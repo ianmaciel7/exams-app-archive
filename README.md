@@ -64,6 +64,12 @@ a integração GitHub conectada copiou para
 deste repositório não possui acesso automático para clonar outro repositório privado.
 Não tornar o `notes-app` público para contornar isso.
 
+## Explorador local e plugin Codex
+
+- [Plugin Codex privado](plugins/exams-archive/README.md): consulta autenticada por SQLite FTS5, imagens, recuperação por SHA + path e exportação JSON local. Marketplace do repositório em `.agents/plugins/marketplace.json`.
+- [GitHub Pages — explorador local](site/README.md): interface estática que abre um JSON escolhido no navegador. **O Pages pode ser público mesmo com o repositório privado; nenhum índice, bundle ou dado histórico é publicado.**
+- [Workflow do Pages](.github/workflows/archive-pages.yml): deploy somente de quatro arquivos permitidos; a publicação requer GitHub Pages habilitado em Settings → Pages com Source = GitHub Actions.
+
 ## Busca com poucos tokens
 
 O relatório Markdown pode ser consultado diretamente pelo GitHub conectado.
