@@ -47,6 +47,25 @@ O índice mais recente de todas as fontes, incluindo as quatro branches do
 `exams-app`, está na release
 [**index-2026-11-23-exams-complete**](https://github.com/ianmaciel7/exams-app-archive/releases/tag/index-2026-11-23-exams-complete).
 
+### Índice textual completo por trechos (`scripts/content_index.py`)
+
+Para buscar símbolos ou trechos dentro do corpo de arquivos históricos (além de
+mensagens de commit e caminhos cobertos por `scripts/archive_index.py`), o
+script `scripts/content_index.py` constrói um índice SQLite FTS5 local a partir
+de um repositório Git bare ou arquivo `.bundle`, com chunking determinístico por
+linhas, deduplicação por `blob_sha`, limites de tamanho, descarte de binários e
+exclusão automática de `.env`, chaves e padrões de segredos:
+
+```powershell
+python scripts/content_index.py --db .cache/archive/content-index.sqlite ingest --repo .cache/archive/exams-app-antigo-2.bundle --name exams-app-antigo-2
+python scripts/content_index.py --db .cache/archive/content-index.sqlite search "sidebar" --repo exams-app-antigo-2 --branch main --ext .ts
+python scripts/content_index.py --db .cache/archive/content-index.sqlite recover --repo .cache/archive/exams-app-antigo-2.bundle --sha <COMMIT_SHA> --path <PATH> --start-line <START> --end-line <END>
+python scripts/content_index.py --db .cache/archive/content-index.sqlite stats
+```
+
+Mantenha o banco FTS5 gerado apenas em armazenamento local/privado; nunca o
+publique no GitHub Pages.
+
 ## Nível 3 — Restaurar código, documentos e imagens
 
 Para versões antigas de `exams-app-antigo-2`, use o bundle **completo com PR refs**:
