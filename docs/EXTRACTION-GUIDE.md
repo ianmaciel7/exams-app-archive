@@ -34,6 +34,19 @@ O arquivo completo ocupa cerca de **37,33 MiB** e o download cerca de **5,88 MiB
 não é um modelo semântico sobre todo o texto das versões dos arquivos.
 Os resultados incluem o nome da fonte e o commit SHA.
 
+## exams-app — preservar e pesquisar as quatro branches
+
+A release **[exams-app-2026-11-23-complete](https://github.com/ianmaciel7/exams-app-archive/releases/tag/exams-app-2026-11-23-complete)** contém todas as quatro branches: `main`, `dev`, `claude/project-thread-o4dym1` e `chore/consolidate-legacy-sources-20261123`.
+
+Para leitura sem Git, baixe `exams-app-dev-snapshot.tar.gz`. Para recuperar
+qualquer branch, use `exams-app-all-refs.bundle`; o inventário completo dos
+arquivos está em [inventory/exams-app-branch-files.json](../inventory/exams-app-branch-files.json).
+Os metadados do PR #1 estão em `GITHUB-METADATA.json` na mesma release.
+
+O índice mais recente de todas as fontes, incluindo as quatro branches do
+`exams-app`, está na release
+[**index-2026-11-23-exams-complete**](https://github.com/ianmaciel7/exams-app-archive/releases/tag/index-2026-11-23-exams-complete).
+
 ## Nível 3 — Restaurar código, documentos e imagens
 
 Para versões antigas de `exams-app-antigo-2`, use o bundle **completo com PR refs**:
