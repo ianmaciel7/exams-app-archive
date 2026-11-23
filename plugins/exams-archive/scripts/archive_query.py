@@ -147,8 +147,9 @@ def export_pages(conn: sqlite3.Connection, destination: Path) -> dict:
            FROM images i JOIN repositories r ON r.id=i.repo_id"""
     ]
     count = 0
+    output_stream = destination.open("x", encoding="utf-8")
     try:
-        with destination.open("x", encoding="utf-8") as out:
+        with output_stream as out:
             out.write(json.dumps({"version": 1, "generated_at": datetime.now(timezone.utc).isoformat()})[:-1])
             out.write(',"records":[')
             for query in queries:
@@ -173,8 +174,9 @@ def recover(bare: Path, sha: str, path: str, output: Path) -> dict:
     if not (bare / "HEAD").is_file():
         raise ValueError("Use the path to a bare Git mirror of the downloaded bundle")
     output.parent.mkdir(parents=True, exist_ok=True)
+    output_stream = output.open("xb")
     try:
-        with output.open("xb") as target:
+        with output_stream as target:
             subprocess.run(["git", f"--git-dir={bare}", "show", f"{sha}:{path}"],
                            stdout=target, stderr=subprocess.PIPE, check=True)
     except Exception:
