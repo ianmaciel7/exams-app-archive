@@ -1,0 +1,559 @@
+{
+  "date_utc": "2026-11-23T17:39:47.659899+00:00",
+  "source": "private releases; original repositories not accessed",
+  "sources": [
+    {
+      "repository": "exams-app",
+      "refs": 2,
+      "commits": 38,
+      "changes": 9313,
+      "deleted_image_evidence": 122,
+      "images": 482,
+      "elapsed_seconds": 0.55,
+      "source": "release://archive-2026-11-23-initial/exams-app.bundle",
+      "head_count": 2
+    },
+    {
+      "repository": "exams-app-old",
+      "refs": 6,
+      "commits": 41,
+      "changes": 1565,
+      "deleted_image_evidence": 0,
+      "images": 14,
+      "elapsed_seconds": 0.04,
+      "source": "release://archive-2026-11-23-initial/exams-app-old.bundle",
+      "head_count": 6
+    },
+    {
+      "repository": "exams-app-antigo-2",
+      "refs": 28,
+      "commits": 296,
+      "changes": 11439,
+      "deleted_image_evidence": 1498,
+      "images": 1563,
+      "elapsed_seconds": 5.67,
+      "source": "release://archive-2026-11-23-initial/exams-app-antigo-2.bundle",
+      "head_count": 28
+    },
+    {
+      "repository": "shadcn-template",
+      "refs": 7,
+      "commits": 15,
+      "changes": 322,
+      "deleted_image_evidence": 0,
+      "images": 9,
+      "elapsed_seconds": 0.03,
+      "source": "release://archive-2026-11-23-audit-complements/shadcn-template.bundle",
+      "head_count": 7
+    },
+    {
+      "repository": "shadcn-firebase-template",
+      "refs": 7,
+      "commits": 17,
+      "changes": 756,
+      "deleted_image_evidence": 0,
+      "images": 9,
+      "elapsed_seconds": 0.04,
+      "source": "release://archive-2026-11-23-audit-complements/shadcn-firebase-template.bundle",
+      "head_count": 7
+    },
+    {
+      "repository": "fcc-responsive-web-design",
+      "refs": 1,
+      "commits": 3,
+      "changes": 21,
+      "deleted_image_evidence": 0,
+      "images": 0,
+      "elapsed_seconds": 0.01,
+      "source": "release://archive-2026-11-23-audit-complements/fcc-responsive-web-design.bundle",
+      "head_count": 1
+    },
+    {
+      "repository": "ianmaciel7",
+      "refs": 1,
+      "commits": 9,
+      "changes": 9,
+      "deleted_image_evidence": 0,
+      "images": 0,
+      "elapsed_seconds": 0.01,
+      "source": "release://archive-2026-11-23-audit-complements/ianmaciel7.bundle",
+      "head_count": 1
+    },
+    {
+      "repository": "notes-app@old-1",
+      "refs": 1,
+      "commits": 7,
+      "changes": 30,
+      "deleted_image_evidence": 0,
+      "images": 0,
+      "elapsed_seconds": 0.01,
+      "source": "embedded://archive-2026-11-23-initial/prototype/notes-app-old-1.bundle",
+      "head_count": 1
+    },
+    {
+      "repository": "notes-app@old-10",
+      "refs": 1,
+      "commits": 110,
+      "changes": 711,
+      "deleted_image_evidence": 0,
+      "images": 7,
+      "elapsed_seconds": 0.02,
+      "source": "embedded://archive-2026-11-23-initial/prototype/notes-app-old-10.bundle",
+      "head_count": 1
+    },
+    {
+      "repository": "notes-app@old-11",
+      "refs": 1,
+      "commits": 293,
+      "changes": 3222,
+      "deleted_image_evidence": 0,
+      "images": 8,
+      "elapsed_seconds": 0.06,
+      "source": "embedded://archive-2026-11-23-initial/prototype/notes-app-old-11.bundle",
+      "head_count": 1
+    },
+    {
+      "repository": "notes-app@old-2",
+      "refs": 1,
+      "commits": 19,
+      "changes": 2181,
+      "deleted_image_evidence": 0,
+      "images": 836,
+      "elapsed_seconds": 0.05,
+      "source": "embedded://archive-2026-11-23-initial/prototype/notes-app-old-2.bundle",
+      "head_count": 1
+    },
+    {
+      "repository": "notes-app@old-3",
+      "refs": 1,
+      "commits": 23,
+      "changes": 293,
+      "deleted_image_evidence": 0,
+      "images": 5,
+      "elapsed_seconds": 0.02,
+      "source": "embedded://archive-2026-11-23-initial/prototype/notes-app-old-3.bundle",
+      "head_count": 1
+    },
+    {
+      "repository": "notes-app@old-4",
+      "refs": 1,
+      "commits": 380,
+      "changes": 2714,
+      "deleted_image_evidence": 0,
+      "images": 121,
+      "elapsed_seconds": 0.05,
+      "source": "embedded://archive-2026-11-23-initial/prototype/notes-app-old-4.bundle",
+      "head_count": 1
+    },
+    {
+      "repository": "notes-app@old-5",
+      "refs": 1,
+      "commits": 158,
+      "changes": 2399,
+      "deleted_image_evidence": 0,
+      "images": 31,
+      "elapsed_seconds": 0.05,
+      "source": "embedded://archive-2026-11-23-initial/prototype/notes-app-old-5.bundle",
+      "head_count": 1
+    },
+    {
+      "repository": "notes-app@old-6",
+      "refs": 1,
+      "commits": 81,
+      "changes": 1668,
+      "deleted_image_evidence": 0,
+      "images": 5,
+      "elapsed_seconds": 0.03,
+      "source": "embedded://archive-2026-11-23-initial/prototype/notes-app-old-6.bundle",
+      "head_count": 1
+    },
+    {
+      "repository": "notes-app@old-7",
+      "refs": 1,
+      "commits": 40,
+      "changes": 1676,
+      "deleted_image_evidence": 2,
+      "images": 10,
+      "elapsed_seconds": 0.04,
+      "source": "embedded://archive-2026-11-23-initial/prototype/notes-app-old-7.bundle",
+      "head_count": 1
+    },
+    {
+      "repository": "notes-app@old-8",
+      "refs": 1,
+      "commits": 22,
+      "changes": 974,
+      "deleted_image_evidence": 0,
+      "images": 0,
+      "elapsed_seconds": 0.03,
+      "source": "embedded://archive-2026-11-23-initial/prototype/notes-app-old-8.bundle",
+      "head_count": 1
+    },
+    {
+      "repository": "notes-app@old-9",
+      "refs": 1,
+      "commits": 89,
+      "changes": 1198,
+      "deleted_image_evidence": 0,
+      "images": 7,
+      "elapsed_seconds": 0.03,
+      "source": "embedded://archive-2026-11-23-initial/prototype/notes-app-old-9.bundle",
+      "head_count": 1
+    },
+    {
+      "repository": "notes-app@old",
+      "refs": 1,
+      "commits": 36,
+      "changes": 1053,
+      "deleted_image_evidence": 6,
+      "images": 12,
+      "elapsed_seconds": 0.05,
+      "source": "embedded://archive-2026-11-23-initial/prototype/notes-app-old.bundle",
+      "head_count": 1
+    }
+  ],
+  "queries": [
+    {
+      "query": "firebase",
+      "count": 12,
+      "ms": 0.73,
+      "sample": [
+        {
+          "repository": "exams-app-old",
+          "kind": "commit",
+          "sha": "3902607e00b841e7388030288a34ee783d3e9efe",
+          "path": "",
+          "summary": "feat(tooling): configure MDX, bundle analyzer, codemod, flags, OpenTelemetry, and Firebase analytics (ADR 0005)"
+        },
+        {
+          "repository": "exams-app-old",
+          "kind": "commit",
+          "sha": "f0178a47f7135e71c216de593335a361b67c8b2f",
+          "path": "",
+          "summary": "feat(tooling): configure MDX, bundle analyzer, codemod, flags, OpenTelemetry, and Firebase analytics (ADR 0005)"
+        },
+        {
+          "repository": "exams-app-old",
+          "kind": "commit",
+          "sha": "cc43fb998824101d68da7fad237fd5457986e1cb",
+          "path": "",
+          "summary": "feat: bootstrap exams app with Next.js, Firebase auth, testing, CI/CD and ADRs"
+        },
+        {
+          "repository": "shadcn-firebase-template",
+          "kind": "commit",
+          "sha": "a0aa422871d330a8b69c08ffd795d9464dc4dbce",
+          "path": "",
+          "summary": "feat(auth): integrate firebase authentication, roles, and emulators"
+        }
+      ]
+    },
+    {
+      "query": "grafo",
+      "count": 12,
+      "ms": 0.19,
+      "sample": [
+        {
+          "repository": "exams-app",
+          "kind": "commit",
+          "sha": "34851ff787a9ff6a5708e05853299206f97c4a9e",
+          "path": "",
+          "summary": "docs: atualizar repo-grafo (README, template e visualizador)"
+        },
+        {
+          "repository": "exams-app",
+          "kind": "commit",
+          "sha": "f52b0c8f9235c5641d608cf199d0b2a8553f060e",
+          "path": "",
+          "summary": "docs: atualizar horário do artefato Repo Grafo"
+        },
+        {
+          "repository": "exams-app",
+          "kind": "commit",
+          "sha": "21de22c1ec4b250524c286474a6a8b03c2952212",
+          "path": "",
+          "summary": "docs: atualizar repo-grafo com temas shell e layout"
+        },
+        {
+          "repository": "exams-app",
+          "kind": "commit",
+          "sha": "85045d8bfb9cc362fa53618fec18466451cf0bca",
+          "path": "",
+          "summary": "docs: adicionar visualizador do repo-grafo e artefato"
+        }
+      ]
+    },
+    {
+      "query": "qconcursos",
+      "count": 12,
+      "ms": 0.2,
+      "sample": [
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "commit",
+          "sha": "dfe179fd9a882a8e98b6d7d8db43dd5930f20a2a",
+          "path": "",
+          "summary": "Add QConcursos inventory for issue #31"
+        },
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "commit",
+          "sha": "895da69a6c737fc976a396b3a37ec91e1780294a",
+          "path": "",
+          "summary": "docs: add partial verified QConcursos research for issue 31 (#196)"
+        },
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "commit",
+          "sha": "c45744eee97971b48217ff3a9d51564b7f99f8c2",
+          "path": "",
+          "summary": "docs(board): add Section 30 with exhaustive QConcursos, Readwise Reader & Readwise SRS screenshots and functional blueprints (Issues #74-#84) (#85)"
+        },
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "commit",
+          "sha": "6283f03db1034b4f5f2a5019b1420edb79811e6f",
+          "path": "",
+          "summary": "docs(board): add Capacities Right Panel & Graph blueprint + QConcursos Elite UX dossier & 18 screenshots (#64, #66-#72) (#73)"
+        }
+      ]
+    },
+    {
+      "query": "recall",
+      "count": 12,
+      "ms": 0.14,
+      "sample": [
+        {
+          "repository": "notes-app@old-10",
+          "kind": "commit",
+          "sha": "7ae7b62b3f6f64005ca3d897a30011d1ba3ede63",
+          "path": "",
+          "summary": "feat: close remaining Recall punch-list items (accessibility, sidebar parity)"
+        },
+        {
+          "repository": "notes-app@old-10",
+          "kind": "commit",
+          "sha": "b70aea78ad63b0b234e2891e1738c32d34ed2c31",
+          "path": "",
+          "summary": "feat: add recall feature and study mode with retry queue components and tests"
+        },
+        {
+          "repository": "notes-app@old-10",
+          "kind": "commit",
+          "sha": "b0dde2be0af6b56645587a27c173556e30dca0fa",
+          "path": "",
+          "summary": "feat: implement recall study application with space management and e2e tests"
+        },
+        {
+          "repository": "notes-app@old-10",
+          "kind": "commit",
+          "sha": "fc2be76188f76868c8dc3dae0cf5c6705f2ec5f9",
+          "path": "",
+          "summary": "feat: add comprehensive UI component library, recall domain logic, and Firebase integration"
+        }
+      ]
+    },
+    {
+      "query": "capacit",
+      "count": 12,
+      "ms": 0.18,
+      "sample": [
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "commit",
+          "sha": "1c2d093747c29adbef895944b67f7aab2e7e72f9",
+          "path": "",
+          "summary": "feat(capacities-graph-engine): painel direito do grafo em canvas 2D"
+        },
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "commit",
+          "sha": "176e6125611ab53929c96eb84faee502f426c9a0",
+          "path": "",
+          "summary": "style(capacities-right-panel-tools): grade 3x2 das ferramentas no Explorar (#66)"
+        },
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "commit",
+          "sha": "3c329ba0c95cb28a28c06f9f79c9bdaf6a2c3235",
+          "path": "",
+          "summary": "style(capacities-right-panel-tools): grade 3x2 das ferramentas no Explorar (#66)"
+        },
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "commit",
+          "sha": "e778ada7f0442cd1a8ba7155e5e97699a547a24f",
+          "path": "",
+          "summary": "feat(capacities-graph-controls): barras flutuantes do grafo (#68)"
+        }
+      ]
+    },
+    {
+      "query": "fsrs",
+      "count": 12,
+      "ms": 0.14,
+      "sample": [
+        {
+          "repository": "notes-app@old-8",
+          "kind": "commit",
+          "sha": "9e75e0ca0aecce755045e94441b7ece4434ede01",
+          "path": "",
+          "summary": "feat: add spaced repetition study system with FSRS scheduler, database, and UI components"
+        },
+        {
+          "repository": "notes-app@old-9",
+          "kind": "commit",
+          "sha": "fdeb3230ea1f1cec0f0286f35604bf581d89a679",
+          "path": "",
+          "summary": "style: apply biome formatting across exam-fsrs-foundation merge"
+        },
+        {
+          "repository": "notes-app@old-9",
+          "kind": "commit",
+          "sha": "f177da0d0b64f39913c50b78e45c188052f32e9a",
+          "path": "",
+          "summary": "Merge branch 'feature/exam-fsrs-foundation' into feature/home"
+        },
+        {
+          "repository": "notes-app@old-9",
+          "kind": "commit",
+          "sha": "b569304f74ca2780f9a0d7d9840ac1da2c12bde1",
+          "path": "",
+          "summary": "feat: complete exam-fsrs foundation with full Next.js 16 build and knowledge graph"
+        }
+      ]
+    },
+    {
+      "query": "sidebar",
+      "count": 12,
+      "ms": 0.18,
+      "sample": [
+        {
+          "repository": "exams-app",
+          "kind": "commit",
+          "sha": "f729fa7ecb227b3bb42592f6c2c6ed23db4fc9f0",
+          "path": "",
+          "summary": "docs: adicionar protótipo da sidebar"
+        },
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "commit",
+          "sha": "a587f6a20edb548ce4210e594f2f7ebe01208f18",
+          "path": "",
+          "summary": "test(sidebar): persist Issue #138 real SpaceSwitcher evidence"
+        },
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "commit",
+          "sha": "dbdddaf67932238ec99e1a92f8380a5c5a999dc3",
+          "path": "",
+          "summary": "feat(sidebar): SpaceSwitcher pesquisável com reordenação persistente (#138) (#143)"
+        },
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "commit",
+          "sha": "235ba0ec2d904911c13cc641dbc91ee1738556e8",
+          "path": "",
+          "summary": "test(sidebar): open mobile drawer before using SpaceSwitcher (#138)"
+        }
+      ]
+    },
+    {
+      "query": "exam",
+      "count": 12,
+      "ms": 0.4,
+      "sample": [
+        {
+          "repository": "exams-app",
+          "kind": "commit",
+          "sha": "c6d50b2096e397ee2819b4d5ef84a2a799cca247",
+          "path": "",
+          "summary": "Adiciona contexto do projeto Exams App"
+        },
+        {
+          "repository": "exams-app-old",
+          "kind": "commit",
+          "sha": "cc43fb998824101d68da7fad237fd5457986e1cb",
+          "path": "",
+          "summary": "feat: bootstrap exams app with Next.js, Firebase auth, testing, CI/CD and ADRs"
+        },
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "commit",
+          "sha": "5569564d0ed2c48bf724255b8744734aa886af46",
+          "path": "",
+          "summary": "docs(archive): atualizar links de restauração exams-app-old-backup-dev-20261111-1903.bundle"
+        },
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "commit",
+          "sha": "297e7e5082d0130fa843f111095f308a121f7eb6",
+          "path": "",
+          "summary": "docs(archive): atualizar links de restauração exams-app-old-backup-dev-before-adr2.bundle"
+        }
+      ]
+    },
+    {
+      "query": "simulado",
+      "count": 12,
+      "ms": 0.14,
+      "sample": [
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "commit",
+          "sha": "467737ebcd2840b6bd9ebfae8fafbf8f3ebb173b",
+          "path": "",
+          "summary": "Revert \"feat(novo): modelos de usuário, Questão e Simulado no menu + Novo (#84) (#241)\""
+        },
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "commit",
+          "sha": "fee92c25985065787d4596d1565682c5ff7eb594",
+          "path": "",
+          "summary": "feat(novo): modelos de usuário, Questão e Simulado no menu + Novo (#84) (#241)"
+        },
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "commit",
+          "sha": "eb0bc750ef235651890e3ac75aa97a4d797db187",
+          "path": "",
+          "summary": "fix(responsive): replace undefined Simulado icon and test Home at 12 widths (#132)"
+        },
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "commit",
+          "sha": "c0c6029a2978c8ad4d67584308300e35e96eb82e",
+          "path": "",
+          "summary": "feat(study): unify official/manual question workflows and simulado configuration (#113)"
+        }
+      ]
+    }
+  ],
+  "proofs": {
+    "code": {
+      "repository": "notes-app@old-10",
+      "sha": "cabcec2e8227fc7f06aa5c9c5afcc0e8944802c6",
+      "sha256": "e890398452d553b21f177f520727e15f7eebab2c0d68c4ba935a1bbc0565035c",
+      "bytes": 7532,
+      "verified": true
+    },
+    "deleted_image": {
+      "repository": "exams-app-antigo-2",
+      "path": "prototypes/board-exam-app/assets/issue68_graph_toolbar_1366.png",
+      "sha256": "922a84401ea7cfa71a9121ea897b6436bad52ae9cde73c1b035704a752b39554",
+      "sha": "65ce2ab7ac95e8fc4e1be998eb0aa593049bf2c8",
+      "verified": true
+    }
+  },
+  "source_count": 19,
+  "elapsed_seconds": 17.04,
+  "sqlite_bytes": 21733376,
+  "gzip_bytes": 3330596,
+  "gzip_sha256": "afae28b63e69d47d1a20d81c65b5c112131ab36cadaafb2afdffaf43aa834dd7",
+  "release_tag": "index-2026-11-23-full",
+  "limitations": [
+    "notes-app current main/dev/stag/firebase/file and three private tags still missing",
+    "FTS covers commit subjects and historical paths, not full text of every blob",
+    "metadata does not include GitHub Issues, PRs, comments, CI or LFS payloads"
+  ]
+}
