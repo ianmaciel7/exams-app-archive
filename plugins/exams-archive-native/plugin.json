@@ -1,0 +1,61 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "exams-archive-native",
+  "version": "0.5.1",
+  "description": "Arquivo histórico Exams App: Git/FTS5, UI/UX, animações e sincronização bidirecional controlada com repositório privado.",
+  "author": {
+    "name": "Ian Maciel de Carvalho",
+    "email": "ianmaciel76@gmail.com"
+  },
+  "keywords": [
+    "exam app",
+    "archive",
+    "github",
+    "history",
+    "source provenance",
+    "codex",
+    "sidebar",
+    "design fidelity",
+    "ui ux",
+    "visual references",
+    "ui motion",
+    "animations",
+    "transitions",
+    "microinteractions",
+    "gesture",
+    "bidirectional sync",
+    "plugin release"
+  ],
+  "repository": "https://github.com/ianmaciel7/exams-app-archive",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "capabilities": [
+          "GitHub privado e pesquisa histórica FTS5",
+          "Fontes de UI auditadas com SHA e branch",
+          "Catálogo de 213 imagens históricas recuperadas",
+          "Componentes React e stories Notes App old-4/old-5",
+          "Matriz 48 capturas do shell antigo",
+          "Fidelidade de design, medidas e tokens OKLCH",
+          "Prévia autocontida no ChatGPT, sem iframe/fetch externo",
+          "Auditoria de backup e restauração por SHA",
+          "Catálogo motion: 13 comportamentos com duração, delay, estado e fonte SHA",
+          "Sincronização bidirecional controlada entre plugin ChatGPT e espelho GitHub"
+        ],
+        "category": "Developer Tools",
+        "defaultPrompt": [
+          "Recupere a sidebar do Notes old-5, o contrato visual old-4 e as imagens Capacities antes de criar um preview interativo autocontido aqui no ChatGPT.",
+          "Compare as 48 capturas lowchrome e as 26 capturas sidebar para verificar tema, painéis, estados e densidade visual, mantendo fontes e SHAs.",
+          "Encontre no catálogo as imagens recuperadas de Capacities, QConcursos, Readwise e ExamTopics que servem como referência de UI.",
+          "Faça uma auditoria do arquivo Git privado, seus bundles e pendências de recuperação sem excluir fontes.",
+          "Recupere do Exams Archive tempos e triggers de animações, peek, hover e drag da sidebar, validando código e SHA.",
+          "Compare a versão do plugin ChatGPT com plugins/exams-archive-native em ianmaciel7/exams-app-archive e sincronize diferenças em ambos os sentidos, preservando o plugin Codex separado e sem sobrescrever conflitos."
+        ],
+        "developerName": "Ian Maciel de Carvalho",
+        "displayName": "Exams Archive",
+        "longDescription": "Consulta o histórico privado Exams/Notes App via GitHub e FTS5, preservando evidências de UI e animações. Inclui um contrato de sincronização bidirecional controlada: mantém um espelho de código-fonte em plugins/exams-archive-native no GitHub e compara as versões com o plugin ChatGPT. A atualização/publicação do plugin requer uma ação autorizada via Plugin Creator e não acontece automaticamente a cada commit. Não altera backups imutáveis nem o plugin Codex separado.",
+        "shortDescription": "Histórico, UI/UX e sincronização com GitHub"
+      }
+    }
+  }
+}

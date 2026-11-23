@@ -1,0 +1,6 @@
+interface:
+  display_name: Exams Archive
+  short_description: Arquivo historico e fidelidade UI
+  default_prompt: Localize o HTML, os componentes React, os tokens e as capturas originais nos repos antigos. Para preview no ChatGPT, crie uma interface autocontida e verificada, nunca dependente de GitHub/iframe.
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,32 @@
+---
+name: exams-archive-research
+description: Use to research, verify, audit, search or recover historical Exam App/Notes App repositories, commits, Git bundles, screenshot paths, code and original UI sources. Use GitHub connected tools and private FTS5 via Actions when needed. For a visual preview or sidebar/UI reconstruction also consult exams-archive-ui-fidelity.
+---
+
+# Exams Archive — pesquisa histórica via GitHub
+
+Fonte do **backup histórico**: repositório **privado** `ianmaciel7/exams-app-archive`, branch `main`. O GitHub já está conectado. O plugin não cria ferramenta MCP independente. Para fontes **atuais de protótipos**, consulte também `ianmaciel7/exams-app@dev` e os repos originais quando acessíveis, sem confundir com o backup.
+
+## Roteamento: decidir antes de buscar
+
+- **Criação, reprodução ou preview de UI (sidebar, shell, layout, design, HTML, imagem de referência)**: leia a skill **`exams-archive-ui-fidelity`**, `visual-source-catalog.md`, `chat-preview-contract.md` e `source-map.md` **antes** de qualquer FTS5. Primeiro obtenha os arquivos e screenshots originais, não um índice genérico.
+- **Auditoria de backup/restauração**: leia `README.md`, `docs/VERIFICATION-2026-11-23.md`, `docs/DELETE-READINESS.md` e `docs/EXTRACTION-GUIDE.md` conforme necessidade. Verifique o status presente; jamais conclua que o Notes privado está 100% restaurado só por histórico.
+- **Busca histórica sem caminho conhecido**: relatórios primeiro, FTS5 privada depois (`references/private-fts5.md`).
+
+## Consulta com menor custo
+
+1. Use `mcp__GitHub__get_repo` para confirmar acesso, privacidade e repositório.
+2. Se arquivo/ref/caminho conhecido, use `mcp__GitHub__fetch_file` **diretamente**, com `ref` explícita. Para listar pastas ou inspecionar árvore use `mcp__GitHub__fetch` GET de `https://api.github.com/repos/<owner>/<repo>/contents/<path>?ref=<branch>` (somente se a ferramenta oferecer esse endpoint).
+3. Para buscas sem caminho, use `reports/FULL-INDEX.md`, `inventory/`, `docs/EXTRACTION-GUIDE.md`; só execute pesquisa FTS5 quando os relatórios não resolverem. Pesquisa FTS5 cria request/result na branch privada `archive-search-queries`; não afirmar que é sem escrita.
+4. Limite a 10–20 resultados, refine por repositório/termo/tipo e apresente origem, ref, SHA, caminho, tipo, release. Diferencie **registro indexado** de **bytes efetivamente recuperados**.
+5. Para reconstruir UI, **não transforme** uma lista de arquivos/commits ou resumo em suposta réplica visual. Se houver HTML/CSS/TSX e capturas, são a fonte prioritária; a versão do chat precisa de verificação visual.
+
+## Segurança
+
+Não peça tokens, computador ligado nem clone local se a conexão GitHub já atende. Não faça escrita fora de consulta FTS5 e não modifique repositórios, branches, arquivos de backup, releases, artefatos ou configuração do app sem solicitação. Não execute código legado automaticamente, exponha conteúdo privado publicamente, faça merge da branch de buscas, nem exclua repositórios antigos. Se a execução FTS5 não retornar JSON `ok:true` com ID, `index_release` e `index_checksum` válidos, reporte falha.
+
+Referências: `references/github-connected.md`, `references/private-fts5.md`; para UI usar `skills/ui-fidelity/SKILL.md`.
+
+## Motion retrieval
+
+FTS5 indexes paths and commit subjects rather than source-body transitions/animations. For these use `skills/ui-motion/SKILL.md` and `docs/UI-MOTION-EVIDENCE.json` in archive main followed by verified GitHub code reads. Do not call the existing SQLite index full-text or semantic vector search.

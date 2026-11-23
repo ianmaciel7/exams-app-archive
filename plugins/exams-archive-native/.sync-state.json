@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "plugin_id": "plugins_6b04aaa9fd848191a24525011f76e2bb",
+  "release_id": "pluginrel_6b04c26723e48191b7598be909646792",
+  "version": "0.5.1",
+  "source": "Plugin Creator release",
+  "mirrored_paths": [
+    ".codex-plugin/plugin.json",
+    "README.md",
+    "agents/openai.yaml",
+    "plugin.json",
+    "skills/archive-research/SKILL.md",
+    "skills/archive-research/references/github-connected.md",
+    "skills/archive-research/references/private-fts5.md",
+    "skills/sync-bridge/SKILL.md",
+    "skills/ui-fidelity/SKILL.md",
+    "skills/ui-fidelity/references/chat-preview-contract.md",
+    "skills/ui-fidelity/references/source-map.md",
+    "skills/ui-fidelity/references/visual-qa.md",
+    "skills/ui-fidelity/references/visual-source-catalog.md",
+    "skills/ui-motion/SKILL.md",
+    "skills/ui-motion/references/motion-taxonomy.md"
+  ],
+  "tracked_plugin_root": "plugins/exams-archive-native",
+  "codex_legacy_root": "plugins/exams-archive",
+  "notes": "Mirror of ChatGPT plugin source. Update through verified two-way synchronization; independent publication is not automatic."
+}
