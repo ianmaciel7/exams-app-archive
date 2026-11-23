@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-23T23:26:16.490912+00:00",
+  "generated_utc": "2026-11-23T23:30:19.771643+00:00",
   "sources": [
     {
       "repository": "exams-app-old",
@@ -8,7 +8,7 @@
       "changes": 13676,
       "deleted_image_evidence": 0,
       "images": 14,
-      "seconds": 1.02,
+      "seconds": 1.31,
       "branch_compare": {
         "main_only": 0,
         "dev_only": 9,
@@ -22,7 +22,7 @@
       "changes": 18279,
       "deleted_image_evidence": 2266,
       "images": 1563,
-      "seconds": 11.21,
+      "seconds": 15.7,
       "branch_compare": {
         "main_only": 0,
         "dev_only": 180,
@@ -36,7 +36,7 @@
       "changes": 711,
       "deleted_image_evidence": 0,
       "images": 7,
-      "seconds": 0.02
+      "seconds": 0.03
     }
   ],
   "queries": [
@@ -46,61 +46,81 @@
         {
           "repository": "exams-app-old",
           "kind": "commit",
-          "sha": "3902607e00b841e7388030288a34ee783d3e9efe",
+          "sha": "d7c47355bccbe4c2155ee23a8249d7e43e5d10c9",
           "path": "",
-          "summary": "feat(tooling): configure MDX, bundle analyzer, codemod, flags, OpenTelemetry, and Firebase analytics (ADR 0005)"
+          "summary": "feat(firebase): install firebase ui registry components",
+          "rank": -4.644434
         },
         {
           "repository": "exams-app-old",
           "kind": "commit",
-          "sha": "f0178a47f7135e71c216de593335a361b67c8b2f",
+          "sha": "4b71a2d764f69fe4979f91c80cb07b8117efb834",
           "path": "",
-          "summary": "feat(tooling): configure MDX, bundle analyzer, codemod, flags, OpenTelemetry, and Firebase analytics (ADR 0005)"
+          "summary": "feat(firebase): install firebase ui registry components (ADR 0008)",
+          "rank": -4.380086
         },
         {
           "repository": "exams-app-old",
           "kind": "commit",
+          "sha": "7b41b5371c0ca874d81b70b93106ab9743715cf3",
+          "path": "",
+          "summary": "feat(firebase): install firebase ui registry components (ADR 0008)",
+          "rank": -4.380086
+        },
+        {
+          "repository": "exams-app-old",
+          "kind": "file",
           "sha": "cc43fb998824101d68da7fad237fd5457986e1cb",
-          "path": "",
-          "summary": "feat: bootstrap exams app with Next.js, Firebase auth, testing, CI/CD and ADRs"
+          "path": ".firebaserc",
+          "summary": "",
+          "commits": 10,
+          "first_sha": "1ffe11115e8625ee4aae2623174f3ca3ff3fd9f3",
+          "last_sha": "cc43fb998824101d68da7fad237fd5457986e1cb",
+          "rank": -4.663016
+        },
+        {
+          "repository": "exams-app-old",
+          "kind": "file",
+          "sha": "cc43fb998824101d68da7fad237fd5457986e1cb",
+          "path": "firebase.json",
+          "summary": "",
+          "commits": 6,
+          "first_sha": "1ffe11115e8625ee4aae2623174f3ca3ff3fd9f3",
+          "last_sha": "cc43fb998824101d68da7fad237fd5457986e1cb",
+          "rank": -4.268943
+        },
+        {
+          "repository": "notes-app-old-10",
+          "kind": "file",
+          "sha": "fc2be76188f76868c8dc3dae0cf5c6705f2ec5f9",
+          "path": "firebase.json",
+          "summary": "",
+          "commits": 1,
+          "first_sha": "fc2be76188f76868c8dc3dae0cf5c6705f2ec5f9",
+          "last_sha": "fc2be76188f76868c8dc3dae0cf5c6705f2ec5f9",
+          "rank": -4.268943
         },
         {
           "repository": "exams-app-old",
           "kind": "commit",
-          "sha": "0dd6b81c4065b4bdd4df180ada096576bab5b25a",
+          "sha": "d51318da1234142eb7521eb512e81540ee1298be",
           "path": "",
-          "summary": "fix(spelling): allow firebasestorage in cspell words"
+          "summary": "refactor(components): move Firebase client wrappers to src/components/firebase",
+          "rank": -4.258884
         },
         {
           "repository": "exams-app-old",
-          "kind": "commit",
-          "sha": "0f4e2b47de1818b6fa23b4f891505dd536766ee2",
-          "path": "",
-          "summary": "refactor(firebase): pass children to LegalText and drop two wrapper components"
-        },
-        {
-          "repository": "exams-app-old",
-          "kind": "commit",
-          "sha": "f7770e926a596c781358812880c28c563c5ff241",
-          "path": "",
-          "summary": "fix(firebase): fallback to default storage bucket in admin client"
-        },
-        {
-          "repository": "exams-app-old",
-          "kind": "commit",
-          "sha": "d73277f1289904606f8d4f692a0f2fad120e8d64",
-          "path": "",
-          "summary": "refactor(firebase): compose auth forms with children and share PendingButton"
-        },
-        {
-          "repository": "exams-app-old",
-          "kind": "commit",
-          "sha": "a4361498008d1ee55defe9b13ac77fbf5ef35733",
-          "path": "",
-          "summary": "refactor(firebase): drop pass-through MFA wrappers and share the code form"
+          "kind": "file",
+          "sha": "cc43fb998824101d68da7fad237fd5457986e1cb",
+          "path": ".agents/skills/firebase-basics/references/firebase-service-init.md",
+          "summary": "",
+          "commits": 9,
+          "first_sha": "18ad26b6c7b223a4bcf0fe0ded5584499fb2bac7",
+          "last_sha": "cc43fb998824101d68da7fad237fd5457986e1cb",
+          "rank": -3.827298
         }
       ],
-      "ms": 0.45,
+      "ms": 8.2,
       "count": 8
     },
     {
@@ -109,61 +129,81 @@
         {
           "repository": "exams-app-antigo-2",
           "kind": "commit",
-          "sha": "1c2d093747c29adbef895944b67f7aab2e7e72f9",
+          "sha": "1d9649f2f4cd136bb50fc8beac69ac1351d7a4a9",
           "path": "",
-          "summary": "feat(capacities-graph-engine): painel direito do grafo em canvas 2D"
-        },
-        {
-          "repository": "exams-app-antigo-2",
-          "kind": "commit",
-          "sha": "b1e0a36adc7811e453ab977f31541455c8640552",
-          "path": "",
-          "summary": "fix(prototype): declarar estado das barras do grafo (#68)"
-        },
-        {
-          "repository": "exams-app-antigo-2",
-          "kind": "commit",
-          "sha": "e778ada7f0442cd1a8ba7155e5e97699a547a24f",
-          "path": "",
-          "summary": "feat(capacities-graph-controls): barras flutuantes do grafo (#68)"
+          "summary": "feat(grafo): exporta PNG via capability downloads (#84)",
+          "rank": -4.881334
         },
         {
           "repository": "exams-app-antigo-2",
           "kind": "commit",
           "sha": "66bc2665b0bc272cf063036c0fa5f6e7798d2d85",
           "path": "",
-          "summary": "fix(prototype): declarar estado das barras do grafo (#68)"
+          "summary": "fix(prototype): declarar estado das barras do grafo (#68)",
+          "rank": -4.676012
+        },
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "commit",
+          "sha": "b1e0a36adc7811e453ab977f31541455c8640552",
+          "path": "",
+          "summary": "fix(prototype): declarar estado das barras do grafo (#68)",
+          "rank": -4.676012
+        },
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "file",
+          "sha": "940b196948b96e9082f8a6284bd76691d1ca4b76",
+          "path": "prototypes/grafo.md",
+          "summary": "",
+          "commits": 5,
+          "first_sha": "7db94589db0c1dfcf09dc8449a6ec78c789b0fb3",
+          "last_sha": "940b196948b96e9082f8a6284bd76691d1ca4b76",
+          "rank": -9.842205
+        },
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "file",
+          "sha": "940b196948b96e9082f8a6284bd76691d1ca4b76",
+          "path": "prototype/grafo.md",
+          "summary": "",
+          "commits": 3,
+          "first_sha": "a711506f2e973352ade39451ea9ffe05766df2b7",
+          "last_sha": "940b196948b96e9082f8a6284bd76691d1ca4b76",
+          "rank": -9.842205
+        },
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "file",
+          "sha": "c081658580cdf73e46aa21dcfacb2efaee97b7a7",
+          "path": "docs/features/grafo.md",
+          "summary": "",
+          "commits": 4,
+          "first_sha": "d17763e4e5f925990a7e06e3772c178267e4889d",
+          "last_sha": "c081658580cdf73e46aa21dcfacb2efaee97b7a7",
+          "rank": -9.130697
         },
         {
           "repository": "exams-app-antigo-2",
           "kind": "commit",
           "sha": "084ac9b841922c1f801861ebc78d4c06e86dde66",
           "path": "",
-          "summary": "feat(capacities-graph-controls): barras flutuantes do grafo (#68)"
+          "summary": "feat(capacities-graph-controls): barras flutuantes do grafo (#68)",
+          "rank": -4.676012
         },
         {
           "repository": "exams-app-antigo-2",
-          "kind": "commit",
-          "sha": "11b8f08d152a46f239607564e9cedcf0d1b9ceea",
-          "path": "",
-          "summary": "feat(capacities-graph): controles do grafo flutuantes e translúcidos no rodapé (#54)"
-        },
-        {
-          "repository": "exams-app-antigo-2",
-          "kind": "commit",
-          "sha": "e247f29687142376381bda2c4d0ccc9f79fb6cbf",
-          "path": "",
-          "summary": "feat(graph): grafo da coleção em canvas com zoom, teclado e lista acessível (#227) (#246)"
-        },
-        {
-          "repository": "exams-app-antigo-2",
-          "kind": "commit",
-          "sha": "8a71dd8f8021619bb6d25ab0cd750175b219b152",
-          "path": "",
-          "summary": "feat(graph): grafo da coleção em canvas com zoom, teclado e lista acessível (#227)"
+          "kind": "file",
+          "sha": "f652257b65504ba2f6eeb302bfc962ef3b555278",
+          "path": "prototypes/docs/features/grafo.md",
+          "summary": "",
+          "commits": 4,
+          "first_sha": "e3696604a88a5bb031837e4e27d63319e9ff326b",
+          "last_sha": "f652257b65504ba2f6eeb302bfc962ef3b555278",
+          "rank": -8.515126
         }
       ],
-      "ms": 0.1,
+      "ms": 0.98,
       "count": 8
     },
     {
@@ -174,59 +214,82 @@
           "kind": "commit",
           "sha": "dfe179fd9a882a8e98b6d7d8db43dd5930f20a2a",
           "path": "",
-          "summary": "Add QConcursos inventory for issue #31"
-        },
-        {
-          "repository": "exams-app-antigo-2",
-          "kind": "commit",
-          "sha": "895da69a6c737fc976a396b3a37ec91e1780294a",
-          "path": "",
-          "summary": "docs: add partial verified QConcursos research for issue 31 (#196)"
+          "summary": "Add QConcursos inventory for issue #31",
+          "rank": -6.682863
         },
         {
           "repository": "exams-app-antigo-2",
           "kind": "commit",
           "sha": "70a1feb8a38d00263fe2ceb7ea083d5b1d11534b",
           "path": "",
-          "summary": "docs: add partial verified QConcursos research for issue 31"
+          "summary": "docs: add partial verified QConcursos research for issue 31",
+          "rank": -5.839568
         },
         {
           "repository": "exams-app-antigo-2",
           "kind": "commit",
-          "sha": "c45744eee97971b48217ff3a9d51564b7f99f8c2",
+          "sha": "895da69a6c737fc976a396b3a37ec91e1780294a",
           "path": "",
-          "summary": "docs(board): add Section 30 with exhaustive QConcursos, Readwise Reader & Readwise SRS screenshots and functional blueprints (Issues #74-#84) (#85)"
+          "summary": "docs: add partial verified QConcursos research for issue 31 (#196)",
+          "rank": -5.603856
         },
         {
           "repository": "exams-app-antigo-2",
-          "kind": "commit",
-          "sha": "4bb538cbdfc12957bcf1c51ce521273d8251974f",
-          "path": "",
-          "summary": "docs(board): add Section 30 with exhaustive QConcursos, Readwise Reader & Readwise SRS screenshots and functional blueprints (Issues #74-#84)"
+          "kind": "file",
+          "sha": "940b196948b96e9082f8a6284bd76691d1ca4b76",
+          "path": "prototypes/analise-qconcursos.md",
+          "summary": "",
+          "commits": 5,
+          "first_sha": "7db94589db0c1dfcf09dc8449a6ec78c789b0fb3",
+          "last_sha": "940b196948b96e9082f8a6284bd76691d1ca4b76",
+          "rank": -4.660871
         },
         {
           "repository": "exams-app-antigo-2",
-          "kind": "commit",
-          "sha": "6283f03db1034b4f5f2a5019b1420edb79811e6f",
-          "path": "",
-          "summary": "docs(board): add Capacities Right Panel & Graph blueprint + QConcursos Elite UX dossier & 18 screenshots (#64, #66-#72) (#73)"
-        },
-        {
-          "repository": "exams-app-antigo-2",
-          "kind": "commit",
-          "sha": "5d0e074f97bc7bc8b715429d336cd18886b6aa66",
-          "path": "",
-          "summary": "docs(board): add Capacities Right Panel & Graph blueprint + QConcursos Elite UX dossier & 18 screenshots (#64, #66-#72)"
+          "kind": "file",
+          "sha": "940b196948b96e9082f8a6284bd76691d1ca4b76",
+          "path": "prototype/analise-qconcursos.md",
+          "summary": "",
+          "commits": 3,
+          "first_sha": "a711506f2e973352ade39451ea9ffe05766df2b7",
+          "last_sha": "940b196948b96e9082f8a6284bd76691d1ca4b76",
+          "rank": -4.660871
         },
         {
           "repository": "exams-app-antigo-2",
           "kind": "file",
           "sha": "dfe179fd9a882a8e98b6d7d8db43dd5930f20a2a",
           "path": "prototype/inventario-qconcursos.md",
-          "summary": ""
+          "summary": "",
+          "commits": 1,
+          "first_sha": "dfe179fd9a882a8e98b6d7d8db43dd5930f20a2a",
+          "last_sha": "dfe179fd9a882a8e98b6d7d8db43dd5930f20a2a",
+          "rank": -4.660871
+        },
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "image",
+          "sha": "65ce2ab7ac95e8fc4e1be998eb0aa593049bf2c8",
+          "path": "prototypes/board-exam-app/assets/qconcursos_list_toolbar_options.png",
+          "summary": "deleted",
+          "blob": "45108d32afce2f62ffa3d1996c379a3a2b3f73a1",
+          "bytes": 329028,
+          "deleted": 1,
+          "occurrences": 4
+        },
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "image",
+          "sha": "65ce2ab7ac95e8fc4e1be998eb0aa593049bf2c8",
+          "path": "prototypes/board-exam-app/assets/qconcursos_live_question_texto_associado.png",
+          "summary": "deleted",
+          "blob": "ac1a6b16d13fbd9f6f5e0c9af329d9342a467604",
+          "bytes": 230971,
+          "deleted": 1,
+          "occurrences": 4
         }
       ],
-      "ms": 0.09,
+      "ms": 4.32,
       "count": 8
     },
     {
@@ -237,59 +300,82 @@
           "kind": "commit",
           "sha": "7ae7b62b3f6f64005ca3d897a30011d1ba3ede63",
           "path": "",
-          "summary": "feat: close remaining Recall punch-list items (accessibility, sidebar parity)"
-        },
-        {
-          "repository": "notes-app-old-10",
-          "kind": "commit",
-          "sha": "b70aea78ad63b0b234e2891e1738c32d34ed2c31",
-          "path": "",
-          "summary": "feat: add recall feature and study mode with retry queue components and tests"
+          "summary": "feat: close remaining Recall punch-list items (accessibility, sidebar parity)",
+          "rank": -6.120951
         },
         {
           "repository": "notes-app-old-10",
           "kind": "commit",
           "sha": "b0dde2be0af6b56645587a27c173556e30dca0fa",
           "path": "",
-          "summary": "feat: implement recall study application with space management and e2e tests"
+          "summary": "feat: implement recall study application with space management and e2e tests",
+          "rank": -5.883467
         },
         {
           "repository": "notes-app-old-10",
           "kind": "commit",
           "sha": "fc2be76188f76868c8dc3dae0cf5c6705f2ec5f9",
           "path": "",
-          "summary": "feat: add comprehensive UI component library, recall domain logic, and Firebase integration"
+          "summary": "feat: add comprehensive UI component library, recall domain logic, and Firebase integration",
+          "rank": -5.663722
+        },
+        {
+          "repository": "notes-app-old-10",
+          "kind": "file",
+          "sha": "b70aea78ad63b0b234e2891e1738c32d34ed2c31",
+          "path": "src/actions/recall.ts",
+          "summary": "",
+          "commits": 4,
+          "first_sha": "fc2be76188f76868c8dc3dae0cf5c6705f2ec5f9",
+          "last_sha": "b70aea78ad63b0b234e2891e1738c32d34ed2c31",
+          "rank": -7.315185
+        },
+        {
+          "repository": "notes-app-old-10",
+          "kind": "file",
+          "sha": "b70aea78ad63b0b234e2891e1738c32d34ed2c31",
+          "path": "src/domain/recall.ts",
+          "summary": "",
+          "commits": 4,
+          "first_sha": "fc2be76188f76868c8dc3dae0cf5c6705f2ec5f9",
+          "last_sha": "b70aea78ad63b0b234e2891e1738c32d34ed2c31",
+          "rank": -7.315185
+        },
+        {
+          "repository": "notes-app-old-10",
+          "kind": "file",
+          "sha": "b70aea78ad63b0b234e2891e1738c32d34ed2c31",
+          "path": "tests/recall.test.ts",
+          "summary": "",
+          "commits": 4,
+          "first_sha": "fc2be76188f76868c8dc3dae0cf5c6705f2ec5f9",
+          "last_sha": "b70aea78ad63b0b234e2891e1738c32d34ed2c31",
+          "rank": -7.315185
         },
         {
           "repository": "exams-app-antigo-2",
-          "kind": "file",
-          "sha": "940b196948b96e9082f8a6284bd76691d1ca4b76",
-          "path": "prototype/archive_notes_app_old_10_recall_home.png",
-          "summary": ""
-        },
-        {
-          "repository": "exams-app-antigo-2",
-          "kind": "file",
-          "sha": "940b196948b96e9082f8a6284bd76691d1ca4b76",
-          "path": "prototype/readwise_srs_cloze_active_recall_prompt.png",
-          "summary": ""
-        },
-        {
-          "repository": "exams-app-antigo-2",
-          "kind": "file",
-          "sha": "940b196948b96e9082f8a6284bd76691d1ca4b76",
+          "kind": "image",
+          "sha": "6a3e5c7036dc8c8623e80cb677fb3b0e99e303ea",
           "path": "prototypes/archive_notes_app_old_10_recall_home.png",
-          "summary": ""
+          "summary": "deleted",
+          "blob": "de9b20811824550f6d41cb9f5b4af55d1e813fb9",
+          "bytes": 72632,
+          "deleted": 1,
+          "occurrences": 4
         },
         {
           "repository": "exams-app-antigo-2",
-          "kind": "file",
-          "sha": "940b196948b96e9082f8a6284bd76691d1ca4b76",
-          "path": "prototypes/readwise_srs_cloze_active_recall_prompt.png",
-          "summary": ""
+          "kind": "image",
+          "sha": "65ce2ab7ac95e8fc4e1be998eb0aa593049bf2c8",
+          "path": "prototypes/board-exam-app/assets/readwise_srs_cloze_active_recall_prompt.png",
+          "summary": "deleted",
+          "blob": "3859d61fec6d0b5eeac480e6c7bfcb4a3ca0f2ed",
+          "bytes": 56322,
+          "deleted": 1,
+          "occurrences": 4
         }
       ],
-      "ms": 0.06,
+      "ms": 1.2,
       "count": 8
     },
     {
@@ -298,61 +384,84 @@
         {
           "repository": "exams-app-antigo-2",
           "kind": "commit",
-          "sha": "1c2d093747c29adbef895944b67f7aab2e7e72f9",
+          "sha": "b05f283d7cdca3a3392bad6a1834b95f4701adc2",
           "path": "",
-          "summary": "feat(capacities-graph-engine): painel direito do grafo em canvas 2D"
-        },
-        {
-          "repository": "exams-app-antigo-2",
-          "kind": "commit",
-          "sha": "176e6125611ab53929c96eb84faee502f426c9a0",
-          "path": "",
-          "summary": "style(capacities-right-panel-tools): grade 3x2 das ferramentas no Explorar (#66)"
-        },
-        {
-          "repository": "exams-app-antigo-2",
-          "kind": "commit",
-          "sha": "3c329ba0c95cb28a28c06f9f79c9bdaf6a2c3235",
-          "path": "",
-          "summary": "style(capacities-right-panel-tools): grade 3x2 das ferramentas no Explorar (#66)"
-        },
-        {
-          "repository": "exams-app-antigo-2",
-          "kind": "commit",
-          "sha": "e778ada7f0442cd1a8ba7155e5e97699a547a24f",
-          "path": "",
-          "summary": "feat(capacities-graph-controls): barras flutuantes do grafo (#68)"
+          "summary": "Add Capacities research inventory (issue #32)",
+          "rank": -5.151834
         },
         {
           "repository": "exams-app-antigo-2",
           "kind": "commit",
           "sha": "084ac9b841922c1f801861ebc78d4c06e86dde66",
           "path": "",
-          "summary": "feat(capacities-graph-controls): barras flutuantes do grafo (#68)"
+          "summary": "feat(capacities-graph-controls): barras flutuantes do grafo (#68)",
+          "rank": -4.501736
         },
         {
           "repository": "exams-app-antigo-2",
           "kind": "commit",
-          "sha": "11b8f08d152a46f239607564e9cedcf0d1b9ceea",
+          "sha": "e778ada7f0442cd1a8ba7155e5e97699a547a24f",
           "path": "",
-          "summary": "feat(capacities-graph): controles do grafo flutuantes e translúcidos no rodapé (#54)"
+          "summary": "feat(capacities-graph-controls): barras flutuantes do grafo (#68)",
+          "rank": -4.501736
         },
         {
           "repository": "exams-app-antigo-2",
-          "kind": "commit",
+          "kind": "file",
           "sha": "b05f283d7cdca3a3392bad6a1834b95f4701adc2",
-          "path": "",
-          "summary": "Add Capacities research inventory (issue #32)"
+          "path": "docs/research/capacities-inventario.md",
+          "summary": "",
+          "commits": 1,
+          "first_sha": "b05f283d7cdca3a3392bad6a1834b95f4701adc2",
+          "last_sha": "b05f283d7cdca3a3392bad6a1834b95f4701adc2",
+          "rank": -5.419971
         },
         {
           "repository": "exams-app-antigo-2",
-          "kind": "commit",
-          "sha": "36bcdf7d59be875b56df3e1ca0a6fa7173125e89",
-          "path": "",
-          "summary": "docs(research): add sourced Capacities baseline for issue 32 (#193)"
+          "kind": "file",
+          "sha": "940b196948b96e9082f8a6284bd76691d1ca4b76",
+          "path": "prototypes/capacities_live_collapsed_sidebar.png",
+          "summary": "",
+          "commits": 5,
+          "first_sha": "7db94589db0c1dfcf09dc8449a6ec78c789b0fb3",
+          "last_sha": "940b196948b96e9082f8a6284bd76691d1ca4b76",
+          "rank": -5.077647
+        },
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "file",
+          "sha": "940b196948b96e9082f8a6284bd76691d1ca4b76",
+          "path": "prototypes/capacities_live_new_popover.png",
+          "summary": "",
+          "commits": 5,
+          "first_sha": "7db94589db0c1dfcf09dc8449a6ec78c789b0fb3",
+          "last_sha": "940b196948b96e9082f8a6284bd76691d1ca4b76",
+          "rank": -5.077647
+        },
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "image",
+          "sha": "65ce2ab7ac95e8fc4e1be998eb0aa593049bf2c8",
+          "path": "prototypes/board-exam-app/assets/capacities_live_graph_3tier_nodes_resized.png",
+          "summary": "deleted",
+          "blob": "4385c869dcd692b5ae7e40b930b6b6acbf839f58",
+          "bytes": 207724,
+          "deleted": 1,
+          "occurrences": 4
+        },
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "image",
+          "sha": "65ce2ab7ac95e8fc4e1be998eb0aa593049bf2c8",
+          "path": "prototypes/board-exam-app/assets/capacities_live_graph_filter_popover.png",
+          "summary": "deleted",
+          "blob": "3dd8fa256b00e159f77a96e5dffc674e48de2047",
+          "bytes": 199639,
+          "deleted": 1,
+          "occurrences": 4
         }
       ],
-      "ms": 0.07,
+      "ms": 2.52,
       "count": 8
     }
   ],
@@ -385,11 +494,11 @@
     "bytes": 7532,
     "mentions_recall": true
   },
-  "elapsed_seconds": 12.65,
+  "elapsed_seconds": 17.59,
   "index_bytes": 14843904,
-  "index_sha256": "7f3dd76cd7ff116948bf8593cf5faab35f5d960c78175fbe72dc20d6227fc6fc",
+  "index_sha256": "d7253d0678d78bc954448b634f6246195b64af8e8e2e5ad591dd51b47470af79",
   "index_gzip_bytes": 2501726,
-  "index_gzip_sha256": "9ac4c54b46c9987be3eede9ec68dbe57115f0fdedcf1018dadf20b21d180cc7c",
+  "index_gzip_sha256": "8964bba642e1b434695bf2e8002d94ce3977facbbf7dfbaf35f44f9ebbdc1b04",
   "release_tag": "poc-archive-index",
   "sqlite_fts5": true,
   "historical_sources_complete": false,
@@ -405,8 +514,8 @@
     "published": true,
     "release_tag": "poc-archive-index",
     "asset_sqlite_gz": "archive-index.sqlite.gz",
-    "sqlite_sha256": "7f3dd76cd7ff116948bf8593cf5faab35f5d960c78175fbe72dc20d6227fc6fc",
-    "gzip_sha256": "9ac4c54b46c9987be3eede9ec68dbe57115f0fdedcf1018dadf20b21d180cc7c",
+    "sqlite_sha256": "d7253d0678d78bc954448b634f6246195b64af8e8e2e5ad591dd51b47470af79",
+    "gzip_sha256": "8964bba642e1b434695bf2e8002d94ce3977facbbf7dfbaf35f44f9ebbdc1b04",
     "gzip_bytes": 2501726,
     "verified_download": true,
     "url": "https://github.com/ianmaciel7/exams-app-archive/releases/tag/poc-archive-index"
