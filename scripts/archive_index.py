@@ -187,7 +187,7 @@ def recover(repo:Path, sha:str,path:str,out:Path)->dict:
 
 def main() -> None:
     ap=argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('--db',default='reports/archive-index.sqlite')
+    ap.add_argument('--db',default='.cache/archive/archive-index.sqlite')
     sub=ap.add_subparsers(dest='command',required=True)
     p=sub.add_parser('ingest');p.add_argument('--repo',required=True);p.add_argument('--name',required=True)
     p=sub.add_parser('search');p.add_argument('query');p.add_argument('--limit',type=int,default=10)

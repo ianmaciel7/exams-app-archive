@@ -67,4 +67,13 @@ class ArchiveTest(unittest.TestCase):
             (self.root/'exists').write_text('data')
             recover(self.bare,self.ancestor,'recall.ts',self.root/'exists')
 
+    def test_default_db_path_not_in_reports_and_no_tracked_sqlite(self):
+        root=Path(__file__).resolve().parents[1]
+        cli_help=run('python3',str(root/'scripts/archive_index.py'),'--help').decode('utf-8')
+        self.assertNotIn('reports/archive-index.sqlite',cli_help)
+        tracked=run('git','ls-files','reports/*.sqlite',cwd=root).decode('utf-8').strip()
+        self.assertEqual(tracked,'')
+        poc_wf=(root/'.github/workflows/archive-poc.yml').read_text(encoding='utf-8')
+        self.assertNotIn('git add reports/POC.md reports/POC.json reports/archive-index.sqlite',poc_wf)
+
 if __name__=='__main__':unittest.main()
