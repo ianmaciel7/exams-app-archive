@@ -97,7 +97,7 @@ def main() -> None:
                 "size_bytes": target.stat().st_size, "refs": expected,
                 "verified": True
             })
-            print(f"{name}: verified {len(actual)} heads/tags ({target.stat().st_size():,} bytes)", flush=True)
+            print(f"{name}: verified {len(actual)} heads/tags ({target.stat().st_size:,} bytes)", flush=True)
         sums = assets / "SHA256SUMS.txt"
         sums.write_text("".join(f"{e['sha256']}  {e['asset']}\n" for e in manifest["assets"]))
         (assets / "MANIFEST.json").write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n")
