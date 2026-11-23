@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-23T23:30:19.771643+00:00",
+  "generated_utc": "2026-11-23T23:44:07.537137+00:00",
   "sources": [
     {
       "repository": "exams-app-old",
@@ -8,7 +8,7 @@
       "changes": 13676,
       "deleted_image_evidence": 0,
       "images": 14,
-      "seconds": 1.31,
+      "seconds": 1.03,
       "branch_compare": {
         "main_only": 0,
         "dev_only": 9,
@@ -22,7 +22,7 @@
       "changes": 18279,
       "deleted_image_evidence": 2266,
       "images": 1563,
-      "seconds": 15.7,
+      "seconds": 15.62,
       "branch_compare": {
         "main_only": 0,
         "dev_only": 180,
@@ -120,7 +120,7 @@
           "rank": -3.827298
         }
       ],
-      "ms": 8.2,
+      "ms": 8.32,
       "count": 8
     },
     {
@@ -129,26 +129,26 @@
         {
           "repository": "exams-app-antigo-2",
           "kind": "commit",
-          "sha": "1d9649f2f4cd136bb50fc8beac69ac1351d7a4a9",
+          "sha": "084ac9b841922c1f801861ebc78d4c06e86dde66",
           "path": "",
-          "summary": "feat(grafo): exporta PNG via capability downloads (#84)",
-          "rank": -4.881334
+          "summary": "feat(capacities-graph-controls): barras flutuantes do grafo (#68)",
+          "rank": -7.745522
         },
         {
           "repository": "exams-app-antigo-2",
           "kind": "commit",
-          "sha": "66bc2665b0bc272cf063036c0fa5f6e7798d2d85",
+          "sha": "e778ada7f0442cd1a8ba7155e5e97699a547a24f",
           "path": "",
-          "summary": "fix(prototype): declarar estado das barras do grafo (#68)",
-          "rank": -4.676012
+          "summary": "feat(capacities-graph-controls): barras flutuantes do grafo (#68)",
+          "rank": -7.745522
         },
         {
           "repository": "exams-app-antigo-2",
           "kind": "commit",
-          "sha": "b1e0a36adc7811e453ab977f31541455c8640552",
+          "sha": "1c2d093747c29adbef895944b67f7aab2e7e72f9",
           "path": "",
-          "summary": "fix(prototype): declarar estado das barras do grafo (#68)",
-          "rank": -4.676012
+          "summary": "feat(capacities-graph-engine): painel direito do grafo em canvas 2D",
+          "rank": -7.144491
         },
         {
           "repository": "exams-app-antigo-2",
@@ -185,25 +185,28 @@
         },
         {
           "repository": "exams-app-antigo-2",
-          "kind": "commit",
-          "sha": "084ac9b841922c1f801861ebc78d4c06e86dde66",
-          "path": "",
-          "summary": "feat(capacities-graph-controls): barras flutuantes do grafo (#68)",
-          "rank": -4.676012
+          "kind": "image",
+          "sha": "65ce2ab7ac95e8fc4e1be998eb0aa593049bf2c8",
+          "path": "prototypes/board-exam-app/assets/issue68_graph_toolbar_1366.png",
+          "summary": "deleted",
+          "blob": "216b4d240c7a05ff2656745f9dd28ccb1d117f6f",
+          "bytes": 1553705,
+          "deleted": 1,
+          "occurrences": 4
         },
         {
           "repository": "exams-app-antigo-2",
-          "kind": "file",
-          "sha": "f652257b65504ba2f6eeb302bfc962ef3b555278",
-          "path": "prototypes/docs/features/grafo.md",
-          "summary": "",
-          "commits": 4,
-          "first_sha": "e3696604a88a5bb031837e4e27d63319e9ff326b",
-          "last_sha": "f652257b65504ba2f6eeb302bfc962ef3b555278",
-          "rank": -8.515126
+          "kind": "image",
+          "sha": "65ce2ab7ac95e8fc4e1be998eb0aa593049bf2c8",
+          "path": "prototypes/board-exam-app/assets/issue68_export_graph_1366.png",
+          "summary": "deleted",
+          "blob": "7098d7340ac913c767d2e1f36d1c62ead06fbdb8",
+          "bytes": 1168483,
+          "deleted": 1,
+          "occurrences": 4
         }
       ],
-      "ms": 0.98,
+      "ms": 4.53,
       "count": 8
     },
     {
@@ -289,7 +292,7 @@
           "occurrences": 4
         }
       ],
-      "ms": 4.32,
+      "ms": 4.3,
       "count": 8
     },
     {
@@ -375,7 +378,7 @@
           "occurrences": 4
         }
       ],
-      "ms": 1.2,
+      "ms": 1.21,
       "count": 8
     },
     {
@@ -461,7 +464,7 @@
           "occurrences": 4
         }
       ],
-      "ms": 2.52,
+      "ms": 2.2,
       "count": 8
     }
   ],
@@ -494,11 +497,11 @@
     "bytes": 7532,
     "mentions_recall": true
   },
-  "elapsed_seconds": 17.59,
+  "elapsed_seconds": 17.22,
   "index_bytes": 14843904,
-  "index_sha256": "d7253d0678d78bc954448b634f6246195b64af8e8e2e5ad591dd51b47470af79",
-  "index_gzip_bytes": 2501726,
-  "index_gzip_sha256": "8964bba642e1b434695bf2e8002d94ce3977facbbf7dfbaf35f44f9ebbdc1b04",
+  "index_sha256": "cde496c0a6a1c799c770ee5ffe27fd73b8f80868823898871c5226416deb383f",
+  "index_gzip_bytes": 2501727,
+  "index_gzip_sha256": "e2b1be879c0dc5b98cd89574eb8ecb43166386ce304077734977ff4079c5b6a0",
   "release_tag": "poc-archive-index",
   "sqlite_fts5": true,
   "historical_sources_complete": false,
@@ -514,9 +517,9 @@
     "published": true,
     "release_tag": "poc-archive-index",
     "asset_sqlite_gz": "archive-index.sqlite.gz",
-    "sqlite_sha256": "d7253d0678d78bc954448b634f6246195b64af8e8e2e5ad591dd51b47470af79",
-    "gzip_sha256": "8964bba642e1b434695bf2e8002d94ce3977facbbf7dfbaf35f44f9ebbdc1b04",
-    "gzip_bytes": 2501726,
+    "sqlite_sha256": "cde496c0a6a1c799c770ee5ffe27fd73b8f80868823898871c5226416deb383f",
+    "gzip_sha256": "e2b1be879c0dc5b98cd89574eb8ecb43166386ce304077734977ff4079c5b6a0",
+    "gzip_bytes": 2501727,
     "verified_download": true,
     "url": "https://github.com/ianmaciel7/exams-app-archive/releases/tag/poc-archive-index"
   }
