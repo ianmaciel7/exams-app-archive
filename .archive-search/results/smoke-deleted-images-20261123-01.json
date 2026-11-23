@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "id": "smoke-deleted-images-20261123-01",
+  "request_sha256": "c3e894fba449fad9fece8c0c3c13c18538666013a208698a00c7ddcfa0486f9d",
+  "index_release": "index-2026-11-23-exams-complete",
+  "index_checksum": "292961e31629d2c128a5a97d8bb95a811d1e6ae1f39fb5834bc6fd52c23aa6da",
+  "ok": true,
+  "operation": "images",
+  "query": null,
+  "results": [
+    {
+      "repository": "exams-app-antigo-2",
+      "kind": "image",
+      "sha": "65ce2ab7ac95e8fc4e1be998eb0aa593049bf2c8",
+      "path": "prototypes/board-exam-app/assets/issue68_graph_toolbar_1366.png",
+      "summary": "deleted",
+      "blob": "216b4d240c7a05ff2656745f9dd28ccb1d117f6f",
+      "bytes": 1553705,
+      "deleted": 1
+    },
+    {
+      "repository": "exams-app-antigo-2",
+      "kind": "image",
+      "sha": "6a3e5c7036dc8c8623e80cb677fb3b0e99e303ea",
+      "path": "prototypes/issue68_graph_toolbar_1366.png",
+      "summary": "deleted",
+      "blob": "216b4d240c7a05ff2656745f9dd28ccb1d117f6f",
+      "bytes": 1553705,
+      "deleted": 1
+    },
+    {
+      "repository": "exams-app-antigo-2",
+      "kind": "image",
+      "sha": "65ce2ab7ac95e8fc4e1be998eb0aa593049bf2c8",
+      "path": "prototypes/board-exam-app/assets/issue68_export_graph_1366.png",
+      "summary": "deleted",
+      "blob": "7098d7340ac913c767d2e1f36d1c62ead06fbdb8",
+      "bytes": 1168483,
+      "deleted": 1
+    },
+    {
+      "repository": "exams-app-antigo-2",
+      "kind": "image",
+      "sha": "6a3e5c7036dc8c8623e80cb677fb3b0e99e303ea",
+      "path": "prototypes/issue68_export_graph_1366.png",
+      "summary": "deleted",
+      "blob": "7098d7340ac913c767d2e1f36d1c62ead06fbdb8",
+      "bytes": 1168483,
+      "deleted": 1
+    },
+    {
+      "repository": "exams-app-antigo-2",
+      "kind": "image",
+      "sha": "65ce2ab7ac95e8fc4e1be998eb0aa593049bf2c8",
+      "path": "prototypes/board-exam-app/assets/issue128_restored_1366.png",
+      "summary": "deleted",
+      "blob": "856a12278bd34f9d5056da9b82c70e1234dab89d",
+      "bytes": 887132,
+      "deleted": 1
+    },
+    {
+      "repository": "exams-app-antigo-2",
+      "kind": "image",
+      "sha": "6a3e5c7036dc8c8623e80cb677fb3b0e99e303ea",
+      "path": "prototypes/issue128_restored_1366.png",
+      "summary": "deleted",
+      "blob": "856a12278bd34f9d5056da9b82c70e1234dab89d",
+      "bytes": 887132,
+      "deleted": 1
+    },
+    {
+      "repository": "exams-app-antigo-2",
+      "kind": "image",
+      "sha": "65ce2ab7ac95e8fc4e1be998eb0aa593049bf2c8",
+      "path": "prototypes/board-exam-app/assets/issue139_after_contexts.png",
+      "summary": "deleted",
+      "blob": "0cbf45f011b892dc4e41a76900e785e25d5bc134",
+      "bytes": 700653,
+      "deleted": 1
+    },
+    {
+      "repository": "exams-app-antigo-2",
+      "kind": "image",
+      "sha": "6a3e5c7036dc8c8623e80cb677fb3b0e99e303ea",
+      "path": "prototypes/issue139_after_contexts.png",
+      "summary": "deleted",
+      "blob": "0cbf45f011b892dc4e41a76900e785e25d5bc134",
+      "bytes": 700653,
+      "deleted": 1
+    }
+  ],
+  "limitation": "FTS indexes paths and commit subjects, not full blob text"
+}
