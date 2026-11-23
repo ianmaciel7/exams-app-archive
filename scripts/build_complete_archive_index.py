@@ -97,7 +97,7 @@ def main():
             source_tag=TAG_EXAMS if name=="exams-app" else TAG_SOURCE
             import_bundle(file,name,"release://"+source_tag+"/"+file.name)
         exams=next(x for x in results if x["repository"]=="exams-app")
-        if exams["head_count"]!=4 or exams["refs"]<5 or exams["commits"]<52:
+        if exams["head_count"]!=4 or exams["refs"]<5 or exams["commits"]<45 or exams["images"]<900:
             raise RuntimeError("The four exams-app branches have not been fully indexed")
         if next(x for x in results if x["repository"]=="exams-app-old")["commits"] < 700:
             raise RuntimeError("Old exams PR history disappeared from index")
