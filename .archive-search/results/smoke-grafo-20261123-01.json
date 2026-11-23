@@ -1,0 +1,133 @@
+{
+  "version": 1,
+  "id": "smoke-grafo-20261123-01",
+  "request_sha256": "790d9d290a4baaba60ae30d7cd0c0fe4081172aaabf19693ad643bb150f2150a",
+  "index_release": "index-2026-11-23-exams-complete",
+  "index_checksum": "292961e31629d2c128a5a97d8bb95a811d1e6ae1f39fb5834bc6fd52c23aa6da",
+  "ok": true,
+  "operation": "search",
+  "query": "grafo sidebar",
+  "results": [
+    {
+      "repository": "exams-app",
+      "kind": "commit",
+      "sha": "34851ff787a9ff6a5708e05853299206f97c4a9e",
+      "path": "",
+      "summary": "docs: atualizar repo-grafo (README, template e visualizador)",
+      "blob": "",
+      "bytes": 0,
+      "deleted": 0
+    },
+    {
+      "repository": "exams-app",
+      "kind": "commit",
+      "sha": "f52b0c8f9235c5641d608cf199d0b2a8553f060e",
+      "path": "",
+      "summary": "docs: atualizar horário do artefato Repo Grafo",
+      "blob": "",
+      "bytes": 0,
+      "deleted": 0
+    },
+    {
+      "repository": "exams-app",
+      "kind": "commit",
+      "sha": "21de22c1ec4b250524c286474a6a8b03c2952212",
+      "path": "",
+      "summary": "docs: atualizar repo-grafo com temas shell e layout",
+      "blob": "",
+      "bytes": 0,
+      "deleted": 0
+    },
+    {
+      "repository": "exams-app",
+      "kind": "commit",
+      "sha": "85045d8bfb9cc362fa53618fec18466451cf0bca",
+      "path": "",
+      "summary": "docs: adicionar visualizador do repo-grafo e artefato",
+      "blob": "",
+      "bytes": 0,
+      "deleted": 0
+    },
+    {
+      "repository": "exams-app",
+      "kind": "commit",
+      "sha": "905de2105fb29c8c3790080186fca5ab20d31f0e",
+      "path": "",
+      "summary": "docs: atualizar repo-grafo com 6 repositórios e tema shadcn",
+      "blob": "",
+      "bytes": 0,
+      "deleted": 0
+    },
+    {
+      "repository": "exams-app",
+      "kind": "commit",
+      "sha": "ef5c8db9b4fdac1cc79edfbc1bf5a5d7c5447af2",
+      "path": "",
+      "summary": "docs: adicionar ferramenta repo-grafo e atualizar memória",
+      "blob": "",
+      "bytes": 0,
+      "deleted": 0
+    },
+    {
+      "repository": "exams-app",
+      "kind": "commit",
+      "sha": "f729fa7ecb227b3bb42592f6c2c6ed23db4fc9f0",
+      "path": "",
+      "summary": "docs: adicionar protótipo da sidebar",
+      "blob": "",
+      "bytes": 0,
+      "deleted": 0
+    },
+    {
+      "repository": "exams-app-antigo-2",
+      "kind": "commit",
+      "sha": "1c2d093747c29adbef895944b67f7aab2e7e72f9",
+      "path": "",
+      "summary": "feat(capacities-graph-engine): painel direito do grafo em canvas 2D",
+      "blob": "",
+      "bytes": 0,
+      "deleted": 0
+    },
+    {
+      "repository": "exams-app-antigo-2",
+      "kind": "commit",
+      "sha": "b1e0a36adc7811e453ab977f31541455c8640552",
+      "path": "",
+      "summary": "fix(prototype): declarar estado das barras do grafo (#68)",
+      "blob": "",
+      "bytes": 0,
+      "deleted": 0
+    },
+    {
+      "repository": "exams-app-antigo-2",
+      "kind": "commit",
+      "sha": "e778ada7f0442cd1a8ba7155e5e97699a547a24f",
+      "path": "",
+      "summary": "feat(capacities-graph-controls): barras flutuantes do grafo (#68)",
+      "blob": "",
+      "bytes": 0,
+      "deleted": 0
+    },
+    {
+      "repository": "exams-app-antigo-2",
+      "kind": "commit",
+      "sha": "66bc2665b0bc272cf063036c0fa5f6e7798d2d85",
+      "path": "",
+      "summary": "fix(prototype): declarar estado das barras do grafo (#68)",
+      "blob": "",
+      "bytes": 0,
+      "deleted": 0
+    },
+    {
+      "repository": "exams-app-antigo-2",
+      "kind": "commit",
+      "sha": "084ac9b841922c1f801861ebc78d4c06e86dde66",
+      "path": "",
+      "summary": "feat(capacities-graph-controls): barras flutuantes do grafo (#68)",
+      "blob": "",
+      "bytes": 0,
+      "deleted": 0
+    }
+  ],
+  "limitation": "FTS indexes paths and commit subjects, not full blob text"
+}
