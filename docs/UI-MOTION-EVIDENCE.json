@@ -1,0 +1,432 @@
+{
+  "schema_version": 1,
+  "type": "curated_ui_motion_evidence",
+  "built_on": "2026-11-23",
+  "status": "manual_source_review",
+  "search_contract": "Search intent aliases, inspect cited source lines, then test browser behavior; this is NOT a full-text/vector index or execution trace.",
+  "caution": "A static screenshot does not prove animation timing. Delay vs duration are distinct. Verified-in-source does not imply browser-validated.",
+  "entries": [
+    {
+      "id": "shell-surface-transition",
+      "concept": "Transições do app-shell",
+      "aliases": [
+        "animação painéis",
+        "surface animation",
+        "colapso",
+        "resize",
+        "transição de painéis",
+        "movimento de layout"
+      ],
+      "trigger": "mudança de dimensão/visibilidade de painel",
+      "from": "estado anterior do painel",
+      "to": "novo estado do painel",
+      "properties": [
+        "width",
+        "height",
+        "transform",
+        "opacity"
+      ],
+      "duration_ms": 200,
+      "easing": "ease-out",
+      "reduced_motion": "motion-reduce:transition-none e animate-none",
+      "source": {
+        "repository": "ianmaciel7/notes-app",
+        "ref": "old-5",
+        "path": "src/app/_components/workspace/app-shell.tsx",
+        "blob_sha": "c8149bad08ee026dec049371d3814c29aec8b89a",
+        "lines": [
+          13,
+          14
+        ]
+      },
+      "confidence": "verified-in-source"
+    },
+    {
+      "id": "row-hover-active",
+      "concept": "Hover e seleção de linhas",
+      "aliases": [
+        "hover",
+        "microinteração linha",
+        "highlight",
+        "active row",
+        "transição background"
+      ],
+      "trigger": "hover/active",
+      "from": "linha inativa",
+      "to": "linha destacada",
+      "properties": [
+        "background-color",
+        "color",
+        "filter",
+        "opacity"
+      ],
+      "duration_ms": 200,
+      "easing": "ease-out",
+      "reduced_motion": "motion-reduce:transition-none",
+      "source": {
+        "repository": "ianmaciel7/notes-app",
+        "ref": "old-5",
+        "path": "src/app/_components/workspace/app-sidebar-overview.tsx",
+        "blob_sha": "a020d635de368b755992e1282e18af9fdc2b8a03",
+        "lines": [
+          100,
+          104
+        ]
+      },
+      "confidence": "verified-in-source"
+    },
+    {
+      "id": "reveal-overflow",
+      "concept": "Revelação de ações na sidebar",
+      "aliases": [
+        "ação hover",
+        "botão mais aparece",
+        "context menu indicator",
+        "fade de ações",
+        "opacity reveal",
+        "menu ⋯"
+      ],
+      "trigger": "hover/focus/popup aberto",
+      "from": "opacity-0/invisible/pointer-events-none",
+      "to": "opacity-100/visible/pointer-events-auto",
+      "properties": [
+        "opacity",
+        "visibility",
+        "pointer-events"
+      ],
+      "duration_ms": 200,
+      "easing": "ease-out",
+      "reduced_motion": "motion-reduce:transition-none",
+      "source": {
+        "repository": "ianmaciel7/notes-app",
+        "ref": "old-5",
+        "path": "src/app/_components/workspace/app-sidebar-overview.tsx",
+        "blob_sha": "a020d635de368b755992e1282e18af9fdc2b8a03",
+        "lines": [
+          102,
+          106
+        ]
+      },
+      "confidence": "verified-in-source"
+    },
+    {
+      "id": "reorder-flip",
+      "concept": "Animação de reordenação por arrastar",
+      "aliases": [
+        "drag",
+        "drop",
+        "reordenar",
+        "dnd",
+        "drag and drop",
+        "flip animation",
+        "movimento dos itens"
+      ],
+      "trigger": "reordenação com posição antiga e nova",
+      "from": "translateY(delta)",
+      "to": "translateY(0)",
+      "properties": [
+        "transform"
+      ],
+      "duration_ms": 200,
+      "easing": "ease-out",
+      "reduced_motion": "não demonstrado no trecho; verificar regra de motion-reduce na chamada",
+      "source": {
+        "repository": "ianmaciel7/notes-app",
+        "ref": "old-5",
+        "path": "src/app/_components/workspace/app-sidebar.tsx",
+        "blob_sha": "3a0b57cfbe907c6ea6779880273d61ba02c96bdd",
+        "lines": [
+          248,
+          270
+        ]
+      },
+      "confidence": "verified-in-source"
+    },
+    {
+      "id": "tooltip-open-close",
+      "concept": "Tooltip abrir e fechar",
+      "aliases": [
+        "tooltip",
+        "dica flutuante",
+        "fade de tooltip",
+        "overlay hint"
+      ],
+      "trigger": "data-open/data-closed",
+      "from": "opacity baixa",
+      "to": "visível (e vice-versa)",
+      "properties": [
+        "opacity"
+      ],
+      "duration_ms": 180,
+      "easing": "não explícito na classe de tooltip",
+      "reduced_motion": "motion-reduce desativa animação e transição",
+      "source": {
+        "repository": "ianmaciel7/notes-app",
+        "ref": "old-5",
+        "path": "src/components/ui/shared-styles.ts",
+        "blob_sha": "d0d3bda4590a5bf142dd6a0eac7403026eb88332",
+        "lines": [
+          10,
+          12
+        ]
+      },
+      "confidence": "verified-in-source"
+    },
+    {
+      "id": "popover-open-close",
+      "concept": "Popover de abrir e fechar",
+      "aliases": [
+        "modal",
+        "popover",
+        "menu flutuante",
+        "fade",
+        "entrada saída",
+        "transição menus"
+      ],
+      "trigger": "data-open/data-closed",
+      "from": "fechado",
+      "to": "aberto e vice-versa",
+      "properties": [
+        "opacity",
+        "visibility via data states"
+      ],
+      "duration_ms": 150,
+      "closing_duration_ms": 100,
+      "easing": "não explícito na classe",
+      "reduced_motion": "motion-reduce desativa animação e transição",
+      "source": {
+        "repository": "ianmaciel7/notes-app",
+        "ref": "old-5",
+        "path": "src/components/ui/shared-styles.ts",
+        "blob_sha": "d0d3bda4590a5bf142dd6a0eac7403026eb88332",
+        "lines": [
+          13,
+          15
+        ]
+      },
+      "confidence": "verified-in-source"
+    },
+    {
+      "id": "peek-open",
+      "concept": "Peek da sidebar ao passar mouse",
+      "aliases": [
+        "peek",
+        "barra lateral recolhida",
+        "reveal sidebar",
+        "hover dwell",
+        "debounce abrir",
+        "passar mouse"
+      ],
+      "trigger": "hover sobre área de ativação com sidebar collapsed",
+      "from": "collapsed+peek=false",
+      "to": "collapsed+peek=true",
+      "delay_ms": 300,
+      "duration_ms": null,
+      "properties": [
+        "estado peek"
+      ],
+      "reduced_motion": "não mostrado no trecho",
+      "source": {
+        "repository": "ianmaciel7/notes-app",
+        "ref": "old-10",
+        "path": "src/components/space-frame.tsx",
+        "blob_sha": "c916f3d4003d24bc9eb8727be98e8afa5d19b31f",
+        "lines": [
+          148,
+          161
+        ]
+      },
+      "confidence": "verified-in-source"
+    },
+    {
+      "id": "peek-close",
+      "concept": "Fechamento do peek com tolerância",
+      "aliases": [
+        "peek",
+        "sair do hover",
+        "debounce fechar",
+        "sidebar close dwell",
+        "flicker"
+      ],
+      "trigger": "mouseleave do peek",
+      "from": "peek=true",
+      "to": "peek=false",
+      "delay_ms": 150,
+      "duration_ms": null,
+      "properties": [
+        "estado peek"
+      ],
+      "reduced_motion": "não mostrado no trecho",
+      "source": {
+        "repository": "ianmaciel7/notes-app",
+        "ref": "old-10",
+        "path": "src/components/space-frame.tsx",
+        "blob_sha": "c916f3d4003d24bc9eb8727be98e8afa5d19b31f",
+        "lines": [
+          162,
+          176
+        ]
+      },
+      "confidence": "verified-in-source"
+    },
+    {
+      "id": "standalone-sidebar-collapse",
+      "concept": "Recolher a sidebar com deslocamento",
+      "aliases": [
+        "collapse",
+        "sidebar",
+        "slide",
+        "barra lateral fechar",
+        "recolher"
+      ],
+      "trigger": "classe .shell.collapsed",
+      "from": "margin-left:0",
+      "to": "margin-left:-width",
+      "properties": [
+        "margin-left"
+      ],
+      "duration_ms": 200,
+      "easing": "ease",
+      "reduced_motion": "prefers-reduced-motion desativa transições e animações",
+      "source": {
+        "repository": "ianmaciel7/exams-app",
+        "ref": "dev",
+        "path": "docs/Documentos/01-planejamento/revisao/sidebar-prototipo/prototipo-sidebar.html",
+        "blob_sha": "783b7041913a8ddc01c7bd2aa1ee6bbf6eeb7e1a",
+        "lines": [
+          23,
+          32
+        ]
+      },
+      "confidence": "verified-in-source"
+    },
+    {
+      "id": "standalone-section-toggle",
+      "concept": "Chevron das seções",
+      "aliases": [
+        "expand",
+        "accordion",
+        "chevron",
+        "seta gira",
+        "abrir seção"
+      ],
+      "trigger": "data-open=false ou aria-expanded=false",
+      "from": "rotação normal",
+      "to": "rotate(-90deg)",
+      "properties": [
+        "transform"
+      ],
+      "duration_ms": 150,
+      "easing": "default",
+      "reduced_motion": "prefers-reduced-motion desativa transições",
+      "source": {
+        "repository": "ianmaciel7/exams-app",
+        "ref": "dev",
+        "path": "docs/Documentos/01-planejamento/revisao/sidebar-prototipo/prototipo-sidebar.html",
+        "blob_sha": "783b7041913a8ddc01c7bd2aa1ee6bbf6eeb7e1a",
+        "lines": [
+          61,
+          76
+        ]
+      },
+      "confidence": "verified-in-source"
+    },
+    {
+      "id": "standalone-skeleton",
+      "concept": "Skeleton carregando",
+      "aliases": [
+        "loading",
+        "pulse",
+        "skeleton",
+        "carregamento",
+        "feedback de espera"
+      ],
+      "trigger": "estado de carregamento",
+      "from": "opacity 1",
+      "to": "opacity .5 no keyframe 50% e retorno",
+      "properties": [
+        "opacity"
+      ],
+      "duration_ms": 1200,
+      "easing": "ease-in-out",
+      "repeat": "infinite",
+      "reduced_motion": "prefers-reduced-motion desativa animações",
+      "source": {
+        "repository": "ianmaciel7/exams-app",
+        "ref": "dev",
+        "path": "docs/Documentos/01-planejamento/revisao/sidebar-prototipo/prototipo-sidebar.html",
+        "blob_sha": "783b7041913a8ddc01c7bd2aa1ee6bbf6eeb7e1a",
+        "lines": [
+          99,
+          102
+        ]
+      },
+      "confidence": "verified-in-source"
+    },
+    {
+      "id": "standalone-drawer",
+      "concept": "Gaveta da sidebar no celular",
+      "aliases": [
+        "mobile",
+        "drawer",
+        "gaveta",
+        "slide-in",
+        "entrar",
+        "responsive sidebar"
+      ],
+      "trigger": "mobile drawer open/close",
+      "from": "translateX(-105%)",
+      "to": "translateX(0)",
+      "properties": [
+        "transform"
+      ],
+      "duration_ms": 200,
+      "easing": "ease",
+      "reduced_motion": "prefers-reduced-motion desativa transições",
+      "source": {
+        "repository": "ianmaciel7/exams-app",
+        "ref": "dev",
+        "path": "docs/Documentos/01-planejamento/revisao/sidebar-prototipo/prototipo-sidebar.html",
+        "blob_sha": "783b7041913a8ddc01c7bd2aa1ee6bbf6eeb7e1a",
+        "lines": [
+          159,
+          166
+        ]
+      },
+      "confidence": "verified-in-source"
+    },
+    {
+      "id": "standalone-resize-gesture",
+      "concept": "Redimensionamento da sidebar por pointer",
+      "aliases": [
+        "resize",
+        "arrastar divisor",
+        "drag width",
+        "largura da sidebar",
+        "teclado redimensionar"
+      ],
+      "trigger": "pointermove no separador ou setas do teclado",
+      "from": "width anterior",
+      "to": "width limitada a 160..360px",
+      "properties": [
+        "width",
+        "pointer capture",
+        "keyboard"
+      ],
+      "duration_ms": null,
+      "easing": null,
+      "reduced_motion": "não aplicável como transição CSS no trecho",
+      "source": {
+        "repository": "ianmaciel7/exams-app",
+        "ref": "dev",
+        "path": "docs/Documentos/01-planejamento/revisao/sidebar-prototipo/prototipo-sidebar.html",
+        "blob_sha": "783b7041913a8ddc01c7bd2aa1ee6bbf6eeb7e1a",
+        "lines": [
+          555,
+          573
+        ]
+      },
+      "confidence": "verified-in-source"
+    }
+  ]
+}
