@@ -80,3 +80,32 @@ Bundles não incluem automaticamente issues, comentários de PR, discussões, a�
 - Manter `exams-app-archive` privado e com apenas `main`.
 - Material histórico de 12 branches antigas de Notes **não foi esquecido**: os 12 HEADs foram recuperados dos bundles embutidos no backup de `exams-app-antigo-2`.
 - **Pendente real:** quatro branches correntes + três tags de `notes-app`, e expansão do índice de busca.
+
+## Retificação — preservação integral do `exams-app` (23/11/2026)
+
+A exclusão anterior das branches `claude/project-thread-o4dym1` e
+`chore/consolidate-legacy-sources-20261123` foi revertida em uma **nova release imutável**:
+[exams-app-2026-11-23-complete](https://github.com/ianmaciel7/exams-app-archive/releases/tag/exams-app-2026-11-23-complete).
+
+O backup foi gerado de um espelho Git do repositório público e inclui agora **as quatro
+branches originais e a referência de PR**, com comparação exata de ref e SHA. Foram restauradas
+as quatro branches para validar commits e contagem de arquivos. O bundle publicado foi
+baixado e conferido novamente por SHA-256.
+
+| Branch | Arquivos na árvore | Imagens/PDF |
+|---|---:|---:|
+| `main` | 1 | 0 |
+| `dev` | 509 | 360 |
+| `claude/project-thread-o4dym1` | 309 | 260 |
+| `chore/consolidate-legacy-sources-20261123` | 2.837 | 811 |
+
+Além de Git Bundle, a release inclui: snapshot extraível de `dev`, catálogo completo
+de caminhos e blobs de cada branch, metadados públicos do PR #1 (incluindo 2.328 arquivos
+alterados, comentários e revisões retornados pela API), manifestos e checksums.
+A fonte possui 1 PR fechado, 0 releases e nenhuma issue separada do PR; a wiki remota
+não pôde ser clonada (repositório wiki ausente ou indisponível). Git LFS externo ainda
+não foi auditado exaustivamente.
+
+**A release acima substitui, para `exams-app`, a versão anterior que excluía duas refs.**
+Os backups anteriores seguem preservados como histórico de auditoria. A consolidação dos
+demais repositórios e o backup integral do `notes-app` privado são questões separadas.
