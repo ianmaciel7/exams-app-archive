@@ -1,0 +1,153 @@
+name: Preserve all recoverable legacy GitHub Actions artifacts
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/archive-legacy-ci-artifacts.yml'
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: legacy-evidence-2026-11-23-bulk
+  cancel-in-progress: false
+jobs:
+  prepare:
+    if: github.repository == 'ianmaciel7/exams-app-archive'
+    runs-on: ubuntu-latest
+    outputs:
+      tag: legacy-ci-artifacts-2026-11-23-bulk
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - run: |
+          set -euo pipefail
+          test "$(gh repo view ianmaciel7/exams-app-archive --json visibility --jq .visibility)" = PRIVATE
+          tag=legacy-ci-artifacts-2026-11-23-bulk
+          if ! gh release view "$tag" -R ianmaciel7/exams-app-archive >/dev/null 2>&1; then
+            gh release create "$tag" -R ianmaciel7/exams-app-archive --draft --title "Recoverable Actions evidence from old public repositories" --notes "Original ZIP artifacts preserved from old repositories. Partitioned TAR files and SHA-256 manifests. The original repositories remain unchanged."
+          fi
+  copy:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    env:
+      GH_TOKEN: ${{ github.token }}
+      SHARD: ${{ matrix.shard }}
+      TAG: legacy-ci-artifacts-2026-11-23-bulk
+    steps:
+      - name: Fetch snapshot inventory
+        run: |
+          mkdir -p inventory
+          for r in exams-app-antigo-2 shadcn-template shadcn-firebase-template; do
+            gh release download public-metadata-2026-11-23 -R ianmaciel7/exams-app-archive --pattern "$r.platform.zip" --dir inventory
+          done
+      - name: Download original artifacts and seal shard manifest
+        run: |
+          python3 - <<'PY'
+          import hashlib,json,os,subprocess,tarfile,time,zipfile
+          from pathlib import Path
+          SHARD=int(os.environ['SHARD']); N=16
+          sources=('exams-app-antigo-2','shadcn-template','shadcn-firebase-template')
+          root=Path('source-zips');root.mkdir()
+          manifests=[]
+          def sha(p):
+              h=hashlib.sha256()
+              with p.open('rb') as f:
+                  for c in iter(lambda:f.read(1048576),b''):h.update(c)
+              return h.hexdigest()
+          for name in sources:
+              with zipfile.ZipFile(Path('inventory')/(name+'.platform.zip')) as f:
+                  records=json.loads(f.read('actions_artifacts.json'))
+              selected=[r for r in records if not r.get('expired',True) and int(r['id'])%N==SHARD]
+              for i,a in enumerate(selected):
+                  ident=int(a['id']); target=root/(name+'-'+str(ident)+'.zip')
+                  err=''
+                  for attempt in range(4):
+                      try:
+                          with target.open('wb') as out:
+                              p=subprocess.run(['gh','api','-H','Accept: application/vnd.github+json',f'repos/ianmaciel7/{name}/actions/artifacts/{ident}/zip'],stdout=out,stderr=subprocess.PIPE,timeout=120)
+                          if p.returncode:raise RuntimeError(p.stderr.decode('utf-8','replace')[-300:])
+                          with zipfile.ZipFile(target) as z:
+                              broken=z.testzip()
+                              if broken:raise RuntimeError('Corrupt member: '+broken)
+                          err='';break
+                      except Exception as e:
+                          err=str(e)[:320]
+                          target.unlink(missing_ok=True)
+                          time.sleep(2**attempt)
+                  row={'repository':name,'id':ident,'name':a.get('name'), 'original_size_bytes':a.get('size_in_bytes'), 'expires_at':a.get('expires_at'),'file':target.name if not err else None,'status':'failed' if err else 'saved'}
+                  if err:row['error']=err
+                  else:row.update({'download_bytes':target.stat().st_size,'sha256':sha(target)})
+                  manifests.append(row)
+                  if (i+1)%50==0:print('progress',SHARD,name,i+1,len(selected),flush=True)
+          status={'shard':SHARD,'shards':N,'entries':manifests,'counts':{'saved':sum(x['status']=='saved' for x in manifests),'failed':sum(x['status']=='failed' for x in manifests)},'recovered_bytes':sum(x.get('download_bytes',0) for x in manifests)}
+          manifest=Path(f'legacy-ci-{SHARD:02d}.manifest.json')
+          manifest.write_text(json.dumps(status,ensure_ascii=False,indent=2)+'\n')
+          with tarfile.open(f'legacy-ci-{SHARD:02d}.tar','w') as tar:
+              for r in manifests:
+                  if r['status']=='saved':tar.add(root/r['file'],arcname=r['file'])
+          print(json.dumps({'shard':SHARD,'counts':status['counts'],'recovered_bytes':status['recovered_bytes']}),flush=True)
+          PY
+      - name: Upload shard archive and its manifest to private release
+        run: |
+          set -euo pipefail
+          printf -v label '%02d' "$SHARD"
+          for f in "legacy-ci-$label.tar" "legacy-ci-$label.manifest.json"; do
+            if gh release view "$TAG" -R ianmaciel7/exams-app-archive --json assets --jq '.assets[].name' | grep -Fxq "$f"; then
+              echo "Previously uploaded: $f"
+            else
+              gh release upload "$TAG" "$f" -R ianmaciel7/exams-app-archive
+            fi
+            actual=$(sha256sum "$f" | cut -d' ' -f1)
+            remote=$(gh api "repos/ianmaciel7/exams-app-archive/releases/tags/$TAG" --jq ".assets[] | select(.name==\"$f\") | .digest")
+            test "$remote" = "sha256:$actual"
+          done
+  finalize:
+    needs: [prepare, copy]
+    if: always() && needs.prepare.result == 'success'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      TAG: legacy-ci-artifacts-2026-11-23-bulk
+    steps:
+      - name: Audit all shard manifests for complete source coverage
+        run: |
+          set -euo pipefail
+          mkdir -p all-manifests original
+          gh release download "$TAG" -R ianmaciel7/exams-app-archive --pattern '*.manifest.json' --dir all-manifests
+          for r in exams-app-antigo-2 shadcn-template shadcn-firebase-template; do
+            gh release download public-metadata-2026-11-23 -R ianmaciel7/exams-app-archive --pattern "$r.platform.zip" --dir original
+          done
+          python3 - <<'PY'
+          import json,zipfile
+          from pathlib import Path
+          sources=('exams-app-antigo-2','shadcn-template','shadcn-firebase-template')
+          expected={}
+          for repo in sources:
+              with zipfile.ZipFile(Path('original')/(repo+'.platform.zip')) as z:
+                  for a in json.loads(z.read('actions_artifacts.json')):
+                      if not a.get('expired',True):expected[(repo,int(a['id']))]=a
+          rows=[];shards=[]
+          for p in sorted(Path('all-manifests').glob('*.manifest.json')):
+              m=json.loads(p.read_text());shards.append(m['shard']);rows+=m['entries']
+          saved={(r['repository'],r['id']) for r in rows if r['status']=='saved'}
+          errors=[r for r in rows if r['status']!='saved']
+          duplicates=len(rows)-len({(r['repository'],r['id']) for r in rows})
+          missing=sorted(set(expected)-saved)
+          summary={'expected_artifacts':len(expected),'archived_artifacts':len(saved),'missing_artifacts':len(missing),'failed_downloads':len(errors),'duplicate_manifest_entries':duplicates,'shards_seen':sorted(shards),'complete':len(shards)==16 and not missing and not errors and duplicates==0,'missing_samples':[{'repo':a,'id':b} for a,b in missing[:30]],'error_samples':errors[:30]}
+          Path('BULK-MANIFEST.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n')
+          print(json.dumps(summary,ensure_ascii=False),flush=True)
+          PY
+          gh release upload "$TAG" BULK-MANIFEST.json -R ianmaciel7/exams-app-archive --clobber
+          if python3 -c 'import json,sys;sys.exit(0 if json.load(open("BULK-MANIFEST.json"))["complete"] else 1)'; then
+            gh release edit "$TAG" -R ianmaciel7/exams-app-archive --draft=false
+            echo 'ALL AVAILABLE ARTIFACTS PRESERVED AND SEALED'
+          else
+            echo '::warning::Partial archive: consult BULK-MANIFEST.json, do not delete old repositories'
+          fi
