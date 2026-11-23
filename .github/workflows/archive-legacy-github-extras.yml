@@ -1,0 +1,60 @@
+name: Preserve GitHub Discussions and Projects inventory from legacy repos
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/archive-legacy-github-extras.yml']
+permissions:
+  contents: write
+  discussions: read
+  repository-projects: read
+jobs:
+  export:
+    if: github.repository == 'ianmaciel7/exams-app-archive'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Fetch GitHub GraphQL Discussions and Projects
+        run: |
+          mkdir -p extras
+          python3 - <<'PY'
+          import json,subprocess,hashlib
+          from pathlib import Path
+          repos=('exams-app-old','exams-app-antigo-2','shadcn-template','shadcn-firebase-template')
+          questions={
+            'discussions':'''query($owner:String!,$name:String!) { repository(owner:$owner,name:$name) { discussions(first:100) {totalCount nodes {number title body url comments(first:100) {totalCount nodes {body createdAt author {login}}}}}}}''',
+            'projects_v2':'''query($owner:String!,$name:String!) { repository(owner:$owner,name:$name) { projectsV2(first:100) {totalCount nodes {id title url}}}}'''
+          }
+          entries=[]
+          for repo in repos:
+              result={'repository':'ianmaciel7/'+repo,'data':{},'errors':[]}
+              for kind,query in questions.items():
+                  p=subprocess.run(['gh','api','graphql','-F','owner=ianmaciel7','-F','name='+repo,'-f','query='+query],capture_output=True,text=True)
+                  if p.returncode:
+                      result['errors'].append({'kind':kind,'error':p.stderr[-600:]})
+                      continue
+                  try:
+                      body=json.loads(p.stdout)
+                      if body.get('errors'):result['errors'].append({'kind':kind,'error':body['errors']})
+                      else:result['data'][kind]=body.get('data',{})
+                  except Exception as e:result['errors'].append({'kind':kind,'error':str(e)})
+              target=Path('extras')/(repo+'.github-extras.json')
+              target.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
+              dc=result['data'].get('discussions',{}).get('repository',{}).get('discussions')
+              pv=result['data'].get('projects_v2',{}).get('repository',{}).get('projectsV2')
+              summary={'repository':repo,'discussions':(dc or {}).get('totalCount'),'projects_v2':(pv or {}).get('totalCount'),'errors':len(result['errors'])}
+              entries.append(summary)
+              print(json.dumps(summary),flush=True)
+          Path('extras/MANIFEST.json').write_text(json.dumps(entries,indent=2)+'\n')
+          PY
+      - name: Publish source extras as a private immutable release
+        run: |
+          set -euo pipefail
+          tag=legacy-github-extras-2026-11-23
+          if ! gh release view "$tag" -R ianmaciel7/exams-app-archive >/dev/null 2>&1; then
+            gh release create "$tag" -R ianmaciel7/exams-app-archive --draft --title "Legacy GitHub Discussions and Projects inventory" --notes "Read-only API snapshot; query failures and pagination limits explicitly recorded."
+          fi
+          gh release upload "$tag" extras/* -R ianmaciel7/exams-app-archive
+          gh release edit "$tag" -R ianmaciel7/exams-app-archive --draft=false
