@@ -15,4 +15,13 @@ jobs:
     steps:
       - run: |
           set -euo pipefail
-          gh release edit legacy-ci-artifacts-2026-11-23-bulk -R ianmaciel7/exams-app-archive --draft=false --title "IN PROGRESS - bulk historical Actions evidence archive"
+          mkdir -p verify
+          gh release download legacy-ci-artifacts-2026-11-23-bulk -R ianmaciel7/exams-app-archive --pattern BULK-MANIFEST.json --dir verify
+          python3 - <<'PY'
+          import json
+          m=json.load(open('verify/BULK-MANIFEST.json'))
+          assert m['complete'] is True
+          assert m['expected_artifacts']==m['archived_artifacts']==2883
+          assert m['missing_artifacts']==0 and m['failed_downloads']==0
+          PY
+          gh release edit legacy-ci-artifacts-2026-11-23-bulk -R ianmaciel7/exams-app-archive --draft=false --title "Verified historical CI evidence - 2,883 artifacts"
