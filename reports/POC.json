@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-23T17:13:25.591730+00:00",
+  "generated_utc": "2026-11-23T17:20:44.536254+00:00",
   "sources": [
     {
       "repository": "exams-app-old",
@@ -8,7 +8,7 @@
       "changes": 13676,
       "deleted_image_evidence": 0,
       "images": 14,
-      "seconds": 1.23,
+      "seconds": 1.29,
       "branch_compare": {
         "main_only": 0,
         "dev_only": 9,
@@ -22,7 +22,7 @@
       "changes": 18279,
       "deleted_image_evidence": 2266,
       "images": 1563,
-      "seconds": 16.42,
+      "seconds": 13.94,
       "branch_compare": {
         "main_only": 0,
         "dev_only": 180,
@@ -36,7 +36,7 @@
       "changes": 711,
       "deleted_image_evidence": 0,
       "images": 7,
-      "seconds": 0.03
+      "seconds": 0.02
     }
   ],
   "queries": [
@@ -67,6 +67,13 @@
         {
           "repository": "exams-app-old",
           "kind": "commit",
+          "sha": "0dd6b81c4065b4bdd4df180ada096576bab5b25a",
+          "path": "",
+          "summary": "fix(spelling): allow firebasestorage in cspell words"
+        },
+        {
+          "repository": "exams-app-old",
+          "kind": "commit",
           "sha": "0f4e2b47de1818b6fa23b4f891505dd536766ee2",
           "path": "",
           "summary": "refactor(firebase): pass children to LegalText and drop two wrapper components"
@@ -91,16 +98,9 @@
           "sha": "a4361498008d1ee55defe9b13ac77fbf5ef35733",
           "path": "",
           "summary": "refactor(firebase): drop pass-through MFA wrappers and share the code form"
-        },
-        {
-          "repository": "exams-app-old",
-          "kind": "commit",
-          "sha": "b92e14c0528ae82e2459da7e8705247c9a179be0",
-          "path": "",
-          "summary": "refactor(components): compose Firebase auth parts with children"
         }
       ],
-      "ms": 0.45,
+      "ms": 0.43,
       "count": 8
     },
     {
@@ -163,7 +163,7 @@
           "summary": "feat(graph): grafo da coleção em canvas com zoom, teclado e lista acessível (#227)"
         }
       ],
-      "ms": 0.18,
+      "ms": 0.1,
       "count": 8
     },
     {
@@ -226,7 +226,7 @@
           "summary": ""
         }
       ],
-      "ms": 0.13,
+      "ms": 0.09,
       "count": 8
     },
     {
@@ -289,14 +289,71 @@
           "summary": ""
         }
       ],
-      "ms": 0.11,
+      "ms": 0.07,
       "count": 8
     },
     {
       "query": "capacit",
-      "results": [],
-      "ms": 0.05,
-      "count": 0
+      "results": [
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "commit",
+          "sha": "1c2d093747c29adbef895944b67f7aab2e7e72f9",
+          "path": "",
+          "summary": "feat(capacities-graph-engine): painel direito do grafo em canvas 2D"
+        },
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "commit",
+          "sha": "176e6125611ab53929c96eb84faee502f426c9a0",
+          "path": "",
+          "summary": "style(capacities-right-panel-tools): grade 3x2 das ferramentas no Explorar (#66)"
+        },
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "commit",
+          "sha": "3c329ba0c95cb28a28c06f9f79c9bdaf6a2c3235",
+          "path": "",
+          "summary": "style(capacities-right-panel-tools): grade 3x2 das ferramentas no Explorar (#66)"
+        },
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "commit",
+          "sha": "e778ada7f0442cd1a8ba7155e5e97699a547a24f",
+          "path": "",
+          "summary": "feat(capacities-graph-controls): barras flutuantes do grafo (#68)"
+        },
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "commit",
+          "sha": "084ac9b841922c1f801861ebc78d4c06e86dde66",
+          "path": "",
+          "summary": "feat(capacities-graph-controls): barras flutuantes do grafo (#68)"
+        },
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "commit",
+          "sha": "11b8f08d152a46f239607564e9cedcf0d1b9ceea",
+          "path": "",
+          "summary": "feat(capacities-graph): controles do grafo flutuantes e translúcidos no rodapé (#54)"
+        },
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "commit",
+          "sha": "b05f283d7cdca3a3392bad6a1834b95f4701adc2",
+          "path": "",
+          "summary": "Add Capacities research inventory (issue #32)"
+        },
+        {
+          "repository": "exams-app-antigo-2",
+          "kind": "commit",
+          "sha": "36bcdf7d59be875b56df3e1ca0a6fa7173125e89",
+          "path": "",
+          "summary": "docs(research): add sourced Capacities baseline for issue 32 (#193)"
+        }
+      ],
+      "ms": 0.07,
+      "count": 8
     }
   ],
   "bundle_validation": {
@@ -328,7 +385,7 @@
     "bytes": 7532,
     "mentions_recall": true
   },
-  "elapsed_seconds": 18.24,
+  "elapsed_seconds": 15.64,
   "index_bytes": 14843904,
   "sqlite_fts5": true,
   "historical_sources_complete": false,
