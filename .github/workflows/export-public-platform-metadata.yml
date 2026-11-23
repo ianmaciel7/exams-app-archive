@@ -1,0 +1,34 @@
+name: Archive all public GitHub platform metadata
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/export-public-platform-metadata.yml'
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: archive-public-metadata-2026-11-23
+  cancel-in-progress: false
+jobs:
+  snapshot:
+    if: github.repository == 'ianmaciel7/exams-app-archive'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Collect public issues, PR discussions, reviews and workflow runs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GIT_TERMINAL_PROMPT: '0'
+        run: python3 scripts/export_public_platform_metadata.py
+      - name: Commit verification manifest and coverage report
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add reports/PUBLIC-PLATFORM-METADATA.md manifests/public-platform-metadata-2026-11-23.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'docs(archive): record public GitHub platform metadata completeness'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
