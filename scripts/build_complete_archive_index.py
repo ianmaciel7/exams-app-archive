@@ -69,7 +69,7 @@ def main():
         for name in SOURCES:
             file=all_bundles.get(name+".bundle")
             if not file:raise RuntimeError("Missing saved source bundle: "+name)
-            if sha256(file)!=provenance[file.name]:raise RuntimeError("SHA mismatch "+str(file))
+            if sha256(file)!=provenance[name+".bundle"]:raise RuntimeError("SHA mismatch "+str(file))
         bare_repos=temp/"repos";bare_repos.mkdir()
         db=REPORTS/"full-index.sqlite"
         REPORTS.mkdir(exist_ok=True)
