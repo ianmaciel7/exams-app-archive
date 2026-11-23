@@ -85,3 +85,34 @@ Os números de Actions são contagens fornecidas pela API no momento da verifica
 - [Índice SQLite pesquisável](https://github.com/ianmaciel7/exams-app-archive/releases/tag/index-2026-11-23-exams-complete)
 
 **Nenhuma branch ou repositório de origem foi apagado nesta verificação.**
+
+## Adendo — progresso da preservação privada e metadados, 23/11/2026
+
+A integração GitHub autenticada copiou diretamente, para
+[inventory/notes-app/](../inventory/notes-app/README.md), as listas de 50 PRs,
+50 registros de issues/PRs, 3 releases, 3 referências de tags,
+37 submissões de review, 100 comentários inline,
+10 comentários de conversa, 153 eventos de issues/PRs,
+1.889 registros de arquivos alterados em PRs e **1.130 runs de Actions**
+(em doze páginas de JSON). Essas cópias contêm **metadados**, não os objetos
+Git faltantes nem os arquivos de logs e artifacts de CI.
+
+Foi criada a automação privada
+[archive-private-notes.yml](https://github.com/ianmaciel7/exams-app-archive/actions/workflows/archive-private-notes.yml),
+mas sua execução comprovou a ausência do secret `NOTES_READ_TOKEN`.
+O teste de sintaxe do script Python passou. O usuário precisa adicionar um token
+fine-grained, somente de leitura, limitado ao repositório `notes-app` para que
+a automação consiga clonar o histórico Git privado e salvar uma release com
+validação de SHA, refs, tags e restauração.
+
+A [auditoria externa de sete Git Bundles](../reports/PUBLIC-GIT-EXTERNALS.md)
+examinou **30.098 objetos** e não encontrou ponteiros LFS nem submódulos;
+também não encontrou repositórios Wiki Git acessíveis.
+
+O workflow [export-public-platform-metadata.yml](https://github.com/ianmaciel7/exams-app-archive/actions/workflows/export-public-platform-metadata.yml)
+foi iniciado para exportar metadados de plataforma dos sete repositórios públicos,
+mas **não deve ser considerado concluído** até existir release final e manifesto
+com checksums verificados. O limite da API Actions pode impedir exportação
+integral em uma única execução; erros precisam permanecer documentados.
+
+**Status atual:** a cobertura histórica **não é 100%**; não excluir as origens.
