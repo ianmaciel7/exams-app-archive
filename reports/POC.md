@@ -1,11 +1,11 @@
 # Prova de conceito real — Git histórico + SQLite FTS5
 
-Gerada em 2026-11-23T23:44:07.537137+00:00 (UTC). Fonte: Git, sem LLM/embeddings.
+Gerada em 2026-11-23T23:46:52.426823+00:00 (UTC). Fonte: Git, sem LLM/embeddings.
 
 | Fonte | Refs | Commits | Alterações | Imagens | Tempo |
 |---|---:|---:|---:|---:|---:|
-| exams-app-old | 167 | 780 | 13676 | 14 | 1.03 s |
-| exams-app-antigo-2 | 234 | 1051 | 18279 | 1563 | 15.62 s |
+| exams-app-old | 167 | 780 | 13676 | 14 | 0.94 s |
+| exams-app-antigo-2 | 234 | 1051 | 18279 | 1563 | 15.17 s |
 | notes-app-old-10 | 1 | 110 | 711 | 7 | 0.03 s |
 
 ## Recuperação de evidências
@@ -13,9 +13,9 @@ Gerada em 2026-11-23T23:44:07.537137+00:00 (UTC). Fonte: Git, sem LLM/embeddings
 - Bundle histórico validado: **True** — `prototype/notes-app-old-10.bundle`
 - Imagem removida recuperada e hash Git verificado: **True**
 - Código histórico `src/domain/recall.ts` recuperado: **True**
-- Tempo total: **17.22 s**; índice SQLite: **14.16 MiB** (`archive-index.sqlite.gz`: **2.39 MiB**)
-- SHA-256 `archive-index.sqlite`: `cde496c0a6a1c799c770ee5ffe27fd73b8f80868823898871c5226416deb383f`
-- SHA-256 `archive-index.sqlite.gz`: `e2b1be879c0dc5b98cd89574eb8ecb43166386ce304077734977ff4079c5b6a0`
+- Tempo total: **16.68 s**; índice SQLite: **14.16 MiB** (`archive-index.sqlite.gz`: **2.39 MiB**)
+- SHA-256 `archive-index.sqlite`: `595b50616142a39cc2267fc19061e8b2d80e38347f269b6bc2aacce026cd3101`
+- SHA-256 `archive-index.sqlite.gz`: `613c83fa83ea61a763186ab06bca9384e3ce0cfec614cf9883dd7a7ce05938d4`
 - Release privada do índice POC: `poc-archive-index` (publicado: **True**)
 
 - Evidência de imagem: `exams-app-antigo-2` / `prototypes/board-exam-app/assets/issue68_graph_toolbar_1366.png` / commit `65ce2ab7ac95e8fc4e1be998eb0aa593049bf2c8` / blob `216b4d240c7a05ff2656745f9dd28ccb1d117f6f`
@@ -26,11 +26,11 @@ Gerada em 2026-11-23T23:44:07.537137+00:00 (UTC). Fonte: Git, sem LLM/embeddings
 
 | Busca | Resultados | Latência | Exemplo |
 |---|---:|---:|---|
-| firebase | 8 | 8.32 ms | `feat(firebase): install firebase ui registry components` |
-| grafo | 8 | 4.53 ms | `feat(capacities-graph-controls): barras flutuantes do g` |
-| qconcursos | 8 | 4.3 ms | `Add QConcursos inventory for issue #31` |
-| recall | 8 | 1.21 ms | `feat: close remaining Recall punch-list items (accessib` |
-| capacit | 8 | 2.2 ms | `Add Capacities research inventory (issue #32)` |
+| firebase | 8 | 8.15 ms | `feat(firebase): install firebase ui registry components` |
+| grafo | 8 | 4.61 ms | `feat(capacities-graph-controls): barras flutuantes do g` |
+| qconcursos | 8 | 4.26 ms | `Add QConcursos inventory for issue #31` |
+| recall | 8 | 1.23 ms | `feat: close remaining Recall punch-list items (accessib` |
+| capacit | 8 | 2.28 ms | `Add Capacities research inventory (issue #32)` |
 
 ## Limitações e próximos passos
 
