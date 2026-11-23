@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
       - "plugins/exams-archive/**"
+      - "site/**"
       - "tests/test_archive_plugin.py"
       - ".agents/plugins/marketplace.json"
       - ".github/workflows/archive-plugin-test.yml"
@@ -24,3 +25,4 @@ jobs:
           python-version: "3.12"
       - run: python -m unittest discover -s tests -p test_archive_plugin.py -v
       - run: python -m py_compile plugins/exams-archive/scripts/archive_query.py
+      - run: node --check site/app.js
