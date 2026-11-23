@@ -29,6 +29,27 @@ Observação: uma branch omitida pode ter commits alcançáveis a partir de outr
 
 **Não são criadas branches antigas no repositório de arquivo.** Cada bundle guarda suas refs internamente. Checksums ficam em [manifests](../manifests/).
 
+## Correção posterior — refs de PR inicialmente não incluídas
+
+A auditoria por branches não era suficiente: os primeiros bundles exportavam apenas refs `heads`/`tags`. A indexação dos clones completos identificou commits adicionais alcançáveis por `refs/pull/*`, importantes para recuperar propostas não mescladas.
+
+Foi publicada a release privada **[archive-2026-11-23-all-refs](https://github.com/ianmaciel7/exams-app-archive/releases/tag/archive-2026-11-23-all-refs)**, utilizando `git clone --mirror` + `git bundle create --all`. Todas as refs anunciadas pelos clones foram comparadas uma a uma por nome e SHA com o bundle final; foi feito também download e verificação de retorno de `exams-app-old.bundle`.
+
+| Repositório público | Refs preservadas | Pull request refs |
+|---|---:|---:|
+| exams-app | 3 | 1 |
+| exams-app-old | 167 | 161 |
+| exams-app-antigo-2 | 234 | 206 |
+| shadcn-template | 37 | 30 |
+| shadcn-firebase-template | 78 | 71 |
+| fcc-responsive-web-design | 1 | 0 |
+| ianmaciel7 | 1 | 0 |
+| **Total** | **521** | **469** |
+
+O `exams-app` tinha cinco refs anunciadas no espelho. Foram deliberadamente removidas **somente do espelho temporário** a branch `chore/consolidate-legacy-sources-20261123` (uma cópia de migração, redundante) e `claude/project-thread-o4dym1` (antecessora de `dev`), resultando em três refs preservadas. As branches originais não foram apagadas.
+
+**Para recuperar todo o histórico público anunciado pelo GitHub, a release `all-refs` passa a ser a fonte preferencial.** As duas releases anteriores continuam imutáveis como snapshots de auditoria.
+
 ## Testes feitos
 
 - POC real com SQLite FTS5: 1.941 commits, 32.666 alterações de arquivos, 1.584 registros de imagens. Buscas por Firebase, grafo, QConcursos, Recall e termos parciais, com exemplos de recuperação de código e imagem histórica.
