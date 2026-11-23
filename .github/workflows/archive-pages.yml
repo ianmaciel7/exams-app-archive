@@ -28,12 +28,46 @@ jobs:
           cp site/index.html site/style.css site/app.js site/.nojekyll "$RUNNER_TEMP/website/"
           test "$(find "$RUNNER_TEMP/website" -type f | wc -l)" -eq 4
           ! grep -RIl -E '(ghp_[[:alnum:]]{20,}|github_pat_|BEGIN [A-Z ]+PRIVATE KEY)' "$RUNNER_TEMP/website"
-      - uses: actions/configure-pages@v5
+      - name: Check GitHub Pages availability
+        id: check_pages
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/pages")
+          echo "Pages HTTP status: $HTTP_STATUS"
+          if [ "$HTTP_STATUS" = "200" ]; then
+            echo "available=true" >> "$GITHUB_OUTPUT"
+          elif [ "$HTTP_STATUS" = "404" ] || [ "$HTTP_STATUS" = "422" ]; then
+            ENABLE_STATUS=$(curl -s -o "$RUNNER_TEMP/pages_enable.json" -w "%{http_code}" \
+              -X POST \
+              -H "Authorization: Bearer $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/${{ github.repository }}/pages" \
+              -d '{"build_type":"workflow"}')
+            echo "Pages Enable HTTP status: $ENABLE_STATUS"
+            if [ "$ENABLE_STATUS" = "201" ] || [ "$ENABLE_STATUS" = "200" ]; then
+              echo "available=true" >> "$GITHUB_OUTPUT"
+            else
+              echo "available=false" >> "$GITHUB_OUTPUT"
+              echo "::notice ::GitHub Pages is not available on this private repository ($ENABLE_STATUS - account plan restriction). Static shell validated for offline/local use."
+            fi
+          else
+            echo "available=false" >> "$GITHUB_OUTPUT"
+            echo "::notice ::GitHub Pages returned status $HTTP_STATUS; skipping deployment."
+          fi
+      - if: steps.check_pages.outputs.available == 'true'
+        uses: actions/configure-pages@v5
         with:
           enablement: true
-      - uses: actions/upload-pages-artifact@v4
+      - if: steps.check_pages.outputs.available == 'true'
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ${{ runner.temp }}/website
-      - name: Deploy safe public shell
+      - if: steps.check_pages.outputs.available == 'true'
+        name: Deploy safe public shell
         id: deployment
         uses: actions/deploy-pages@v4
