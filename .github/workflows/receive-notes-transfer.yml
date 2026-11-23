@@ -3,7 +3,7 @@ on:
   push:
     branches: [notes-private-import]
     paths:
-      - 'transfer/notes-2026-11-23/**'
+      - 'transfer/notes-2026-11-23/TRANSFER-MANIFEST.json'
 permissions:
   contents: write
 concurrency:
