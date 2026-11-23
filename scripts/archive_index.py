@@ -150,7 +150,7 @@ def search(conn:sqlite3.Connection, q:str, limit:int=8) -> list[dict]:
     tokens=re.findall(r'\w+',q,flags=re.UNICODE)[:6]
     if not tokens:
         return []
-    matcher=' OR '.join('"'+t.replace('"','')+'"' for t in tokens)
+    matcher=' OR '.join('"'+t.replace('"','')+'"*' for t in tokens)
     limit=max(1,min(int(limit),50))
     # Separate FTS queries keep memory use and result size bounded.
     result=[]
