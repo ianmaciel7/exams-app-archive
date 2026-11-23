@@ -88,6 +88,14 @@ jobs:
                           releases=json.loads(z.read('releases.json'))
                           release_assets=sum(len(x.get('assets',[])) for x in releases)
                           if release_assets:row['blockers'].append(str(release_assets)+' source release assets need binary backup')
+                          artifacts=json.loads(z.read('actions_artifacts.json')) if 'actions_artifacts.json' in z.namelist() else []
+                          live=[a for a in artifacts if not a.get('expired',True)]
+                          evidence=[a for a in live if re.search(r'evidence|screenshots?|playwright|image|snapshot|visual|photo|pdf|report|prototype|design',a.get('name',''),re.I)]
+                          row['live_actions_artifacts']=len(live)
+                          row['live_artifact_bytes']=sum(a.get('size_in_bytes',0) for a in live)
+                          row['live_evidence_artifacts']=len(evidence)
+                          row['evidence_samples']=[{'id':a.get('id'),'name':a.get('name'),'bytes':a.get('size_in_bytes')} for a in evidence[:12]]
+                          if evidence:row['blockers'].append(str(len(evidence))+' live CI evidence artifacts not yet backed up as binaries')
                           row['warnings'].append('Actions artifacts/log bytes not included; decide if any evidence is essential')
                   except Exception as e:
                       row['blockers'].append(str(e)[:500])
