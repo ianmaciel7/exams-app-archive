@@ -1,0 +1,33 @@
+name: Full historical FTS5 index including pull request refs
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/index-all-git-refs.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  full-index:
+    if: github.repository == 'ianmaciel7/exams-app-archive'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate indexer contracts
+        run: python3 -m unittest discover -s tests -v
+      - name: Build and verify full indexed history from all-refs private release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/build_all_refs_index.py
+      - name: Save compact provenance and query report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/FULL-INDEX.json reports/FULL-INDEX.md
+          if ! git diff --cached --quiet; then
+            git commit -m "test(archive): validate indexed PR and branch history"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
