@@ -1,4 +1,5 @@
 name: Index full exams-app and all saved historical sources
+# Retry with corrected bundle filename checksum mapping.
 on:
   push:
     branches: [main]
