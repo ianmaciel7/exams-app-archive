@@ -25,8 +25,9 @@ a integração GitHub conectada copiou para
   requer configurar o secret `NOTES_READ_TOKEN` na aba Actions do arquivo.
 - [Exportação de metadados dos projetos públicos](https://github.com/ianmaciel7/exams-app-archive/releases/tag/public-metadata-2026-11-23):
   execução concluída para sete repositórios, com ZIPs, manifesto e checksums.
-  Existe uma ocorrência de erro registrada em `exams-app-antigo-2`; consulte
-  [o relatório](reports/PUBLIC-PLATFORM-METADATA.md) antes de declarar cobertura total.
+  A ocorrência HTTP 500 na exportação de reviews do PR #248 de `exams-app-antigo-2`
+  foi verificada separadamente: a coleção possui zero reviews, conforme
+  [suplemento arquivado](inventory/exams-app-antigo-2/pr-248-reviews-supplement.json).
 
 **Não apague repositórios originais antes de concluir e testar essas pendências.**
 
@@ -41,6 +42,7 @@ a integração GitHub conectada copiou para
 | [Relatório e catálogo exams-app](docs/EXAMS-APP-COMPLETE.md) | Contagem de arquivos por branch e instruções de recuperação |
 | [Auditoria de objetos Git, mídia e LFS](reports/EXAMS-APP-VERIFY.md) | `git fsck --full`, 4 branches, TAR de dev, 3.870 objetos examinados, 0 ponteiros LFS e 0 submódulos |
 | [Logs CI originais do exams-app](https://github.com/ianmaciel7/exams-app-archive/releases/tag/exams-app-2026-11-23-ci-logs) | Dois logs recuperados do GitHub Actions, comprimidos e verificados por SHA-256 |
+| [Artefatos históricos de CI de repos antigos](https://github.com/ianmaciel7/exams-app-archive/releases/tag/legacy-ci-artifacts-2026-11-23-bulk) | **2.883/2.883 ZIPs de evidência** guardados em 16 TARs com SHA-256 e manifesto global; restauração real testada |
 | [Backup Git dos demais projetos públicos](https://github.com/ianmaciel7/exams-app-archive/releases/tag/archive-2026-11-23-all-refs) | Versões antigas, templates e referências de PR preservadas |
 | [Índice SQLite FTS5 mais recente](https://github.com/ianmaciel7/exams-app-archive/releases/tag/index-2026-11-23-exams-complete) | Busca histórica em todos os projetos e nas quatro branches de exams-app |
 | [Relatório da busca completa](reports/FULL-INDEX.md) | Resultados e métricas reais da indexação |
