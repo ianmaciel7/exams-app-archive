@@ -10,8 +10,10 @@ não em dezenas de branches.
 | Recurso | Para que serve |
 |---|---|
 | [Auditoria dos 9 repositórios](docs/AUDIT-COVERAGE-2026-11-23.md) | Cobertura e lacunas, com 71 branch heads inventariados |
-| [Backup Git com refs de PR](https://github.com/ianmaciel7/exams-app-archive/releases/tag/archive-2026-11-23-all-refs) | Fonte **preferencial** para todo histórico público anunciado pelo GitHub |
-| [Índice SQLite FTS5 completo](https://github.com/ianmaciel7/exams-app-archive/releases/tag/index-2026-11-23-all-refs) | Buscar rapidamente código histórico por commits e caminhos, sem embeddings |
+| [Backup completo de exams-app](https://github.com/ianmaciel7/exams-app-archive/releases/tag/exams-app-2026-11-23-complete) | **Todas as 4 branches**, refs de PR, imagens, documentos, inventário e metadados GitHub |
+| [Relatório e catálogo exams-app](docs/EXAMS-APP-COMPLETE.md) | Contagem de arquivos por branch e instruções de recuperação |
+| [Backup Git dos demais projetos públicos](https://github.com/ianmaciel7/exams-app-archive/releases/tag/archive-2026-11-23-all-refs) | Versões antigas, templates e referências de PR preservadas |
+| [Índice SQLite FTS5 mais recente](https://github.com/ianmaciel7/exams-app-archive/releases/tag/index-2026-11-23-exams-complete) | Busca histórica em todos os projetos e nas quatro branches de exams-app |
 | [Relatório da busca completa](reports/FULL-INDEX.md) | Resultados e métricas reais da indexação |
 | [Verificação dos 15 bundles internos](reports/embedded-bundles-audit.md) | Preservação de 12 branches `notes-app-old*` e três backups Exams Old |
 | [Guia prático de recuperação](docs/EXTRACTION-GUIDE.md) | Consultar índices e restaurar arquivos originais por commit + caminho |
@@ -20,16 +22,11 @@ não em dezenas de branches.
 
 - **7 repositórios públicos**: os cinco projetos principais (exams-app, exams-app-old,
   exams-app-antigo-2 e dois templates), mais dois repositórios auxiliares.
-- **521 referências Git** preservadas nos espelhos públicos, incluindo **469 refs de PR**
-  não incluídas na primeira tentativa. Duas branches transitórias de `exams-app`
-  foram propositalmente omitidas.
+- **523 referências Git** preservadas ao combinar o backup público geral com o backup completo do `exams-app`, incluindo **469 refs de PR**. As duas branches antes omitidas do `exams-app` agora estão preservadas.
 - **12 versões históricas de Notes** (`old` e `old-1` a `old-11`) recuperadas
   a partir dos bundles internos; os **15/15 bundles** históricos tiveram integridade
   verificada e heads correspondentes às branches atuais.
-- **19 fontes Git pesquisáveis** em um SQLite FTS5 reconstruído exclusivamente das
-  releases privadas. Os dados somam **3.995 registros de commits**, **77.530 alterações**
-  e **3.121 registros de imagens**. O SQLite tem aproximadamente 37,33 MiB, comprimido
-  para 5,88 MiB. Esses registros podem compartilhar ancestrais e imagens.
+- **19 fontes Git pesquisáveis** em um SQLite FTS5 reconstruído exclusivamente das releases privadas. Os valores atualizados estão em [reports/FULL-INDEX.md](reports/FULL-INDEX.md); incluem as quatro branches originais de `exams-app`.
 
 **Pendente:** o backup integral do `notes-app` privado para `main`, `dev`, `stag`,
 `firebase/file` e tags `v0.1.0`, `v0.2.0`, `v0.3.0`. O token do GitHub Actions
