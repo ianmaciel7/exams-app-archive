@@ -1,0 +1,35 @@
+name: Index full exams-app and all saved historical sources
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/index-exams-app-complete.yml'
+
+permissions:
+  contents: write
+concurrency:
+  group: index-complete-exams-app
+  cancel-in-progress: false
+jobs:
+  full-index:
+    if: github.repository == 'ianmaciel7/exams-app-archive'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Unit tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Build complete index using already published private backups only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/build_complete_archive_index.py
+      - name: Publish verified report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/FULL-INDEX.md reports/FULL-INDEX.json
+          if ! git diff --cached --quiet; then
+            git commit -m "test(archive): index every exams-app branch from private release"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
