@@ -1,0 +1,45 @@
+name: Archive 100% accessible private Notes history
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/archive-private-notes.yml'
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: notes-private-history-archive
+  cancel-in-progress: false
+jobs:
+  backup:
+    if: github.repository == 'ianmaciel7/exams-app-archive'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate cross-repository read-only authorization
+        env:
+          NOTES_READ_TOKEN: ${{ secrets.NOTES_READ_TOKEN }}
+        run: |
+          if [ -z "$NOTES_READ_TOKEN" ]; then
+            echo "::error::Falta o secret NOTES_READ_TOKEN em exams-app-archive > Settings > Secrets and variables > Actions."
+            echo "::error::Use um token de granularidade fina, de SOMENTE LEITURA, limitado a notes-app. Nao cole o token no codigo ou no chat."
+            exit 2
+          fi
+      - name: Preserve every private Notes ref, tag, PR ref, source release notes, and metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NOTES_READ_TOKEN: ${{ secrets.NOTES_READ_TOKEN }}
+          GIT_TERMINAL_PROMPT: '0'
+        run: python3 scripts/archive_private_notes.py
+      - name: Commit provenance and checksum manifest
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add manifests/notes-app-private-full.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'docs(archive): record full private Notes Git provenance'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
