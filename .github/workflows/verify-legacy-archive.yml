@@ -1,0 +1,99 @@
+name: Verify backups before deleting legacy repositories
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/verify-legacy-archive.yml'
+permissions:
+  contents: read
+jobs:
+  restore-audit:
+    if: github.repository == 'ianmaciel7/exams-app-archive'
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Verify bundles, branch SHAs, platform exports and attachments
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import hashlib,json,re,subprocess,tempfile,zipfile
+          from pathlib import Path
+          ARCHIVE='ianmaciel7/exams-app-archive'
+          LEGACY=['exams-app-old','exams-app-antigo-2','shadcn-template','shadcn-firebase-template']
+          BUNDLE='archive-2026-11-23-all-refs'
+          META='public-metadata-2026-11-23'
+          pattern=re.compile(r'https?://(?:private-user-images\.githubusercontent\.com|user-images\.githubusercontent\.com|github\.com/user-attachments/assets)/[^\s\"\'<>\\]+',re.I)
+          def cmd(*args):
+              p=subprocess.run(args,capture_output=True,text=True,check=True)
+              return p.stdout
+          def api(path):return json.loads(cmd('gh','api',path))
+          def assets(tag):return {a['name']:a for a in api('repos/'+ARCHIVE+'/releases/tags/'+tag)['assets']}
+          bundles,metadata=assets(BUNDLE),assets(META)
+          records=[]
+          with tempfile.TemporaryDirectory() as directory:
+              root=Path(directory)
+              for name in LEGACY:
+                  print('Checking',name,flush=True)
+                  row={'repository':name,'blockers':[],'warnings':[]}
+                  try:
+                      for tag,asset,table in [(BUNDLE,name+'.bundle',bundles),(META,name+'.platform.zip',metadata)]:
+                          cmd('gh','release','download',tag,'--repo',ARCHIVE,'--pattern',asset,'--dir',str(root))
+                          blob=root/asset
+                          h=hashlib.sha256(blob.read_bytes()).hexdigest()
+                          if h != table[asset].get('digest','').replace('sha256:',''):
+                              row['blockers'].append('Asset SHA-256 mismatch: '+asset)
+                      bare=root/(name+'.git')
+                      cmd('git','clone','--mirror','-q',str(root/(name+'.bundle')),str(bare))
+                      cmd('git','--git-dir='+str(bare),'fsck','--full','--no-reflogs')
+                      gitrefs={a:b for a,b in (line.split(' ',1) for line in cmd('git','--git-dir='+str(bare),'for-each-ref','--format=%(refname) %(objectname)').splitlines())}
+                      live=api('repos/ianmaciel7/'+name+'/branches?per_page=100')
+                      row['branches']=len(live)
+                      row['pr_refs']=sum(k.startswith('refs/pull/') for k in gitrefs)
+                      if len(live)>=100:row['blockers'].append('Pagination of branches not checked')
+                      for branch in live:
+                          key='refs/heads/'+branch['name']
+                          if gitrefs.get(key)!=branch['commit']['sha']:
+                              row['blockers'].append('Missing/moved branch: '+branch['name'])
+                      with zipfile.ZipFile(root/(name+'.platform.zip')) as z:
+                          if z.testzip():row['blockers'].append('ZIP CRC failure')
+                          summary=json.loads(z.read('_SUMMARY.json'))
+                          row['metadata_counts']=summary.get('counts',{})
+                          errors=list(summary.get('errors',[]))
+                          for path in ('pull_request_details.json','issue_conversations.json'):
+                              for item in json.loads(z.read(path)):
+                                  for e in item.get('errors',[]):errors.append({'item':item.get('number'),**e})
+                          row['export_errors']=errors[:25]
+                          if errors:row['blockers'].append(str(len(errors))+' uncorrected PR/issue metadata errors')
+                          attachments=set()
+                          for path in ('issues.json','pulls.json','pull_request_details.json','issue_conversations.json'):
+                              attachments.update(pattern.findall(z.read(path).decode('utf-8','replace')))
+                          row['external_attachment_urls']=len(attachments)
+                          if attachments:row['blockers'].append(str(len(attachments))+' external attachment URLs not backed up as binaries')
+                          releases=json.loads(z.read('releases.json'))
+                          release_assets=sum(len(x.get('assets',[])) for x in releases)
+                          if release_assets:row['blockers'].append(str(release_assets)+' source release assets need binary backup')
+                          row['warnings'].append('Actions artifacts/log bytes not included; decide if any evidence is essential')
+                  except Exception as e:
+                      row['blockers'].append(str(e)[:500])
+                  records.append(row)
+                  print(json.dumps(row,ensure_ascii=False),flush=True)
+          Path('delete-readiness.json').write_text(json.dumps(records,indent=2,ensure_ascii=False)+'\n')
+          with Path('delete-readiness.md').open('w') as f:
+              f.write('# Gate for deletion of old repositories\n\nAll backups were downloaded from private releases and checked on GitHub Actions. No source repository was modified.\n\n')
+              f.write('| Repository | Branches | PR refs | Blockers |\n|---|---:|---:|---:|\n')
+              for r in records:f.write(f"| {r['repository']} | {r.get('branches','?')} | {r.get('pr_refs','?')} | {len(r['blockers'])} |\n")
+              f.write('\nNo repository may be deleted automatically. Check JSON for error details, external attachment gaps and CI artifact policy. Restore and keep a second copy outside this GitHub account.\n')
+          print('BLOCKED',sum(bool(r['blockers']) for r in records),'of',len(records),flush=True)
+          PY
+      - name: Publish audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: legacy-delete-readiness
+          path: |
+            delete-readiness.json
+            delete-readiness.md
+          if-no-files-found: warn
+          retention-days: 30
