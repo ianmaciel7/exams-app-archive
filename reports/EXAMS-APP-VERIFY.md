@@ -29,3 +29,11 @@ Bundle original e TAR extraídos da release privada; nenhum repositório de orig
 Release: https://github.com/ianmaciel7/exams-app-archive/releases/tag/exams-app-2026-11-23-verification
 
 O relatório JSON contém detalhes e limitações.
+
+## Atualização — logs de CI preservados
+
+A primeira execução da auditoria registrou 0/2 logs porque o GitHub CLI bloqueou sequências de escape do terminal. A exportação foi corrigida com `--allow-escape-sequences` e concluída posteriormente.
+
+Os **dois logs originais** foram compactados, publicados e baixados novamente para validação de SHA-256 e descompressão na release privada [exams-app-2026-11-23-ci-logs](https://github.com/ianmaciel7/exams-app-archive/releases/tag/exams-app-2026-11-23-ci-logs). Os dois workflows não produziram artefatos próprios.
+
+Manifesto: [EXAMS-APP-ACTIONS-LOGS.json](EXAMS-APP-ACTIONS-LOGS.json).
