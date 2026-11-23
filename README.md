@@ -64,6 +64,10 @@ a integração GitHub conectada copiou para
 deste repositório não possui acesso automático para clonar outro repositório privado.
 Não tornar o `notes-app` público para contornar isso.
 
+## ChatGPT nativo: pesquisa privada FTS5
+
+- [Consulta remota via GitHub Actions](docs/PRIVATE-CHATGPT-SEARCH.md): perguntas FTS5 e inventário de imagens pelo GitHub conectado, sem PC e sem novo servidor MCP. Usa a branch privada `archive-search-queries` separada da `main` e a release verificada.
+
 ## Explorador local e plugin Codex
 
 - [Plugin Codex privado](plugins/exams-archive/README.md): consulta autenticada por SQLite FTS5, imagens, recuperação por SHA + path e exportação JSON local. Marketplace do repositório em `.agents/plugins/marketplace.json`.
