@@ -1,5 +1,5 @@
 name: Index full exams-app and all saved historical sources
-# Retry with corrected bundle filename checksum mapping.
+# Validate the restored branch heads and unique image entries, not a guessed commit count.
 on:
   push:
     branches: [main]
