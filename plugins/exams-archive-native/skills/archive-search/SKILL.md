@@ -17,8 +17,11 @@ The source of truth is the private GitHub repository `ianmaciel7/exams-app-archi
    - `python scripts/archive_query.py images --deleted-only --repo exams-app-antigo-2 --limit 20`
    - `python scripts/archive_query.py stats`
 4. Cite original repository name, full commit SHA, file path, and the archive release used. Remember that the FTS index covers commit subjects and historical paths, NOT the contents of every file.
-5. If actual content is necessary, follow the private archive's `docs/EXTRACTION-GUIDE.md`. Download the relevant bundle with authenticated `gh release download`, clone it as a mirror, then recover a specific SHA/path:
-   - `python scripts/archive_query.py recover --git-dir <bare-repo> --sha <full-sha> --path <relative/path> --output <local/file>`
+5. If actual content is necessary, follow the private archive's `docs/EXTRACTION-GUIDE.md` or use `scripts/archive_flow.py` (`search` -> `preview` -> `fetch` -> `recover`) against a verified local bundle/bare mirror (no MCP server required):
+   - `python scripts/archive_flow.py search "sidebar" --db <content.sqlite> --source <bundle> --limit 10`
+   - `python scripts/archive_flow.py preview --source <bundle> --sha <full-sha> --path <relative/path>`
+   - `python scripts/archive_flow.py fetch --source <bundle> --sha <full-sha> --path <relative/path> --start-line 1 --end-line 40 --expected-sha256 <sha256>`
+   - `python scripts/archive_flow.py recover --source <bundle> --sha <full-sha> --path <relative/path> --expected-sha256 <sha256> --output <private/file>`
 6. For a local-only browser search, run `python scripts/archive_query.py export-pages --output private.archive-browser.json` and import that JSON using the GitHub Pages UI. This file is PRIVATE; never commit or upload it.
 7. Disclose limitations: as checked on 2026-11-23, the current private `notes-app` main/dev/stag/firebase/file branches and three tags had not yet been fully backed up. Re-check before asserting deletion readiness.
 

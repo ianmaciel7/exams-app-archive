@@ -33,17 +33,25 @@ jobs:
         shell: bash
         run: |
           git -C queue pull --ff-only origin archive-search-queries
-          python trusted/scripts/archive_remote_query.py \
-            --root trusted \
-            --requests queue/.archive-search/requests \
-            --results queue/.archive-search/results \
-            --db "$RUNNER_TEMP/archive.sqlite"
+          for batch in 1 2 3 4 5; do
+            OUT=$(python trusted/scripts/archive_remote_query.py \
+              --root trusted \
+              --requests queue/.archive-search/requests \
+              --results queue/.archive-search/results \
+              --db "$RUNNER_TEMP/archive.sqlite" \
+              --retention-days 14)
+            echo "$OUT"
+            REMAINING=$(python -c 'import json,sys; print(json.loads(sys.argv[1]).get("pending_remaining", 0))' "$OUT")
+            if [ "$REMAINING" -eq 0 ]; then
+              break
+            fi
+          done
       - name: Commit private results to search branch
         shell: bash
         run: |
           git -C queue config user.name "github-actions[bot]"
           git -C queue config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git -C queue add .archive-search/results
+          git -C queue add -A .archive-search/requests .archive-search/results
           if ! git -C queue diff --cached --quiet; then
             git -C queue commit -m "chore(private-search): save bounded archive results"
             git -C queue pull --rebase origin archive-search-queries
