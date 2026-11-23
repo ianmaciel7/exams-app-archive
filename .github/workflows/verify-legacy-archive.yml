@@ -64,6 +64,20 @@ jobs:
                           for path in ('pull_request_details.json','issue_conversations.json'):
                               for item in json.loads(z.read(path)):
                                   for e in item.get('errors',[]):errors.append({'item':item.get('number'),**e})
+                          row['original_export_errors']=errors[:25]
+                          # Supplement from two independent API checks: PR #248 has 0 reviews.
+                          # Retest the REST collection rather than assuming the API 500 was harmless.
+                          resolved=[]
+                          if name=='exams-app-antigo-2':
+                              for e in list(errors):
+                                  if e.get('item')==248 and e.get('section')=='reviews':
+                                      try:
+                                          if api('repos/ianmaciel7/exams-app-antigo-2/pulls/248/reviews?per_page=100')==[]:
+                                              errors.remove(e)
+                                              resolved.append(e)
+                                      except Exception:
+                                          pass
+                          row['resolved_export_errors']=resolved
                           row['export_errors']=errors[:25]
                           if errors:row['blockers'].append(str(len(errors))+' uncorrected PR/issue metadata errors')
                           attachments=set()
