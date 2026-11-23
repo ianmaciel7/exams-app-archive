@@ -6,9 +6,11 @@ in the original repos; Git bundles are verified but not republished by this POC.
 """
 from __future__ import annotations
 
+import gzip
 import hashlib
 import json
 import os
+import shutil
 import sqlite3
 import subprocess
 import sys
@@ -21,10 +23,66 @@ from archive_index import git, ingest, images, open_db, recover, search
 ROOT = Path(__file__).resolve().parents[1]
 CACHE = ROOT / '.cache' / 'poc'
 REPORTS = ROOT / 'reports'
+ARCHIVE = 'ianmaciel7/exams-app-archive'
+POC_RELEASE_TAG = 'poc-archive-index'
 REPOS = ['exams-app-old', 'exams-app-antigo-2']
 BUNDLE_REF = 'refs/heads/dev'
 BUNDLE_PATH = 'prototype/notes-app-old-10.bundle'
 OWNER = 'ianmaciel7'
+
+
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open('rb') as handle:
+        for block in iter(lambda: handle.read(1024 * 1024), b''):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def publish_poc_release(db_file: Path, packed: Path, poc_json: Path, db_sha: str, gz_sha: str) -> dict:
+    info = {
+        'published': False,
+        'release_tag': POC_RELEASE_TAG,
+        'asset_sqlite_gz': packed.name,
+        'sqlite_sha256': db_sha,
+        'gzip_sha256': gz_sha,
+        'gzip_bytes': packed.stat().st_size,
+    }
+    if not os.environ.get('GH_TOKEN'):
+        info['skipped_reason'] = 'GH_TOKEN missing'
+        return info
+    vis = subprocess.run(
+        ['gh', 'repo', 'view', ARCHIVE, '--json', 'visibility', '--jq', '.visibility'],
+        capture_output=True, text=True, check=True,
+    ).stdout.strip()
+    if vis != 'PRIVATE':
+        raise RuntimeError(f'Refusing to publish POC index to non-private repo: {vis}')
+    probe = subprocess.run(['gh', 'release', 'view', POC_RELEASE_TAG, '--repo', ARCHIVE], capture_output=True)
+    if probe.returncode != 0:
+        subprocess.run([
+            'gh', 'release', 'create', POC_RELEASE_TAG, '--repo', ARCHIVE, '--draft',
+            '--title', 'Historical Git search POC index',
+            '--notes', 'Rebuildable SQLite FTS5 POC index (gzip). Kept in private release assets instead of Git history.',
+        ], check=True)
+    subprocess.run([
+        'gh', 'release', 'upload', POC_RELEASE_TAG, str(packed), str(poc_json),
+        '--repo', ARCHIVE, '--clobber',
+    ], check=True)
+    check_dir = CACHE / 'release-verify'
+    if check_dir.exists():
+        shutil.rmtree(check_dir)
+    check_dir.mkdir(parents=True, exist_ok=True)
+    subprocess.run([
+        'gh', 'release', 'download', POC_RELEASE_TAG, '--repo', ARCHIVE,
+        '--pattern', packed.name, '--dir', str(check_dir),
+    ], check=True)
+    if sha256_file(check_dir / packed.name) != gz_sha:
+        raise RuntimeError('POC release download roundtrip SHA-256 mismatch')
+    subprocess.run(['gh', 'release', 'edit', POC_RELEASE_TAG, '--repo', ARCHIVE, '--draft=false'], check=True)
+    info['published'] = True
+    info['verified_download'] = True
+    info['url'] = f'https://github.com/{ARCHIVE}/releases/tag/{POC_RELEASE_TAG}'
+    return info
 
 
 def execute(*args: str, out: Path | None = None, timeout: int = 900) -> str:
@@ -117,7 +175,7 @@ def compare_branches(repo:Path,a:str='main',b:str='dev') -> dict:
 def main() -> int:
     CACHE.mkdir(parents=True,exist_ok=True)
     REPORTS.mkdir(parents=True,exist_ok=True)
-    db_file=REPORTS/'archive-index.sqlite'
+    db_file=CACHE/'archive-index.sqlite'
     if db_file.exists(): db_file.unlink()
     conn=open_db(db_file)
     run={'generated_utc':datetime.now(timezone.utc).isoformat(), 'sources':[],'queries':[]}
@@ -146,7 +204,18 @@ def main() -> int:
     run['deleted_image_recovery']=sample_recovery(conn,sources)
     run['historical_code_recovery']=sample_code(conn,sources)
     run['elapsed_seconds']=round(time.perf_counter()-start,2)
+    conn.commit()
+    conn.close()
+    packed = CACHE / 'archive-index.sqlite.gz'
+    with db_file.open('rb') as inp, gzip.open(packed, 'wb', compresslevel=6) as out_gz:
+        shutil.copyfileobj(inp, out_gz)
+    db_sha = sha256_file(db_file)
+    gz_sha = sha256_file(packed)
     run['index_bytes']=db_file.stat().st_size
+    run['index_sha256']=db_sha
+    run['index_gzip_bytes']=packed.stat().st_size
+    run['index_gzip_sha256']=gz_sha
+    run['release_tag']=POC_RELEASE_TAG
     run['sqlite_fts5']=True
     run['historical_sources_complete']=False
     run['limitations']=[
@@ -157,7 +226,11 @@ def main() -> int:
         'Full contents of every historical file and semantic image descriptions are not indexed.',
         'GitHub Actions costs/limits are not measured by this proof.',
     ]
-    (REPORTS/'POC.json').write_text(json.dumps(run,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+    poc_json = REPORTS / 'POC.json'
+    poc_json.write_text(json.dumps(run,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+    release_info = publish_poc_release(db_file, packed, poc_json, db_sha, gz_sha)
+    run['release_upload'] = release_info
+    poc_json.write_text(json.dumps(run,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
     text=['# Prova de conceito real — Git histórico + SQLite FTS5','',
           f"Gerada em {run['generated_utc']} (UTC). Fonte: Git, sem LLM/embeddings.",'',
           '| Fonte | Refs | Commits | Alterações | Imagens | Tempo |','|---|---:|---:|---:|---:|---:|']
@@ -167,7 +240,10 @@ def main() -> int:
             f"- Bundle histórico validado: **{proof.get('validated')}** — `{BUNDLE_PATH}`",
             f"- Imagem removida recuperada e hash Git verificado: **{run['deleted_image_recovery'].get('verified')}**",
             f"- Código histórico `src/domain/recall.ts` recuperado: **{run['historical_code_recovery'].get('verified')}**",
-            f"- Tempo total: **{run['elapsed_seconds']} s**; índice SQLite: **{round(run['index_bytes']/1024/1024,2)} MiB**",'']
+            f"- Tempo total: **{run['elapsed_seconds']} s**; índice SQLite: **{round(run['index_bytes']/1024/1024,2)} MiB** (`{packed.name}`: **{round(run['index_gzip_bytes']/1024/1024,2)} MiB**)",
+            f"- SHA-256 `archive-index.sqlite`: `{db_sha}`",
+            f"- SHA-256 `{packed.name}`: `{gz_sha}`",
+            f"- Release privada do índice POC: `{POC_RELEASE_TAG}` (publicado: **{release_info.get('published')}**)",'']
     if run['deleted_image_recovery'].get('verified'):
         x=run['deleted_image_recovery'];text.extend([f"- Evidência de imagem: `{x['repository']}` / `{x['path']}` / commit `{x['commit']}` / blob `{x['git_blob_sha']}`",''])
     if run['historical_code_recovery'].get('verified'):
@@ -177,10 +253,9 @@ def main() -> int:
         example=q['results'][0] if q['results'] else {}
         text.append(f"| {q['query']} | {q['count']} | {q['ms']} ms | `{example.get('path') or example.get('summary','nenhum')[:55]}` |")
     text+=['','## Limitações e próximos passos','','- Não é migração completa: esta prova indexa duas fontes públicas e um bundle histórico.','- Sem cópia dos objetos Git para este repositório, a recuperação ainda depende da disponibilidade das fontes originais.','- Não indexa automaticamente todo o `notes-app` privado; exige autorização de acesso entre repositórios ou importação controlada de bundles.','- Próximo passo: verificar demais bundles, integrar históricos aprovados e ampliar a cobertura de consultas/contratos.','',
-           'Os dados estruturados, SHAs e hashes estão em `POC.json`. O SQLite pode ser regenerado usando `scripts/run_poc.py`.']
+           'Os dados estruturados, SHAs e hashes estão em `POC.json`. O SQLite é publicado como asset comprimido na release privada e pode ser regenerado usando `scripts/run_poc.py`.']
     (REPORTS/'POC.md').write_text('\n'.join(text)+'\n',encoding='utf-8')
-    conn.close()
-    print(json.dumps({'sources':run['sources'],'image':run['deleted_image_recovery'],'code':run['historical_code_recovery'],'bundle':proof,'elapsed_seconds':run['elapsed_seconds'],'sqlite_bytes':run['index_bytes']},ensure_ascii=False,indent=2))
+    print(json.dumps({'sources':run['sources'],'image':run['deleted_image_recovery'],'code':run['historical_code_recovery'],'bundle':proof,'elapsed_seconds':run['elapsed_seconds'],'sqlite_bytes':run['index_bytes'],'sqlite_sha256':db_sha,'gzip_sha256':gz_sha,'release_upload':release_info},ensure_ascii=False,indent=2))
     if not run['deleted_image_recovery'].get('verified'):
         print('WARNING: real deleted image was not recovered',file=sys.stderr)
     return 0

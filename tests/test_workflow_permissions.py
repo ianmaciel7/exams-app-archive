@@ -39,7 +39,7 @@ JUSTIFIED_WRITE_WORKFLOWS: dict[str, tuple[set[str], str]] = {
     ),
     "archive-poc.yml": (
         {"contents"},
-        "Commits reports/POC.md, reports/POC.json, and reports/archive-index.sqlite to main.",
+        "Publishes POC SQLite asset to private release poc-archive-index and commits reports/POC.md and reports/POC.json to main.",
     ),
     "archive-private-notes.yml": (
         {"contents"},
