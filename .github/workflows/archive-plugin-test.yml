@@ -1,0 +1,26 @@
+name: Archive plugin tests
+on:
+  pull_request:
+    paths:
+      - "plugins/exams-archive/**"
+      - "tests/test_archive_plugin.py"
+      - ".agents/plugins/marketplace.json"
+      - ".github/workflows/archive-plugin-test.yml"
+  push:
+    branches: [main]
+    paths:
+      - "plugins/exams-archive/**"
+      - "tests/test_archive_plugin.py"
+      - ".agents/plugins/marketplace.json"
+permissions:
+  contents: read
+jobs:
+  stdlib-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m unittest discover -s tests -p test_archive_plugin.py -v
+      - run: python -m py_compile plugins/exams-archive/scripts/archive_query.py
