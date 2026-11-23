@@ -66,6 +66,18 @@ class PluginTests(unittest.TestCase):
         self.assertTrue(result["private"])
         repeat, _ = self.cmd("export-pages", "--output", str(target))
         self.assertNotEqual(repeat.returncode, 0)
+        self.assertEqual(len(json.loads(target.read_text())["records"]), 3)
+
+    def test_existing_recovered_file_is_never_deleted(self):
+        bare = Path(self.temp.name) / "bare"
+        bare.mkdir()
+        (bare / "HEAD").write_text("ref: refs/heads/main\n")
+        existing = Path(self.temp.name) / "keep.txt"
+        existing.write_text("DO NOT DELETE")
+        p, _ = self.cmd("recover", "--git-dir", str(bare), "--sha", "a"*40,
+                        "--path", "readme.md", "--output", str(existing))
+        self.assertNotEqual(p.returncode, 0)
+        self.assertEqual(existing.read_text(), "DO NOT DELETE")
 
     def test_no_unsafe_recovery_paths(self):
         p, _ = self.cmd("recover", "--git-dir", self.temp.name, "--sha", "a"*40,
