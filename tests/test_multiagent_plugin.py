@@ -35,10 +35,10 @@ class MultiAgentPluginTests(unittest.TestCase):
         self.assertGreaterEqual(len(skills),5)
         for path in skills:
             data=path.read_text(encoding="utf-8")
-            self.assertTrue(data.startswith("---\\n"),path)
-            m=re.search(r"^name:\\s*([^\\n]+)$",data,flags=re.M)
+            self.assertEqual(data.splitlines()[0],"---",path)
+            m=next((line[6:].strip() for line in data.splitlines() if line.startswith("name: ")),None)
             self.assertIsNotNone(m,path)
-            self.assertEqual(m.group(1).strip(),path.parent.name,path)
+            self.assertEqual(m,path.parent.name,path)
             self.assertIn("description:",data)
     def test_fts5_script_is_preserved_identically(self):
         new=(PLUGIN / "scripts/archive_query.py").read_bytes()
