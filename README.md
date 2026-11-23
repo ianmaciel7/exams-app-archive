@@ -23,9 +23,10 @@ a integração GitHub conectada copiou para
   nenhum ponteiro LFS ou submódulo encontrado nos sete bundles públicos.
 - [Backup de Notes com acesso mínimo](https://github.com/ianmaciel7/exams-app-archive/actions/workflows/archive-private-notes.yml):
   requer configurar o secret `NOTES_READ_TOKEN` na aba Actions do arquivo.
-- [Exportação de metadados dos projetos públicos](https://github.com/ianmaciel7/exams-app-archive/actions/workflows/export-public-platform-metadata.yml):
-  automação iniciada para salvar histórico de PRs, reviews, issues e CI,
-  com limitações de API, retenção e taxa a serem registradas.
+- [Exportação de metadados dos projetos públicos](https://github.com/ianmaciel7/exams-app-archive/releases/tag/public-metadata-2026-11-23):
+  execução concluída para sete repositórios, com ZIPs, manifesto e checksums.
+  Existe uma ocorrência de erro registrada em `exams-app-antigo-2`; consulte
+  [o relatório](reports/PUBLIC-PLATFORM-METADATA.md) antes de declarar cobertura total.
 
 **Não apague repositórios originais antes de concluir e testar essas pendências.**
 
