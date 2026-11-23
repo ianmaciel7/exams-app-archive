@@ -1,11 +1,11 @@
 # Prova de conceito real — Git histórico + SQLite FTS5
 
-Gerada em 2026-11-23T17:38:59.615286+00:00 (UTC). Fonte: Git, sem LLM/embeddings.
+Gerada em 2026-11-23T17:42:04.674230+00:00 (UTC). Fonte: Git, sem LLM/embeddings.
 
 | Fonte | Refs | Commits | Alterações | Imagens | Tempo |
 |---|---:|---:|---:|---:|---:|
-| exams-app-old | 167 | 780 | 13676 | 14 | 1.04 s |
-| exams-app-antigo-2 | 234 | 1051 | 18279 | 1563 | 13.46 s |
+| exams-app-old | 167 | 780 | 13676 | 14 | 1.25 s |
+| exams-app-antigo-2 | 234 | 1051 | 18279 | 1563 | 15.28 s |
 | notes-app-old-10 | 1 | 110 | 711 | 7 | 0.02 s |
 
 ## Recuperação de evidências
@@ -13,7 +13,7 @@ Gerada em 2026-11-23T17:38:59.615286+00:00 (UTC). Fonte: Git, sem LLM/embeddings
 - Bundle histórico validado: **True** — `prototype/notes-app-old-10.bundle`
 - Imagem removida recuperada e hash Git verificado: **True**
 - Código histórico `src/domain/recall.ts` recuperado: **True**
-- Tempo total: **14.89 s**; índice SQLite: **14.16 MiB**
+- Tempo total: **17.07 s**; índice SQLite: **14.16 MiB**
 
 - Evidência de imagem: `exams-app-antigo-2` / `prototypes/board-exam-app/assets/issue68_graph_toolbar_1366.png` / commit `65ce2ab7ac95e8fc4e1be998eb0aa593049bf2c8` / blob `216b4d240c7a05ff2656745f9dd28ccb1d117f6f`
 
@@ -23,11 +23,11 @@ Gerada em 2026-11-23T17:38:59.615286+00:00 (UTC). Fonte: Git, sem LLM/embeddings
 
 | Busca | Resultados | Latência | Exemplo |
 |---|---:|---:|---|
-| firebase | 8 | 0.36 ms | `feat(tooling): configure MDX, bundle analyzer, codemod,` |
-| grafo | 8 | 0.09 ms | `feat(capacities-graph-engine): painel direito do grafo ` |
-| qconcursos | 8 | 0.08 ms | `Add QConcursos inventory for issue #31` |
-| recall | 8 | 0.06 ms | `feat: close remaining Recall punch-list items (accessib` |
-| capacit | 8 | 0.06 ms | `feat(capacities-graph-engine): painel direito do grafo ` |
+| firebase | 8 | 0.49 ms | `feat(tooling): configure MDX, bundle analyzer, codemod,` |
+| grafo | 8 | 0.15 ms | `feat(capacities-graph-engine): painel direito do grafo ` |
+| qconcursos | 8 | 0.15 ms | `Add QConcursos inventory for issue #31` |
+| recall | 8 | 0.11 ms | `feat: close remaining Recall punch-list items (accessib` |
+| capacit | 8 | 0.16 ms | `feat(capacities-graph-engine): painel direito do grafo ` |
 
 ## Limitações e próximos passos
 
