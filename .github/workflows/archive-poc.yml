@@ -1,0 +1,47 @@
+name: Historical Git search POC
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scripts/**
+      - tests/**
+      - .github/workflows/archive-poc.yml
+
+permissions:
+  contents: write
+
+jobs:
+  historical-search:
+    if: github.repository == 'ianmaciel7/exams-app-archive'
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Unit tests with synthetic Git histories
+        run: python3 -m unittest discover -s tests -v
+      - name: Real Git history and bundle recovery tests
+        run: python3 scripts/run_poc.py
+      - name: Check report exists and remains reasonably sized
+        run: |
+          test -s reports/POC.md
+          test -s reports/POC.json
+          test -s reports/archive-index.sqlite
+          python3 - <<'PY'
+          from pathlib import Path
+          size=Path('reports/archive-index.sqlite').stat().st_size
+          if size > 75_000_000:
+              raise SystemExit(f'SQLite index exceeds GitHub size guard: {size}')
+          PY
+      - name: Commit reproducible evidence and SQLite index
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add reports/POC.md reports/POC.json reports/archive-index.sqlite
+          if ! git diff --cached --quiet; then
+            git commit -m 'test(archive): record real Git history extraction POC'
+            git push origin HEAD:main
+          fi
