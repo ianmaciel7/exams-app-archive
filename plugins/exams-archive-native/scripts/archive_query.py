@@ -74,45 +74,275 @@ def sync(path: Path, force: bool = False) -> dict:
     return {"index": str(path), "release": tag, "sources": count, "sha256_gzip": actual, "cached": False}
 
 
+def _fts_matchers(tokens: list[str]) -> list[str]:
+    clean = [t.replace('"', "") for t in tokens if t.replace('"', "")]
+    if not clean:
+        return []
+    prefix_terms = [f'"{t}"*' for t in clean]
+    if len(clean) == 1:
+        return [prefix_terms[0]]
+    phrase = '"' + " ".join(clean) + '"'
+    and_expr = " AND ".join(prefix_terms)
+    or_expr = " OR ".join(prefix_terms)
+    return [f"({phrase} OR ({and_expr}))", or_expr]
+
+
+def _type_quotas(limit: int, kinds: tuple[str, ...]) -> dict[str, int]:
+    n = len(kinds)
+    base, rem = divmod(limit, n)
+    return {k: base + (1 if i < rem else 0) for i, k in enumerate(kinds)}
+
+
+def _interleave_by_kind(buckets: dict[str, list[dict]], kinds: tuple[str, ...], limit: int) -> list[dict]:
+    quotas = _type_quotas(limit, kinds)
+    selected: list[dict] = []
+    positions: dict[str, int] = {k: 0 for k in kinds}
+
+    for k in kinds:
+        rows = buckets.get(k, [])
+        take = min(quotas[k], len(rows))
+        selected.extend(rows[:take])
+        positions[k] = take
+
+    if len(selected) < limit:
+        progressed = True
+        while len(selected) < limit and progressed:
+            progressed = False
+            for k in kinds:
+                rows = buckets.get(k, [])
+                idx = positions[k]
+                if idx < len(rows):
+                    selected.append(rows[idx])
+                    positions[k] = idx + 1
+                    progressed = True
+                    if len(selected) >= limit:
+                        break
+    return selected[:limit]
+
+
+def _query_commits(conn: sqlite3.Connection, tokens: list[str],
+                   repo: str | None, limit: int) -> list[dict]:
+    matchers = _fts_matchers(tokens)
+    if not matchers:
+        return []
+    for matcher in matchers:
+        sql = """SELECT r.name AS repository,'commit' AS kind,c.sha AS sha,'' AS path,
+                 c.subject AS summary,'' AS blob,0 AS bytes,0 AS deleted,
+                 c.date AS commit_date,bm25(commit_fts) AS rank
+                 FROM commit_fts f JOIN repositories r ON r.id=CAST(f.repo_id AS INTEGER)
+                 JOIN commits c ON c.repo_id=r.id AND c.sha=f.sha
+                 WHERE commit_fts MATCH ?"""
+        params: list = [matcher]
+        if repo:
+            sql += " AND r.name=?"
+            params.append(repo)
+        sql += " ORDER BY rank ASC, c.date DESC, r.name ASC, c.sha ASC LIMIT ?"
+        params.append(limit)
+        try:
+            rows = conn.execute(sql, params).fetchall()
+        except sqlite3.OperationalError:
+            rows = []
+        if rows:
+            out: list[dict] = []
+            for row in rows:
+                item = dict(row)
+                item.pop("commit_date", None)
+                item["rank"] = round(float(item["rank"]), 6)
+                out.append(item)
+            return out
+    return []
+
+
+def _date_sort_key(value: str, sha: str, *, missing_last: bool) -> tuple[str, str]:
+    if not value:
+        return ("9999-99-99", sha) if missing_last else ("", sha)
+    try:
+        dt = datetime.fromisoformat(value.replace("Z", "+00:00"))
+        if dt.tzinfo is not None:
+            return (dt.astimezone(timezone.utc).isoformat(), sha)
+    except ValueError:
+        pass
+    return (value, sha)
+
+
+def _query_files(conn: sqlite3.Connection, tokens: list[str],
+                 repo: str | None, limit: int) -> list[dict]:
+    matchers = _fts_matchers(tokens)
+    if not matchers:
+        return []
+    for matcher in matchers:
+        repo_filter = (
+            " AND CAST(f.repo_id AS INTEGER) = (SELECT id FROM repositories WHERE name=?)"
+            if repo
+            else ""
+        )
+        sql = f"""WITH matched AS MATERIALIZED (
+                      SELECT CAST(f.repo_id AS INTEGER) AS repo_id, f.sha AS sha,
+                             f.path AS path, bm25(change_fts) AS rank
+                      FROM change_fts f
+                      WHERE change_fts MATCH ?{repo_filter}
+                  ),
+                  grouped AS (
+                      SELECT m.repo_id, r.name AS repository, m.path,
+                             MIN(m.rank) AS best_rank, COUNT(DISTINCT m.sha) AS commits
+                      FROM matched m JOIN repositories r ON r.id=m.repo_id
+                      GROUP BY m.repo_id, m.path
+                      ORDER BY best_rank ASC, commits DESC, repository ASC, m.path ASC
+                      LIMIT ?
+                  )
+                  SELECT g.repo_id AS repo_id, g.repository AS repository, g.path AS path,
+                         g.best_rank AS best_rank, g.commits AS commits,
+                         m.sha AS sha, COALESCE(c.date,'') AS commit_date
+                  FROM grouped g
+                  JOIN matched m ON m.repo_id=g.repo_id AND m.path=g.path
+                  LEFT JOIN commits c ON c.repo_id=g.repo_id AND c.sha=m.sha
+                  ORDER BY g.best_rank ASC, g.commits DESC, g.repository ASC, g.path ASC, m.sha ASC"""
+        params: list = [matcher]
+        if repo:
+            params.append(repo)
+        params.append(limit)
+        try:
+            rows = conn.execute(sql, params).fetchall()
+        except sqlite3.OperationalError:
+            rows = []
+        if not rows:
+            continue
+
+        grouped: dict[tuple[int, str], dict] = {}
+        for row in rows:
+            repo_id = row["repo_id"]
+            repo_name = row["repository"]
+            fpath = row["path"]
+            best_rank = float(row["best_rank"])
+            commit_count = int(row["commits"])
+            sha = row["sha"]
+            cdate = row["commit_date"]
+            key = (repo_id, fpath)
+            fkey = _date_sort_key(cdate, sha, missing_last=True)
+            lkey = _date_sort_key(cdate, sha, missing_last=False)
+            entry = grouped.get(key)
+            if entry is None:
+                grouped[key] = {
+                    "repository": repo_name,
+                    "path": fpath,
+                    "best_rank": best_rank,
+                    "commits": commit_count,
+                    "first_key": fkey,
+                    "first_sha": sha,
+                    "last_key": lkey,
+                    "last_sha": sha,
+                }
+            else:
+                if fkey < entry["first_key"]:
+                    entry["first_key"] = fkey
+                    entry["first_sha"] = sha
+                if lkey > entry["last_key"]:
+                    entry["last_key"] = lkey
+                    entry["last_sha"] = sha
+
+        return [
+            {
+                "repository": e["repository"],
+                "kind": "file",
+                "sha": e["last_sha"],
+                "path": e["path"],
+                "summary": "",
+                "blob": "",
+                "bytes": 0,
+                "deleted": 0,
+                "commits": e["commits"],
+                "first_sha": e["first_sha"],
+                "last_sha": e["last_sha"],
+                "rank": round(e["best_rank"], 6),
+            }
+            for e in grouped.values()
+        ]
+    return []
+
+
+def _query_images(conn: sqlite3.Connection, tokens: list[str],
+                  repo: str | None, limit: int) -> list[dict]:
+    if not tokens:
+        return []
+    lowered = [t.lower() for t in tokens]
+    escaped = [
+        "%" + t.replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_") + "%"
+        for t in lowered
+    ]
+    attempts = [(" OR ", escaped)] if len(escaped) == 1 else [(" AND ", escaped), (" OR ", escaped)]
+    for joiner, patterns in attempts:
+        sql = """SELECT r.name AS repository,i.path AS path,i.blob AS blob,
+                 i.commit_sha AS sha,i.kind AS ikind,i.bytes AS bytes
+                 FROM images i JOIN repositories r ON r.id=i.repo_id WHERE (""" + (
+            joiner.join("lower(i.path) LIKE ? ESCAPE '\\'" for _ in patterns)
+        ) + ")"
+        params: list = list(patterns)
+        if repo:
+            sql += " AND r.name=?"
+            params.append(repo)
+        try:
+            rows = conn.execute(sql, params).fetchall()
+        except sqlite3.OperationalError:
+            rows = []
+        if not rows:
+            continue
+
+        deduped: dict[str, dict] = {}
+        for row in rows:
+            repo_name = row["repository"]
+            ipath = row["path"]
+            blob = row["blob"]
+            commit_sha = row["sha"]
+            ikind = row["ikind"]
+            ibytes = int(row["bytes"])
+            low_path = ipath.lower()
+            basename = Path(low_path).name
+            tok_hits = sum(1 for t in lowered if t in low_path)
+            base_hits = sum(1 for t in lowered if t in basename)
+            deleted_flag = 1 if ikind == "deleted" else 0
+            score_key = (-base_hits, -tok_hits, -deleted_flag, -ibytes, repo_name, ipath)
+            existing = deduped.get(blob)
+            if existing is None or score_key < existing["score_key"]:
+                deduped[blob] = {
+                    "repository": repo_name,
+                    "kind": "image",
+                    "sha": commit_sha,
+                    "path": ipath,
+                    "summary": ikind,
+                    "blob": blob,
+                    "bytes": ibytes,
+                    "deleted": deleted_flag,
+                    "score_key": score_key,
+                    "occurrences": (existing["occurrences"] + 1) if existing else 1,
+                }
+            else:
+                existing["occurrences"] += 1
+
+        ranked = sorted(deduped.values(), key=lambda e: e["score_key"])[:limit]
+        for item in ranked:
+            item.pop("score_key", None)
+        return ranked
+    return []
+
+
 def build_results(conn: sqlite3.Connection, query: str, repo: str | None,
                   kind: str, limit: int) -> list[dict]:
     tokens = re.findall(r"\w+", query, flags=re.UNICODE)[:6]
     if not tokens:
         return []
-    matcher = " OR ".join('"' + token.replace('"', '') + '"*' for token in tokens)
-    results: list[dict] = []
+    limit = max(1, min(int(limit), 100))
     kinds = ("commit", "file", "image") if kind == "all" else (kind,)
+    buckets: dict[str, list[dict]] = {}
     for current in kinds:
-        params: list = []
         if current == "commit":
-            sql = """SELECT r.name AS repository,'commit' AS kind,c.sha AS sha,'' AS path,
-                     c.subject AS summary,'' AS blob,0 AS bytes,0 AS deleted
-                     FROM commit_fts f JOIN repositories r ON r.id=CAST(f.repo_id AS INTEGER)
-                     JOIN commits c ON c.repo_id=r.id AND c.sha=f.sha
-                     WHERE commit_fts MATCH ?"""
-            params.append(matcher)
+            buckets["commit"] = _query_commits(conn, tokens, repo, limit)
         elif current == "file":
-            sql = """SELECT r.name AS repository,'file' AS kind,f.sha AS sha,f.path AS path,
-                     '' AS summary,'' AS blob,0 AS bytes,0 AS deleted
-                     FROM change_fts f JOIN repositories r ON r.id=CAST(f.repo_id AS INTEGER)
-                     WHERE change_fts MATCH ?"""
-            params.append(matcher)
+            buckets["file"] = _query_files(conn, tokens, repo, limit)
         else:
-            sql = """SELECT r.name AS repository,'image' AS kind,i.commit_sha AS sha,i.path AS path,
-                     i.kind AS summary,i.blob AS blob,i.bytes AS bytes,
-                     (i.kind='deleted') AS deleted
-                     FROM images i JOIN repositories r ON r.id=i.repo_id WHERE (""" + (
-                    " OR ".join("lower(i.path) LIKE ? ESCAPE '\\'" for _ in tokens)) + ")"
-            params.extend("%" + t.lower().replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_") + "%"
-                          for t in tokens)
-        if repo:
-            sql += " AND r.name=?"
-            params.append(repo)
-        sql += " LIMIT ?"
-        params.append(limit)
-        for row in conn.execute(sql, params):
-            results.append(dict(row))
-    return results[:limit]
+            buckets["image"] = _query_images(conn, tokens, repo, limit)
+    if len(kinds) == 1:
+        return buckets.get(kinds[0], [])[:limit]
+    return _interleave_by_kind(buckets, kinds, limit)
 
 
 def list_images(conn: sqlite3.Connection, repo: str | None,
