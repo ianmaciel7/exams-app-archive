@@ -51,7 +51,7 @@ def digest(file: Path) -> str:
     return h.hexdigest()
 
 def api(path: str):
-    if not path.startswith("repos/"):
+    if not (path.startswith("repos/") or re.match(r"^repositories/[0-9]+/", path)):
         raise ValueError("Only approved GitHub repository paths allowed")
     url = urllib.parse.urljoin(BASE, path)
     headers = {"Accept": "application/vnd.github+json",
