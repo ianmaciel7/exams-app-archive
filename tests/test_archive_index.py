@@ -52,7 +52,7 @@ class ArchiveTest(unittest.TestCase):
 
     def test_search_and_branch_history(self):
         ingest(self.bare,'example',self.conn)
-        hits=search(self.conn,'FSRS')
+        hits=search(self.conn,'FSR')
         self.assertTrue(any('FSRS' in x['summary'] for x in hits))
         hits=search(self.conn,'recall')
         self.assertTrue(any(x['path']=='recall.ts' for x in hits))
