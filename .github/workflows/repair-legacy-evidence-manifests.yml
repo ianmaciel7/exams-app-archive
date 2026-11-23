@@ -1,0 +1,64 @@
+name: Repair manifests for the first two bulk evidence shards
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/repair-legacy-evidence-manifests.yml']
+permissions:
+  contents: write
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    if: github.repository == 'ianmaciel7/exams-app-archive'
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+      TAG: legacy-ci-artifacts-2026-11-23-bulk
+    steps:
+      - name: Reconstruct and verify shard 00 and 07 manifests from uploaded TARs
+        run: |
+          set -euo pipefail
+          mkdir -p restore inventory
+          for r in exams-app-antigo-2 shadcn-template shadcn-firebase-template; do
+            gh release download public-metadata-2026-11-23 -R ianmaciel7/exams-app-archive --pattern "$r.platform.zip" --dir inventory
+          done
+          for shard in 00 07; do
+            gh release download "$TAG" -R ianmaciel7/exams-app-archive --pattern "legacy-ci-$shard.tar" --dir restore
+          done
+          python3 - <<'PY'
+          import hashlib,io,json,tarfile,zipfile
+          from pathlib import Path
+          repo_names=('exams-app-antigo-2','shadcn-template','shadcn-firebase-template')
+          inventory={}
+          for repo in repo_names:
+              with zipfile.ZipFile(Path('inventory')/(repo+'.platform.zip')) as z:
+                  for a in json.loads(z.read('actions_artifacts.json')):
+                      if not a.get('expired',True):inventory[(repo,int(a['id']))]=a
+          for shard in (0,7):
+              p=Path(f'restore/legacy-ci-{shard:02d}.tar')
+              source={}
+              with tarfile.open(p,'r') as t:
+                  for item in t.getmembers():
+                      if not item.isfile() or not item.name.endswith('.zip'):continue
+                      raw=t.extractfile(item).read()
+                      with zipfile.ZipFile(io.BytesIO(raw)) as z:
+                          broken=z.testzip()
+                          if broken:raise RuntimeError('Invalid original ZIP: '+item.name)
+                      source[item.name]=(len(raw),hashlib.sha256(raw).hexdigest())
+              items=[]
+              for (repo,ident),a in inventory.items():
+                  if ident%16!=shard:continue
+                  f=f'{repo}-{ident}.zip'
+                  found=source.get(f)
+                  row={'repository':repo,'id':ident,'name':a.get('name'),'original_size_bytes':a.get('size_in_bytes'),'expires_at':a.get('expires_at'),'file':f if found else None,'status':'saved' if found else 'failed'}
+                  if found:row.update({'download_bytes':found[0],'sha256':found[1]})
+                  else:row['error']='Source artifact missing from first TAR upload'
+                  items.append(row)
+              status={'shard':shard,'shards':16,'entries':items,'counts':{'saved':sum(x['status']=='saved' for x in items),'failed':sum(x['status']=='failed' for x in items)},'recovered_bytes':sum(x.get('download_bytes',0) for x in items)}
+              out=Path(f'legacy-ci-{shard:02d}.manifest.json')
+              out.write_text(json.dumps(status,ensure_ascii=False,indent=2)+'\n')
+              print(json.dumps({'shard':shard,'counts':status['counts'],'tar_members':len(source)}),flush=True)
+          PY
+          for shard in 00 07; do
+            gh release upload "$TAG" "legacy-ci-$shard.manifest.json" -R ianmaciel7/exams-app-archive
+          done
