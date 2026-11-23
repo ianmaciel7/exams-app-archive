@@ -1,0 +1,38 @@
+{
+  "source": "ianmaciel7/notes-app",
+  "private_source": true,
+  "snapshot_date": "2026-11-23",
+  "endpoint": "git/refs/tags",
+  "entries": [
+    {
+      "ref": "refs/tags/v0.1.0",
+      "node_id": "REF_kwDOTwgSx7ByZWZzL3RhZ3MvdjAuMS4w",
+      "url": "https://api.github.com/repos/ianmaciel7/notes-app/git/refs/tags/v0.1.0",
+      "object": {
+        "sha": "6cef12874e55ee43601628150ce23100a0aa49f6",
+        "type": "tag",
+        "url": "https://api.github.com/repos/ianmaciel7/notes-app/git/tags/6cef12874e55ee43601628150ce23100a0aa49f6"
+      }
+    },
+    {
+      "ref": "refs/tags/v0.2.0",
+      "node_id": "REF_kwDOTwgSx7ByZWZzL3RhZ3MvdjAuMi4w",
+      "url": "https://api.github.com/repos/ianmaciel7/notes-app/git/refs/tags/v0.2.0",
+      "object": {
+        "sha": "82aca1cb830899a07d58bbc8cc08e85395108ed6",
+        "type": "tag",
+        "url": "https://api.github.com/repos/ianmaciel7/notes-app/git/tags/82aca1cb830899a07d58bbc8cc08e85395108ed6"
+      }
+    },
+    {
+      "ref": "refs/tags/v0.3.0",
+      "node_id": "REF_kwDOTwgSx7ByZWZzL3RhZ3MvdjAuMy4w",
+      "url": "https://api.github.com/repos/ianmaciel7/notes-app/git/refs/tags/v0.3.0",
+      "object": {
+        "sha": "08a6096759b4dad252c06d2212ec5ab70583e293",
+        "type": "tag",
+        "url": "https://api.github.com/repos/ianmaciel7/notes-app/git/tags/08a6096759b4dad252c06d2212ec5ab70583e293"
+      }
+    }
+  ]
+}
