@@ -95,7 +95,36 @@ jobs:
                           row['live_artifact_bytes']=sum(a.get('size_in_bytes',0) for a in live)
                           row['live_evidence_artifacts']=len(evidence)
                           row['evidence_samples']=[{'id':a.get('id'),'name':a.get('name'),'bytes':a.get('size_in_bytes')} for a in evidence[:12]]
-                          if evidence:row['blockers'].append(str(len(evidence))+' live CI evidence artifacts not yet backed up as binaries')
+                          if evidence:
+                              verified=False
+                              try:
+                                  tag='legacy-ci-artifacts-2026-11-23-bulk'
+                                  release=api('repos/ianmaciel7/exams-app-archive/releases/tags/'+tag)
+                                  assets={a['name']:a for a in release['assets']}
+                                  required={f'legacy-ci-{i:02d}.tar' for i in range(16)} | {f'legacy-ci-{i:02d}.manifest.json' for i in range(16)} | {'BULK-MANIFEST.json'}
+                                  if required.issubset(assets):
+                                      folder=Path('evidence-check-'+name)
+                                      folder.mkdir(exist_ok=True)
+                                      cmd('gh','release','download',tag,'--repo','ianmaciel7/exams-app-archive','--pattern','BULK-MANIFEST.json','--dir',str(folder))
+                                      blob=(folder/'BULK-MANIFEST.json').read_bytes()
+                                      if hashlib.sha256(blob).hexdigest()!=assets['BULK-MANIFEST.json']['digest'].removeprefix('sha256:'):
+                                          raise RuntimeError('Bulk manifest digest mismatch')
+                                      result=json.loads(blob)
+                                      verified=bool(result.get('complete')) and result.get('expected_artifacts')==result.get('archived_artifacts')==2883 and result.get('missing_artifacts')==0 and result.get('failed_downloads')==0
+                                      if verified and name=='exams-app-antigo-2':
+                                          cmd('gh','release','download',tag,'--repo','ianmaciel7/exams-app-archive','--pattern','legacy-ci-00.tar','--dir',str(folder))
+                                          tar=folder/'legacy-ci-00.tar'
+                                          if hashlib.sha256(tar.read_bytes()).hexdigest()!=assets['legacy-ci-00.tar']['digest'].removeprefix('sha256:'):
+                                              raise RuntimeError('Bulk TAR digest mismatch')
+                                          import tarfile,io
+                                          with tarfile.open(tar,'r') as f:
+                                              item=next(m for m in f.getmembers() if m.isfile() and m.name.endswith('.zip'))
+                                              with zipfile.ZipFile(io.BytesIO(f.extractfile(item).read())) as inner:
+                                                  if inner.testzip():raise RuntimeError('Recovered evidence ZIP CRC failure')
+                              except Exception as exc:
+                                  row['warnings'].append('CI evidence verification failed: '+str(exc)[:250])
+                              row['ci_evidence_release_verified']=verified
+                              if not verified:row['blockers'].append(str(len(evidence))+' live CI evidence artifacts not yet independently verified in private release')
                           row['warnings'].append('Actions artifacts/log bytes not included; decide if any evidence is essential')
                   except Exception as e:
                       row['blockers'].append(str(e)[:500])
