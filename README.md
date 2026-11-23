@@ -5,6 +5,30 @@ Este repositório não é o aplicativo ativo; contém apenas ferramentas, manife
 e índices. Históricos grandes ficam em **Git Bundles anexados a releases privadas**,
 não em dezenas de branches.
 
+## Situação atual do arquivamento integral
+
+**Ainda não é 100%.** Git público verificado (54/54 branches), 12/12 branches antigas
+de `notes-app` restauráveis. Faltam os **objetos Git** das 4 branches privadas
+`main`, `dev`, `stag`, `firebase/file` e das 3 tags de Notes, apesar de seus
+SHAs já constarem do inventário.
+
+Enquanto a autorização para clonar o repositório privado não está configurada,
+a integração GitHub conectada copiou para
+[inventory/notes-app/](inventory/notes-app/README.md) as descrições de 50 PRs,
+37 submissões de review, 100 comentários inline, 10 comentários de conversa,
+153 eventos, 1.889 registros de alterações de arquivos, 3 releases e
+**1.130 registros de execução de Actions**. Isto não inclui os logs binários de CI.
+
+- [Auditoria de 30.098 objetos Git públicos](reports/PUBLIC-GIT-EXTERNALS.md):
+  nenhum ponteiro LFS ou submódulo encontrado nos sete bundles públicos.
+- [Backup de Notes com acesso mínimo](https://github.com/ianmaciel7/exams-app-archive/actions/workflows/archive-private-notes.yml):
+  requer configurar o secret `NOTES_READ_TOKEN` na aba Actions do arquivo.
+- [Exportação de metadados dos projetos públicos](https://github.com/ianmaciel7/exams-app-archive/actions/workflows/export-public-platform-metadata.yml):
+  automação iniciada para salvar histórico de PRs, reviews, issues e CI,
+  com limitações de API, retenção e taxa a serem registradas.
+
+**Não apague repositórios originais antes de concluir e testar essas pendências.**
+
 ## Comece por aqui
 
 | Recurso | Para que serve |
