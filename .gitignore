@@ -4,3 +4,8 @@ __pycache__/
 *.sqlite-wal
 *.sqlite-shm
 .DS_Store
+# Never commit or deploy local exported archive datasets
+private.archive-browser.json
+*.archive-browser.json
+full-index.sqlite
+full-index.sqlite.gz

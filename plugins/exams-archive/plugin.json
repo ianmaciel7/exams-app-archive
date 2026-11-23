@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "exams-archive",
+  "version": "0.1.0",
+  "description": "Search authenticated GitHub archive history using a small local SQLite FTS5 index, and recover files from original Git bundles.",
+  "author": {
+    "name": "Ian Maciel"
+  },
+  "repository": "https://github.com/ianmaciel7/exams-app-archive",
+  "keywords": [
+    "codex",
+    "git",
+    "archive",
+    "history",
+    "fts5"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Exams Archive",
+        "shortDescription": "Explore historic Exam App code",
+        "longDescription": "Query the private, verified Exams App Git archive without sending Git history or source material to public services. Requires local gh authentication and the Python standard library.",
+        "developerName": "Ian Maciel",
+        "category": "Developer Tools",
+        "capabilities": [
+          "Search Git history",
+          "Find historical images",
+          "Recover archived files"
+        ],
+        "websiteURL": "https://github.com/ianmaciel7/exams-app-archive"
+      }
+    }
+  }
+}

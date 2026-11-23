@@ -1,0 +1,20 @@
+{
+  "name": "exams-archive-private",
+  "interface": {
+    "displayName": "Private Exam App Tools"
+  },
+  "plugins": [
+    {
+      "name": "exams-archive",
+      "source": {
+        "source": "local",
+        "path": "./plugins/exams-archive"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}
