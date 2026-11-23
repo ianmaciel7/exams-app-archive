@@ -1,0 +1,677 @@
+[
+  {
+    "repo": "ianmaciel7/exams-app-archive",
+    "branch": "main",
+    "sha": "380daee36d54811f00ebcb1fa07bb918033f260e",
+    "category": "ativa/infraestrutura",
+    "evidence": "Branch padrao do arquivo, fonte de scripts, testes e workflows",
+    "proposed_action": "Preservar",
+    "blockers": "Infraestrutura ativa; nunca excluir"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-archive",
+    "branch": "archive-search-queries",
+    "sha": "d475d53b50b5416555359d7ade55bf0be24f6b13",
+    "category": "ativa/infraestrutura",
+    "evidence": "Workflow archive-private-search.yml utiliza como fila de requests/results privados",
+    "proposed_action": "Preservar com politica de retencao de dados processados",
+    "blockers": "Infraestrutura ativa de consulta privada; nao excluir"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-archive",
+    "branch": "feat/archive-pages-codex-plugin-20261123",
+    "sha": "2feb3f9327fcd2f1fd30254538b7f6079d5eebee",
+    "category": "contém alterações únicas",
+    "evidence": "PR #1 mesclado, mas a branch tem arquivo ausente na main: .github/workflows/export-archive-for-offsite.yml (verificado com git diff --name-status)",
+    "proposed_action": "Revisar e integrar o workflow exclusivo via PR (relacionado a issue #4) antes de qualquer limpeza",
+    "blockers": "Alteracao unica nao integrada; proibido excluir"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-archive",
+    "branch": "feat/chatgpt-native-archive-search-20261123",
+    "sha": "1869d0628426225590845ff226a7c9d7ccafc93a",
+    "category": "desconhecida",
+    "evidence": "PR #2 mesclado e nenhum arquivo exclusivo na branch, porem equivalencia por patch/commit nao foi comprovada",
+    "proposed_action": "Comparar patch-id dos commits com a main antes de classificar",
+    "blockers": "Equivalencia nao comprovada; bloqueado por padrao"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-archive",
+    "branch": "notes-private-import",
+    "sha": "019c67284606c7c47029154d71b27101914a44da",
+    "category": "temporária bloqueada",
+    "evidence": "Contem TRANSFER-MANIFEST.json e partes part-*.b64 da transferencia de Notes privado",
+    "proposed_action": "Concluir recebimento de todas as partes, validar bundle e release antes de limpar",
+    "blockers": "Transferencia de backup pendente (Issue #3); proibido excluir"
+  },
+  {
+    "repo": "ianmaciel7/fcc-responsive-web-design",
+    "branch": "main",
+    "sha": "59972ba7e05cba3794b6effe5a31105212435a55",
+    "category": "ativa/infraestrutura",
+    "evidence": "Repositorio ou branch em producao/ativo (main)",
+    "proposed_action": "Preservar integralmente; fora do escopo de exclusao",
+    "blockers": "Repositorio ativo, nao e alvo de exclusao"
+  },
+  {
+    "repo": "ianmaciel7/ianmaciel7",
+    "branch": "main",
+    "sha": "6a1f1b3be62bb3557af947c92f811c0b213e88bc",
+    "category": "ativa/infraestrutura",
+    "evidence": "Repositorio ou branch em producao/ativo (main)",
+    "proposed_action": "Preservar integralmente; fora do escopo de exclusao",
+    "blockers": "Repositorio ativo, nao e alvo de exclusao"
+  },
+  {
+    "repo": "ianmaciel7/notes-app",
+    "branch": "dev",
+    "sha": "93505f253bd913475e52b626f63cdf4baeac91bd",
+    "category": "temporária bloqueada",
+    "evidence": "Branch principal ou ativa de ianmaciel7/notes-app; objetos pendentes no arquivo",
+    "proposed_action": "Bloquear qualquer exclusao; concluir transferencia da issue #3",
+    "blockers": "Aguardando conclusao da transferencia (Issue #3) e autorizacao explicita"
+  },
+  {
+    "repo": "ianmaciel7/notes-app",
+    "branch": "firebase/file",
+    "sha": "4a609e6db23ba89d9a1d773a910696582b9cc699",
+    "category": "temporária bloqueada",
+    "evidence": "Branch principal ou ativa de ianmaciel7/notes-app; objetos pendentes no arquivo",
+    "proposed_action": "Bloquear qualquer exclusao; concluir transferencia da issue #3",
+    "blockers": "Aguardando conclusao da transferencia (Issue #3) e autorizacao explicita"
+  },
+  {
+    "repo": "ianmaciel7/notes-app",
+    "branch": "main",
+    "sha": "793fde6d083748ef42211e0a650b696951a38d56",
+    "category": "temporária bloqueada",
+    "evidence": "Branch principal ou ativa de ianmaciel7/notes-app; objetos pendentes no arquivo",
+    "proposed_action": "Bloquear qualquer exclusao; concluir transferencia da issue #3",
+    "blockers": "Aguardando conclusao da transferencia (Issue #3) e autorizacao explicita"
+  },
+  {
+    "repo": "ianmaciel7/notes-app",
+    "branch": "old",
+    "sha": "e2234be59ba61a717884f829037cb8be268e5c6c",
+    "category": "backup histórico",
+    "evidence": "Preservada em release de bundles internos verificados (old)",
+    "proposed_action": "Preservar; manter copia no acervo",
+    "blockers": "Nao excluir origem sem copia independente externa confirmada"
+  },
+  {
+    "repo": "ianmaciel7/notes-app",
+    "branch": "old-1",
+    "sha": "c2fca6232c45ce4d64d0088036e1ddd0742944d4",
+    "category": "backup histórico",
+    "evidence": "Preservada em release de bundles internos verificados (old-1)",
+    "proposed_action": "Preservar; manter copia no acervo",
+    "blockers": "Nao excluir origem sem copia independente externa confirmada"
+  },
+  {
+    "repo": "ianmaciel7/notes-app",
+    "branch": "old-2",
+    "sha": "7d14209252e47bf4449ec953928c2ef711f0642e",
+    "category": "backup histórico",
+    "evidence": "Preservada em release de bundles internos verificados (old-2)",
+    "proposed_action": "Preservar; manter copia no acervo",
+    "blockers": "Nao excluir origem sem copia independente externa confirmada"
+  },
+  {
+    "repo": "ianmaciel7/notes-app",
+    "branch": "old-3",
+    "sha": "19105d011c84fe7bf9b5cea4bb75f4fd4b94ea34",
+    "category": "backup histórico",
+    "evidence": "Preservada em release de bundles internos verificados (old-3)",
+    "proposed_action": "Preservar; manter copia no acervo",
+    "blockers": "Nao excluir origem sem copia independente externa confirmada"
+  },
+  {
+    "repo": "ianmaciel7/notes-app",
+    "branch": "old-4",
+    "sha": "2839f410e3f696cfcf1d92a48849275c1016776b",
+    "category": "backup histórico",
+    "evidence": "Preservada em release de bundles internos verificados (old-4)",
+    "proposed_action": "Preservar; manter copia no acervo",
+    "blockers": "Nao excluir origem sem copia independente externa confirmada"
+  },
+  {
+    "repo": "ianmaciel7/notes-app",
+    "branch": "old-5",
+    "sha": "0857a9977d1f66f1ba2b26d46bb6084344d489c8",
+    "category": "backup histórico",
+    "evidence": "Preservada em release de bundles internos verificados (old-5)",
+    "proposed_action": "Preservar; manter copia no acervo",
+    "blockers": "Nao excluir origem sem copia independente externa confirmada"
+  },
+  {
+    "repo": "ianmaciel7/notes-app",
+    "branch": "old-6",
+    "sha": "f336db18e2149040707c453814cbb16e388cde37",
+    "category": "backup histórico",
+    "evidence": "Preservada em release de bundles internos verificados (old-6)",
+    "proposed_action": "Preservar; manter copia no acervo",
+    "blockers": "Nao excluir origem sem copia independente externa confirmada"
+  },
+  {
+    "repo": "ianmaciel7/notes-app",
+    "branch": "old-7",
+    "sha": "e5d9048aabb480605e357c2d2a00e82fc4c24c3d",
+    "category": "backup histórico",
+    "evidence": "Preservada em release de bundles internos verificados (old-7)",
+    "proposed_action": "Preservar; manter copia no acervo",
+    "blockers": "Nao excluir origem sem copia independente externa confirmada"
+  },
+  {
+    "repo": "ianmaciel7/notes-app",
+    "branch": "old-8",
+    "sha": "d930d7a7391b231c1888bb5b2fb271f8d9f2f5be",
+    "category": "backup histórico",
+    "evidence": "Preservada em release de bundles internos verificados (old-8)",
+    "proposed_action": "Preservar; manter copia no acervo",
+    "blockers": "Nao excluir origem sem copia independente externa confirmada"
+  },
+  {
+    "repo": "ianmaciel7/notes-app",
+    "branch": "old-9",
+    "sha": "dae844270e7ebc80c6a307c49e0f830630e70cb0",
+    "category": "backup histórico",
+    "evidence": "Preservada em release de bundles internos verificados (old-9)",
+    "proposed_action": "Preservar; manter copia no acervo",
+    "blockers": "Nao excluir origem sem copia independente externa confirmada"
+  },
+  {
+    "repo": "ianmaciel7/notes-app",
+    "branch": "old-10",
+    "sha": "cabcec2e8227fc7f06aa5c9c5afcc0e8944802c6",
+    "category": "backup histórico",
+    "evidence": "Preservada em release de bundles internos verificados (old-10)",
+    "proposed_action": "Preservar; manter copia no acervo",
+    "blockers": "Nao excluir origem sem copia independente externa confirmada"
+  },
+  {
+    "repo": "ianmaciel7/notes-app",
+    "branch": "old-11",
+    "sha": "f513fc91cdebd0adf8ba708d8108f9808af698c6",
+    "category": "backup histórico",
+    "evidence": "Preservada em release de bundles internos verificados (old-11)",
+    "proposed_action": "Preservar; manter copia no acervo",
+    "blockers": "Nao excluir origem sem copia independente externa confirmada"
+  },
+  {
+    "repo": "ianmaciel7/notes-app",
+    "branch": "stag",
+    "sha": "46a64d8aa25ae228b7857ec91e200acc53fac1be",
+    "category": "temporária bloqueada",
+    "evidence": "Branch principal ou ativa de ianmaciel7/notes-app; objetos pendentes no arquivo",
+    "proposed_action": "Bloquear qualquer exclusao; concluir transferencia da issue #3",
+    "blockers": "Aguardando conclusao da transferencia (Issue #3) e autorizacao explicita"
+  },
+  {
+    "repo": "ianmaciel7/shadcn-template",
+    "branch": "chore/declarative-ruleset-as-code",
+    "sha": "6ceb812e4397cfd0364b8233dea076747af73861",
+    "category": "backup histórico",
+    "evidence": "Branch auxiliar/dependabot preservada em bundle de refs",
+    "proposed_action": "Candidata a remocao apos copia externa independente",
+    "blockers": "Requer copia externa independente e aprovacao manual"
+  },
+  {
+    "repo": "ianmaciel7/shadcn-template",
+    "branch": "dependabot/github_actions/github-actions-6b1aed0551",
+    "sha": "f0d37bc1c9beee8f167e6048a4b4f031b5bc221e",
+    "category": "backup histórico",
+    "evidence": "Branch auxiliar/dependabot preservada em bundle de refs",
+    "proposed_action": "Candidata a remocao apos copia externa independente",
+    "blockers": "Requer copia externa independente e aprovacao manual"
+  },
+  {
+    "repo": "ianmaciel7/shadcn-template",
+    "branch": "dependabot/npm_and_yarn/dev-dependencies-f148a7b98d",
+    "sha": "3e7ca140f1c5147cfa3a8cd71682c130d28ab68e",
+    "category": "backup histórico",
+    "evidence": "Branch auxiliar/dependabot preservada em bundle de refs",
+    "proposed_action": "Candidata a remocao apos copia externa independente",
+    "blockers": "Requer copia externa independente e aprovacao manual"
+  },
+  {
+    "repo": "ianmaciel7/shadcn-template",
+    "branch": "dependabot/npm_and_yarn/production-dependencies-144fe1c970",
+    "sha": "8383571c48e2de087419fb89559856e315ff9579",
+    "category": "backup histórico",
+    "evidence": "Branch auxiliar/dependabot preservada em bundle de refs",
+    "proposed_action": "Candidata a remocao apos copia externa independente",
+    "blockers": "Requer copia externa independente e aprovacao manual"
+  },
+  {
+    "repo": "ianmaciel7/shadcn-template",
+    "branch": "dependabot/pip/dot-github/dependabot-mirror/ci-python/ci-python-tools-ff2d40f37a",
+    "sha": "853df5f59fd1c0c24b4006baa2b6317d45141c83",
+    "category": "backup histórico",
+    "evidence": "Branch auxiliar/dependabot preservada em bundle de refs",
+    "proposed_action": "Candidata a remocao apos copia externa independente",
+    "blockers": "Requer copia externa independente e aprovacao manual"
+  },
+  {
+    "repo": "ianmaciel7/shadcn-template",
+    "branch": "feat/setup-github-and-standards",
+    "sha": "bb30ac75f3c48fda2aa5f7bedea6f46faf0c6fa8",
+    "category": "backup histórico",
+    "evidence": "Branch auxiliar/dependabot preservada em bundle de refs",
+    "proposed_action": "Candidata a remocao apos copia externa independente",
+    "blockers": "Requer copia externa independente e aprovacao manual"
+  },
+  {
+    "repo": "ianmaciel7/shadcn-template",
+    "branch": "main",
+    "sha": "c091632dfc03519862950dcffc6c3a41a9360b9c",
+    "category": "backup histórico",
+    "evidence": "Head preservado em bundle publico e CI arquivado",
+    "proposed_action": "Candidato a arquivamento somente leitura",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual"
+  },
+  {
+    "repo": "ianmaciel7/shadcn-firebase-template",
+    "branch": "dependabot/github_actions/github-actions-77df686157",
+    "sha": "7f290ee023ca0ecca2a9895eb86f42b5f72210af",
+    "category": "backup histórico",
+    "evidence": "Branch auxiliar/dependabot preservada em bundle de refs",
+    "proposed_action": "Candidata a remocao apos copia externa independente",
+    "blockers": "Requer copia externa independente e aprovacao manual"
+  },
+  {
+    "repo": "ianmaciel7/shadcn-firebase-template",
+    "branch": "dependabot/npm_and_yarn/dev-dependencies-02e65f9da5",
+    "sha": "98dcf6dce60930dd8756a29700c8397b57236dde",
+    "category": "backup histórico",
+    "evidence": "Branch auxiliar/dependabot preservada em bundle de refs",
+    "proposed_action": "Candidata a remocao apos copia externa independente",
+    "blockers": "Requer copia externa independente e aprovacao manual"
+  },
+  {
+    "repo": "ianmaciel7/shadcn-firebase-template",
+    "branch": "dependabot/npm_and_yarn/functions/fast-xml-parser-5.12.0",
+    "sha": "7b687641a0b6f9ee67bd5e6af467cf4ee9715f7a",
+    "category": "backup histórico",
+    "evidence": "Branch auxiliar/dependabot preservada em bundle de refs",
+    "proposed_action": "Candidata a remocao apos copia externa independente",
+    "blockers": "Requer copia externa independente e aprovacao manual"
+  },
+  {
+    "repo": "ianmaciel7/shadcn-firebase-template",
+    "branch": "dependabot/npm_and_yarn/next-16.4.5",
+    "sha": "dbfa1196ea15b3993ecc33a555a4a3332a610de2",
+    "category": "backup histórico",
+    "evidence": "Branch auxiliar/dependabot preservada em bundle de refs",
+    "proposed_action": "Candidata a remocao apos copia externa independente",
+    "blockers": "Requer copia externa independente e aprovacao manual"
+  },
+  {
+    "repo": "ianmaciel7/shadcn-firebase-template",
+    "branch": "dependabot/npm_and_yarn/production-dependencies-efc1227285",
+    "sha": "0ac9307017c78f3c2fadc8220047656eb355050a",
+    "category": "backup histórico",
+    "evidence": "Branch auxiliar/dependabot preservada em bundle de refs",
+    "proposed_action": "Candidata a remocao apos copia externa independente",
+    "blockers": "Requer copia externa independente e aprovacao manual"
+  },
+  {
+    "repo": "ianmaciel7/shadcn-firebase-template",
+    "branch": "dependabot/pip/dot-github/dependabot-mirror/ci-python/ci-python-tools-ff2d40f37a",
+    "sha": "077813adc5e6b6a721d667b4097d780d24510513",
+    "category": "backup histórico",
+    "evidence": "Branch auxiliar/dependabot preservada em bundle de refs",
+    "proposed_action": "Candidata a remocao apos copia externa independente",
+    "blockers": "Requer copia externa independente e aprovacao manual"
+  },
+  {
+    "repo": "ianmaciel7/shadcn-firebase-template",
+    "branch": "main",
+    "sha": "4d706df638738c3babe5df562e38fb830832f238",
+    "category": "backup histórico",
+    "evidence": "Head preservado em bundle publico e CI arquivado",
+    "proposed_action": "Candidato a arquivamento somente leitura",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-old",
+    "branch": "backup/dev-20261111-1903",
+    "sha": "a8d9797ed47bd8d2e2987e12d7bb478841c78671",
+    "category": "backup histórico",
+    "evidence": "Commit preservado no bundle e inventario de refs 2026-11-23",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-old",
+    "branch": "backup/dev-before-adr2",
+    "sha": "1db80ad136bbab8720637fbd33315d08bf6a5def",
+    "category": "backup histórico",
+    "evidence": "Commit preservado no bundle e inventario de refs 2026-11-23",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-old",
+    "branch": "backup/old-1",
+    "sha": "cc43fb998824101d68da7fad237fd5457986e1cb",
+    "category": "backup histórico",
+    "evidence": "Commit preservado no bundle e inventario de refs 2026-11-23",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-old",
+    "branch": "claude/project-thread-u76ueb",
+    "sha": "8d5cc9f7533a220228ba0b7df31c772d0ad0592c",
+    "category": "backup histórico",
+    "evidence": "Commit preservado no bundle e inventario de refs 2026-11-23",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-old",
+    "branch": "dev",
+    "sha": "b86b70c304e574022416e8e2ecdc3816f1b386f1",
+    "category": "backup histórico",
+    "evidence": "Bundle Git preservado em archive-2026-11-23-all-refs, CI e metadados arquivados",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-old",
+    "branch": "main",
+    "sha": "30a94c44277e869dc4ae1b9080828886ce405f2f",
+    "category": "backup histórico",
+    "evidence": "Bundle Git preservado em archive-2026-11-23-all-refs, CI e metadados arquivados",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-antigo-2",
+    "branch": "chore/type-workspace-e2e-evidence-84",
+    "sha": "a14153c52acc412099c58c2fd8c1b695a6447115",
+    "category": "backup histórico",
+    "evidence": "Commit preservado no bundle e inventario de refs 2026-11-23",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-antigo-2",
+    "branch": "claude/downloads-grafo-png",
+    "sha": "3bc92b289b6a30cc069eecb8733f5779b1566562",
+    "category": "backup histórico",
+    "evidence": "Commit preservado no bundle e inventario de refs 2026-11-23",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-antigo-2",
+    "branch": "claude/project-thread-2l6igc",
+    "sha": "4d2fb5c026e698bee9d04138ae4cda3088440095",
+    "category": "backup histórico",
+    "evidence": "Commit preservado no bundle e inventario de refs 2026-11-23",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-antigo-2",
+    "branch": "claude/project-thread-4bxup8",
+    "sha": "65ce2ab7ac95e8fc4e1be998eb0aa593049bf2c8",
+    "category": "backup histórico",
+    "evidence": "Commit preservado no bundle e inventario de refs 2026-11-23",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-antigo-2",
+    "branch": "claude/project-thread-6zihkn",
+    "sha": "3c329ba0c95cb28a28c06f9f79c9bdaf6a2c3235",
+    "category": "backup histórico",
+    "evidence": "Commit preservado no bundle e inventario de refs 2026-11-23",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-antigo-2",
+    "branch": "claude/project-thread-8plm74",
+    "sha": "537e5e0de66ad60808456ccae53800c5408e3e4b",
+    "category": "backup histórico",
+    "evidence": "Commit preservado no bundle e inventario de refs 2026-11-23",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-antigo-2",
+    "branch": "claude/project-thread-t6crru",
+    "sha": "dfe179fd9a882a8e98b6d7d8db43dd5930f20a2a",
+    "category": "backup histórico",
+    "evidence": "Commit preservado no bundle e inventario de refs 2026-11-23",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-antigo-2",
+    "branch": "claude/project-thread-wanbwx",
+    "sha": "b05f283d7cdca3a3392bad6a1834b95f4701adc2",
+    "category": "backup histórico",
+    "evidence": "Commit preservado no bundle e inventario de refs 2026-11-23",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-antigo-2",
+    "branch": "claude/project-thread-xy12f0",
+    "sha": "7f4113c54b2654a2464cb64bb65ff8196ed121fb",
+    "category": "backup histórico",
+    "evidence": "Commit preservado no bundle e inventario de refs 2026-11-23",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-antigo-2",
+    "branch": "claude/project-thread-yykbt1",
+    "sha": "1c2d093747c29adbef895944b67f7aab2e7e72f9",
+    "category": "backup histórico",
+    "evidence": "Commit preservado no bundle e inventario de refs 2026-11-23",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-antigo-2",
+    "branch": "dev",
+    "sha": "b6ece41f0568c94c6ccb7655e8e973f926801afc",
+    "category": "backup histórico",
+    "evidence": "Bundle Git preservado em archive-2026-11-23-all-refs, CI e metadados arquivados",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-antigo-2",
+    "branch": "docs/apple-principles-m3-writing-audit-20261114",
+    "sha": "f51e4f4c61cfc02970b32de0b2cc66c59a93d1bf",
+    "category": "backup histórico",
+    "evidence": "Commit preservado no bundle e inventario de refs 2026-11-23",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-antigo-2",
+    "branch": "docs/audit-design-skills-gaps-20261114",
+    "sha": "a1600638d33e50b00d6fcfb705c7d530e5e72aa1",
+    "category": "backup histórico",
+    "evidence": "Commit preservado no bundle e inventario de refs 2026-11-23",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-antigo-2",
+    "branch": "docs/fix-design-shortcuts-a11y-20261114",
+    "sha": "95b3128b20aae4c587d1e6922e723dfdbc19cbc1",
+    "category": "backup histórico",
+    "evidence": "Commit preservado no bundle e inventario de refs 2026-11-23",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-antigo-2",
+    "branch": "feat/automatic-error-review-raiox-76",
+    "sha": "ac116c5ebb563fb88c1e14d741aa366bcb1eb639",
+    "category": "backup histórico",
+    "evidence": "Commit preservado no bundle e inventario de refs 2026-11-23",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-antigo-2",
+    "branch": "feat/claude-storage-production-sync",
+    "sha": "d4525cee7e52d5c15a3e665eae91bdb3b2b2c462",
+    "category": "backup histórico",
+    "evidence": "Commit preservado no bundle e inventario de refs 2026-11-23",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-antigo-2",
+    "branch": "feat/issue278-phase2c-history-bundles",
+    "sha": "f3dc7365205e444baf1647ccf3bd721be7f1c468",
+    "category": "backup histórico",
+    "evidence": "Commit preservado no bundle e inventario de refs 2026-11-23",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-antigo-2",
+    "branch": "feat/66-rp-tools-grid",
+    "sha": "176e6125611ab53929c96eb84faee502f426c9a0",
+    "category": "backup histórico",
+    "evidence": "Commit preservado no bundle e inventario de refs 2026-11-23",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-antigo-2",
+    "branch": "feat/67-unified-graph-20261115",
+    "sha": "9776b538fea6eefe66a0e0d7aa006475b6580972",
+    "category": "backup histórico",
+    "evidence": "Commit preservado no bundle e inventario de refs 2026-11-23",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-antigo-2",
+    "branch": "feat/68-floating-graph-bars",
+    "sha": "b1e0a36adc7811e453ab977f31541455c8640552",
+    "category": "backup histórico",
+    "evidence": "Commit preservado no bundle e inventario de refs 2026-11-23",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-antigo-2",
+    "branch": "feat/138-searchable-space-switcher",
+    "sha": "a587f6a20edb548ce4210e594f2f7ebe01208f18",
+    "category": "backup histórico",
+    "evidence": "Commit preservado no bundle e inventario de refs 2026-11-23",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-antigo-2",
+    "branch": "fix/issue-66-luna-20261115",
+    "sha": "8ec1d519b09080e902df4aad4c5ec2178387badd",
+    "category": "backup histórico",
+    "evidence": "Commit preservado no bundle e inventario de refs 2026-11-23",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-antigo-2",
+    "branch": "fix/issue-80-luna-20261115",
+    "sha": "69179a590f0073e4e3b2374a54570d873488a672",
+    "category": "backup histórico",
+    "evidence": "Commit preservado no bundle e inventario de refs 2026-11-23",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-antigo-2",
+    "branch": "fix/low-chrome-shell-97",
+    "sha": "7f6dd66e1a996d30a418b97e5231ff592e287323",
+    "category": "backup histórico",
+    "evidence": "Commit preservado no bundle e inventario de refs 2026-11-23",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-antigo-2",
+    "branch": "fix/mcp-serena-tooling",
+    "sha": "20eaac86cbaa9b567756ebd485c80a2a655faf93",
+    "category": "backup histórico",
+    "evidence": "Commit preservado no bundle e inventario de refs 2026-11-23",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-antigo-2",
+    "branch": "fix/native-select-color-scheme-120",
+    "sha": "783958cb1c6e179ac63df669f3f92a069e46bcea",
+    "category": "backup histórico",
+    "evidence": "Commit preservado no bundle e inventario de refs 2026-11-23",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-antigo-2",
+    "branch": "main",
+    "sha": "7457fc5558679a1af631fadc245c6315e76738fa",
+    "category": "backup histórico",
+    "evidence": "Bundle Git preservado em archive-2026-11-23-all-refs, CI e metadados arquivados",
+    "proposed_action": "Candidato a arquivamento/exclusao somente apos copia externa e gate",
+    "blockers": "Copia externa independente pendente; requer aprovacao manual expressa"
+  },
+  {
+    "repo": "ianmaciel7/exams-app-antigo-2",
+    "branch": "worktree-archive-reuse-map",
+    "sha": "cfd9969272ce864224d08c4f720c72c26e16ac17",
+    "category": "backup histórico",
+    "evidence": "Ref inventariada em archive-2026-11-23-all-refs",
+    "proposed_action": "Avaliar apos consolidacao externa",
+    "blockers": "Requer copia externa independente e aprovacao manual"
+  },
+  {
+    "repo": "ianmaciel7/exams-app",
+    "branch": "chore/consolidate-legacy-sources-20261123",
+    "sha": "b67c7c1e36e09676192382112590a203a2113cbc",
+    "category": "ativa/infraestrutura",
+    "evidence": "Repositorio ou branch em producao/ativo (chore/consolidate-legacy-sources-20261123)",
+    "proposed_action": "Preservar integralmente; fora do escopo de exclusao",
+    "blockers": "Repositorio ativo, nao e alvo de exclusao"
+  },
+  {
+    "repo": "ianmaciel7/exams-app",
+    "branch": "claude/project-thread-o4dym1",
+    "sha": "c6d50b2096e397ee2819b4d5ef84a2a799cca247",
+    "category": "ativa/infraestrutura",
+    "evidence": "Repositorio ou branch em producao/ativo (claude/project-thread-o4dym1)",
+    "proposed_action": "Preservar integralmente; fora do escopo de exclusao",
+    "blockers": "Repositorio ativo, nao e alvo de exclusao"
+  },
+  {
+    "repo": "ianmaciel7/exams-app",
+    "branch": "dev",
+    "sha": "dfc277cd98239c92d2a6b9f6dea44393b15a626b",
+    "category": "ativa/infraestrutura",
+    "evidence": "Repositorio ou branch em producao/ativo (dev)",
+    "proposed_action": "Preservar integralmente; fora do escopo de exclusao",
+    "blockers": "Repositorio ativo, nao e alvo de exclusao"
+  },
+  {
+    "repo": "ianmaciel7/exams-app",
+    "branch": "main",
+    "sha": "70247f40f1495ad5660578cd90bef28fc489e59f",
+    "category": "ativa/infraestrutura",
+    "evidence": "Repositorio ou branch em producao/ativo (main)",
+    "proposed_action": "Preservar integralmente; fora do escopo de exclusao",
+    "blockers": "Repositorio ativo, nao e alvo de exclusao"
+  }
+]
