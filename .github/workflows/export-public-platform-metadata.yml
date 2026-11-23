@@ -32,3 +32,5 @@ jobs:
             git pull --rebase origin main
             git push origin HEAD:main
           fi
+
+# Retry pagination through canonical /repositories/<id> links.
