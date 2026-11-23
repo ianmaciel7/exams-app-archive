@@ -1,0 +1,48 @@
+name: Preserve a legacy CI evidence sample
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/archive-ci-evidence-sample.yml'
+permissions:
+  contents: write
+  actions: read
+jobs:
+  sample:
+    if: github.repository == 'ianmaciel7/exams-app-archive'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Download and verify evidence from a legacy public repository
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(gh repo view ianmaciel7/exams-app-archive --json visibility --jq .visibility)" = PRIVATE
+          mkdir -p evidence
+          gh api -H "Accept: application/vnd.github+json" repos/ianmaciel7/exams-app-antigo-2/actions/artifacts/14370167305/zip > evidence/exams-app-antigo-2-issue72-rich-notes-graph-evidence.zip
+          unzip -t evidence/exams-app-antigo-2-issue72-rich-notes-graph-evidence.zip
+          sha256sum evidence/*.zip | tee evidence/SHA256SUMS.txt
+          python3 - <<'PY'
+          import json,hashlib,pathlib
+          p=pathlib.Path('evidence/exams-app-antigo-2-issue72-rich-notes-graph-evidence.zip')
+          manifest={'source':'ianmaciel7/exams-app-antigo-2','artifact_id':14370167305,'source_workflow_run_id':44176575349,'original_name':'issue72-rich-notes-graph-evidence','size_bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'purpose':'Historical visual test evidence; GitHub Actions artifact is not contained in Git bundles.'}
+          pathlib.Path('evidence/MANIFEST.json').write_text(json.dumps(manifest,indent=2)+'\n')
+          PY
+      - name: Publish private immutable backup and verify download
+        shell: bash
+        run: |
+          set -euo pipefail
+          tag=legacy-ci-evidence-sample-2026-11-23
+          if gh release view "$tag" -R ianmaciel7/exams-app-archive >/dev/null 2>&1; then
+            echo "Release exists; refusing overwrite"
+            exit 1
+          fi
+          gh release create "$tag" -R ianmaciel7/exams-app-archive --draft --title "Legacy source CI evidence (sample)" --notes "Proof of retrieval of original GitHub Actions evidence ZIP before deletion of the legacy source."
+          gh release upload "$tag" evidence/* -R ianmaciel7/exams-app-archive
+          mkdir -p verify
+          gh release download "$tag" -R ianmaciel7/exams-app-archive --pattern "*.zip" --dir verify
+          cmp evidence/exams-app-antigo-2-issue72-rich-notes-graph-evidence.zip verify/exams-app-antigo-2-issue72-rich-notes-graph-evidence.zip
+          gh release edit "$tag" -R ianmaciel7/exams-app-archive --draft=false
