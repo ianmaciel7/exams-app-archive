@@ -1,0 +1,140 @@
+{
+  "tag": "public-metadata-2026-11-23",
+  "archive": "ianmaciel7/exams-app-archive",
+  "captured_at": "2026-11-23T18:24:00.710895+00:00",
+  "sources": [
+    {
+      "repository": "ianmaciel7/exams-app",
+      "asset": "exams-app.platform.zip",
+      "size_bytes": 2459316,
+      "sha256": "ce202f5e754d5eb5c4e2a699213176748689a71e42e75f3ee203ac9d0284a736",
+      "counts": {
+        "issues_including_prs": 1,
+        "actual_issues": 0,
+        "prs": 1,
+        "releases": 0,
+        "workflow_runs": 2,
+        "artifact_records": 0,
+        "pr_details": 1,
+        "issue_conversations": 1,
+        "errors": 0
+      },
+      "errors": []
+    },
+    {
+      "repository": "ianmaciel7/exams-app-old",
+      "asset": "exams-app-old.platform.zip",
+      "size_bytes": 3781493,
+      "sha256": "80c143fb8eb52cbea12b4a6e34d077fe3ecd1fdc111d8c8ef33877e8e5e54100",
+      "counts": {
+        "issues_including_prs": 161,
+        "actual_issues": 0,
+        "prs": 158,
+        "releases": 0,
+        "workflow_runs": 739,
+        "artifact_records": 0,
+        "pr_details": 158,
+        "issue_conversations": 161,
+        "errors": 0
+      },
+      "errors": []
+    },
+    {
+      "repository": "ianmaciel7/exams-app-antigo-2",
+      "asset": "exams-app-antigo-2.platform.zip",
+      "size_bytes": 8386092,
+      "sha256": "9f632e1f7bf59ce2448deed96257801f8d0e4d79b337d2391415796380fdeb65",
+      "counts": {
+        "issues_including_prs": 288,
+        "actual_issues": 88,
+        "prs": 200,
+        "releases": 0,
+        "workflow_runs": 7290,
+        "artifact_records": 2844,
+        "pr_details": 200,
+        "issue_conversations": 288,
+        "errors": 1
+      },
+      "errors": []
+    },
+    {
+      "repository": "ianmaciel7/shadcn-template",
+      "asset": "shadcn-template.platform.zip",
+      "size_bytes": 1513290,
+      "sha256": "c40a09fe31724e723e322bdb4cfca87720480ecdb0a6d6de7183a971add96a58",
+      "counts": {
+        "issues_including_prs": 26,
+        "actual_issues": 0,
+        "prs": 26,
+        "releases": 0,
+        "workflow_runs": 169,
+        "artifact_records": 15,
+        "pr_details": 26,
+        "issue_conversations": 26,
+        "errors": 0
+      },
+      "errors": []
+    },
+    {
+      "repository": "ianmaciel7/shadcn-firebase-template",
+      "asset": "shadcn-firebase-template.platform.zip",
+      "size_bytes": 7757162,
+      "sha256": "4401fe359b64b1b5e6c4921e3b7d8ea720b92143d97e562b78b735312e526ff0",
+      "counts": {
+        "issues_including_prs": 65,
+        "actual_issues": 0,
+        "prs": 65,
+        "releases": 0,
+        "workflow_runs": 821,
+        "artifact_records": 24,
+        "pr_details": 65,
+        "issue_conversations": 65,
+        "errors": 0
+      },
+      "errors": []
+    },
+    {
+      "repository": "ianmaciel7/fcc-responsive-web-design",
+      "asset": "fcc-responsive-web-design.platform.zip",
+      "size_bytes": 4592,
+      "sha256": "8e5705bd62bbcb3b7b931d7b90cbf0459d73a511bb2f57605832c6577d2b5e94",
+      "counts": {
+        "issues_including_prs": 0,
+        "actual_issues": 0,
+        "prs": 0,
+        "releases": 0,
+        "workflow_runs": 0,
+        "artifact_records": 0,
+        "pr_details": 0,
+        "issue_conversations": 0,
+        "errors": 0
+      },
+      "errors": []
+    },
+    {
+      "repository": "ianmaciel7/ianmaciel7",
+      "asset": "ianmaciel7.platform.zip",
+      "size_bytes": 4406,
+      "sha256": "fb5b0bed9bf6d82ab3d5cb0d71d267a7672ceb1a745548594a4014ce247006f4",
+      "counts": {
+        "issues_including_prs": 0,
+        "actual_issues": 0,
+        "prs": 0,
+        "releases": 0,
+        "workflow_runs": 0,
+        "artifact_records": 0,
+        "pr_details": 0,
+        "issue_conversations": 0,
+        "errors": 0
+      },
+      "errors": []
+    }
+  ],
+  "limitations": [
+    "GitHub API only: expired CI logs/artifacts cannot be reconstructed",
+    "Secrets values, deleted/pruned source data and third-party assets are not exportable",
+    "GitHub Actions run JOB metadata, every log and artifact bytes need separate scalable processing",
+    "Code review threads and external issue attachment payloads need separate assessment",
+    "notes-app is PRIVATE and is intentionally excluded until least-privilege read access is granted"
+  ]
+}
