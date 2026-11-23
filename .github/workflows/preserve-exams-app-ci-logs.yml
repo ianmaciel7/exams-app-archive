@@ -1,0 +1,32 @@
+name: Preserve original exams-app GitHub Actions job logs
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/preserve-exams-app-ci-logs.yml'
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  save-source-logs:
+    if: github.repository == 'ianmaciel7/exams-app-archive'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch public source job logs, compress and checksum in private release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/preserve_exams_app_ci_logs.py
+      - name: Commit compact CI log manifest
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add reports/EXAMS-APP-ACTIONS-LOGS.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'docs(archive): record source CI logs and checksums'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
