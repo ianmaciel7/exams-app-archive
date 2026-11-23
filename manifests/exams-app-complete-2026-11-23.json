@@ -1,0 +1,90 @@
+{
+  "archive": "ianmaciel7/exams-app-archive",
+  "source": "ianmaciel7/exams-app",
+  "tag": "exams-app-2026-11-23-complete",
+  "timestamp_utc": "2026-11-23T17:53:36.737681+00:00",
+  "all_advertised_refs": {
+    "refs/heads/chore/consolidate-legacy-sources-20261123": "b67c7c1e36e09676192382112590a203a2113cbc",
+    "refs/heads/claude/project-thread-o4dym1": "c6d50b2096e397ee2819b4d5ef84a2a799cca247",
+    "refs/heads/dev": "dfc277cd98239c92d2a6b9f6dea44393b15a626b",
+    "refs/heads/main": "70247f40f1495ad5660578cd90bef28fc489e59f",
+    "refs/pull/1/head": "b67c7c1e36e09676192382112590a203a2113cbc"
+  },
+  "ref_count": 5,
+  "branch_count": 4,
+  "refs_pull_count": 1,
+  "branch_summaries": [
+    {
+      "branch": "chore/consolidate-legacy-sources-20261123",
+      "sha": "b67c7c1e36e09676192382112590a203a2113cbc",
+      "file_count": 2837,
+      "media_file_count": 811,
+      "total_blob_bytes": 139569550
+    },
+    {
+      "branch": "claude/project-thread-o4dym1",
+      "sha": "c6d50b2096e397ee2819b4d5ef84a2a799cca247",
+      "file_count": 309,
+      "media_file_count": 260,
+      "total_blob_bytes": 40343777
+    },
+    {
+      "branch": "dev",
+      "sha": "dfc277cd98239c92d2a6b9f6dea44393b15a626b",
+      "file_count": 509,
+      "media_file_count": 360,
+      "total_blob_bytes": 57167258
+    },
+    {
+      "branch": "main",
+      "sha": "70247f40f1495ad5660578cd90bef28fc489e59f",
+      "file_count": 1,
+      "media_file_count": 0,
+      "total_blob_bytes": 500
+    }
+  ],
+  "github_metadata_counts": {
+    "issues_including_prs": 1,
+    "prs": 1,
+    "releases": 0
+  },
+  "wiki": {
+    "status": "wiki repository is empty, absent or inaccessible",
+    "reason": "remote: Repository not found.\nfatal: repository 'https://github.com/ianmaciel7/exams-app.wiki.git/' not found\n"
+  },
+  "git_lfs": "no root .gitattributes found on the four branch heads; other pointers not exhaustively checked",
+  "assets": [
+    {
+      "name": "BRANCH-FILES.json",
+      "size_bytes": 1022977,
+      "sha256": "94570365b5003d26e1b9a60522fa12fd7a3066dece99c33ec745aed5f180b2ba"
+    },
+    {
+      "name": "GITHUB-METADATA.json",
+      "size_bytes": 10451658,
+      "sha256": "bac179c496c0e4d2320adbbca93c506c1b0ae7b9ef6f78b6324d886bf83dd547"
+    },
+    {
+      "name": "exams-app-all-refs.bundle",
+      "size_bytes": 91204441,
+      "sha256": "31ccb5296ec49af841641d969b1bf6d7c162b1a73ba9435bb2dce84bf7f0702c"
+    },
+    {
+      "name": "exams-app-dev-snapshot.tar.gz",
+      "size_bytes": 50624276,
+      "sha256": "9266ed7b3e04aa33e7192073bfd27ab863e201796bb709017b70c86c25109d15"
+    }
+  ],
+  "integrity": {
+    "bundle_verify": true,
+    "all_refs_equal": true,
+    "roundtrip_branch_restore": true,
+    "release_download_roundtrip": true
+  },
+  "notes": [
+    "Source repository is public; archive is private.",
+    "Includes all four branches, including previously excluded temporary branches.",
+    "Other Github platform metadata such as older workflow artifacts or LFS payloads may require additional exports.",
+    "Git unreferenced/pruned objects are not recoverable solely from a mirror clone."
+  ]
+}
