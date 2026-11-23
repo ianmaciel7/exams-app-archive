@@ -1,0 +1,223 @@
+{
+  "date_utc": "2026-11-23T18:30:17.249879+00:00",
+  "archive": "ianmaciel7/exams-app-archive",
+  "source_tag": "archive-2026-11-23-all-refs",
+  "exams_tag": "exams-app-2026-11-23-complete",
+  "sources": [
+    {
+      "git_fsck": true,
+      "refs": 4,
+      "object_count": 3870,
+      "small_blobs_scanned": 949,
+      "lfs_pointer_count": 0,
+      "lfs_pointers": [],
+      "pointers_truncated": false,
+      "submodules": [],
+      "gitattributes": [
+        {
+          "ref": "refs/heads/chore/consolidate-legacy-sources-20261123",
+          "path": "docs/archives/legacy/shadcn-firebase-template/snapshot/.gitattributes",
+          "object_sha": "7674659f46c6558d2e555c92a24ae288f1689603"
+        },
+        {
+          "ref": "refs/heads/chore/consolidate-legacy-sources-20261123",
+          "path": "docs/archives/legacy/shadcn-template/snapshot/.gitattributes",
+          "object_sha": "6313b56c57848efce05faa7aa7e901ccfc2886ea"
+        }
+      ],
+      "repository": "ianmaciel7/exams-app",
+      "bundle_sha256_verified": true,
+      "wiki": {
+        "accessible": false,
+        "reported_refs": 0,
+        "status": "not found / inaccessible / empty"
+      }
+    },
+    {
+      "git_fsck": true,
+      "refs": 6,
+      "object_count": 9437,
+      "small_blobs_scanned": 1508,
+      "lfs_pointer_count": 0,
+      "lfs_pointers": [],
+      "pointers_truncated": false,
+      "submodules": [],
+      "gitattributes": [
+        {
+          "ref": "refs/heads/backup/old-1",
+          "path": ".gitattributes",
+          "object_sha": "7674659f46c6558d2e555c92a24ae288f1689603"
+        }
+      ],
+      "repository": "ianmaciel7/exams-app-old",
+      "bundle_sha256_verified": true,
+      "wiki": {
+        "accessible": false,
+        "reported_refs": 0,
+        "status": "not found / inaccessible / empty"
+      }
+    },
+    {
+      "git_fsck": true,
+      "refs": 28,
+      "object_count": 5904,
+      "small_blobs_scanned": 382,
+      "lfs_pointer_count": 0,
+      "lfs_pointers": [],
+      "pointers_truncated": false,
+      "submodules": [],
+      "gitattributes": [],
+      "repository": "ianmaciel7/exams-app-antigo-2",
+      "bundle_sha256_verified": true,
+      "wiki": {
+        "accessible": false,
+        "reported_refs": 0,
+        "status": "not found / inaccessible / empty"
+      }
+    },
+    {
+      "git_fsck": true,
+      "refs": 7,
+      "object_count": 1573,
+      "small_blobs_scanned": 301,
+      "lfs_pointer_count": 0,
+      "lfs_pointers": [],
+      "pointers_truncated": false,
+      "submodules": [],
+      "gitattributes": [
+        {
+          "ref": "refs/heads/chore/declarative-ruleset-as-code",
+          "path": ".gitattributes",
+          "object_sha": "6313b56c57848efce05faa7aa7e901ccfc2886ea"
+        },
+        {
+          "ref": "refs/heads/dependabot/github_actions/github-actions-6b1aed0551",
+          "path": ".gitattributes",
+          "object_sha": "6313b56c57848efce05faa7aa7e901ccfc2886ea"
+        },
+        {
+          "ref": "refs/heads/dependabot/npm_and_yarn/dev-dependencies-f148a7b98d",
+          "path": ".gitattributes",
+          "object_sha": "6313b56c57848efce05faa7aa7e901ccfc2886ea"
+        },
+        {
+          "ref": "refs/heads/dependabot/npm_and_yarn/production-dependencies-144fe1c970",
+          "path": ".gitattributes",
+          "object_sha": "6313b56c57848efce05faa7aa7e901ccfc2886ea"
+        },
+        {
+          "ref": "refs/heads/dependabot/pip/dot-github/dependabot-mirror/ci-python/ci-python-tools-ff2d40f37a",
+          "path": ".gitattributes",
+          "object_sha": "6313b56c57848efce05faa7aa7e901ccfc2886ea"
+        },
+        {
+          "ref": "refs/heads/feat/setup-github-and-standards",
+          "path": ".gitattributes",
+          "object_sha": "6313b56c57848efce05faa7aa7e901ccfc2886ea"
+        },
+        {
+          "ref": "refs/heads/main",
+          "path": ".gitattributes",
+          "object_sha": "6313b56c57848efce05faa7aa7e901ccfc2886ea"
+        }
+      ],
+      "repository": "ianmaciel7/shadcn-template",
+      "bundle_sha256_verified": true,
+      "wiki": {
+        "accessible": false,
+        "reported_refs": 0,
+        "status": "not found / inaccessible / empty"
+      }
+    },
+    {
+      "git_fsck": true,
+      "refs": 7,
+      "object_count": 9252,
+      "small_blobs_scanned": 1523,
+      "lfs_pointer_count": 0,
+      "lfs_pointers": [],
+      "pointers_truncated": false,
+      "submodules": [],
+      "gitattributes": [
+        {
+          "ref": "refs/heads/dependabot/github_actions/github-actions-77df686157",
+          "path": ".gitattributes",
+          "object_sha": "7674659f46c6558d2e555c92a24ae288f1689603"
+        },
+        {
+          "ref": "refs/heads/dependabot/npm_and_yarn/dev-dependencies-02e65f9da5",
+          "path": ".gitattributes",
+          "object_sha": "7674659f46c6558d2e555c92a24ae288f1689603"
+        },
+        {
+          "ref": "refs/heads/dependabot/npm_and_yarn/functions/fast-xml-parser-5.12.0",
+          "path": ".gitattributes",
+          "object_sha": "7674659f46c6558d2e555c92a24ae288f1689603"
+        },
+        {
+          "ref": "refs/heads/dependabot/npm_and_yarn/next-16.4.5",
+          "path": ".gitattributes",
+          "object_sha": "7674659f46c6558d2e555c92a24ae288f1689603"
+        },
+        {
+          "ref": "refs/heads/dependabot/npm_and_yarn/production-dependencies-efc1227285",
+          "path": ".gitattributes",
+          "object_sha": "7674659f46c6558d2e555c92a24ae288f1689603"
+        },
+        {
+          "ref": "refs/heads/dependabot/pip/dot-github/dependabot-mirror/ci-python/ci-python-tools-ff2d40f37a",
+          "path": ".gitattributes",
+          "object_sha": "7674659f46c6558d2e555c92a24ae288f1689603"
+        },
+        {
+          "ref": "refs/heads/main",
+          "path": ".gitattributes",
+          "object_sha": "7674659f46c6558d2e555c92a24ae288f1689603"
+        }
+      ],
+      "repository": "ianmaciel7/shadcn-firebase-template",
+      "bundle_sha256_verified": true,
+      "wiki": {
+        "accessible": false,
+        "reported_refs": 0,
+        "status": "not found / inaccessible / empty"
+      }
+    },
+    {
+      "git_fsck": true,
+      "refs": 1,
+      "object_count": 35,
+      "small_blobs_scanned": 14,
+      "lfs_pointer_count": 0,
+      "lfs_pointers": [],
+      "pointers_truncated": false,
+      "submodules": [],
+      "gitattributes": [],
+      "repository": "ianmaciel7/fcc-responsive-web-design",
+      "bundle_sha256_verified": true,
+      "wiki": {
+        "accessible": false,
+        "reported_refs": 0,
+        "status": "not found / inaccessible / empty"
+      }
+    },
+    {
+      "git_fsck": true,
+      "refs": 1,
+      "object_count": 27,
+      "small_blobs_scanned": 0,
+      "lfs_pointer_count": 0,
+      "lfs_pointers": [],
+      "pointers_truncated": false,
+      "submodules": [],
+      "gitattributes": [],
+      "repository": "ianmaciel7/ianmaciel7",
+      "bundle_sha256_verified": true,
+      "wiki": {
+        "accessible": false,
+        "reported_refs": 0,
+        "status": "not found / inaccessible / empty"
+      }
+    }
+  ]
+}
