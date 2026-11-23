@@ -35,6 +35,7 @@ a integração GitHub conectada copiou para
 | Recurso | Para que serve |
 |---|---|
 | **[Verificação independente de arquivamento](docs/VERIFICATION-2026-11-23.md)** | **Situação atual: Git público íntegro; 4 branches privadas e 3 tags ainda pendentes, além de metadados de PR/CI** |
+| [Critérios para excluir repositórios antigos](docs/DELETE-READINESS.md) | Gate: restauração, histórico de PRs, evidências do GitHub Actions e backup independente antes da exclusão |
 | [Auditoria dos 9 repositórios](docs/AUDIT-COVERAGE-2026-11-23.md) | Cobertura e lacunas, com 71 branch heads inventariados |
 | [Backup completo de exams-app](https://github.com/ianmaciel7/exams-app-archive/releases/tag/exams-app-2026-11-23-complete) | **Todas as 4 branches**, refs de PR, imagens, documentos, inventário e metadados GitHub |
 | [Relatório e catálogo exams-app](docs/EXAMS-APP-COMPLETE.md) | Contagem de arquivos por branch e instruções de recuperação |
