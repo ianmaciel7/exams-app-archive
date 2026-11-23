@@ -1,0 +1,98 @@
+name: Receive verified private Notes bundle through authorized GitHub connector
+on:
+  push:
+    branches: [notes-private-import]
+    paths:
+      - 'transfer/notes-2026-11-23/**'
+permissions:
+  contents: write
+concurrency:
+  group: notes-private-import-2026-11-23
+  cancel-in-progress: false
+jobs:
+  restore-and-publish:
+    if: github.repository == 'ianmaciel7/exams-app-archive'
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Reassemble, hash-check and restore all original Git refs
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(gh repo view ianmaciel7/exams-app-archive --json visibility --jq .visibility)" = PRIVATE
+          mkdir -p output
+          python3 - <<'PY'
+          import base64,hashlib,json
+          from pathlib import Path
+          root=Path('transfer/notes-2026-11-23')
+          manifest=json.loads((root/'TRANSFER-MANIFEST.json').read_text())
+          assert manifest['source']=='ianmaciel7/notes-app'
+          assert manifest['original_branches_expected']==16
+          assert manifest['original_tags_expected']==3
+          parts=manifest['parts']
+          assert len(parts)>1 and len(parts)==len(list(root.glob('part-*.b64')))
+          dest=Path('output/notes-app-all-refs.bundle')
+          h=hashlib.sha256()
+          total=0
+          with dest.open('wb') as out:
+              for entry in parts:
+                  p=root/entry['name']
+                  encoded=p.read_bytes()
+                  assert len(encoded)==entry['encoded_bytes'],p.name
+                  assert hashlib.sha256(encoded).hexdigest()==entry['encoded_sha256'],p.name
+                  decoded=base64.b64decode(encoded,validate=True)
+                  assert len(decoded)==entry['decoded_bytes'],p.name
+                  assert hashlib.sha256(decoded).hexdigest()==entry['decoded_sha256'],p.name
+                  out.write(decoded);h.update(decoded);total+=len(decoded)
+          assert h.hexdigest()==manifest['bundle_sha256'], 'Full bundle hash mismatch'
+          assert total==manifest['bundle_bytes'], 'Full bundle byte count mismatch'
+          Path('output/NOTES-FULL-MANIFEST.json').write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n')
+          Path('output/SHA256SUMS.txt').write_text(h.hexdigest()+'  notes-app-all-refs.bundle\n')
+          print(json.dumps({'bundle_bytes':total,'bundle_sha256':h.hexdigest(),'parts':len(parts)},indent=2))
+          PY
+          tmp="$(mktemp -d)"
+          git init -q --bare "$tmp/verify.git"
+          git --git-dir="$tmp/verify.git" bundle verify "$PWD/output/notes-app-all-refs.bundle"
+          git clone --mirror -q "$PWD/output/notes-app-all-refs.bundle" "$tmp/restored.git"
+          git --git-dir="$tmp/restored.git" fsck --full --no-reflogs
+          RESTORED="$tmp/restored.git" python3 - <<'PY'
+          import json,os,subprocess
+          from pathlib import Path
+          m=json.loads(Path('output/NOTES-FULL-MANIFEST.json').read_text())
+          raw=subprocess.check_output(['git',f'--git-dir={os.environ["RESTORED"]}','for-each-ref','--format=%(refname) %(objectname)'],text=True)
+          refs=dict(line.split(' ',1) for line in raw.splitlines())
+          for n,sha in m['original_branch_heads'].items():
+              if refs.get('refs/heads/'+n)!=sha:raise SystemExit('Branch SHA mismatch: '+n)
+          for n,sha in m['original_tag_refs'].items():
+              if refs.get('refs/tags/'+n)!=sha:raise SystemExit('Tag SHA mismatch: '+n)
+          if len(m['original_branch_heads'])!=16 or len(m['original_tag_refs'])!=3:
+              raise SystemExit('Original ref counts are invalid')
+          if len(refs)!=m['all_ref_count']:raise SystemExit('All refs count mismatched')
+          pr_count=sum(k.startswith('refs/pull/') for k in refs)
+          if pr_count!=m['pull_ref_count']:raise SystemExit('PR refs count mismatch')
+          print('VERIFIED 16/16 branches, 3/3 original tags,',len(refs),'total refs',pr_count,'PR refs')
+          PY
+      - name: Publish immutable bundle to private archive and verify restored bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          tag=notes-app-2026-11-23-private-full
+          repo=ianmaciel7/exams-app-archive
+          if gh release view "$tag" -R "$repo" >/dev/null 2>&1; then
+            echo '::error::Release already exists; refusing to overwrite.'
+            exit 1
+          fi
+          gh release create "$tag" -R "$repo" --title "Notes App: all 16 original branches, 3 original tags and PR refs" --notes "Full private Notes Git bundle transferred securely by connected GitHub user authorization; original refs independently restored and hashes checked." output/*
+          mkdir -p redownload
+          gh release download "$tag" -R "$repo" --pattern notes-app-all-refs.bundle --dir redownload
+          cmp output/notes-app-all-refs.bundle redownload/notes-app-all-refs.bundle
+          echo 'NOTES_CENTRAL_ARCHIVE_VERIFIED=16/16'
+      - name: Remove temporary archive transfer branch only after successful publication
+        shell: bash
+        run: |
+          gh api -X DELETE repos/ianmaciel7/exams-app-archive/git/refs/heads/notes-private-import
