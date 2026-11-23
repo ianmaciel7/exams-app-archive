@@ -1,0 +1,104 @@
+{
+  "tag": "archive-2026-11-23-initial",
+  "created_at": "2026-11-23T17:19:46.780827+00:00",
+  "archive": "ianmaciel7/exams-app-archive",
+  "assets": [
+    {
+      "asset": "exams-app.bundle",
+      "repository": "exams-app",
+      "source": "Git branch/tag refs",
+      "size_bytes": 59890971,
+      "sha256": "19a999ad3a6a205dae5f6978b75fecf9ee2db483c59874dadbd45f55ae2cc542",
+      "branch_refs_in_bundle": 2,
+      "verified": true,
+      "message": "The bundle contains these 2 refs:\n70247f40f1495ad5660578cd90bef28fc489e59f refs/heads/main\ndfc277cd98239c92d2a6b9f6dea44393b15a626b refs/heads/dev\nThe bundle records a complete history.\nThe bundle uses this hash algorithm: sha1"
+    },
+    {
+      "asset": "exams-app-old.bundle",
+      "repository": "exams-app-old",
+      "source": "Git branch/tag refs",
+      "size_bytes": 3191920,
+      "sha256": "d773c165e793a0595db919dbbcc5876b9b2653ccf35d113d49a494e2a5ef58dc",
+      "branch_refs_in_bundle": 6,
+      "verified": true,
+      "message": "The bundle contains these 6 refs:\na8d9797ed47bd8d2e2987e12d7bb478841c78671 refs/heads/backup/dev-20261111-1903\n1db80ad136bbab8720637fbd33315d08bf6a5def refs/heads/backup/dev-before-adr2\ncc43fb998824101d68da7fad237fd5457986e1cb refs/heads/backup/old-1"
+    },
+    {
+      "asset": "exams-app-antigo-2.bundle",
+      "repository": "exams-app-antigo-2",
+      "source": "Git branch/tag refs",
+      "size_bytes": 160411477,
+      "sha256": "076ae0c0f7dbcc22e180e3fd1e4bbcfa830981d709659f873a14ef2fe3ac5fde",
+      "branch_refs_in_bundle": 28,
+      "verified": true,
+      "message": "The bundle contains these 28 refs:\na14153c52acc412099c58c2fd8c1b695a6447115 refs/heads/chore/type-workspace-e2e-evidence-84\n3bc92b289b6a30cc069eecb8733f5779b1566562 refs/heads/claude/downloads-grafo-png\n4d2fb5c026e698bee9d04138ae4cda3088440095 refs/h"
+    },
+    {
+      "asset": "shadcn-template.bundle",
+      "repository": "shadcn-template",
+      "source": "Git branch/tag refs",
+      "size_bytes": 615723,
+      "sha256": "57599b9e485ba4b5f84bf90c4b72afbccaeb8b2f1492ae058e360ce464882100",
+      "branch_refs_in_bundle": 1,
+      "verified": true,
+      "message": "The bundle contains this ref:\nc091632dfc03519862950dcffc6c3a41a9360b9c refs/heads/main\nThe bundle records a complete history.\nThe bundle uses this hash algorithm: sha1"
+    },
+    {
+      "asset": "shadcn-firebase-template.bundle",
+      "repository": "shadcn-firebase-template",
+      "source": "Git branch/tag refs",
+      "size_bytes": 2248409,
+      "sha256": "a2718f69edee4abb80b5735c000cc456bddf43de0ad7e074135fadc68021d152",
+      "branch_refs_in_bundle": 1,
+      "verified": true,
+      "message": "The bundle contains this ref:\n4d706df638738c3babe5df562e38fb830832f238 refs/heads/main\nThe bundle records a complete history.\nThe bundle uses this hash algorithm: sha1"
+    },
+    {
+      "asset": "notes-app-old-5.bundle",
+      "repository": "notes-app",
+      "source": "prototype/notes-app-old-5.bundle",
+      "size_bytes": 15165783,
+      "sha256": "16c39bb02b1f55e2057543b2c3a3806f652e9e7d87800d9ce68e5d486c75c250",
+      "branch_refs_in_bundle": 1,
+      "verified": true,
+      "message": "The bundle contains this ref:\n0857a9977d1f66f1ba2b26d46bb6084344d489c8 refs/heads/old-5\nThe bundle records a complete history.\nThe bundle uses this hash algorithm: sha1"
+    },
+    {
+      "asset": "notes-app-old-8.bundle",
+      "repository": "notes-app",
+      "source": "prototype/notes-app-old-8.bundle",
+      "size_bytes": 7053659,
+      "sha256": "96d4f98fad7ecc720e249f8d229ce034bc63e3fe69547d16ca88c93c4432d611",
+      "branch_refs_in_bundle": 1,
+      "verified": true,
+      "message": "The bundle contains this ref:\nd930d7a7391b231c1888bb5b2fb271f8d9f2f5be refs/heads/old-8\nThe bundle records a complete history.\nThe bundle uses this hash algorithm: sha1"
+    },
+    {
+      "asset": "notes-app-old-10.bundle",
+      "repository": "notes-app",
+      "source": "prototype/notes-app-old-10.bundle",
+      "size_bytes": 4917677,
+      "sha256": "515858ddf88553d9a2e3d48cfce4f7c6a8f18a761472b7e42b835cfb039db3e3",
+      "branch_refs_in_bundle": 1,
+      "verified": true,
+      "message": "The bundle contains this ref:\ncabcec2e8227fc7f06aa5c9c5afcc0e8944802c6 refs/heads/old-10\nThe bundle records a complete history.\nThe bundle uses this hash algorithm: sha1"
+    },
+    {
+      "asset": "notes-app-old-11.bundle",
+      "repository": "notes-app",
+      "source": "prototype/notes-app-old-11.bundle",
+      "size_bytes": 3268223,
+      "sha256": "0a140e95c7a207babada0295dd99a756dfa85677c6a0017bc9511010c32289f8",
+      "branch_refs_in_bundle": 1,
+      "verified": true,
+      "message": "The bundle contains this ref:\nf513fc91cdebd0adf8ba708d8108f9808af698c6 refs/heads/old-11\nThe bundle records a complete history.\nThe bundle uses this hash algorithm: sha1"
+    }
+  ],
+  "limitations": [
+    "Does not yet include complete private notes-app remote repository history.",
+    "Historical notes-app bundles are restored from exams-app-antigo-2, not its current private remote.",
+    "Full Git bundles preserve internal branch refs, but the archive repository itself has only main.",
+    "Release asset checksums prove bytes; no claim that unreachable Git objects survived upstream pruning."
+  ],
+  "roundtrip_verified_asset": "exams-app-old.bundle"
+}
