@@ -1,0 +1,33 @@
+name: Index every preserved history from private releases
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/full-index-archive.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  full-index:
+    if: github.repository == 'ianmaciel7/exams-app-archive'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run unit tests for indexer
+        run: python3 -m unittest discover -s tests -v
+      - name: Download preserved bundles; build & test full FTS5 index
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/build_full_index.py
+      - name: Commit audit summaries without storing large SQLite files in Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/FULL-INDEX.json reports/FULL-INDEX.md
+          if ! git diff --cached --quiet; then
+            git commit -m "test(archive): index and test all historical Git bundles"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
