@@ -1,18 +1,36 @@
 # Exams Archive Pages
 
-Public **shell** for a private archive. Only `site/index.html`, `site/style.css`, `site/app.js`, and `site/.nojekyll` may be deployed. The public page imports locally selected JSON with `File.text()`: it does not fetch, upload, transmit, persist, or log the data.
+Public **shell** for a private archive. Only `site/index.html`, `site/style.css`, `site/app.js`, and `site/.nojekyll` may be deployed or used. The explorer imports locally selected JSON with `File.text()`: it does not fetch, upload, transmit, persist, or log the data.
 
-## Setup
+## Setup & Platform Availability
 
-1. Configure **Settings → Pages → Build and deployment → Source: GitHub Actions** for the private repo. GitHub Pages availability for a private repository depends on the account plan. Note: a Pages site can still be **publicly visible**, despite a private repository.
-2. Run the `Archive Pages` workflow or push the site on `main`. Its upload artifact includes ONLY the allowlisted static files, never the private index, docs, releases, or bundles.
-3. Authenticate locally with `gh auth login`. From `plugins/exams-archive`, run:
-   `python scripts/archive_query.py sync`
-   `python scripts/archive_query.py export-pages --output private.archive-browser.json`
-4. On the Pages website, select the generated JSON file. Search stays in the browser and disappears on refresh. The JSON contains potentially sensitive paths; do not publish it.
+1. **GitHub Pages availability**: On GitHub Free accounts, GitHub Pages is restricted to public repositories (calling Pages enablement on private repos returns HTTP 422: `Your current plan does not support GitHub Pages for this repository`). To publish via GitHub Pages, GitHub Pro, Team, or Enterprise is required, configured in **Settings → Pages → Source: GitHub Actions**. Note: if enabled, a Pages site is **publicly visible**, despite a private repository.
+2. **Offline & Local Execution (No Paid Service Required)**:
+   The static shell in `site/` works completely offline without any internet connection or cloud service:
+   ```bash
+   # Option A: Local lightweight HTTP server
+   python3 -m http.server 8080 --directory site
+
+   # Option B: Direct file opening
+   # Open site/index.html directly in Chrome, Firefox, Safari or Edge
+   ```
+3. Run the `Archive Pages` workflow or push the site on `main`. Its upload artifact includes ONLY the allowlisted static files, never the private index, docs, releases, or bundles. If GitHub Pages is unavailable due to account plan restrictions, the workflow verifies and validates the static shell safely without failing.
+4. Authenticate locally with `gh auth login`. From `plugins/exams-archive`, run:
+   ```bash
+   python scripts/archive_query.py sync
+   python scripts/archive_query.py export-pages --output private.archive-browser.json
+   ```
+5. On the Pages website or local offline explorer (`http://localhost:8080` or `file://...`), select the generated JSON file. Search stays 100% in the browser and disappears on refresh. The JSON contains potentially sensitive paths; do not publish or commit it.
 
 The site is a LOCAL index viewer, not a searchable public mirror. There are no secrets and no API endpoints in the deployed artifact.
 
+## Security & Privacy Verification
+
+- **Allowlist gate**: Only `site/index.html`, `site/style.css`, `site/app.js`, and `site/.nojekyll` are included.
+- **Strict Content Security Policy (CSP)**: `default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'none'; img-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'`.
+- **Zero Network Calls**: No outgoing telemetry, analytics, cookies, local storage, or server communication.
+- **Zero-Emoji Policy**: Pure monochromatic SVG and text UI without Unicode emojis.
+
 ## Limitations
 
-Searches cover file paths, commit messages and image records; not full source text. Exact recovery requires the corresponding private Git bundle and full SHA. Some private Notes App branches remained pending at the last audit.
+Searches cover file paths, commit messages and image records; not full source text. Exact recovery requires the corresponding private Git bundle and full SHA.
