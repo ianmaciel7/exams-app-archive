@@ -1,5 +1,5 @@
 ---
-name: exams-archive-ui-fidelity
+name: ui-fidelity
 description: Use when asked to create, show, preview, compare, rebuild, migrate, improve or audit a sidebar, app-shell, navigation, component, interaction or visual design based on historic Exams App, Notes App, Capacities, ChatGPT, Claude or other references in the Exams Archive. Retrieve the original HTML/CSS/TSX, screenshots and design decisions before authoring any preview, mockup or code.
 ---
 
@@ -47,7 +47,7 @@ A versão 0.3.0 conhecia sobretudo a sidebar standalone de `exams-app@dev`. O le
 - Garantir que saída visual seja utilizável no layout em que é exibida. O shell completo não cabe em uma sidebar de 220px; não escalar texto ou remover controles para "caber" sem explicar.
 - Se usuário disser "apague o que criou", auditar **o que foi efetivamente gravado nesta sessão**. Não remover a branch `dev` preexistente, repositórios antigos, backups ou capturas só porque foram consultados.
 
-Fontes: `references/source-map.md`, `references/visual-source-catalog.md`, `references/chat-preview-contract.md` e checklist `references/visual-qa.md`. Para buscas históricas sem caminho conhecido, encaminhar à skill `exams-archive-research`.
+Fontes: `references/source-map.md`, `references/visual-source-catalog.md`, `references/chat-preview-contract.md` e checklist `references/visual-qa.md`. Para buscas históricas sem caminho conhecido, encaminhar à skill `archive-research`.
 
 ## Motion-aware recovery
 

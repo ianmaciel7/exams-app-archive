@@ -1,0 +1,14 @@
+{
+  "name": "exams-archive-private",
+  "description": "Plugins privados de pesquisa histórica do Exams App.",
+  "owner": {
+    "name": "Ian Maciel de Carvalho"
+  },
+  "plugins": [
+    {
+      "name": "exams-archive-native",
+      "source": "./plugins/exams-archive-native",
+      "description": "Pesquisa Git/FTS5, UI, animações e auditoria de backups do Exams App."
+    }
+  ]
+}
