@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-23T17:43:35.532630+00:00",
+  "generated_utc": "2026-11-23T17:52:40.232357+00:00",
   "sources": [
     {
       "repository": "exams-app-old",
@@ -8,7 +8,7 @@
       "changes": 13676,
       "deleted_image_evidence": 0,
       "images": 14,
-      "seconds": 2.49,
+      "seconds": 1.02,
       "branch_compare": {
         "main_only": 0,
         "dev_only": 9,
@@ -22,7 +22,7 @@
       "changes": 18279,
       "deleted_image_evidence": 2266,
       "images": 1563,
-      "seconds": 11.61,
+      "seconds": 14.94,
       "branch_compare": {
         "main_only": 0,
         "dev_only": 180,
@@ -36,7 +36,7 @@
       "changes": 711,
       "deleted_image_evidence": 0,
       "images": 7,
-      "seconds": 0.03
+      "seconds": 0.02
     }
   ],
   "queries": [
@@ -163,7 +163,7 @@
           "summary": "feat(graph): grafo da coleção em canvas com zoom, teclado e lista acessível (#227)"
         }
       ],
-      "ms": 0.1,
+      "ms": 0.13,
       "count": 8
     },
     {
@@ -226,7 +226,7 @@
           "summary": ""
         }
       ],
-      "ms": 0.09,
+      "ms": 0.13,
       "count": 8
     },
     {
@@ -289,7 +289,7 @@
           "summary": ""
         }
       ],
-      "ms": 0.07,
+      "ms": 0.09,
       "count": 8
     },
     {
@@ -352,7 +352,7 @@
           "summary": "docs(research): add sourced Capacities baseline for issue 32 (#193)"
         }
       ],
-      "ms": 0.07,
+      "ms": 0.09,
       "count": 8
     }
   ],
@@ -385,7 +385,7 @@
     "bytes": 7532,
     "mentions_recall": true
   },
-  "elapsed_seconds": 14.52,
+  "elapsed_seconds": 16.45,
   "index_bytes": 14843904,
   "sqlite_fts5": true,
   "historical_sources_complete": false,
