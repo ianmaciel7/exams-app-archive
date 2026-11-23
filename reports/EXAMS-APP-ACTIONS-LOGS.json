@@ -1,0 +1,33 @@
+{
+  "source": "ianmaciel7/exams-app",
+  "destination": "ianmaciel7/exams-app-archive",
+  "tag": "exams-app-2026-11-23-ci-logs",
+  "captured_at_utc": "2026-11-23T18:08:31.632017+00:00",
+  "total_runs": 2,
+  "jobs": [
+    {
+      "run_id": 45220066096,
+      "job_id": 137851601509,
+      "run_name": "Consolidate public legacy references (one-time)",
+      "run_url": "https://github.com/ianmaciel7/exams-app/actions/runs/45220066096",
+      "archive_file": "exams-app-job-137851601509.log.gz",
+      "uncompressed_bytes": 14569,
+      "compressed_bytes": 3900,
+      "sha256": "118714de22f1fb516b9e542ecd56bac6f6d6029af2f506c5186fedf17f3082e8",
+      "verified": true,
+      "source_artifacts_count": 0
+    },
+    {
+      "run_id": 45219839901,
+      "job_id": 137850801665,
+      "run_name": "Consolidate public legacy references (one-time)",
+      "run_url": "https://github.com/ianmaciel7/exams-app/actions/runs/45219839901",
+      "archive_file": "exams-app-job-137850801665.log.gz",
+      "uncompressed_bytes": 346022,
+      "compressed_bytes": 35316,
+      "sha256": "8d3931f4411e1dcb3fae61b6cae258e7b19e55814de0590a1ca49a9b481bd1a3",
+      "verified": true,
+      "source_artifacts_count": 0
+    }
+  ]
+}
