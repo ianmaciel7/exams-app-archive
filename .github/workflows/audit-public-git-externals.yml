@@ -1,0 +1,32 @@
+name: Verify LFS, submodules and wiki dependencies of archived public Git
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/audit-public-git-externals.yml'
+permissions:
+  contents: write
+concurrency:
+  group: audit-public-git-externals
+  cancel-in-progress: false
+jobs:
+  scan:
+    if: github.repository == 'ianmaciel7/exams-app-archive'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify all Git objects and detect external LFS / gitlinks
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/audit_public_git_externals.py
+      - name: Save independent source coverage evidence
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add reports/PUBLIC-GIT-EXTERNALS.json reports/PUBLIC-GIT-EXTERNALS.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'test(archive): verify public bundles for missing LFS and Git submodules'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
