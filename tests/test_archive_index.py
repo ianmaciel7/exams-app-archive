@@ -76,4 +76,56 @@ class ArchiveTest(unittest.TestCase):
         poc_wf=(root/'.github/workflows/archive-poc.yml').read_text(encoding='utf-8')
         self.assertNotIn('git add reports/POC.md reports/POC.json reports/archive-index.sqlite',poc_wf)
 
+    def test_search_ranking_quota_dedup_and_compatibility(self):
+        # Populate enough synthetic rows across commit, file, and image to test quota, ranking, and dedupe
+        for idx in range(10):
+            (self.work / 'sidebar.tsx').write_text(f'export const step = {idx};\n')
+            run('git', 'add', 'sidebar.tsx', cwd=self.work)
+            run('git', 'commit', '-qm', f'chore: update sidebar iteration {idx}', cwd=self.work)
+        (self.work / 'sidebar-panel.png').write_bytes(b'\x89PNG\r\n\x1a\nSIDEBAR_IMG_A')
+        (self.work / 'sidebar-extra.png').write_bytes(b'\x89PNG\r\n\x1a\nSIDEBAR_IMG_A')
+        run('git', 'add', '.', cwd=self.work)
+        run('git', 'commit', '-qm', 'feat: sidebar panel layout exact', cwd=self.work)
+        exact_sha = run('git', 'rev-parse', 'HEAD', cwd=self.work).decode().strip()
+
+        bare2 = self.root / 'source2.git'
+        run('git', 'clone', '--mirror', '-q', str(self.work), str(bare2))
+        ingest(bare2, 'example', self.conn)
+
+        # Default search(conn, q, limit=...) remains backwards compatible and includes multiple types
+        mixed = search(self.conn, 'sidebar', 6)
+        self.assertEqual(len(mixed), 6)
+        kinds = {item['kind'] for item in mixed}
+        self.assertIn('commit', kinds)
+        self.assertIn('file', kinds)
+        self.assertIn('image', kinds)
+        for item in mixed:
+            self.assertTrue({'repository', 'kind', 'sha', 'path', 'summary'}.issubset(item.keys()))
+
+        # File deduplication aggregates commits and preserves first/last SHA
+        file_hits = search(self.conn, 'sidebar', 10, kind='file')
+        paths = [(r['repository'], r['path']) for r in file_hits]
+        self.assertEqual(len(paths), len(set(paths)))
+        sidebar_file = next(r for r in file_hits if r['path'] == 'sidebar.tsx')
+        self.assertEqual(sidebar_file['commits'], 10)
+        self.assertNotEqual(sidebar_file['first_sha'], sidebar_file['last_sha'])
+
+        # Image deduplication collapses identical blobs across paths
+        img_hits = search(self.conn, 'sidebar', 10, kind='image')
+        blobs = [r['blob'] for r in img_hits]
+        self.assertEqual(len(blobs), len(set(blobs)))
+        self.assertEqual(img_hits[0]['occurrences'], 2)
+
+        # Phrase/AND-first returns exact match before falling back to OR
+        and_hits = search(self.conn, 'sidebar panel', 10, kind='commit')
+        self.assertEqual([h['sha'] for h in and_hits], [exact_sha])
+        or_fallback = search(self.conn, 'sidebar nonexistentterm', 10, kind='commit')
+        self.assertGreaterEqual(len(or_fallback), 10)
+
+        # CLI backwards compatibility: search without --kind/--repo
+        root = Path(__file__).resolve().parents[1]
+        db_file = self.root / 'index.sqlite'
+        cli_out = run('python3', str(root / 'scripts/archive_index.py'), '--db', str(db_file), 'search', 'sidebar', '--limit', '6').decode('utf-8')
+        self.assertEqual(len(__import__('json').loads(cli_out)), 6)
+
 if __name__=='__main__':unittest.main()
