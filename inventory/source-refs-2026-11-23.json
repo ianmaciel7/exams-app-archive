@@ -1,0 +1,173 @@
+{
+  "date": "2026-11-23",
+  "purpose": "Live source branch SHA audit for exams-app-archive backup coverage",
+  "scope": "All 9 accessible GitHub repositories, including the archive itself",
+  "repositories": [
+    {
+      "name": "fcc-responsive-web-design",
+      "repo": "ianmaciel7/fcc-responsive-web-design",
+      "visibility": "public",
+      "default_branch": "main",
+      "archived": false,
+      "branches": {
+        "main": "59972ba7e05cba3794b6effe5a31105212435a55"
+      }
+    },
+    {
+      "name": "ianmaciel7",
+      "repo": "ianmaciel7/ianmaciel7",
+      "visibility": "public",
+      "default_branch": "main",
+      "archived": false,
+      "branches": {
+        "main": "6a1f1b3be62bb3557af947c92f811c0b213e88bc"
+      }
+    },
+    {
+      "name": "notes-app",
+      "repo": "ianmaciel7/notes-app",
+      "visibility": "private",
+      "default_branch": "main",
+      "archived": false,
+      "branches": {
+        "dev": "93505f253bd913475e52b626f63cdf4baeac91bd",
+        "firebase/file": "4a609e6db23ba89d9a1d773a910696582b9cc699",
+        "main": "793fde6d083748ef42211e0a650b696951a38d56",
+        "old": "e2234be59ba61a717884f829037cb8be268e5c6c",
+        "old-1": "c2fca6232c45ce4d64d0088036e1ddd0742944d4",
+        "old-2": "7d14209252e47bf4449ec953928c2ef711f0642e",
+        "old-3": "19105d011c84fe7bf9b5cea4bb75f4fd4b94ea34",
+        "old-4": "2839f410e3f696cfcf1d92a48849275c1016776b",
+        "old-5": "0857a9977d1f66f1ba2b26d46bb6084344d489c8",
+        "old-6": "f336db18e2149040707c453814cbb16e388cde37",
+        "old-7": "e5d9048aabb480605e357c2d2a00e82fc4c24c3d",
+        "old-8": "d930d7a7391b231c1888bb5b2fb271f8d9f2f5be",
+        "old-9": "dae844270e7ebc80c6a307c49e0f830630e70cb0",
+        "old-10": "cabcec2e8227fc7f06aa5c9c5afcc0e8944802c6",
+        "old-11": "f513fc91cdebd0adf8ba708d8108f9808af698c6",
+        "stag": "46a64d8aa25ae228b7857ec91e200acc53fac1be"
+      },
+      "tags": [
+        {
+          "name": "v0.1.0",
+          "sha": "6cef12874e55ee43601628150ce23100a0aa49f6"
+        },
+        {
+          "name": "v0.2.0",
+          "sha": "82aca1cb830899a07d58bbc8cc08e85395108ed6"
+        },
+        {
+          "name": "v0.3.0",
+          "sha": "08a6096759b4dad252c06d2212ec5ab70583e293"
+        }
+      ]
+    },
+    {
+      "name": "shadcn-template",
+      "repo": "ianmaciel7/shadcn-template",
+      "visibility": "public",
+      "default_branch": "main",
+      "archived": false,
+      "branches": {
+        "chore/declarative-ruleset-as-code": "6ceb812e4397cfd0364b8233dea076747af73861",
+        "dependabot/github_actions/github-actions-6b1aed0551": "f0d37bc1c9beee8f167e6048a4b4f031b5bc221e",
+        "dependabot/npm_and_yarn/dev-dependencies-f148a7b98d": "3e7ca140f1c5147cfa3a8cd71682c130d28ab68e",
+        "dependabot/npm_and_yarn/production-dependencies-144fe1c970": "8383571c48e2de087419fb89559856e315ff9579",
+        "dependabot/pip/dot-github/dependabot-mirror/ci-python/ci-python-tools-ff2d40f37a": "853df5f59fd1c0c24b4006baa2b6317d45141c83",
+        "feat/setup-github-and-standards": "bb30ac75f3c48fda2aa5f7bedea6f46faf0c6fa8",
+        "main": "c091632dfc03519862950dcffc6c3a41a9360b9c"
+      }
+    },
+    {
+      "name": "shadcn-firebase-template",
+      "repo": "ianmaciel7/shadcn-firebase-template",
+      "visibility": "public",
+      "default_branch": "main",
+      "archived": false,
+      "branches": {
+        "dependabot/github_actions/github-actions-77df686157": "7f290ee023ca0ecca2a9895eb86f42b5f72210af",
+        "dependabot/npm_and_yarn/dev-dependencies-02e65f9da5": "98dcf6dce60930dd8756a29700c8397b57236dde",
+        "dependabot/npm_and_yarn/functions/fast-xml-parser-5.12.0": "7b687641a0b6f9ee67bd5e6af467cf4ee9715f7a",
+        "dependabot/npm_and_yarn/next-16.4.5": "dbfa1196ea15b3993ecc33a555a4a3332a610de2",
+        "dependabot/npm_and_yarn/production-dependencies-efc1227285": "0ac9307017c78f3c2fadc8220047656eb355050a",
+        "dependabot/pip/dot-github/dependabot-mirror/ci-python/ci-python-tools-ff2d40f37a": "077813adc5e6b6a721d667b4097d780d24510513",
+        "main": "4d706df638738c3babe5df562e38fb830832f238"
+      }
+    },
+    {
+      "name": "exams-app-old",
+      "repo": "ianmaciel7/exams-app-old",
+      "visibility": "public",
+      "default_branch": "main",
+      "archived": false,
+      "branches": {
+        "backup/dev-20261111-1903": "a8d9797ed47bd8d2e2987e12d7bb478841c78671",
+        "backup/dev-before-adr2": "1db80ad136bbab8720637fbd33315d08bf6a5def",
+        "backup/old-1": "cc43fb998824101d68da7fad237fd5457986e1cb",
+        "claude/project-thread-u76ueb": "8d5cc9f7533a220228ba0b7df31c772d0ad0592c",
+        "dev": "b86b70c304e574022416e8e2ecdc3816f1b386f1",
+        "main": "30a94c44277e869dc4ae1b9080828886ce405f2f"
+      }
+    },
+    {
+      "name": "exams-app-antigo-2",
+      "repo": "ianmaciel7/exams-app-antigo-2",
+      "visibility": "public",
+      "default_branch": "main",
+      "archived": false,
+      "branches": {
+        "chore/type-workspace-e2e-evidence-84": "a14153c52acc412099c58c2fd8c1b695a6447115",
+        "claude/downloads-grafo-png": "3bc92b289b6a30cc069eecb8733f5779b1566562",
+        "claude/project-thread-2l6igc": "4d2fb5c026e698bee9d04138ae4cda3088440095",
+        "claude/project-thread-4bxup8": "65ce2ab7ac95e8fc4e1be998eb0aa593049bf2c8",
+        "claude/project-thread-6zihkn": "3c329ba0c95cb28a28c06f9f79c9bdaf6a2c3235",
+        "claude/project-thread-8plm74": "537e5e0de66ad60808456ccae53800c5408e3e4b",
+        "claude/project-thread-t6crru": "dfe179fd9a882a8e98b6d7d8db43dd5930f20a2a",
+        "claude/project-thread-wanbwx": "b05f283d7cdca3a3392bad6a1834b95f4701adc2",
+        "claude/project-thread-xy12f0": "7f4113c54b2654a2464cb64bb65ff8196ed121fb",
+        "claude/project-thread-yykbt1": "1c2d093747c29adbef895944b67f7aab2e7e72f9",
+        "dev": "b6ece41f0568c94c6ccb7655e8e973f926801afc",
+        "docs/apple-principles-m3-writing-audit-20261114": "f51e4f4c61cfc02970b32de0b2cc66c59a93d1bf",
+        "docs/audit-design-skills-gaps-20261114": "a1600638d33e50b00d6fcfb705c7d530e5e72aa1",
+        "docs/fix-design-shortcuts-a11y-20261114": "95b3128b20aae4c587d1e6922e723dfdbc19cbc1",
+        "feat/automatic-error-review-raiox-76": "ac116c5ebb563fb88c1e14d741aa366bcb1eb639",
+        "feat/claude-storage-production-sync": "d4525cee7e52d5c15a3e665eae91bdb3b2b2c462",
+        "feat/issue278-phase2c-history-bundles": "f3dc7365205e444baf1647ccf3bd721be7f1c468",
+        "feat/66-rp-tools-grid": "176e6125611ab53929c96eb84faee502f426c9a0",
+        "feat/67-unified-graph-20261115": "9776b538fea6eefe66a0e0d7aa006475b6580972",
+        "feat/68-floating-graph-bars": "b1e0a36adc7811e453ab977f31541455c8640552",
+        "feat/138-searchable-space-switcher": "a587f6a20edb548ce4210e594f2f7ebe01208f18",
+        "fix/issue-66-luna-20261115": "8ec1d519b09080e902df4aad4c5ec2178387badd",
+        "fix/issue-80-luna-20261115": "69179a590f0073e4e3b2374a54570d873488a672",
+        "fix/low-chrome-shell-97": "7f6dd66e1a996d30a418b97e5231ff592e287323",
+        "fix/mcp-serena-tooling": "20eaac86cbaa9b567756ebd485c80a2a655faf93",
+        "fix/native-select-color-scheme-120": "783958cb1c6e179ac63df669f3f92a069e46bcea",
+        "main": "7457fc5558679a1af631fadc245c6315e76738fa",
+        "worktree-archive-reuse-map": "cfd9969272ce864224d08c4f720c72c26e16ac17"
+      }
+    },
+    {
+      "name": "exams-app",
+      "repo": "ianmaciel7/exams-app",
+      "visibility": "public",
+      "default_branch": "main",
+      "archived": false,
+      "branches": {
+        "chore/consolidate-legacy-sources-20261123": "b67c7c1e36e09676192382112590a203a2113cbc",
+        "claude/project-thread-o4dym1": "c6d50b2096e397ee2819b4d5ef84a2a799cca247",
+        "dev": "dfc277cd98239c92d2a6b9f6dea44393b15a626b",
+        "main": "70247f40f1495ad5660578cd90bef28fc489e59f"
+      }
+    },
+    {
+      "name": "exams-app-archive",
+      "repo": "ianmaciel7/exams-app-archive",
+      "visibility": "private",
+      "default_branch": "main",
+      "archived": false,
+      "branches": {
+        "main": "c26ae223bcbd082993fd5eb9ba3b4242537ac119"
+      }
+    }
+  ]
+}
