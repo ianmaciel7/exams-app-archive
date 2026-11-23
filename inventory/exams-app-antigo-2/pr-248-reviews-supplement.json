@@ -1,0 +1,14 @@
+{
+  "source_repository": "ianmaciel7/exams-app-antigo-2",
+  "pull_request": 248,
+  "archived_metadata_release": "public-metadata-2026-11-23",
+  "original_export_error": "API 500: repos/ianmaciel7/exams-app-antigo-2/pulls/248/reviews?per_page=100 []",
+  "verified_on": "2026-11-23",
+  "verification": {
+    "rest_endpoint": "GET /repos/ianmaciel7/exams-app-antigo-2/pulls/248/reviews?per_page=100",
+    "rest_result": "200 OK, []",
+    "independent_graphql_review_lookup": "0 reviews"
+  },
+  "conclusion": "There are zero submitted reviews to preserve for pull request #248. The original export's single API 500 is covered by this independently verified supplemental record.",
+  "limitations": "A point-in-time view of reviews available through GitHub's authenticated REST and GraphQL APIs; it cannot recreate deleted historical platform data."
+}
