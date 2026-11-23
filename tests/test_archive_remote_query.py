@@ -82,6 +82,92 @@ class RemoteQueryTests(unittest.TestCase):
         self.assertFalse(doc["ok"])
         self.assertIn("120", doc["error"])
 
+    def test_pending_batch_status_and_retention_pruning(self):
+        self.write_request(identifier="test-batch-01")
+        self.write_request(identifier="test-batch-02")
+        self.write_request(identifier="test-batch-03")
+        p1 = subprocess.run(
+            [
+                sys.executable,
+                str(RUNNER),
+                "--root",
+                str(ROOT),
+                "--requests",
+                str(self.requests),
+                "--results",
+                str(self.results),
+                "--db",
+                str(self.db),
+                "--offline",
+                "--batch-limit",
+                "2",
+            ],
+            capture_output=True,
+            text=True,
+        )
+        self.assertEqual(p1.returncode, 0, p1.stderr)
+        meta1 = json.loads(p1.stdout)
+        self.assertEqual(meta1["processed"], 2)
+        self.assertEqual(meta1["pending_remaining"], 1)
+        self.assertEqual(meta1["status"], "pending")
+
+        p2 = subprocess.run(
+            [
+                sys.executable,
+                str(RUNNER),
+                "--root",
+                str(ROOT),
+                "--requests",
+                str(self.requests),
+                "--results",
+                str(self.results),
+                "--db",
+                str(self.db),
+                "--offline",
+                "--batch-limit",
+                "2",
+            ],
+            capture_output=True,
+            text=True,
+        )
+        self.assertEqual(p2.returncode, 0, p2.stderr)
+        meta2 = json.loads(p2.stdout)
+        self.assertEqual(meta2["processed"], 1)
+        self.assertEqual(meta2["pending_remaining"], 0)
+        self.assertEqual(meta2["status"], "complete")
+
+        # Mark test-batch-01 pair older than 14 days and prune
+        import os
+        import time
+        old_ts = time.time() - (20 * 86400)
+        for p in (self.requests / "test-batch-01.json", self.results / "test-batch-01.json"):
+            os.utime(p, (old_ts, old_ts))
+        p3 = subprocess.run(
+            [
+                sys.executable,
+                str(RUNNER),
+                "--root",
+                str(ROOT),
+                "--requests",
+                str(self.requests),
+                "--results",
+                str(self.results),
+                "--db",
+                str(self.db),
+                "--offline",
+                "--retention-days",
+                "14",
+            ],
+            capture_output=True,
+            text=True,
+        )
+        self.assertEqual(p3.returncode, 0, p3.stderr)
+        meta3 = json.loads(p3.stdout)
+        self.assertEqual(meta3["pruned"], 1)
+        self.assertFalse((self.requests / "test-batch-01.json").exists())
+        self.assertFalse((self.results / "test-batch-01.json").exists())
+        self.assertTrue((self.requests / "test-batch-02.json").exists())
+
 
 if __name__ == "__main__":
     unittest.main()

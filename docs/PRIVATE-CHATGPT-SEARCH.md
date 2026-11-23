@@ -42,5 +42,6 @@ Os IDs devem ter 6–64 caracteres alfanuméricos, hífen ou sublinhado. O nome 
 - Nunca publicar requests/results, SQLite ou bundles no Pages.
 - A Action lê código confiável da `main`, valida os campos de entrada e não avalia shell de usuário.
 - O GitHub Actions consome minutos de CI por busca; prefira relatórios existentes para perguntas triviais.
+- A fila processa em lotes de até **30 pedidos** por execução (até 5 lotes por workflow) e informa `pending_remaining` / `status` (`complete` ou `pending`). Pares processados (`requests/` + `results/`) com mais de **14 dias** são podados pela política de retenção, preservando a branch ativa `archive-search-queries`.
 - Não remover histórico, releases, repositórios antigos ou indexar credenciais.
-- Recuperação efetiva de bytes de imagens ou documentos ainda exige acesso autorizado ao bundle correspondente; os resultados aqui fornecem **referências e SHAs**, não cópias de binários.
+- Recuperação efetiva de bytes de imagens ou documentos ainda exige acesso autorizado ao bundle correspondente; os resultados aqui fornecem **referências e SHAs**, não cópias de binários. Para recuperação local verificada com `source_repo`, `ref`, `full_sha`, `path`, `mime`, `sha256` e preview base64/linhas, utilize `scripts/archive_flow.py` (`search`, `fetch`, `preview`, `recover`).

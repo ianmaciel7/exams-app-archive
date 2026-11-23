@@ -63,12 +63,41 @@ def execute(cli, db, req):
     return json.loads(p.stdout)
 
 
-def process(root, requests, results, db, offline=False):
+def prune_processed(requests: Path, results: Path, retention_days: int, now_ts: float | None = None) -> int:
+    """Remove old processed request/result pairs older than retention_days without touching the branch itself."""
+    if retention_days <= 0:
+        return 0
+    cutoff = (now_ts if now_ts is not None else __import__("time").time()) - (retention_days * 86400)
+    removed = 0
+    for res_path in sorted(results.glob("*.json")):
+        if not ID.fullmatch(res_path.stem):
+            continue
+        req_path = requests / res_path.name
+        if not req_path.is_file():
+            continue
+        try:
+            res_data = json.loads(res_path.read_text(encoding="utf-8"))
+            req_digest = hashlib.sha256(req_path.read_bytes()).hexdigest()
+        except (OSError, ValueError):
+            continue
+        if res_data.get("request_sha256") != req_digest:
+            continue
+        if res_path.stat().st_mtime <= cutoff and req_path.stat().st_mtime <= cutoff:
+            req_path.unlink(missing_ok=True)
+            res_path.unlink(missing_ok=True)
+            removed += 1
+    return removed
+
+
+def process(root, requests, results, db, offline=False, batch_limit=30, retention_days=0):
     cli = root / "plugins/exams-archive/scripts/archive_query.py"
     if not cli.is_file() or not requests.is_dir():
         raise RuntimeError("Trusted archive CLI or request directory missing")
+    if batch_limit < 1 or batch_limit > 30:
+        raise ValueError("batch_limit must be between 1 and 30")
     results.mkdir(parents=True, exist_ok=True)
-    pending = []
+    pruned = prune_processed(requests, results, retention_days) if retention_days > 0 else 0
+    all_pending = []
     for path in sorted(requests.glob("*.json")):
         if not ID.fullmatch(path.stem) or path.stat().st_size > 4096:
             continue
@@ -81,11 +110,11 @@ def process(root, requests, results, db, offline=False):
                     continue
             except (OSError, ValueError):
                 pass
-        pending.append((path, raw, digest, target))
-        if len(pending) == 30:
-            break
+        all_pending.append((path, raw, digest, target))
+    pending = all_pending[:batch_limit]
+    remaining = max(0, len(all_pending) - len(pending))
     if not pending:
-        return {"processed": 0}
+        return {"processed": 0, "pending_remaining": 0, "status": "idle", "pruned": pruned}
     if offline:
         with sqlite3.connect(db.resolve().as_uri() + "?mode=ro", uri=True) as conn:
             if conn.execute("PRAGMA quick_check").fetchone()[0] != "ok":
@@ -117,7 +146,12 @@ def process(root, requests, results, db, offline=False):
         finally:
             temp.unlink(missing_ok=True)
         count += 1
-    return {"processed": count}
+    return {
+        "processed": count,
+        "pending_remaining": remaining,
+        "status": "pending" if remaining > 0 else "complete",
+        "pruned": pruned,
+    }
 
 
 def main():
@@ -125,9 +159,19 @@ def main():
     for opt in ("root", "requests", "results", "db"):
         parser.add_argument("--" + opt, type=Path, required=True)
     parser.add_argument("--offline", action="store_true")
+    parser.add_argument("--batch-limit", type=int, default=30)
+    parser.add_argument("--retention-days", type=int, default=0)
     args = parser.parse_args()
     try:
-        print(json.dumps(process(args.root, args.requests, args.results, args.db, args.offline)))
+        print(json.dumps(process(
+            args.root,
+            args.requests,
+            args.results,
+            args.db,
+            args.offline,
+            batch_limit=args.batch_limit,
+            retention_days=args.retention_days,
+        )))
     except (RuntimeError, OSError, ValueError, sqlite3.Error) as exc:
         print("Private search failed: " + str(exc)[:200], file=sys.stderr)
         sys.exit(2)
