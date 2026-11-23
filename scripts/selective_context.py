@@ -266,9 +266,6 @@ def _find_repomix_command() -> list[str] | None:
     repomix_bin = shutil.which("repomix")
     if repomix_bin:
         return [repomix_bin]
-    npx_bin = shutil.which("npx")
-    if npx_bin:
-        return [npx_bin, "--no-install", "repomix"]
     return None
 
 
@@ -284,6 +281,14 @@ def _compact_with_repomix(
     Never reads secrets or full repository directories; only writes the sanitized
     selected relative paths to an isolated temp dir and extracts per-file blocks.
     """
+    for rel_path, body in files.items():
+        safe_rel = content_index.safe_path(rel_path)
+        blocked, reason = is_secret_or_blocked(safe_rel, body)
+        if blocked:
+            raise archive_flow.PermissionDeniedError(
+                f"Refusing to stage secret/blocked file '{rel_path}': {reason}"
+            )
+
     cmd_base = _find_repomix_command()
     if cmd_base is None:
         return {
