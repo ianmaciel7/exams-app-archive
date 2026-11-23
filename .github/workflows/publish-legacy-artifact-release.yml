@@ -1,0 +1,18 @@
+name: Publish legacy artifact release for in-progress checksum verification
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/publish-legacy-artifact-release.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    if: github.repository == 'ianmaciel7/exams-app-archive'
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - run: |
+          set -euo pipefail
+          gh release edit legacy-ci-artifacts-2026-11-23-bulk -R ianmaciel7/exams-app-archive --draft=false --title "IN PROGRESS - bulk historical Actions evidence archive"
