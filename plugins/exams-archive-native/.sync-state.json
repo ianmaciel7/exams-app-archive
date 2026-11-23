@@ -3,8 +3,13 @@
   "source_of_truth": "ianmaciel7/exams-app-archive@main:plugins/exams-archive-native/",
   "plugin_id": "plugins_6b04aaa9fd848191a24525011f76e2bb",
   "desired_version": "0.6.0",
-  "last_published_release_id": "pluginrel_6b04c26723e48191b7598be909646792",
-  "last_published_version": "0.5.1",
-  "status": "pending-publication",
-  "note": "Update to published release ID after successful Plugin Creator sync. This metadata file is not included in plugin ZIP."
+  "last_published_release_id": "pluginrel_6b04c63bd96c8191bda2c535f2b62e1b",
+  "last_published_version": "0.6.0",
+  "status": "verified-synced",
+  "note": "All 19 package files verified against ChatGPT release; 18 byte-identical, Codex compatibility manifest semantically equal after Plugin Creator Unicode escaping. Artifacts are generated from private GitHub Actions workflow.",
+  "verified_files": 19,
+  "byte_identical_files": 18,
+  "json_semantic_equivalent_files": [
+    ".codex-plugin/plugin.json"
+  ]
 }
