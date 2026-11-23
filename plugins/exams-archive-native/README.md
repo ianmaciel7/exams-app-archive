@@ -1,25 +1,23 @@
-# Exams Archive — plugin privado ChatGPT (v0.5.1)
+# Exams Archive — pacote único multiagente (v0.6.0)
 
-Pesquisa Git/FTS5, recuperação visual e motion-aware baseada em evidências reais do histórico, mais um protocolo de sincronização bidirecional de **código-fonte do plugin** com o GitHub privado.
+Fonte canônica do plugin privado para **ChatGPT, Codex, Claude Code e Antigravity**: `plugins/exams-archive-native/` na branch `main` deste repositório. Nenhum backup histórico é publicado no pacote.
 
-## Duas implementações — não sobrescrever
+## Conteúdo
+- `skills/archive-research`: GitHub conectado e localização de histórico.
+- `skills/archive-search` + `scripts/archive_query.py`: FTS5 autenticado no ambiente local (Python stdlib e `gh`).
+- `skills/ui-fidelity`: recuperação de protótipos, capturas e componentes originais.
+- `skills/ui-motion`: transições e microinterações com evidência por SHA.
+- `skills/sync-bridge`: fluxo GitHub → publicação de releases, com divergência explícita.
 
-- **ChatGPT** `exams-archive-native` (esta release): espelho em `plugins/exams-archive-native/` no repositório `ianmaciel7/exams-app-archive`.
-- **Codex legado** `exams-archive` em `plugins/exams-archive/`: preservado, com Python/FTS5 e seu manifesto próprio.
+## Instalação
+- **Codex**: `codex plugin marketplace add ianmaciel7/exams-app-archive`, depois instalar `exams-archive-native` no marketplace privado.
+- **Claude Code**: `claude plugin marketplace add ianmaciel7/exams-app-archive` e `claude plugin install exams-archive-native@exams-archive-private`.
+- **Antigravity**: após clone autenticado do repositório privado, `agy plugin validate plugins/exams-archive-native` e `agy plugin install ./plugins/exams-archive-native`. Para distribuição direta por URL, verificar suporte da versão do cliente a subdiretórios de repositório privado.
+- **ChatGPT pessoal**: release privada atualizada via Plugin Creator com arquivos da fonte canônica; sync automática GitHub → publicação depende de workspace elegível e **não está habilitada** pela existência deste repositório.
 
-O espelho do GitHub é uma fonte versionada dos arquivos do plugin ChatGPT; não é a cópia de bundles, releases, índice FTS5 ou artefatos históricos.
+O script `archive_query.py` é **idêntico ao legado**, verificado por teste de hash; para pesquisa local execute `python scripts/archive_query.py sync` dentro da pasta do plugin e então `python scripts/archive_query.py search "sidebar" --limit 10`.
 
-## Fluxos
-
-1. Histórico privado e backups: `skills/archive-research/SKILL.md` e referência FTS5. Buscas FTS5 podem criar writes na branch `archive-search-queries`.
-2. Sidebar, shell, design e preview: `skills/ui-fidelity/SKILL.md`, `references/visual-source-catalog.md` e `references/source-map.md`; checar código, imagens e estados.
-3. Animações, hover e drag: `skills/ui-motion/SKILL.md` e catálogo privado com fontes/SHA.
-4. **Sincronização ChatGPT ↔ GitHub:** `skills/sync-bridge/SKILL.md`. Antes e depois de qualquer alteração relevante do plugin, comparar versões, arquivos e SHA. Criar mudanças verificáveis nos dois lados e relatar conflitos.
-
-## Limitação da automação
-
-Não existe webhook ou daemon neste plugin de skills que publique automaticamente releases do ChatGPT a cada commit GitHub. A sincronização é executada com ferramentas GitHub + Plugin Creator conectadas durante uma solicitação. Um commit no GitHub, sozinho, não atualiza a instalação ChatGPT. Não afirmar que os lados estão sincronizados enquanto houver PR não mesclada ou diferença de conteúdo.
+O plugin histórico em `plugins/exams-archive/` foi preservado para recuperação/rollback, mas saiu do marketplace ativo. Ele não é removido automaticamente. Veja `docs/PLUGIN-SYNC.md`.
 
 ## Segurança
-
-O repositório e o histórico são privados. Não publicar arquivos, índices, capturas ou segredos em Pages; não alterar bundles/release, backups históricos, `exams-app@dev` ou plugin Codex ao sincronizar a fonte desta release.
+Nunca compartilhar o índice FTS5, bundles, tokens ou imagens privadas via GitHub Pages. Toda alteração no pacote entra por GitHub, com CI e review; publicação ChatGPT é uma etapa explícita, não webhook.

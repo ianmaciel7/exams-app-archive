@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "exams-archive-native",
-  "version": "0.5.1",
-  "description": "Arquivo histórico Exams App: Git/FTS5, UI/UX, animações e sincronização bidirecional controlada com repositório privado.",
+  "version": "0.6.0",
+  "description": "Exams Archive para ChatGPT, Codex, Claude Code e Antigravity: história Git/FTS5, UI/UX, motion e sincronização segura via GitHub.",
   "author": {
     "name": "Ian Maciel de Carvalho",
     "email": "ianmaciel76@gmail.com"
@@ -24,7 +24,11 @@
     "microinteractions",
     "gesture",
     "bidirectional sync",
-    "plugin release"
+    "plugin release",
+    "claude code",
+    "antigravity",
+    "multi-agent",
+    "portable agent skills"
   ],
   "repository": "https://github.com/ianmaciel7/exams-app-archive",
   "extensions": {
@@ -40,7 +44,9 @@
           "Prévia autocontida no ChatGPT, sem iframe/fetch externo",
           "Auditoria de backup e restauração por SHA",
           "Catálogo motion: 13 comportamentos com duração, delay, estado e fonte SHA",
-          "Sincronização bidirecional controlada entre plugin ChatGPT e espelho GitHub"
+          "Sincronização bidirecional controlada entre plugin ChatGPT e espelho GitHub",
+          "Compatibilidade com Claude Code e Antigravity em diretório unificado",
+          "Script FTS5 histórico preservado dentro do pacote"
         ],
         "category": "Developer Tools",
         "defaultPrompt": [
@@ -53,7 +59,7 @@
         ],
         "developerName": "Ian Maciel de Carvalho",
         "displayName": "Exams Archive",
-        "longDescription": "Consulta o histórico privado Exams/Notes App via GitHub e FTS5, preservando evidências de UI e animações. Inclui um contrato de sincronização bidirecional controlada: mantém um espelho de código-fonte em plugins/exams-archive-native no GitHub e compara as versões com o plugin ChatGPT. A atualização/publicação do plugin requer uma ação autorizada via Plugin Creator e não acontece automaticamente a cada commit. Não altera backups imutáveis nem o plugin Codex separado.",
+        "longDescription": "Plugin de fonte única no repositório GitHub privado com skills compartilhadas para ChatGPT, Codex, Claude Code e Antigravity. Preserva pesquisa Git/FTS5 autenticada, referências visuais verificadas por SHA, UI motion e sincronização controlada ChatGPT↔GitHub. CI valida manifests, skills e CLI. Não publica backups nem fornece sincronização autônoma de releases pessoais.",
         "shortDescription": "Histórico, UI/UX e sincronização com GitHub"
       }
     }

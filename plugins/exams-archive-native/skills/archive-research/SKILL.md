@@ -1,6 +1,6 @@
 ---
-name: exams-archive-research
-description: Use to research, verify, audit, search or recover historical Exam App/Notes App repositories, commits, Git bundles, screenshot paths, code and original UI sources. Use GitHub connected tools and private FTS5 via Actions when needed. For a visual preview or sidebar/UI reconstruction also consult exams-archive-ui-fidelity.
+name: archive-research
+description: Use to research, verify, audit, search or recover historical Exam App/Notes App repositories, commits, Git bundles, screenshot paths, code and original UI sources. Use GitHub connected tools and private FTS5 via Actions when needed. For a visual preview or sidebar/UI reconstruction also consult ui-fidelity.
 ---
 
 # Exams Archive — pesquisa histórica via GitHub
@@ -9,7 +9,7 @@ Fonte do **backup histórico**: repositório **privado** `ianmaciel7/exams-app-a
 
 ## Roteamento: decidir antes de buscar
 
-- **Criação, reprodução ou preview de UI (sidebar, shell, layout, design, HTML, imagem de referência)**: leia a skill **`exams-archive-ui-fidelity`**, `visual-source-catalog.md`, `chat-preview-contract.md` e `source-map.md` **antes** de qualquer FTS5. Primeiro obtenha os arquivos e screenshots originais, não um índice genérico.
+- **Criação, reprodução ou preview de UI (sidebar, shell, layout, design, HTML, imagem de referência)**: leia a skill **`ui-fidelity`**, `visual-source-catalog.md`, `chat-preview-contract.md` e `source-map.md` **antes** de qualquer FTS5. Primeiro obtenha os arquivos e screenshots originais, não um índice genérico.
 - **Auditoria de backup/restauração**: leia `README.md`, `docs/VERIFICATION-2026-11-23.md`, `docs/DELETE-READINESS.md` e `docs/EXTRACTION-GUIDE.md` conforme necessidade. Verifique o status presente; jamais conclua que o Notes privado está 100% restaurado só por histórico.
 - **Busca histórica sem caminho conhecido**: relatórios primeiro, FTS5 privada depois (`references/private-fts5.md`).
 

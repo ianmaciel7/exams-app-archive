@@ -1,14 +1,14 @@
 {
   "name": "exams-archive-private",
   "interface": {
-    "displayName": "Private Exam App Tools"
+    "displayName": "Private Exams Archive Tools"
   },
   "plugins": [
     {
-      "name": "exams-archive",
+      "name": "exams-archive-native",
       "source": {
         "source": "local",
-        "path": "./plugins/exams-archive"
+        "path": "./plugins/exams-archive-native"
       },
       "policy": {
         "installation": "AVAILABLE",

@@ -1,5 +1,5 @@
 ---
-name: exams-archive-motion-research
+name: ui-motion
 description: Use when researching, creating or comparing UI animations, transitions, microinteractions, hover, sidebar peek, drawer, motion easing, timing, loading skeleton, drag and drop, gestures, focus and reduced-motion across historical Exams App and Notes App.
 ---
 

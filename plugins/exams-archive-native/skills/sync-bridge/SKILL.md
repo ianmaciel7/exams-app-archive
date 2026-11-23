@@ -1,5 +1,5 @@
 ---
-name: exams-archive-sync-bridge
+name: sync-bridge
 description: Use when the user modifies, audits, updates or asks to synchronize the Exams Archive ChatGPT plugin and its GitHub source. Enforce two-way source mirroring, version checks, evidence of equality, and safe conflict handling for each material plugin change.
 ---
 
@@ -29,3 +29,10 @@ description: Use when the user modifies, audits, updates or asks to synchronize 
 - Editar sempre a versão semântica nos dois manifests; versões e conteúdos divergentes devem ser marcados como drift.
 - Não depender de computador local nem usar credenciais expostas na conversa. Só ferramentas GitHub e Plugin Creator conectadas.
 - Em caso de falha num dos lados, manter o outro íntegro, relatar a divergência e fornecer a operação segura para completar depois.
+
+## Pacote multiagente v0.6.0
+
+- A fonte canônica de código do plugin é `ianmaciel7/exams-app-archive@main:plugins/exams-archive-native/`, com manifests nativos de quatro clientes. Modificações por qualquer agente devem ser propostas ao GitHub como PR validada. **Não atualizar cópias concorrentes como fonte independente**.
+- O CLI FTS5 histórico agora também está neste pacote em `scripts/archive_query.py`, e a skill `archive-search` descreve o uso local com autenticação `gh`. No ChatGPT sem executor local, usar GitHub conectado e pesquisa privada já documentada.
+- Toda release ChatGPT deve ser gerada da árvore canônica aprovada. Comparar hash byte a byte de cada arquivo de origem; salvar a release no registro `.sync-state.json` externo ao pacote. Plugin Creator não fornece atualização automática em contas pessoais.
+- Não presumir que claude/agy/codex estão instalados ou que uma atualização Git instala no usuário sem refresh. CI estática não é teste end-to-end de cliente.

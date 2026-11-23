@@ -1,0 +1,34 @@
+name: Multiagent plugin validation
+on:
+  pull_request:
+    paths:
+      - "plugins/exams-archive-native/**"
+      - ".agents/plugins/marketplace.json"
+      - ".claude-plugin/marketplace.json"
+      - "tests/test_multiagent_plugin.py"
+      - ".github/workflows/plugin-validation.yml"
+  push:
+    branches: [main]
+    paths:
+      - "plugins/exams-archive-native/**"
+      - ".agents/plugins/marketplace.json"
+      - ".claude-plugin/marketplace.json"
+      - "tests/test_multiagent_plugin.py"
+      - ".github/workflows/plugin-validation.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  portable-plugin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Manifest, marketplace, skill and FTS5 preservation tests
+        run: python -m unittest discover -s tests -p 'test_multiagent_plugin.py' -v
+      - name: Historical FTS5 CLI regression suite
+        run: python -m unittest discover -s tests -p 'test_archive_plugin.py' -v
+      - name: Compile the bundled archive CLI
+        run: python -m py_compile plugins/exams-archive-native/scripts/archive_query.py

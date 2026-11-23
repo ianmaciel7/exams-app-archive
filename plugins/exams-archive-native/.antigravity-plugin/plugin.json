@@ -1,0 +1,23 @@
+{
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "name": "exams-archive-native",
+  "displayName": "Exams Archive",
+  "version": "0.6.0",
+  "description": "Pesquisa Git/FTS5, recuperação de designs, motion e auditoria de backups históricos do Exams App, com fonte GitHub privada.",
+  "author": {
+    "name": "Ian Maciel de Carvalho"
+  },
+  "suggestedPrompts": [
+    "Localize uma captura histórica da sidebar com repositório, branch e SHA.",
+    "Recupere as animações de hover e peek verificando o código-fonte.",
+    "Audite um bundle Git sem alterar o backup original."
+  ],
+  "keywords": [
+    "exams",
+    "archive",
+    "github",
+    "ui-ux",
+    "motion",
+    "research"
+  ]
+}
