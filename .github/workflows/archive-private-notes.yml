@@ -18,6 +18,8 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
+      - name: Validate Python syntax before requiring private credential
+        run: python3 -m py_compile scripts/archive_private_notes.py scripts/export_public_platform_metadata.py
       - name: Validate cross-repository read-only authorization
         env:
           NOTES_READ_TOKEN: ${{ secrets.NOTES_READ_TOKEN }}
