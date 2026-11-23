@@ -1,0 +1,249 @@
+{
+  "generated_utc": "2026-11-23T17:34:37.197301+00:00",
+  "release": "archive-2026-11-23-initial",
+  "verified_bundles": 15,
+  "matching_current_source_heads": 15,
+  "contents_recovered_independently_of_sources": true,
+  "items": [
+    {
+      "path": "prototype/exams-app-old-backup-dev-20261111-1903.bundle",
+      "source_repository": "exams-app-old",
+      "branch": "backup/dev-20261111-1903",
+      "expected_source_sha": "a8d9797ed47bd8d2e2987e12d7bb478841c78671",
+      "bundle_heads": [
+        {
+          "sha": "a8d9797ed47bd8d2e2987e12d7bb478841c78671",
+          "ref": "refs/heads/backup-dev-20261111-1903"
+        }
+      ],
+      "matches_source_branch_sha": true,
+      "size_bytes": 247258,
+      "sha256": "45607e086eca212c08ecfd58431111a346398df8fc44af393765d26082ad3e4f",
+      "verified": true
+    },
+    {
+      "path": "prototype/exams-app-old-backup-dev-before-adr2.bundle",
+      "source_repository": "exams-app-old",
+      "branch": "backup/dev-before-adr2",
+      "expected_source_sha": "1db80ad136bbab8720637fbd33315d08bf6a5def",
+      "bundle_heads": [
+        {
+          "sha": "1db80ad136bbab8720637fbd33315d08bf6a5def",
+          "ref": "refs/heads/backup-dev-before-adr2"
+        }
+      ],
+      "matches_source_branch_sha": true,
+      "size_bytes": 172066,
+      "sha256": "197dd3bde28bda705ba068bce6ffe0356b3b473bdadbefd5c6c731dfe771e8f2",
+      "verified": true
+    },
+    {
+      "path": "prototype/exams-app-old-backup-old-1.bundle",
+      "source_repository": "exams-app-old",
+      "branch": "backup/old-1",
+      "expected_source_sha": "cc43fb998824101d68da7fad237fd5457986e1cb",
+      "bundle_heads": [
+        {
+          "sha": "cc43fb998824101d68da7fad237fd5457986e1cb",
+          "ref": "refs/heads/backup-old-1"
+        }
+      ],
+      "matches_source_branch_sha": true,
+      "size_bytes": 2816794,
+      "sha256": "f21e9d0fec028cd127368ec45d041fe543d44ad0af7ba57a7954d9f12bad25e0",
+      "verified": true
+    },
+    {
+      "path": "prototype/notes-app-old-1.bundle",
+      "source_repository": "notes-app",
+      "branch": "old-1",
+      "expected_source_sha": "c2fca6232c45ce4d64d0088036e1ddd0742944d4",
+      "bundle_heads": [
+        {
+          "sha": "c2fca6232c45ce4d64d0088036e1ddd0742944d4",
+          "ref": "refs/heads/old-1"
+        }
+      ],
+      "matches_source_branch_sha": true,
+      "size_bytes": 24026,
+      "sha256": "cecab4b509f6af0080b91d389a879e1cad08221a384fa457dc67815293c7e508",
+      "verified": true
+    },
+    {
+      "path": "prototype/notes-app-old-10.bundle",
+      "source_repository": "notes-app",
+      "branch": "old-10",
+      "expected_source_sha": "cabcec2e8227fc7f06aa5c9c5afcc0e8944802c6",
+      "bundle_heads": [
+        {
+          "sha": "cabcec2e8227fc7f06aa5c9c5afcc0e8944802c6",
+          "ref": "refs/heads/old-10"
+        }
+      ],
+      "matches_source_branch_sha": true,
+      "size_bytes": 4917677,
+      "sha256": "515858ddf88553d9a2e3d48cfce4f7c6a8f18a761472b7e42b835cfb039db3e3",
+      "verified": true
+    },
+    {
+      "path": "prototype/notes-app-old-11.bundle",
+      "source_repository": "notes-app",
+      "branch": "old-11",
+      "expected_source_sha": "f513fc91cdebd0adf8ba708d8108f9808af698c6",
+      "bundle_heads": [
+        {
+          "sha": "f513fc91cdebd0adf8ba708d8108f9808af698c6",
+          "ref": "refs/heads/old-11"
+        }
+      ],
+      "matches_source_branch_sha": true,
+      "size_bytes": 3268223,
+      "sha256": "0a140e95c7a207babada0295dd99a756dfa85677c6a0017bc9511010c32289f8",
+      "verified": true
+    },
+    {
+      "path": "prototype/notes-app-old-2.bundle",
+      "source_repository": "notes-app",
+      "branch": "old-2",
+      "expected_source_sha": "7d14209252e47bf4449ec953928c2ef711f0642e",
+      "bundle_heads": [
+        {
+          "sha": "7d14209252e47bf4449ec953928c2ef711f0642e",
+          "ref": "refs/heads/old-2"
+        }
+      ],
+      "matches_source_branch_sha": true,
+      "size_bytes": 37349710,
+      "sha256": "b4f4ea171df3207e27af1c8d60a66c8cc521d96bdc5e82e4c3dc2b0c861d9f5f",
+      "verified": true
+    },
+    {
+      "path": "prototype/notes-app-old-3.bundle",
+      "source_repository": "notes-app",
+      "branch": "old-3",
+      "expected_source_sha": "19105d011c84fe7bf9b5cea4bb75f4fd4b94ea34",
+      "bundle_heads": [
+        {
+          "sha": "19105d011c84fe7bf9b5cea4bb75f4fd4b94ea34",
+          "ref": "refs/heads/old-3"
+        }
+      ],
+      "matches_source_branch_sha": true,
+      "size_bytes": 1291691,
+      "sha256": "063a0c8345bec493b9553194a4f59a6485fc48004cb4c0928cdf3cd7e81cf901",
+      "verified": true
+    },
+    {
+      "path": "prototype/notes-app-old-4.bundle",
+      "source_repository": "notes-app",
+      "branch": "old-4",
+      "expected_source_sha": "2839f410e3f696cfcf1d92a48849275c1016776b",
+      "bundle_heads": [
+        {
+          "sha": "2839f410e3f696cfcf1d92a48849275c1016776b",
+          "ref": "refs/heads/old-4"
+        }
+      ],
+      "matches_source_branch_sha": true,
+      "size_bytes": 11169545,
+      "sha256": "1b0bb645bd74bf01fec1a1c41dfda147ff0789e5fe1528eb706e52f389f649fb",
+      "verified": true
+    },
+    {
+      "path": "prototype/notes-app-old-5.bundle",
+      "source_repository": "notes-app",
+      "branch": "old-5",
+      "expected_source_sha": "0857a9977d1f66f1ba2b26d46bb6084344d489c8",
+      "bundle_heads": [
+        {
+          "sha": "0857a9977d1f66f1ba2b26d46bb6084344d489c8",
+          "ref": "refs/heads/old-5"
+        }
+      ],
+      "matches_source_branch_sha": true,
+      "size_bytes": 15165783,
+      "sha256": "16c39bb02b1f55e2057543b2c3a3806f652e9e7d87800d9ce68e5d486c75c250",
+      "verified": true
+    },
+    {
+      "path": "prototype/notes-app-old-6.bundle",
+      "source_repository": "notes-app",
+      "branch": "old-6",
+      "expected_source_sha": "f336db18e2149040707c453814cbb16e388cde37",
+      "bundle_heads": [
+        {
+          "sha": "f336db18e2149040707c453814cbb16e388cde37",
+          "ref": "refs/heads/old-6"
+        }
+      ],
+      "matches_source_branch_sha": true,
+      "size_bytes": 5487301,
+      "sha256": "d96871dad75174e2fc6439b672e03917c6a5581d6b4bb2aadf9fb47793ac393b",
+      "verified": true
+    },
+    {
+      "path": "prototype/notes-app-old-7.bundle",
+      "source_repository": "notes-app",
+      "branch": "old-7",
+      "expected_source_sha": "e5d9048aabb480605e357c2d2a00e82fc4c24c3d",
+      "bundle_heads": [
+        {
+          "sha": "e5d9048aabb480605e357c2d2a00e82fc4c24c3d",
+          "ref": "refs/heads/old-7"
+        }
+      ],
+      "matches_source_branch_sha": true,
+      "size_bytes": 5175373,
+      "sha256": "a522d4120ef04209a397adf9bdf50d05195a8242a7bdb1b2f8285241ac447288",
+      "verified": true
+    },
+    {
+      "path": "prototype/notes-app-old-8.bundle",
+      "source_repository": "notes-app",
+      "branch": "old-8",
+      "expected_source_sha": "d930d7a7391b231c1888bb5b2fb271f8d9f2f5be",
+      "bundle_heads": [
+        {
+          "sha": "d930d7a7391b231c1888bb5b2fb271f8d9f2f5be",
+          "ref": "refs/heads/old-8"
+        }
+      ],
+      "matches_source_branch_sha": true,
+      "size_bytes": 7053659,
+      "sha256": "96d4f98fad7ecc720e249f8d229ce034bc63e3fe69547d16ca88c93c4432d611",
+      "verified": true
+    },
+    {
+      "path": "prototype/notes-app-old-9.bundle",
+      "source_repository": "notes-app",
+      "branch": "old-9",
+      "expected_source_sha": "dae844270e7ebc80c6a307c49e0f830630e70cb0",
+      "bundle_heads": [
+        {
+          "sha": "dae844270e7ebc80c6a307c49e0f830630e70cb0",
+          "ref": "refs/heads/old-9"
+        }
+      ],
+      "matches_source_branch_sha": true,
+      "size_bytes": 4940004,
+      "sha256": "cf6ae6b75439da131f2e9e23f8ce6581d5f6899d02a4e0044c532daf8569d852",
+      "verified": true
+    },
+    {
+      "path": "prototype/notes-app-old.bundle",
+      "source_repository": "notes-app",
+      "branch": "old",
+      "expected_source_sha": "e2234be59ba61a717884f829037cb8be268e5c6c",
+      "bundle_heads": [
+        {
+          "sha": "e2234be59ba61a717884f829037cb8be268e5c6c",
+          "ref": "refs/heads/old"
+        }
+      ],
+      "matches_source_branch_sha": true,
+      "size_bytes": 2309793,
+      "sha256": "3183366dd5a29e9cf97f226b9d701a2faff1224d23f341d5f3c1a99061e02cfa",
+      "verified": true
+    }
+  ]
+}
