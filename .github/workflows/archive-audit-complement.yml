@@ -1,0 +1,33 @@
+name: Complete archived public branch coverage
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/archive-audit-complement.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  preserve-missing:
+    if: github.repository == 'ianmaciel7/exams-app-archive'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Make branch-complete bundles and validate reference roundtrip
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/preserve_missing_branches.py
+      - name: Publish immutable provenance manifest
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add manifests/release-2026-11-23-audit-complements.json
+          if ! git diff --cached --quiet; then
+            git commit -m "docs(archive): record missing refs remediation and checksums"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
