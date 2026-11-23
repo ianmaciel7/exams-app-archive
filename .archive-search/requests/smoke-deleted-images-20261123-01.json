@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "id": "smoke-deleted-images-20261123-01",
+  "operation": "images",
+  "repo": "exams-app-antigo-2",
+  "deleted_only": true,
+  "limit": 8
+}
