@@ -7,9 +7,9 @@ Data de referência: 2026-11-23. **Não excluir automaticamente repositórios de
 | Repositório | Histórico Git / SHA dos heads | Issues/PRs/revisões | Actions artifacts | Situação de exclusão |
 |---|---|---|---|---|
 | `exams-app-old` | 6/6 branches restauradas e conferidas | ZIP de metadados verificado | Nenhum artifact ativo no inventário | Depende de cópia externa e conferência de integrações |
-| `exams-app-antigo-2` | 28/28 branches restauradas e conferidas | 200 PRs e 88 issues; erro de reviews do PR #248 resolvido em complemento | 2.844 ZIPs, aproximadamente 1,09 GB; exportação em lotes iniciada | **Bloqueado** até auditoria e backup binário concluídos |
-| `shadcn-template` | 7/7 branches restauradas e conferidas | ZIP de metadados verificado | 15 artifacts, aproximadamente 2,60 MB | **Bloqueado** até backup dos artifacts |
-| `shadcn-firebase-template` | 7/7 branches restauradas e conferidas | ZIP de metadados verificado | 24 artifacts, aproximadamente 19,47 MB | **Bloqueado** até backup dos artifacts e verificação de Discussions |
+| `exams-app-antigo-2` | 28/28 branches restauradas e conferidas | 200 PRs e 88 issues; erro de reviews do PR #248 resolvido em complemento | 2.844 ZIPs, aproximadamente 1,09 GB; preservados em release privada e validados | Etapa técnica aprovada; confirmar dependências e cópia independente |
+| `shadcn-template` | 7/7 branches restauradas e conferidas | ZIP de metadados verificado | 15 artifacts, aproximadamente 2,60 MB; todos preservados | Etapa técnica aprovada; confirmar dependências e cópia independente |
+| `shadcn-firebase-template` | 7/7 branches restauradas e conferidas | ZIP de metadados verificado | 24 artifacts, aproximadamente 19,47 MB; todos preservados, 0 Discussions | Etapa técnica aprovada; confirmar dependências e cópia independente |
 
 O `exams-app` e o `notes-app` **não são alvos** de exclusão: são projetos correntes. Para o Notes privado ainda faltam 4 branches e 3 tags no arquivo (o workflow requer `NOTES_READ_TOKEN`).
 
@@ -20,8 +20,20 @@ O `exams-app` e o `notes-app` **não são alvos** de exclusão: são projetos co
 - JSON dos metadados de issues/PRs/CI: [public-metadata-2026-11-23](https://github.com/ianmaciel7/exams-app-archive/releases/tag/public-metadata-2026-11-23).
 - Suplemento do PR #248: [inventory/exams-app-antigo-2/pr-248-reviews-supplement.json](../inventory/exams-app-antigo-2/pr-248-reviews-supplement.json).
 - Prova de recuperação de mídia de CI: [legacy-ci-evidence-sample-2026-11-23](https://github.com/ianmaciel7/exams-app-archive/releases/tag/legacy-ci-evidence-sample-2026-11-23).
-- Preservação integral dos artifacts recuperáveis: [workflow](https://github.com/ianmaciel7/exams-app-archive/actions/runs/45250235125) e [release dos lotes](https://github.com/ianmaciel7/exams-app-archive/releases/tag/legacy-ci-artifacts-2026-11-23-bulk).
-- Validador: [.github/workflows/verify-legacy-archive.yml](../.github/workflows/verify-legacy-archive.yml).
+- Preservação integral dos artifacts recuperáveis: [workflow aprovado](https://github.com/ianmaciel7/exams-app-archive/actions/runs/45250235125) e [release completa e verificada](https://github.com/ianmaciel7/exams-app-archive/releases/tag/legacy-ci-artifacts-2026-11-23-bulk).
+- Validador: [.github/workflows/verify-legacy-archive.yml](../.github/workflows/verify-legacy-archive.yml), com [execução final aprovada](https://github.com/ianmaciel7/exams-app-archive/actions/runs/45251774013).
+- Inventário GraphQL de Discussions e Projects V2: [legacy-github-extras-2026-11-23](https://github.com/ianmaciel7/exams-app-archive/releases/tag/legacy-github-extras-2026-11-23), 0 registros nos quatro repositórios.
+
+## Resultado técnico confirmado em 23/11/2026
+
+- **4/4 repositórios antigos aprovados** no auditor de restauração, com **0 impedimentos técnicos** dentro do escopo verificado.
+- **2.883/2.883 GitHub Actions artifacts preservados**, em 16 TARs acompanhados por 16 manifestos, mais manifesto global `complete=true`. **0 arquivos faltantes, 0 downloads falhos e 0 IDs duplicados**.
+- A release contém aproximadamente **1,11 GB**, incluindo os dados binários dos artifacts e seus manifestos; SHA-256 da release conferido e um ZIP real extraído e validado.
+- O erro HTTP 500 ao exportar reviews do PR #248 foi resolvido por consulta REST e GraphQL: **0 revisões**.
+- **0 Discussions e 0 Projects V2** na consulta GraphQL aos quatro repositórios.
+- O resultado não prova recuperação de logs/artefatos que já haviam expirado, dados apagados do GitHub ou serviços externos.
+
+**Ainda não excluir originais:** falta a cópia independente fora desta conta GitHub e a confirmação de dependências externas (deploy, webhooks, links e ferramentas). A exclusão exige autorização explícita.
 
 ## Condições cumulativas para permitir a exclusão
 
