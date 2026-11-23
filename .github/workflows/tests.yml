@@ -1,0 +1,40 @@
+name: CI tests
+
+on:
+  pull_request:
+    paths:
+      - "scripts/**"
+      - "plugins/**"
+      - "site/**"
+      - "tests/**"
+      - ".github/workflows/**"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - "plugins/**"
+      - "site/**"
+      - "tests/**"
+      - ".github/workflows/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-suite:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Run full test suite (pytest)
+        run: python -m pytest tests -v
+      - name: Compile Python scripts
+        run: python -m py_compile scripts/*.py plugins/*/scripts/*.py
+      - name: Check site/app.js syntax
+        run: node --check site/app.js
