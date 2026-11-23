@@ -9,6 +9,10 @@ on:
       - tests/**
       - .github/workflows/archive-poc.yml
 
+concurrency:
+  group: exam-archive-historical-index
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
@@ -43,5 +47,6 @@ jobs:
           git add reports/POC.md reports/POC.json reports/archive-index.sqlite
           if ! git diff --cached --quiet; then
             git commit -m 'test(archive): record real Git history extraction POC'
+            git pull --rebase origin main
             git push origin HEAD:main
           fi
