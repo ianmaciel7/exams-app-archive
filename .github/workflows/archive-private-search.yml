@@ -1,0 +1,51 @@
+name: Private historical archive search
+on:
+  push:
+    branches: [archive-search-queries]
+    paths: [".archive-search/requests/*.json"]
+permissions:
+  contents: write
+concurrency:
+  group: private-archive-search
+  cancel-in-progress: false
+jobs:
+  search:
+    if: github.repository == 'ianmaciel7/exams-app-archive'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          path: trusted
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          ref: archive-search-queries
+          path: queue
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Search verified private release index
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          git -C queue pull --ff-only origin archive-search-queries
+          python trusted/scripts/archive_remote_query.py \
+            --root trusted \
+            --requests queue/.archive-search/requests \
+            --results queue/.archive-search/results \
+            --db "$RUNNER_TEMP/archive.sqlite"
+      - name: Commit private results to search branch
+        shell: bash
+        run: |
+          git -C queue config user.name "github-actions[bot]"
+          git -C queue config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C queue add .archive-search/results
+          if ! git -C queue diff --cached --quiet; then
+            git -C queue commit -m "chore(private-search): save bounded archive results"
+            git -C queue pull --rebase origin archive-search-queries
+            git -C queue push origin HEAD:archive-search-queries
+          fi
