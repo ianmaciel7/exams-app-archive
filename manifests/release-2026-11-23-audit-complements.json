@@ -1,0 +1,71 @@
+{
+  "tag": "archive-2026-11-23-audit-complements",
+  "created_at": "2026-11-23T17:31:32.871909+00:00",
+  "archive": "ianmaciel7/exams-app-archive",
+  "reason": "Initial release only included main for two templates, and omitted two auxiliary public repositories.",
+  "assets": [
+    {
+      "asset": "shadcn-template.bundle",
+      "repository": "ianmaciel7/shadcn-template",
+      "purpose": "Exam UI template — include feature/automation refs",
+      "sha256": "0a251265797e6b1cc614eb495dd2c369182150ebb95646979a6a06a052fbdf42",
+      "size_bytes": 658330,
+      "refs": {
+        "refs/heads/chore/declarative-ruleset-as-code": "6ceb812e4397cfd0364b8233dea076747af73861",
+        "refs/heads/dependabot/github_actions/github-actions-6b1aed0551": "f0d37bc1c9beee8f167e6048a4b4f031b5bc221e",
+        "refs/heads/dependabot/npm_and_yarn/dev-dependencies-f148a7b98d": "3e7ca140f1c5147cfa3a8cd71682c130d28ab68e",
+        "refs/heads/dependabot/npm_and_yarn/production-dependencies-144fe1c970": "8383571c48e2de087419fb89559856e315ff9579",
+        "refs/heads/dependabot/pip/dot-github/dependabot-mirror/ci-python/ci-python-tools-ff2d40f37a": "853df5f59fd1c0c24b4006baa2b6317d45141c83",
+        "refs/heads/feat/setup-github-and-standards": "bb30ac75f3c48fda2aa5f7bedea6f46faf0c6fa8",
+        "refs/heads/main": "c091632dfc03519862950dcffc6c3a41a9360b9c"
+      },
+      "verified": true
+    },
+    {
+      "asset": "shadcn-firebase-template.bundle",
+      "repository": "ianmaciel7/shadcn-firebase-template",
+      "purpose": "Exam Firebase template — include automation refs",
+      "sha256": "1c3a404c21e19735bdd83068a06d3e554b1c98c24be0e214c1677331e1cb9f16",
+      "size_bytes": 2328265,
+      "refs": {
+        "refs/heads/dependabot/github_actions/github-actions-77df686157": "7f290ee023ca0ecca2a9895eb86f42b5f72210af",
+        "refs/heads/dependabot/npm_and_yarn/dev-dependencies-02e65f9da5": "98dcf6dce60930dd8756a29700c8397b57236dde",
+        "refs/heads/dependabot/npm_and_yarn/functions/fast-xml-parser-5.12.0": "7b687641a0b6f9ee67bd5e6af467cf4ee9715f7a",
+        "refs/heads/dependabot/npm_and_yarn/next-16.4.5": "dbfa1196ea15b3993ecc33a555a4a3332a610de2",
+        "refs/heads/dependabot/npm_and_yarn/production-dependencies-efc1227285": "0ac9307017c78f3c2fadc8220047656eb355050a",
+        "refs/heads/dependabot/pip/dot-github/dependabot-mirror/ci-python/ci-python-tools-ff2d40f37a": "077813adc5e6b6a721d667b4097d780d24510513",
+        "refs/heads/main": "4d706df638738c3babe5df562e38fb830832f238"
+      },
+      "verified": true
+    },
+    {
+      "asset": "fcc-responsive-web-design.bundle",
+      "repository": "ianmaciel7/fcc-responsive-web-design",
+      "purpose": "Auxiliary public repository — inventoried for completeness",
+      "sha256": "65a0fe45d30fe02afc300d03acd11142bdfd38c49ee50363642935b12389c397",
+      "size_bytes": 16957,
+      "refs": {
+        "refs/heads/main": "59972ba7e05cba3794b6effe5a31105212435a55"
+      },
+      "verified": true
+    },
+    {
+      "asset": "ianmaciel7.bundle",
+      "repository": "ianmaciel7/ianmaciel7",
+      "purpose": "Auxiliary public profile repository — inventoried for completeness",
+      "sha256": "d55cb369f206755954120aa6b7f12790cffb5a0001f777a07c8609997f26f42e",
+      "size_bytes": 7360,
+      "refs": {
+        "refs/heads/main": "6a1f1b3be62bb3557af947c92f811c0b213e88bc"
+      },
+      "verified": true
+    }
+  ],
+  "excluded": [
+    "notes-app private repository — no cross-repository authentication available",
+    "exams-app/chore/consolidate-legacy-sources-20261123 — generated transient migration copy; excluded deliberately",
+    "exams-app/claude/project-thread-o4dym1 — ancestor of dev, commits already included in exams-app.bundle",
+    "exams-app-archive — current destination; self-archival is unnecessary"
+  ],
+  "roundtrip_verified_asset": "shadcn-template.bundle"
+}
