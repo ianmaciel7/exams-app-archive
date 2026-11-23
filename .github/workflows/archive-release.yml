@@ -1,0 +1,39 @@
+name: Preserve historical Git bundles in private Release
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scripts/create_release_archives.py
+      - .github/workflows/archive-release.yml
+
+permissions:
+  contents: write
+
+jobs:
+  archive-release:
+    if: github.repository == 'ianmaciel7/exams-app-archive'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Confirm archive is private and validate script
+        run: |
+          test "$(gh repo view "$GITHUB_REPOSITORY" --json visibility --jq .visibility)" = PRIVATE
+          python3 -m py_compile scripts/create_release_archives.py
+      - name: Export verified Git bundles and upload private Release assets
+        run: python3 scripts/create_release_archives.py
+      - name: Store provenance manifest in searchable Git files
+        run: |
+          test -s manifests/release-2026-11-23.json
+          test -s manifests/README.md
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add manifests/release-2026-11-23.json manifests/README.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore(archive): verify private Git bundle release assets'
+            git push origin HEAD:main
+          fi
