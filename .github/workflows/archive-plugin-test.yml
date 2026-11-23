@@ -26,3 +26,11 @@ jobs:
       - run: python -m unittest discover -s tests -p test_archive_plugin.py -v
       - run: python -m py_compile plugins/exams-archive/scripts/archive_query.py
       - run: node --check site/app.js
+      - name: Authenticated archived-index smoke test
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          python plugins/exams-archive/scripts/archive_query.py --db "$RUNNER_TEMP/archive.sqlite" sync > "$RUNNER_TEMP/verify-sync.json"
+          python plugins/exams-archive/scripts/archive_query.py --db "$RUNNER_TEMP/archive.sqlite" search grafo --limit 4 > "$RUNNER_TEMP/verify-search.json"
+          python -c 'import json,os,pathlib; p=pathlib.Path(os.environ["RUNNER_TEMP"]); a=json.loads((p/"verify-sync.json").read_text()); b=json.loads((p/"verify-search.json").read_text()); assert a["sources"] >= 19 and len(b) >= 1, (a,len(b))'
