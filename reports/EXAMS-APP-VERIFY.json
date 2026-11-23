@@ -1,0 +1,124 @@
+{
+  "source": "ianmaciel7/exams-app",
+  "archive": "ianmaciel7/exams-app-archive",
+  "generated_at_utc": "2026-11-23T18:07:11.304699+00:00",
+  "release_checked": "exams-app-2026-11-23-complete",
+  "integrity": {
+    "bundle_sha256_valid": true,
+    "snapshot_sha256_valid": true,
+    "git_fsck_full": true,
+    "all_refs_match": true,
+    "branch_heads_and_file_counts_match": true,
+    "dev_tar_files_match": true
+  },
+  "refs_count": 5,
+  "branches": [
+    {
+      "branch": "chore/consolidate-legacy-sources-20261123",
+      "head": "b67c7c1e36e09676192382112590a203a2113cbc",
+      "files": 2837,
+      "media": 811,
+      "blob_bytes": 139569550,
+      "verified": true
+    },
+    {
+      "branch": "claude/project-thread-o4dym1",
+      "head": "c6d50b2096e397ee2819b4d5ef84a2a799cca247",
+      "files": 309,
+      "media": 260,
+      "blob_bytes": 40343777,
+      "verified": true
+    },
+    {
+      "branch": "dev",
+      "head": "dfc277cd98239c92d2a6b9f6dea44393b15a626b",
+      "files": 509,
+      "media": 360,
+      "blob_bytes": 57167258,
+      "verified": true
+    },
+    {
+      "branch": "main",
+      "head": "70247f40f1495ad5660578cd90bef28fc489e59f",
+      "files": 1,
+      "media": 0,
+      "blob_bytes": 500,
+      "verified": true
+    }
+  ],
+  "gitmodules": [],
+  "gitattributes_files": [
+    "chore/consolidate-legacy-sources-20261123:docs/archives/legacy/shadcn-firebase-template/snapshot/.gitattributes",
+    "chore/consolidate-legacy-sources-20261123:docs/archives/legacy/shadcn-template/snapshot/.gitattributes"
+  ],
+  "git_lfs": {
+    "total_objects_scanned": 3870,
+    "candidate_small_blobs_scanned": 607,
+    "lfs_pointers_found": 0,
+    "pointers": [],
+    "pointers_truncated": false
+  },
+  "github_actions": {
+    "verified": true,
+    "total_runs": 2,
+    "runs": [
+      {
+        "id": 45220066096,
+        "name": "Consolidate public legacy references (one-time)",
+        "event": "push",
+        "created_at": "2026-11-23T16:45:24Z",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/ianmaciel7/exams-app/actions/runs/45220066096",
+        "jobs": [
+          {
+            "id": 137851601509,
+            "name": "import-public-legacy",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ],
+        "artifacts_count": 0,
+        "artifacts": []
+      },
+      {
+        "id": 45219839901,
+        "name": "Consolidate public legacy references (one-time)",
+        "event": "pull_request",
+        "created_at": "2026-11-23T16:44:12Z",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/ianmaciel7/exams-app/actions/runs/45219839901",
+        "jobs": [
+          {
+            "id": 137850801665,
+            "name": "import-public-legacy",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ],
+        "artifacts_count": 0,
+        "artifacts": []
+      }
+    ]
+  },
+  "workflow_job_logs": [
+    {
+      "job_id": 137851601509,
+      "saved": false,
+      "error": "('gh', 'api', 'repos/ianmaciel7/exams-app/actions/jobs/137851601509/logs') failed (1): the response contains terminal escape sequences; pass --allow-escape-sequences to output it anyway\n"
+    },
+    {
+      "job_id": 137850801665,
+      "saved": false,
+      "error": "('gh', 'api', 'repos/ianmaciel7/exams-app/actions/jobs/137850801665/logs') failed (1): the response contains terminal escape sequences; pass --allow-escape-sequences to output it anyway\n"
+    }
+  ],
+  "limitations": [
+    "All Git refs and objects reachable by the release were verified, not unreachable/pruned upstream objects.",
+    "GitHub Actions logs were saved only if their source API endpoint allowed reading them.",
+    "GitHub API metadata, including some platform settings, may change after this snapshot.",
+    "External website assets and third-party services referenced in documents are not bundled.",
+    "Checks on other repositories, including notes-app private, are tracked separately."
+  ]
+}
