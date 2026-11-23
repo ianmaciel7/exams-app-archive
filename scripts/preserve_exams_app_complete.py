@@ -96,7 +96,7 @@ def file_inventory(git_dir: Path, refs: dict[str,str]):
         for line in lines.split(b"\x00"):
             if not line or b"\t" not in line: continue
             meta, name = line.split(b"\t", 1)
-            p = meta.decode("ascii", "replace").split(" ")
+            p = meta.decode("ascii", "replace").split()
             if len(p) < 4: continue
             files.append({
                 "path": name.decode("utf-8", "replace"), "mode": p[0],
