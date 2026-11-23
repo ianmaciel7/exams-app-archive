@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-23T23:10:31.866481+00:00",
+  "generated_utc": "2026-11-23T23:15:05.013394+00:00",
   "sources": [
     {
       "repository": "exams-app-old",
@@ -8,7 +8,7 @@
       "changes": 13676,
       "deleted_image_evidence": 0,
       "images": 14,
-      "seconds": 1.38,
+      "seconds": 1.02,
       "branch_compare": {
         "main_only": 0,
         "dev_only": 9,
@@ -22,7 +22,7 @@
       "changes": 18279,
       "deleted_image_evidence": 2266,
       "images": 1563,
-      "seconds": 16.94,
+      "seconds": 16.56,
       "branch_compare": {
         "main_only": 0,
         "dev_only": 180,
@@ -100,7 +100,7 @@
           "summary": "refactor(firebase): drop pass-through MFA wrappers and share the code form"
         }
       ],
-      "ms": 0.51,
+      "ms": 0.53,
       "count": 8
     },
     {
@@ -163,7 +163,7 @@
           "summary": "feat(graph): grafo da coleção em canvas com zoom, teclado e lista acessível (#227)"
         }
       ],
-      "ms": 0.15,
+      "ms": 0.16,
       "count": 8
     },
     {
@@ -352,7 +352,7 @@
           "summary": "docs(research): add sourced Capacities baseline for issue 32 (#193)"
         }
       ],
-      "ms": 0.14,
+      "ms": 0.17,
       "count": 8
     }
   ],
@@ -385,7 +385,7 @@
     "bytes": 7532,
     "mentions_recall": true
   },
-  "elapsed_seconds": 18.88,
+  "elapsed_seconds": 18.15,
   "index_bytes": 14843904,
   "sqlite_fts5": true,
   "historical_sources_complete": false,
