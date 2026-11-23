@@ -14,6 +14,8 @@ import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 
+from search_expansion import expand_query, expanded_image_terms
+
 MEDIA = {'.png', '.jpg', '.jpeg', '.webp', '.gif', '.svg'}
 DB_SCHEMA = '''
 PRAGMA journal_mode=DELETE;
@@ -197,8 +199,9 @@ def _query_commits(
     tokens: list[str],
     repo: str | None,
     limit: int,
+    matchers: list[str] | None = None,
 ) -> list[dict]:
-    matchers = _fts_matchers(tokens)
+    matchers = matchers if matchers is not None else _fts_matchers(tokens)
     if not matchers:
         return []
     for matcher in matchers:
@@ -251,8 +254,9 @@ def _query_files(
     tokens: list[str],
     repo: str | None,
     limit: int,
+    matchers: list[str] | None = None,
 ) -> list[dict]:
-    matchers = _fts_matchers(tokens)
+    matchers = matchers if matchers is not None else _fts_matchers(tokens)
     if not matchers:
         return []
     for matcher in matchers:
@@ -339,15 +343,17 @@ def _query_images(
     tokens: list[str],
     repo: str | None,
     limit: int,
+    expanded_terms: list[str] | None = None,
 ) -> list[dict]:
-    if not tokens:
+    search_terms = expanded_terms if expanded_terms is not None else tokens
+    if not search_terms:
         return []
-    lowered = [t.lower() for t in tokens]
+    lowered = [t.lower() for t in search_terms]
     escaped = [
         '%' + t.replace('\\', '\\\\').replace('%', '\\%').replace('_', '\\_') + '%'
         for t in lowered
     ]
-    if len(escaped) == 1:
+    if expanded_terms is not None or len(escaped) == 1:
         attempts = [(' OR ', escaped)]
     else:
         attempts = [(' AND ', escaped), (' OR ', escaped)]
@@ -410,20 +416,30 @@ def search(
     *,
     kind: str = 'all',
     repo: str | None = None,
+    expand_pt_en: bool = True,
 ) -> list[dict]:
     tokens = re.findall(r'\w+', q, flags=re.UNICODE)[:6]
     if not tokens:
         return []
     limit = max(1, min(int(limit), 100))
+    fts_matchers: list[str] | None = None
+    image_terms: list[str] | None = None
+    if expand_pt_en:
+        expansion = expand_query(q, max_tokens=6)
+        if expansion['fts_matchers']:
+            fts_matchers = expansion['fts_matchers']
+        img_terms = expanded_image_terms(q)
+        if img_terms and len(img_terms) > len(tokens):
+            image_terms = img_terms
     kinds = ('commit', 'file', 'image') if kind == 'all' else (kind,)
     buckets: dict[str, list[dict]] = {}
     for current in kinds:
         if current == 'commit':
-            buckets['commit'] = _query_commits(conn, tokens, repo, limit)
+            buckets['commit'] = _query_commits(conn, tokens, repo, limit, matchers=fts_matchers)
         elif current == 'file':
-            buckets['file'] = _query_files(conn, tokens, repo, limit)
+            buckets['file'] = _query_files(conn, tokens, repo, limit, matchers=fts_matchers)
         elif current == 'image':
-            buckets['image'] = _query_images(conn, tokens, repo, limit)
+            buckets['image'] = _query_images(conn, tokens, repo, limit, expanded_terms=image_terms)
     if len(kinds) == 1:
         return buckets.get(kinds[0], [])[:limit]
     return _interleave_by_kind(buckets, kinds, limit)
