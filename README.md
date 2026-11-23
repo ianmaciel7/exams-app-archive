@@ -12,6 +12,8 @@ não em dezenas de branches.
 | [Auditoria dos 9 repositórios](docs/AUDIT-COVERAGE-2026-11-23.md) | Cobertura e lacunas, com 71 branch heads inventariados |
 | [Backup completo de exams-app](https://github.com/ianmaciel7/exams-app-archive/releases/tag/exams-app-2026-11-23-complete) | **Todas as 4 branches**, refs de PR, imagens, documentos, inventário e metadados GitHub |
 | [Relatório e catálogo exams-app](docs/EXAMS-APP-COMPLETE.md) | Contagem de arquivos por branch e instruções de recuperação |
+| [Auditoria de objetos Git, mídia e LFS](reports/EXAMS-APP-VERIFY.md) | `git fsck --full`, 4 branches, TAR de dev, 3.870 objetos examinados, 0 ponteiros LFS e 0 submódulos |
+| [Logs CI originais do exams-app](https://github.com/ianmaciel7/exams-app-archive/releases/tag/exams-app-2026-11-23-ci-logs) | Dois logs recuperados do GitHub Actions, comprimidos e verificados por SHA-256 |
 | [Backup Git dos demais projetos públicos](https://github.com/ianmaciel7/exams-app-archive/releases/tag/archive-2026-11-23-all-refs) | Versões antigas, templates e referências de PR preservadas |
 | [Índice SQLite FTS5 mais recente](https://github.com/ianmaciel7/exams-app-archive/releases/tag/index-2026-11-23-exams-complete) | Busca histórica em todos os projetos e nas quatro branches de exams-app |
 | [Relatório da busca completa](reports/FULL-INDEX.md) | Resultados e métricas reais da indexação |
