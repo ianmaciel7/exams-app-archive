@@ -15,7 +15,7 @@ A primeira execução automatizada avalia:
 2. `exams-app-antigo-2` — protótipos, imagens e histórico amplo;
 3. `notes-app-old-10.bundle` — backup histórico extraído do segundo repositório.
 
-O relatório e o índice ficam em [`reports/`](./reports/POC.md) após a execução.
+O relatório e o índice ficam em [`reports/`](./reports/POC.md) após a execução.\nA primeira preservação verificada foi publicada em\n[release privada `archive-2026-11-23-initial`](https://github.com/ianmaciel7/exams-app-archive/releases/tag/archive-2026-11-23-initial):\ncinco bundles Git de repositórios públicos e quatro bundles históricos de `notes-app`.\nNenhuma branch temporária foi recriada aqui.\n\n**[Guia de extração e consultas](./docs/EXTRACTION-GUIDE.md)**.
 A busca funciona por assuntos de commit e nomes históricos de arquivos, inclusive
 arquivos removidos. A recuperação usa SHA + caminho diretamente dos objetos Git.
 
@@ -56,5 +56,5 @@ uma parte do histórico, mas não comprova cobertura completa.
 - `scripts/archive_index.py` — indexador e busca/recuperação pela CLI.
 - `scripts/run_poc.py` — prova executada contra fontes Git reais.
 - `tests/test_archive_index.py` — testes determinísticos, incluindo imagem removida.
-- `reports/` — inventário e evidências da execução, inclusive SQLite FTS5.
+- `reports/` — inventário e evidências da execução, inclusive SQLite FTS5.\n- `manifests/` — hashes SHA-256 dos bundles da release privada.\n- `docs/EXTRACTION-GUIDE.md` — busca e restauração comprovável de arquivos antigos.
 - `sources/` — reservado para futuros backups Git verificados e aprovados.
