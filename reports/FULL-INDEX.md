@@ -1,20 +1,20 @@
-# Índice pesquisável com as refs de PR preservadas
+# Índice pesquisável com as quatro branches de exams-app
 
-Índice criado exclusivamente a partir das duas releases privadas; sem clonar origens.
+Índice criado exclusivamente das releases privadas, incluindo exams-app completo; sem clonar origens.
 
 - Fontes históricas indexadas: 19
 - Commits processados (somados, podem ter ancestrais comuns): 3995
 - Alterações de arquivos processadas: 77530
-- Registros de imagens: 3121
-- Tempo: 23.5 segundos
-- SQLite: 37.33 MiB
-- Download comprimido: 5.88 MiB
+- Registros de imagens: 3572
+- Tempo: 25.27 segundos
+- SQLite: 37.5 MiB
+- Download comprimido: 5.91 MiB
 
-Release: https://github.com/ianmaciel7/exams-app-archive/releases/tag/index-2026-11-23-all-refs
+Release: https://github.com/ianmaciel7/exams-app-archive/releases/tag/index-2026-11-23-exams-complete
 
 | Fonte | Refs | Commits | Alterações | Imagens |
 |---|---:|---:|---:|---:|
-| exams-app | 3 | 45 | 11643 | 482 |
+| exams-app | 5 | 45 | 11643 | 933 |
 | exams-app-old | 167 | 780 | 13676 | 14 |
 | exams-app-antigo-2 | 234 | 1051 | 18279 | 1563 |
 | shadcn-template | 37 | 128 | 1647 | 11 |
@@ -38,15 +38,15 @@ Release: https://github.com/ianmaciel7/exams-app-archive/releases/tag/index-2026
 
 | Consulta | Resultados | Latência |
 |---|---:|---:|
-| firebase | 12 | 0.79 ms |
-| grafo | 12 | 0.2 ms |
-| qconcursos | 12 | 0.17 ms |
-| recall | 12 | 0.2 ms |
-| capacit | 12 | 0.32 ms |
-| fsrs | 12 | 0.15 ms |
-| sidebar | 12 | 0.2 ms |
-| exam | 12 | 0.6 ms |
-| simulado | 12 | 0.18 ms |
+| firebase | 12 | 0.73 ms |
+| grafo | 12 | 0.17 ms |
+| qconcursos | 12 | 0.15 ms |
+| recall | 12 | 0.11 ms |
+| capacit | 12 | 0.17 ms |
+| fsrs | 12 | 0.12 ms |
+| sidebar | 12 | 0.37 ms |
+| exam | 12 | 0.48 ms |
+| simulado | 12 | 0.15 ms |
 
 ## Limitações
 
