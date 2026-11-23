@@ -1,0 +1,31 @@
+name: Preserve Git history including pull request refs
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/preserve-all-git-refs.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  all-refs:
+    if: github.repository == 'ianmaciel7/exams-app-archive'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Export verified complete advertised Git refs into private Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/preserve_all_git_refs.py
+      - name: Commit SHA provenance and coverage metrics
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add manifests/release-2026-11-23-all-refs.json manifests/ALL-REFS.md
+          if ! git diff --cached --quiet; then
+            git commit -m "docs(archive): record PR refs and full-public-history coverage"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
