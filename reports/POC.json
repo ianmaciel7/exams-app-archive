@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-23T23:22:05.127691+00:00",
+  "generated_utc": "2026-11-23T23:26:16.490912+00:00",
   "sources": [
     {
       "repository": "exams-app-old",
@@ -8,7 +8,7 @@
       "changes": 13676,
       "deleted_image_evidence": 0,
       "images": 14,
-      "seconds": 1.36,
+      "seconds": 1.02,
       "branch_compare": {
         "main_only": 0,
         "dev_only": 9,
@@ -22,7 +22,7 @@
       "changes": 18279,
       "deleted_image_evidence": 2266,
       "images": 1563,
-      "seconds": 17.61,
+      "seconds": 11.21,
       "branch_compare": {
         "main_only": 0,
         "dev_only": 180,
@@ -100,7 +100,7 @@
           "summary": "refactor(firebase): drop pass-through MFA wrappers and share the code form"
         }
       ],
-      "ms": 0.51,
+      "ms": 0.45,
       "count": 8
     },
     {
@@ -163,7 +163,7 @@
           "summary": "feat(graph): grafo da coleção em canvas com zoom, teclado e lista acessível (#227)"
         }
       ],
-      "ms": 0.15,
+      "ms": 0.1,
       "count": 8
     },
     {
@@ -226,7 +226,7 @@
           "summary": ""
         }
       ],
-      "ms": 0.15,
+      "ms": 0.09,
       "count": 8
     },
     {
@@ -289,7 +289,7 @@
           "summary": ""
         }
       ],
-      "ms": 0.11,
+      "ms": 0.06,
       "count": 8
     },
     {
@@ -352,7 +352,7 @@
           "summary": "docs(research): add sourced Capacities baseline for issue 32 (#193)"
         }
       ],
-      "ms": 0.12,
+      "ms": 0.07,
       "count": 8
     }
   ],
@@ -385,11 +385,11 @@
     "bytes": 7532,
     "mentions_recall": true
   },
-  "elapsed_seconds": 19.52,
+  "elapsed_seconds": 12.65,
   "index_bytes": 14843904,
-  "index_sha256": "58e2fd94f1530f7a12cede9254a94201e2b08c358629f3dfd539c844b5635a55",
+  "index_sha256": "7f3dd76cd7ff116948bf8593cf5faab35f5d960c78175fbe72dc20d6227fc6fc",
   "index_gzip_bytes": 2501726,
-  "index_gzip_sha256": "867b0572b3c7ff7582e08c7e4245146374bb8bc9320994399f2e2ad43f1d400b",
+  "index_gzip_sha256": "9ac4c54b46c9987be3eede9ec68dbe57115f0fdedcf1018dadf20b21d180cc7c",
   "release_tag": "poc-archive-index",
   "sqlite_fts5": true,
   "historical_sources_complete": false,
@@ -405,8 +405,8 @@
     "published": true,
     "release_tag": "poc-archive-index",
     "asset_sqlite_gz": "archive-index.sqlite.gz",
-    "sqlite_sha256": "58e2fd94f1530f7a12cede9254a94201e2b08c358629f3dfd539c844b5635a55",
-    "gzip_sha256": "867b0572b3c7ff7582e08c7e4245146374bb8bc9320994399f2e2ad43f1d400b",
+    "sqlite_sha256": "7f3dd76cd7ff116948bf8593cf5faab35f5d960c78175fbe72dc20d6227fc6fc",
+    "gzip_sha256": "9ac4c54b46c9987be3eede9ec68dbe57115f0fdedcf1018dadf20b21d180cc7c",
     "gzip_bytes": 2501726,
     "verified_download": true,
     "url": "https://github.com/ianmaciel7/exams-app-archive/releases/tag/poc-archive-index"
