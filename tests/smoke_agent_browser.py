@@ -67,9 +67,9 @@ def check_browser():
             graph = {"nodes":[{"id":"a","label":"Sidebar","type":"Component"},{"id":"b","label":"Design","type":"File"}],
                      "edges":[{"source":"a","target":"b","type":"REFERENCES","confidence":"INFERRED"}]}
             page.locator("#file").set_input_files({"name":"graph.json","mimeType":"application/json","buffer":json.dumps(graph).encode()})
-            page.locator("#graph .graph-node").first.wait_for()
+            page.get_by_role("button", name="Sidebar", exact=True).wait_for()
             assert page.locator("#graph .graph-node").count() == 2
-            page.locator("#graph .graph-node").first.click()
+            page.get_by_role("button", name="Sidebar", exact=True).locator("circle").last.click()
             assert "Sidebar" in page.locator("#graph-detail").inner_text()
             page.locator("#confidence").select_option("EXTRACTED")
             assert page.locator("#graph line").count() == 0

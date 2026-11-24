@@ -22,7 +22,7 @@
         <div class="eyebrow">EXPLORADOR LOCAL · SEM SERVIDOR DE BUSCA</div>
         <h1 id="heading">Encontre referências dos projetos antigos.</h1>
         <p>Pesquise commits, arquivos e imagens históricas sem enviar o índice para a internet. Os registros são importados do seu computador e ficam somente nesta aba.</p>
-      </section>
+      <a class="graph-jump" href="#graph-panel">Abrir grafo de conexões</a></section>
 
       <section class="import-card" aria-labelledby="import-heading">
         <div>
@@ -61,7 +61,7 @@ python scripts/archive_query.py export-pages --output private.archive-browser.js
           </select></label>
           <label class="check"><input id="deleted" type="checkbox" disabled> Apenas arquivos/imagens excluídos</label>
         </div>
-        <section class="graph-panel"><div class="graph-head"><div><span class="eyebrow">MAPA DE CONHECIMENTO</span><h2>Grafo de conexões</h2><p id="graph-meta"></p></div><label>Relações <select id="confidence"><option value="">Todas</option><option>EXTRACTED</option><option>INFERRED</option></select></label><button id="graph-reset" type="button">Visão geral</button></div><svg id="graph" viewBox="0 0 800 440" role="group" aria-label="Grafo interativo"></svg><p id="graph-detail" role="status">Selecione um nó para explorar.</p><div id="graph-neighbors"></div><p class="hint">Linhas contínuas: extraídas. Tracejadas: inferidas ou não classificadas. Até 30 nós por visão.</p></section><div class="result-header"><p id="status" role="status" aria-live="polite">Importe o índice para começar.</p><button id="clear" class="text-button" disabled>Limpar filtros</button></div>
+        <section class="graph-panel" id="graph-panel"><div class="graph-head"><div><span class="eyebrow">MAPA DE CONHECIMENTO</span><h2>Grafo de conexões</h2><p id="graph-meta"></p></div><label>Relações <select id="confidence"><option value="">Todas</option><option>EXTRACTED</option><option>INFERRED</option></select></label><button id="graph-reset" type="button">Visão geral</button></div><svg id="graph" viewBox="0 0 800 440" role="group" aria-label="Grafo interativo"></svg><p id="graph-detail" role="status">Selecione um nó para explorar.</p><div id="graph-neighbors"></div><p class="hint">Linhas contínuas: extraídas. Tracejadas: inferidas ou não classificadas. Até 30 nós por visão.</p></section><div class="result-header"><p id="status" role="status" aria-live="polite">Importe o índice para começar.</p><button id="clear" class="text-button" disabled>Limpar filtros</button></div>
         <div id="results" class="results" tabindex="-1">
           <div class="empty"><div aria-hidden="true" class="empty-mark">⌕</div><h3>Seu histórico, no seu navegador.</h3><p>Escolha um índice JSON local para habilitar a pesquisa.</p></div>
         </div>
