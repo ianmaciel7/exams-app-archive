@@ -13,7 +13,8 @@ CLI=ROOT/"plugins/exams-archive/scripts/archive_query.py"
 def main():
     deps=Path(sys.argv[1]).resolve()
     with tempfile.TemporaryDirectory() as home:
-        env={**os.environ,"HOME":home,"USERPROFILE":home}
+        env={**os.environ,"HOME":home,"USERPROFILE":home,
+             "PLAYWRIGHT_BROWSERS_PATH":os.environ.get("PLAYWRIGHT_BROWSERS_PATH",str(Path.home()/".cache/ms-playwright"))}
         def run(*args):
             r=subprocess.run([sys.executable,str(CLI),"components",*args],env=env,cwd=ROOT,capture_output=True,text=True,check=True)
             return json.loads(r.stdout)
