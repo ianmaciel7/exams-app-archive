@@ -462,46 +462,35 @@ def git_stream_commits(repo: Path, *extra_args: str):
 
 
 def read_blobs_batch(repo: Path, blob_shas: list[str]) -> dict[str, bytes]:
-    if not blob_shas:
-        return {}
+    """Read bounded batches with communicate to avoid pipe deadlocks."""
+    import io
     out: dict[str, bytes] = {}
-    proc = subprocess.Popen(
-        ["git", f"--git-dir={repo}", "cat-file", "--batch"],
-        stdin=subprocess.PIPE,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-    )
-    assert proc.stdin is not None and proc.stdout is not None and proc.stderr is not None
-    payload = ("\n".join(blob_shas) + "\n").encode("ascii")
-    proc.stdin.write(payload)
-    proc.stdin.close()
-    try:
-        while True:
-            header_raw = proc.stdout.readline()
-            if not header_raw:
-                break
-            header = header_raw.decode("ascii", "replace").rstrip("\n")
-            parts = header.split()
-            if len(parts) < 2:
+    for start in range(0, len(blob_shas), 64):
+        batch = blob_shas[start:start + 64]
+        if any(not re.fullmatch(r"[0-9a-fA-F]{40,64}", sha) for sha in batch):
+            raise ValueError("Invalid Git object ID")
+        payload = ("\n".join(batch) + "\n").encode("ascii")
+        proc = subprocess.run(
+            ["git", f"--git-dir={repo}", "cat-file", "--batch"],
+            input=payload, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+            check=False, timeout=180,
+        )
+        if proc.returncode:
+            raise RuntimeError("git cat-file batch failed")
+        stream = io.BytesIO(proc.stdout)
+        while header_raw := stream.readline():
+            parts = header_raw.decode("ascii", "replace").rstrip("\n").split()
+            if len(parts) == 2 and parts[1] == "missing":
                 continue
-            sha = parts[0]
-            if parts[1] == "missing":
-                continue
-            if len(parts) < 3:
-                continue
-            obj_type = parts[1]
-            size = int(parts[2])
-            data = proc.stdout.read(size)
-            proc.stdout.read(1)
-            if obj_type == "blob" and len(data) == size:
+            if len(parts) != 3:
+                raise RuntimeError("Malformed Git object header")
+            sha, obj_type, raw_size = parts
+            size = int(raw_size)
+            data = stream.read(size)
+            if len(data) != size or stream.read(1) != b"\n":
+                raise RuntimeError("Truncated Git object")
+            if obj_type == "blob":
                 out[sha] = data
-        err = proc.stderr.read().decode("utf-8", "replace")
-    finally:
-        proc.stdout.close()
-        proc.stderr.close()
-    code = proc.wait()
-    if code:
-        raise RuntimeError(f"git cat-file --batch returned {code}: {err[:1200]}")
     return out
 
 
