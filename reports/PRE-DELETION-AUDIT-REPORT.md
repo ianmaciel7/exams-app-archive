@@ -1,5 +1,8 @@
 # Relatorio de Auditoria Pre-Exclusao e Conformidade (Pre-Deletion Audit)
 
+> **Retificação de 24/11/2026:** este documento é um snapshot histórico. A conferência mais recente de cobertura, segurança e lacunas está no [README](../README.md). O backup Git posterior de Notes já possui manifesto verificado; isso não implica que o índice antigo foi reconstruído, que a privacidade esteja garantida ou que a exclusão esteja autorizada.
+
+
 **Data da Auditoria:** 2026-11-24T11:05:07.945156+00:00
 **Veredito Geral:** `FAIL - REPOSITORY DELETION HARD-BLOCKED`
 
