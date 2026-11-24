@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import gzip
 import hashlib
+import importlib
 import json
 import os
 from pathlib import Path
@@ -20,6 +21,8 @@ REPORT_PATH = "reports/FULL-INDEX.json"
 DEFAULT_TAG = "index-2026-11-23-exams-complete"
 CACHE = Path.home() / ".cache" / "exams-app-archive"
 DEFAULT_DB = CACHE / "full-index.sqlite"
+DEFAULT_GRAPH_DB = CACHE / "graph-linker.sqlite"
+DEFAULT_CONTEXT_DB = CACHE / "context-linker.sqlite"
 COLUMNS = ("repository", "kind", "sha", "path", "summary", "blob", "bytes", "deleted")
 
 
@@ -416,6 +419,206 @@ def recover(bare: Path, sha: str, path: str, output: Path) -> dict:
             "bytes": output.stat().st_size, "sha": sha, "path": path}
 
 
+def _find_scripts_dir() -> Path:
+    """Locate the repository scripts/ directory containing core integration modules."""
+    here = Path(__file__).resolve()
+    env_root = os.environ.get("EXAMS_ARCHIVE_ROOT")
+    candidates: list[Path] = []
+    if env_root:
+        candidates.append(Path(env_root) / "scripts")
+    for parent in here.parents:
+        candidates.append(parent / "scripts")
+    candidates.append(Path.cwd() / "scripts")
+    for candidate in candidates:
+        if (candidate / "ast_chunker.py").is_file():
+            return candidate
+    raise RuntimeError(
+        "Core archive scripts directory not found. Run inside the exams-app-archive "
+        "repository or set EXAMS_ARCHIVE_ROOT."
+    )
+
+
+def _load_core_module(name: str):
+    scripts_dir = _find_scripts_dir()
+    if str(scripts_dir) not in sys.path:
+        sys.path.insert(0, str(scripts_dir))
+    return importlib.import_module(name)
+
+
+def run_ast_command(path: Path, lang: str | None = None, summary_only: bool = False) -> dict:
+    if not path.is_file():
+        raise RuntimeError(f"Source file not found: {path}")
+    ast_chunker = _load_core_module("ast_chunker")
+    text = path.read_text(encoding="utf-8", errors="replace")
+    effective_lang = lang or path.suffix.lower() or "text"
+    chunks = ast_chunker.chunk_code(text, language=effective_lang)
+    motion_contracts = [m.to_dict() for c in chunks for m in c.motion_contracts]
+    payload: dict = {
+        "path": str(path),
+        "language": ast_chunker.normalize_language(effective_lang),
+        "extractor_version": ast_chunker.EXTRACTOR_VERSION,
+        "blob_sha": ast_chunker.compute_git_blob_sha(text.replace("\r\n", "\n").replace("\r", "\n")),
+        "chunk_count": len(chunks),
+        "motion_contract_count": len(motion_contracts),
+    }
+    if summary_only:
+        payload["chunks"] = [
+            {
+                "chunk_index": c.chunk_index,
+                "node_type": c.node_type,
+                "name": c.name,
+                "parent_context": c.parent_context,
+                "start_line": c.start_line,
+                "end_line": c.end_line,
+                "symbol_id": c.symbol_id,
+                "status": c.status,
+                "motion_contracts": [m.to_dict() for m in c.motion_contracts],
+            }
+            for c in chunks
+        ]
+    else:
+        payload["chunks"] = [c.to_dict() for c in chunks]
+    return payload
+
+
+def run_graph_command(
+    *,
+    entity: str | None = None,
+    graph_db: Path = DEFAULT_GRAPH_DB,
+    inventory_dir: Path | None = None,
+    archive_db: Path | None = None,
+    hops: int = 2,
+    repo: str | None = None,
+    since: str | None = None,
+    until: str | None = None,
+    confidence: str | None = None,
+    limit: int = 50,
+    stats_only: bool = False,
+) -> dict:
+    graph_linker = _load_core_module("graph_linker")
+    if not graph_db.exists() and not inventory_dir and not archive_db:
+        raise RuntimeError(
+            f"Graph DB not found: {graph_db}. Pass --inventory-dir, --archive-db, or --graph-db."
+        )
+    conn = graph_linker.open_db(graph_db)
+    try:
+        build_info: dict = {}
+        if inventory_dir is not None:
+            if not inventory_dir.is_dir():
+                raise RuntimeError(f"Inventory directory not found: {inventory_dir}")
+            exams_inv = inventory_dir / "exams-app-branch-files.json"
+            notes_inv = inventory_dir / "notes-app"
+            if exams_inv.is_file():
+                build_info["exams_app"] = graph_linker.ingest_branch_inventory(
+                    conn, exams_inv, repo_override="exams-app"
+                )
+            if notes_inv.is_dir():
+                build_info["notes_app"] = graph_linker.ingest_notes_platform_inventory(
+                    conn, notes_inv, repo_name="notes-app"
+                )
+            build_info["supersedes_edges"] = graph_linker.link_temporal_supersession(conn)
+        if archive_db is not None:
+            if not archive_db.is_file():
+                raise RuntimeError(f"Archive SQLite not found: {archive_db}")
+            build_info["archive_ingest"] = graph_linker.ingest_archive_sqlite(conn, archive_db)
+            build_info["supersedes_edges"] = graph_linker.link_temporal_supersession(conn)
+
+        if stats_only or not entity:
+            out = graph_linker.graph_stats(conn)
+            if build_info:
+                out["build"] = build_info
+            return out
+
+        out = graph_linker.query_neighborhood(
+            conn,
+            entity,
+            hops=hops,
+            repo=repo,
+            since=since,
+            until=until,
+            confidence=confidence,
+            limit=max(1, min(int(limit), 500)),
+        )
+        if build_info:
+            out["build"] = build_info
+        return out
+    finally:
+        conn.close()
+
+
+def run_context_command(
+    *,
+    query: str | None = None,
+    context_db: Path = DEFAULT_CONTEXT_DB,
+    inventory_dir: Path | None = None,
+    git_source: Path | None = None,
+    repo: str | None = None,
+    limit: int = 20,
+    stats_only: bool = False,
+) -> dict:
+    context_linker = _load_core_module("context_linker")
+    if not context_db.exists() and not inventory_dir and not git_source:
+        raise RuntimeError(
+            f"Context DB not found: {context_db}. Pass --inventory-dir, --git-source, or --context-db."
+        )
+    conn = context_linker.open_db(context_db)
+    try:
+        build_info: dict = {}
+        if inventory_dir is not None:
+            if not inventory_dir.is_dir():
+                raise RuntimeError(f"Inventory directory not found: {inventory_dir}")
+            build_info["inventory"] = context_linker.import_inventory(
+                inventory_dir, conn, repo_override=repo
+            )
+        if git_source is not None:
+            if not repo:
+                raise RuntimeError("--repo is required when using --git-source")
+            build_info["git"] = context_linker.ingest_git_repo(git_source, repo, conn)
+
+        if stats_only or not query:
+            out = {
+                "sources": conn.execute("SELECT COUNT(*) FROM ctx_sources").fetchone()[0],
+                "items": conn.execute("SELECT COUNT(*) FROM ctx_items").fetchone()[0],
+                "commits": conn.execute("SELECT COUNT(*) FROM ctx_commits").fetchone()[0],
+                "commit_files": conn.execute("SELECT COUNT(*) FROM ctx_commit_files").fetchone()[0],
+                "comments": conn.execute("SELECT COUNT(*) FROM ctx_comments").fetchone()[0],
+                "events": conn.execute("SELECT COUNT(*) FROM ctx_events").fetchone()[0],
+                "images": conn.execute("SELECT COUNT(*) FROM ctx_images").fetchone()[0],
+                "links": conn.execute("SELECT COUNT(*) FROM ctx_links").fetchone()[0],
+                "releases": conn.execute("SELECT COUNT(*) FROM ctx_releases").fetchone()[0],
+                "workflow_runs": conn.execute("SELECT COUNT(*) FROM ctx_workflow_runs").fetchone()[0],
+                "gaps": conn.execute("SELECT COUNT(*) FROM ctx_gaps").fetchone()[0],
+            }
+            if build_info:
+                out["build"] = build_info
+            return out
+
+        out = context_linker.query_history(
+            conn,
+            query,
+            repo=repo,
+            limit=max(1, min(int(limit), 100)),
+        )
+        if build_info:
+            out["build"] = build_info
+        return out
+    finally:
+        conn.close()
+
+
+def run_secrets_check_command(
+    target: Path,
+    *,
+    allowlist: Path | None = None,
+    use_gitleaks: bool = False,
+) -> dict:
+    secrets_gate = _load_core_module("secrets_gate")
+    if not target.exists():
+        raise RuntimeError(f"Secrets check target does not exist: {target}")
+    gate_allowlist = secrets_gate._load_allowlist(allowlist) if allowlist else None
+    return secrets_gate.scan_target(target, allowlist=gate_allowlist, use_gitleaks=use_gitleaks)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--db", type=Path, default=DEFAULT_DB)
@@ -439,11 +642,79 @@ def main() -> None:
     p.add_argument("--sha", required=True)
     p.add_argument("--path", required=True)
     p.add_argument("--output", type=Path, required=True)
+
+    p_ast = sub.add_parser("ast", help="Extract structural AST chunks and motion contracts")
+    p_ast.add_argument("path", type=Path)
+    p_ast.add_argument("--lang", default=None)
+    p_ast.add_argument("--summary-only", action="store_true")
+
+    p_graph = sub.add_parser("graph", help="Query or build multi-repo relation graph")
+    p_graph.add_argument("entity", nargs="?", default=None)
+    p_graph.add_argument("--graph-db", type=Path, default=DEFAULT_GRAPH_DB)
+    p_graph.add_argument("--inventory-dir", type=Path, default=None)
+    p_graph.add_argument("--archive-db", type=Path, default=None)
+    p_graph.add_argument("--hops", type=int, default=2)
+    p_graph.add_argument("--repo", default=None)
+    p_graph.add_argument("--since", default=None)
+    p_graph.add_argument("--until", default=None)
+    p_graph.add_argument("--confidence", choices=("EXTRACTED", "INFERRED"), default=None)
+    p_graph.add_argument("--limit", type=int, default=50)
+    p_graph.add_argument("--stats", action="store_true")
+
+    p_ctx = sub.add_parser("context", help="Query chronological file/PR/review/image context")
+    p_ctx.add_argument("query", nargs="?", default=None)
+    p_ctx.add_argument("--context-db", type=Path, default=DEFAULT_CONTEXT_DB)
+    p_ctx.add_argument("--inventory-dir", type=Path, default=None)
+    p_ctx.add_argument("--git-source", type=Path, default=None)
+    p_ctx.add_argument("--repo", default=None)
+    p_ctx.add_argument("--limit", type=int, default=20)
+    p_ctx.add_argument("--stats", action="store_true")
+
+    p_sec = sub.add_parser("secrets-check", help="Scan file, directory, SQLite, JSON, or Git bundle for secrets")
+    p_sec.add_argument("target", type=Path)
+    p_sec.add_argument("--allowlist", type=Path, default=None)
+    p_sec.add_argument("--use-gitleaks", action="store_true")
+
     args = parser.parse_args()
+    exit_code = 0
     if args.command == "sync":
         result = sync(args.db, args.force)
     elif args.command == "recover":
         result = recover(args.git_dir, args.sha, args.path, args.output)
+    elif args.command == "ast":
+        result = run_ast_command(args.path, lang=args.lang, summary_only=args.summary_only)
+    elif args.command == "graph":
+        result = run_graph_command(
+            entity=args.entity,
+            graph_db=args.graph_db,
+            inventory_dir=args.inventory_dir,
+            archive_db=args.archive_db,
+            hops=args.hops,
+            repo=args.repo,
+            since=args.since,
+            until=args.until,
+            confidence=args.confidence,
+            limit=args.limit,
+            stats_only=args.stats,
+        )
+    elif args.command == "context":
+        result = run_context_command(
+            query=args.query,
+            context_db=args.context_db,
+            inventory_dir=args.inventory_dir,
+            git_source=args.git_source,
+            repo=args.repo,
+            limit=args.limit,
+            stats_only=args.stats,
+        )
+    elif args.command == "secrets-check":
+        result = run_secrets_check_command(
+            args.target,
+            allowlist=args.allowlist,
+            use_gitleaks=args.use_gitleaks,
+        )
+        if result.get("blocked"):
+            exit_code = 2
     else:
         with read_db(args.db) as conn:
             if args.command == "search":
@@ -459,6 +730,8 @@ def main() -> None:
             else:
                 result = export_pages(conn, args.output)
     print(json.dumps(result, ensure_ascii=False, indent=2))
+    if exit_code:
+        sys.exit(exit_code)
 
 
 if __name__ == "__main__":
