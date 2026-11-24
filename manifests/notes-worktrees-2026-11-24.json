@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-24",
+  "source": "ianmaciel7/notes-app",
+  "supplement_release": "notes-worktrees-2026-11-24",
+  "storage": "private source repository; not a copy in the public archive",
+  "verified_workflow_run": 45438413372,
+  "restore_verified": true,
+  "download_verified": true,
+  "refs": {
+    "object_studio": "786e519c135269600f534a52fe95a9436164f2d8",
+    "capacities_sidebar": "ef0bda5cc8ca1a75418671da00ecac2cbfcdeef7"
+  },
+  "assets": [
+    {
+      "name": "SHA256SUMS.txt",
+      "bytes": 90,
+      "sha256": "a4139c3a0009a9a907418e7d1b5064fa281ac886a64eb9627f5a8549abb788b0"
+    },
+    {
+      "name": "worktree-history.bundle",
+      "bytes": 547065,
+      "sha256": "b108afe0cf3e42efcc6f4d537cbb356744985d8635da51a88ddff497b21347b7"
+    }
+  ],
+  "limitations": [
+    "Separate private supplement preserves source commits; not incorporated into the six public bundles.",
+    "Original notes-app must remain available; no deletion authorization."
+  ]
+}
