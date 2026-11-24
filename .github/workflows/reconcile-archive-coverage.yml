@@ -1,0 +1,25 @@
+name: Reconcile archive coverage
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/reconcile-archive-coverage.yml"
+permissions:
+  contents: read
+jobs:
+  reconcile:
+    if: github.repository == 'ianmaciel7/exams-app-archive'
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compare public PR inventory, historical gitlinks and complete local index
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/reconcile_archive_coverage.py
