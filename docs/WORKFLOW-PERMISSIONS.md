@@ -33,6 +33,9 @@ This document catalogs every GitHub Actions workflow in `.github/workflows/`, it
 | `verify-exams-app-extras.yml` | Preservation / audit | `push` (`main`: self) | `contents: write`, `actions: read` | Commits `reports/EXAMS-APP-VERIFY.json` and `reports/EXAMS-APP-VERIFY.md` to `main` |
 | `verify-legacy-archive.yml` | Preservation / audit | `workflow_dispatch`, `push` (`main`: self) | `contents: read` | None (read-only; uploads workflow artifact `legacy-delete-readiness`) |
 
+| `audit-release-bytes.yml` | Integrity audit | `workflow_dispatch`, `push` (`main`: self) | `contents: read` | None; aggregate-only logs, no asset uploads |
+| `reconcile-archive-coverage.yml` | Coverage audit | `workflow_dispatch`, `push` (`main`: self) | `contents: read` | None; local-only index rebuild, aggregate outputs |
+
 ## Governance Guardrail
 
 `tests/test_workflow_permissions.py` enforces least-privilege governance on `.github/workflows/*.yml`:
