@@ -21,12 +21,12 @@ from archive_index import git, ingest, images, open_db, recover, search
 ARCHIVE="ianmaciel7/exams-app-archive"
 TAG_SOURCE="archive-2026-11-23-all-refs"
 TAG_EXAMS="exams-app-2026-11-23-complete"
-TAG_INDEX="index-2026-11-23-exams-complete"
+TAG_NOTES="notes-app-2026-11-23-private-full"
+TAG_INDEX="index-2026-11-24-six-sources-complete"
 REPORTS=Path("reports")
 SOURCES=[
     "exams-app","exams-app-old","exams-app-antigo-2",
     "shadcn-template","shadcn-firebase-template",
-    "fcc-responsive-web-design","ianmaciel7",
 ]
 
 def cmd(*args, output=None, timeout=1800):
@@ -56,6 +56,10 @@ def main():
     complete_manifest=json.loads((Path("manifests")/"exams-app-complete-2026-11-23.json").read_text())
     complete_hash=next(i["sha256"] for i in complete_manifest["assets"] if i["name"]=="exams-app-all-refs.bundle")
     provenance["exams-app.bundle"]=complete_hash
+    notes_manifest=json.loads((Path("manifests")/"notes-app-private-full.json").read_text())
+    notes_asset=next(i for i in notes_manifest["assets"] if i["asset"]=="notes-app-all-refs.bundle")
+    if not all(notes_manifest["verified"].get(k) is True for k in ("bundle","git_fsck","ref_comparison","restore","release_download")):
+        raise RuntimeError("Notes backup verification evidence missing")
     with tempfile.TemporaryDirectory(prefix="full-allrefs-archive-") as folder:
         temp=Path(folder)
         downloaded=temp/"downloaded";downloaded.mkdir()
@@ -70,6 +74,12 @@ def main():
             file=all_bundles.get(name+".bundle")
             if not file:raise RuntimeError("Missing saved source bundle: "+name)
             if sha256(file)!=provenance[name+".bundle"]:raise RuntimeError("SHA mismatch "+str(file))
+        notes_dir=temp/"complete-notes";notes_dir.mkdir()
+        cmd("gh","release","download",TAG_NOTES,"--repo",ARCHIVE,
+            "--pattern","notes-app-all-refs.bundle","--dir",str(notes_dir),timeout=900)
+        notes_file=notes_dir/"notes-app-all-refs.bundle"
+        if sha256(notes_file)!=notes_asset["sha256"] or notes_file.stat().st_size!=notes_asset["bytes"]:
+            raise RuntimeError("Notes bundle checksum or size mismatch")
         bare_repos=temp/"repos";bare_repos.mkdir()
         db=REPORTS/"full-index.sqlite"
         REPORTS.mkdir(exist_ok=True)
@@ -96,6 +106,11 @@ def main():
             file=all_bundles[name+".bundle"]
             source_tag=TAG_EXAMS if name=="exams-app" else TAG_SOURCE
             import_bundle(file,name,"release://"+source_tag+"/"+file.name)
+        import_bundle(notes_file,"notes-app","release://"+TAG_NOTES+"/"+notes_file.name)
+        actual={line.split(" ",1)[1]:line.split(" ",1)[0] for line in git(repos["notes-app"],"show-ref").splitlines()}
+        if actual!=notes_manifest["all_refs"]:
+            raise RuntimeError("Notes restored refs differ from verified manifest")
+        cmd("git",f"--git-dir={repos['notes-app']}","fsck","--full",timeout=900)
         exams=next(x for x in results if x["repository"]=="exams-app")
         if exams["head_count"]!=4 or exams["refs"]<5 or exams["commits"]<45 or exams["images"]<900:
             raise RuntimeError("The four exams-app branches have not been fully indexed")
@@ -152,13 +167,13 @@ def main():
             shutil.copyfileobj(inp,output)
         elapsed=round(time.perf_counter()-start,2)
         report={"date_utc":datetime.now(timezone.utc).isoformat(),
-                "source":"all-refs private release and complete exams-app release; original repositories not accessed",
+                "source":"all-refs and complete exams-app/notes-app releases; six primary repositories only; originals not accessed",
                 "sources":results,"queries":tests,"proofs":proof,
                 "source_count":len(results),"elapsed_seconds":elapsed,
                 "sqlite_bytes":db.stat().st_size,"gzip_bytes":packed.stat().st_size,
                 "gzip_sha256":sha256(packed),"release_tag":TAG_INDEX,
                 "limitations":[
-                    "notes-app current main/dev/stag/firebase/file and three private tags still missing",
+                    "Full Notes Git refs indexed; old aliases retained for historical source compatibility",
                     "FTS covers commit subjects and historical paths, not full text of every blob",
                     "Historical GitHub issue and PR metadata are separately preserved in exams-app complete release, not indexed in this FTS",
                     "Other project issues and PR metadata and LFS payloads are not included in this FTS",
@@ -167,7 +182,7 @@ def main():
         manifest_file.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n")
         cmd("gh","release","create",TAG_INDEX,"--repo",ARCHIVE,"--draft",
             "--title","Portable historical FTS5 index — complete exams-app and all other preserved sources",
-            "--notes","Searchable SQLite FTS5 (gzip) rebuilt from full public refs and the corrected exams-app four-branch release. Contains Git metadata, no raw code duplication.")
+            "--notes","Searchable SQLite FTS5 (gzip) rebuilt from the six in-scope Git bundles, including complete Notes. Contains Git metadata, no raw code duplication.")
         for f in (packed,manifest_file):
             cmd("gh","release","upload",TAG_INDEX,str(f),"--repo",ARCHIVE,timeout=900)
         check=temp/"download";check.mkdir()
@@ -177,8 +192,8 @@ def main():
             raise RuntimeError("Download roundtrip SHA256 mismatch")
         cmd("gh","release","edit",TAG_INDEX,"--repo",ARCHIVE,"--draft=false")
         (REPORTS/"FULL-INDEX.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n")
-        summary=["# Índice pesquisável com as quatro branches de exams-app","",
-                 "Índice criado exclusivamente das releases privadas, incluindo exams-app completo; sem clonar origens.",
+        summary=["# Índice pesquisável das seis origens completas","",
+                 "Índice criado exclusivamente das releases privadas, incluindo exams-app e notes-app completos; sem clonar origens.",
                  "","- Fontes históricas indexadas: "+str(len(results)),
                  "- Commits processados (somados, podem ter ancestrais comuns): "+str(sum(x["commits"] for x in results)),
                  "- Alterações de arquivos processadas: "+str(sum(x["changes"] for x in results)),
@@ -193,7 +208,7 @@ def main():
         summary+=["","## Buscas com evidência","","| Consulta | Resultados | Latência |","|---|---:|---:|"]
         for t in tests:
             summary.append(f"| {t['query']} | {t['count']} | {t['ms']} ms |")
-        summary+=["","## Limitações","","Ainda faltam os 4 branches e 3 tags correntes do notes-app privado.",
+        summary+=["","## Limitações","","Todas as refs de Notes no manifesto foram comparadas; índices de conteúdo e metadados de plataforma são separados.",
                   "A busca FTS não é semântica e não indexa o conteúdo completo de cada versão.",
                   "É possível recuperar os blobs originais por SHA e caminho usando os Git bundles.",
                   "",""]
