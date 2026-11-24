@@ -1,5 +1,8 @@
 # Auditoria completa de cobertura — 23/11/2026
 
+> **Retificação de 24/11/2026:** este documento é um snapshot histórico. A conferência mais recente de cobertura, segurança e lacunas está no [README](../README.md). O backup Git posterior de Notes já possui manifesto verificado; isso não implica que o índice antigo foi reconstruído, que a privacidade esteja garantida ou que a exclusão esteja autorizada.
+
+
 ## Escopo e método
 
 Fonte de verdade da auditoria: GitHub conectado, com inventário de SHA dos heads em [source-refs-2026-11-23.json](../inventory/source-refs-2026-11-23.json). A auditoria abrange **todos os nove repositórios acessíveis** (oito origens + o próprio arquivo), **71 branches** no momento da verificação e as três tags encontradas em `notes-app`.
