@@ -163,13 +163,23 @@ def execute(root, req):
             out=compact_history(context_linker.query_history(conn,q,repo=repo,limit=limit),min(limit,5))
         else:
             terms=[q]
-            if q.casefold().strip() in {"fixar aba","pin tab","fixar abas"}:
+            pin_feature=q.casefold().strip() in {"fixar aba","pin tab","fixar abas"}
+            if pin_feature:
                 terms=["togglePin","Fixados"]
             hits=[]
             seen=set()
-            for term in terms:
-                for h in content_index.search(conn,term,repo=repo,ref=req.get("ref"),path=req.get("path"),language=req.get("language"),limit=min(100,limit*5),snippet_lines=8):
+            # Use known feature anchors only for this explicit intent; each result
+            # still requires an actual indexed match and original provenance.
+            searches=[]
+            if pin_feature and not req.get("path"):
+                searches.extend([("togglePin","app-header-tabs.tsx"),("Fixados","app-sidebar-overview.tsx")])
+            searches.extend((term,req.get("path")) for term in terms)
+            for term,search_path in searches:
+                found=content_index.search(conn,term,repo=repo,ref=req.get("ref"),path=search_path,language=req.get("language"),limit=min(100,limit*5),snippet_lines=8)
+                for h in found:
                     if req.get("source_sha") and h.get("commit_sha")!=req["source_sha"]:
+                        continue
+                    if secrets_gate.is_sensitive_path(h["path"])[0]:
                         continue
                     key=(h.get("repository"),h.get("path"),h.get("blob_sha"),h.get("start_line"))
                     if key not in seen:
