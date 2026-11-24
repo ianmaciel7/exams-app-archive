@@ -83,6 +83,8 @@ def full_index_and_submodules(root, output=None, submodules_only=False):
     results = []
     for name, bare in repos.items():
         info = ingest(bare, name, conn)
+        tag, asset = BUNDLES[name]
+        conn.execute("UPDATE repositories SET source=? WHERE name=?", (f"release://{tag}/{asset}", name))
         count = conn.execute("SELECT count(*) FROM refs r JOIN repositories p ON r.repo_id=p.id WHERE p.name=?", (name,)).fetchone()[0]
         if count != len(expected_refs(name)):
             raise ValueError("index_ref_count_mismatch")
