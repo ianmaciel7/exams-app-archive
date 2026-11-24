@@ -58,3 +58,7 @@ The browser consumes generated `catalog.json` (schema v2), not hardcoded file pa
 ### Graph motion
 
 Inspired by the official Graphify v8 HTML exporter (vis-network / ForceAtlas2, damping, bounded stabilization, hover and animated camera focus): https://github.com/Graphify-Labs/graphify/blob/v8/graphify/exporters/html.py. Exams Archive retains its local SVG renderer, using bounded requestAnimationFrame force iterations, previous visible positions, direct node dragging with incident edges, hover neighborhood emphasis and eased camera movement. The animation toggle and prefers-reduced-motion bypass motion. This is not the ForceAtlas2 solver itself; the visible subset remains bounded. CI tests settling, camera zoom, node dragging and reduced motion controls.
+
+### Integrated workspace
+
+Inspired by GitNexus/Sourcegraph, Graphify and component explorers: search and exact revision results on the left, graph/embedded file reader/reviewed React previews/agent guide in the center, and node inspector plus selected evidence on the right. The reader uses the same-origin Files UI and catalog-approved immutable public refs; local files remain in the tab. Selected source excerpts are sent only to the same-origin workspace on explicit action. Context exports are bounded JSON/Markdown, not an LLM call. The two reviewed React builds are still the only prebuilt components. Future expansion should use original Ladle stories and their meta.json (https://ladle.dev/docs/meta/), Storybook interaction tests and local isolated builds, not arbitrary TSX execution.

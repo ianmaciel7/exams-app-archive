@@ -39,3 +39,7 @@ python plugins/exams-archive/scripts/archive_query.py components export SCREENSH
 ```
 
 MCP stdio tools: components_list, component_render, component_capture, component_screenshots, component_screenshot_image. The final tool returns PNG bytes as an MCP image. The local SQLite catalog stores PNG BLOB, full commit, source path/blob, build SHA-256, state, theme, viewport, timestamp and PNG SHA-256. The database is not published by Pages. CLI and MCP operate on the same local cache; no daemon, no second historical index, no arbitrary historical code execution. Component coverage is currently one interactive reviewed source; expand the allowlist through explicit source/dependency review and fixture QA.
+
+## Unified browser workspace
+
+The home page embeds the file explorer with a catalog-validated repo, commit and path. Its Components tab shows the two existing reviewed builds at selectable desktop/tablet/mobile widths, with reset and provenance. When a selected TSX blob matches a reviewed build, the file reader can open that same sandboxed preview. Unreviewed TSX remains readable source; do not auto-execute it. Users can add up to 200 lines (12,000 characters) per explicit excerpt to the same-origin context panel. The panel exports a bounded evidence package for agents. The next step is a Ladle `meta.json` adapter, pinned fixture and dependency manifests, and per-story Playwright interaction/screenshot evidence. Storybook Controls and interaction tests provide the richer reference contract.
