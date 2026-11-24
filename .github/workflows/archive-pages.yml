@@ -108,4 +108,27 @@ jobs:
       - if: steps.check_pages.outputs.available == 'true'
         name: Deploy safe public shell
         id: deployment
-        uses: actions/deploy-pages@v5
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          ARTIFACT_ID=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts" --jq '.artifacts | map(select(.name == "github-pages" and .expired == false)) | if length == 1 then .[0].id else error("Expected exactly one Pages artifact") end')
+          OIDC_TOKEN=$(curl --fail --silent --show-error -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=$(printf '%s' "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY" | jq -sRr @uri)" | jq -er .value)
+          echo "::add-mask::$OIDC_TOKEN"
+          DEPLOYMENT=$(jq -nc --argjson artifact "$ARTIFACT_ID" --arg version "$GITHUB_SHA" --arg oidc "$OIDC_TOKEN" '{artifact_id:$artifact,pages_build_version:$version,oidc_token:$oidc}' | gh api --method POST "repos/$GITHUB_REPOSITORY/pages/deployments" --input -)
+          unset OIDC_TOKEN
+          DEPLOYMENT_ID=$(printf '%s' "$DEPLOYMENT" | jq -er .id)
+          PAGE_URL=$(printf '%s' "$DEPLOYMENT" | jq -er .page_url)
+          echo "page_url=$PAGE_URL" >> "$GITHUB_OUTPUT"
+          for attempt in $(seq 1 60); do
+            STATUS=$(gh api "repos/$GITHUB_REPOSITORY/pages/deployments/$DEPLOYMENT_ID" --jq .status)
+            echo "Pages deployment status: $STATUS"
+            case "$STATUS" in
+              succeed|success|succeeded) exit 0 ;;
+              failed|failure|error|cancelled|canceled|deployment_failed|deployment_cancelled|purged) exit 1 ;;
+            esac
+            sleep 5
+          done
+          echo "::error::Pages deployment did not finish within the polling window"
+          exit 1
