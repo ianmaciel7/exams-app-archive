@@ -1,5 +1,8 @@
 # Índice pesquisável com as quatro branches de exams-app
 
+> **Retificação de 24/11/2026:** este documento é um snapshot histórico. A conferência mais recente de cobertura, segurança e lacunas está no [README](../README.md). O backup Git posterior de Notes já possui manifesto verificado; isso não implica que o índice antigo foi reconstruído, que a privacidade esteja garantida ou que a exclusão esteja autorizada.
+
+
 Índice criado exclusivamente das releases privadas, incluindo exams-app completo; sem clonar origens.
 
 - Fontes históricas indexadas: 19
