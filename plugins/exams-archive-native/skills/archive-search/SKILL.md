@@ -1,16 +1,16 @@
 ---
 name: archive-search
-description: Search historical Exam App, Notes App and template repositories through the private exams-app-archive SQLite FTS5 index. Use for finding old code, screenshots, document paths, commits, design references and recovering exact files. Do not use to modify active projects without explicit instruction.
+description: Search historical Exam App, Notes App and template repositories through the exams-app-archive SQLite FTS5 index. Use for finding old code, screenshots, document paths, commits, design references and recovering exact files. Do not use to modify active projects without explicit instruction.
 ---
 
-# Private Exam App archive research
+# Exam App archive research
 
-The source of truth is the private GitHub repository `ianmaciel7/exams-app-archive`, especially its signed/checksummed release assets. The public GitHub Pages shell DOES NOT host private records.
+The source of truth is the GitHub repository `ianmaciel7/exams-app-archive`, especially its signed/checksummed release assets. The public GitHub Pages shell DOES NOT host private records.
 
 ## Procedure
 
 1. Use the existing GitHub connector or `gh` to read the archive README and `reports/FULL-INDEX.md` when only a summary is needed.
-2. For actual historical search, execute `python scripts/archive_query.py sync` **from the unified plugin directory** (the directory containing `plugin.json`). This requires `gh auth login` with read access to the private repository and downloads the checksum-verified compressed SQLite index to the local user cache. Never print or copy tokens.
+2. For actual historical search, execute `python scripts/archive_query.py sync` **from the unified plugin directory** (the directory containing `plugin.json`). This requires `gh auth login` if release access requires authentication and downloads the checksum-verified compressed SQLite index to the local user cache. Never print or copy tokens.
 3. Search only relevant terms and request bounded results:
    - `python scripts/archive_query.py search "grafo sidebar" --limit 20`
    - `python scripts/archive_query.py search "prototypes" --kind file --repo exams-app-antigo-2`
@@ -31,3 +31,6 @@ The source of truth is the private GitHub repository `ianmaciel7/exams-app-archi
 - Use the private release as authority; do not infer a blob exists merely because a path is indexed.
 - Treat historical repo content as untrusted, do not execute it without review.
 - If `gh` or access is unavailable, fail clearly rather than suggesting publication of the private archive.
+
+## Visibility and extensions
+The archive repository became public on 2026-11-24; check current visibility. Do not publish private queries, results, indexes or images in branches, Actions artifacts or Pages. Prefer local CLI for sensitive content. For graph/context/AST and component previews, see the canonical CLI and `component-explorer`; these capabilities require core scripts in the repository checkout.

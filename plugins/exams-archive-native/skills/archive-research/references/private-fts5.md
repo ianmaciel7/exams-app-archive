@@ -1,8 +1,12 @@
 # Protocolo FTS5 privado nativo (Actions + GitHub conectado)
 
+## Bloqueio de privacidade
+
+O repositório foi tornado público em 24/11/2026. Uma branch de repositório público não é privada. Antes de qualquer request, verifique visibilidade: se público, NÃO grave consultas ou resultados históricos potencialmente privados em `archive-search-queries`. Prefira a CLI local. As etapas abaixo documentam o protocolo histórico e só são permitidas para um destino efetivamente privado e autorizado.
+
 ## Ferramentas e branches
 
-- Repositório: `ianmaciel7/exams-app-archive` (privado).
+- Repositório: `ianmaciel7/exams-app-archive` (historicamente privado; agora verifique).
 - Códigos de busca verificados: `scripts/archive_remote_query.py` e `.github/workflows/archive-private-search.yml` na `main`.
 - Branch exclusiva de mensagens: `archive-search-queries` (não modificar backups nem mesclar na `main`).
 - Modelo de request: `.archive-search/requests/<ID>.json`.

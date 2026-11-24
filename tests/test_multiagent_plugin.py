@@ -17,7 +17,7 @@ class MultiAgentPluginTests(unittest.TestCase):
         paths = ["plugin.json",".codex-plugin/plugin.json",".claude-plugin/plugin.json",".antigravity-plugin/plugin.json"]
         manifests = [json.loads((PLUGIN / p).read_text(encoding="utf-8")) for p in paths]
         self.assertEqual({m["name"] for m in manifests}, {"exams-archive-native"})
-        self.assertEqual({m["version"] for m in manifests}, {"0.6.0"})
+        self.assertEqual({m["version"] for m in manifests}, {"0.7.0"})
         self.assertEqual(manifests[0]["$schema"], "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json")
         self.assertEqual(manifests[3]["$schema"], "https://antigravity.google/schemas/v1/plugin.json")
         self.assertTrue(manifests[2]["description"])
@@ -32,7 +32,7 @@ class MultiAgentPluginTests(unittest.TestCase):
         self.assertTrue((ROOT / claude["plugins"][0]["source"]).is_dir())
     def test_skills_have_matching_frontmatter(self):
         skills=list((PLUGIN / "skills").glob("*/SKILL.md"))
-        self.assertGreaterEqual(len(skills),5)
+        self.assertGreaterEqual(len(skills),6)
         for path in skills:
             data=path.read_text(encoding="utf-8")
             self.assertEqual(data.splitlines()[0],"---",path)
@@ -46,6 +46,8 @@ class MultiAgentPluginTests(unittest.TestCase):
         self.assertEqual(new,old,"Do not silently rewrite the historical FTS5 CLI")
         self.assertIn(b"def read_db(",new)
         self.assertIn(b"gzip_sha256",new)
+        self.assertIn(b"component_catalog",new)
+        self.assertTrue((PLUGIN / "skills/component-explorer/SKILL.md").is_file())
     def test_private_archive_remains_separate(self):
         self.assertTrue((LEGACY / "plugin.json").is_file())
         self.assertTrue((ROOT / "manifests").exists())

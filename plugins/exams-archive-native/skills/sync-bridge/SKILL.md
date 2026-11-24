@@ -11,7 +11,7 @@ description: Use when the user modifies, audits, updates or asks to synchronize 
 - Espelho de fonte: `ianmaciel7/exams-app-archive@main:plugins/exams-archive-native/`. Ler/escrever pelo **GitHub conectado**.
 - **NÃO confundir** com `plugins/exams-archive/`, o plugin Codex histórico `exams-archive` v0.1.x; preservá-lo com seus scripts e testes. Não substituir um pelo outro.
 - `manifests/`, `inventory/`, `reports/`, `docs/`, releases e bundles do repositório são evidências/backup, não arquivos de plugin sincronizáveis. Nunca alterá-los só para "sincronizar".
-- O GitHub privado não deve ser convertido em GitHub Pages público. Não copiar segredos, URLs assinadas, tokens nem dados autenticados para o plugin/commits.
+- O repositório foi tornado público em 24/11/2026; Pages deve publicar apenas interface e evidências explicitamente revisadas. Nunca enviar dados privados ao espelho público. Não copiar segredos, URLs assinadas, tokens nem dados autenticados para o plugin/commits.
 
 ## Contrato de uso (em todas as modificações pertinentes)
 
@@ -30,9 +30,11 @@ description: Use when the user modifies, audits, updates or asks to synchronize 
 - Não depender de computador local nem usar credenciais expostas na conversa. Só ferramentas GitHub e Plugin Creator conectadas.
 - Em caso de falha num dos lados, manter o outro íntegro, relatar a divergência e fornecer a operação segura para completar depois.
 
-## Pacote multiagente v0.6.0
+## Pacote multiagente v0.7.0
 
 - A fonte canônica de código do plugin é `ianmaciel7/exams-app-archive@main:plugins/exams-archive-native/`, com manifests nativos de quatro clientes. Modificações por qualquer agente devem ser propostas ao GitHub como PR validada. **Não atualizar cópias concorrentes como fonte independente**.
-- O CLI FTS5 histórico agora também está neste pacote em `scripts/archive_query.py`, e a skill `archive-search` descreve o uso local com autenticação `gh`. No ChatGPT sem executor local, usar GitHub conectado e pesquisa privada já documentada.
+- O CLI FTS5 histórico agora também está neste pacote em `scripts/archive_query.py`, e a skill `archive-search` descreve o uso local com autenticação `gh`. No ChatGPT sem executor local, usar GitHub conectado e leitura GitHub já documentada (não escrever queries privadas em branch pública).
 - Toda release ChatGPT deve ser gerada da árvore canônica aprovada. Comparar hash byte a byte de cada arquivo de origem; salvar a release no registro `.sync-state.json` externo ao pacote. Plugin Creator não fornece atualização automática em contas pessoais.
 - Não presumir que claude/agy/codex estão instalados ou que uma atualização Git instala no usuário sem refresh. CI estática não é teste end-to-end de cliente.
+
+- O pacote 0.7.0 adiciona a skill `component-explorer` e a CLI `components` em paridade com a fonte canônica. Os módulos `scripts/component_catalog.py` e `scripts/archive_mcp.py` permanecem na raiz do checkout; a instalação do plugin de skills não instala um MCP local ou remoto automaticamente.

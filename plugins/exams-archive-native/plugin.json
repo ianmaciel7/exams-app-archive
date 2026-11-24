@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "exams-archive-native",
-  "version": "0.6.0",
-  "description": "Exams Archive para ChatGPT, Codex, Claude Code e Antigravity: história Git/FTS5, UI/UX, motion e sincronização segura via GitHub.",
+  "version": "0.7.0",
+  "description": "Exams Archive: pesquisa histórica, UI/UX, grafo, componentes interativos, capturas e CLI/MCP local para agentes.",
   "author": {
     "name": "Ian Maciel de Carvalho",
     "email": "ianmaciel76@gmail.com"
@@ -28,14 +28,20 @@
     "claude code",
     "antigravity",
     "multi-agent",
-    "portable agent skills"
+    "portable agent skills",
+    "component explorer",
+    "React preview",
+    "visual evidence",
+    "screenshots",
+    "MCP",
+    "knowledge graph"
   ],
   "repository": "https://github.com/ianmaciel7/exams-app-archive",
   "extensions": {
     "com.openai": {
       "interface": {
         "capabilities": [
-          "GitHub privado e pesquisa histórica FTS5",
+          "GitHub e pesquisa histórica FTS5",
           "Fontes de UI auditadas com SHA e branch",
           "Catálogo de 213 imagens históricas recuperadas",
           "Componentes React e stories Notes App old-4/old-5",
@@ -46,21 +52,25 @@
           "Catálogo motion: 13 comportamentos com duração, delay, estado e fonte SHA",
           "Sincronização bidirecional controlada entre plugin ChatGPT e espelho GitHub",
           "Compatibilidade com Claude Code e Antigravity em diretório unificado",
-          "Script FTS5 histórico preservado dentro do pacote"
+          "Script FTS5 histórico preservado dentro do pacote",
+          "Explorador de árvores Git, código e componentes",
+          "Preview React revisado, interação e captura Playwright",
+          "Catálogo SQLite de screenshots e proveniência; CLI/MCP local",
+          "Site, grafo e llms.txt para descoberta de contexto"
         ],
         "category": "Developer Tools",
         "defaultPrompt": [
           "Recupere a sidebar do Notes old-5, o contrato visual old-4 e as imagens Capacities antes de criar um preview interativo autocontido aqui no ChatGPT.",
           "Compare as 48 capturas lowchrome e as 26 capturas sidebar para verificar tema, painéis, estados e densidade visual, mantendo fontes e SHAs.",
           "Encontre no catálogo as imagens recuperadas de Capacities, QConcursos, Readwise e ExamTopics que servem como referência de UI.",
-          "Faça uma auditoria do arquivo Git privado, seus bundles e pendências de recuperação sem excluir fontes.",
+          "Faça uma auditoria do arquivo Git, seus bundles e pendências de recuperação sem excluir fontes.",
           "Recupere do Exams Archive tempos e triggers de animações, peek, hover e drag da sidebar, validando código e SHA.",
-          "Compare a versão do plugin ChatGPT com plugins/exams-archive-native em ianmaciel7/exams-app-archive e sincronize diferenças em ambos os sentidos, preservando o plugin Codex separado e sem sobrescrever conflitos."
+          "Localize componentes históricos e seus SHAs, consulte o catálogo de previews e recupere screenshots reais via CLI ou MCP quando disponível. Sincronize o plugin com o GitHub sem sobrescrever conflitos."
         ],
         "developerName": "Ian Maciel de Carvalho",
         "displayName": "Exams Archive",
-        "longDescription": "Plugin de fonte única no repositório GitHub privado com skills compartilhadas para ChatGPT, Codex, Claude Code e Antigravity. Preserva pesquisa Git/FTS5 autenticada, referências visuais verificadas por SHA, UI motion e sincronização controlada ChatGPT↔GitHub. CI valida manifests, skills e CLI. Não publica backups nem fornece sincronização autônoma de releases pessoais.",
-        "shortDescription": "Histórico, UI/UX e sincronização com GitHub"
+        "longDescription": "Plugin privado de skills com fonte canônica no GitHub para ChatGPT, Codex, Claude Code e Antigravity. Pesquisa Git/FTS5, grafo, código, UI/motion e evidência visual por SHA. Usa CLI e MCP local opcional para renderizar componentes revisados, capturar PNG e consultar SQLite. Pages é estático; ChatGPT não recebe automaticamente o servidor MCP local. Sincronização de releases é explícita.",
+        "shortDescription": "Histórico, componentes, grafo e evidência visual"
       }
     }
   }

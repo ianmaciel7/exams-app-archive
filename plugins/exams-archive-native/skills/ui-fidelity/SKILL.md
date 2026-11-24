@@ -52,3 +52,6 @@ Fontes: `references/source-map.md`, `references/visual-source-catalog.md`, `refe
 ## Motion-aware recovery
 
 For animations, transitions, peek, drag, hover, focus, opening/closing menus or reduced-motion, **also read `skills/ui-motion/SKILL.md`** and the private catalog `ianmaciel7/exams-app-archive@main:docs/UI-MOTION-EVIDENCE.json`. Static images do not prove transition timing; recover code and validate.
+
+## Componentes executáveis e screenshots
+Quando o pedido incluir renderizar, interagir, capturar screenshot ou consultar evidência visual por MCP/CLI, carregar `skills/component-explorer/SKILL.md` e consultar o catálogo de builds revisados primeiro. Preserve o contrato de fidelidade e não confunda fixture React com estado de produção.

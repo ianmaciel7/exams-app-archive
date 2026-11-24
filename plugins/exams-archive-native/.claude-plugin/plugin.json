@@ -1,7 +1,7 @@
 {
   "name": "exams-archive-native",
-  "version": "0.6.0",
-  "description": "Pesquisa privada histórica e UI/UX do Exams App com ferramentas compartilhadas com Codex, ChatGPT e Antigravity.",
+  "version": "0.7.0",
+  "description": "Exams Archive: pesquisa histórica, UI/UX, grafo, componentes interativos, capturas e CLI/MCP local para agentes.",
   "author": {
     "name": "Ian Maciel de Carvalho"
   },
