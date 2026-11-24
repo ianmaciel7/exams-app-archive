@@ -210,6 +210,17 @@ class ContentIndexTests(unittest.TestCase):
         self.assertEqual(md_feat[0]["commit_sha"], self.branch_sha)
         self.assertEqual(md_feat[0]["path"], "docs/architecture.md")
 
+    def test_literal_basename_and_source_sha_filter_before_limit(self):
+        ingest_repo(self.bare, "exams-app", self.conn, max_file_bytes=2048)
+        hits = search(self.conn, "LegacySidebarNavigation", path="sidebar.ts", source_sha=self.main_sha, limit=1)
+        self.assertEqual(len(hits), 1)
+        self.assertEqual(hits[0]["path"], "src/sidebar.ts")
+        self.assertEqual(hits[0]["commit_sha"], self.main_sha)
+        self.assertEqual(search(self.conn, "LegacySidebarNavigation", path="%sidebar.ts"), [])
+        self.assertEqual(search(self.conn, "LegacySidebarNavigation", source_sha="0"*40), [])
+        with self.assertRaises(ValueError):
+            search(self.conn, "LegacySidebarNavigation", source_sha="short")
+
     def test_removed_file_history_and_provenance(self):
         ingest_repo(self.bare, "exams-app", self.conn, max_file_bytes=2048)
         # Deleted from main, still present on feature/notes.
