@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Reconcile archive coverage without publishing historical secrets or new private data."""
 from __future__ import annotations
+import argparse
 import json
+import shutil
 from pathlib import Path
 import sqlite3
 import tempfile
@@ -31,7 +33,7 @@ def metadata(root):
     print(json.dumps({"kind":"pr_reconciliation", "expected":len(expected),"archived":len(existing),
                       "missing_public_pr_numbers":missing,"missing_detail_numbers":detail_missing}), flush=True)
 
-def full_index_and_submodules(root):
+def full_index_and_submodules(root, output=None):
     repos = {name: restore(root, name) for name in BUNDLES}
     notes = repos["notes-app"]
     trees = command("git", f"--git-dir={notes}", "cat-file", "--batch-all-objects",
@@ -71,15 +73,27 @@ def full_index_and_submodules(root):
     if conn.execute("PRAGMA integrity_check").fetchone()[0] != "ok":
         raise ValueError("sqlite_integrity_failed")
     conn.close()
+    if output is not None:
+        output = output.expanduser().resolve()
+        if output.exists():
+            raise FileExistsError("Refusing to overwrite an existing index")
+        output.parent.mkdir(parents=True, exist_ok=True)
+        with output.open("xb") as target, db.open("rb") as source:
+            shutil.copyfileobj(source, target)
     print(json.dumps({"kind":"index_rebuild","integrity":True,"sources":results,
                       "published":False,"reason":"unredacted derived index remains local"}), flush=True)
 
 def main():
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--local-index", type=Path, help="Save the complete index locally; never publish it")
+    ap.add_argument("--metadata-only", action="store_true", help="Compare PR records without building an index")
+    args = ap.parse_args()
     with tempfile.TemporaryDirectory() as tmp:
         root = Path(tmp)
         try:
             metadata(root)
-            full_index_and_submodules(root)
+            if not args.metadata_only:
+                full_index_and_submodules(root, args.local_index)
         except Exception as e:
             print(json.dumps({"ok":False,"category":type(e).__name__}),flush=True)
             raise SystemExit(1) from None
