@@ -148,6 +148,8 @@ def execute(root, req):
         with conn:
             if op=="search":
                 out=archive_index.search(conn,q,limit,kind=req.get("kind","all"),repo=repo)
+            elif op=="images" and q.strip():
+                out=archive_index.search(conn,q,limit,kind="image",repo=repo)
             elif op=="images":
                 sql="SELECT r.name repository,i.path,i.blob,i.commit_sha,i.kind,i.bytes FROM images i JOIN repositories r ON r.id=i.repo_id"
                 params=[]
@@ -175,7 +177,7 @@ def execute(root, req):
                 searches.extend([("togglePin","app-header-tabs.tsx"),("Fixados","app-sidebar-overview.tsx")])
             searches.extend((term,req.get("path")) for term in terms)
             for term,search_path in searches:
-                found=content_index.search(conn,term,repo=repo,ref=req.get("ref"),path=search_path,language=req.get("language"),limit=min(100,limit*5),snippet_lines=8)
+                found=content_index.search(conn,term,repo=repo,ref=req.get("ref"),path=search_path,language=req.get("language"),source_sha=req.get("source_sha"),limit=min(100,limit*5),snippet_lines=8)
                 for h in found:
                     if req.get("source_sha") and h.get("commit_sha")!=req["source_sha"]:
                         continue
