@@ -55,9 +55,9 @@ class PreDeletionAuditTests(unittest.TestCase):
         bundle_cond = result["conditions"]["COND-05-RELEASE-BUNDLE-CHECKSUMS"]
         self.assertEqual(bundle_cond["result"], "PASS")
 
-        # Notes preservation check: must FAIL for deletion
+        # Notes Git coverage is verified independently of deletion readiness
         notes_cond = result["conditions"]["COND-07-NOTES-APP-PRIVATE-PRESERVED"]
-        self.assertEqual(notes_cond["result"], "FAIL")
+        self.assertEqual(notes_cond["result"], "PASS")
 
         # Branch readiness gate: must FAIL for deletion
         gate_cond = result["conditions"]["COND-08-BRANCH-READINESS-GATE"]
@@ -70,6 +70,20 @@ class PreDeletionAuditTests(unittest.TestCase):
         # Owner authorization check: must FAIL for deletion
         auth_cond = result["conditions"]["COND-11-OWNER-EXPLICIT-AUTHORIZATION"]
         self.assertEqual(auth_cond["result"], "FAIL")
+
+    def test_notes_manifest_missing_or_invalid_fails_closed(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            orch = pda.PreDeletionAuditOrchestrator(root_dir=Path(tmp_dir))
+            self.assertEqual(orch.check_notes_preservation()["status"], "FAIL")
+            source = json.loads(self.orchestrator.notes_private_manifest.read_text(encoding="utf-8"))
+            orch.notes_private_manifest.parent.mkdir(parents=True)
+            source["verified"]["restore"] = False
+            orch.notes_private_manifest.write_text(json.dumps(source), encoding="utf-8")
+            self.assertEqual(orch.check_notes_preservation()["status"], "FAIL")
+            source["verified"]["restore"] = True
+            source["all_refs"].pop("refs/heads/main")
+            orch.notes_private_manifest.write_text(json.dumps(source), encoding="utf-8")
+            self.assertEqual(orch.check_notes_preservation()["status"], "FAIL")
 
     def test_repository_dispositions(self) -> None:
         """Verify per-repository disposition recommendations."""
