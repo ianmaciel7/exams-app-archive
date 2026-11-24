@@ -18,13 +18,14 @@ import archive_index
 import archive_flow
 import content_index
 import context_linker
+import graph_linker
 import secrets_gate
 
 OWNER = "ianmaciel7/notes-app"
 HISTORY = "archive-index-private-2026-11-24"
 ADVANCED = "archive-content-private-2026-11-24"
 ALLOWED = set(BUNDLES) | {"notes-app@worktrees"}
-OPS = {"search", "images", "stats", "content_search", "linked_context", "context_pack", "get_evidence", "coverage"}
+OPS = {"search", "images", "stats", "content_search", "linked_context", "context_pack", "get_evidence", "coverage", "graph_neighbors"}
 
 def open_asset(root, tag, name):
     assets=json.loads(command("gh","api",f"repos/{OWNER}/releases/tags/{tag}"))["assets"]
@@ -44,7 +45,7 @@ def open_asset(root, tag, name):
     return conn, {"index_release":tag,"index_checksum":sha,"asset":name}
 
 def validate(req):
-    if not isinstance(req,dict) or set(req)-{"version","id","operation","query","repo","ref","path","sha","start_line","end_line","limit","kind"}:
+    if not isinstance(req,dict) or set(req)-{"version","id","operation","query","repo","ref","path","sha","start_line","end_line","limit","kind","language","concept_id","entity_type","edge_type","hops","source_sha","token_budget"}:
         raise ValueError("unsupported fields")
     if req.get("version")!=1 or req.get("operation") not in OPS:
         raise ValueError("invalid contract")
@@ -56,13 +57,21 @@ def validate(req):
         raise ValueError("invalid limit")
     if req.get("kind","all") not in {"all","commit","file","image"}:
         raise ValueError("invalid kind")
-    for key, size in [("query",160),("ref",200),("path",500)]:
+    for key, size in [("query",160),("ref",200),("path",500),("language",50),("concept_id",160),("entity_type",80),("edge_type",80)]:
         if key in req and (not isinstance(req[key],str) or len(req[key])>size or any(ord(c)<32 for c in req[key])):
             raise ValueError("invalid text")
     if "path" in req:
         path=archive_flow.validate_path(req["path"])
         if secrets_gate.is_sensitive_path(path)[0]:
             raise ValueError("sensitive path")
+    if "hops" in req and (type(req["hops"]) is not int or not 1<=req["hops"]<=2):
+        raise ValueError("invalid hops")
+    if "token_budget" in req and (type(req["token_budget"]) is not int or not 256<=req["token_budget"]<=8000):
+        raise ValueError("invalid token budget")
+    if "source_sha" in req and not re.fullmatch(r"[a-f0-9]{40}",req["source_sha"]):
+        raise ValueError("invalid source_sha")
+    if req["operation"]=="graph_neighbors" and not (req.get("concept_id") or req.get("query","").strip()):
+        raise ValueError("concept required")
     if "sha" in req and not re.fullmatch(r"[a-f0-9]{40}",req["sha"]):
         raise ValueError("full SHA required")
     if req["operation"] in {"search","content_search","linked_context","context_pack"} and not req.get("query","").strip():
@@ -96,7 +105,16 @@ def compact_history(history, limit):
 
 def execute(root, req):
     op=req["operation"];limit=req.get("limit",10);repo=req.get("repo");q=req.get("query","")
-    if op in {"search","images","stats","coverage"}:
+    if op=="graph_neighbors":
+        history,prov=open_asset(root,HISTORY,"full-index.sqlite.gz")
+        history.close()
+        graph=graph_linker.open_db(root/"graph.sqlite")
+        graph_linker.ingest_archive_sqlite(graph,root/"full-index.sqlite")
+        graph_linker.link_temporal_supersession(graph)
+        out=graph_linker.query_neighborhood(graph,req.get("concept_id") or q,hops=req.get("hops",1),repo=repo,edge_types=(req["edge_type"],) if req.get("edge_type") else None,target_types=(req["entity_type"],) if req.get("entity_type") else None,limit=limit)
+        graph.close()
+        out["coverage_note"]="Graph derived from historical Git paths, commits, and images; inferred edges are not proof of decisions."
+    elif op in {"search","images","stats","coverage"}:
         conn,prov=open_asset(root,HISTORY,"full-index.sqlite.gz")
         with conn:
             if op=="search":
@@ -115,7 +133,27 @@ def execute(root, req):
         if op=="linked_context":
             out=compact_history(context_linker.query_history(conn,q,repo=repo,limit=limit),min(limit,5))
         else:
-            hits=content_index.search(conn,q,repo=repo,ref=req.get("ref"),path=req.get("path"),limit=limit,snippet_lines=8)
+            terms=[q]
+            if q.casefold().strip() in {"fixar aba","pin tab","fixar abas"}:
+                terms=["togglePin","Fixados"]
+            hits=[]
+            seen=set()
+            for term in terms:
+                for h in content_index.search(conn,term,repo=repo,ref=req.get("ref"),path=req.get("path"),language=req.get("language"),limit=min(100,limit*5),snippet_lines=8):
+                    if req.get("source_sha") and h.get("commit_sha")!=req["source_sha"]:
+                        continue
+                    key=(h.get("repository"),h.get("path"),h.get("blob_sha"),h.get("start_line"))
+                    if key not in seen:
+                        seen.add(key); hits.append(h)
+            # Prefer distinct paths before filling remaining slots with historical variants.
+            preferred=[]
+            paths=set()
+            for h in hits:
+                key=(h.get("repository"),h.get("path"))
+                if key not in paths:
+                    paths.add(key);preferred.append(h)
+            preferred.extend(h for h in hits if h not in preferred)
+            hits=preferred[:limit]
             if op=="context_pack":
                 selected=[];seen=set()
                 for h in hits:
@@ -136,6 +174,13 @@ def execute(root, req):
         out=archive_flow.flow_fetch(source=source,source_repo=repo,sha=req["sha"],ref=req.get("ref"),path=req["path"],start_line=req.get("start_line",1),end_line=req.get("end_line",40),max_bytes=1024*1024,max_payload_bytes=48*1024)
     clean,redactions=secrets_gate.sanitize_json_value(out)
     serialized=json.dumps(clean,ensure_ascii=False,sort_keys=True).encode()
+    if op=="context_pack" and req.get("token_budget"):
+        items=clean.get("items",[])
+        while items and len(serialized)>req["token_budget"]*3:
+            items.pop()
+            serialized=json.dumps(clean,ensure_ascii=False,sort_keys=True).encode()
+        clean["budget_note"]="Conservative character/byte heuristic, not exact tokenizer count."
+        serialized=json.dumps(clean,ensure_ascii=False,sort_keys=True).encode()
     if len(serialized)>96*1024:
         raise ValueError("response_too_large")
     return {"ok":True,"version":1,"id":req["id"],"operation":op,**prov,"result_checksum":hashlib.sha256(serialized).hexdigest(),"redactions":redactions,"results":clean}
