@@ -1,50 +1,34 @@
-# Protocolo FTS5 privado nativo (Actions + GitHub conectado)
+# Pesquisa autenticada (Actions + GitHub conectado)
 
-## Bloqueio de privacidade
+## Privacidade obrigatória
 
-O repositório foi tornado público em 24/11/2026. Uma branch de repositório público não é privada. Antes de qualquer request, verifique visibilidade: se público, NÃO grave consultas ou resultados históricos potencialmente privados em `archive-search-queries`. Prefira a CLI local. As etapas abaixo documentam o protocolo histórico e só são permitidas para um destino efetivamente privado e autorizado.
+O arquivo principal `ianmaciel7/exams-app-archive` permanece público. Nunca grave consultas, resultados, índices de conteúdo ou dados privados em branches desse repositório. A fila autorizada é `ianmaciel7/notes-app`, branch `archive-authenticated-queries-20261124`. Antes de escrever, confirme que o Notes continua privado. Se não for privado ou não houver acesso, falhe explicitamente.
 
-## Ferramentas e branches
+## Consultar sem computador local
 
-- Repositório: `ianmaciel7/exams-app-archive` (historicamente privado; agora verifique).
-- Códigos de busca verificados: `scripts/archive_remote_query.py` e `.github/workflows/archive-private-search.yml` na `main`.
-- Branch exclusiva de mensagens: `archive-search-queries` (não modificar backups nem mesclar na `main`).
-- Modelo de request: `.archive-search/requests/<ID>.json`.
-- Resultado: `.archive-search/results/<ID>.json`.
-- Registro de prova: `https://github.com/ianmaciel7/exams-app-archive/actions/runs/45267569005` (12 referências grafo/sidebar e índice SHA-256 conferido).
-
-## Como efetuar consulta
-
-1. Para busca que não pode ser resolvida com relatórios, gere um ID único, por exemplo `grafo-20261123-analise-01` (6–64 caracteres ASCII alfanuméricos, hífens ou sublinhados, iniciando com alfanumérico).
-2. Com o GitHub instalado, chame `mcp__GitHub__create_file` com `repository_full_name: "ianmaciel7/exams-app-archive"`, `branch: "archive-search-queries"`, `path: ".archive-search/requests/<ID>.json"` e conteúdo JSON abaixo. A mensagem de commit deve indicar uma consulta privada. Nunca sobrescreva pedido já existente; crie outro ID em colisão.
-3. Encontre a execução de `Private historical archive search` pelo commit criado, usando `mcp__GitHub__fetch_commit_workflow_runs` ou o endpoint Actions via conexão GitHub. Aguarde de forma limitada, sem prometer trabalho em segundo plano.
-4. Ao concluir com sucesso, chame `mcp__GitHub__fetch_file` com `ref: "archive-search-queries"` e `path: ".archive-search/results/<ID>.json"`.
-5. Valide `id` igual, `ok:true`, `request_sha256` com 64 caracteres hexadecimais, `index_release` e `index_checksum`. Se a Action falhar ou o resultado não estiver disponível, reporte sem fingir êxito. Extraia poucos resultados com `repository`, `kind`, `sha`, `path`, `summary`, `blob`, `deleted` conforme presentes.
-
-## Pedidos aceitos
-
-Busca geral (busca lógica OR sobre tokens, limite até 40):
+1. Use o GitHub conectado para ler o arquivo/commit conhecido diretamente; use a fila somente se a pesquisa histórica exigir contexto.
+2. Crie um ID único de 6–64 caracteres ASCII (letras, números, hífen e sublinhado). Em `ianmaciel7/notes-app`, branch `archive-authenticated-queries-20261124`, crie `archive-query/requests/<ID>.json` com no máximo 4096 bytes. Exemplo:
 
 ```json
-{"version":1,"id":"grafo-20261123-analise-01","operation":"search","query":"grafo sidebar","kind":"all","limit":20}
+{"version":1,"id":"sidebar-motion-20261124-01","operation":"content_search","query":"togglePin","limit":10}
 ```
 
-`kind` pode ser `all`, `commit`, `file`, `image`. O campo opcional `repo` restringe a fonte.
+3. Consulte a execução `Authenticated archive queries` pelo commit criado. Leia `archive-query/results/<ID>.json` com a branch explícita. Se ainda não existir, reconsulte de modo limitado. Não confunda sucesso da Action com sucesso da consulta.
+4. Exija `ok:true`, ID correspondente, `index_release`, `index_checksum` SHA-256 e `result_checksum`. Confira a release e os hashes quando necessário. Retorne caminhos, ref, commit SHA, blob SHA e linhas presentes; nunca invente proveniência. Resultados são commits privados persistentes; não envie informações sensíveis desnecessárias à fila.
+5. Se a operação falhar, reporte a categoria; reduza limite ou restrinja repo/path. Para imagem/binário que exceda limite, use recuperação local autorizada do bundle, não uma réplica inventada.
 
-Imagens apagadas:
+## Operações
 
-```json
-{"version":1,"id":"grafo-imagens-20261123-01","operation":"images","repo":"exams-app-antigo-2","deleted_only":true,"limit":20}
-```
+- `search`, `images`, `stats`, `coverage`: índice histórico de 595 refs. `search` aceita `kind` all/commit/file/image.
+- `content_search`: texto e código indexados; filtros `repo`, `ref`, `path`, `language`, `source_sha`. Use termos literais de implementação, depois amplie sinônimos e caminhos.
+- `linked_context`: relações e timeline por caminho/termo; commits recentes limitados, omissões explícitas.
+- `context_pack`: snippets deduplicados, limite 1–20 e `token_budget` opcional (heurística, não contagem exata). Não confundir snippet com recuperação integral.
+- `get_evidence`: `repo`, SHA completo no campo `sha`, `path`, `start_line`, `end_line` (até 100 linhas). Confirme bytes e SHA do blob; não execute código histórico.
+- `graph_neighbors`: vizinhança derivada de Git histórico, caminhos e imagens; `query` ou `concept_id`, `hops` 1–2, `edge_type`, `entity_type`, `repo`. Distinga arestas inferidas das extraídas. Operação nova: confirme resultado real antes de afirmar que funcionou.
 
-Estatísticas:
+## Fontes e evidências
 
-```json
-{"version":1,"id":"estatisticas-20261123-01","operation":"stats"}
-```
-
-Todos os requests são JSON simples, até 4096 bytes, e o worker valida operação, tipo, caminho de saída e limite.
-
-## Limites importantes
-
-Cada pedido é um commit privado + execução GitHub Actions; não iniciar se a pergunta pode ser respondida lendo relatório. O worker baixa e verifica a release SQLite FTS5 sem divulgar o índice. Os resultados ficam versionados na branch privada. Isso não cria API de serviço contínuo nem executa busca sem ter disponível uma ferramenta GitHub com permissões de escrita. A execução depende do Actions habilitado e da permissão atual da conexão GitHub. Não transforma o repositório em público, não baixa imagens binárias nem oferece texto integral dos fontes.
+- `archive-index-private-2026-11-24` e `archive-content-private-2026-11-24`, releases autenticadas de Notes; SHA-256 e SQLite conferidos.
+- Busca de texto, conteúdo, context pack e timeline foram testados no corpus real. A recuperação exata de código do complemento de worktrees foi conferida por blob SHA.
+- O índice de conteúdo é FTS5 lexical, não embedding semântico. Tipos de arquivo, tamanhos e caminhos sensíveis têm exclusões. Use o bundle original para verificar lacunas. Não presuma que todos os ADRs, testes ou links estão indexados.
+- CLI local com autenticação `gh` continua disponível. Não use a fila pública histórica `archive-search-queries`.
