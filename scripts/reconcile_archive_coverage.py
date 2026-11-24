@@ -30,10 +30,23 @@ def metadata(root):
     expected = {x["number"] for x in issues if x.get("pull_request")}
     missing = sorted(expected - existing)
     detail_missing = sorted(expected - {x["number"] for x in details})
+    supplements = Path(__file__).resolve().parents[1] / "inventory" / "exams-app-old" / "pr-supplement"
+    verified = set()
+    for n in missing:
+        file = supplements / f"{n}.json"
+        if not file.is_file():
+            continue
+        supplement = json.loads(file.read_text(encoding="utf-8"))
+        data = supplement["data"]
+        detail = data[f"pulls/{n}"]
+        files = data[f"pulls/{n}/files?per_page=100"]
+        if supplement["number"] == n and not supplement["errors"] and detail["number"] == n and len(files) == detail["changed_files"] and len(data) == 7:
+            verified.add(n)
+    print(json.dumps({"kind":"pr_supplements","validated":sorted(verified),"total_covered":len(existing | verified),"unresolved":sorted(expected - existing - verified)}),flush=True)
     print(json.dumps({"kind":"pr_reconciliation", "expected":len(expected),"archived":len(existing),
                       "missing_public_pr_numbers":missing,"missing_detail_numbers":detail_missing}), flush=True)
 
-def full_index_and_submodules(root, output=None):
+def full_index_and_submodules(root, output=None, submodules_only=False):
     repos = {name: restore(root, name) for name in BUNDLES}
     notes = repos["notes-app"]
     trees = command("git", f"--git-dir={notes}", "cat-file", "--batch-all-objects",
@@ -47,6 +60,7 @@ def full_index_and_submodules(root, output=None):
                     links.add(entry.split()[2])
     recovered = 0
     missing = 0
+    missing_targets = []
     for sha in sorted(links):
         found = False
         for bare in repos.values():
@@ -58,8 +72,12 @@ def full_index_and_submodules(root, output=None):
                 pass
         recovered += int(found)
         missing += int(not found)
+        if not found:
+            missing_targets.append(sha)
     print(json.dumps({"kind":"submodule_reconciliation","unique_target_commits":len(links),
-                      "targets_in_six_bundles":recovered,"targets_not_found":missing}), flush=True)
+                      "targets_in_six_bundles":recovered,"targets_not_found":missing,"missing_gitlink_object_ids":missing_targets}), flush=True)
+    if submodules_only:
+        return
     db = root / "complete.sqlite"
     conn = open_db(db)
     results = []
@@ -87,13 +105,14 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--local-index", type=Path, help="Save the complete index locally; never publish it")
     ap.add_argument("--metadata-only", action="store_true", help="Compare PR records without building an index")
+    ap.add_argument("--submodules-only", action="store_true", help="Identify unavailable gitlink object IDs without indexing")
     args = ap.parse_args()
     with tempfile.TemporaryDirectory() as tmp:
         root = Path(tmp)
         try:
             metadata(root)
             if not args.metadata_only:
-                full_index_and_submodules(root, args.local_index)
+                full_index_and_submodules(root, args.local_index, args.submodules_only)
         except Exception as e:
             print(json.dumps({"ok":False,"category":type(e).__name__}),flush=True)
             raise SystemExit(1) from None
