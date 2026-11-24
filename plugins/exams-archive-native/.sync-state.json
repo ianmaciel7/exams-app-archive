@@ -5,6 +5,10 @@
   "desired_version": "0.7.0",
   "last_published_release_id": "pluginrel_6b05737fc5ac8191901dc20c99f82da6",
   "last_published_version": "0.7.0",
-  "status": "pending-post-commit-verification",
-  "note": "Source mirrored from the published ChatGPT release, including canonical CLI and component-explorer. Post-commit verification required. Repository is public; no private source data or screenshot database is packaged."
+  "status": "verified-synced",
+  "note": "All 20 plugin source files verified byte-for-byte against published ChatGPT release 0.7.0. Four manifests and canonical CLI are synchronized. Runtime MCP, React builds and screenshot tests are separate.",
+  "verified_files": 20,
+  "byte_identical_files": 20,
+  "json_semantic_equivalent_files": [],
+  "verified_commit": "521230e6defdbbe5401a8cede11db837d0b325e1"
 }
