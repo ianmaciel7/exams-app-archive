@@ -7,6 +7,9 @@ import argparse
 import gzip
 import hashlib
 import json
+import os
+import subprocess
+import time
 import re
 import shutil
 import sqlite3
@@ -28,14 +31,40 @@ ALLOWED = set(BUNDLES) | {"notes-app@worktrees"}
 OPS = {"search", "images", "stats", "content_search", "linked_context", "context_pack", "get_evidence", "coverage", "graph_neighbors"}
 
 def open_asset(root, tag, name):
-    assets=json.loads(command("gh","api",f"repos/{OWNER}/releases/tags/{tag}"))["assets"]
-    expected=next(a for a in assets if a["name"]==name)
-    command("gh","release","download",tag,"-R",OWNER,"--pattern",name,"--dir",str(root))
-    path=root/name
+    # The private job supplies a runner-local manifest of independently verified,
+    # immutable release assets. One authenticated API download, not three per query.
+    pins=json.loads(Path(os.environ["ARCHIVE_INDEX_PINS"]).read_text(encoding="utf-8"))
+    expected=pins[tag][name]
+    cache=Path(os.environ.get("ARCHIVE_QUERY_CACHE",str(root)))
+    cache.mkdir(parents=True,exist_ok=True)
+    path=cache/name
+    if not path.exists():
+        tmp=cache/(name+".part")
+        for attempt in range(3):
+            try:
+                with tmp.open("wb") as out:
+                    p=subprocess.run(["gh","api","-H","Accept: application/octet-stream",f"repos/{OWNER}/releases/assets/{int(expected['id'])}"],stdout=out,stderr=subprocess.PIPE,timeout=240)
+                if p.returncode==0:
+                    if tmp.stat().st_size!=expected["size"] or digest(tmp)!=expected["sha256"]:
+                        raise ValueError("index_digest_mismatch")
+                    tmp.replace(path)
+                    break
+                err=p.stderr.decode("utf-8","replace").lower()
+                if "rate limit" in err or "http 429" in err:
+                    raise RuntimeError("api_rate_limited")
+                if "http 401" in err or "http 403" in err or "http 404" in err:
+                    raise RuntimeError("asset_access_denied")
+            except subprocess.TimeoutExpired:
+                pass
+            finally:
+                tmp.unlink(missing_ok=True)
+            if attempt<2: time.sleep(5*(attempt+1))
+        if not path.exists():
+            raise RuntimeError("asset_download_failed")
     sha=digest(path)
-    if path.stat().st_size!=expected["size"] or "sha256:"+sha!=expected["digest"]:
-        raise ValueError("index digest mismatch")
-    db=path.with_suffix("")
+    if path.stat().st_size!=expected["size"] or sha!=expected["sha256"]:
+        raise ValueError("index_digest_mismatch")
+    db=root/Path(name).with_suffix("").name
     with gzip.open(path,"rb") as src, db.open("wb") as dst:
         shutil.copyfileobj(src,dst)
     conn=sqlite3.connect(db.resolve().as_uri()+"?mode=ro",uri=True)
@@ -196,7 +225,7 @@ def main():
         with tempfile.TemporaryDirectory() as folder:
             response=execute(Path(folder),req)
     except Exception as e:
-        response={"ok":False,"id":req.get("id"),"category":type(e).__name__,"reason":"response_too_large" if str(e)=="response_too_large" else "query_failed"}
+        response={"ok":False,"id":req.get("id"),"category":type(e).__name__,"reason":str(e) if str(e) in {"response_too_large","api_rate_limited","asset_access_denied","asset_download_failed","index_digest_mismatch"} else "query_failed"}
     a.output.parent.mkdir(parents=True,exist_ok=True)
     a.output.write_text(json.dumps(response,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps({"ok":response["ok"],"operation":req.get("operation"),"id":req.get("id")}),flush=True)
