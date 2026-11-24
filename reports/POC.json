@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-24T00:09:05.067346+00:00",
+  "generated_utc": "2026-11-24T00:19:10.258205+00:00",
   "sources": [
     {
       "repository": "exams-app-old",
@@ -8,7 +8,7 @@
       "changes": 13676,
       "deleted_image_evidence": 0,
       "images": 14,
-      "seconds": 1.09,
+      "seconds": 1.1,
       "branch_compare": {
         "main_only": 0,
         "dev_only": 9,
@@ -22,7 +22,7 @@
       "changes": 18279,
       "deleted_image_evidence": 2266,
       "images": 1563,
-      "seconds": 16.43,
+      "seconds": 14.02,
       "branch_compare": {
         "main_only": 0,
         "dev_only": 180,
@@ -36,7 +36,7 @@
       "changes": 711,
       "deleted_image_evidence": 0,
       "images": 7,
-      "seconds": 0.03
+      "seconds": 0.02
     }
   ],
   "queries": [
@@ -120,7 +120,7 @@
           "rank": -3.827298
         }
       ],
-      "ms": 8.44,
+      "ms": 6.49,
       "count": 8
     },
     {
@@ -206,7 +206,7 @@
           "occurrences": 4
         }
       ],
-      "ms": 4.78,
+      "ms": 3.56,
       "count": 8
     },
     {
@@ -292,7 +292,7 @@
           "occurrences": 4
         }
       ],
-      "ms": 4.26,
+      "ms": 3.26,
       "count": 8
     },
     {
@@ -378,7 +378,7 @@
           "occurrences": 4
         }
       ],
-      "ms": 1.24,
+      "ms": 0.95,
       "count": 8
     },
     {
@@ -464,7 +464,7 @@
           "occurrences": 4
         }
       ],
-      "ms": 2.2,
+      "ms": 1.79,
       "count": 8
     }
   ],
@@ -497,11 +497,11 @@
     "bytes": 7532,
     "mentions_recall": true
   },
-  "elapsed_seconds": 18.11,
+  "elapsed_seconds": 15.64,
   "index_bytes": 14843904,
-  "index_sha256": "2824f32e941cd857e9d3af6741cf1f3c4d804d3598d88b5f2a8b13e03867fbf9",
-  "index_gzip_bytes": 2501715,
-  "index_gzip_sha256": "ed89103587f9928df64c5e842d60c6bec2fd2a7cf2b444b44ed7ea0a6a181981",
+  "index_sha256": "0ffbb6fbfe5eb6d3f91213860595653d0493c9bc3c37d237ffbfc52dd6e9ec20",
+  "index_gzip_bytes": 2501720,
+  "index_gzip_sha256": "dd47abb6e1f4493fd537c253f005dfee2c6841d587324fea66392fccf0c2cd55",
   "release_tag": "poc-archive-index",
   "sqlite_fts5": true,
   "historical_sources_complete": false,
@@ -517,9 +517,9 @@
     "published": true,
     "release_tag": "poc-archive-index",
     "asset_sqlite_gz": "archive-index.sqlite.gz",
-    "sqlite_sha256": "2824f32e941cd857e9d3af6741cf1f3c4d804d3598d88b5f2a8b13e03867fbf9",
-    "gzip_sha256": "ed89103587f9928df64c5e842d60c6bec2fd2a7cf2b444b44ed7ea0a6a181981",
-    "gzip_bytes": 2501715,
+    "sqlite_sha256": "0ffbb6fbfe5eb6d3f91213860595653d0493c9bc3c37d237ffbfc52dd6e9ec20",
+    "gzip_sha256": "dd47abb6e1f4493fd537c253f005dfee2c6841d587324fea66392fccf0c2cd55",
+    "gzip_bytes": 2501720,
     "verified_download": true,
     "url": "https://github.com/ianmaciel7/exams-app-archive/releases/tag/poc-archive-index"
   }
