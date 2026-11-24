@@ -74,6 +74,26 @@ def validate(req):
         if type(start)is not int or type(end)is not int or not 1<=start<=end<=start+99:
             raise ValueError("line range")
 
+def compact_history(history, limit):
+    """Bound nested timelines without pretending omitted records were inspected."""
+    files=[]
+    for file in history.get("files", [])[:limit]:
+        commits=file.get("commits", [])
+        kept=[]
+        for c in commits[-6:]:
+            item={k:c[k] for k in ("commit_sha","date","ref","status","pr_number","blob_sha","blob_url","justification_status","has_cited_justification") if k in c}
+            for k in ("subject","snippet"):
+                if k in c: item[k]=str(c[k])[:300]
+            for k in ("objective_links","associated_images","cited_justifications"):
+                if k in c:
+                    item[k]=[{a:(str(b)[:300] if isinstance(b,str) else b) for a,b in x.items() if not isinstance(b,(dict,list))} for x in c[k][:3] if isinstance(x,dict)]
+                    item[k+"_total"]=len(c[k])
+            kept.append(item)
+        row={k:file[k] for k in ("repository","repo","path","first_sha","last_sha","first_date","last_date") if k in file}
+        row.update({"commits":kept,"total_commits":len(commits),"omitted_commits":max(0,len(commits)-len(kept))})
+        files.append(row)
+    return {"query":history.get("query"),"files":files,"gaps":history.get("gaps",[])[:10],"mode":"bounded history; recent commits only","total_matched_files":len(history.get("files",[]))}
+
 def execute(root, req):
     op=req["operation"];limit=req.get("limit",10);repo=req.get("repo");q=req.get("query","")
     if op in {"search","images","stats","coverage"}:
@@ -93,7 +113,7 @@ def execute(root, req):
     elif op in {"content_search","context_pack","linked_context"}:
         conn,prov=open_asset(root,ADVANCED,"links.sqlite.gz" if op=="linked_context" else "content.sqlite.gz")
         if op=="linked_context":
-            out=context_linker.query_history(conn,q,repo=repo,limit=limit)
+            out=compact_history(context_linker.query_history(conn,q,repo=repo,limit=limit),min(limit,5))
         else:
             hits=content_index.search(conn,q,repo=repo,ref=req.get("ref"),path=req.get("path"),limit=limit,snippet_lines=8)
             if op=="context_pack":
@@ -117,7 +137,7 @@ def execute(root, req):
     clean,redactions=secrets_gate.sanitize_json_value(out)
     serialized=json.dumps(clean,ensure_ascii=False,sort_keys=True).encode()
     if len(serialized)>96*1024:
-        raise ValueError("response too large; narrow query")
+        raise ValueError("response_too_large")
     return {"ok":True,"version":1,"id":req["id"],"operation":op,**prov,"result_checksum":hashlib.sha256(serialized).hexdigest(),"redactions":redactions,"results":clean}
 
 def main():
@@ -131,7 +151,7 @@ def main():
         with tempfile.TemporaryDirectory() as folder:
             response=execute(Path(folder),req)
     except Exception as e:
-        response={"ok":False,"id":req.get("id"),"category":type(e).__name__}
+        response={"ok":False,"id":req.get("id"),"category":type(e).__name__,"reason":"response_too_large" if str(e)=="response_too_large" else "query_failed"}
     a.output.parent.mkdir(parents=True,exist_ok=True)
     a.output.write_text(json.dumps(response,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps({"ok":response["ok"],"operation":req.get("operation"),"id":req.get("id")}),flush=True)
