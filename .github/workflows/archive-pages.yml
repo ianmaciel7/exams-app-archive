@@ -114,7 +114,7 @@ jobs:
         run: |
           set -euo pipefail
           ARTIFACT_ID=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts" --jq '.artifacts | map(select(.name == "github-pages" and .expired == false)) | if length == 1 then .[0].id else error("Expected exactly one Pages artifact") end')
-          OIDC_TOKEN=$(curl --fail --silent --show-error -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=$(printf '%s' "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY" | jq -sRr @uri)" | jq -er .value)
+          OIDC_TOKEN=$(curl --fail --silent --show-error -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=$(printf '%s' "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY_OWNER" | jq -sRr @uri)" | jq -er .value)
           echo "::add-mask::$OIDC_TOKEN"
           DEPLOYMENT=$(jq -nc --argjson artifact "$ARTIFACT_ID" --arg version "$GITHUB_SHA" --arg oidc "$OIDC_TOKEN" '{artifact_id:$artifact,pages_build_version:$version,oidc_token:$oidc}' | gh api --method POST "repos/$GITHUB_REPOSITORY/pages/deployments" --input -)
           unset OIDC_TOKEN
