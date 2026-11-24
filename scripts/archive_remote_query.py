@@ -717,7 +717,19 @@ def prune_processed(requests: Path, results: Path, retention_days: int, now_ts: 
             continue
         if res_data.get("request_sha256") != req_digest:
             continue
-        if res_path.stat().st_mtime <= cutoff and req_path.stat().st_mtime <= cutoff:
+        res_ts = None
+        req_ts = None
+        try:
+            import archive_flow
+            res_ts = archive_flow.get_git_commit_timestamp(res_path)
+            req_ts = archive_flow.get_git_commit_timestamp(req_path)
+        except Exception:
+            pass
+        if res_ts is None:
+            res_ts = res_path.stat().st_mtime
+        if req_ts is None:
+            req_ts = req_path.stat().st_mtime
+        if res_ts <= cutoff and req_ts <= cutoff:
             req_path.unlink(missing_ok=True)
             res_path.unlink(missing_ok=True)
             removed += 1
@@ -741,7 +753,8 @@ def process(root: Path, requests: Path, results: Path, db: Path, offline: bool =
         target = results / path.name
         if target.exists():
             try:
-                if json.loads(target.read_text(encoding="utf-8")).get("request_sha256") == digest:
+                target_data = json.loads(target.read_text(encoding="utf-8"))
+                if target_data.get("request_sha256") == digest and target_data.get("status") != "pending":
                     continue
             except (OSError, ValueError):
                 pass
@@ -825,6 +838,24 @@ def process(root: Path, requests: Path, results: Path, db: Path, offline: bool =
         finally:
             temp.unlink(missing_ok=True)
         count += 1
+
+    for path, raw, digest, target in all_pending[batch_limit:]:
+        if not target.exists():
+            pending_doc = {
+                "version": 1,
+                "id": path.stem,
+                "request_sha256": digest,
+                "ok": True,
+                "status": "pending",
+                "message": "Request queued: exceeds batch limit, pending subsequent run",
+            }
+            temp = target.with_suffix(".tmp")
+            try:
+                temp.write_text(json.dumps(pending_doc, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+                temp.replace(target)
+            finally:
+                temp.unlink(missing_ok=True)
+
     return {
         "processed": count,
         "pending_remaining": remaining,

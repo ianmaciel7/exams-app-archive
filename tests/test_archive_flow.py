@@ -11,6 +11,7 @@ import struct
 import subprocess
 import sys
 import tempfile
+import time
 import unittest
 import zlib
 from pathlib import Path
@@ -27,7 +28,10 @@ import content_index  # noqa: E402
 EMOJI_REGEX = re.compile(r"[\U00010000-\U0010ffff]")
 
 
-def run_git(*args: str, cwd: Path | None = None) -> str:
+def run_git(*args: str, cwd: Path | None = None, env: dict | None = None) -> str:
+    eff_env = dict(os.environ)
+    if env:
+        eff_env.update(env)
     proc = subprocess.run(
         ["git", *args],
         cwd=cwd,
@@ -35,6 +39,7 @@ def run_git(*args: str, cwd: Path | None = None) -> str:
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         text=True,
+        env=eff_env,
     )
     return proc.stdout
 
@@ -580,6 +585,227 @@ class ArchiveFlowEndToEndTests(unittest.TestCase):
                 release_dir=self.root / "rel-store",
                 manifest_path=manifest_path,
             )
+
+    def test_queue_retention_based_on_git_commit_timestamp(self):
+        repo_dir = self.root / "queue_repo"
+        repo_dir.mkdir()
+        run_git("init", "-q", "-b", "main", str(repo_dir))
+        run_git("config", "user.email", "flow-test@example.invalid", cwd=repo_dir)
+        run_git("config", "user.name", "Flow Test", cwd=repo_dir)
+
+        req_dir = repo_dir / "requests"
+        res_dir = repo_dir / "results"
+        req_dir.mkdir()
+        res_dir.mkdir()
+
+        old_req_data = {"version": 1, "id": "req-old-01", "operation": "search", "query": "old"}
+        old_req_bytes = json.dumps(old_req_data).encode("utf-8")
+        old_digest = hashlib.sha256(old_req_bytes).hexdigest()
+        old_res_data = {"version": 1, "id": "req-old-01", "request_sha256": old_digest, "ok": True}
+
+        old_req_path = req_dir / "req-old-01.json"
+        old_res_path = res_dir / "req-old-01.json"
+        old_req_path.write_bytes(old_req_bytes)
+        old_res_path.write_text(json.dumps(old_res_data, indent=2) + "\n", encoding="utf-8")
+
+        run_git("add", ".", cwd=repo_dir)
+        old_date_env = {
+            "GIT_AUTHOR_DATE": "2026-10-01T12:00:00Z",
+            "GIT_COMMITTER_DATE": "2026-10-01T12:00:00Z",
+        }
+        run_git("commit", "-qm", "chore: record old processed query", cwd=repo_dir, env=old_date_env)
+
+        new_req_data = {"version": 1, "id": "req-recent-02", "operation": "search", "query": "recent"}
+        new_req_bytes = json.dumps(new_req_data).encode("utf-8")
+        new_digest = hashlib.sha256(new_req_bytes).hexdigest()
+        new_res_data = {"version": 1, "id": "req-recent-02", "request_sha256": new_digest, "ok": True}
+
+        new_req_path = req_dir / "req-recent-02.json"
+        new_res_path = res_dir / "req-recent-02.json"
+        new_req_path.write_bytes(new_req_bytes)
+        new_res_path.write_text(json.dumps(new_res_data, indent=2) + "\n", encoding="utf-8")
+
+        run_git("add", ".", cwd=repo_dir)
+        run_git("commit", "-qm", "chore: record recent processed query", cwd=repo_dir)
+
+        current_time = time.time()
+        os.utime(old_req_path, (current_time, current_time))
+        os.utime(old_res_path, (current_time, current_time))
+        self.assertGreaterEqual(old_res_path.stat().st_mtime, current_time - 2)
+
+        commit_ts = archive_flow.get_git_commit_timestamp(old_res_path, repo_root=repo_dir)
+        self.assertIsNotNone(commit_ts)
+        self.assertLess(commit_ts, current_time - (15 * 86400))
+
+        pruned_count = archive_flow.prune_queue(req_dir, res_dir, retention_days=14, repo_root=repo_dir)
+        self.assertEqual(pruned_count, 1)
+        self.assertFalse(old_req_path.exists())
+        self.assertFalse(old_res_path.exists())
+        self.assertTrue(new_req_path.exists())
+        self.assertTrue(new_res_path.exists())
+
+    def test_queue_batch_handling_and_loop_processing(self):
+        req_dir = self.root / "batch_q_requests"
+        res_dir = self.root / "batch_q_results"
+        req_dir.mkdir()
+        res_dir.mkdir()
+
+        for idx in range(1, 6):
+            doc = {
+                "version": 1,
+                "id": f"req-batch-{idx:02d}",
+                "operation": "fetch",
+                "path": "src/sidebar.ts",
+                "sha": self.main_sha,
+                "source_repo": "exams-app-synthetic",
+                "start_line": 1,
+                "end_line": idx * 5,
+            }
+            (req_dir / f"req-batch-{idx:02d}.json").write_text(json.dumps(doc, indent=2), encoding="utf-8")
+
+        batch1 = archive_flow.process_queue_batch(
+            req_dir,
+            res_dir,
+            source=self.bundle,
+            batch_limit=2,
+            loop_until_empty=False,
+        )
+        self.assertTrue(batch1["ok"])
+        self.assertEqual(batch1["processed"], 2)
+        self.assertEqual(batch1["pending_remaining"], 3)
+        self.assertEqual(batch1["status"], "pending")
+        self.assertGreater(batch1["tokens"]["estimated_tokens"], 0)
+
+        res1 = json.loads((res_dir / "req-batch-01.json").read_text(encoding="utf-8"))
+        self.assertTrue(res1["ok"])
+        self.assertIn("content", res1)
+        self.assertEqual(res1["end_line"], 5)
+
+        res3 = json.loads((res_dir / "req-batch-03.json").read_text(encoding="utf-8"))
+        self.assertTrue(res3["ok"])
+        self.assertEqual(res3["status"], "pending")
+        self.assertIn("exceeds batch limit", res3["message"])
+
+        batch_loop = archive_flow.process_queue_batch(
+            req_dir,
+            res_dir,
+            source=self.bundle,
+            batch_limit=2,
+            loop_until_empty=True,
+        )
+        self.assertTrue(batch_loop["ok"])
+        self.assertEqual(batch_loop["processed"], 3)
+        self.assertEqual(batch_loop["pending_remaining"], 0)
+        self.assertEqual(batch_loop["status"], "complete")
+        self.assertGreaterEqual(batch_loop["loops"], 2)
+
+        for idx in range(1, 6):
+            target = res_dir / f"req-batch-{idx:02d}.json"
+            self.assertTrue(target.exists())
+            data = json.loads(target.read_text(encoding="utf-8"))
+            self.assertTrue(data["ok"])
+            self.assertNotEqual(data.get("status"), "pending")
+            self.assertIn("content", data)
+
+        idle_batch = archive_flow.process_queue_batch(
+            req_dir,
+            res_dir,
+            source=self.bundle,
+            batch_limit=2,
+            loop_until_empty=True,
+        )
+        self.assertEqual(idle_batch["processed"], 0)
+        self.assertEqual(idle_batch["pending_remaining"], 0)
+        self.assertEqual(idle_batch["status"], "complete")
+
+    def test_recovery_of_code_markdown_images_and_deleted_with_sha_validation(self):
+        code_out = self.root / "recovered" / "sidebar.ts"
+        rec_code = archive_flow.flow_recover(
+            source=self.bundle,
+            source_repo="exams-app-synthetic",
+            sha=self.main_sha,
+            ref="refs/heads/main",
+            path="src/sidebar.ts",
+            output=code_out,
+            expected_sha256=hashlib.sha256(self.sidebar_bytes).hexdigest(),
+        )
+        self._assert_structured_fields(rec_code, expect_content_key="content")
+        self.assertEqual(rec_code["source_repo"], "exams-app-synthetic")
+        self.assertEqual(rec_code["ref"], "refs/heads/main")
+        self.assertEqual(rec_code["full_sha"], self.main_sha)
+        self.assertEqual(rec_code["path"], "src/sidebar.ts")
+        self.assertEqual(rec_code["mime"], "text/typescript")
+        self.assertEqual(rec_code["sha256"], hashlib.sha256(self.sidebar_bytes).hexdigest())
+        self.assertEqual(rec_code["output_sha256"], rec_code["sha256"])
+        self.assertEqual(code_out.read_bytes(), self.sidebar_bytes)
+
+        with self.assertRaises(archive_flow.ChecksumMismatchError):
+            archive_flow.flow_recover(
+                source=self.bundle,
+                sha=self.main_sha,
+                path="src/sidebar.ts",
+                expected_sha256="1" * 64,
+            )
+
+        md_out = self.root / "recovered" / "decisions_rec.md"
+        rec_md = archive_flow.flow_recover(
+            source=self.bundle,
+            source_repo="exams-app-synthetic",
+            sha=self.main_sha,
+            path="docs/decisions.md",
+            output=md_out,
+            expected_sha256=hashlib.sha256(self.markdown_bytes).hexdigest(),
+        )
+        self._assert_structured_fields(rec_md, expect_content_key="content")
+        self.assertEqual(rec_md["mime"], "text/markdown")
+        self.assertEqual(rec_md["sha256"], hashlib.sha256(self.markdown_bytes).hexdigest())
+        self.assertEqual(md_out.read_bytes(), self.markdown_bytes)
+        self.assertGreater(rec_md["tokens"]["estimated_tokens"], 0)
+        self.assertGreater(rec_md["tokens"]["content_tokens"], 0)
+
+        img_out = self.root / "recovered" / "sidebar-preview-rec.png"
+        rec_img = archive_flow.flow_recover(
+            source=self.bundle,
+            source_repo="exams-app-synthetic",
+            sha=self.main_sha,
+            path="assets/sidebar-preview.png",
+            output=img_out,
+            expected_sha256=hashlib.sha256(self.active_png).hexdigest(),
+        )
+        self._assert_structured_fields(rec_img, expect_content_key="content_base64")
+        self.assertEqual(rec_img["mime"], "image/png")
+        self.assertEqual(rec_img["sha256"], hashlib.sha256(self.active_png).hexdigest())
+        self.assertEqual(img_out.read_bytes(), self.active_png)
+        self.assertEqual(base64.b64decode(rec_img["content_base64"]), self.active_png)
+
+        del_code_out = self.root / "recovered" / "legacy_graph_rec.ts"
+        rec_del_code = archive_flow.flow_recover(
+            source=self.bundle,
+            source_repo="exams-app-synthetic",
+            sha=self.initial_sha,
+            path="src/legacy_graph.ts",
+            output=del_code_out,
+            expected_sha256=hashlib.sha256(self.deleted_code_bytes).hexdigest(),
+        )
+        self._assert_structured_fields(rec_del_code, expect_content_key="content")
+        self.assertTrue(rec_del_code["deleted_at_ref_head"])
+        self.assertEqual(del_code_out.read_bytes(), self.deleted_code_bytes)
+        self.assertEqual(rec_del_code["sha256"], hashlib.sha256(self.deleted_code_bytes).hexdigest())
+
+        del_img_out = self.root / "recovered" / "removed-grafo-rec.png"
+        rec_del_img = archive_flow.flow_recover(
+            source=self.bundle,
+            source_repo="exams-app-synthetic",
+            sha=self.initial_sha,
+            path="assets/removed-grafo.png",
+            output=del_img_out,
+            expected_sha256=hashlib.sha256(self.deleted_png).hexdigest(),
+        )
+        self._assert_structured_fields(rec_del_img, expect_content_key="content_base64")
+        self.assertTrue(rec_del_img["deleted_at_ref_head"])
+        self.assertEqual(del_img_out.read_bytes(), self.deleted_png)
+        self.assertEqual(base64.b64decode(rec_del_img["content_base64"]), self.deleted_png)
+        self.assertEqual(rec_del_img["sha256"], hashlib.sha256(self.deleted_png).hexdigest())
 
 
 if __name__ == "__main__":

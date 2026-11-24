@@ -26,6 +26,7 @@ if str(SCRIPT_DIR) not in sys.path:
 
 import content_index  # noqa: E402
 import image_catalog  # noqa: E402
+import secrets_gate  # noqa: E402
 
 REPO_ROOT = SCRIPT_DIR.parent
 
@@ -193,10 +194,86 @@ class UnsafeInputError(ArchiveFlowError):
 
 def validate_private_path(path: Path, repo_root: Path | None = None) -> Path:
     """Reject any path targeting site/ or public GitHub Pages output."""
+    root = (repo_root or REPO_ROOT).resolve()
+    site_dir = root / "site"
     try:
-        return image_catalog.validate_private_output_path(path, repo_root=repo_root or REPO_ROOT)
+        resolved = path.resolve()
+    except Exception:
+        resolved = path
+    if resolved == site_dir or site_dir in resolved.parents:
+        raise PermissionDeniedError(f"Refusing to write private data inside site/: {path}", details={"path": str(path)})
+    cwd_site = (Path.cwd() / "site").resolve()
+    if resolved == cwd_site or cwd_site in resolved.parents:
+        raise PermissionDeniedError(f"Refusing to write private data inside site/: {path}", details={"path": str(path)})
+    if not path.is_absolute() and path.parts and path.parts[0] == "site":
+        raise PermissionDeniedError(f"Refusing to write private data inside site/: {path}", details={"path": str(path)})
+    try:
+        return image_catalog.validate_private_output_path(path, repo_root=root)
     except ValueError as exc:
         raise PermissionDeniedError(str(exc), details={"path": str(path)}) from exc
+
+
+def get_git_commit_timestamp(file_path: Path, repo_root: Path | None = None) -> int | None:
+    """Retrieve Git commit timestamp (%ct) for a file, avoiding checkout mtime instability."""
+    cwd = repo_root or (file_path.parent if file_path.is_file() else file_path)
+    try:
+        proc = subprocess.run(
+            ["git", "log", "-1", "--format=%ct", "--", str(file_path)],
+            cwd=cwd,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            timeout=10.0,
+        )
+        if proc.returncode == 0:
+            out = proc.stdout.strip()
+            if out.isdigit():
+                return int(out)
+    except (subprocess.SubprocessError, OSError):
+        pass
+    return None
+
+
+def prune_queue(
+    requests_dir: Path,
+    results_dir: Path,
+    retention_days: int,
+    now_ts: float | None = None,
+    repo_root: Path | None = None,
+) -> int:
+    """Remove old processed request/result pairs older than retention_days using Git commit timestamps."""
+    if retention_days <= 0:
+        return 0
+    cutoff = (now_ts if now_ts is not None else time.time()) - (retention_days * 86400)
+    removed = 0
+    if not results_dir.is_dir() or not requests_dir.is_dir():
+        return 0
+    for res_path in sorted(results_dir.glob("*.json")):
+        req_path = requests_dir / res_path.name
+        if not req_path.is_file():
+            continue
+        try:
+            res_data = json.loads(res_path.read_text(encoding="utf-8"))
+            req_bytes = req_path.read_bytes()
+            req_digest = hashlib.sha256(req_bytes).hexdigest()
+        except (OSError, ValueError):
+            continue
+        if res_data.get("request_sha256") != req_digest:
+            continue
+
+        res_ts = get_git_commit_timestamp(res_path, repo_root=repo_root)
+        req_ts = get_git_commit_timestamp(req_path, repo_root=repo_root)
+
+        if res_ts is None:
+            res_ts = res_path.stat().st_mtime
+        if req_ts is None:
+            req_ts = req_path.stat().st_mtime
+
+        if res_ts <= cutoff and req_ts <= cutoff:
+            req_path.unlink(missing_ok=True)
+            res_path.unlink(missing_ok=True)
+            removed += 1
+    return removed
 
 
 def validate_sha256(value: str, label: str = "sha256") -> str:
@@ -968,10 +1045,11 @@ def flow_fetch(
     if max_payload_bytes < 64:
         raise UnsafeInputError("max_payload_bytes must be >= 64")
     safe_rel_path = validate_path(path)
-    if content_index.is_secret_path(safe_rel_path):
+    is_sensitive, reason = secrets_gate.is_sensitive_path(safe_rel_path)
+    if is_sensitive or content_index.is_secret_path(safe_rel_path):
         raise PermissionDeniedError(
             f"Refusing to fetch secret path: {safe_rel_path}",
-            details={"path": safe_rel_path},
+            details={"path": safe_rel_path, "reason": reason},
         )
     repo_label = source_repo or source.stem or source.name
 
@@ -1079,11 +1157,12 @@ def flow_fetch(
             return _attach_tokens(body, content_text=b64)
 
         full_text = raw_bytes.decode("utf-8", "replace")
-        if content_index.contains_secret_content(full_text):
+        gate_findings = secrets_gate.scan_text(full_text, location=safe_rel_path)
+        if content_index.contains_secret_content(full_text) or gate_findings:
             raise PermissionDeniedError(
                 f"Refusing to return blob containing secret pattern: {safe_rel_path}",
                 attempts=attempts,
-                details={"path": safe_rel_path},
+                details={"path": safe_rel_path, "findings_count": len(gate_findings)},
             )
 
         if start_line is not None and end_line is not None:
@@ -1192,10 +1271,11 @@ def flow_preview(
         validate_private_path(thumb_dir)
 
     safe_rel_path = validate_path(path)
-    if content_index.is_secret_path(safe_rel_path):
+    is_sensitive, reason = secrets_gate.is_sensitive_path(safe_rel_path)
+    if is_sensitive or content_index.is_secret_path(safe_rel_path):
         raise PermissionDeniedError(
             f"Refusing to preview secret path: {safe_rel_path}",
-            details={"path": safe_rel_path},
+            details={"path": safe_rel_path, "reason": reason},
         )
     repo_label = source_repo or source.stem or source.name
 
@@ -1346,11 +1426,12 @@ def flow_preview(
             return _attach_tokens(body, content_text=b64)
 
         full_text = raw_bytes.decode("utf-8", "replace")
-        if content_index.contains_secret_content(full_text):
+        gate_findings = secrets_gate.scan_text(full_text, location=safe_rel_path)
+        if content_index.contains_secret_content(full_text) or gate_findings:
             raise PermissionDeniedError(
                 f"Refusing to preview blob containing secret pattern: {safe_rel_path}",
                 attempts=attempts,
-                details={"path": safe_rel_path},
+                details={"path": safe_rel_path, "findings_count": len(gate_findings)},
             )
         all_lines = full_text.replace("\r\n", "\n").replace("\r", "\n").split("\n")
         if all_lines and all_lines[-1] == "":
@@ -1498,6 +1579,202 @@ def flow_recover(
     return _attach_tokens(body, content_text=content_str)
 
 
+def process_queue_batch(
+    requests_dir: Path,
+    results_dir: Path,
+    *,
+    source: Path | None = None,
+    db_path: Path | None = None,
+    batch_limit: int = 30,
+    loop_until_empty: bool = False,
+    max_loops: int = 100,
+    retention_days: int = 0,
+    now_ts: float | None = None,
+    repo_root: Path | None = None,
+    timeout: float = DEFAULT_TIMEOUT_SECONDS,
+    max_retries: int = DEFAULT_MAX_RETRIES,
+) -> dict:
+    """Process queue requests with batch limit, loop processing, and explicit pending status."""
+    validate_private_path(requests_dir, repo_root=repo_root)
+    validate_private_path(results_dir, repo_root=repo_root)
+    if not requests_dir.is_dir():
+        raise NotFoundError(f"Requests directory not found: {requests_dir}")
+    if batch_limit < 1:
+        raise UnsafeInputError("batch_limit must be >= 1")
+
+    results_dir.mkdir(parents=True, exist_ok=True)
+    pruned = prune_queue(requests_dir, results_dir, retention_days, now_ts=now_ts, repo_root=repo_root) if retention_days > 0 else 0
+
+    id_pattern = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_-]{2,63}$")
+
+    def get_pending_items() -> list[tuple[Path, bytes, str, Path]]:
+        items = []
+        for path in sorted(requests_dir.glob("*.json")):
+            if not id_pattern.fullmatch(path.stem) or path.stat().st_size > 65536:
+                continue
+            raw = path.read_bytes()
+            digest = hashlib.sha256(raw).hexdigest()
+            target = results_dir / path.name
+            if target.exists():
+                try:
+                    data = json.loads(target.read_text(encoding="utf-8"))
+                    if data.get("request_sha256") == digest and data.get("status") != "pending":
+                        continue
+                except (OSError, ValueError):
+                    pass
+            items.append((path, raw, digest, target))
+        return items
+
+    total_processed = 0
+    loop_count = 0
+
+    while True:
+        pending_items = get_pending_items()
+        if not pending_items:
+            break
+
+        loop_count += 1
+        current_batch = pending_items[:batch_limit]
+        beyond_limit = pending_items[batch_limit:]
+
+        for path, raw, digest, target in current_batch:
+            outcome: dict = {
+                "version": 1,
+                "id": path.stem,
+                "request_sha256": digest,
+            }
+            try:
+                req_data = json.loads(raw.decode("utf-8"))
+                op = req_data.get("operation")
+                req_source = Path(req_data["source"]) if req_data.get("source") else source
+                req_db = Path(req_data["db"]) if req_data.get("db") else db_path
+
+                if op == "search":
+                    res = flow_search(
+                        req_data["query"],
+                        db_path=req_db,
+                        source=req_source,
+                        repo=req_data.get("repo"),
+                        ref=req_data.get("ref"),
+                        extension=req_data.get("ext") or req_data.get("extension"),
+                        language=req_data.get("lang") or req_data.get("language"),
+                        status=req_data.get("status"),
+                        kind=req_data.get("kind", "all"),
+                        limit=req_data.get("limit", DEFAULT_SEARCH_LIMIT),
+                        snippet_lines=req_data.get("snippet_lines", DEFAULT_SNIPPET_LINES),
+                        timeout=timeout,
+                        max_retries=max_retries,
+                    )
+                elif op == "fetch":
+                    if req_source is None:
+                        raise UnsafeInputError("Missing source repository for fetch")
+                    res = flow_fetch(
+                        source=req_source,
+                        path=req_data["path"],
+                        sha=req_data.get("sha"),
+                        ref=req_data.get("ref"),
+                        source_repo=req_data.get("source_repo"),
+                        start_line=req_data.get("start_line"),
+                        end_line=req_data.get("end_line"),
+                        expected_sha256=req_data.get("expected_sha256"),
+                        expected_blob_sha=req_data.get("expected_blob_sha"),
+                        timeout=timeout,
+                        max_retries=max_retries,
+                    )
+                elif op == "preview":
+                    if req_source is None:
+                        raise UnsafeInputError("Missing source repository for preview")
+                    res = flow_preview(
+                        source=req_source,
+                        path=req_data["path"],
+                        sha=req_data.get("sha"),
+                        ref=req_data.get("ref"),
+                        source_repo=req_data.get("source_repo"),
+                        start_line=req_data.get("start_line", 1),
+                        max_lines=req_data.get("max_lines", DEFAULT_PREVIEW_LINES),
+                        max_chars=req_data.get("max_chars", DEFAULT_MAX_CHARS),
+                        thumb_size=req_data.get("thumb_size", DEFAULT_THUMB_SIZE),
+                        timeout=timeout,
+                        max_retries=max_retries,
+                    )
+                elif op == "recover":
+                    if req_source is None:
+                        raise UnsafeInputError("Missing source repository for recover")
+                    out_path = Path(req_data["output"]) if req_data.get("output") else None
+                    if out_path:
+                        validate_private_path(out_path, repo_root=repo_root)
+                    res = flow_recover(
+                        source=req_source,
+                        path=req_data["path"],
+                        sha=req_data.get("sha"),
+                        ref=req_data.get("ref"),
+                        source_repo=req_data.get("source_repo"),
+                        start_line=req_data.get("start_line"),
+                        end_line=req_data.get("end_line"),
+                        output=out_path,
+                        overwrite=req_data.get("overwrite", False),
+                        expected_sha256=req_data.get("expected_sha256"),
+                        expected_blob_sha=req_data.get("expected_blob_sha"),
+                        timeout=timeout,
+                        max_retries=max_retries,
+                    )
+                else:
+                    raise UnsafeInputError(f"Unsupported operation: {op}")
+
+                outcome.update(res)
+            except ArchiveFlowError as exc:
+                outcome.update(exc.to_dict())
+            except (ValueError, OSError, json.JSONDecodeError) as exc:
+                err = ArchiveFlowError(str(exc), code="invalid_input")
+                outcome.update(err.to_dict())
+
+            outcome_with_tokens = _attach_tokens(outcome)
+            temp = target.with_suffix(".tmp")
+            try:
+                temp.write_text(json.dumps(outcome_with_tokens, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+                temp.replace(target)
+            finally:
+                temp.unlink(missing_ok=True)
+            total_processed += 1
+
+        if not loop_until_empty:
+            for p_path, p_raw, p_digest, p_target in beyond_limit:
+                if not p_target.exists():
+                    pending_doc = {
+                        "version": 1,
+                        "id": p_path.stem,
+                        "request_sha256": p_digest,
+                        "ok": True,
+                        "status": "pending",
+                        "message": "Request queued: exceeds batch limit, pending subsequent execution",
+                    }
+                    temp = p_target.with_suffix(".tmp")
+                    try:
+                        temp.write_text(json.dumps(_attach_tokens(pending_doc), ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+                        temp.replace(p_target)
+                    finally:
+                        temp.unlink(missing_ok=True)
+            break
+
+        if loop_count >= max_loops:
+            break
+
+    final_pending = get_pending_items()
+    remaining_count = len(final_pending)
+    status = "pending" if remaining_count > 0 else "complete"
+
+    summary = {
+        "ok": True,
+        "operation": "process-queue",
+        "processed": total_processed,
+        "pending_remaining": remaining_count,
+        "status": status,
+        "pruned": pruned,
+        "loops": loop_count,
+    }
+    return _attach_tokens(summary)
+
+
 def _resolve_cli_source(args: argparse.Namespace) -> Path:
     if getattr(args, "source", None) is not None:
         return args.source
@@ -1578,6 +1855,18 @@ def build_parser() -> argparse.ArgumentParser:
     p_recover.add_argument("--output", type=Path, default=None, help="Private output path (never inside site/)")
     p_recover.add_argument("--overwrite", action="store_true")
 
+    p_queue = sub.add_parser("process-queue", help="Process queued JSON requests with batching and retention")
+    p_queue.add_argument("--requests", type=Path, required=True, help="Directory containing request JSON files")
+    p_queue.add_argument("--results", type=Path, required=True, help="Directory for result JSON files")
+    p_queue.add_argument("--source", type=Path, default=None, help="Default Git bundle or repository")
+    p_queue.add_argument("--db", type=Path, default=None, help="Default content index SQLite DB")
+    p_queue.add_argument("--batch-limit", type=int, default=30, help="Max requests per batch")
+    p_queue.add_argument("--loop", action="store_true", help="Process in a loop until queue is empty")
+    p_queue.add_argument("--max-loops", type=int, default=100, help="Maximum loop iterations")
+    p_queue.add_argument("--retention-days", type=int, default=0, help="Days to retain completed request/results")
+    p_queue.add_argument("--timeout", type=float, default=DEFAULT_TIMEOUT_SECONDS)
+    p_queue.add_argument("--max-retries", type=int, default=DEFAULT_MAX_RETRIES)
+
     return ap
 
 
@@ -1636,6 +1925,19 @@ def main(argv: list[str] | None = None) -> None:
             expected_sha256=args.expected_sha256,
             max_bytes=args.max_bytes,
             max_payload_bytes=args.max_payload_bytes,
+            timeout=args.timeout,
+            max_retries=args.max_retries,
+        )
+    elif args.command == "process-queue":
+        result = process_queue_batch(
+            requests_dir=args.requests,
+            results_dir=args.results,
+            source=args.source,
+            db_path=args.db,
+            batch_limit=args.batch_limit,
+            loop_until_empty=args.loop,
+            max_loops=args.max_loops,
+            retention_days=args.retention_days,
             timeout=args.timeout,
             max_retries=args.max_retries,
         )
