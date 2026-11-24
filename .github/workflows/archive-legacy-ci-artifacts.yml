@@ -1,10 +1,6 @@
 name: Preserve all recoverable legacy GitHub Actions artifacts
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/archive-legacy-ci-artifacts.yml'
 permissions:
   contents: write
   actions: read

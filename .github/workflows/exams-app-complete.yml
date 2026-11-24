@@ -1,9 +1,6 @@
 name: Preserve every exams-app branch and GitHub metadata
 on:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/exams-app-complete.yml'
+  workflow_dispatch:
 permissions:
   contents: write
 concurrency:

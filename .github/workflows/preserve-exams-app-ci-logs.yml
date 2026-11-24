@@ -1,10 +1,6 @@
 name: Preserve original exams-app GitHub Actions job logs
 on:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/preserve-exams-app-ci-logs.yml'
-
+  workflow_dispatch:
 permissions:
   contents: write
   actions: read

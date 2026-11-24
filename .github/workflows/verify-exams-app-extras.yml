@@ -1,9 +1,6 @@
 name: Verify exams-app full archive, assets, LFS and workflow logs
 on:
-  push:
-    branches: [main]
-    paths:
-      - ".github/workflows/verify-exams-app-extras.yml"
+  workflow_dispatch:
 permissions:
   contents: write
   actions: read

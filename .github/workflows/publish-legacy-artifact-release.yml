@@ -1,8 +1,5 @@
 name: Publish legacy artifact release for in-progress checksum verification
 on:
-  push:
-    branches: [main]
-    paths: ['.github/workflows/publish-legacy-artifact-release.yml']
   workflow_dispatch:
 permissions:
   contents: write

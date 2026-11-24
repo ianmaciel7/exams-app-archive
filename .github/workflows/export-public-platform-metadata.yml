@@ -1,9 +1,6 @@
 name: Archive all public GitHub platform metadata
 on:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/export-public-platform-metadata.yml'
+  workflow_dispatch:
 permissions:
   contents: write
   actions: read

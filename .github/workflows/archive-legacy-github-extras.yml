@@ -1,9 +1,6 @@
 name: Preserve GitHub Discussions and Projects inventory from legacy repos
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths: ['.github/workflows/archive-legacy-github-extras.yml']
 permissions:
   contents: write
   discussions: read

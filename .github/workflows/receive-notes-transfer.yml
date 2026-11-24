@@ -1,9 +1,6 @@
 name: Receive verified private Notes bundle through authorized GitHub connector
 on:
-  push:
-    branches: [notes-private-import]
-    paths:
-      - 'transfer/notes-2026-11-23/TRANSFER-MANIFEST.json'
+  workflow_dispatch:
 permissions:
   contents: write
 concurrency:

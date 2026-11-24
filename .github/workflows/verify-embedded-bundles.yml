@@ -1,10 +1,6 @@
 name: Verify all embedded historical Git bundles
 on:
-  push:
-    branches: [main]
-    paths:
-      - ".github/workflows/verify-embedded-bundles.yml"
-
+  workflow_dispatch:
 permissions:
   contents: write
 

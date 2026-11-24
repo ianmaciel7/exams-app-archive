@@ -2,13 +2,6 @@ name: Historical Git search POC
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - scripts/**
-      - tests/**
-      - .github/workflows/archive-poc.yml
-
 concurrency:
   group: exam-archive-historical-index
   cancel-in-progress: true
