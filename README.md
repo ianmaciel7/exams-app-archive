@@ -2,42 +2,23 @@
 
 **[Abrir busca e grafo interativo](https://ianmaciel7.github.io/exams-app-archive/)** · [Interface em site/](https://ianmaciel7.github.io/exams-app-archive/site/) (quando Pages usa a branch).
 
-**Arquivo privado, verificável e pesquisável de versões antigas do Exam App.**
-Este repositório não é o aplicativo ativo; contém apenas ferramentas, manifestos
-e índices. Históricos grandes ficam em **Git Bundles anexados a releases privadas**,
-não em dezenas de branches.
+Arquivo verificável e pesquisável de versões históricas. O repositório não é o aplicativo ativo.
 
-## Situação atual do arquivamento integral
+## Situação verificada em 24/11/2026
 
-**Ainda não é 100%.** Git público verificado (54/54 branches), 12/12 branches antigas
-de `notes-app` restauráveis. Faltam os **objetos Git** das 4 branches privadas
-`main`, `dev`, `stag`, `firebase/file` e das 3 tags de Notes, apesar de seus
-SHAs já constarem do inventário.
+> **Segurança:** o destino está público. Não publicar novos dados privados, executar consultas privadas remotas ou criar índices privados neste destino enquanto a visibilidade não for corrigida. Revisar a exposição histórica e rotacionar credenciais potencialmente expostas. O Pages deve ser separado do armazenamento privado.
 
-Enquanto a autorização para clonar o repositório privado não está configurada,
-a integração GitHub conectada copiou para
-[inventory/notes-app/](inventory/notes-app/README.md) as descrições de 50 PRs,
-37 submissões de review, 100 comentários inline, 10 comentários de conversa,
-153 eventos, 1.889 registros de alterações de arquivos, 3 releases e
-**1.130 registros de execução de Actions**. Isto não inclui os logs binários de CI.
+Escopo principal: seis repositórios; os dois projetos auxiliares não entram nas métricas de aceite. A conferência autenticada de refs encontrou **69/69 branches, 519/519 refs de PR e 5/5 tags**, com SHAs correspondentes aos manifestos das releases. O backup Git de Notes foi concluído após os relatórios iniciais; o manifesto registra verificação, fsck, restauração e download de retorno. A verificação de 24/11 comparou os hashes declarados dos assets, sem repetir o download integral.
 
-- [Auditoria de 30.098 objetos Git públicos](reports/PUBLIC-GIT-EXTERNALS.md):
-  nenhum ponteiro LFS ou submódulo encontrado nos sete bundles públicos.
-- [Backup de Notes com acesso mínimo](https://github.com/ianmaciel7/exams-app-archive/actions/workflows/archive-private-notes.yml):
-  requer configurar o secret `NOTES_READ_TOKEN` na aba Actions do arquivo.
-- [Exportação de metadados dos projetos públicos](https://github.com/ianmaciel7/exams-app-archive/releases/tag/public-metadata-2026-11-23):
-  execução concluída para sete repositórios, com ZIPs, manifesto e checksums.
-  A ocorrência HTTP 500 na exportação de reviews do PR #248 de `exams-app-antigo-2`
-  foi verificada separadamente: a coleção possui zero reviews, conforme
-  [suplemento arquivado](inventory/exams-app-antigo-2/pr-248-reviews-supplement.json).
+Pendências reais: privacidade, cópia independente com restore offline, reconciliação dos 161 PRs de exams-app-old (manifesto antigo: 158), cobertura de logs/jobs de CI, auditoria externa e reconstrução/validação do índice privado atualizado. Dados expirados ou apagados não são recuperáveis apenas pelo Git.
 
-**Não apague repositórios originais antes de concluir e testar essas pendências.**
+**Nenhuma exclusão está autorizada.** Os relatórios datados de 23/11 são snapshots históricos e não substituem esta conferência.
 
 ## Comece por aqui
 
 | Recurso | Para que serve |
 |---|---|
-| **[Verificação independente de arquivamento](docs/VERIFICATION-2026-11-23.md)** | **Situação atual: Git público íntegro; 4 branches privadas e 3 tags ainda pendentes, além de metadados de PR/CI** |
+| **[Verificação independente de arquivamento](docs/VERIFICATION-2026-11-23.md)** | Snapshot histórico; consultar a situação atual acima |
 | [Critérios para excluir repositórios antigos](docs/DELETE-READINESS.md) | Gate: restauração, histórico de PRs, evidências do GitHub Actions e backup independente antes da exclusão |
 | [Auditoria dos 9 repositórios](docs/AUDIT-COVERAGE-2026-11-23.md) | Cobertura e lacunas, com 71 branch heads inventariados |
 | [Backup completo de exams-app](https://github.com/ianmaciel7/exams-app-archive/releases/tag/exams-app-2026-11-23-complete) | **Todas as 4 branches**, refs de PR, imagens, documentos, inventário e metadados GitHub |
@@ -46,12 +27,12 @@ a integração GitHub conectada copiou para
 | [Logs CI originais do exams-app](https://github.com/ianmaciel7/exams-app-archive/releases/tag/exams-app-2026-11-23-ci-logs) | Dois logs recuperados do GitHub Actions, comprimidos e verificados por SHA-256 |
 | [Artefatos históricos de CI de repos antigos](https://github.com/ianmaciel7/exams-app-archive/releases/tag/legacy-ci-artifacts-2026-11-23-bulk) | **2.883/2.883 ZIPs de evidência** guardados em 16 TARs com SHA-256 e manifesto global; restauração real testada |
 | [Backup Git dos demais projetos públicos](https://github.com/ianmaciel7/exams-app-archive/releases/tag/archive-2026-11-23-all-refs) | Versões antigas, templates e referências de PR preservadas |
-| [Índice SQLite FTS5 mais recente](https://github.com/ianmaciel7/exams-app-archive/releases/tag/index-2026-11-23-exams-complete) | Busca histórica em todos os projetos e nas quatro branches de exams-app |
+| [Índice SQLite FTS5 mais recente](https://github.com/ianmaciel7/exams-app-archive/releases/tag/index-2026-11-23-exams-complete) | Índice histórico anterior ao backup completo de Notes; cobertura parcial |
 | [Relatório da busca completa](reports/FULL-INDEX.md) | Resultados e métricas reais da indexação |
 | [Verificação dos 15 bundles internos](reports/embedded-bundles-audit.md) | Preservação de 12 branches `notes-app-old*` e três backups Exams Old |
 | [Guia prático de recuperação](docs/EXTRACTION-GUIDE.md) | Consultar índices e restaurar arquivos originais por commit + caminho |
 
-## Escopo validado em 23/11/2026
+## Escopo histórico validado em 23/11/2026
 
 - **7 repositórios públicos**: os cinco projetos principais (exams-app, exams-app-old,
   exams-app-antigo-2 e dois templates), mais dois repositórios auxiliares.
@@ -61,19 +42,16 @@ a integração GitHub conectada copiou para
   verificada e heads correspondentes às branches atuais.
 - **19 fontes Git pesquisáveis** em um SQLite FTS5 reconstruído exclusivamente das releases privadas. Os valores atualizados estão em [reports/FULL-INDEX.md](reports/FULL-INDEX.md); incluem as quatro branches originais de `exams-app`.
 
-**Pendente:** o backup integral do `notes-app` privado para `main`, `dev`, `stag`,
-`firebase/file` e tags `v0.1.0`, `v0.2.0`, `v0.3.0`. O token do GitHub Actions
-deste repositório não possui acesso automático para clonar outro repositório privado.
-Não tornar o `notes-app` público para contornar isso.
+**Retificação 24/11:** o backup Git posterior de Notes está documentado no manifesto. A publicação e consulta privada permanecem bloqueadas até corrigir a visibilidade.
 
 ## ChatGPT nativo: pesquisa privada FTS5
 
-- [Consulta remota via GitHub Actions](docs/PRIVATE-CHATGPT-SEARCH.md): perguntas FTS5 e inventário de imagens pelo GitHub conectado, sem PC e sem novo servidor MCP. Usa a branch privada `archive-search-queries` separada da `main` e a release verificada.
+- [Consulta remota via GitHub Actions](docs/PRIVATE-CHATGPT-SEARCH.md): perguntas FTS5 e inventário de imagens pelo GitHub conectado, sem PC e sem novo servidor MCP. Usa a branch `archive-search-queries`; não executar enquanto o destino estiver público.
 
 ## Explorador local e plugin Codex
 
 - [Plugin Codex privado](plugins/exams-archive/README.md): consulta autenticada por SQLite FTS5, imagens, recuperação por SHA + path e exportação JSON local. Marketplace do repositório em `.agents/plugins/marketplace.json`.
-- [GitHub Pages — explorador local](site/README.md): interface estática que abre um JSON escolhido no navegador. **O Pages pode ser público mesmo com o repositório privado; nenhum índice, bundle ou dado histórico é publicado.**
+- [GitHub Pages — explorador local](site/README.md): interface estática que abre um JSON escolhido no navegador. **O Pages deve publicar somente interface estática sanitizada, sem dados históricos privados.**
 - [Workflow do Pages](.github/workflows/archive-pages.yml): deploy somente de quatro arquivos permitidos; a publicação requer GitHub Pages habilitado em Settings → Pages com Source = GitHub Actions.
 
 ## Busca com poucos tokens
@@ -110,5 +88,4 @@ correspondente e use o comando `recover` documentado no guia.
 - `tests/`: testes sintéticos e verificações reprodutíveis.
 - `docs/`: guia operacional e decisões de preservação.
 
-**Fora do Git:** bundles grandes e o índice completo comprimido ficam em releases
-privadas. Requere-se autenticação GitHub para acessá-los.
+**Fora do Git:** bundles grandes e índices ficam em releases. A visibilidade pública atual exige correção; não presuma que releases ou branches estejam protegidas.
