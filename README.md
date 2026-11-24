@@ -1,5 +1,9 @@
 # Exams App Archive
 
+## Centralização verificada — 24/11/2026
+
+**[Relatório final e instruções de recuperação](reports/CENTRAL-ARCHIVE-2026-11-24.md)**: quatro pacotes criptografados publicados e validados por download, SHA-256 e descriptografia. Incluem Git atualizado, 52 releases/102 assets das origens, metadados e 84 evidências recentes. Os pacotes podem ser baixados diretamente deste repositório, sem depender dos repositórios de origem, mediante a frase secreta mantida pelo proprietário. O destino permanece público. Os relatórios anteriores são snapshots históricos; a consulta remota dos índices pelos plugins ainda pode exigir reconfiguração.
+
 ## Auditoria atual — 24/11/2026
 
 Consultar [estado de aceite atualizado](reports/ARCHIVE-STATUS-2026-11-24.md): 161 PRs de exams-app-old reconciliados, complemento das worktrees restaurado e índice autenticado validado (595 refs). O arquivo permanece público; complementos privados ficam no Notes App. Logs históricos integrais e classificação de credenciais ainda têm limitações.
