@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
-"""Tests for scripts/content_index.py using temporary synthetic Git repositories and bundles."""
+"""Tests for scripts/content_index.py using temporary synthetic Git repositories and bundles.
+
+Zero Emoji Policy: Absolutely NO Unicode emojis [\\U00010000-\\U0010ffff].
+"""
 import json
+import re
 import sqlite3
 import subprocess
 import sys
@@ -15,7 +19,10 @@ from content_index import (  # noqa: E402
     ingest_repo,
     open_db,
     recover_lines,
+    run_benchmark,
     search,
+    search_changes,
+    search_commits,
     stats,
 )
 
@@ -64,6 +71,12 @@ class ContentIndexTests(unittest.TestCase):
             encoding="utf-8",
         )
 
+        # File to be renamed in history to test previous_path indexing.
+        (self.work / "src" / "old_widget.ts").write_text(
+            "export function LegacyWidget() { return 'renamed_widget_exact_marker'; }\n",
+            encoding="utf-8",
+        )
+
         # Binary disguised with .ts extension (contains NUL bytes).
         (self.work / "src" / "fake_binary.ts").write_bytes(b"\x89PNG\r\n\x1a\n\x00\x00\x00IHDRbinary_marker")
 
@@ -84,8 +97,27 @@ class ContentIndexTests(unittest.TestCase):
         )
 
         run("git", "add", ".", cwd=self.work)
-        run("git", "commit", "-qm", "feat: initial synthetic codebase", cwd=self.work)
+        run(
+            "git",
+            "commit",
+            "-qm",
+            "feat: initial synthetic codebase\n\n"
+            "Initial architectural baseline decision for exams archive indexing.",
+            cwd=self.work,
+        )
         self.initial_sha = run("git", "rev-parse", "HEAD", cwd=self.work).decode().strip()
+
+        # Rename old_widget.ts to widget.ts on main to test renames.
+        run("git", "mv", "src/old_widget.ts", "src/widget.ts", cwd=self.work)
+        run(
+            "git",
+            "commit",
+            "-qm",
+            "refactor: rename widget component\n\n"
+            "Standardized component naming from old_widget to widget.",
+            cwd=self.work,
+        )
+        self.rename_sha = run("git", "rev-parse", "HEAD", cwd=self.work).decode().strip()
 
         # Feature branch keeping identical fsrs.py blob + adding markdown doc.
         run("git", "checkout", "-qb", "feature/notes", cwd=self.work)
@@ -95,14 +127,28 @@ class ContentIndexTests(unittest.TestCase):
             encoding="utf-8",
         )
         run("git", "add", ".", cwd=self.work)
-        run("git", "commit", "-qm", "docs: add architecture notes", cwd=self.work)
+        run(
+            "git",
+            "commit",
+            "-qm",
+            "docs: add architecture notes\n\n"
+            "Recall decision: Use qconcursos_importer pipeline with spaced repetition.",
+            cwd=self.work,
+        )
         self.branch_sha = run("git", "rev-parse", "HEAD", cwd=self.work).decode().strip()
 
         # Back to main: delete legacy_graph.ts so it only lives in commit history.
         run("git", "checkout", "-q", "main", cwd=self.work)
         (self.work / "src" / "legacy_graph.ts").unlink()
         run("git", "add", "-u", cwd=self.work)
-        run("git", "commit", "-qm", "chore: remove legacy graph module", cwd=self.work)
+        run(
+            "git",
+            "commit",
+            "-qm",
+            "chore: remove legacy graph module\n\n"
+            "Removal decision: deprecated legacy graph node physics module.",
+            cwd=self.work,
+        )
         self.main_sha = run("git", "rev-parse", "HEAD", cwd=self.work).decode().strip()
 
         self.bare = self.root / "repo.git"
@@ -140,6 +186,8 @@ class ContentIndexTests(unittest.TestCase):
         self.assertEqual(hit["commit_sha"], self.main_sha)
         self.assertEqual(hit["path"], "src/sidebar.ts")
         self.assertEqual(hit["language"], "typescript")
+        self.assertEqual(hit["commit_author"], "Archive Test")
+        self.assertTrue(hit["commit_date"])
         self.assertIn("LegacySidebarNavigation", hit["snippet"])
         self.assertGreaterEqual(hit["start_line"], 30)
         self.assertLessEqual(hit["end_line"], 40)
@@ -169,8 +217,9 @@ class ContentIndexTests(unittest.TestCase):
         self.assertEqual(len(deleted_hits), 1)
         hit = deleted_hits[0]
         self.assertEqual(hit["status"], "deleted")
-        self.assertEqual(hit["commit_sha"], self.initial_sha)
+        self.assertEqual(hit["commit_sha"], self.rename_sha)
         self.assertEqual(hit["path"], "src/legacy_graph.ts")
+        self.assertTrue(hit["commit_date"])
 
         recovered = recover_lines(self.bare, hit["commit_sha"], hit["path"], hit["start_line"], hit["end_line"])
         self.assertIn("LEGACY_GRAPH_MARKER", recovered["content"])
@@ -227,6 +276,106 @@ class ContentIndexTests(unittest.TestCase):
         self.assertNotIn("src/fake_binary.ts", indexed_paths)
         self.assertNotIn("src/huge.txt", indexed_paths)
 
+    def test_commit_body_indexing(self):
+        ingest_repo(self.bare, "exams-app", self.conn, max_file_bytes=2048)
+
+        # 1. Search for keyword present ONLY in commit body
+        hits = search_commits(self.conn, "architectural baseline decision")
+        self.assertGreaterEqual(len(hits), 1)
+        hit = hits[0]
+        self.assertEqual(hit["commit_sha"], self.initial_sha)
+        self.assertEqual(hit["repository"], "exams-app")
+        self.assertEqual(hit["author"], "Archive Test")
+        self.assertTrue(hit["commit_date"])
+        self.assertIn("baseline decision", hit["body"])
+
+        # 2. Search commit body on feature branch
+        branch_hits = search_commits(self.conn, "spaced repetition", branch="feature/notes")
+        self.assertGreaterEqual(len(branch_hits), 1)
+        self.assertEqual(branch_hits[0]["commit_sha"], self.branch_sha)
+        self.assertIn("qconcursos_importer", branch_hits[0]["body"])
+
+        # 3. Search commits via search(target="commits") unified interface
+        uni_hits = search(self.conn, "Standardized component naming", target="commits")
+        self.assertGreaterEqual(len(uni_hits), 1)
+        self.assertEqual(uni_hits[0]["commit_sha"], self.rename_sha)
+        self.assertIn("old_widget to widget", uni_hits[0]["body"])
+
+    def test_rename_previous_path_matching(self):
+        ingest_repo(self.bare, "exams-app", self.conn, max_file_bytes=2048)
+
+        # 1. Search changes for the old path name
+        changes = search_changes(self.conn, "old_widget", status="renamed")
+        self.assertGreaterEqual(len(changes), 1)
+        ch = changes[0]
+        self.assertEqual(ch["path"], "src/widget.ts")
+        self.assertEqual(ch["previous_path"], "src/old_widget.ts")
+        self.assertEqual(ch["status"], "renamed")
+
+        # 2. Search content filtering by old path finds the renamed file
+        hits = search(self.conn, "renamed_widget_exact_marker", path="src/old_widget.ts")
+        self.assertGreaterEqual(len(hits), 1)
+        hit = hits[0]
+        self.assertEqual(hit["path"], "src/widget.ts")
+        self.assertEqual(hit["previous_path"], "src/old_widget.ts")
+        self.assertEqual(hit["status"], "renamed")
+        self.assertEqual(hit["commit_sha"], self.rename_sha)
+
+    def test_provenance_date_and_ref_fields(self):
+        ingest_repo(self.bare, "exams-app", self.conn, max_file_bytes=2048)
+
+        hits = search(self.conn, "LegacySidebarNavigation", branch="main")
+        self.assertGreaterEqual(len(hits), 1)
+        hit = hits[0]
+        self.assertTrue(hit["commit_date"])
+        self.assertTrue(re.match(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}", hit["commit_date"]))
+        self.assertEqual(hit["ref"], "refs/heads/main")
+        self.assertEqual(hit["commit_author"], "Archive Test")
+
+        # Provenance verification: exact snippet matches original file in git
+        recovered = recover_lines(
+            self.bare,
+            hit["commit_sha"],
+            hit["path"],
+            start_line=hit["start_line"],
+            end_line=hit["end_line"],
+        )
+        self.assertEqual(recovered["content"], hit["snippet"])
+
+    def test_benchmark_suite_metrics(self):
+        bench = run_benchmark()
+        self.assertIn("cost", bench)
+        self.assertEqual(bench["cost"]["api_cost_usd"], 0.0)
+        self.assertEqual(bench["cost"]["external_dependencies"], 0)
+        self.assertGreater(bench["db_size_bytes"], 0)
+        self.assertGreater(bench["source_bytes_indexed"], 0)
+        self.assertGreater(bench["indexing_throughput"]["bytes_per_sec"], 0)
+        self.assertGreater(bench["dedup_ratio"], 0)
+        self.assertGreater(len(bench["query_latencies"]), 0)
+        self.assertGreater(len(bench["file_type_metrics"]), 0)
+
+        for ql in bench["query_latencies"]:
+            self.assertIn("latency_p50_ms", ql)
+            self.assertGreater(ql["latency_p50_ms"], 0)
+
+    def test_zero_emoji_policy(self):
+        pattern = re.compile(r"[\U00010000-\U0010ffff]")
+        base_dir = Path(__file__).resolve().parents[1]
+        for rel_path in [
+            "scripts/content_index.py",
+            "tests/test_content_index.py",
+            "reports/CONTENT-INDEX-BENCHMARK.md",
+        ]:
+            target = base_dir / rel_path
+            if target.exists():
+                text = target.read_text(encoding="utf-8")
+                matches = pattern.findall(text)
+                self.assertEqual(
+                    len(matches),
+                    0,
+                    f"Zero Emoji Policy violated in {rel_path}: {matches}",
+                )
+
     def test_cli_end_to_end_with_bundle(self):
         cli = Path(__file__).resolve().parents[1] / "scripts" / "content_index.py"
         ingest_out = run(
@@ -263,6 +412,7 @@ class ContentIndexTests(unittest.TestCase):
         self.assertEqual(len(results), 1)
         self.assertEqual(results[0]["path"], "src/sidebar.ts")
         self.assertEqual(results[0]["ref"], "refs/heads/main")
+        self.assertTrue(results[0]["commit_date"])
 
 
 if __name__ == "__main__":
