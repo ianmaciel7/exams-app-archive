@@ -1,10 +1,10 @@
 # Exams Archive Pages
 
-Public **shell** for a private archive. Only `site/index.html`, `site/style.css`, `site/app.js`, and `site/.nojekyll` may be deployed or used. The explorer imports locally selected JSON with `File.text()`: it does not fetch, upload, transmit, persist, or log the data.
+Public static shell for the archive. The GitHub repository is public. Only `site/index.html`, `site/style.css`, `site/app.js`, `site/.nojekyll`, and `site/llms.txt` may be deployed or used. The explorer imports locally selected JSON with `File.text()`: it does not fetch, upload, transmit, persist, or log the data.
 
 ## Setup & Platform Availability
 
-1. **GitHub Pages availability**: On GitHub Free accounts, GitHub Pages is restricted to public repositories (calling Pages enablement on private repos returns HTTP 422: `Your current plan does not support GitHub Pages for this repository`). To publish via GitHub Pages, GitHub Pro, Team, or Enterprise is required, configured in **Settings → Pages → Source: GitHub Actions**. Note: if enabled, a Pages site is **publicly visible**, despite a private repository.
+1. **GitHub Pages availability**: On GitHub Free accounts, GitHub Pages is restricted to public repositories (calling Pages enablement on private repos returns HTTP 422: `Your current plan does not support GitHub Pages for this repository`). For a private repository a paid plan is required. This public repository can use GitHub Free, configured in **Settings → Pages → Source: GitHub Actions**. Note: if enabled, a Pages site is **publicly visible**, despite a private repository.
 2. **Offline & Local Execution (No Paid Service Required)**:
    The static shell in `site/` works completely offline without any internet connection or cloud service:
    ```bash
@@ -26,7 +26,7 @@ The site is a LOCAL index viewer, not a searchable public mirror. There are no s
 
 ## Security & Privacy Verification
 
-- **Allowlist gate**: Only `site/index.html`, `site/style.css`, `site/app.js`, and `site/.nojekyll` are included.
+- **Allowlist gate**: Only `site/index.html`, `site/style.css`, `site/app.js`, `site/.nojekyll`, and `site/llms.txt` are included.
 - **Strict Content Security Policy (CSP)**: `default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'none'; img-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'`.
 - **Zero Network Calls**: No outgoing telemetry, analytics, cookies, local storage, or server communication.
 - **Zero-Emoji Policy**: Pure monochromatic SVG and text UI without Unicode emojis.

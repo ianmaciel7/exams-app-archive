@@ -26,7 +26,7 @@ With uv installed, configure a stdio MCP client using an absolute local path:
   "mcpServers": {
     "exams-archive": {
       "command": "uv",
-      "args": ["run", "--no-project", "--with", "mcp==1.27.2", "python", "/absolute/path/exams-app-archive/scripts/archive_mcp.py"]
+      "args": ["run", "--no-project", "--with", "mcp>=1.9,<2", "python", "/absolute/path/exams-app-archive/scripts/archive_mcp.py"]
     }
   }
 }
@@ -43,3 +43,7 @@ On Windows use an absolute path with forward slashes or escaped backslashes. Ada
 - `/exams-app-archive/llms.txt` is the proposed Markdown discovery file for agents, not an API or MCP endpoint.
 
 Imported files stay in the current tab. Never commit an unreviewed data export.
+
+## Integration validation
+
+CI runs a real MCP stdio handshake and CLI calls against synthetic fixtures, then Chromium checks search, graph import, node selection, confidence filters and llms.txt. No archive data is uploaded by this test.

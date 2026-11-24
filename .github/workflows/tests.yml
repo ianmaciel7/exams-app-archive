@@ -40,3 +40,18 @@ jobs:
         run: python -m py_compile scripts/*.py plugins/*/scripts/*.py
       - name: Check site/app.js syntax
         run: node --check site/app.js
+
+  agent-browser-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install optional integration dependencies
+        run: python -m pip install 'mcp>=1.9,<2' 'playwright>=1.49,<2'
+      - name: Install Chromium
+        run: python -m playwright install --with-deps chromium
+      - name: Run MCP and browser integration smoke
+        run: python tests/smoke_agent_browser.py
