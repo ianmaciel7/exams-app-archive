@@ -1,5 +1,9 @@
 # Exams App Archive
 
+## Auditoria atual — 24/11/2026
+
+Consultar [estado de aceite atualizado](reports/ARCHIVE-STATUS-2026-11-24.md): 161 PRs de exams-app-old reconciliados, complemento das worktrees restaurado e índice autenticado validado (595 refs). O arquivo permanece público; complementos privados ficam no Notes App. Logs históricos integrais e classificação de credenciais ainda têm limitações.
+
 **[Abrir busca e grafo interativo](https://ianmaciel7.github.io/exams-app-archive/)** · [Interface em site/](https://ianmaciel7.github.io/exams-app-archive/site/) (quando Pages usa a branch).
 
 Arquivo verificável e pesquisável de versões históricas. O repositório não é o aplicativo ativo.
