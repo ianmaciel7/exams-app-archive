@@ -1,11 +1,7 @@
 name: Index full exams-app and all saved historical sources
 # Validate the restored branch heads and unique image entries, not a guessed commit count.
 on:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/index-exams-app-complete.yml'
-
+  workflow_dispatch:
 permissions:
   contents: write
 concurrency:

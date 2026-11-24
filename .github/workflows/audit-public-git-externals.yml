@@ -1,9 +1,6 @@
 name: Verify LFS, submodules and wiki dependencies of archived public Git
 on:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/audit-public-git-externals.yml'
+  workflow_dispatch:
 permissions:
   contents: write
 concurrency:

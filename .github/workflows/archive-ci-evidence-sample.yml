@@ -1,10 +1,6 @@
 name: Preserve a legacy CI evidence sample
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/archive-ci-evidence-sample.yml'
 permissions:
   contents: write
   actions: read

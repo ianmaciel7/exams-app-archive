@@ -1,10 +1,6 @@
 name: Full historical FTS5 index including pull request refs
 on:
-  push:
-    branches: [main]
-    paths:
-      - ".github/workflows/index-all-git-refs.yml"
-
+  workflow_dispatch:
 permissions:
   contents: write
 

@@ -1,10 +1,6 @@
 name: Verify backups before deleting legacy repositories
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/verify-legacy-archive.yml'
 permissions:
   contents: read
 jobs:
