@@ -49,7 +49,7 @@ $("load-refs").addEventListener("click",async()=>{const repo=$("source-repo").va
 $("source-repo").addEventListener("change",()=>{$("source-ref").replaceChildren(new Option("dev","dev"),new Option("main","main"));});
 $("load-public").addEventListener("click",async()=>{
   const epoch=++state.epoch,repo=$("source-repo").value,ref=$("source-ref").value;
-  try{status("Carregando árvore Git pública…");const commit=await api(repo,"commits/"+encodeURIComponent(ref));const sha=commit.sha;if(!/^[a-f0-9]{40,64}$/.test(sha))throw Error("Revisão inválida.");const tree=await api(repo,"git/trees/"+sha+"?recursive=1");if(epoch!==state.epoch)return;
+  try{status("Carregando árvore Git pública…");const commit=await api(repo,"commits/"+encodeURIComponent(ref));const sha=commit.sha;if(!/^[a-f0-9]{40,64}$/.test(sha))throw Error("Revisão inválida.");const treeSha=commit.commit?.tree?.sha;if(!/^[a-f0-9]{40,64}$/.test(treeSha||""))throw Error("Árvore inválida.");const tree=await api(repo,"git/trees/"+treeSha+"?recursive=1");if(epoch!==state.epoch)return;
     install("public",tree.tree.filter(x=>x.type==="blob"&&x.mode!=="120000").map(x=>({path:x.path,size:x.size,blob:x.sha})),repo,sha);if(tree.truncated)status("Árvore parcial (limite GitHub). Use uma pasta local para cobertura completa.");
   }catch(e){if(epoch===state.epoch)status(e.message);}
 });

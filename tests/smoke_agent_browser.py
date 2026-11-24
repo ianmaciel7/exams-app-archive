@@ -78,6 +78,20 @@ def check_browser():
             assert not errors, errors
             response = page.request.get(f"http://127.0.0.1:{server.server_port}/llms.txt")
             assert response.ok and "# Exams Archive" in response.text()
+            page.goto(f"http://127.0.0.1:{server.server_port}/files.html")
+            page.locator("#local-files").set_input_files([{"name":"Button.tsx","mimeType":"text/plain","buffer":b"export const Button = () => <button>OK</button>"},{"name":"example.html","mimeType":"text/html","buffer":b"<h1>Original HTML</h1><script>document.body.dataset.ran=1</script>"}])
+            page.get_by_role("button", name="Button.tsx", exact=False).click()
+            assert "export const Button" in page.locator("#source-code").inner_text()
+            assert page.locator("#component-help").is_visible()
+            page.locator("#components-only").check()
+            assert page.get_by_role("button", name="example.html", exact=False).count() == 0
+            page.locator("#components-only").uncheck()
+            page.get_by_role("button", name="example.html", exact=False).click()
+            page.locator("#preview-tab").click()
+            page.locator("#render-preview").click()
+            assert page.frame_locator("#preview-frame").locator("h1").inner_text() == "Original HTML"
+            assert page.frame_locator("#preview-frame").locator("body").get_attribute("data-ran") is None
+            assert not errors, errors
             browser.close()
         print("Browser: mobile search, graph import, node navigation, confidence filter and llms.txt passed")
     finally:

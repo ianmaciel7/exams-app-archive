@@ -1,0 +1,23 @@
+// Build only the explicitly reviewed historical Loading component.
+import { createRequire } from "node:module";
+import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { resolve, dirname } from "node:path";
+import { createHash } from "node:crypto";
+const [deps, output] = process.argv.slice(2);
+if (!deps || !output) throw new Error("Usage: node scripts/build_loading_preview.mjs DEPENDENCY_DIR OUTPUT_HTML");
+const req = createRequire(resolve(deps, "package.json"));
+const ts = req("typescript");
+const React = req("react");
+const { renderToStaticMarkup } = req("react-dom/server");
+const source = readFileSync(new URL("../previews/loading/source.tsx", import.meta.url));
+const blob = createHash("sha1").update("blob "+source.length+"\0").update(source).digest("hex");
+if (blob !== "5850f0972153976a33e3e42e0891f9f23ac8bad8") throw Error("Unreviewed source changed");
+const compiled = ts.transpileModule(source.toString("utf8"), {compilerOptions:{jsx:ts.JsxEmit.ReactJSX,module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText;
+const module = {exports:{}};
+new Function("require","module","exports",compiled)(req,module,module.exports);
+const rendered = renderToStaticMarkup(React.createElement(module.exports.default));
+if (!rendered.includes("animate-spin")) throw Error("Expected component markup not found");
+const css = "html{color-scheme:light dark}body{margin:0;background:#fff;color:#171717;font-family:Arial,Helvetica,sans-serif}*{box-sizing:border-box}.flex{display:flex}.items-center{align-items:center}.justify-center{justify-content:center}.p-4{padding:1rem}.min-h-\\[50vh\\]{min-height:50vh}.h-8{height:2rem}.w-8{width:2rem}.rounded-full{border-radius:9999px}.border-4{border-width:4px}.border-solid{border-style:solid}.border-black{border-color:#000}.border-t-transparent{border-top-color:transparent}.animate-spin{animation:spin 1s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}@media(prefers-color-scheme:dark){body{background:#0a0a0a;color:#ededed}.dark\\:border-white{border-color:#fff}.dark\\:border-t-transparent{border-top-color:transparent}}";
+mkdirSync(dirname(resolve(output)),{recursive:true});
+writeFileSync(output,'<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src &apos;none&apos;; style-src &apos;unsafe-inline&apos;; object-src &apos;none&apos;; base-uri &apos;none&apos;; form-action &apos;none&apos;"><title>Loading · historical React component</title><style>'+css+'</style></head><body>'+rendered+'</body></html>');
+console.log("React SSR rendered verified source",blob);

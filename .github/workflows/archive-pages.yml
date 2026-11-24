@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - "site/**"
+      - "previews/loading/**"
+      - "scripts/build_loading_preview.mjs"
       - ".github/workflows/archive-pages.yml"
 permissions:
   contents: read
@@ -21,12 +23,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Build reviewed React preview
+        run: |
+          npm install --prefix "$RUNNER_TEMP/preview-deps" --no-save --ignore-scripts react@19.1.1 react-dom@19.1.1 typescript@5.9.3
+          node scripts/build_loading_preview.mjs "$RUNNER_TEMP/preview-deps" "$RUNNER_TEMP/preview-loading.html"
       - name: Assert only public static shell is packaged
         shell: bash
         run: |
           mkdir -p "$RUNNER_TEMP/website"
           cp site/index.html site/style.css site/app.js site/.nojekyll site/llms.txt site/files.html site/files.js "$RUNNER_TEMP/website/"
-          test "$(find "$RUNNER_TEMP/website" -type f | wc -l)" -eq 7
+          cp "$RUNNER_TEMP/preview-loading.html" "$RUNNER_TEMP/website/"
+          test "$(find "$RUNNER_TEMP/website" -type f | wc -l)" -eq 8
           ! grep -RIl -E '(ghp_[[:alnum:]]{20,}|github_pat_|BEGIN [A-Z ]+PRIVATE KEY)' "$RUNNER_TEMP/website"
       - name: Check GitHub Pages availability
         id: check_pages
