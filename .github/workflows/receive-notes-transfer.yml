@@ -8,7 +8,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   restore-and-publish:
-    if: github.repository == 'ianmaciel7/exams-app-archive'
+    if: github.repository == 'ianmaciel7/exams-app-archive' && github.event.repository.private == true
     runs-on: ubuntu-latest
     timeout-minutes: 75
     env:
