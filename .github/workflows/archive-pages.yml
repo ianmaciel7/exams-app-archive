@@ -1,10 +1,14 @@
 name: Archive Pages (public shell only)
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '23 6,18 * * *'
   push:
     branches: [main]
     paths:
       - "site/**"
+      - "config/public-catalog-sources.json"
+      - "scripts/build_public_catalog.py"
       - "previews/loading/**"
       - "previews/error/**"
       - "scripts/build_error_preview.mjs"
@@ -34,6 +38,10 @@ jobs:
           npm install --prefix "$RUNNER_TEMP/preview-deps" --no-save --ignore-scripts react@19.1.1 react-dom@19.1.1 typescript@5.9.3 esbuild@0.25.5
           node scripts/build_loading_preview.mjs "$RUNNER_TEMP/preview-deps" "$RUNNER_TEMP/preview-loading.html"
           node scripts/build_error_preview.mjs "$RUNNER_TEMP/preview-deps" "$RUNNER_TEMP/preview-error.html"
+      - name: Generate public catalog from live branches and tags
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/build_public_catalog.py --output "$RUNNER_TEMP/catalog.json"
       - name: Assert only public static shell is packaged
         shell: bash
         run: |
@@ -41,7 +49,8 @@ jobs:
           cp site/index.html site/style.css site/app.js site/.nojekyll site/llms.txt site/files.html site/files.js "$RUNNER_TEMP/website/"
           cp "$RUNNER_TEMP/preview-loading.html" "$RUNNER_TEMP/website/"
           cp "$RUNNER_TEMP/preview-error.html" "$RUNNER_TEMP/website/"
-          test "$(find "$RUNNER_TEMP/website" -type f | wc -l)" -eq 9
+          cp "$RUNNER_TEMP/catalog.json" "$RUNNER_TEMP/website/"
+          test "$(find "$RUNNER_TEMP/website" -type f | wc -l)" -eq 10
           ! grep -RIl -E '(ghp_[[:alnum:]]{20,}|github_pat_|BEGIN [A-Z ]+PRIVATE KEY)' "$RUNNER_TEMP/website"
       - name: Check GitHub Pages availability
         id: check_pages
@@ -99,4 +108,4 @@ jobs:
       - if: steps.check_pages.outputs.available == 'true'
         name: Deploy safe public shell
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

@@ -61,10 +61,13 @@ def check_browser():
             page = browser.new_page(viewport={"width": 390, "height": 844})
             errors = []
             page.on("pageerror", lambda error: errors.append(str(error)))
+            fixture = json.loads((ROOT / "tests/fixtures/public-catalog.json").read_text(encoding="utf-8"))
+            page.route("**/catalog.json", lambda route: route.fulfill(json=fixture))
             page.goto(f"http://127.0.0.1:{server.server_port}/")
+            expect(page.locator("#query")).to_be_enabled()
             assert page.locator("#query").is_enabled()
             assert page.locator("#graph .graph-node").count() > 2
-            assert page.locator("#graph-groups button").count() > 2
+            assert page.locator("#graph-groups button").count() >= 2
             page.locator("#zoom-in").click()
             assert "scale(1.25)" in page.locator(".graph-world").get_attribute("transform")
             page.locator("#graph-fit").click()

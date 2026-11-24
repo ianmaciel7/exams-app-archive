@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="pt-BR">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src https://api.github.com; img-src 'self' data: blob:; frame-src 'self' blob:; font-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://api.github.com; img-src 'self' data: blob:; frame-src 'self' blob:; font-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'">
 <title>Arquivos e componentes · Exams Archive</title><link rel="stylesheet" href="./style.css"><script src="./files.js" defer></script></head>
 <body><div class="shell"><header class="topbar"><a class="brand" href="./"><span class="brand-mark">EA</span>Exams Archive</a><a href="./">Busca e grafo</a></header>
 <main class="file-workspace"><header><span class="eyebrow">ARQUIVO HISTÓRICO</span><h1>Arquivos e componentes</h1><p>Explore uma revisão pública ou uma pasta recuperada localmente. O código não é executado automaticamente.</p></header>
 <section class="component-help"><h2>Galeria de previews</h2><p>Componentes originais revisados. Loading (SSR) e ErrorBoundary (React interativo com callback de retry e tema). CSS equivalente, com fixture explícita.</p><a href="./preview-loading.html" target="_blank" rel="noopener noreferrer">Abrir preview React: Loading</a> · <a href="./preview-error.html" target="_blank" rel="noopener noreferrer">Abrir ErrorBoundary interativo</a> · <a href="https://github.com/ianmaciel7/exams-app-old/blob/b86b70c304e574022416e8e2ecdc3816f1b386f1/src/app/loading.tsx" target="_blank" rel="noopener noreferrer">Código original</a></section><section class="file-controls" aria-label="Origem dos arquivos">
-<label>Repositório público<select id="source-repo"><option>exams-app-old</option><option>exams-app-antigo-2</option></select></label>
-<label>Revisão<select id="source-ref"><option value="dev">dev</option><option value="main">main</option></select></label>
-<button id="load-public" type="button">Abrir revisão</button><button id="load-refs" type="button">Listar branches</button>
+<label>Repositório público<select id="source-repo"><option value="">Carregando…</option></select></label>
+<label>Revisão<select id="source-ref"></select></label>
+<button id="load-public" type="button" disabled>Abrir revisão</button><button id="load-refs" type="button">Atualizar revisões</button>
 <label class="file-button">Abrir pasta local<input id="local-folder" type="file" webkitdirectory multiple class="file-input"></label>
 <label class="file-button">Abrir arquivos locais<input id="local-files" type="file" multiple class="file-input"></label>
 </section>

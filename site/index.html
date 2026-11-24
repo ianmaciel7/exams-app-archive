@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Explorador local e privado do histórico do Exams App">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'none'; img-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
   <title>Exams Archive · Explorador histórico</title>
   <link rel="stylesheet" href="./style.css">
   <script src="./app.js" defer></script>
@@ -20,7 +20,7 @@
     <main>
       <section class="hero graph-intro" aria-labelledby="heading"><div><div class="eyebrow">EXAMS ARCHIVE / KNOWLEDGE EXPLORER</div><h1 id="heading">Explore o histórico.</h1><p>Conexões entre código, documentação e componentes. Comece com o catálogo público ou importe um grafo completo.</p></div><a class="graph-jump" href="./files.html">Explorar arquivos e componentes ↗</a></section>
 
-      <section class="import-card compact-import" aria-labelledby="import-heading"><div><h2 id="import-heading">Fonte de dados</h2><p>O catálogo inicial contém arquivos e imagens de três repositórios públicos, em revisões verificadas. A busca pesquisa caminhos e nomes, não todo o conteúdo dos arquivos. Importe o JSON nativo do archive ou do Graphify para explorar relações históricas.</p></div><div class="import-actions"><label class="file-button" for="file">Importar JSON</label><input id="file" type="file" accept=".json,application/json" aria-describedby="import-hint"><span id="import-hint" class="hint">Dados importados ficam nesta aba.</span></div><details><summary>Gerar índice ou grafo local</summary><pre><code>python scripts/graph_linker.py build-inventory --export-json ~/archive-graph.json
+      <section class="import-card compact-import" aria-labelledby="import-heading"><div><h2 id="import-heading">Fonte de dados</h2><p>Catálogo gerado automaticamente a partir dos branches e tags dos repositórios públicos aprovados. Busca por caminhos, nomes e referências Git; conteúdo integral ainda requer o índice histórico. Importe o JSON nativo do archive ou do Graphify para explorar relações históricas.</p></div><div class="import-actions"><button type="button" id="reload-catalog" class="text-button">Atualizar catálogo</button><label class="file-button" for="file">Importar JSON</label><input id="file" type="file" accept=".json,application/json" aria-describedby="import-hint"><span id="import-hint" class="hint">Dados importados ficam nesta aba.</span></div><details><summary>Gerar índice ou grafo local</summary><pre><code>python scripts/graph_linker.py build-inventory --export-json ~/archive-graph.json
 # Ou importe graphify-out/graph.json
 python plugins/exams-archive/scripts/archive_query.py export-pages --output private.archive-browser.json</code></pre></details></section>
 

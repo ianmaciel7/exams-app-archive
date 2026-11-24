@@ -41,7 +41,7 @@ class ArchivePagesTests(unittest.TestCase):
         html = (SITE_DIR / "index.html").read_text(encoding="utf-8")
         self.assertIn("Content-Security-Policy", html)
         self.assertIn("default-src 'none'", html)
-        self.assertIn("connect-src 'none'", html)
+        self.assertIn("connect-src 'self'", html)
         self.assertIn("script-src 'self'", html)
         self.assertIn('role="status"', html)
         self.assertIn('aria-live="polite"', html)

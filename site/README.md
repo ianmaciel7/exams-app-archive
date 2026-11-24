@@ -50,3 +50,7 @@ Graphify's HTML exporter motivated degree-scaled nodes, imported community color
 ### Expanded public search catalog
 
 The initial graph now uses eligible code, documents, and images from pinned public dev snapshots of exams-app, exams-app-old and exams-app-antigo-2. It is path/name search, not full-text search. The query parameter `?q=sidebar` pre-fills the search. Original-file links use the verified commit. Private historical records still require local import or authenticated recovery.
+
+## Dynamic public catalog
+
+The browser consumes generated `catalog.json` (schema v2), not hardcoded file paths. `scripts/build_public_catalog.py` enumerates all branches and tags in the explicit public-source policy, checks visibility at build time, resolves immutable trees, excludes sensitive path patterns and refuses truncated results. Duplicate content versions are grouped by repository/path/blob with ref aliases in the graph. GitHub Actions regenerates on site/config changes and twice daily. The same manifest drives the file explorer. It contains metadata only; private bundles, content search, semantic edges and reviewed component builds remain separate. Full historical deleted paths and private refs require authenticated access. For local testing generate the manifest with `gh` or import a historical JSON.

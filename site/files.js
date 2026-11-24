@@ -1,6 +1,9 @@
 "use strict";
 const $=id=>document.getElementById(id);
-const publicRepos=new Set(["exams-app-old","exams-app-antigo-2"]);
+const publicRepos=new Set();
+let publicSnapshots=[];
+async function loadPublicSources(){try{const r=await fetch("./catalog.json",{credentials:"omit",cache:"no-cache"});if(!r.ok)throw Error("HTTP "+r.status);const data=await r.json();if(data.version!==2)throw Error("Formato inválido");publicSnapshots=data.snapshots;for(const s of publicSnapshots){if(/^[A-Za-z0-9_.-]+$/.test(s.repo))publicRepos.add(s.repo);}const select=$("source-repo");select.replaceChildren(...[...publicRepos].sort().map(r=>new Option(r,r)));refreshRefs();$("load-public").disabled=!publicRepos.size;status("Catálogo público carregado.");}catch(e){status("Catálogo indisponível: "+e.message+". Use uma pasta local.");}}
+function refreshRefs(){const repo=$("source-repo").value,sel=$("source-ref");sel.replaceChildren();for(const s of publicSnapshots.filter(s=>s.repo===repo))for(const ref of s.refs)sel.append(new Option(ref,s.sha));}
 const state={mode:"",repo:"",sha:"",entries:[],selected:null,expanded:new Set(),epoch:0,url:null};
 const limit=2*1024*1024;
 const isReact=p=>/\.(tsx|jsx)$/i.test(p);
@@ -45,12 +48,11 @@ function renderTree(){
 function install(mode,entries,repo="",sha=""){
   state.mode=mode;state.repo=repo;state.sha=sha;state.entries=entries;state.expanded=new Set();$("tree-search").value="";$("components-only").checked=false;clearSelection();renderTree();status(entries.length+" arquivos · "+(mode==="public"?repo+" @ "+sha.slice(0,12):"pasta local"));
 }
-$("load-refs").addEventListener("click",async()=>{const repo=$("source-repo").value;try{status("Carregando branches públicas…");const refs=await api(repo,"branches?per_page=100");if(repo!==$("source-repo").value)return;const sel=$("source-ref");sel.replaceChildren();for(const b of refs)sel.append(new Option(b.name,b.commit.sha));status(refs.length+" branches (até 100). Escolha uma revisão.");}catch(e){status(e.message);}});
-$("source-repo").addEventListener("change",()=>{$("source-ref").replaceChildren(new Option("dev","dev"),new Option("main","main"));});
+$("load-refs").addEventListener("click",loadPublicSources);
+$("source-repo").addEventListener("change",refreshRefs);
 $("load-public").addEventListener("click",async()=>{
   const epoch=++state.epoch,repo=$("source-repo").value,ref=$("source-ref").value;
-  try{status("Carregando árvore Git pública…");const commit=await api(repo,"commits/"+encodeURIComponent(ref));const sha=commit.sha;if(!/^[a-f0-9]{40,64}$/.test(sha))throw Error("Revisão inválida.");const treeSha=commit.commit?.tree?.sha;if(!/^[a-f0-9]{40,64}$/.test(treeSha||""))throw Error("Árvore inválida.");const tree=await api(repo,"git/trees/"+treeSha+"?recursive=1");if(epoch!==state.epoch)return;
-    install("public",tree.tree.filter(x=>x.type==="blob"&&x.mode!=="120000").map(x=>({path:x.path,size:x.size,blob:x.sha})),repo,sha);if(tree.truncated)status("Árvore parcial (limite GitHub). Use uma pasta local para cobertura completa.");
+  try{const snapshot=publicSnapshots.find(s=>s.repo===repo&&s.sha===ref);if(!snapshot)throw Error("Revisão não encontrada no catálogo.");if(epoch!==state.epoch)return;install("public",snapshot.files.map(x=>({path:x.path,size:x.size,blob:x.blob})),repo,ref);
   }catch(e){if(epoch===state.epoch)status(e.message);}
 });
 for(const id of ["local-folder","local-files"]){$(id).addEventListener("change",e=>{++state.epoch;const files=[...e.target.files];if(files.length)install("local",files.map(file=>({path:file.webkitRelativePath||file.name,size:file.size,file})));e.target.value="";});}
@@ -82,3 +84,5 @@ function render(live){
   frame.srcdoc='<!doctype html><meta http-equiv="Content-Security-Policy" content="'+policy+'">'+entry.text;frame.hidden=false;
 }
 $("render-preview").addEventListener("click",()=>render(false));$("render-live").addEventListener("click",()=>render(true));
+
+loadPublicSources();
