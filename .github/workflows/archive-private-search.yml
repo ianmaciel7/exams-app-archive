@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   search:
-    if: github.repository == 'ianmaciel7/exams-app-archive'
+    if: github.repository == 'ianmaciel7/exams-app-archive' && github.event.repository.private == true
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
