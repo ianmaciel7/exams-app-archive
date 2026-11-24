@@ -36,6 +36,8 @@ This document catalogs every GitHub Actions workflow in `.github/workflows/`, it
 | `audit-release-bytes.yml` | Integrity audit | `workflow_dispatch`, `push` (`main`: self) | `contents: read` | None; aggregate-only logs, no asset uploads |
 | `reconcile-archive-coverage.yml` | Coverage audit | `workflow_dispatch`, `push` (`main`: self) | `contents: read` | None; local-only index rebuild, aggregate outputs |
 
+| `triage-archive-secrets.yml` | Security audit | `workflow_dispatch`, `push` (`main`: self) | `contents: read` | None; offline aggregate-only secret classification |
+
 ## Governance Guardrail
 
 `tests/test_workflow_permissions.py` enforces least-privilege governance on `.github/workflows/*.yml`:
