@@ -5,7 +5,7 @@ import sys
 from pathlib import Path
 from typing import Literal
 
-from mcp.server.fastmcp import FastMCP
+from mcp.server.fastmcp import FastMCP, Image
 
 ROOT = Path(__file__).resolve().parents[1]
 CLI = ROOT / "plugins" / "exams-archive" / "scripts" / "archive_query.py"
@@ -22,7 +22,7 @@ def checked(value: str) -> str:
 def invoke(*args: str):
     proc = subprocess.run(
         [sys.executable, str(CLI), *args], cwd=ROOT,
-        capture_output=True, text=True, encoding="utf-8", timeout=60,
+        capture_output=True, text=True, encoding="utf-8", timeout=120,
     )
     if proc.returncode:
         raise RuntimeError("Archive query failed. Check the local index and CLI setup.")
@@ -74,6 +74,41 @@ def images(repo: str | None = None, deleted_only: bool = False, limit: int = 20)
 def stats():
     """Return counts for the locally synchronized archive."""
     return invoke("stats")
+
+
+@mcp.tool()
+def components_list():
+    """List reviewed historical component previews and capture counts."""
+    return invoke("components", "list")
+
+
+@mcp.tool()
+def component_render(component: str):
+    """Build an allowlisted interactive component using preinstalled local dependencies."""
+    return invoke("components", "render", checked(component))
+
+
+@mcp.tool()
+def component_capture(component: str, state: Literal["default","retry"] = "default",
+                      theme: Literal["light","dark"] = "light", width: int = 1280, height: int = 800):
+    """Capture a reviewed build with Playwright and save PNG plus provenance in SQLite."""
+    return invoke("components","capture",checked(component),"--state",state,"--theme",theme,
+                  "--width",str(width),"--height",str(height))
+
+
+@mcp.tool()
+def component_screenshots(component: str | None = None, limit: int = 20):
+    """List saved component screenshots and their immutable source/build checksums."""
+    args=["components","screenshots","--limit",str(max(1,min(limit,50)))]
+    if component: args+=["--component",checked(component)]
+    return invoke(*args)
+
+
+@mcp.tool()
+def component_screenshot_image(screenshot_id: str) -> Image:
+    """Return the actual stored PNG image by id, not just a path."""
+    from component_catalog import screenshot_bytes
+    return Image(data=screenshot_bytes(screenshot_id),format="png")
 
 
 if __name__ == "__main__":

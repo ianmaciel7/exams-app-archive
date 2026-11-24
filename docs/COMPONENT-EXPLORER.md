@@ -15,3 +15,27 @@ The site does not transpile arbitrary React code, fetch dependencies from CDN, o
 ## First reviewed React render
 
 The deployment workflow builds the original public `exams-app-old@b86b70c304e574022416e8e2ecdc3816f1b386f1:src/app/loading.tsx` from a pinned byte-identical source (`5850f0972153976a33e3e42e0891f9f23ac8bad8`). The build refuses a different Git blob. It uses React DOM Server, TypeScript and equivalent CSS utilities, with a different pinned React runtime from the historical lockfile. It is an SSR preview, not a full historical app or a pixel-verified reproduction. The generated preview is deployed as `preview-loading.html` by GitHub Actions only.
+
+## Interactive React + screenshot catalog
+
+The reviewed ErrorBoundary is the exact public source from exams-app-old at commit b86b70c304e574022416e8e2ecdc3816f1b386f1, blob 936e638aa231a2533e866c12e4d97a429c524d6c. Its original retry button calls a fixture callback (counter). A theme control is provided by the fixture. The build uses pinned React/esbuild dependencies, equivalent CSS and no network access. It is not a pixel-verified historical environment.
+
+Install optional tooling locally:
+
+```sh
+npm install --prefix ~/.cache/exams-app-archive/component-previews/preview-deps --no-save --ignore-scripts react@19.1.1 react-dom@19.1.1 esbuild@0.25.5
+python -m pip install 'playwright>=1.49,<2'
+python -m playwright install chromium
+```
+
+CLI (same commands in both plugin mirrors):
+
+```sh
+python plugins/exams-archive/scripts/archive_query.py components list
+python plugins/exams-archive/scripts/archive_query.py components render error-boundary
+python plugins/exams-archive/scripts/archive_query.py components capture error-boundary --state retry --theme dark --width 390 --height 844
+python plugins/exams-archive/scripts/archive_query.py components screenshots --component error-boundary
+python plugins/exams-archive/scripts/archive_query.py components export SCREENSHOT_ID --output component.png
+```
+
+MCP stdio tools: components_list, component_render, component_capture, component_screenshots, component_screenshot_image. The final tool returns PNG bytes as an MCP image. The local SQLite catalog stores PNG BLOB, full commit, source path/blob, build SHA-256, state, theme, viewport, timestamp and PNG SHA-256. The database is not published by Pages. CLI and MCP operate on the same local cache; no daemon, no second historical index, no arbitrary historical code execution. Component coverage is currently one interactive reviewed source; expand the allowlist through explicit source/dependency review and fixture QA.

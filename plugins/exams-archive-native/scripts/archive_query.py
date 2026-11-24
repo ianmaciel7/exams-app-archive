@@ -620,9 +620,13 @@ def run_secrets_check_command(
 
 
 def main() -> None:
+    if len(sys.argv) > 1 and sys.argv[1] == "components":
+        _load_core_module("component_catalog").main(sys.argv[2:])
+        return
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--db", type=Path, default=DEFAULT_DB)
     sub = parser.add_subparsers(dest="command", required=True)
+    sub.add_parser("components", help="Reviewed component previews, capture and screenshot catalog")
     p = sub.add_parser("sync", help="Download and verify private release index")
     p.add_argument("--force", action="store_true")
     p = sub.add_parser("search")

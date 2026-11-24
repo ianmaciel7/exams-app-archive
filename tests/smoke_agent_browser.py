@@ -38,15 +38,17 @@ async def check_mcp():
             async with ClientSession(read, write) as session:
                 await session.initialize()
                 names = {tool.name for tool in (await session.list_tools()).tools}
-                assert names == {"search", "graph", "context", "images", "stats"}, names
+                assert names == {"search", "graph", "context", "images", "stats", "components_list", "component_render", "component_capture", "component_screenshots", "component_screenshot_image"}, names
                 stats = await session.call_tool("stats", {})
                 assert not stats.isError, stats
                 assert "fixture" in str(stats.content), stats
                 images = await session.call_tool("images", {"repo": "fixture", "deleted_only": True})
                 assert not images.isError and "sidebar.png" in str(images.content), images
+                components = await session.call_tool("components_list", {})
+                assert not components.isError and "error-boundary" in str(components.content), components
                 invalid = await session.call_tool("search", {"query": "--help"})
                 assert invalid.isError, invalid
-        print("MCP: handshake, five tool registrations, real CLI stats/images, invalid query rejection passed")
+        print("MCP: handshake, ten tool registrations, real CLI stats/images, invalid query rejection passed")
 
 
 def check_browser():

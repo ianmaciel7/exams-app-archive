@@ -24,3 +24,6 @@ The GitHub Pages site is a static interface. Local imports are not transmitted. 
 
 - [Files and component explorer](https://ianmaciel7.github.io/exams-app-archive/files.html): browse public pinned Git trees and local restored files.
 - [React rendering guide](https://github.com/ianmaciel7/exams-app-archive/blob/main/docs/COMPONENT-EXPLORER.md): original stories and reviewed builds.
+
+- [Interactive React component](https://ianmaciel7.github.io/exams-app-archive/preview-error.html): reviewed ErrorBoundary with retry fixture.
+- [Component CLI and MCP capture guide](https://github.com/ianmaciel7/exams-app-archive/blob/main/docs/COMPONENT-EXPLORER.md): render, capture, query and retrieve PNGs in SQLite.

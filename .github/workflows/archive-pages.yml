@@ -6,6 +6,8 @@ on:
     paths:
       - "site/**"
       - "previews/loading/**"
+      - "previews/error/**"
+      - "scripts/build_error_preview.mjs"
       - "scripts/build_loading_preview.mjs"
       - ".github/workflows/archive-pages.yml"
 permissions:
@@ -28,15 +30,17 @@ jobs:
           node-version: "22"
       - name: Build reviewed React preview
         run: |
-          npm install --prefix "$RUNNER_TEMP/preview-deps" --no-save --ignore-scripts react@19.1.1 react-dom@19.1.1 typescript@5.9.3
+          npm install --prefix "$RUNNER_TEMP/preview-deps" --no-save --ignore-scripts react@19.1.1 react-dom@19.1.1 typescript@5.9.3 esbuild@0.25.5
           node scripts/build_loading_preview.mjs "$RUNNER_TEMP/preview-deps" "$RUNNER_TEMP/preview-loading.html"
+          node scripts/build_error_preview.mjs "$RUNNER_TEMP/preview-deps" "$RUNNER_TEMP/preview-error.html"
       - name: Assert only public static shell is packaged
         shell: bash
         run: |
           mkdir -p "$RUNNER_TEMP/website"
           cp site/index.html site/style.css site/app.js site/.nojekyll site/llms.txt site/files.html site/files.js "$RUNNER_TEMP/website/"
           cp "$RUNNER_TEMP/preview-loading.html" "$RUNNER_TEMP/website/"
-          test "$(find "$RUNNER_TEMP/website" -type f | wc -l)" -eq 8
+          cp "$RUNNER_TEMP/preview-error.html" "$RUNNER_TEMP/website/"
+          test "$(find "$RUNNER_TEMP/website" -type f | wc -l)" -eq 9
           ! grep -RIl -E '(ghp_[[:alnum:]]{20,}|github_pat_|BEGIN [A-Z ]+PRIVATE KEY)' "$RUNNER_TEMP/website"
       - name: Check GitHub Pages availability
         id: check_pages

@@ -55,3 +55,22 @@ jobs:
         run: python -m playwright install --with-deps chromium
       - name: Run MCP and browser integration smoke
         run: python tests/smoke_agent_browser.py
+
+  component-preview-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install optional preview dependencies
+        run: |
+          npm install --prefix "$RUNNER_TEMP/preview-deps" --no-save --ignore-scripts react@19.1.1 react-dom@19.1.1 esbuild@0.25.5
+          python -m pip install 'playwright>=1.49,<2'
+          python -m playwright install --with-deps chromium
+      - name: Test real React interaction and screenshot database
+        run: python tests/smoke_component_preview.py "$RUNNER_TEMP/preview-deps"
