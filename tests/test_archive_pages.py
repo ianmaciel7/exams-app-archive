@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SITE_DIR = ROOT / "site"
 WORKFLOW_PATH = ROOT / ".github/workflows/archive-pages.yml"
 
-ALLOWLIST = {"index.html", "style.css", "app.js", ".nojekyll"}
+ALLOWLIST = {"index.html", "style.css", "app.js", ".nojekyll", "llms.txt"}
 EMOJI_REGEX = re.compile(r"[\U00010000-\U0010ffff]")
 
 
@@ -52,7 +52,7 @@ class ArchivePagesTests(unittest.TestCase):
             for name in ALLOWLIST:
                 shutil.copy2(SITE_DIR / name, website / name)
 
-            # Legitimate packaging has exactly 4 files
+            # Legitimate packaging has exactly 5 files
             packaged_files = [p.name for p in website.iterdir()]
             self.assertEqual(set(packaged_files), ALLOWLIST)
 
@@ -70,7 +70,7 @@ class ArchivePagesTests(unittest.TestCase):
                 leak_target.write_bytes(content)
                 self.assertNotEqual(
                     len(list(website.iterdir())),
-                    4,
+                    5,
                     f"Directory should reject or detect extra file {filename}"
                 )
                 leak_target.unlink()

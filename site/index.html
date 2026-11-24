@@ -8,6 +8,7 @@
   <title>Exams Archive · Explorador histórico</title>
   <link rel="stylesheet" href="./style.css">
   <script src="./app.js" defer></script>
+  <link rel="describedby" href="./llms.txt">
 </head>
 <body>
   <a class="skip-link" href="#results">Ir para resultados</a>
@@ -25,13 +26,13 @@
 
       <section class="import-card" aria-labelledby="import-heading">
         <div>
-          <h2 id="import-heading">1. Carregue seu índice privado</h2>
+          <h2 id="import-heading">Importar índice ou grafo</h2>
           <p>Exporte o JSON a partir do SQLite autenticado com o plugin Codex, depois selecione o arquivo aqui. O índice importado não é enviado ao GitHub Pages.</p>
         </div>
         <div class="import-actions">
           <label class="file-button" for="file">Selecionar arquivo JSON</label>
           <input id="file" type="file" accept=".json,application/json" aria-describedby="import-hint">
-          <span id="import-hint" class="hint">Nome sugerido: private.archive-browser.json</span>
+          <span id="import-hint" class="hint">Índice histórico ou JSON de grafo</span>
         </div>
         <details>
           <summary>Como gerar o índice no seu computador</summary>
@@ -45,8 +46,8 @@ python scripts/archive_query.py export-pages --output private.archive-browser.js
 
       <section class="browser" aria-labelledby="search-heading">
         <div class="section-top">
-          <div><span class="eyebrow">PESQUISA</span><h2 id="search-heading">2. Explore o histórico</h2></div>
-          <span id="dataset" class="dataset">Nenhum índice carregado</span>
+          <div><span class="eyebrow">PESQUISA</span><h2 id="search-heading">Pesquisar o arquivo</h2></div>
+          <span id="dataset" class="dataset">Catálogo de documentação</span>
         </div>
         <div class="search-field">
           <span aria-hidden="true">⌕</span>
@@ -56,18 +57,18 @@ python scripts/archive_query.py export-pages --output private.archive-browser.js
           <label>Repositório <select id="repository" disabled><option value="">Todos os repositórios</option></select></label>
           <label>Tipo <select id="kind" disabled>
             <option value="">Todos</option><option value="commit">Commits</option>
-            <option value="file">Arquivos</option><option value="image">Imagens</option>
+            <option value="file">Arquivos</option><option value="image">Imagens</option><option value="node">Entidades</option>
           </select></label>
           <label class="check"><input id="deleted" type="checkbox" disabled> Apenas arquivos/imagens excluídos</label>
         </div>
-        <div class="result-header"><p id="status" role="status" aria-live="polite">Importe o índice para começar.</p><button id="clear" class="text-button" disabled>Limpar filtros</button></div>
+        <section class="graph-panel"><div class="graph-head"><div><span class="eyebrow">MAPA DE CONHECIMENTO</span><h2>Grafo de conexões</h2><p id="graph-meta"></p></div><label>Relações <select id="confidence"><option value="">Todas</option><option>EXTRACTED</option><option>INFERRED</option></select></label><button id="graph-reset" type="button">Visão geral</button></div><svg id="graph" viewBox="0 0 800 440" role="group" aria-label="Grafo interativo"></svg><p id="graph-detail" role="status">Selecione um nó para explorar.</p><div id="graph-neighbors"></div><p class="hint">Linhas contínuas: extraídas. Tracejadas: inferidas ou não classificadas. Até 30 nós por visão.</p></section><div class="result-header"><p id="status" role="status" aria-live="polite">Importe o índice para começar.</p><button id="clear" class="text-button" disabled>Limpar filtros</button></div>
         <div id="results" class="results" tabindex="-1">
           <div class="empty"><div aria-hidden="true" class="empty-mark">⌕</div><h3>Seu histórico, no seu navegador.</h3><p>Escolha um índice JSON local para habilitar a pesquisa.</p></div>
         </div>
         <button id="more" class="more-button" hidden>Mostrar mais resultados</button>
       </section>
     </main>
-    <footer>Exams Archive · O site publica apenas a interface. O índice importado permanece nesta aba; o repositório GitHub é público. <a href="https://github.com/ianmaciel7/exams-app-archive/blob/main/docs/EXTRACTION-GUIDE.md" target="_blank" rel="noopener noreferrer">Guia de recuperação ↗</a></footer>
+    <footer>Exams Archive · O site publica apenas a interface. O índice importado permanece nesta aba; o repositório GitHub é público. <a href="https://github.com/ianmaciel7/exams-app-archive/blob/main/docs/EXTRACTION-GUIDE.md" target="_blank" rel="noopener noreferrer">Guia de recuperação ↗</a> · <a href="./llms.txt">llms.txt</a></footer>
   </div>
 </body>
 </html>

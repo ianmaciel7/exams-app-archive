@@ -34,3 +34,7 @@ The site is a LOCAL index viewer, not a searchable public mirror. There are no s
 ## Limitations
 
 Searches cover file paths, commit messages and image records; not full source text. Exact recovery requires the corresponding private Git bundle and full SHA.
+
+## Agent and graph interfaces
+
+The public catalog works without an import. Import a graph export (`nodes` + `edges` or `links`) to explore typed relationships locally. See [Agent access](../docs/AGENT-ACCESS.md) for CLI and MCP. The site also serves `llms.txt`. The packaging allowlist includes this curated text file; no historical JSON is published.

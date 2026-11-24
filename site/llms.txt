@@ -1,0 +1,23 @@
+# Exams Archive
+
+> Historical research archive for Exam App, Notes App and related templates. Use the existing Git, SQLite, graph and context tools rather than treating search results as recovered source files.
+
+The GitHub Pages site is a static interface. Local imports are not transmitted. Repository visibility is independent of whether a file is included in Pages. Historical data may be sensitive; do not republish it.
+
+## Documentation
+- [Repository README](https://github.com/ianmaciel7/exams-app-archive/blob/main/README.md): scope, backup status and limitations.
+- [Extraction guide](https://github.com/ianmaciel7/exams-app-archive/blob/main/docs/EXTRACTION-GUIDE.md): recover original files by SHA and path.
+- [Full index report](https://github.com/ianmaciel7/exams-app-archive/blob/main/reports/FULL-INDEX.md): historical index coverage.
+- [Integration guide](https://github.com/ianmaciel7/exams-app-archive/blob/main/docs/ENHANCEMENT-INTEGRATION-MATRIX.md): graph, context, AST, and search.
+- [Agent access guide](https://github.com/ianmaciel7/exams-app-archive/blob/main/docs/AGENT-ACCESS.md): CLI and local MCP configuration.
+- [Browser explorer](https://ianmaciel7.github.io/exams-app-archive/): search and interactive graph.
+
+## Tools
+- [CLI](https://github.com/ianmaciel7/exams-app-archive/blob/main/plugins/exams-archive/scripts/archive_query.py): sync, search, images, graph, context, stats, recover.
+- [MCP server](https://github.com/ianmaciel7/exams-app-archive/blob/main/scripts/archive_mcp.py): optional local stdio adapter; GitHub Pages cannot host a running MCP server.
+
+## Interpretation
+- Search matches are indexed metadata, not proof of recovered bytes.
+- Cite repository, full commit SHA and original path when available.
+- Distinguish EXTRACTED, INFERRED and unspecified relations.
+- Check current verification reports before assuming backup completeness.
