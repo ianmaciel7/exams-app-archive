@@ -1228,11 +1228,16 @@ def search(
     extension: str | None = None,
     language: str | None = None,
     status: str | None = None,
+    source_sha: str | None = None,
     limit: int = 10,
     snippet_lines: int = DEFAULT_SNIPPET_LINES,
     match_all: bool = True,
     target: str = "content",
 ) -> list[dict]:
+    if source_sha is not None and not re.fullmatch(r"[0-9a-f]{40}", source_sha):
+        raise ValueError("Full commit SHA required")
+    if source_sha is not None and target != "content":
+        raise ValueError("source_sha requires content target")
     if target == "commits":
         return search_commits(
             conn,
@@ -1288,6 +1293,10 @@ def search(
     if repo:
         sql += " AND o.repo = ?"
         params.append(repo)
+
+    if source_sha is not None:
+        sql += " AND o.commit_sha = ?"
+        params.append(source_sha)
 
     effective_ref = ref or branch
     if effective_ref:
