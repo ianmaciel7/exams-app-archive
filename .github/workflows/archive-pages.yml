@@ -82,6 +82,23 @@ jobs:
         with:
           path: ${{ runner.temp }}/website
       - if: steps.check_pages.outputs.available == 'true'
+        name: Wait for uploaded Pages artifact to be visible
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for attempt in $(seq 1 12); do
+            if gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts" --jq '.artifacts[] | select(.name == "github-pages" and .expired == false) | .id' | grep -Eq '^[0-9]+
+        id: deployment
+        uses: actions/deploy-pages@v4
+; then
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "::error::Uploaded Pages artifact not visible after polling"
+          exit 1
+      - if: steps.check_pages.outputs.available == 'true'
         name: Deploy safe public shell
         id: deployment
         uses: actions/deploy-pages@v4

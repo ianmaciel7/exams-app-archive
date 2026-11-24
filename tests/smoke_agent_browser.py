@@ -13,7 +13,7 @@ from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 
 from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright, expect
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -68,6 +68,12 @@ def check_browser():
             page.locator("#zoom-in").click()
             assert "scale(1.25)" in page.locator(".graph-world").get_attribute("transform")
             page.locator("#graph-fit").click()
+            page.locator("#query").fill("sidebar")
+            expect(page.locator("#results article").filter(has_text="prototipo-sidebar.html").first).to_be_visible()
+            assert page.locator("#results article").count() >= 30
+            page.locator("#kind").select_option("image")
+            expect(page.locator("#results article").filter(has_text="capturas/").first).to_be_visible()
+            page.locator("#clear").click()
             page.locator("#query").fill("MCP")
             assert page.locator("#results article").count() >= 1
             page.locator("#clear").click()
@@ -89,12 +95,13 @@ def check_browser():
             page.goto(f"http://127.0.0.1:{server.server_port}/files.html")
             page.locator("#local-files").set_input_files([{"name":"Button.tsx","mimeType":"text/plain","buffer":b"export const Button = () => <button>OK</button>"},{"name":"example.html","mimeType":"text/html","buffer":b"<h1>Original HTML</h1><script>document.body.dataset.ran=1</script>"}])
             page.get_by_role("button", name="Button.tsx", exact=False).click()
-            assert "export const Button" in page.locator("#source-code").inner_text()
+            expect(page.locator("#source-code")).to_contain_text("export const Button")
             assert page.locator("#component-help").is_visible()
             page.locator("#components-only").check()
             assert page.get_by_role("button", name="example.html", exact=False).count() == 0
             page.locator("#components-only").uncheck()
             page.get_by_role("button", name="example.html", exact=False).click()
+            expect(page.locator("#preview-tab")).to_be_enabled()
             page.locator("#preview-tab").click()
             page.locator("#render-preview").click()
             assert page.frame_locator("#preview-frame").locator("h1").inner_text() == "Original HTML"
