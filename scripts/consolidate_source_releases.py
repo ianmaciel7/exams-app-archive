@@ -97,7 +97,10 @@ def copy_release(source, release, existing):
         # not substitutes for the original Git refs in the historical bundle.
         metadata = {k: v for k, v in release.items() if k != "assets"}
         receipt = {"source_repository": source, "release": metadata,
-                   "assets": receipt_assets, "original_asset_metadata": source_assets}
+                   "assets": receipt_assets,
+                   "original_asset_metadata": [
+                       {k: v for k, v in a.items() if k != "download_count"}
+                       for a in source_assets]}
         (original / RECEIPT).write_text(json.dumps(receipt, sort_keys=True,
                                                    ensure_ascii=False, indent=2),
                                         encoding="utf-8")
