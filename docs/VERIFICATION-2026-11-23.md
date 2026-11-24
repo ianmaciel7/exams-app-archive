@@ -1,5 +1,8 @@
 # Verificação independente do exams-app-archive — 23/11/2026
 
+> **Retificação de 24/11/2026:** este documento é um snapshot histórico. A conferência mais recente de cobertura, segurança e lacunas está no [README](../README.md). O backup Git posterior de Notes já possui manifesto verificado; isso não implica que o índice antigo foi reconstruído, que a privacidade esteja garantida ou que a exclusão esteja autorizada.
+
+
 ## Veredito
 
 **Arquivo Git público validado, porém a consolidação TOTAL ainda não terminou.** A integridade dos objetos Git já preservados é forte; a auditoria não deve declarar 100% do acervo enquanto houver as lacunas abaixo.
