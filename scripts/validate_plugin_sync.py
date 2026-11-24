@@ -28,8 +28,9 @@ CANONICAL_SOURCE = "ianmaciel7/exams-app-archive@main:plugins/exams-archive-nati
 EXPECTED_PLUGIN_ID = "plugins_6b04aaa9fd848191a24525011f76e2bb"
 EXPECTED_VERSION = "0.8.0"
 VALID_VERSIONS = {"0.6.0", "0.7.0", "0.8.0"}
-EXPECTED_RELEASE_ID = "pluginrel_6b05737fc5ac8191901dc20c99f82da6"
+EXPECTED_RELEASE_ID = "pluginrel_6b05cabf4a84819182a5509e963ada1f"
 VALID_RELEASE_IDS = {
+    "pluginrel_6b05cabf4a84819182a5509e963ada1f",
     "pluginrel_6b04c63bd96c8191bda2c535f2b62e1b",
     "pluginrel_6b05737fc5ac8191901dc20c99f82da6",
 }
