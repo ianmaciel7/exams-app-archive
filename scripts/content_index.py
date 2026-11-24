@@ -1299,8 +1299,13 @@ def search(
             params.extend([effective_ref, f"refs/heads/{effective_ref}"])
 
     if path:
-        sql += " AND (o.path = ? OR o.previous_path = ?)"
-        params.extend([path, path])
+        if "/" not in path:
+            # Literal basename shorthand, never an unescaped wildcard.
+            sql += " AND (o.path = ? OR o.previous_path = ? OR substr(o.path, -length(?) - 1) = '/' || ? OR substr(o.previous_path, -length(?) - 1) = '/' || ?)"
+            params.extend([path, path, path, path, path, path])
+        else:
+            sql += " AND (o.path = ? OR o.previous_path = ?)"
+            params.extend([path, path])
 
     if previous_path:
         sql += " AND o.previous_path = ?"
