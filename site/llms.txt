@@ -27,3 +27,5 @@ The GitHub Pages site is a static interface. Local imports are not transmitted. 
 
 - [Interactive React component](https://ianmaciel7.github.io/exams-app-archive/preview-error.html): reviewed ErrorBoundary with retry fixture.
 - [Component CLI and MCP capture guide](https://github.com/ianmaciel7/exams-app-archive/blob/main/docs/COMPONENT-EXPLORER.md): render, capture, query and retrieve PNGs in SQLite.
+
+- The graph workspace supports imported community labels, group aggregation, degree-scaled nodes, zoom/pan and 1–3 hop inspection. The public starter catalog is a bounded structural sample, not a full historical semantic graph.

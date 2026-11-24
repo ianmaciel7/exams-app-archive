@@ -42,3 +42,7 @@ The public catalog works without an import. Import a graph export (`nodes` + `ed
 ## Files and components
 
 Open [Files view](files.html) for historical public Git trees, source inspection and local HTML previews. See [Component explorer](../docs/COMPONENT-EXPLORER.md) for reviewed React build workflows.
+
+## Graphify-inspired knowledge workspace
+
+Graphify's HTML exporter motivated degree-scaled nodes, imported community colors, a group sidebar, confidence-styled edges and a node inspector. Reference: https://github.com/Graphify-Labs/graphify/blob/v8/graphify/exporters/html.py. The native SVG implementation has no CDN/runtime dependency; it bounds the visible view to 100 nodes and 800 relations, with group aggregation for larger datasets and 1–3 hop expansion. Graphify JSON supports nodes/links, community fields and relation confidence. Imported data remains local. The initial catalog is a bounded sample of **public** Git tree paths from two pinned old Exams repositories plus archive documentation; its edges are file containment, not a semantic Graphify extraction. Groups without imported community IDs are structural (repo/directory/type). No private dataset is packaged.

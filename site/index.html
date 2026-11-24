@@ -12,37 +12,17 @@
 </head>
 <body>
   <a class="skip-link" href="#results">Ir para resultados</a>
-  <div class="shell">
+  <div class="shell graph-shell">
     <header class="topbar">
       <div class="brand"><span class="brand-mark" aria-hidden="true">EA</span><span>Exams Archive <small>Arquivo histórico</small></span></div>
-      <a href="https://github.com/ianmaciel7/exams-app-archive" target="_blank" rel="noopener noreferrer">Repositório GitHub ↗</a>
+      <nav class="archive-nav" aria-label="Navegação principal"><a href="./" aria-current="page">Grafo</a><a href="./files.html">Arquivos</a><a href="./files.html">Componentes</a><a href="https://github.com/ianmaciel7/exams-app-archive" target="_blank" rel="noopener noreferrer">GitHub ↗</a></nav>
     </header>
     <main>
-      <section class="hero" aria-labelledby="heading">
-        <div class="eyebrow">EXPLORADOR LOCAL · SEM SERVIDOR DE BUSCA</div>
-        <h1 id="heading">Encontre referências dos projetos antigos.</h1>
-        <p>Pesquise commits, arquivos e imagens históricas sem enviar o índice para a internet. Os registros são importados do seu computador e ficam somente nesta aba.</p>
-      <a class="graph-jump" href="#graph-panel">Abrir grafo de conexões</a> · <a class="graph-jump" href="./files.html">Arquivos e componentes</a></section>
+      <section class="hero graph-intro" aria-labelledby="heading"><div><div class="eyebrow">EXAMS ARCHIVE / KNOWLEDGE EXPLORER</div><h1 id="heading">Explore o histórico.</h1><p>Conexões entre código, documentação e componentes. Comece com o catálogo público ou importe um grafo completo.</p></div><a class="graph-jump" href="./files.html">Explorar arquivos e componentes ↗</a></section>
 
-      <section class="import-card" aria-labelledby="import-heading">
-        <div>
-          <h2 id="import-heading">Importar índice ou grafo</h2>
-          <p>Exporte o JSON a partir do SQLite autenticado com o plugin Codex, depois selecione o arquivo aqui. O índice importado não é enviado ao GitHub Pages.</p>
-        </div>
-        <div class="import-actions">
-          <label class="file-button" for="file">Selecionar arquivo JSON</label>
-          <input id="file" type="file" accept=".json,application/json" aria-describedby="import-hint">
-          <span id="import-hint" class="hint">Índice histórico ou JSON de grafo</span>
-        </div>
-        <details>
-          <summary>Como gerar o índice no seu computador</summary>
-          <pre><code>gh auth login
-cd plugins/exams-archive
-python scripts/archive_query.py sync
-python scripts/archive_query.py export-pages --output private.archive-browser.json</code></pre>
-          <p class="hint">Não faça commit nem envie o JSON para um site público. O arquivo pode conter nomes e caminhos históricos privados.</p>
-        </details>
-      </section>
+      <section class="import-card compact-import" aria-labelledby="import-heading"><div><h2 id="import-heading">Fonte de dados</h2><p>O catálogo inicial usa arquivos públicos de revisões verificadas. Importe o JSON nativo do archive ou do Graphify para explorar relações históricas.</p></div><div class="import-actions"><label class="file-button" for="file">Importar JSON</label><input id="file" type="file" accept=".json,application/json" aria-describedby="import-hint"><span id="import-hint" class="hint">Dados importados ficam nesta aba.</span></div><details><summary>Gerar índice ou grafo local</summary><pre><code>python scripts/graph_linker.py build-inventory --export-json ~/archive-graph.json
+# Ou importe graphify-out/graph.json
+python plugins/exams-archive/scripts/archive_query.py export-pages --output private.archive-browser.json</code></pre></details></section>
 
       <section class="browser" aria-labelledby="search-heading">
         <div class="section-top">
@@ -61,7 +41,7 @@ python scripts/archive_query.py export-pages --output private.archive-browser.js
           </select></label>
           <label class="check"><input id="deleted" type="checkbox" disabled> Apenas arquivos/imagens excluídos</label>
         </div>
-        <section class="graph-panel" id="graph-panel"><div class="graph-head"><div><span class="eyebrow">MAPA DE CONHECIMENTO</span><h2>Grafo de conexões</h2><p id="graph-meta"></p></div><label>Relações <select id="confidence"><option value="">Todas</option><option>EXTRACTED</option><option>INFERRED</option></select></label><button id="graph-reset" type="button">Visão geral</button></div><svg id="graph" viewBox="0 0 800 440" role="group" aria-label="Grafo interativo"></svg><p id="graph-detail" role="status">Selecione um nó para explorar.</p><div id="graph-neighbors"></div><p class="hint">Linhas contínuas: extraídas. Tracejadas: inferidas ou não classificadas. Até 30 nós por visão.</p></section><div class="result-header"><p id="status" role="status" aria-live="polite">Importe o índice para começar.</p><button id="clear" class="text-button" disabled>Limpar filtros</button></div>
+        <section class="graph-panel" id="graph-panel"><div class="graph-head"><div><span class="eyebrow">KNOWLEDGE GRAPH</span><h2>Mapa de conexões</h2><p id="graph-meta"></p></div><div class="graph-actions"><button id="zoom-out" type="button" aria-label="Reduzir zoom">−</button><button id="zoom-in" type="button" aria-label="Aumentar zoom">+</button><button id="graph-fit" type="button">Ajustar</button><button id="graph-reset" type="button">Visão geral</button></div></div><div class="graph-workspace"><aside class="graph-filters"><h3 id="group-title">Grupos</h3><p class="graph-subtitle" id="group-description"></p><div id="graph-groups"></div><label>Relações<select id="confidence"><option value="">Todas</option><option>EXTRACTED</option><option>INFERRED</option><option>UNSPECIFIED</option></select></label><label>Profundidade<select id="graph-hops"><option value="1">1 conexão</option><option value="2" selected>2 conexões</option><option value="3">3 conexões</option></select></label><label>Visão<select id="graph-mode"><option value="auto">Automática</option><option value="groups">Grupos</option><option value="nodes">Nós</option></select></label></aside><div class="graph-canvas"><svg id="graph" viewBox="0 0 900 560" role="group" aria-label="Grafo interativo"></svg><div class="graph-legend"><span>● Tamanho: conexões</span><span>— Extraída</span><span>– – Inferida / não classificada</span><span>Arraste o fundo para mover</span></div></div><aside class="graph-inspector"><h3>Inspetor</h3><p id="graph-detail" role="status">Selecione um nó para explorar.</p><div id="graph-source"></div><h4>Conexões</h4><div id="graph-neighbors"></div></aside></div></section><div class="result-header"><p id="status" role="status" aria-live="polite">Importe o índice para começar.</p><button id="clear" class="text-button" disabled>Limpar filtros</button></div>
         <div id="results" class="results" tabindex="-1">
           <div class="empty"><div aria-hidden="true" class="empty-mark">⌕</div><h3>Seu histórico, no seu navegador.</h3><p>Escolha um índice JSON local para habilitar a pesquisa.</p></div>
         </div>
