@@ -11,6 +11,7 @@ from pathlib import Path
 import re
 import subprocess
 import tempfile
+import time
 import zipfile
 from audit_release_bytes import META, NOTES, BUNDLES, download
 
@@ -31,14 +32,28 @@ def capture(source, ids, folder):
     records=[]
     for id in ids:
         dest=folder/f"{id}.zip"
-        with dest.open("wb") as out:
-            p=subprocess.run(["gh","api","--allow-escape-sequences",f"repos/ianmaciel7/{source}/actions/runs/{id}/logs"],
-                             stdout=out,stderr=subprocess.PIPE,timeout=120)
-        if p.returncode:
+        status=None
+        succeeded=False
+        for attempt in range(4):
+            try:
+                with dest.open("wb") as out:
+                    p=subprocess.run(["gh","api","--allow-escape-sequences",f"repos/ianmaciel7/{source}/actions/runs/{id}/logs"],
+                                     stdout=out,stderr=subprocess.PIPE,timeout=120)
+                if p.returncode==0:
+                    succeeded=True
+                    break
+                err=p.stderr.decode("utf-8","replace")
+                match=re.search(r"HTTP\s+(\d{3})",err)
+                status=int(match.group(1)) if match else None
+                if status in (404,410):
+                    break
+            except subprocess.TimeoutExpired:
+                status=None
+            if attempt<3:
+                time.sleep(2**attempt * 5)
+        if not succeeded:
             dest.unlink(missing_ok=True)
-            err=p.stderr.decode("utf-8","replace")
-            status=re.search(r"HTTP\s+(\d{3})",err)
-            records.append({"run_id":id,"status":"unavailable","http_status":int(status.group(1)) if status else None})
+            records.append({"run_id":id,"status":"unavailable" if status in (404,410) else "retry_required","http_status":status})
             continue
         try:
             with zipfile.ZipFile(dest) as z:
@@ -57,13 +72,13 @@ def main():
     p.add_argument("--limit",type=int,default=20)
     p.add_argument("--output",type=Path,required=True)
     a=p.parse_args()
-    if a.offset<0 or not 1<=a.limit<=100: p.error("invalid batch")
+    if a.offset<0 or not 1<=a.limit<=500: p.error("invalid batch")
     a.output.mkdir(parents=True,exist_ok=False)
     with tempfile.TemporaryDirectory() as tmp:
         ids=run_list(Path(tmp),a.source)
         records=capture(a.source,ids[a.offset:a.offset+a.limit],a.output)
     report={"source":a.source,"snapshot_run_count":len(ids),"offset":a.offset,"requested":len(records),"records":records}
     (a.output/"MANIFEST.json").write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8")
-    print(json.dumps({"source":a.source,"total":len(ids),"requested":len(records),"saved":sum(r["status"]=="saved" for r in records),"unavailable":sum(r["status"]!="saved" for r in records)}))
+    print(json.dumps({"source":a.source,"total":len(ids),"requested":len(records),"saved":sum(r["status"]=="saved" for r in records),"unavailable":sum(r["status"]=="unavailable" for r in records),"retry_required":sum(r["status"] not in ("saved","unavailable") for r in records)}))
 if __name__=="__main__":
     main()
