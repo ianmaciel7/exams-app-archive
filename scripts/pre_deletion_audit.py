@@ -425,50 +425,60 @@ class PreDeletionAuditOrchestrator:
         if "notes_preservation" in self.overrides:
             return self.overrides["notes_preservation"]
 
-        # Checklist from Issue #12 and inventory/notes-app/README.md:
-        # Full preservation requires actual Git objects for:
-        # main, dev, stag, firebase/file and tags v0.1.0, v0.2.0, v0.3.0.
-        # Historical branches old, old-1..old-11 have objects in embedded bundles,
-        # but current active branches remain pending under Issue #3.
-        pending_branches = ["main", "dev", "stag", "firebase/file"]
-        pending_tags = ["v0.1.0", "v0.2.0", "v0.3.0"]
-
-        # Inspect if notes inventory notes pendencies
-        has_pending_items = True
-        notes_readme_text = ""
-        if self.notes_inventory_readme.is_file():
-            try:
-                notes_readme_text = self.notes_inventory_readme.read_text(encoding="utf-8")
-                if "Pendências para arquivamento privado integral" in notes_readme_text:
-                    has_pending_items = True
-            except Exception:
-                pass
-
-        # Check if full objects were imported or if import branch remains pending
-        import_branch_pending = True
-        if self.branch_readiness_json.is_file():
-            try:
-                with open(self.branch_readiness_json, "r", encoding="utf-8") as f:
-                    branches = json.load(f)
-                for b in branches:
-                    if b.get("branch") == "notes-private-import" and b.get("category") == "temporária bloqueada":
-                        import_branch_pending = True
-            except Exception:
-                pass
-
-        # Since Issue #3 is not closed and objects for main/dev/stag/firebase/file are pending,
-        # notes-app full preservation status is FAIL for deletion authorization.
-        status = "FAIL" if (has_pending_items or import_branch_pending) else "PASS"
-
+        # A dated report is not evidence of current failure. Require the actual
+        # verified release manifest; this is recorded evidence, not a fresh restore.
+        required_branches = {"main", "dev", "stag", "firebase/file", "old"} | {
+            f"old-{i}" for i in range(1, 12)
+        }
+        required_tags = {"v0.1.0", "v0.2.0", "v0.3.0"}
+        refs = {}
+        checks = {}
+        assets = []
+        manifest = {}
+        try:
+            manifest = json.loads(self.notes_private_manifest.read_text(encoding="utf-8"))
+            refs = manifest["all_refs"]
+            checks = manifest["verified"]
+            assets = manifest["assets"]
+            if not isinstance(refs, dict) or not isinstance(checks, dict) or not isinstance(assets, list):
+                raise ValueError("Invalid manifest schema")
+        except (OSError, ValueError, KeyError, TypeError):
+            refs, checks, assets, manifest = {}, {}, [], {}
+        branches = {k.removeprefix("refs/heads/") for k in refs if k.startswith("refs/heads/")}
+        tags = {k.removeprefix("refs/tags/") for k in refs if k.startswith("refs/tags/")}
+        pull_count = sum(k.startswith("refs/pull/") for k in refs)
+        pending_branches = sorted(required_branches - branches)
+        pending_tags = sorted(required_tags - tags)
+        required_checks = ("bundle", "git_fsck", "ref_comparison", "restore", "main_tar", "release_download")
+        bundle_ok = any(
+            isinstance(a, dict) and a.get("asset") == "notes-app-all-refs.bundle"
+            and isinstance(a.get("bytes"), int) and a["bytes"] > 0
+            and isinstance(a.get("sha256"), str) and len(a["sha256"]) == 64
+            and all(ch in "0123456789abcdef" for ch in a["sha256"])
+            for a in assets
+        )
+        refs_ok = bool(refs) and all(isinstance(v, str) and len(v) == 40
+                                   and all(c in "0123456789abcdef" for c in v)
+                                   for v in refs.values())
+        complete = (
+            manifest.get("source") == "ianmaciel7/notes-app"
+            and manifest.get("branch_count") == manifest.get("branch_heads_verified") == len(branches)
+            and manifest.get("tag_count") == len(tags)
+            and manifest.get("pull_ref_count") == pull_count
+            and not pending_branches and not pending_tags and refs_ok and bundle_ok
+            and all(checks.get(k) is True for k in required_checks)
+        )
         return {
-            "status": status,
-            "fully_preserved": False,
-            "transfer_status": "PENDENTE (Issue #3 em aberto)",
+            "status": "PASS" if complete else "FAIL",
+            "fully_preserved": complete,
+            "transfer_status": "VERIFIED_MANIFEST" if complete else "UNVERIFIED",
             "pending_branches": pending_branches,
             "pending_tags": pending_tags,
-            "embedded_historical_bundles_ok": 12,  # 12 notes old bundles verified in embedded-bundles-audit
-            "import_branch_pending": import_branch_pending,
-            "blockers": "Objetos Git de main, dev, stag, firebase/file e tags pendentes de conclusao via NOTES_READ_TOKEN",
+            "embedded_historical_bundles_ok": 12 if complete else 0,
+            "import_branch_pending": not complete,
+            "blockers": ("Manifesto de bundle e restauracao verificados; nova auditoria binaria, "
+                         "privacidade e offsite continuam gates separados" if complete else
+                         "Manifesto ausente, incompleto ou sem verificacoes de restauracao"),
         }
 
     def check_branch_readiness_gate(self) -> Dict[str, Any]:
@@ -690,7 +700,7 @@ class PreDeletionAuditOrchestrator:
             if repo in LEGACY_CANDIDATE_REPOSITORIES:
                 # Legacy candidate repositories
                 can_archive_read_only = True
-                can_delete = offsite_ok and auth_ok
+                can_delete = offsite_ok and auth_ok and all(c["result"] == "PASS" for c in conditions.values())
 
                 status_label = "AUTORIZADO PARA EXCLUSAO" if can_delete else "BLOQUEADO PARA EXCLUSAO"
                 recommendation = (
@@ -717,10 +727,10 @@ class PreDeletionAuditOrchestrator:
                     "role": "Projeto corrente / Repositorio privado ativo",
                     "deletion_status": "BLOQUEADO PARA EXCLUSAO",
                     "read_only_archive_eligible": False,
-                    "recommendation": "Preservar integralmente; concluir transferencia de objetos Git da Issue #3",
+                    "recommendation": "Preservar integralmente; revisar manifesto, privacidade e offsite",
                     "blockers": [
                         "Projeto corrente em desenvolvimento",
-                        "Transferencia de objetos Git pendente (Issue #3)",
+                        "Projeto ativo; nao autorizar exclusao com base no backup",
                         "Proibido qualquer arquivamento ou exclusao automatica",
                     ],
                 })
@@ -806,7 +816,7 @@ class PreDeletionAuditOrchestrator:
             "| Verificacao de Integridade Git fsck | 100% | [PASS] Zero corrupcao |",
             "| Bundles de Release e Hashes SHA-256 | 15/15 | [PASS] Verificados |",
             "| Artefatos de CI e Logs Preservados | 2.883 | [PASS] Preservados |",
-            "| Preservacao Integral Notes Privado (#3) | Pendente | [FAIL] Objetos pendentes |",
+            f"| Preservacao Integral Notes Privado (#3) | Manifesto | [{audit_result['conditions']['COND-07-NOTES-APP-PRIVATE-PRESERVED']['result']}] Consultar condicao |",
             "| Gate de Branches (#15) | 75/75 Bloqueadas | [FAIL] Exclusao bloqueada |",
             "| Backup Independente Externo (#4) | Pendente | [FAIL] Ausencia de SPOF externo |",
             "| Autorizacao Manual do Proprietario | Nao concedida | [FAIL] Exclusao nao autorizada |",
@@ -844,9 +854,9 @@ class PreDeletionAuditOrchestrator:
             "## 4. Analise Detalhada das Pendencias Criticas",
             "",
             "### 4.1. Transferencia do Notes Privado (Issue #3)",
-            "- **Estado Atual:** A branch auxiliar `notes-private-import` contem o arquivo `TRANSFER-MANIFEST.json` e 13 partes `part-*.b64`, mas a ingestao automatizada anterior falhou.",
-            "- **Lacuna Tecnica:** Os objetos Git completos das branches `main`, `dev`, `stag`, `firebase/file` e das tags `v0.1.0`, `v0.2.0`, `v0.3.0` ainda nao foram incorporados em release privada definitiva.",
-            "- **Acao Mandatoria:** Executar o workflow com secret `NOTES_READ_TOKEN` com escopo restrito e validar SHA-256 antes de qualquer acao em `notes-app`.",
+            "- **Estado Atual:** consultar COND-07, calculada a partir do manifesto de release.",
+            "- **Lacuna Tecnica:** nao confundir manifesto de restore com revalidacao binaria independente ou garantia de privacidade.",
+            "- **Acao Mandatoria:** confirmar privacidade e restore independente; nunca publicar novos dados privados em destino publico.",
             "",
             "### 4.2. Backup Independente Fora da Conta GitHub (Issue #4)",
             "- **Risco Identificado:** Manter todos os backups na mesma conta GitHub mantem um ponto unico de falha (SPOF).",
@@ -860,7 +870,7 @@ class PreDeletionAuditOrchestrator:
             "",
             "## 5. Roteiro Recomendado de Encerramento (Zero Data Loss)",
             "",
-            "1. **Concluir a Issue #3:** Fornecer `NOTES_READ_TOKEN`, rodar workflow de ingestao e gerar release privada verificada de `notes-app`.",
+            "1. **Revalidar Issue #3:** consultar manifesto, preservar origens e corrigir privacidade antes de novas exportacoes.",
             "2. **Concluir a Issue #4:** Exportar bundles e 2.883 artifacts de CI para destino externo com validacao de checksum.",
             "3. **Reconciliar Branches Auxiliares:** Integrar `.github/workflows/export-archive-for-offsite.yml` via PR.",
             "4. **Arquivamento Somente Leitura:** Configurar os 4 repositorios legados (`exams-app-old`, `exams-app-antigo-2`, `shadcn-template`, `shadcn-firebase-template`) como **Archive (read-only)** no GitHub.",
