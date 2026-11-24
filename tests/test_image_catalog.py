@@ -261,10 +261,192 @@ class ImageCatalogTests(unittest.TestCase):
             image_catalog.validate_private_output_path(ROOT / "site" / "catalog.json")
         with self.assertRaises(ValueError):
             image_catalog.validate_private_output_path(Path("site/thumbs"))
+        with self.assertRaises(ValueError):
+            image_catalog.validate_private_output_path(Path("site/visual_gallery.html"))
+        with self.assertRaises(ValueError):
+            image_catalog.validate_private_output_path(Path("_site/gallery.html"))
+        with self.assertRaises(ValueError):
+            image_catalog.validate_private_output_path(Path("gh-pages/gallery.html"))
+        with self.assertRaises(ValueError):
+            image_catalog.validate_private_output_path(Path("public/pages/gallery.html"))
 
-    def test_cli_private_json_output(self):
-        out_json = self.root / "private-catalog.json"
-        proc = subprocess.run(
+    def test_svg_sanitization_and_inert_rendering(self):
+        malicious_svg = (
+            b'<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">\n'
+            b'  <script>throw new Error("XSS execute");</script>\n'
+            b'  <script xlink:href="https://evil.invalid/xss.js"/>\n'
+            b'  <foreignObject width="100" height="100"><div>dangerous html</div></foreignObject>\n'
+            b'  <rect x="0" y="0" width="100" height="100" fill="#00f" onload="alert(1)" onclick="steal()"/>\n'
+            b'  <a href="javascript:doEvil()">click here</a>\n'
+            b'  <iframe src="https://evil.invalid"></iframe>\n'
+            b'  <!ENTITY xxe SYSTEM "file:///etc/passwd">\n'
+            b'</svg>\n'
+        )
+        sanitized = image_catalog.sanitize_svg(malicious_svg)
+        self.assertNotIn("<script", sanitized)
+        self.assertNotIn("XSS execute", sanitized)
+        self.assertNotIn("<foreignObject", sanitized)
+        self.assertNotIn("dangerous html", sanitized)
+        self.assertNotIn("onload=", sanitized)
+        self.assertNotIn("onclick=", sanitized)
+        self.assertNotIn("javascript:", sanitized)
+        self.assertIn("#blocked", sanitized)
+        self.assertNotIn("<iframe", sanitized)
+        self.assertNotIn("!ENTITY", sanitized)
+        self.assertIn("<rect", sanitized)
+        self.assertIn('fill="#00f"', sanitized)
+
+    def test_version_diffing_and_multi_commit_history(self):
+        # Create a dedicated repository with multiple revisions of an image
+        repo_dir = self.root / "version-repo"
+        repo_dir.mkdir()
+        run_git("init", "-q", "-b", "main", str(repo_dir))
+        run_git("config", "user.email", "vdiff-test@example.invalid", cwd=repo_dir)
+        run_git("config", "user.name", "VDiff Test", cwd=repo_dir)
+
+        (repo_dir / "assets").mkdir()
+        png_v1 = make_png(32, 18)
+        png_v2 = make_png(64, 36)
+
+        # Commit 1: v1
+        (repo_dir / "assets" / "sidebar.png").write_bytes(png_v1)
+        run_git("add", ".", cwd=repo_dir)
+        run_git("commit", "-qm", "feat: initial sidebar 32x18", cwd=repo_dir)
+        c1 = run_git("rev-parse", "HEAD", cwd=repo_dir).strip()
+
+        # Commit 2: v2
+        (repo_dir / "assets" / "sidebar.png").write_bytes(png_v2)
+        run_git("add", ".", cwd=repo_dir)
+        run_git("commit", "-qm", "feat: resize sidebar to 64x36", cwd=repo_dir)
+        run_git("tag", "v1.0.0", cwd=repo_dir)
+        c2 = run_git("rev-parse", "HEAD", cwd=repo_dir).strip()
+
+        bare_dir = self.root / "version-repo.git"
+        run_git("clone", "--mirror", "-q", str(repo_dir), str(bare_dir))
+
+        catalog = image_catalog.catalog_git_source(
+            bare_dir,
+            origin="vdiff-origin",
+            force_no_pillow=True,
+        )
+
+        item = next(i for i in catalog["items"] if i["path"] == "assets/sidebar.png")
+        self.assertEqual(item["version_count"], 2)
+        self.assertEqual(item["screen"], "sidebar")
+        self.assertEqual(item["width"], 64)
+        self.assertEqual(item["height"], 36)
+        self.assertIn("v1.0.0", item["tags"])
+
+        v_new = item["versions"][0]
+        v_old = item["versions"][1]
+        self.assertEqual(v_new["commit"], c2)
+        self.assertEqual(v_old["commit"], c1)
+        self.assertEqual((v_new["width"], v_new["height"]), (64, 36))
+        self.assertEqual((v_old["width"], v_old["height"]), (32, 18))
+
+        # Diff older vs newer
+        diff = image_catalog.diff_image_versions(v_old, v_new)
+        self.assertFalse(diff["same_content"])
+        self.assertTrue(diff["dimensions_changed"])
+        self.assertEqual(diff["dimension_diff"]["width_delta"], 32)
+        self.assertEqual(diff["dimension_diff"]["height_delta"], 18)
+        self.assertGreater(diff["bytes_diff"], 0)
+        self.assertIn("delta: +32w, +18h", diff["summary"])
+
+        # Compare versions helper
+        comp = image_catalog.compare_versions(catalog, "assets/sidebar.png")
+        self.assertFalse(comp["same_content"])
+        self.assertTrue(comp["dimensions_changed"])
+
+        # Compare with explicit commits
+        comp_explicit = image_catalog.compare_versions(
+            catalog, "assets/sidebar.png", commit_a=c1[:8], commit_b=c2[:8]
+        )
+        self.assertEqual(comp_explicit["dimension_diff"]["width_delta"], 32)
+
+        with self.assertRaises(ValueError):
+            image_catalog.compare_versions(catalog, "assets/nonexistent.png")
+        with self.assertRaises(ValueError):
+            image_catalog.compare_versions(catalog, "assets/sidebar.png", commit_a="00000000", commit_b=c2[:8])
+
+    def test_visual_gallery_generation(self):
+        catalog = image_catalog.catalog_git_source(
+            self.bare,
+            origin="gallery-test",
+            force_no_pillow=True,
+        )
+        html_str = image_catalog.generate_visual_gallery(catalog)
+        self.assertIn("<!DOCTYPE html>", html_str)
+        self.assertIn("[CONFIDENTIAL] PRIVATE HISTORICAL ARCHIVE CATALOG", html_str)
+        self.assertIn("STRICT PRIVACY GATE", html_str)
+        self.assertIn("data:image/", html_str)
+        self.assertIn("assets/sidebar-v1.png", html_str)
+        self.assertIn("assets/grafo.svg", html_str)
+        self.assertIn("view-gallery", html_str)
+        self.assertIn("view-diff", html_str)
+        self.assertIn("diff-modal", html_str)
+        self.assertIn("filter-repo", html_str)
+        self.assertIn("filter-screen", html_str)
+        self.assertIn("filter-tag", html_str)
+
+        # SVG in gallery must render as inert image, not executable script
+        self.assertNotIn("throw new Error", html_str)
+        self.assertEqual(EMOJI_REGEX.findall(html_str), [])
+
+        # Test writing gallery to a valid private output file
+        gallery_file = self.root / "private_gallery.html"
+        written = image_catalog.generate_visual_gallery(catalog, output_path=gallery_file)
+        self.assertTrue(gallery_file.is_file())
+        self.assertEqual(gallery_file.read_text(encoding="utf-8"), written)
+
+        # Test output privacy gate refusal for gallery HTML
+        with self.assertRaises(ValueError):
+            image_catalog.generate_visual_gallery(
+                catalog, output_path=ROOT / "site" / "gallery.html"
+            )
+
+        # Test catalog_git_source with gallery_output option
+        cat_with_gallery = image_catalog.catalog_git_source(
+            self.bare,
+            origin="gallery-test",
+            gallery_output=gallery_file,
+            force_no_pillow=True,
+        )
+        self.assertEqual(cat_with_gallery["gallery_path"], str(gallery_file))
+
+    def test_filtering_by_repo_screen_commit_tag_ext(self):
+        catalog = image_catalog.catalog_git_source(
+            self.bare,
+            origin="exams-app-synthetic",
+            force_no_pillow=True,
+        )
+        # Filter by repo
+        filtered_repo = image_catalog.filter_catalog(catalog, repo="exams-app-synthetic")
+        self.assertEqual(len(filtered_repo["items"]), 5)
+
+        filtered_bad_repo = image_catalog.filter_catalog(catalog, repo="nonexistent-repo")
+        self.assertEqual(len(filtered_bad_repo["items"]), 0)
+
+        # Filter by screen
+        filtered_screen = image_catalog.filter_catalog(catalog, screen="sidebar")
+        paths = {i["path"] for i in filtered_screen["items"]}
+        self.assertEqual(paths, {"assets/sidebar-v1.png", "assets/old-sidebar.png"})
+
+        # Filter by extension
+        filtered_svg = image_catalog.filter_catalog(catalog, extension="svg")
+        self.assertEqual(len(filtered_svg["items"]), 1)
+        self.assertEqual(filtered_svg["items"][0]["path"], "assets/grafo.svg")
+
+        filtered_png = image_catalog.filter_catalog(catalog, extension=".png")
+        self.assertEqual(len(filtered_png["items"]), 2)
+
+        # Filter by commit
+        filtered_commit = image_catalog.filter_catalog(catalog, commit=self.initial_commit[:8])
+        self.assertGreaterEqual(len(filtered_commit["items"]), 1)
+
+    def test_cli_gallery_and_diff_options(self):
+        out_html = self.root / "cli-gallery.html"
+        proc_gallery = subprocess.run(
             [
                 sys.executable,
                 str(ROOT / "scripts" / "image_catalog.py"),
@@ -272,20 +454,54 @@ class ImageCatalogTests(unittest.TestCase):
                 str(self.bundle),
                 "--origin",
                 "cli-test",
-                "--query",
-                "sidebar",
                 "--no-pillow",
-                "--output",
-                str(out_json),
+                "--gallery-output",
+                str(out_html),
+                "--screen",
+                "sidebar",
             ],
             capture_output=True,
             text=True,
         )
-        self.assertEqual(proc.returncode, 0, proc.stderr)
-        data = json.loads(out_json.read_text(encoding="utf-8"))
-        self.assertEqual(data["summary"]["total_images"], 2)
-        paths = {i["path"] for i in data["items"]}
-        self.assertEqual(paths, {"assets/sidebar-v1.png", "assets/old-sidebar.png"})
+        self.assertEqual(proc_gallery.returncode, 0, proc_gallery.stderr)
+        self.assertTrue(out_html.is_file())
+        self.assertIn("assets/sidebar-v1.png", out_html.read_text(encoding="utf-8"))
+
+        proc_diff = subprocess.run(
+            [
+                sys.executable,
+                str(ROOT / "scripts" / "image_catalog.py"),
+                "--source",
+                str(self.bundle),
+                "--origin",
+                "cli-test",
+                "--no-pillow",
+                "--diff",
+                "assets/sidebar-v1.png",
+            ],
+            capture_output=True,
+            text=True,
+        )
+        self.assertEqual(proc_diff.returncode, 0, proc_diff.stderr)
+        diff_data = json.loads(proc_diff.stdout)
+        self.assertIn("same_content", diff_data)
+        self.assertIn("dimensions_changed", diff_data)
+
+        # CLI privacy refusal
+        proc_bad = subprocess.run(
+            [
+                sys.executable,
+                str(ROOT / "scripts" / "image_catalog.py"),
+                "--source",
+                str(self.bundle),
+                "--gallery-output",
+                "site/leaked_gallery.html",
+            ],
+            capture_output=True,
+            text=True,
+        )
+        self.assertNotEqual(proc_bad.returncode, 0)
+        self.assertIn("Refusing to write private catalog data inside", proc_bad.stderr)
 
     def test_zero_emoji_policy(self):
         for rel in ("scripts/image_catalog.py", "tests/test_image_catalog.py"):
