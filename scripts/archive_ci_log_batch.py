@@ -13,11 +13,22 @@ import subprocess
 import tempfile
 import time
 import zipfile
-from audit_release_bytes import META, NOTES, BUNDLES, download
+from audit_release_bytes import META, NOTES, BUNDLES, ROOT, ARCHIVE
 
 def run_list(root: Path, source: str):
     tag, name = (NOTES, "notes-app-github-metadata.zip") if source == "notes-app" else (META, source+".platform.zip")
-    path = download(root, tag, name)
+    # These snapshots were already independently verified. Use their pinned
+    # digest and public release asset URL without spending API rate quota.
+    if source=="notes-app":
+        entry=next(a for a in json.loads((ROOT/"manifests/notes-app-private-full.json").read_text())["assets"] if a["asset"]==name)
+        size=entry["bytes"]
+    else:
+        entry=next(a for a in json.loads((ROOT/"manifests/public-platform-metadata-2026-11-23.json").read_text())["sources"] if a["asset"]==name)
+        size=entry["size_bytes"]
+    path=root/name
+    subprocess.run(["curl","--fail","--silent","--show-error","--location","--retry","3","--max-time","180","--output",str(path),f"https://github.com/{ARCHIVE}/releases/download/{tag}/{name}"],check=True,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+    if path.stat().st_size!=size or sha(path)!=entry["sha256"]:
+        raise ValueError("snapshot_integrity_failed")
     with zipfile.ZipFile(path) as z:
         data = json.loads(z.read("workflow_runs.json"))
     if isinstance(data, dict):
@@ -47,6 +58,10 @@ def capture(source, ids, folder):
                 status=int(match.group(1)) if match else None
                 if status in (404,410):
                     break
+                if status in (403,429) and ('rate limit' in err.lower() or status==429):
+                    # Stop a throttled shard promptly. Do not mislabel it as missing.
+                    status=429
+                    break
             except subprocess.TimeoutExpired:
                 status=None
             if attempt<3:
@@ -54,6 +69,9 @@ def capture(source, ids, folder):
         if not succeeded:
             dest.unlink(missing_ok=True)
             records.append({"run_id":id,"status":"unavailable" if status in (404,410) else "retry_required","http_status":status})
+            if status==429:
+                records.extend({"run_id":remaining,"status":"retry_required","http_status":429} for remaining in ids[len(records):])
+                break
             continue
         try:
             with zipfile.ZipFile(dest) as z:
