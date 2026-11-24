@@ -10,7 +10,7 @@ Arquivo verificável e pesquisável de versões históricas. O repositório não
 
 Escopo principal: seis repositórios; os dois projetos auxiliares não entram nas métricas de aceite. A conferência autenticada de refs encontrou **69/69 branches, 519/519 refs de PR e 5/5 tags**, com SHAs correspondentes aos manifestos das releases. O backup Git de Notes foi concluído após os relatórios iniciais; o manifesto registra verificação, fsck, restauração e download de retorno. A verificação de 24/11 comparou os hashes declarados dos assets, sem repetir o download integral.
 
-Pendências reais: privacidade, cópia independente com restore offline, reconciliação dos 161 PRs de exams-app-old (manifesto antigo: 158), cobertura de logs/jobs de CI, auditoria externa e reconstrução/validação do índice privado atualizado. Dados expirados ou apagados não são recuperáveis apenas pelo Git.
+Decisão do proprietário (24/11/2026): manter o arquivo público; cópia no Google Drive não é requisito de aceite do arquivamento. A ausência de cópia independente continua sendo risco de perda e não autoriza exclusão das origens. Auditoria binária: 29/29 jobs aprovados, seis bundles restaurados, SHA-256 recalculados e 16 partições CI verificadas ([execução](https://github.com/ianmaciel7/exams-app-archive/actions/runs/45432868764)). Pendências: reconciliar três PRs de exams-app-old, destinos de gitlinks históricos de Notes, logs/anexos externos, triagem privada de candidatos a segredos e índice integral sanitizado. Dados expirados ou apagados não são recuperáveis apenas pelo Git.
 
 **Nenhuma exclusão está autorizada.** Os relatórios datados de 23/11 são snapshots históricos e não substituem esta conferência.
 
@@ -88,4 +88,4 @@ correspondente e use o comando `recover` documentado no guia.
 - `tests/`: testes sintéticos e verificações reprodutíveis.
 - `docs/`: guia operacional e decisões de preservação.
 
-**Fora do Git:** bundles grandes e índices ficam em releases. A visibilidade pública atual exige correção; não presuma que releases ou branches estejam protegidas.
+**Fora do Git:** bundles grandes e índices ficam em releases. A visibilidade pública é intencional; não presuma confidencialidade das releases ou branches. Não publique novos dados privados ou índices não sanitizados.
