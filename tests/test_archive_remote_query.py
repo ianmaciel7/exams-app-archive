@@ -72,7 +72,10 @@ class RemoteQueryTests(unittest.TestCase):
                 extension TEXT,
                 language TEXT,
                 blob_sha TEXT,
-                status TEXT
+                status TEXT,
+                previous_path TEXT,
+                commit_author TEXT,
+                commit_date TEXT
             );
             CREATE VIRTUAL TABLE content_fts USING fts5(
                 blob_sha UNINDEXED,
@@ -82,7 +85,8 @@ class RemoteQueryTests(unittest.TestCase):
             );
             INSERT INTO content_occurrences VALUES(
                 'exams-app', 'refs/heads/main', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'src/sidebar.tsx', '.tsx', 'tsx', 'cccccccccccccccccccccccccccccccccccccccc', 'A'
+                'src/sidebar.tsx', '.tsx', 'tsx', 'cccccccccccccccccccccccccccccccccccccccc', 'A',
+                '', 'Ian', '2026-11-20T00:00:00Z'
             );
             INSERT INTO content_fts VALUES(
                 'cccccccccccccccccccccccccccccccccccccccc', 1, 10,
@@ -425,7 +429,7 @@ class RemoteQueryTests(unittest.TestCase):
         # Insert a secret into content index
         with sqlite3.connect(self.db) as c:
             c.execute(
-                "INSERT INTO content_occurrences VALUES('exams-app', 'refs/heads/main', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'src/auth.ts', '.ts', 'typescript', 'secretblob', 'A')"
+                "INSERT INTO content_occurrences VALUES('exams-app', 'refs/heads/main', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'src/auth.ts', '.ts', 'typescript', 'secretblob', 'A', '', 'Ian', '2026-11-20T00:00:00Z')"
             )
             c.execute(
                 "INSERT INTO content_fts VALUES('secretblob', 1, 5, 'const AWS_KEY = \"AKIASYNTHETIC1234567\"; const PAT = \"ghp_syntheticTestClassicToken123456789012\";')"

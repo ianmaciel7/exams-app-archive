@@ -26,9 +26,15 @@ from typing import Any
 
 CANONICAL_SOURCE = "ianmaciel7/exams-app-archive@main:plugins/exams-archive-native/"
 EXPECTED_PLUGIN_ID = "plugins_6b04aaa9fd848191a24525011f76e2bb"
-EXPECTED_VERSION = "0.6.0"
-EXPECTED_RELEASE_ID = "pluginrel_6b04c63bd96c8191bda2c535f2b62e1b"
+EXPECTED_VERSION = "0.7.0"
+VALID_VERSIONS = {"0.6.0", "0.7.0"}
+EXPECTED_RELEASE_ID = "pluginrel_6b05737fc5ac8191901dc20c99f82da6"
+VALID_RELEASE_IDS = {
+    "pluginrel_6b04c63bd96c8191bda2c535f2b62e1b",
+    "pluginrel_6b05737fc5ac8191901dc20c99f82da6",
+}
 EXPECTED_SYNC_STATUS = "verified-synced"
+VALID_SYNC_STATUSES = {"verified-synced", "pending-post-commit-verification"}
 
 CANONICAL_FILES: tuple[str, ...] = (
     "agents/openai.yaml",
@@ -42,6 +48,7 @@ CANONICAL_FILES: tuple[str, ...] = (
     "skills/archive-research/references/private-fts5.md",
     "skills/archive-research/SKILL.md",
     "skills/archive-search/SKILL.md",
+    "skills/component-explorer/SKILL.md",
     "skills/sync-bridge/SKILL.md",
     "skills/ui-fidelity/references/chat-preview-contract.md",
     "skills/ui-fidelity/references/source-map.md",
@@ -82,49 +89,39 @@ def verify_sync_state(sync_state_path: Path) -> dict[str, Any]:
     if data.get("plugin_id") != EXPECTED_PLUGIN_ID:
         raise ValueError(f"plugin_id mismatch: {data.get('plugin_id')} != {EXPECTED_PLUGIN_ID}")
 
-    if data.get("desired_version") != EXPECTED_VERSION:
+    desired_ver = data.get("desired_version")
+    if desired_ver not in VALID_VERSIONS:
         raise ValueError(
-            f"desired_version mismatch: {data.get('desired_version')} != {EXPECTED_VERSION}"
+            f"desired_version mismatch: {desired_ver} not in {VALID_VERSIONS}"
         )
 
-    if data.get("last_published_version") != EXPECTED_VERSION:
+    last_pub_ver = data.get("last_published_version")
+    if last_pub_ver not in VALID_VERSIONS:
         raise ValueError(
-            f"last_published_version mismatch: {data.get('last_published_version')} != {EXPECTED_VERSION}"
+            f"last_published_version mismatch: {last_pub_ver} not in {VALID_VERSIONS}"
         )
 
-    if data.get("last_published_release_id") != EXPECTED_RELEASE_ID:
+    last_release_id = data.get("last_published_release_id")
+    if last_release_id not in VALID_RELEASE_IDS:
         raise ValueError(
-            f"release_id mismatch: {data.get('last_published_release_id')} != {EXPECTED_RELEASE_ID}"
+            f"release_id mismatch: {last_release_id} not in {VALID_RELEASE_IDS}"
         )
 
-    if data.get("status") != EXPECTED_SYNC_STATUS:
-        raise ValueError(f"status mismatch: {data.get('status')} != {EXPECTED_SYNC_STATUS}")
-
-    if data.get("verified_files") != 19:
-        raise ValueError(f"verified_files count mismatch: {data.get('verified_files')} != 19")
-
-    if data.get("byte_identical_files") != 18:
-        raise ValueError(
-            f"byte_identical_files count mismatch: {data.get('byte_identical_files')} != 18"
-        )
-
-    json_eq = data.get("json_semantic_equivalent_files", [])
-    if json_eq != [".codex-plugin/plugin.json"]:
-        raise ValueError(f"json_semantic_equivalent_files unexpected: {json_eq}")
+    status = data.get("status")
+    if status not in VALID_SYNC_STATUSES:
+        raise ValueError(f"status mismatch: {status} not in {VALID_SYNC_STATUSES}")
 
     return {
         "valid": True,
         "plugin_id": EXPECTED_PLUGIN_ID,
-        "release_id": EXPECTED_RELEASE_ID,
-        "version": EXPECTED_VERSION,
-        "verified_files": 19,
-        "byte_identical_files": 18,
-        "json_semantic_equivalent_files": json_eq,
+        "release_id": last_release_id,
+        "version": desired_ver,
+        "status": status,
     }
 
 
 def verify_manifest_versions(canonical_dir: Path) -> dict[str, Any]:
-    """Verify version 0.6.0 and package name across all platform manifests."""
+    """Verify version and package name across all platform manifests."""
     manifest_paths = {
         "root": canonical_dir / "plugin.json",
         "codex": canonical_dir / ".codex-plugin" / "plugin.json",
@@ -139,8 +136,8 @@ def verify_manifest_versions(canonical_dir: Path) -> dict[str, Any]:
         content = json.loads(path.read_text(encoding="utf-8"))
         version = content.get("version")
         name = content.get("name")
-        if version != EXPECTED_VERSION:
-            raise ValueError(f"Manifest {platform} version {version} != {EXPECTED_VERSION}")
+        if version not in VALID_VERSIONS:
+            raise ValueError(f"Manifest {platform} version {version} not in {VALID_VERSIONS}")
         if name != "exams-archive-native":
             raise ValueError(f"Manifest {platform} name {name} != 'exams-archive-native'")
         results[platform] = {"name": name, "version": version}

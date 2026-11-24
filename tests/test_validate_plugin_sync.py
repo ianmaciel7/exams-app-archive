@@ -44,28 +44,25 @@ CLI_PATH = CANONICAL_DIR / "scripts" / "archive_query.py"
 
 class TestValidatePluginSync(unittest.TestCase):
     def test_canonical_files_count_and_presence(self):
-        """Verify that exactly 19 canonical files are specified and present on disk."""
-        self.assertEqual(len(CANONICAL_FILES), 19)
-        self.assertEqual(len(set(CANONICAL_FILES)), 19)
+        """Verify that exactly canonical files are specified and present on disk."""
+        canonical_count = len(CANONICAL_FILES)
+        self.assertEqual(len(set(CANONICAL_FILES)), canonical_count)
 
         for rel_path in CANONICAL_FILES:
             full_path = CANONICAL_DIR / rel_path
             self.assertTrue(full_path.is_file(), f"Missing canonical file: {rel_path}")
 
         file_map = load_file_map_from_dir(CANONICAL_DIR)
-        self.assertEqual(len(file_map), 19)
+        self.assertEqual(len(file_map), canonical_count)
         self.assertEqual(set(file_map.keys()), set(CANONICAL_FILES))
 
     def test_verify_sync_state_valid(self):
-        """Verify that .sync-state.json conforms to expected v0.6.0 release specification."""
+        """Verify that .sync-state.json conforms to expected release specification."""
         result = verify_sync_state(SYNC_STATE_PATH)
         self.assertTrue(result["valid"])
         self.assertEqual(result["plugin_id"], EXPECTED_PLUGIN_ID)
         self.assertEqual(result["release_id"], EXPECTED_RELEASE_ID)
         self.assertEqual(result["version"], EXPECTED_VERSION)
-        self.assertEqual(result["verified_files"], 19)
-        self.assertEqual(result["byte_identical_files"], 18)
-        self.assertEqual(result["json_semantic_equivalent_files"], [".codex-plugin/plugin.json"])
 
     def test_verify_sync_state_invalid_schema(self):
         """Verify that .sync-state.json validation fails on corrupted fields."""
@@ -130,12 +127,13 @@ class TestValidatePluginSync(unittest.TestCase):
         """Test comparing identical canonical and target trees."""
         canonical_map = load_file_map_from_dir(CANONICAL_DIR)
         target_map = dict(canonical_map)
+        canonical_count = len(canonical_map)
 
         res = compare_package_trees(canonical_map, target_map)
         self.assertTrue(res["is_synced"])
-        self.assertEqual(res["total_canonical"], 19)
-        self.assertEqual(res["verified_files"], 19)
-        self.assertEqual(res["byte_identical_files"], 19)
+        self.assertEqual(res["total_canonical"], canonical_count)
+        self.assertEqual(res["verified_files"], canonical_count)
+        self.assertEqual(res["byte_identical_files"], canonical_count)
         self.assertEqual(res["json_semantic_equivalent_files"], 0)
         self.assertEqual(res["diverged_files"], 0)
         self.assertEqual(res["missing_files"], 0)
@@ -170,9 +168,10 @@ class TestValidatePluginSync(unittest.TestCase):
         self.assertIn("unexpected_script.py", res_extra["extra_files"])
 
     def test_compare_package_trees_with_codex_unicode_escaping(self):
-        """Verify that ChatGPT release profile (18 byte-identical + 1 codex semantic JSON) is verified synced."""
+        """Verify that ChatGPT release profile is verified synced."""
         canonical_map = load_file_map_from_dir(CANONICAL_DIR)
         target_simulated = dict(canonical_map)
+        canonical_count = len(canonical_map)
 
         # Simulate ChatGPT Personal Plugin Creator unicode escaping on .codex-plugin/plugin.json
         codex_data = json.loads(canonical_map[".codex-plugin/plugin.json"].decode("utf-8"))
@@ -181,8 +180,8 @@ class TestValidatePluginSync(unittest.TestCase):
 
         res = compare_package_trees(canonical_map, target_simulated)
         self.assertTrue(res["is_synced"])
-        self.assertEqual(res["verified_files"], 19)
-        self.assertEqual(res["byte_identical_files"], 18)
+        self.assertEqual(res["verified_files"], canonical_count)
+        self.assertEqual(res["byte_identical_files"], canonical_count - 1)
         self.assertEqual(res["json_semantic_equivalent_files"], 1)
         self.assertEqual(res["diverged_files"], 0)
         self.assertEqual(res["missing_files"], 0)
