@@ -14,7 +14,7 @@ Data de referência: 2026-11-23. **Não excluir automaticamente repositórios de
 | `shadcn-template` | 7/7 branches restauradas e conferidas | ZIP de metadados verificado | 15 artifacts, aproximadamente 2,60 MB; todos preservados | Etapa técnica aprovada; confirmar dependências e cópia independente |
 | `shadcn-firebase-template` | 7/7 branches restauradas e conferidas | ZIP de metadados verificado | 24 artifacts, aproximadamente 19,47 MB; todos preservados, 0 Discussions | Etapa técnica aprovada; confirmar dependências e cópia independente |
 
-O `exams-app` e o `notes-app` **não são alvos** de exclusão: são projetos correntes. Para o Notes privado ainda faltam 4 branches e 3 tags no arquivo (o workflow requer `NOTES_READ_TOKEN`).
+O `exams-app` e o `notes-app` **não são alvos** de exclusão: são projetos correntes. O bundle posterior do Notes foi verificado com 72 refs originais (17 branches, 5 tags, 50 refs de PR), e dois worktrees adicionais foram recuperados em suplemento privado. Ver [auditoria atual](../reports/ARCHIVE-STATUS-2026-11-24.md).
 
 ## Backups e evidência
 
@@ -36,7 +36,7 @@ O `exams-app` e o `notes-app` **não são alvos** de exclusão: são projetos co
 - **0 Discussions e 0 Projects V2** na consulta GraphQL aos quatro repositórios.
 - O resultado não prova recuperação de logs/artefatos que já haviam expirado, dados apagados do GitHub ou serviços externos.
 
-**Ainda não excluir originais:** falta a cópia independente fora desta conta GitHub e a confirmação de dependências externas (deploy, webhooks, links e ferramentas). A exclusão exige autorização explícita.
+**Ainda não excluir originais:** a cópia em Google Drive foi dispensada pelo proprietário para o aceite do acervo; não há cópia independente verificada fora desta conta GitHub e ainda falta a confirmação de dependências externas (deploy, webhooks, links e ferramentas). A exclusão exige autorização explícita.
 
 ## Condições cumulativas para permitir a exclusão
 
