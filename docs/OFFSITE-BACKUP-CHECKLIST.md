@@ -166,3 +166,14 @@ Exemplo de formato para `config/offsite-receipt.json`:
 2. **Criptografia**: Criptografia em repouso com chave KMS gerenciada ou LUKS em unidades fisicas.
 3. **Principio do Menor Privilegio**: As credenciais utilizadas para exportar o backup nao devem ter permissao para apagar arquivos no destino (`write-once, read-many`).
 4. **Imutabilidade**: Ativar politicas de retencao temporal (retention period) para proteger contra ransomware ou exclusao acidental.
+
+## Exportação local verificável (24/11/2026)
+
+O script `scripts/offsite_export_and_restore.py` baixa as releases das seis origens principais e valida SHA-256 e tamanho de cada asset. Exige destino GitHub privado antes da transferência. Use um volume independente, criptografado ou sincronizado com um armazenamento privado. A execução com `--verify-only` não consulta GitHub e restaura os seis bundles e testa CRC dos 2.883 ZIPs de CI. A existência do script não prova a existência de uma segunda cópia.
+
+```powershell
+python scripts/offsite_export_and_restore.py --destination 'D:/Backups/exams-archive'
+python scripts/offsite_export_and_restore.py --destination 'D:/Backups/exams-archive' --verify-only
+```
+
+Registre a evidência de persistência independente e o recibo `OFFSITE-RESTORE.json`; o script não autoriza exclusão.
