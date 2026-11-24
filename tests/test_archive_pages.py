@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SITE_DIR = ROOT / "site"
 WORKFLOW_PATH = ROOT / ".github/workflows/archive-pages.yml"
 
-ALLOWLIST = {"index.html", "style.css", "app.js", ".nojekyll", "llms.txt"}
+ALLOWLIST = {"index.html", "style.css", "app.js", ".nojekyll", "llms.txt", "files.html", "files.js"}
 EMOJI_REGEX = re.compile(r"[\U00010000-\U0010ffff]")
 
 
@@ -23,7 +23,7 @@ class ArchivePagesTests(unittest.TestCase):
             self.assertTrue(target.is_file(), f"Missing required allowlisted file: {name}")
 
     def test_zero_emoji_policy(self):
-        for name in ["index.html", "style.css", "app.js"]:
+        for name in ["index.html", "style.css", "app.js", "files.html", "files.js"]:
             content = (SITE_DIR / name).read_text(encoding="utf-8")
             emojis = EMOJI_REGEX.findall(content)
             self.assertEqual(len(emojis), 0, f"Found emojis in site/{name}: {emojis}")
@@ -32,6 +32,10 @@ class ArchivePagesTests(unittest.TestCase):
         res = subprocess.run(["node", "--check", str(SITE_DIR / "app.js")],
                              capture_output=True, text=True)
         self.assertEqual(res.returncode, 0, f"Syntax error in site/app.js: {res.stderr}")
+
+    def test_files_js_syntax(self):
+        res = subprocess.run(["node", "--check", str(SITE_DIR / "files.js")], capture_output=True, text=True)
+        self.assertEqual(res.returncode, 0, res.stderr)
 
     def test_content_security_policy_and_landmarks(self):
         html = (SITE_DIR / "index.html").read_text(encoding="utf-8")
@@ -52,7 +56,7 @@ class ArchivePagesTests(unittest.TestCase):
             for name in ALLOWLIST:
                 shutil.copy2(SITE_DIR / name, website / name)
 
-            # Legitimate packaging has exactly 5 files
+            # Legitimate packaging has exactly 7 files
             packaged_files = [p.name for p in website.iterdir()]
             self.assertEqual(set(packaged_files), ALLOWLIST)
 
@@ -70,7 +74,7 @@ class ArchivePagesTests(unittest.TestCase):
                 leak_target.write_bytes(content)
                 self.assertNotEqual(
                     len(list(website.iterdir())),
-                    5,
+                    7,
                     f"Directory should reject or detect extra file {filename}"
                 )
                 leak_target.unlink()

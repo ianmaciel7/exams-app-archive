@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src https://api.github.com; img-src 'self' data: blob:; frame-src 'self' blob:; font-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Arquivos e componentes · Exams Archive</title><link rel="stylesheet" href="./style.css"><script src="./files.js" defer></script></head>
+<body><div class="shell"><header class="topbar"><a class="brand" href="./"><span class="brand-mark">EA</span>Exams Archive</a><a href="./">Busca e grafo</a></header>
+<main class="file-workspace"><header><span class="eyebrow">ARQUIVO HISTÓRICO</span><h1>Arquivos e componentes</h1><p>Explore uma revisão pública ou uma pasta recuperada localmente. O código não é executado automaticamente.</p></header>
+<section class="file-controls" aria-label="Origem dos arquivos">
+<label>Repositório público<select id="source-repo"><option>exams-app-old</option><option>exams-app-antigo-2</option></select></label>
+<label>Revisão<select id="source-ref"><option value="dev">dev</option><option value="main">main</option></select></label>
+<button id="load-public" type="button">Abrir revisão</button><button id="load-refs" type="button">Listar branches</button>
+<label class="file-button">Abrir pasta local<input id="local-folder" type="file" webkitdirectory multiple class="file-input"></label>
+<label class="file-button">Abrir arquivos locais<input id="local-files" type="file" multiple class="file-input"></label>
+</section>
+<p id="file-status" role="status" aria-live="polite">Escolha uma origem. Consultas públicas usam apenas a API do GitHub; arquivos locais ficam na aba.</p>
+<div class="file-layout">
+<aside class="tree-pane"><div class="file-pane-title"><h2>Explorador</h2><label><input id="components-only" type="checkbox"> React e stories</label></div><input id="tree-search" type="search" placeholder="Filtrar caminhos…" aria-label="Filtrar arquivos"><div id="tree" class="file-tree"></div></aside>
+<section class="source-pane"><div class="file-pane-title"><h2 id="selected-path">Nenhum arquivo selecionado</h2><a id="source-link" hidden target="_blank" rel="noopener noreferrer">Abrir original</a></div><p id="source-info"></p>
+<div class="file-tabs"><button id="code-tab" aria-pressed="true">Código</button><button id="preview-tab" aria-pressed="false" disabled>Preview</button></div>
+<pre id="source-code" tabindex="0">Selecione um arquivo na árvore.</pre>
+<div id="preview-area" hidden><p id="preview-note"></p><button id="render-preview" type="button">Renderizar HTML estático</button><button id="render-live" type="button" hidden>Executar build local revisado</button><iframe id="preview-frame" title="Preview isolado" sandbox="" referrerpolicy="no-referrer" hidden></iframe><img id="preview-image" alt="Imagem original selecionada" hidden></div>
+<div class="component-help" id="component-help" hidden><h3>Componente React original</h3><p>O código TSX/JSX precisa de React, dependências, CSS e dados de demonstração da mesma revisão. Use as stories originais (Ladle/Storybook) ou um build standalone revisado; importe o HTML gerado em Arquivos locais. O preview estático não executa scripts. O modo de execução é opcional e exclusivo para builds locais confiáveis.</p><a href="https://github.com/ianmaciel7/exams-app-archive/blob/main/docs/COMPONENT-EXPLORER.md" target="_blank" rel="noopener noreferrer">Guia de renderização React</a></div>
+</section></div></main><footer>Não execute código histórico desconhecido. O visual de um build deve ser verificado antes de ser chamado de reprodução fiel.</footer></div></body></html>

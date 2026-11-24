@@ -21,3 +21,6 @@ The GitHub Pages site is a static interface. Local imports are not transmitted. 
 - Cite repository, full commit SHA and original path when available.
 - Distinguish EXTRACTED, INFERRED and unspecified relations.
 - Check current verification reports before assuming backup completeness.
+
+- [Files and component explorer](https://ianmaciel7.github.io/exams-app-archive/files.html): browse public pinned Git trees and local restored files.
+- [React rendering guide](https://github.com/ianmaciel7/exams-app-archive/blob/main/docs/COMPONENT-EXPLORER.md): original stories and reviewed builds.

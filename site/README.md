@@ -1,6 +1,6 @@
 # Exams Archive Pages
 
-Public static shell for the archive. The GitHub repository is public. Only `site/index.html`, `site/style.css`, `site/app.js`, `site/.nojekyll`, and `site/llms.txt` may be deployed or used. The explorer imports locally selected JSON with `File.text()`: it does not fetch, upload, transmit, persist, or log the data.
+Public static shell for the archive. The GitHub repository is public. Only `site/index.html`, `site/style.css`, `site/app.js`, `site/.nojekyll`, `site/llms.txt`, `site/files.html`, and `site/files.js` may be deployed or used. The explorer imports locally selected JSON with `File.text()`: it does not fetch, upload, transmit, persist, or log the data.
 
 ## Setup & Platform Availability
 
@@ -26,9 +26,9 @@ The site is a LOCAL index viewer, not a searchable public mirror. There are no s
 
 ## Security & Privacy Verification
 
-- **Allowlist gate**: Only `site/index.html`, `site/style.css`, `site/app.js`, `site/.nojekyll`, and `site/llms.txt` are included.
+- **Allowlist gate**: Only `site/index.html`, `site/style.css`, `site/app.js`, `site/.nojekyll`, `site/llms.txt`, `site/files.html`, and `site/files.js` are included.
 - **Strict Content Security Policy (CSP)**: `default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'none'; img-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'`.
-- **Zero Network Calls**: No outgoing telemetry, analytics, cookies, local storage, or server communication.
+- **Local search**: no network calls, telemetry, cookies or storage. The separate Files view makes explicit unauthenticated reads to api.github.com for the two allowlisted public repositories. Local imports are not transmitted.
 - **Zero-Emoji Policy**: Pure monochromatic SVG and text UI without Unicode emojis.
 
 ## Limitations
@@ -38,3 +38,7 @@ Searches cover file paths, commit messages and image records; not full source te
 ## Agent and graph interfaces
 
 The public catalog works without an import. Import a graph export (`nodes` + `edges` or `links`) to explore typed relationships locally. See [Agent access](../docs/AGENT-ACCESS.md) for CLI and MCP. The site also serves `llms.txt`. The packaging allowlist includes this curated text file; no historical JSON is published.
+
+## Files and components
+
+Open [Files view](files.html) for historical public Git trees, source inspection and local HTML previews. See [Component explorer](../docs/COMPONENT-EXPLORER.md) for reviewed React build workflows.

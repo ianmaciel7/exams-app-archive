@@ -25,8 +25,8 @@ jobs:
         shell: bash
         run: |
           mkdir -p "$RUNNER_TEMP/website"
-          cp site/index.html site/style.css site/app.js site/.nojekyll site/llms.txt "$RUNNER_TEMP/website/"
-          test "$(find "$RUNNER_TEMP/website" -type f | wc -l)" -eq 5
+          cp site/index.html site/style.css site/app.js site/.nojekyll site/llms.txt site/files.html site/files.js "$RUNNER_TEMP/website/"
+          test "$(find "$RUNNER_TEMP/website" -type f | wc -l)" -eq 7
           ! grep -RIl -E '(ghp_[[:alnum:]]{20,}|github_pat_|BEGIN [A-Z ]+PRIVATE KEY)' "$RUNNER_TEMP/website"
       - name: Check GitHub Pages availability
         id: check_pages
