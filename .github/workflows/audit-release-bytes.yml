@@ -1,0 +1,85 @@
+name: Archive binary and coverage audit
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/audit-release-bytes.yml"
+permissions:
+  contents: read
+jobs:
+  bundle:
+    if: github.repository == 'ianmaciel7/exams-app-archive'
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        source: [exams-app, exams-app-old, exams-app-antigo-2, shadcn-template, shadcn-firebase-template, notes-app]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Restore and audit existing published bundle (aggregate output only)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE: ${{ matrix.source }}
+        run: python scripts/audit_release_bytes.py bundle "$SOURCE"
+  ci-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        shard: ["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15"]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify CI partition hashes and ZIP CRCs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SHARD: ${{ matrix.shard }}
+        run: python scripts/audit_release_bytes.py ci "$SHARD"
+  metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        source: [exams-app, exams-app-old, exams-app-antigo-2, shadcn-template, shadcn-firebase-template, notes-app]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify metadata ZIP and count original records
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE: ${{ matrix.source }}
+        run: python scripts/audit_release_bytes.py metadata "$SOURCE"
+  index:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify published SQLite integrity
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/audit_release_bytes.py index published
