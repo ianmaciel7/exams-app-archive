@@ -1,5 +1,8 @@
 # Como encontrar e recuperar informações antigas
 
+> **Retificação de 24/11/2026:** este documento é um snapshot histórico. A conferência mais recente de cobertura, segurança e lacunas está no [README](../README.md). O backup Git posterior de Notes já possui manifesto verificado; isso não implica que o índice antigo foi reconstruído, que a privacidade esteja garantida ou que a exclusão esteja autorizada.
+
+
 O `exams-app-archive` é privado. Ele preserva metadados de origem e todos os objetos
 alcançáveis pelas refs anunciadas no espelho dos sete repositórios públicos, incluindo
 refs de PR. As 12 branches `notes-app-old*` foram preservadas dentro de bundles
