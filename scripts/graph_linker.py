@@ -1260,7 +1260,7 @@ def query_neighborhood(
     hops = max(1, min(int(hops), 5))
     limit = max(1, min(int(limit), 500))
 
-    seeds = _resolve_seed_nodes(conn, entity, repo=repo)[:10]
+    seeds = _resolve_seed_nodes(conn, entity, repo=repo)[:max(1, min(10, limit // 3))]
     visited_nodes: dict[str, dict[str, Any]] = {}
     depth_by_node: dict[str, int] = {}
     collected_edges: dict[str, dict[str, Any]] = {}
