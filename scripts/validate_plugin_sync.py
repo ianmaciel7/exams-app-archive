@@ -26,8 +26,8 @@ from typing import Any
 
 CANONICAL_SOURCE = "ianmaciel7/exams-app-archive@main:plugins/exams-archive-native/"
 EXPECTED_PLUGIN_ID = "plugins_6b04aaa9fd848191a24525011f76e2bb"
-EXPECTED_VERSION = "0.7.0"
-VALID_VERSIONS = {"0.6.0", "0.7.0"}
+EXPECTED_VERSION = "0.8.0"
+VALID_VERSIONS = {"0.6.0", "0.7.0", "0.8.0"}
 EXPECTED_RELEASE_ID = "pluginrel_6b05737fc5ac8191901dc20c99f82da6"
 VALID_RELEASE_IDS = {
     "pluginrel_6b04c63bd96c8191bda2c535f2b62e1b",
@@ -142,6 +142,8 @@ def verify_manifest_versions(canonical_dir: Path) -> dict[str, Any]:
             raise ValueError(f"Manifest {platform} name {name} != 'exams-archive-native'")
         results[platform] = {"name": name, "version": version}
 
+    if len({m["version"] for m in results.values()}) != 1:
+        raise ValueError("Manifest versions disagree")
     return {"valid": True, "manifests": results}
 
 

@@ -17,7 +17,8 @@ class MultiAgentPluginTests(unittest.TestCase):
         paths = ["plugin.json",".codex-plugin/plugin.json",".claude-plugin/plugin.json",".antigravity-plugin/plugin.json"]
         manifests = [json.loads((PLUGIN / p).read_text(encoding="utf-8")) for p in paths]
         self.assertEqual({m["name"] for m in manifests}, {"exams-archive-native"})
-        self.assertEqual({m["version"] for m in manifests}, {"0.7.0"})
+        self.assertRegex(manifests[0]["version"], r"^\d+\.\d+\.\d+$")
+        self.assertEqual({m["version"] for m in manifests}, {manifests[0]["version"]})
         self.assertEqual(manifests[0]["$schema"], "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json")
         self.assertEqual(manifests[3]["$schema"], "https://antigravity.google/schemas/v1/plugin.json")
         self.assertTrue(manifests[2]["description"])

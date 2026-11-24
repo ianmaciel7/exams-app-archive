@@ -10,7 +10,7 @@ The source of truth is the GitHub repository `ianmaciel7/exams-app-archive`, esp
 ## Procedure
 
 1. Use the existing GitHub connector or `gh` to read the archive README and `reports/FULL-INDEX.md` when only a summary is needed.
-2. For actual historical search, execute `python scripts/archive_query.py sync` **from the unified plugin directory** (the directory containing `plugin.json`). This requires `gh auth login` if release access requires authentication and downloads the checksum-verified compressed SQLite index to the local user cache. Never print or copy tokens.
+2. Prefer the authenticated GitHub query queue documented in `../archive-research/references/private-fts5.md` for historical content and evidence without a local executor. For local historical search, execute `python scripts/archive_query.py sync` **from the unified plugin directory** (the directory containing `plugin.json`). This requires `gh auth login` if release access requires authentication and downloads the checksum-verified compressed SQLite index to the local user cache. Never print or copy tokens.
 3. Search only relevant terms and request bounded results:
    - `python scripts/archive_query.py search "grafo sidebar" --limit 20`
    - `python scripts/archive_query.py search "prototypes" --kind file --repo exams-app-antigo-2`
@@ -23,7 +23,7 @@ The source of truth is the GitHub repository `ianmaciel7/exams-app-archive`, esp
    - `python scripts/archive_flow.py fetch --source <bundle> --sha <full-sha> --path <relative/path> --start-line 1 --end-line 40 --expected-sha256 <sha256>`
    - `python scripts/archive_flow.py recover --source <bundle> --sha <full-sha> --path <relative/path> --expected-sha256 <sha256> --output <private/file>`
 6. For a local-only browser search, run `python scripts/archive_query.py export-pages --output private.archive-browser.json` and import that JSON using the GitHub Pages UI. This file is PRIVATE; never commit or upload it.
-7. Disclose limitations: as checked on 2026-11-23, the current private `notes-app` main/dev/stag/firebase/file branches and three tags had not yet been fully backed up. Re-check before asserting deletion readiness.
+7. Disclose limitations: the Notes Git bundle was verified on 2026-11-24, including the formerly missing branches and tags; two historical worktrees have a verified private supplement. Logs and external dependencies are separate from Git preservation. See the current archive audit.
 
 ## Safety
 
