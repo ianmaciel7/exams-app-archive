@@ -1,7 +1,11 @@
-# Notes App — arquivo parcial de metadados privados
+# Notes App — inventário histórico e backup Git verificado
 
 Fonte: [ianmaciel7/notes-app](https://github.com/ianmaciel7/notes-app) (privado)
-Destino: [ianmaciel7/exams-app-archive](https://github.com/ianmaciel7/exams-app-archive) (privado)
+Destino: [ianmaciel7/exams-app-archive](https://github.com/ianmaciel7/exams-app-archive) (público desde 24/11/2026; não adicionar dados privados sem revisão).
+
+## Estado verificado em 24/11/2026
+
+O bundle integral do Notes App foi restaurado e conferido: 17 heads, 5 tags e 50 refs de PR, total 72 refs originais. Ver [manifesto](../../manifests/notes-app-private-full.json) e [auditoria binária](https://github.com/ianmaciel7/exams-app-archive/actions/runs/45432868764). O ZIP posterior contém 1.135 runs. Dois commits de worktrees ausentes foram preservados em [suplemento autenticado](https://github.com/ianmaciel7/notes-app/releases/tag/notes-worktrees-2026-11-24), com restore e hash verificados; ver [manifesto](../../manifests/notes-worktrees-2026-11-24.json). As origens permanecem intactas. Os dados abaixo são o inventário parcial anterior, preservado como evidência histórica.
 
 ## Dados preservados nesta pasta — 23/11/2026
 
@@ -26,18 +30,9 @@ Essas contagens representam **registros**, não necessariamente entidades distin
 
 As 12 branches históricas `old`, `old-1` a `old-11` foram preservadas em 12 Git Bundles dentro de um backup completo de `exams-app-antigo-2`. Seus commits de ponta coincidiram com o repositório original em [verificação de 15 bundles](../../reports/embedded-bundles-audit.md).
 
-## Pendências para arquivamento privado integral
+## Limitações atuais
 
-- Os objetos Git das branches `main`, `dev`, `stag` e `firebase/file`.
-- Os objetos Git e referências das tags `v0.1.0`, `v0.2.0`, `v0.3.0`. SHAs e descrições **não equivalem** a backup de objetos Git.
-- `refs/pull/*` privadas, inclusive commits não alcançáveis pelas 12 branches históricas.
-- Logs completos e artifacts das 1.130 execuções de CI quando ainda recuperáveis. A pasta `actions/` salva metadados dos runs, **não os logs/binários**.
-- Links para anexos fora de GitHub Git e demais metadados com acesso restrito.
-
-## Como finalizar
-
-O workflow [Archive 100% accessible private Notes history](https://github.com/ianmaciel7/exams-app-archive/actions/workflows/archive-private-notes.yml) já está configurado. Requer o secret de repositório `NOTES_READ_TOKEN` com token **somente leitura** e acesso exclusivamente a `notes-app`, com permissões Contents, Pull requests, Issues e Actions.
-
-Depois de adicionar o secret, execute o workflow manualmente. Ele tentará criar uma release **privada**, validar refs, blobs e checksums, e registrar explicitamente as limitações de API.
-
-**Não descarte `notes-app` original** até a release passar e os dados externos prioritários serem conferidos.
+- Os objetos Git de main, dev, stag, firebase/file, tags originais e refs de PR estão preservados no bundle verificado.
+- O índice histórico autenticado e o índice de conteúdo foram publicados em releases privadas no Notes App. O arquivo público não deve receber novos dados privados.
+- Logs originais de CI são recuperados separadamente dos metadados de runs; ver [auditoria atual](../../reports/ARCHIVE-STATUS-2026-11-24.md).
+- Transferências temporárias e origens não devem ser excluídas sem análise de dependências e autorização específica.
