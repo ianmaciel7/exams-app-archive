@@ -1,0 +1,178 @@
+{
+  "audit_timestamp_utc": "2026-11-24T11:05:07.945156+00:00",
+  "overall_verdict": "FAIL - REPOSITORY DELETION HARD-BLOCKED",
+  "can_delete_repositories": false,
+  "total_conditions": 11,
+  "passed_conditions_count": 6,
+  "failed_conditions_count": 5,
+  "total_repositories_audited": 9,
+  "repositories_blocked_from_deletion": 9,
+  "repositories_eligible_read_only_archive": 4,
+  "repositories_active_preserved": 5,
+  "conditions": {
+    "COND-01-REPOSITORIES-INVENTORIED": {
+      "name": "Inventario Completo dos 9 Repositorios de Origem",
+      "result": "PASS",
+      "evidence": "9/9 repos catalogados no inventario",
+      "mandatory_gate": true
+    },
+    "COND-02-BRANCHES-AUDITED": {
+      "name": "Auditoria e Classificacao das 75 Branches",
+      "result": "PASS",
+      "evidence": "75/75 branches classificadas com SHAs",
+      "mandatory_gate": true
+    },
+    "COND-03-TAGS-RECORDED": {
+      "name": "Preservacao das Referencias de Tags",
+      "result": "PASS",
+      "evidence": "5 tags registradas (notes-app v0.1.0..v0.3.0)",
+      "mandatory_gate": true
+    },
+    "COND-04-GIT-FSCK-INTEGRITY": {
+      "name": "Integridade Estrutural Git fsck --full",
+      "result": "PASS",
+      "evidence": "Zero corrupcao de objetos em bundles e repositorios auditados",
+      "mandatory_gate": true
+    },
+    "COND-05-RELEASE-BUNDLE-CHECKSUMS": {
+      "name": "Checksums SHA-256 e Verificacao de Bundles de Release",
+      "result": "PASS",
+      "evidence": "Manifestos validados; 15/15 bundles historicos verificados com HEADs coincidentes",
+      "mandatory_gate": true
+    },
+    "COND-06-CI-LOGS-AND-METADATA": {
+      "name": "Preservacao de Logs de CI e Metadados de Plataforma",
+      "result": "PASS",
+      "evidence": "2.883 artifacts CI arquivados, logs de Actions conferidos, 7 ZIPs de metadados",
+      "mandatory_gate": true
+    },
+    "COND-07-NOTES-APP-PRIVATE-PRESERVED": {
+      "name": "Preservacao Integral do Notes Privado (#3)",
+      "result": "FAIL",
+      "evidence": "Objetos Git de main, dev, stag, firebase/file e tags pendentes de conclusao via NOTES_READ_TOKEN",
+      "mandatory_gate": true
+    },
+    "COND-08-BRANCH-READINESS-GATE": {
+      "name": "Gate de Seguranca de Branches (#15)",
+      "result": "FAIL",
+      "evidence": "75/75 branches bloqueadas por padrao",
+      "mandatory_gate": true
+    },
+    "COND-09-OFFSITE-BACKUP-VERIFIED": {
+      "name": "Backup Independente Offsite Fora do GitHub (#4)",
+      "result": "FAIL",
+      "evidence": "Falta copia externa independente com SHA-256 conferido e restore testado (Issue #4)",
+      "mandatory_gate": true
+    },
+    "COND-10-EXTERNAL-DEPENDENCIES-AUDITED": {
+      "name": "Auditoria de Dependencias e Segredos Externos",
+      "result": "FAIL",
+      "evidence": "Servicos em producao, deploys ativos e segredos nao desativados",
+      "mandatory_gate": true
+    },
+    "COND-11-OWNER-EXPLICIT-AUTHORIZATION": {
+      "name": "Autorizacao Manual Expressa do Proprietario",
+      "result": "FAIL",
+      "evidence": "Nenhuma autorizacao manual expressa concedida pelo proprietario (ianmaciel7)",
+      "mandatory_gate": true
+    }
+  },
+  "repository_dispositions": [
+    {
+      "repository": "ianmaciel7/exams-app",
+      "role": "Projeto corrente / Aplicacao principal em producao",
+      "deletion_status": "BLOQUEADO PARA EXCLUSAO",
+      "read_only_archive_eligible": false,
+      "recommendation": "Preservar integralmente (Fora do escopo de exclusao)",
+      "blockers": [
+        "Aplicacao em producao ativa; nunca excluir"
+      ]
+    },
+    {
+      "repository": "ianmaciel7/exams-app-old",
+      "role": "Repositorio legado",
+      "deletion_status": "BLOQUEADO PARA EXCLUSAO",
+      "read_only_archive_eligible": true,
+      "recommendation": "Apto para arquivar em modo somente leitura (Exclusao BLOQUEADA: Requer backup offsite #4 e autorizacao expressa)",
+      "blockers": [
+        "Copia independente fora da conta GitHub pendente (Issue #4)",
+        "Aprovacao manual expressa do proprietario ausente"
+      ]
+    },
+    {
+      "repository": "ianmaciel7/exams-app-antigo-2",
+      "role": "Repositorio legado",
+      "deletion_status": "BLOQUEADO PARA EXCLUSAO",
+      "read_only_archive_eligible": true,
+      "recommendation": "Apto para arquivar em modo somente leitura (Exclusao BLOQUEADA: Requer backup offsite #4 e autorizacao expressa)",
+      "blockers": [
+        "Copia independente fora da conta GitHub pendente (Issue #4)",
+        "Aprovacao manual expressa do proprietario ausente"
+      ]
+    },
+    {
+      "repository": "ianmaciel7/shadcn-template",
+      "role": "Repositorio legado",
+      "deletion_status": "BLOQUEADO PARA EXCLUSAO",
+      "read_only_archive_eligible": true,
+      "recommendation": "Apto para arquivar em modo somente leitura (Exclusao BLOQUEADA: Requer backup offsite #4 e autorizacao expressa)",
+      "blockers": [
+        "Copia independente fora da conta GitHub pendente (Issue #4)",
+        "Aprovacao manual expressa do proprietario ausente"
+      ]
+    },
+    {
+      "repository": "ianmaciel7/shadcn-firebase-template",
+      "role": "Repositorio legado",
+      "deletion_status": "BLOQUEADO PARA EXCLUSAO",
+      "read_only_archive_eligible": true,
+      "recommendation": "Apto para arquivar em modo somente leitura (Exclusao BLOQUEADA: Requer backup offsite #4 e autorizacao expressa)",
+      "blockers": [
+        "Copia independente fora da conta GitHub pendente (Issue #4)",
+        "Aprovacao manual expressa do proprietario ausente"
+      ]
+    },
+    {
+      "repository": "ianmaciel7/fcc-responsive-web-design",
+      "role": "Repositorio complementar / Perfil ativo",
+      "deletion_status": "BLOQUEADO PARA EXCLUSAO",
+      "read_only_archive_eligible": false,
+      "recommendation": "Preservar integralmente (Fora do escopo de exclusao)",
+      "blockers": [
+        "Repositorio ativo fora de escopo de exclusao"
+      ]
+    },
+    {
+      "repository": "ianmaciel7/ianmaciel7",
+      "role": "Repositorio complementar / Perfil ativo",
+      "deletion_status": "BLOQUEADO PARA EXCLUSAO",
+      "read_only_archive_eligible": false,
+      "recommendation": "Preservar integralmente (Fora do escopo de exclusao)",
+      "blockers": [
+        "Repositorio ativo fora de escopo de exclusao"
+      ]
+    },
+    {
+      "repository": "ianmaciel7/notes-app",
+      "role": "Projeto corrente / Repositorio privado ativo",
+      "deletion_status": "BLOQUEADO PARA EXCLUSAO",
+      "read_only_archive_eligible": false,
+      "recommendation": "Preservar integralmente; concluir transferencia de objetos Git da Issue #3",
+      "blockers": [
+        "Projeto corrente em desenvolvimento",
+        "Transferencia de objetos Git pendente (Issue #3)",
+        "Proibido qualquer arquivamento ou exclusao automatica"
+      ]
+    },
+    {
+      "repository": "ianmaciel7/exams-app-archive",
+      "role": "Repositorio central de arquivo historico e busca",
+      "deletion_status": "BLOQUEADO PARA EXCLUSAO",
+      "read_only_archive_eligible": false,
+      "recommendation": "Preservar integralmente (Infraestrutura central ativa)",
+      "blockers": [
+        "Destino principal do acervo e dos workflows operacionais"
+      ]
+    }
+  ]
+}
