@@ -155,23 +155,50 @@ function svgNode(tag,attrs={}){const n=document.createElementNS("http://www.w3.o
 const colorFor=i=>palette[i%palette.length];
 function groupKey(n){return n.community!=null?"community:"+n.community:(n.repo||"Grafo")+" / "+(n.path?n.path.split("/")[0]:n.type);}
 function groupName(n){return n.community!=null?(n.communityName||"Comunidade "+n.community):groupKey(n);}
-function layout(nodes,edges,groups,degree){
-  const pos=new Map(),keys=[...new Set(nodes.map(groupKey))];
+// Bounded force simulation, animated on screen; no external physics runtime.
+const motionPreference=matchMedia("(prefers-reduced-motion: reduce)");
+let graphFrame=0,cameraFrame=0,visibleScene=null,rememberedPositions=new Map(),suppressNodeClick=false;
+function stopLayout(){cancelAnimationFrame(graphFrame);graphFrame=0;if(visibleScene)rememberedPositions=new Map([...visibleScene.pos].map(([id,p])=>[id,{x:p.x,y:p.y}]));}
+function layout(nodes,edges){
+  const pos=new Map(),keys=[...new Set(nodes.map(n=>n.group||groupKey(n)))];
   const centers=new Map(keys.map((k,i)=>{const a=i*2*Math.PI/Math.max(1,keys.length);return [k,keys.length===1?[450,280]:[450+Math.cos(a)*230,280+Math.sin(a)*140]];}));
-  nodes.forEach((n,i)=>{const [cx,cy]=centers.get(groupKey(n));const a=i*2.399963,r=22+Math.sqrt(i+1)*12;pos.set(n.id,{x:cx+Math.cos(a)*r,y:cy+Math.sin(a)*r});});
-  if(nodes.length===1){pos.set(nodes[0].id,{x:450,y:280});return pos;}
-  for(let tick=0;tick<75;tick++){
-    const cool=1-tick/80,delta=new Map(nodes.map(n=>[n.id,{x:0,y:0}]));
-    for(let a=0;a<nodes.length;a++)for(let b=a+1;b<nodes.length;b++){const u=pos.get(nodes[a].id),v=pos.get(nodes[b].id),dx=u.x-v.x,dy=u.y-v.y,sq=Math.max(40,dx*dx+dy*dy),r=Math.sqrt(sq),f=2200/sq,px=dx/r*f,py=dy/r*f;delta.get(nodes[a].id).x+=px;delta.get(nodes[a].id).y+=py;delta.get(nodes[b].id).x-=px;delta.get(nodes[b].id).y-=py;}
-    for(const e of edges){const a=pos.get(e.source),b=pos.get(e.target);if(!a||!b)continue;const dx=b.x-a.x,dy=b.y-a.y,r=Math.max(1,Math.hypot(dx,dy)),f=(r-78)*0.035;delta.get(e.source).x+=dx/r*f;delta.get(e.source).y+=dy/r*f;delta.get(e.target).x-=dx/r*f;delta.get(e.target).y-=dy/r*f;}
-    for(const n of nodes){const p=pos.get(n.id),d=delta.get(n.id),center=centers.get(groupKey(n));p.x=Math.max(40,Math.min(860,p.x+(d.x+(center[0]-p.x)*.008)*cool));p.y=Math.max(35,Math.min(515,p.y+(d.y+(center[1]-p.y)*.008)*cool));}
+  const velocities=new Map();
+  nodes.forEach((n,i)=>{const [cx,cy]=centers.get(n.group||groupKey(n));const a=i*2.399963,r=22+Math.sqrt(i+1)*12,prev=rememberedPositions.get(n.id);pos.set(n.id,prev?{...prev}:{x:cx+Math.cos(a)*r,y:cy+Math.sin(a)*r});velocities.set(n.id,{x:0,y:0});});
+  if(nodes.length===1){pos.set(nodes[0].id,{x:450,y:280});}
+  function step(tick){
+    const cool=Math.max(.1,1-tick/100),delta=new Map(nodes.map(n=>[n.id,{x:0,y:0}]));
+    for(let a=0;a<nodes.length;a++)for(let b=a+1;b<nodes.length;b++){const u=pos.get(nodes[a].id),v=pos.get(nodes[b].id);let dx=u.x-v.x,dy=u.y-v.y;if(Math.abs(dx)+Math.abs(dy)<.01){dx=.13;dy=.17;}const sq=Math.max(40,dx*dx+dy*dy),r=Math.sqrt(sq),f=2200/sq+Math.max(0,39-r)*.055,px=dx/r*f,py=dy/r*f;delta.get(nodes[a].id).x+=px;delta.get(nodes[a].id).y+=py;delta.get(nodes[b].id).x-=px;delta.get(nodes[b].id).y-=py;}
+    for(const e of edges){const a=pos.get(e.source),b=pos.get(e.target);if(!a||!b)continue;const dx=b.x-a.x,dy=b.y-a.y,r=Math.max(1,Math.hypot(dx,dy)),f=(r-100)*.035;delta.get(e.source).x+=dx/r*f;delta.get(e.source).y+=dy/r*f;delta.get(e.target).x-=dx/r*f;delta.get(e.target).y-=dy/r*f;}
+    for(const n of nodes){const p=pos.get(n.id),d=delta.get(n.id),v=velocities.get(n.id),center=centers.get(n.group||groupKey(n));v.x=(v.x+(d.x+(center[0]-p.x)*.012)*cool)*.64;v.y=(v.y+(d.y+(center[1]-p.y)*.012)*cool)*.64;p.x=Math.max(40,Math.min(860,p.x+Math.max(-16,Math.min(16,v.x))));p.y=Math.max(35,Math.min(515,p.y+Math.max(-16,Math.min(16,v.y))));}
   }
-  return pos;
+  return {pos,step};
+}
+function paintScene(scene){
+  for(const item of scene.nodeEls){const p=scene.pos.get(item.id);item.group.setAttribute("transform","translate("+p.x+" "+p.y+")");}
+  for(const item of scene.edgeEls){const a=scene.pos.get(item.edge.source),b=scene.pos.get(item.edge.target);for(const [key,value] of Object.entries({x1:a.x,y1:a.y,x2:b.x,y2:b.y}))item.line.setAttribute(key,String(value));}
+}
+function animateLayout(scene){
+  let tick=0;
+  const finish=()=>{if(visibleScene!==scene)return;graphFrame=0;rememberedPositions=new Map([...scene.pos].map(([id,p])=>[id,{x:p.x,y:p.y}]));$("graph").setAttribute("data-layout","settled");if(focusId)centerNode(focusId);};
+  if(motionPreference.matches||!$("graph-motion").checked||scene.pos.size<2){for(;tick<75;tick++)scene.step(tick);paintScene(scene);finish();return;}
+  $("graph").setAttribute("data-layout","running");
+  function frame(){if(visibleScene!==scene)return;for(let i=0;i<2&&tick<75;i++,tick++)scene.step(tick);paintScene(scene);if(tick<75)graphFrame=requestAnimationFrame(frame);else finish();}
+  graphFrame=requestAnimationFrame(frame);
 }
 function applyCamera(){const layer=$("graph").querySelector(".graph-world");if(layer)layer.setAttribute("transform","translate("+camera.x+" "+camera.y+") scale("+camera.z+")");}
-function zoom(f){const z=Math.max(.35,Math.min(5,camera.z*f)),r=z/camera.z;camera.x=450-(450-camera.x)*r;camera.y=280-(280-camera.y)*r;camera.z=z;applyCamera();}
-function fit(){camera={x:0,y:0,z:1};applyCamera();}
+function animateCamera(target){
+  cancelAnimationFrame(cameraFrame);const from={...camera};
+  if(motionPreference.matches||!$("graph-motion").checked){camera=target;applyCamera();return;}
+  const start=performance.now(),duration=280;
+  function frame(now){const t=Math.min(1,(now-start)/duration),ease=1-Math.pow(1-t,3);camera={x:from.x+(target.x-from.x)*ease,y:from.y+(target.y-from.y)*ease,z:from.z+(target.z-from.z)*ease};applyCamera();if(t<1)cameraFrame=requestAnimationFrame(frame);else{camera=target;applyCamera();cameraFrame=0;}}
+  cameraFrame=requestAnimationFrame(frame);
+}
+function zoom(f){const z=Math.max(.35,Math.min(5,camera.z*f)),r=z/camera.z;animateCamera({x:450-(450-camera.x)*r,y:280-(280-camera.y)*r,z});}
+function fit(){cancelAnimationFrame(cameraFrame);camera={x:0,y:0,z:1};applyCamera();}
+function centerNode(id){const p=visibleScene?.pos.get(id);if(!p)return;const z=1.25;animateCamera({x:450-p.x*z,y:280-p.y*z,z});}
+function highlightNode(id){const scene=visibleScene;if(!scene)return;const related=new Set([id]);for(const item of scene.edgeEls){const hit=id&&(item.edge.source===id||item.edge.target===id);item.line.classList.toggle("highlighted",!!hit);item.line.classList.toggle("muted",!!id&&!hit);if(hit){related.add(item.edge.source);related.add(item.edge.target);}}for(const item of scene.nodeEls)item.group.classList.toggle("muted",!!id&&!related.has(item.id));}
 function renderGraph(){
+  stopLayout(); cancelAnimationFrame(cameraFrame); visibleScene=null;
   const svg=$("graph");clear(svg);clear($("graph-neighbors"));clear($("graph-source"));clear($("graph-groups"));
   const g=graphData||structuralGraph(state.matches),all=new Map(g.nodes.map(n=>[n.id,n]));
   const groups=new Map(),degree=new Map(),adj=new Map(),conf=$("confidence").value;
@@ -204,24 +231,41 @@ function renderGraph(){
     visible=[...ids].map(id=>all.get(id)).filter(Boolean);edges=eligible.filter(e=>ids.has(e.source)&&ids.has(e.target)).slice(0,800);
   }
   const world=svgNode("g",{class:"graph-world"});svg.append(world);
-  const pos=layout(visible,edges,groups,degree),maxDegree=Math.max(1,...visible.map(n=>n.memberCount||degree.get(n.id)||1));
-  for(const e of edges){const a=pos.get(e.source),b=pos.get(e.target);if(!a||!b)continue;const line=svgNode("line",{x1:a.x,y1:a.y,x2:b.x,y2:b.y,class:e.confidence==="EXTRACTED"?"graph-edge":"graph-edge graph-dashed"});const tip=svgNode("title");tip.textContent=e.type+" · "+e.confidence;line.append(tip);world.append(line);}
-  for(const n of visible){const p=pos.get(n.id),radius=7+Math.sqrt((n.memberCount||degree.get(n.id)||1)/maxDegree)*13;const group=svgNode("g",{class:"graph-node "+(n.id===focusId?"selected":""),tabindex:0,role:"button","aria-label":n.label});const hit=svgNode("circle",{cx:p.x,cy:p.y,r:Math.max(25,radius),fill:"transparent",class:"graph-hit"});const circle=svgNode("circle",{cx:p.x,cy:p.y,r:radius,fill:groups.get(n.group||groupKey(n))?.color||palette[0]});const label=svgNode("text",{x:p.x,y:p.y+radius+13,"text-anchor":"middle"});label.textContent=(n.label.length>29?n.label.slice(0,27)+"…":n.label)+(n.memberCount?" ("+n.memberCount+")":"");const title=svgNode("title");title.textContent=n.label;group.append(hit,circle,label,title);const select=()=>{if(n.group){activeGroup=n.group;focusId=null;}else focusId=n.id;fit();renderGraph();};group.addEventListener("click",select);group.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();select();}});world.append(group);}
+  const simulation=layout(visible,edges),pos=simulation.pos,maxDegree=Math.max(1,...visible.map(n=>n.memberCount||degree.get(n.id)||1));
+  const scene={...simulation,nodeEls:[],edgeEls:[]};visibleScene=scene;
+  for(const e of edges){if(!pos.has(e.source)||!pos.has(e.target))continue;const line=svgNode("line",{class:e.confidence==="EXTRACTED"?"graph-edge":"graph-edge graph-dashed"});const tip=svgNode("title");tip.textContent=e.type+" · "+e.confidence;line.append(tip);world.append(line);scene.edgeEls.push({edge:e,line});}
+  for(const n of visible){const radius=7+Math.sqrt((n.memberCount||degree.get(n.id)||1)/maxDegree)*13;const group=svgNode("g",{class:"graph-node "+(n.id===focusId?"selected":""),tabindex:0,role:"button","aria-label":n.label,"data-node-id":n.id});const hit=svgNode("circle",{cx:0,cy:0,r:Math.max(25,radius),fill:"transparent",class:"graph-hit"});const circle=svgNode("circle",{cx:0,cy:0,r:radius,fill:groups.get(n.group||groupKey(n))?.color||palette[0]});const label=svgNode("text",{x:0,y:radius+13,"text-anchor":"middle"});label.textContent=(n.label.length>29?n.label.slice(0,27)+"…":n.label)+(n.memberCount?" ("+n.memberCount+")":"");const title=svgNode("title");title.textContent=n.label;group.append(hit,circle,label,title);
+    const select=()=>{if(suppressNodeClick)return;if(n.group){activeGroup=n.group;focusId=null;}else focusId=n.id;fit();renderGraph();};
+    group.addEventListener("click",select);group.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();suppressNodeClick=false;select();}});
+    group.addEventListener("pointerenter",()=>highlightNode(n.id));group.addEventListener("pointerleave",()=>highlightNode(null));
+    group.addEventListener("focus",()=>highlightNode(n.id));group.addEventListener("blur",()=>highlightNode(null));
+    world.append(group);scene.nodeEls.push({id:n.id,group});
+  }
+  paintScene(scene);
+  animateLayout(scene);
   $("graph-meta").textContent=graphOrigin+" · "+g.nodes.length.toLocaleString("pt-BR")+" nós · "+g.edges.length.toLocaleString("pt-BR")+" relações · "+visible.length+" "+(aggregate?"grupos":"nós")+" visíveis";
   if(!visible.length){const txt=svgNode("text",{x:450,y:280,"text-anchor":"middle",fill:"#a9b4c5"});txt.textContent="Nenhum nó corresponde aos filtros.";world.append(txt);}
   const n=all.get(focusId);$("graph-detail").textContent=n?[n.label,n.type,n.repo,n.path,n.sha,n.line,n.validity].filter(Boolean).join(" · "):activeGroup?"Grupo: "+groups.get(activeGroup)?.label:"Selecione um nó ou grupo para inspecionar.";
   if(n){const count=element("p","graph-subtitle",(degree.get(n.id)||0)+" relações no filtro atual");$("graph-source").append(count);if(n.publicUrl){const a=element("a","graph-open","Abrir arquivo original ↗");a.href=n.publicUrl;a.target="_blank";a.rel="noopener noreferrer";$("graph-source").append(a);}for(const item of (adj.get(n.id)||[]).slice(0,60)){const other=all.get(item.id);if(!other)continue;const btn=element("button","neighbor");btn.append(element("strong","",other.label),element("span","",item.edge.type+" · "+item.edge.confidence+(item.edge.evidence?" · "+item.edge.evidence:"")));btn.addEventListener("click",()=>{focusId=other.id;activeGroup="";fit();renderGraph();});$("graph-neighbors").append(btn);}}
   applyCamera();
 }
+$("graph-motion").addEventListener("change",()=>{fit();renderGraph();});
+motionPreference.addEventListener?.("change",()=>{fit();renderGraph();});
 $("confidence").addEventListener("change",renderGraph);
 $("graph-hops").addEventListener("change",renderGraph);
 $("graph-mode").addEventListener("change",()=>{focusId=null;activeGroup="";fit();renderGraph();});
 $("graph-reset").addEventListener("click",()=>{focusId=null;activeGroup="";fit();renderGraph();});
 $("zoom-out").addEventListener("click",()=>zoom(1/1.25));$("zoom-in").addEventListener("click",()=>zoom(1.25));$("graph-fit").addEventListener("click",fit);
 let drag=null;const graphSvg=$("graph");
-graphSvg.addEventListener("pointerdown",e=>{if(e.target.closest(".graph-node"))return;drag={x:e.clientX,y:e.clientY};graphSvg.setPointerCapture(e.pointerId);});
-graphSvg.addEventListener("pointermove",e=>{if(!drag)return;const rect=graphSvg.getBoundingClientRect(),scale=Math.min(rect.width/900,rect.height/560)||1;camera.x+=(e.clientX-drag.x)/scale;camera.y+=(e.clientY-drag.y)/scale;drag={x:e.clientX,y:e.clientY};applyCamera();});
-for(const event of ["pointerup","pointercancel","lostpointercapture"])graphSvg.addEventListener(event,()=>drag=null);
+function pointerInWorld(e){const layer=graphSvg.querySelector(".graph-world"),matrix=layer?.getScreenCTM();if(!matrix)return null;return new DOMPoint(e.clientX,e.clientY).matrixTransform(matrix.inverse());}
+graphSvg.addEventListener("pointerdown",e=>{if(e.button!==0)return;suppressNodeClick=false;const node=e.target.closest(".graph-node");const pt=pointerInWorld(e),id=node?.getAttribute("data-node-id"),p=id&&visibleScene?.pos.get(id);drag={pointer:e.pointerId,startX:e.clientX,startY:e.clientY,x:e.clientX,y:e.clientY,id,moved:false,offsetX:p&&pt?p.x-pt.x:0,offsetY:p&&pt?p.y-pt.y:0};if(!id)graphSvg.setPointerCapture(e.pointerId);});
+graphSvg.addEventListener("pointermove",e=>{if(!drag||drag.pointer!==e.pointerId)return;if(!drag.moved&&Math.hypot(e.clientX-drag.startX,e.clientY-drag.startY)<5)return;if(!drag.moved){drag.moved=true;cancelAnimationFrame(cameraFrame);if(drag.id){stopLayout();$("graph").setAttribute("data-layout","settled");graphSvg.setPointerCapture(e.pointerId);}}
+  if(drag.id){const p=visibleScene?.pos.get(drag.id),pt=pointerInWorld(e);if(p&&pt){p.x=pt.x+drag.offsetX;p.y=pt.y+drag.offsetY;paintScene(visibleScene);}}
+  else{const rect=graphSvg.getBoundingClientRect(),scale=Math.min(rect.width/900,rect.height/560)||1;camera.x+=(e.clientX-drag.x)/scale;camera.y+=(e.clientY-drag.y)/scale;applyCamera();}
+  drag.x=e.clientX;drag.y=e.clientY;
+});
+function endDrag(e){if(!drag||drag.pointer!==e.pointerId)return;if(drag.id&&drag.moved){suppressNodeClick=true;stopLayout();}drag=null;}
+for(const event of ["pointerup","pointercancel","lostpointercapture"])graphSvg.addEventListener(event,endDrag);
 graphSvg.addEventListener("wheel",e=>{if(!e.ctrlKey)return;e.preventDefault();zoom(e.deltaY<0?1.1:1/1.1);},{passive:false});
 // The generated manifest is the source of truth; no embedded file list.
 let catalogEpoch=0;

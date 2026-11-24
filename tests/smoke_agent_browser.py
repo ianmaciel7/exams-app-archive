@@ -69,7 +69,7 @@ def check_browser():
             assert page.locator("#graph .graph-node").count() > 2
             assert page.locator("#graph-groups button").count() >= 2
             page.locator("#zoom-in").click()
-            assert "scale(1.25)" in page.locator(".graph-world").get_attribute("transform")
+            expect(page.locator(".graph-world")).to_have_attribute("transform", "translate(-112.5 -70) scale(1.25)")
             page.locator("#graph-fit").click()
             page.locator("#query").fill("sidebar")
             expect(page.locator("#results article").filter(has_text="prototipo-sidebar.html").first).to_be_visible()
@@ -85,6 +85,20 @@ def check_browser():
             page.locator("#file").set_input_files({"name":"graph.json","mimeType":"application/json","buffer":json.dumps(graph).encode()})
             page.get_by_role("button", name="Sidebar", exact=True).wait_for()
             assert page.locator("#graph .graph-node").count() == 2
+            expect(page.locator("#graph")).to_have_attribute("data-layout", "settled")
+            node = page.get_by_role("button", name="Sidebar", exact=True).locator("circle").last
+            node.hover()
+            expect(page.locator("#graph line")).to_have_class("graph-edge graph-dashed highlighted")
+            before = page.get_by_role("button", name="Sidebar", exact=True).get_attribute("transform")
+            rect = node.bounding_box()
+            assert rect
+            page.mouse.move(rect["x"]+rect["width"]/2, rect["y"]+rect["height"]/2)
+            page.mouse.down()
+            page.mouse.move(rect["x"]+rect["width"]/2+24, rect["y"]+rect["height"]/2+20, steps=5)
+            page.mouse.up()
+            assert page.get_by_role("button", name="Sidebar", exact=True).get_attribute("transform") != before
+            page.locator("#graph-motion").uncheck()
+            expect(page.locator("#graph")).to_have_attribute("data-layout", "settled")
             assert page.locator("#group-title").inner_text() == "Comunidades"
             page.get_by_role("button", name="Sidebar", exact=True).locator("circle").last.click()
             assert "Sidebar" in page.locator("#graph-detail").inner_text()
