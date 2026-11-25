@@ -1,0 +1,542 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-25",
+  "category": "design-methods-and-deliverables",
+  "evidence_status": "documentary web research; examples synthetic; no user testing or production verification",
+  "activities": [
+    {
+      "id": "activity-01",
+      "name": "Product Discovery",
+      "question": "Problema e contexto",
+      "deliverable": "Brief de pesquisa, evidências, hipóteses e decisões de escopo",
+      "activities": "Problema inicial, contexto, atores, restrições, entrevistas, observação e evidência existente; síntese por temas, necessidades, objetivos mensuráveis, riscos e perguntas em aberto.",
+      "include": "Problemas e necessidades com indicação de fonte; distinguir evidência, hipótese e decisão; escopo e próximo experimento.",
+      "avoid": "Personas inventadas como evidência, feature list sem justificativa, métricas inventadas ou visual final obrigatório.",
+      "example": "Hipótese: estudantes precisam recuperar questões erradas rapidamente; investigar como fazem hoje.",
+      "exit": "Problema articulado e hipóteses priorizadas; decisão de avançar, investigar ou interromper, sem declarar validação inexistente.",
+      "evidence": "NN/g Discovery; GOV.UK Discovery; affinity map Found Coffee."
+    },
+    {
+      "id": "activity-02",
+      "name": "Information Architecture",
+      "question": "Encontrabilidade e organização",
+      "deliverable": "Sitemap, taxonomia, modelo de navegação e/ou Object Map",
+      "activities": "Necessidades e conteúdos; inventariar objetos, agrupar, nomear destinos, relações, navegação global/local e busca; card sort gera opções e tree test avalia.",
+      "include": "Rótulos, agrupamentos, tipos de nós, relações e escopo; explicitar categorias que não são páginas e caminhos cruzados.",
+      "avoid": "Não confundir sitemap com IA inteira, ERD, XML, fluxo ou lista de botões; não impor profundidade fixa ou copiar organograma.",
+      "example": "Início / Questões (Banco, Simulados) / Revisão (Erros) / Perfil; Questão relaciona-se a Matéria e Tentativa; responder/revisar são ações.",
+      "exit": "Tarefas de encontrabilidade definidas; categorias, rótulos e relações compreensíveis; testar e registrar lacunas.",
+      "evidence": "NN/g IA vs Sitemap; NN/g Card Sorting vs Tree Testing; OOUX ORCA."
+    },
+    {
+      "id": "activity-03",
+      "name": "Screen Inventory",
+      "question": "Cobertura e escopo",
+      "deliverable": "Tabela de telas, superfícies e estados",
+      "activities": "IA, casos de uso, requisitos e, quando existente, rotas/capturas; listar superfícies, propósito, atores, entradas, estados, fluxos, prioridade, dependências e revisão.",
+      "include": "ID estável, nome, tipo (page/panel/dialog/drawer/state), tarefa, vínculo com flow, escopo/status, estados relevantes; no redesign, fonte/rota/captura.",
+      "avoid": "Não tratar cada hover como tela, cada feature como página, apenas happy path, ou inventário como mockup; distinguir planejar e auditar.",
+      "example": "S01 Início; S02 Banco; S03 Resolução (sem resposta, respondida, falha); S04 Filtros drawer; S05 Explicação panel; S06 Resultado; S07 Encerrar dialog.",
+      "exit": "Cada tarefa prioritária tem superfícies/estados rastreáveis; identificar lacunas, duplicatas e fora de escopo.",
+      "evidence": "NN/g Asset Mapping; Content Inventory; Lex master table. Screen Inventory é convenção prática, não taxonomia normativa."
+    },
+    {
+      "id": "activity-04",
+      "name": "User Flow",
+      "question": "Caminhos de tarefa",
+      "deliverable": "Diagrama com ações, decisões, respostas e saída",
+      "activities": "Objetivo, ator, gatilho, pré-condições, entradas, caminho principal, alternativas, erros/cancelamento/retorno; mapear passos com IDs do inventário; revisar observando tarefas.",
+      "include": "Início, ação, decisão rotulada, resposta, destino, conclusão e recuperação quando relevante. Wireflow opcional quando tela dinâmica muda.",
+      "avoid": "Não usar setas sem gatilho, sitemap como fluxo, backend irrelevante, nem deixar saídas mortas; não confundir jornada multicanal com tarefa.",
+      "example": "Banco → escolher questão → selecionar → responder → sucesso: correção; falha: preservar seleção e tentar novamente → próxima/encerrar.",
+      "exit": "Percorrer tarefa e testar caminhos de risco; cada estado necessário tem origem e destino.",
+      "evidence": "NN/g User Journeys vs User Flows; Wireflows; Figma User Flow."
+    },
+    {
+      "id": "activity-05",
+      "name": "Sketch",
+      "question": "Explorar soluções rapidamente",
+      "deliverable": "Alternativas rápidas e notas de decisão",
+      "activities": "Pergunta de design e restrições; papel/whiteboard/digital; gerar alternativas, anotar o que muda, comparar com a mesma tarefa e selecionar para teste. Crazy 8's é opcional.",
+      "include": "Ideia inteligível, áreas, ação principal, relação com hipótese; alternativas quando exploratório, notas e questões abertas.",
+      "avoid": "Evitar pixels precisos, styling definitivo, design system obrigatório, escolher por estética sem critério; sketch pode ser wireframe, não é categoria exclusiva.",
+      "example": "Três alternativas de resolução: sidebar + questão, split view com explicação, leitura focada.",
+      "exit": "Alternativas suficientemente diferentes comparadas; justificar próximo teste ou refinamento.",
+      "evidence": "Google Design Sprint Sketch/Crazy 8's; Lara Kınay."
+    },
+    {
+      "id": "activity-06",
+      "name": "Low-fidelity Wireframe",
+      "question": "Estrutura e hierarquia",
+      "deliverable": "Wireframe block, outline ou sketchy",
+      "activities": "Partir de tarefas ou sketch; regiões, hierarquia, proporções, rótulos e ações essenciais; usar placeholders só se não interferirem no teste; testar compreensão.",
+      "include": "Seções, navegação, ação principal, conteúdo mínimo, estados que impactam estrutura, anotações de dúvida.",
+      "avoid": "Evitar marca, decoração, sombras e tipografia final sem propósito; não exigir que seja estático ou que todos os estados sejam desenhados.",
+      "example": "Sidebar matérias, área de enunciado, quatro alternativas e ação Responder.",
+      "exit": "Estrutura compreensível para discutir/testar sem acabamento; documentar incertezas.",
+      "evidence": "Balsamiq; Sky View; Smashing Magazine."
+    },
+    {
+      "id": "activity-07",
+      "name": "Mid-fidelity Wireframe",
+      "question": "Densidade e controles",
+      "deliverable": "Wireframe estruturado de detalhe intermediário",
+      "activities": "Usar conteúdo plausível e componentes reconhecíveis; revisar proporções, agrupamentos, hierarquia, controles e estados; anotar comportamento em larguras diferentes.",
+      "include": "Rótulos realistas, controles reconhecíveis, textos de extensão plausível, espaçamentos aproximados e estados relevantes.",
+      "avoid": "Evitar placeholder onde compreensão é essencial, branding como prioridade, precisão falsa, confundir mid-fi com obrigatório.",
+      "example": "Questão numerada, matérias selecionáveis, alternativas e botão Responder, filtro e painel de explicação.",
+      "exit": "Hierarquia, controles e densidade suficientes para a pergunta; testar com dados de exemplo e casos extremos.",
+      "evidence": "Sketch; Balsamiq mid-fi; CMU/NASA p.52; Travel app wireframes."
+    },
+    {
+      "id": "activity-08",
+      "name": "High-fidelity Wireframe",
+      "question": "Precisão estrutural",
+      "deliverable": "Wireframe de alta fidelidade estrutural (opcional)",
+      "activities": "Aprofundar dimensões, grid, conteúdo, regras de overflow, variantes, estados, comportamento responsivo e anotações de implementação conforme hipótese.",
+      "include": "Conteúdo representativo, medidas e relações mais precisas; explicitar fidelidade visual e funcional separadamente.",
+      "avoid": "Não exigir cor, nem duplicar mockup, confundir precisão com validação, ou assumir que alta fidelidade prova interação/produção.",
+      "example": "Enunciados curtos/longos, sidebar colapsável, largura mínima, respostas de múltiplas linhas, explicação e navegação.",
+      "exit": "Questões de estrutura/densidade/responsividade resolvidas o suficiente ou prontas para teste.",
+      "evidence": "Balsamiq, Sketch, Smashing: terminologia varia; Nomadly apenas referência interpretativa."
+    },
+    {
+      "id": "activity-09",
+      "name": "Mockup",
+      "question": "Aparência pretendida",
+      "deliverable": "Render estático visual de alta fidelidade",
+      "activities": "Reutilizar sistema visual existente, aplicar tokens e componentes, tipografia, iconografia, cores, imagens, tema, densidade, estados e responsividade pertinente.",
+      "include": "Hierarquia visual, conteúdo plausível, variantes de aparência, legibilidade e consistência; anotar decisões não finais.",
+      "avoid": "Não fingir que screenshot é software, usar contraste insuficiente, ignorar estados, impor novo design system ou exigir lógica de backend.",
+      "example": "Mesma resolução de questão com paleta, estilos de botão, estado selecionado/correto/incorreto e tema.",
+      "exit": "Revisão visual e de legibilidade; acessibilidade funcional exige implementação/teste.",
+      "evidence": "Figma Wireframe vs Mockup; Sketch comparativo."
+    },
+    {
+      "id": "activity-10",
+      "name": "Interactive Prototype",
+      "question": "Comportamento e experiência",
+      "deliverable": "Protótipo operável dentro de escopo + roteiro de teste",
+      "activities": "Selecionar hipótese, tarefa e dimensões; conectar ações/estados, simular dados, incluir retorno/erro e feedback conforme risco; pilotar, observar usuários, corrigir e retestar.",
+      "include": "Tarefas/escopo, estados, controles operáveis, feedback, caminhos simulados, reset e limites; teclado/foco e responsividade quando testáveis.",
+      "avoid": "Não exigir hi-fi, todas as telas ou backend; não usar dados sensíveis reais, fingir persistência ou alegar validação sem teste.",
+      "example": "Escolher opção → Responder → feedback correto/incorreto → próxima; simular falha com seleção preservada.",
+      "exit": "Executar cenários no escopo; registrar evidência, limitações, achados e decisão; status criado ≠ validado.",
+      "evidence": "NN/g Fidelity e IA-Based View; Houde & Hill; GOV.UK prototyping/testing; Balsamiq examples."
+    }
+  ],
+  "sources": [
+    {
+      "id": "ux-activities-double-diamond",
+      "title": "Design Council — Double Diamond",
+      "url": "https://www.designcouncil.org.uk/resources/the-double-diamond/",
+      "kind": "primary-method",
+      "notes": "Iteração e divergência/convergência; diagrama CC BY 4.0.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Conteúdo textual ou figura recuperados na busca web; não revisão integral de todas as páginas ou teste do produto.",
+      "canonical_id": "ux-activities-double-diamond"
+    },
+    {
+      "id": "ux-activities-discovery",
+      "title": "NN/g — Discovery: Definition",
+      "url": "https://www.nngroup.com/articles/discovery-phase/",
+      "kind": "professional-guidance",
+      "notes": "Problema, resultados, evidência.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Conteúdo textual ou figura recuperados na busca web; não revisão integral de todas as páginas ou teste do produto.",
+      "canonical_id": "ux-activities-discovery"
+    },
+    {
+      "id": "ux-activities-gov-discovery",
+      "title": "GOV.UK — User research in discovery",
+      "url": "https://www.gov.uk/service-manual/user-research/user-research-in-discovery",
+      "kind": "primary-practice-guide",
+      "notes": "Necessidades, contexto, inclusão.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Conteúdo textual ou figura recuperados na busca web; não revisão integral de todas as páginas ou teste do produto.",
+      "canonical_id": "ux-activities-gov-discovery"
+    },
+    {
+      "id": "ux-activities-affinity",
+      "title": "NN/g — Affinity Diagramming",
+      "url": "https://www.nngroup.com/articles/affinity-diagram/",
+      "kind": "professional-guidance",
+      "notes": "Síntese de observações e ideias.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Conteúdo textual ou figura recuperados na busca web; não revisão integral de todas as páginas ou teste do produto.",
+      "canonical_id": "ux-activities-affinity"
+    },
+    {
+      "id": "ux-activities-ia-sitemap",
+      "title": "NN/g — Information Architecture vs. Sitemaps",
+      "url": "https://www.nngroup.com/articles/information-architecture-sitemaps/",
+      "kind": "professional-guidance",
+      "notes": "Sitemap é parte da IA; exemplo visual.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Conteúdo textual ou figura recuperados na busca web; não revisão integral de todas as páginas ou teste do produto.",
+      "canonical_id": "ux-activities-ia-sitemap"
+    },
+    {
+      "id": "ux-activities-ia-card-tree",
+      "title": "NN/g — Card Sorting vs. Tree Testing",
+      "url": "https://www.nngroup.com/articles/card-sorting-tree-testing-differences/",
+      "kind": "professional-guidance",
+      "notes": "Card sort generativo; tree test avaliativo.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Conteúdo textual ou figura recuperados na busca web; não revisão integral de todas as páginas ou teste do produto.",
+      "canonical_id": "ux-activities-ia-card-tree"
+    },
+    {
+      "id": "ux-activities-orca",
+      "title": "OOUX — ORCA Handbook",
+      "url": "https://ooux.com/offerings/xrayux",
+      "kind": "originator-method",
+      "notes": "Objetos, relações, ações e atributos; diagrama.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Conteúdo textual ou figura recuperados na busca web; não revisão integral de todas as páginas ou teste do produto.",
+      "canonical_id": "ux-activities-orca"
+    },
+    {
+      "id": "ux-activities-asset-map",
+      "title": "NN/g — Asset Mapping for Experience Consistency",
+      "url": "https://www.nngroup.com/articles/asset-mapping/",
+      "kind": "professional-guidance",
+      "notes": "Catálogo de superfícies ao longo de jornadas.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Conteúdo textual ou figura recuperados na busca web; não revisão integral de todas as páginas ou teste do produto.",
+      "canonical_id": "ux-activities-asset-map"
+    },
+    {
+      "id": "ux-activities-content-inventory",
+      "title": "NN/g — Content Inventory and Auditing 101",
+      "url": "https://www.nngroup.com/articles/content-audits/",
+      "kind": "professional-guidance",
+      "notes": "Inventário descreve; auditoria avalia. Analogia, não norma de screen inventory.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Conteúdo textual ou figura recuperados na busca web; não revisão integral de todas as páginas ou teste do produto.",
+      "canonical_id": "ux-activities-content-inventory"
+    },
+    {
+      "id": "ux-activities-screen-case",
+      "title": "Lex — Rebrand Design System Case Study",
+      "url": "https://static1.squarespace.com/static/5660899ae4b0e9f4ea746494/t/6760da5cec3ab34b7be4e7c6/1734400619473/Lex-Rebrand-Design%2BSystem_Case%2BStudy-Unlocked.pdf",
+      "kind": "case-study",
+      "notes": "Master table de telas; evidência de prática, não norma.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Conteúdo textual ou figura recuperados na busca web; não revisão integral de todas as páginas ou teste do produto.",
+      "canonical_id": "ux-activities-screen-case"
+    },
+    {
+      "id": "ux-activities-user-flow",
+      "title": "NN/g — User Journeys vs. User Flows",
+      "url": "https://www.nngroup.com/articles/user-journeys-vs-user-flows/",
+      "kind": "professional-guidance",
+      "notes": "Fluxo micro versus jornada macro.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Conteúdo textual ou figura recuperados na busca web; não revisão integral de todas as páginas ou teste do produto.",
+      "canonical_id": "ux-activities-user-flow"
+    },
+    {
+      "id": "ux-activities-wireflow",
+      "title": "NN/g — Wireflows",
+      "url": "https://www.nngroup.com/articles/wireflows/",
+      "kind": "professional-guidance",
+      "notes": "Hotspots, ações, respostas e estados de telas.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Conteúdo textual ou figura recuperados na busca web; não revisão integral de todas as páginas ou teste do produto.",
+      "canonical_id": "ux-activities-wireflow"
+    },
+    {
+      "id": "ux-activities-figma-flow",
+      "title": "Figma — Fluxo de usuário",
+      "url": "https://www.figma.com/pt-br/resource-library/fluxo-de-usuario/",
+      "kind": "vendor-guide",
+      "notes": "Exemplos visuais de fluxos.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Conteúdo textual ou figura recuperados na busca web; não revisão integral de todas as páginas ou teste do produto.",
+      "canonical_id": "ux-activities-figma-flow"
+    },
+    {
+      "id": "ux-activities-crazy8",
+      "title": "Google Design Sprint Kit — Sketch",
+      "url": "https://designsprintkit.withgoogle.com/methodology/phase3-sketch",
+      "kind": "originator-method",
+      "notes": "Exploração e seleção de ideias; Crazy 8's.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Conteúdo textual ou figura recuperados na busca web; não revisão integral de todas as páginas ou teste do produto.",
+      "canonical_id": "ux-activities-crazy8"
+    },
+    {
+      "id": "ux-activities-crazy8-deck",
+      "title": "Google Design Sprint — Voice Action Sprint Deck",
+      "url": "https://designsprintkit.withgoogle.com/assets/tools/Voice%20Action%20Sprint%20Deck%20-%203-Day%20Template.pdf",
+      "kind": "originator-method",
+      "notes": "Exemplo visual e instruções Crazy 8's.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Conteúdo textual ou figura recuperados na busca web; não revisão integral de todas as páginas ou teste do produto.",
+      "canonical_id": "ux-activities-crazy8-deck"
+    },
+    {
+      "id": "ux-activities-balsamiq-wire",
+      "title": "Balsamiq — What are wireframes?",
+      "url": "https://balsamiq.com/blog/what-are-wireframes/",
+      "kind": "vendor-guide",
+      "notes": "Lo-fi e hi-fi; exemplos de imagens; termo hi-fi sobrepõe mockup.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Conteúdo textual ou figura recuperados na busca web; não revisão integral de todas as páginas ou teste do produto.",
+      "canonical_id": "ux-activities-balsamiq-wire"
+    },
+    {
+      "id": "ux-activities-sketch-wire",
+      "title": "Sketch — Wireframe examples",
+      "url": "https://www.sketch.com/blog/wireframe-examples/",
+      "kind": "vendor-guide",
+      "notes": "Exemplos lo/mid/hi-fi, autores creditados na página.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Conteúdo textual ou figura recuperados na busca web; não revisão integral de todas as páginas ou teste do produto.",
+      "canonical_id": "ux-activities-sketch-wire"
+    },
+    {
+      "id": "ux-activities-balsamiq-mid",
+      "title": "Balsamiq — Diving into wireframes",
+      "url": "https://balsamiq.com/learn/learning-tracks/rapid-wireframing/wireframes/",
+      "kind": "vendor-guide",
+      "notes": "Aula de mid-fi; Billy Carlson.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Conteúdo textual ou figura recuperados na busca web; não revisão integral de todas as páginas ou teste do produto.",
+      "canonical_id": "ux-activities-balsamiq-mid"
+    },
+    {
+      "id": "ux-activities-cmu-nasa",
+      "title": "CMU HCII — NASA Final Report, 2010",
+      "url": "https://hcii.cmu.edu/mhci/capstone/2010/nasa/files/NASA-FinalReport-Web.pdf",
+      "kind": "academic-case",
+      "notes": "p. 52: sketches e mid-fi; estudo aplicado, não regra geral.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Conteúdo textual ou figura recuperados na busca web; não revisão integral de todas as páginas ou teste do produto.",
+      "canonical_id": "ux-activities-cmu-nasa"
+    },
+    {
+      "id": "ux-activities-figma-mock",
+      "title": "Figma — Wireframe vs. mockup",
+      "url": "https://www.figma.com/resource-library/wireframe-vs-mockup/",
+      "kind": "vendor-guide",
+      "notes": "Estrutura versus aparência.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Conteúdo textual ou figura recuperados na busca web; não revisão integral de todas as páginas ou teste do produto.",
+      "canonical_id": "ux-activities-figma-mock"
+    },
+    {
+      "id": "ux-activities-sketch-comparison",
+      "title": "Sketch — Wireframe vs mockup vs prototype",
+      "url": "https://www.sketch.com/blog/wireframe-vs-mockup-vs-prototype/",
+      "kind": "vendor-guide",
+      "notes": "Comparação visual da mesma travel app; sobreposição de hi-fi e mockup.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Conteúdo textual ou figura recuperados na busca web; não revisão integral de todas as páginas ou teste do produto.",
+      "canonical_id": "ux-activities-sketch-comparison"
+    },
+    {
+      "id": "ux-activities-smashing-wire",
+      "title": "Smashing Magazine — Wireframing: The Perfectionist’s Guide",
+      "url": "https://www.smashingmagazine.com/2016/11/wireframe-perfectionist-guide/",
+      "kind": "professional-editorial",
+      "notes": "Variações de fidelidade; critérios descritivos não universais.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Conteúdo textual ou figura recuperados na busca web; não revisão integral de todas as páginas ou teste do produto.",
+      "canonical_id": "ux-activities-smashing-wire"
+    },
+    {
+      "id": "ux-activities-prototype-purpose",
+      "title": "Houde & Hill — What do Prototypes Prototype? (1997)",
+      "url": "https://hci.stanford.edu/courses/cs294h/2006/readings/houde-prototypes-97.pdf",
+      "kind": "original-academic-chapter",
+      "notes": "Role, look and feel, implementation; escolher por pergunta.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Conteúdo textual ou figura recuperados na busca web; não revisão integral de todas as páginas ou teste do produto.",
+      "canonical_id": "ux-activities-prototype-purpose"
+    },
+    {
+      "id": "ux-activities-prototype-fidelity",
+      "title": "NN/g — UX Prototypes: Low Fidelity vs. High Fidelity",
+      "url": "https://www.nngroup.com/articles/ux-prototype-hi-lo-fidelity/",
+      "kind": "professional-guidance",
+      "notes": "Fidelidade de visual, conteúdo, interação; pilotar teste.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Conteúdo textual ou figura recuperados na busca web; não revisão integral de todas as páginas ou teste do produto.",
+      "canonical_id": "ux-activities-prototype-fidelity"
+    },
+    {
+      "id": "ux-activities-prototype-coverage",
+      "title": "NN/g — IA-Based View of Prototype Fidelity",
+      "url": "https://www.nngroup.com/articles/ia-view-prototype/",
+      "kind": "professional-guidance",
+      "notes": "Cobertura horizontal, T, M, semi-completa.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Conteúdo textual ou figura recuperados na busca web; não revisão integral de todas as páginas ou teste do produto.",
+      "canonical_id": "ux-activities-prototype-coverage"
+    },
+    {
+      "id": "ux-activities-gov-prototype",
+      "title": "GOV.UK — Making prototypes",
+      "url": "https://www.gov.uk/service-manual/design/making-prototypes",
+      "kind": "primary-practice-guide",
+      "notes": "Protótipos descartáveis, papel/código, não produção.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Conteúdo textual ou figura recuperados na busca web; não revisão integral de todas as páginas ou teste do produto.",
+      "canonical_id": "ux-activities-gov-prototype"
+    },
+    {
+      "id": "ux-activities-gov-alpha",
+      "title": "GOV.UK — How the alpha phase works",
+      "url": "https://www.gov.uk/service-manual/agile-delivery/how-the-alpha-phase-works",
+      "kind": "primary-practice-guide",
+      "notes": "Testar suposições de maior risco, escopo mínimo.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Conteúdo textual ou figura recuperados na busca web; não revisão integral de todas as páginas ou teste do produto.",
+      "canonical_id": "ux-activities-gov-alpha"
+    },
+    {
+      "id": "ux-activities-gov-usability",
+      "title": "GOV.UK — Moderated usability testing",
+      "url": "https://www.gov.uk/service-manual/user-research/using-moderated-usability-testing",
+      "kind": "primary-practice-guide",
+      "notes": "Observar tarefas, não apenas opiniões.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Conteúdo textual ou figura recuperados na busca web; não revisão integral de todas as páginas ou teste do produto.",
+      "canonical_id": "ux-activities-gov-usability"
+    },
+    {
+      "id": "ux-activities-wcag22",
+      "title": "W3C — WCAG 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "kind": "normative-standard",
+      "notes": "Acessibilidade web; aparência isolada não prova conformidade.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Conteúdo textual ou figura recuperados na busca web; não revisão integral de todas as páginas ou teste do produto.",
+      "canonical_id": "behavior-wcag22"
+    },
+    {
+      "id": "ux-activities-found-coffee",
+      "title": "Chris C. Hardy — Found Coffee",
+      "url": "https://chrischardy.com/found-coffee",
+      "kind": "portfolio-example",
+      "notes": "Mapa de afinidade; exemplo, não avaliação independente.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Resultado visual indexado e página de origem identificada; licença de reprodução não verificada.",
+      "canonical_id": "ux-activities-found-coffee"
+    },
+    {
+      "id": "ux-activities-humbleteam",
+      "title": "Humbleteam — UX audit",
+      "url": "https://fintech.humbleteam.com/",
+      "kind": "portfolio-example",
+      "notes": "Board de captura de telas/fluxos; referência relacionada ao inventário, não formato canônico.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Resultado visual indexado e página de origem identificada; licença de reprodução não verificada.",
+      "canonical_id": "ux-activities-humbleteam"
+    },
+    {
+      "id": "ux-activities-registration-wireflow",
+      "title": "Anna Vlasiuk — User Flow Wireframes for Registration",
+      "url": "https://dribbble.com/shots/17517345-User-Flow-Wireframes-for-Registration",
+      "kind": "portfolio-example",
+      "notes": "Wireflow de cadastro com alternativas e estados.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Resultado visual indexado e página de origem identificada; licença de reprodução não verificada.",
+      "canonical_id": "ux-activities-registration-wireflow"
+    },
+    {
+      "id": "ux-activities-sketch-lara",
+      "title": "Lara Gülbüke Kınay — Phase 3 Sketch",
+      "url": "https://gulbuke.medium.com/phase-3-sketch-65e60ea48f21",
+      "kind": "portfolio-example",
+      "notes": "Sketches de compras em papel.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Resultado visual indexado e página de origem identificada; licença de reprodução não verificada.",
+      "canonical_id": "ux-activities-sketch-lara"
+    },
+    {
+      "id": "ux-activities-sky-view",
+      "title": "Heidi Faith Lopez — Sky View",
+      "url": "https://www.heidifaithlopez.com/portfolio/sky-view-airlines-a-travel-mobile-app",
+      "kind": "portfolio-example",
+      "notes": "Wireframes lo-fi de aplicativo de viagem.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Resultado visual indexado e página de origem identificada; licença de reprodução não verificada.",
+      "canonical_id": "ux-activities-sky-view"
+    },
+    {
+      "id": "ux-activities-travel-mid",
+      "title": "Alexey Tretina — Travel app wireframes",
+      "url": "https://dribbble.com/shots/4230021-Travel-app-wireframes",
+      "kind": "portfolio-example",
+      "notes": "Wireframes cinza detalhados, leitura mid-fi interpretativa.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Resultado visual indexado e página de origem identificada; licença de reprodução não verificada.",
+      "canonical_id": "ux-activities-travel-mid"
+    },
+    {
+      "id": "ux-activities-nomadly",
+      "title": "Nomadly — UX/UI Case Study",
+      "url": "https://www.behance.net/gallery/247763113/Nomadly-UXUI-Case-Study",
+      "kind": "portfolio-example",
+      "notes": "Referência monocromática com maior precisão; leitura hi-fi estrutural interpretativa.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Resultado visual indexado e página de origem identificada; licença de reprodução não verificada.",
+      "canonical_id": "ux-activities-nomadly"
+    }
+  ],
+  "sync": {
+    "plugin": "not confirmed; package upload required",
+    "archive": "publication verified by readback separately"
+  },
+  "visuals": [
+    {
+      "path": "ux-design-activities-2026-11-25.svg",
+      "origin": "original educational illustration",
+      "status": "created for this guide"
+    },
+    {
+      "origin": "third-party references",
+      "storage": "link-only",
+      "rights": "unverified except Double Diamond CC BY 4.0"
+    }
+  ]
+}
