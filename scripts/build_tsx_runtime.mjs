@@ -24,18 +24,12 @@ import * as ReactDOM from "react-dom";
 import { createRoot } from "react-dom/client";
 import * as jsxRuntime from "react/jsx-runtime";
 import { transform } from "sucrase";
+import { cva } from "class-variance-authority";
+import { clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
 
 function cn(...inputs) {
-  const out = [];
-  for (const x of inputs) {
-    if (!x) continue;
-    if (typeof x === "string") out.push(x);
-    else if (Array.isArray(x)) out.push(cn(...x));
-    else if (typeof x === "object") {
-      for (const [k, v] of Object.entries(x)) if (v) out.push(k);
-    }
-  }
-  return out.filter(Boolean).join(" ");
+  return twMerge(clsx(inputs));
 }
 
 function makeIconProxy() {
@@ -198,8 +192,10 @@ window.renderArchiveComponent = function renderArchiveComponent(container, entry
       if (spec === "react-dom/client") return { createRoot };
       if (spec === "react/jsx-runtime" || spec === "react/jsx-dev-runtime") return jsxRuntime;
       if (spec === "lucide-react") return iconProxy;
-      if (spec === "clsx" || spec === "tailwind-merge") return { __esModule: true, default: cn, clsx: cn, twMerge: cn };
-      if (spec === "class-variance-authority") return { __esModule: true, cva: (base) => () => base || "" };
+      if (spec === "clsx") return { __esModule: true, default: clsx, clsx };
+      if (spec === "tailwind-merge") return { __esModule: true, twMerge };
+      if (spec === "cn" || spec === "@/lib/utils" || spec.endsWith("/lib/utils")) return { __esModule: true, default: cn, cn };
+      if (spec === "class-variance-authority") return { __esModule: true, cva };
       if (spec === "next/link") {
         const Link = React.forwardRef(({ href, children, ...rest }, ref) =>
           React.createElement("a", { ref, href: typeof href === "string" ? href : "#", onClick: (e) => e.preventDefault(), ...rest }, children)
@@ -246,13 +242,60 @@ window.renderArchiveComponent = function renderArchiveComponent(container, entry
     return mod.exports;
   }
 
+  function StageShell({ title, children }) {
+    const [dark, setDark] = React.useState(false);
+    React.useEffect(() => {
+      document.documentElement.classList.toggle("dark", dark);
+    }, [dark]);
+    return React.createElement(
+      "div",
+      { className: "min-h-screen flex flex-col bg-background text-foreground" },
+      React.createElement(
+        "div",
+        { className: "flex items-center justify-between gap-2 px-3.5 py-2 border-b border-border bg-muted/40 text-xs text-muted-foreground" },
+        React.createElement("span", { className: "truncate" }, title),
+        React.createElement(
+          "button",
+          {
+            type: "button",
+            onClick: () => setDark((d) => !d),
+            className: "px-2.5 py-1 rounded-md border border-border bg-background text-foreground font-medium hover:bg-accent",
+          },
+          dark ? "Tema claro" : "Tema escuro"
+        )
+      ),
+      React.createElement("div", { className: "p-6 flex-1 flex flex-col items-center gap-6" }, children)
+    );
+  }
+
   const root = createRoot(container);
   try {
     const exportsObj = loadModule(entryPath);
     const exportedNames = Object.keys(exportsObj).filter((k) => k !== "__esModule");
 
     let element = null;
-    if (exportsObj.SidebarProvider && exportsObj.Sidebar && exportsObj.SidebarMenu && exportsObj.SidebarMenuButton) {
+    const isStoryFile = /\.stories\.(tsx|jsx)$/i.test(entryPath);
+    if (isStoryFile) {
+      const stories = exportedNames.filter((n) => n !== "default" && typeof exportsObj[n] === "function");
+      if (stories.length) {
+        element = React.createElement(
+          "div",
+          { className: "w-full max-w-2xl flex flex-col gap-5" },
+          stories.map((name) => {
+            const StoryComp = exportsObj[name];
+            const storyArgs = StoryComp.args || {};
+            return React.createElement(
+              "section",
+              { key: name, className: "rounded-xl border border-border bg-card p-5 shadow-xs" },
+              React.createElement("div", { className: "text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3" }, name),
+              React.createElement("div", { className: "flex flex-wrap items-center gap-3" }, React.createElement(StoryComp, storyArgs))
+            );
+          })
+        );
+      }
+    }
+
+    if (!element && exportsObj.SidebarProvider && exportsObj.Sidebar && exportsObj.SidebarMenu && exportsObj.SidebarMenuButton) {
       const {
         SidebarProvider,
         Sidebar,
@@ -285,18 +328,24 @@ window.renderArchiveComponent = function renderArchiveComponent(container, entry
         ? React.createElement(
             SidebarGroup,
             null,
-            SidebarGroupLabel ? React.createElement(SidebarGroupLabel, null, "Exams App") : null,
+            SidebarGroupLabel ? React.createElement(SidebarGroupLabel, null, "Navegacao") : null,
             groupInner
           )
         : groupInner;
       const content = SidebarContent ? React.createElement(SidebarContent, null, group) : group;
-      const header = SidebarHeader ? React.createElement(SidebarHeader, null, React.createElement("strong", null, "Exams App")) : null;
+      const header = SidebarHeader ? React.createElement(SidebarHeader, null, React.createElement("strong", { className: "px-2 py-1 text-sm font-semibold" }, "Exams App")) : null;
       element = React.createElement(
-        SidebarProvider,
-        { defaultOpen: true },
-        React.createElement(Sidebar, { collapsible: "none" }, header, content)
+        "div",
+        { className: "rounded-xl border border-border overflow-hidden shadow-sm bg-sidebar text-sidebar-foreground w-64" },
+        React.createElement(
+          SidebarProvider,
+          { defaultOpen: true, className: "min-h-0" },
+          React.createElement(Sidebar, { collapsible: "none", className: "w-full" }, header, content)
+        )
       );
-    } else {
+    }
+
+    if (!element) {
       let Comp = null;
       if (typeof exportsObj.default === "function" || (exportsObj.default && exportsObj.default.$$typeof)) {
         Comp = exportsObj.default;
@@ -340,12 +389,13 @@ window.renderArchiveComponent = function renderArchiveComponent(container, entry
     }
 
     root.render(
-      React.createElement(PreviewErrorBoundary, null,
-        React.createElement("div", { className: "pv-stage" },
-          React.createElement("div", { className: "pv-banner" },
-            "Preview TSX · " + entryPath + " · " + exportedNames.length + " exports"
-          ),
-          React.createElement("div", { className: "pv-canvas" }, element)
+      React.createElement(
+        PreviewErrorBoundary,
+        null,
+        React.createElement(
+          StageShell,
+          { title: (isStoryFile ? "Ladle Stories · " : "Preview TSX · ") + entryPath + " · " + exportedNames.length + " exports" },
+          element
         )
       )
     );
