@@ -2,7 +2,7 @@
   "schema_version": 1,
   "verified_on": "2026-11-25",
   "plugin": "especialista-ui-ux",
-  "plugin_version": "1.8.6",
+  "plugin_version": "1.8.7",
   "previous_research_commit": "0d7d26be550bb068cc8b33bd712b486d8069952a",
   "patterns": 47,
   "additional_pattern_families": [
@@ -22,13 +22,14 @@
   "added_source_urls": 16,
   "verification": {
     "plugin_release_confirmed": true,
-    "plugin_reference_files_read": false,
-    "source_url_sets_equal": false
+    "plugin_reference_files_read": true,
+    "source_url_sets_equal": true,
+    "pattern_records_equal": true,
+    "new_source_records_equal": true,
+    "catalog_source_metadata_equal": false,
+    "metadata_note": "Legacy source descriptions/check dates differ between plugin and repository; canonical 58 pattern records and 209 URL sets match. New source records checked separately. Markdown link paths are destination-specific."
   },
-  "scope": "General UI/UX behavioral quality, deep research consolidation",
+  "scope": "General UI/UX behavioral quality, deep research consolidation; manual synchronization verified",
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",
-  "pending_sync": {
-    "target": "plugin 1.8.7",
-    "reason": "Repository updated; plugin overlay pending publication and readback"
-  }
+  "plugin_release_id": "pluginrel_6b06dde719a48191b5f57c9f7828baaf"
 }
