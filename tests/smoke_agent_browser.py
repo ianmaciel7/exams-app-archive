@@ -38,7 +38,7 @@ async def check_mcp():
             async with ClientSession(read, write) as session:
                 await session.initialize()
                 names = {tool.name for tool in (await session.list_tools()).tools}
-                assert names == {"search", "graph", "context", "images", "stats", "components_list", "component_render", "component_capture", "component_screenshots", "component_screenshot_image"}, names
+                assert names == {"search", "graph", "context", "images", "stats", "components_list", "component_render", "component_capture", "component_screenshots", "component_screenshot_image", "research_search", "research_audit"}, names
                 stats = await session.call_tool("stats", {})
                 assert not stats.isError, stats
                 assert "fixture" in str(stats.content), stats
@@ -46,9 +46,13 @@ async def check_mcp():
                 assert not images.isError and "sidebar.png" in str(images.content), images
                 components = await session.call_tool("components_list", {})
                 assert not components.isError and "error-boundary" in str(components.content), components
+                research = await session.call_tool("research_search", {"query": "sortable", "product": "dnd-kit"})
+                assert not research.isError and "dnd-kit" in str(research.content), research
+                audit = await session.call_tool("research_audit", {})
+                assert not audit.isError and "visual_matrix" in str(audit.content), audit
                 invalid = await session.call_tool("search", {"query": "--help"})
                 assert invalid.isError, invalid
-        print("MCP: handshake, ten tool registrations, real CLI stats/images, invalid query rejection passed")
+        print("MCP: handshake, twelve tool registrations, real CLI stats/images, invalid query rejection passed")
 
 
 def check_browser():

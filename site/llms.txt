@@ -57,3 +57,6 @@ The GitHub Pages site is a static interface. Local imports are not transmitted. 
 - [Media policy](https://github.com/ianmaciel7/exams-app-archive/blob/main/docs/references/visual-evidence-library/MEDIA-POLICY.md): source links, sampled keyframes, short excerpts, rights and provenance.
 - [Visual evidence manifest](https://github.com/ianmaciel7/exams-app-archive/blob/main/docs/references/visual-evidence-library/manifest.json): nine sampled demos, timestamped reviewed frames, observations and source/blob hashes. Search by pattern, component and state; exact motion timing and easing remain unknown unless measured.
 - [Public gallery](https://ianmaciel7.github.io/exams-app-archive/visual/gallery.html): derivative frames and short clips when deployed; original source remains linked.
+
+- [Public research explorer](https://ianmaciel7.github.io/exams-app-archive/research.html): searchable public research records with explicit provenance and availability; independent of historical search.
+- [Public research JSON](https://ianmaciel7.github.io/exams-app-archive/research.json): allowlisted public catalogs only.

@@ -9,6 +9,9 @@ on:
       - "site/**"
       - "docs/references/visual-evidence-library/**"
       - "scripts/visual_reference_index.py"
+      - "scripts/research_index.py"
+      - "scripts/export_public_research.py"
+      - "docs/references/**"
       - "config/public-catalog-sources.json"
       - "scripts/build_public_catalog.py"
       - "previews/loading/**"
@@ -48,11 +51,12 @@ jobs:
         shell: bash
         run: |
           mkdir -p "$RUNNER_TEMP/website"
-          cp site/index.html site/style.css site/app.js site/.nojekyll site/llms.txt site/files.html site/files.js "$RUNNER_TEMP/website/"
+          cp site/index.html site/style.css site/app.js site/.nojekyll site/llms.txt site/files.html site/files.js site/research.html site/research.js "$RUNNER_TEMP/website/"
           cp "$RUNNER_TEMP/preview-loading.html" "$RUNNER_TEMP/website/"
           cp "$RUNNER_TEMP/preview-error.html" "$RUNNER_TEMP/website/"
           cp "$RUNNER_TEMP/catalog.json" "$RUNNER_TEMP/website/"
-          test "$(find "$RUNNER_TEMP/website" -type f | wc -l)" -eq 10
+          python scripts/export_public_research.py "$RUNNER_TEMP/website/research.json"
+          test "$(find "$RUNNER_TEMP/website" -type f | wc -l)" -eq 13
           python scripts/visual_reference_index.py --export-public "$RUNNER_TEMP/website/visual"
           ! grep -RIl -E '(ghp_[[:alnum:]]{20,}|github_pat_|BEGIN [A-Z ]+PRIVATE KEY)' "$RUNNER_TEMP/website"
       - name: Check GitHub Pages availability
