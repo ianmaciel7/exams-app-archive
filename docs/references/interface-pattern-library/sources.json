@@ -2893,6 +2893,886 @@
       "status": "community-catalog",
       "storage": "link-only",
       "notes": "Collection of brand-derived design files for examples; not official specifications for every brand or proof of completeness."
+    },
+    {
+      "id": "getdesign-home",
+      "title": "Getdesign.md",
+      "url": "https://getdesign.md/",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "catalog landing retrieved",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-catalog",
+      "title": "Getdesign website catalog",
+      "url": "https://getdesign.md/design-md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "550 entries advertised; not all full documents accessible",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-pass",
+      "title": "Getdesign Catalog Pass",
+      "url": "https://getdesign.md/design-md-pass",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "45 paid entries advertised; no paid content retrieved",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-public-directory",
+      "title": "Public DESIGN.md directory",
+      "url": "https://github.com/VoltAgent/awesome-design-md/tree/main/design-md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "84 folders identified",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-1win",
+      "title": "1win DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/1win/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-airbnb",
+      "title": "airbnb DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/airbnb/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-airtable",
+      "title": "airtable DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/airtable/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-aljazeera",
+      "title": "aljazeera DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/aljazeera/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-apple",
+      "title": "apple DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/apple/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-binance",
+      "title": "binance DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/binance/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-bmw-m",
+      "title": "bmw-m DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/bmw-m/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-bmw",
+      "title": "bmw DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/bmw/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-bugatti",
+      "title": "bugatti DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/bugatti/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-cal",
+      "title": "cal DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/cal/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-claude",
+      "title": "claude DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/claude/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-clay",
+      "title": "clay DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/clay/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-clickhouse",
+      "title": "clickhouse DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/clickhouse/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-cohere",
+      "title": "cohere DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/cohere/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-coinbase",
+      "title": "coinbase DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/coinbase/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-composio",
+      "title": "composio DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/composio/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-cursor",
+      "title": "cursor DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/cursor/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-dell-1996",
+      "title": "dell-1996 DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/dell-1996/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-dji",
+      "title": "dji DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/dji/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-elevenlabs",
+      "title": "elevenlabs DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/elevenlabs/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-expo",
+      "title": "expo DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/expo/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-ferrari",
+      "title": "ferrari DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/ferrari/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-figma",
+      "title": "figma DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/figma/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-framer",
+      "title": "framer DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/framer/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-hashicorp",
+      "title": "hashicorp DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/hashicorp/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-hp",
+      "title": "hp DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/hp/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-ibm",
+      "title": "ibm DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/ibm/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-intercom",
+      "title": "intercom DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/intercom/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-jobright",
+      "title": "jobright DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/jobright/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-kraken",
+      "title": "kraken DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/kraken/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-lamborghini",
+      "title": "lamborghini DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/lamborghini/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-linear.app",
+      "title": "linear.app DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/linear.app/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-lovable",
+      "title": "lovable DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/lovable/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-mastercard",
+      "title": "mastercard DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/mastercard/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-mercury",
+      "title": "mercury DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/mercury/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-meta",
+      "title": "meta DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/meta/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-minimax",
+      "title": "minimax DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/minimax/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-mintlify",
+      "title": "mintlify DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/mintlify/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-miro",
+      "title": "miro DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/miro/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-mistral.ai",
+      "title": "mistral.ai DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/mistral.ai/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-mongodb",
+      "title": "mongodb DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/mongodb/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-mydealz",
+      "title": "mydealz DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/mydealz/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-nerdwallet",
+      "title": "nerdwallet DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/nerdwallet/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-nike",
+      "title": "nike DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/nike/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-nintendo-2001",
+      "title": "nintendo-2001 DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/nintendo-2001/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-notion",
+      "title": "notion DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/notion/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-nvidia",
+      "title": "nvidia DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/nvidia/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-ollama",
+      "title": "ollama DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/ollama/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-opencode.ai",
+      "title": "opencode.ai DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/opencode.ai/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-oracle",
+      "title": "oracle DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/oracle/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-oura",
+      "title": "oura DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/oura/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-pinterest",
+      "title": "pinterest DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/pinterest/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-playstation",
+      "title": "playstation DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/playstation/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-posthog",
+      "title": "posthog DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/posthog/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-raycast",
+      "title": "raycast DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/raycast/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-renault",
+      "title": "renault DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/renault/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-replicate",
+      "title": "replicate DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/replicate/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-resend",
+      "title": "resend DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/resend/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-revolut",
+      "title": "revolut DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/revolut/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-runwayml",
+      "title": "runwayml DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/runwayml/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-sanity",
+      "title": "sanity DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/sanity/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-sap",
+      "title": "sap DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/sap/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-sentry",
+      "title": "sentry DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/sentry/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-shopify",
+      "title": "shopify DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/shopify/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-slack",
+      "title": "slack DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/slack/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-spacex",
+      "title": "spacex DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/spacex/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-spotify",
+      "title": "spotify DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/spotify/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-starbucks",
+      "title": "starbucks DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/starbucks/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-stripe",
+      "title": "stripe DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/stripe/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-supabase",
+      "title": "supabase DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/supabase/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-superhuman",
+      "title": "superhuman DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/superhuman/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-tesla",
+      "title": "tesla DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/tesla/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-theverge",
+      "title": "theverge DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/theverge/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-together.ai",
+      "title": "together.ai DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/together.ai/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-uber",
+      "title": "uber DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/uber/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-vercel",
+      "title": "vercel DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/vercel/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-vodafone",
+      "title": "vodafone DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/vodafone/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-voltagent",
+      "title": "voltagent DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/voltagent/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-warp",
+      "title": "warp DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/warp/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-webflow",
+      "title": "webflow DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/webflow/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-wired",
+      "title": "wired DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/wired/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-wise",
+      "title": "wise DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/wise/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-x.ai",
+      "title": "x.ai DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/x.ai/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "getdesign-doc-zapier",
+      "title": "zapier DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/zapier/DESIGN.md",
+      "kind": "community-design-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "full text retrieved; programmatic extraction and synthesis",
+      "storage": "link-only",
+      "notes": "Independent visual analysis; not official brand specification."
     }
   ],
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",

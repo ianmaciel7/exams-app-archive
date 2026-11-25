@@ -102,3 +102,9 @@ Registrar URLs originais e redirects, datas de consulta, fonte e status (verific
 
 - [Catalog and source reviews](./agent-ready-design-system-completeness.md)
 - [Structured index](./agent-ready-design-system-completeness.json)
+
+## Getdesign.md public corpus (2026-11-25)
+
+- [Corpus review and 84-document inventory](./getdesign-public-corpus-2026-11-25.md)
+- [Structured corpus](./getdesign-public-corpus-2026-11-25.json)
+- [Canonical source register](../interface-pattern-library/sources.json)

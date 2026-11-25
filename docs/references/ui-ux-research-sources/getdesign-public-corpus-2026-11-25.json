@@ -1,0 +1,844 @@
+{
+  "id": "getdesign-public-corpus-2026-11-25",
+  "date": "2026-11-25",
+  "scope": "2026-11-25 Firecrawl: 84 public GitHub files retrieved (84/84 identified in repository directory); 550 catalog entries advertised, 45 paid pass entries advertised on separate page; paid/private files not accessed. Full text fetched and programmatically inspected, not manual validation of all rules or live interfaces. Counts measure heading presence, not verified functionality. Independent brand-inspired analyses, not official specifications. Source revision observed on GitHub repository: main fcc70284932276d085f01ef9f83edde90b1258cb; directory last change c7c1bada4eda972236d124e06ee58df129a9266b. Raw retrieval used main, not immutable per-file hashes.",
+  "counts": {
+    "identity": 84,
+    "colors": 84,
+    "typography": 84,
+    "components": 84,
+    "layout": 84,
+    "elevation": 84,
+    "do_dont": 83,
+    "yaml": 74,
+    "shapes_separate": 73,
+    "responsive": 61,
+    "agent_guide": 60,
+    "known_gaps": 43,
+    "hybrid_eleven": 42
+  },
+  "principles": [
+    {
+      "id": "semantic-token-references",
+      "summary": "Use named roles and references instead of duplicated literals; validate token resolution and contrast.",
+      "category": "cross-indexed practice, not new normative rule"
+    },
+    {
+      "id": "surface-ladder",
+      "summary": "Use ordered surfaces and optional hairline edges instead of indiscriminate shadows; verify separation in each theme and high contrast.",
+      "category": "cross-indexed practice, not new normative rule"
+    },
+    {
+      "id": "type-hierarchy",
+      "summary": "Assign typography roles with family, size, weight, line height and tracking; validate fallbacks, zoom and reflow.",
+      "category": "cross-indexed practice, not new normative rule"
+    },
+    {
+      "id": "component-variants",
+      "summary": "Specify purpose, geometry, token references, variants and states; test keyboard, touch, focus, disabled and error independently.",
+      "category": "cross-indexed practice, not new normative rule"
+    },
+    {
+      "id": "layout-responsive",
+      "summary": "Define grid, density, breakpoints and collapse strategy; test actual narrow viewports rather than infer from desktop.",
+      "category": "cross-indexed practice, not new normative rule"
+    },
+    {
+      "id": "visual-restraint",
+      "summary": "Use intentional accent roles, imagery and depth appropriate to content; avoid applying marketing hero defaults to application workspaces.",
+      "category": "cross-indexed practice, not new normative rule"
+    },
+    {
+      "id": "agent-ready-doc",
+      "summary": "Use compact structured tokens plus prose rules and linked component contracts; verify schema and implementation, not merely visual resemblance.",
+      "category": "cross-indexed practice, not new normative rule"
+    },
+    {
+      "id": "evidence-boundaries",
+      "summary": "Separate observed, inferred, recommended and missing; record source, date, scope and known gaps; do not claim product behavior from marketing screenshots.",
+      "category": "cross-indexed practice, not new normative rule"
+    }
+  ],
+  "families": [
+    {
+      "id": "technical-minimalism",
+      "examples": [
+        "linear.app",
+        "raycast",
+        "vercel",
+        "supabase"
+      ]
+    },
+    {
+      "id": "humanist-editorial",
+      "examples": [
+        "claude",
+        "cursor",
+        "lovable",
+        "replicate"
+      ]
+    },
+    {
+      "id": "cinematic",
+      "examples": [
+        "apple",
+        "tesla",
+        "ferrari",
+        "bugatti",
+        "spacex"
+      ]
+    },
+    {
+      "id": "chromatic-expressive",
+      "examples": [
+        "figma",
+        "miro",
+        "clay",
+        "minimax"
+      ]
+    },
+    {
+      "id": "corporate-functional",
+      "examples": [
+        "ibm",
+        "sap",
+        "oracle",
+        "hp"
+      ]
+    },
+    {
+      "id": "terminal-native",
+      "examples": [
+        "opencode.ai",
+        "warp",
+        "ollama",
+        "voltagent"
+      ]
+    },
+    {
+      "id": "content-first",
+      "examples": [
+        "pinterest",
+        "spotify",
+        "airbnb"
+      ]
+    },
+    {
+      "id": "atmospheric",
+      "examples": [
+        "stripe",
+        "framer",
+        "elevenlabs",
+        "mistral.ai"
+      ]
+    },
+    {
+      "id": "dense-editorial",
+      "examples": [
+        "wired",
+        "theverge",
+        "aljazeera"
+      ]
+    },
+    {
+      "id": "retro-skeuomorphic",
+      "examples": [
+        "nintendo-2001",
+        "dell-1996"
+      ]
+    }
+  ],
+  "documents": [
+    {
+      "id": "1win",
+      "pattern": "Dark dense green actions",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/1win/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eight",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "airbnb",
+      "pattern": "Photography coral rounded cards",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/airbnb/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-airbnb",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "airtable",
+      "pattern": "Editorial color blocks",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/airtable/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "aljazeera",
+      "pattern": "Dense news hierarchy",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/aljazeera/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eight",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "apple",
+      "pattern": "Premium photographic minimalism",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/apple/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "binance",
+      "pattern": "Dark finance yellow actions",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/binance/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "bmw-m",
+      "pattern": "Cinematic motorsport uppercase",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/bmw-m/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "bmw",
+      "pattern": "Corporate blue automotive",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/bmw/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "bugatti",
+      "pattern": "Monochrome luxury photography",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/bugatti/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "cal",
+      "pattern": "Functional neutral scheduling",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/cal/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "claude",
+      "pattern": "Warm editorial serif coral",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/claude/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "clay",
+      "pattern": "Claymation saturated blocks",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/clay/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "clickhouse",
+      "pattern": "Dark technical yellow",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/clickhouse/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "cohere",
+      "pattern": "Enterprise editorial mineral surfaces",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/cohere/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "coinbase",
+      "pattern": "Institutional blue finance",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/coinbase/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "composio",
+      "pattern": "Dark technical electric blue",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/composio/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "cursor",
+      "pattern": "Warm cream technical editorial",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/cursor/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "dell-1996",
+      "pattern": "Retro flat color-block web",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/dell-1996/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eight",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "dji",
+      "pattern": "Photographic showroom pill actions",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/dji/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eight",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "elevenlabs",
+      "pattern": "Editorial pastel atmosphere",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/elevenlabs/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "expo",
+      "pattern": "Minimal technical monochrome",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/expo/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "ferrari",
+      "pattern": "Cinematic black red accents",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/ferrari/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "figma",
+      "pattern": "Monochrome pastel blocks",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/figma/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "framer",
+      "pattern": "Dark atmospheric gradients",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/framer/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "hashicorp",
+      "pattern": "Product-specific accent colors",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/hashicorp/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "hp",
+      "pattern": "Angular corporate blue",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/hp/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-ten",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "ibm",
+      "pattern": "Carbon square geometry",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/ibm/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "intercom",
+      "pattern": "Cream editorial hairlines",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/intercom/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "jobright",
+      "pattern": "Mint and contrast pills",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/jobright/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eight",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "kraken",
+      "pattern": "Purple financial identity",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/kraken/DESIGN.md",
+      "format": "narrative",
+      "section_profile": "narrative-nine",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "lamborghini",
+      "pattern": "Dark luxury photography",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/lamborghini/DESIGN.md",
+      "format": "narrative",
+      "section_profile": "narrative-nine",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "linear.app",
+      "pattern": "Surface ladder hairline precision",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/linear.app/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "lovable",
+      "pattern": "Warm cream restraint",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/lovable/DESIGN.md",
+      "format": "narrative",
+      "section_profile": "narrative-nine",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "mastercard",
+      "pattern": "Warm corporate editorial",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/mastercard/DESIGN.md",
+      "format": "narrative",
+      "section_profile": "narrative-nine",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "mercury",
+      "pattern": "Dual light dark indigo",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/mercury/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eight",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "meta",
+      "pattern": "Photography dual actions",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/meta/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "minimax",
+      "pattern": "Neutral base model gradients",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/minimax/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "mintlify",
+      "pattern": "Documentation marketing duality",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/mintlify/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "miro",
+      "pattern": "Colorful whiteboard identity",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/miro/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "mistral.ai",
+      "pattern": "Warm sunset gradient",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/mistral.ai/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "mongodb",
+      "pattern": "Dual surfaces green identity",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/mongodb/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "mydealz",
+      "pattern": "Dense feed voting",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/mydealz/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eight",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "nerdwallet",
+      "pattern": "Flat comparison tables green",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/nerdwallet/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eight",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "nike",
+      "pattern": "Photography monumental type",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/nike/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "nintendo-2001",
+      "pattern": "Y2K metallic skeuomorphism",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/nintendo-2001/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eight",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "notion",
+      "pattern": "Editorial illustrations category colors",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/notion/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "nvidia",
+      "pattern": "Angular technical green",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/nvidia/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "ollama",
+      "pattern": "README-like minimalism",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/ollama/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "opencode.ai",
+      "pattern": "Monospaced terminal native",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/opencode.ai/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "oracle",
+      "pattern": "Neutral surface hierarchy",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/oracle/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eight",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "oura",
+      "pattern": "Warm natural editorial",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/oura/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eight",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "pinterest",
+      "pattern": "Image-first masonry",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/pinterest/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "playstation",
+      "pattern": "Alternating surface chapters",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/playstation/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "posthog",
+      "pattern": "Hand-drawn technical editorial",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/posthog/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "raycast",
+      "pattern": "Dark command palette hairlines",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/raycast/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "renault",
+      "pattern": "Photography restrained geometry",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/renault/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "replicate",
+      "pattern": "Cream technical editorial",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/replicate/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "resend",
+      "pattern": "Dark serif editorial",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/resend/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "revolut",
+      "pattern": "Dark premium expressive type",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/revolut/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eleven",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "runwayml",
+      "pattern": "Cinematic media",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/runwayml/DESIGN.md",
+      "format": "narrative",
+      "section_profile": "narrative-nine",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "sanity",
+      "pattern": "Dark structured technical",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/sanity/DESIGN.md",
+      "format": "narrative",
+      "section_profile": "narrative-nine",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "sap",
+      "pattern": "Flat corporate structure",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/sap/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eight",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "sentry",
+      "pattern": "Dark expressive mascots",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/sentry/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-ten",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "shopify",
+      "pattern": "Cinematic contrasting surfaces",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/shopify/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-ten",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "slack",
+      "pattern": "Pastel product demonstrations",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/slack/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-ten",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "spacex",
+      "pattern": "Fullscreen radical minimalism",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/spacex/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-ten",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "spotify",
+      "pattern": "Content-first dark UI",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/spotify/DESIGN.md",
+      "format": "narrative",
+      "section_profile": "narrative-nine",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "starbucks",
+      "pattern": "Green warm cream",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/starbucks/DESIGN.md",
+      "format": "narrative",
+      "section_profile": "narrative-nine",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "stripe",
+      "pattern": "Atmospheric gradient light type",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/stripe/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-ten",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "supabase",
+      "pattern": "Technical emerald minimalism",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/supabase/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-ten",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "superhuman",
+      "pattern": "Premium dual surfaces",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/superhuman/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-ten",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "tesla",
+      "pattern": "Product-first subtraction",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/tesla/DESIGN.md",
+      "format": "narrative",
+      "section_profile": "narrative-nine",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "theverge",
+      "pattern": "Experimental dense editorial",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/theverge/DESIGN.md",
+      "format": "narrative",
+      "section_profile": "narrative-nine",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "together.ai",
+      "pattern": "Dark technical gradient",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/together.ai/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eight",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "uber",
+      "pattern": "Monochrome pill geometry",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/uber/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eight",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "vercel",
+      "pattern": "Monochrome precision gradient",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/vercel/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eight",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "vodafone",
+      "pattern": "Heavy editorial typography",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/vodafone/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eight",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "voltagent",
+      "pattern": "Dark terminal technical",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/voltagent/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eight",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "warp",
+      "pattern": "Warm charcoal terminal",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/warp/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eight",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "webflow",
+      "pattern": "Product category colors",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/webflow/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eight",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "wired",
+      "pattern": "Typographic editorial",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/wired/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eight",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "wise",
+      "pattern": "Heavy typography green",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/wise/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eight",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "x.ai",
+      "pattern": "Dark futuristic minimalism",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/x.ai/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eight",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    },
+    {
+      "id": "zapier",
+      "pattern": "Warm orange editorial",
+      "url": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/zapier/DESIGN.md",
+      "format": "yaml-markdown",
+      "section_profile": "hybrid-eight",
+      "access": "full text retrieved; programmatic extraction and synthesis"
+    }
+  ],
+  "gaps": [
+    "information architecture",
+    "application shell and real product flows",
+    "interaction states and keyboard navigation",
+    "motion timing and reduced motion",
+    "accessibility validation",
+    "component anatomy",
+    "data visualization",
+    "loading/empty/error states",
+    "themes",
+    "governance"
+  ],
+  "recommendation": "Keep DESIGN.md compact: identity, semantic tokens, layout, rules and references. Link authoritative IA, shell, components, interaction contracts, motion, accessibility, data visualization, content, themes and validation documents as needed. Do not confuse recommendations with required schema.",
+  "sources": [
+    "https://getdesign.md/",
+    "https://getdesign.md/design-md",
+    "https://getdesign.md/design-md-pass",
+    "https://github.com/VoltAgent/awesome-design-md/tree/main/design-md"
+  ]
+}
