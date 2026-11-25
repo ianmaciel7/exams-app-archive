@@ -7,6 +7,8 @@ on:
     branches: [main]
     paths:
       - "site/**"
+      - "docs/references/visual-evidence-library/**"
+      - "scripts/visual_reference_index.py"
       - "config/public-catalog-sources.json"
       - "scripts/build_public_catalog.py"
       - "previews/loading/**"
@@ -51,6 +53,7 @@ jobs:
           cp "$RUNNER_TEMP/preview-error.html" "$RUNNER_TEMP/website/"
           cp "$RUNNER_TEMP/catalog.json" "$RUNNER_TEMP/website/"
           test "$(find "$RUNNER_TEMP/website" -type f | wc -l)" -eq 10
+          python scripts/visual_reference_index.py --export-public "$RUNNER_TEMP/website/visual"
           ! grep -RIl -E '(ghp_[[:alnum:]]{20,}|github_pat_|BEGIN [A-Z ]+PRIVATE KEY)' "$RUNNER_TEMP/website"
       - name: Check GitHub Pages availability
         id: check_pages

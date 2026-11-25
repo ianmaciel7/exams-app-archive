@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - "scripts/**"
+      - "docs/references/visual-evidence-library/**"
       - "plugins/**"
       - "site/**"
       - "tests/**"
@@ -12,6 +13,7 @@ on:
     branches: [main]
     paths:
       - "scripts/**"
+      - "docs/references/visual-evidence-library/**"
       - "plugins/**"
       - "site/**"
       - "tests/**"

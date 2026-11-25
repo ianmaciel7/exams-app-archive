@@ -3,6 +3,8 @@
 import argparse
 import hashlib
 import json
+import shutil
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -40,14 +42,42 @@ def verify(records):
         else: errors.append(f"unknown status: {ident}")
     return errors
 
+def export_public(records, output):
+    """Copy only manifest-verified, explicitly approved public assets."""
+    errors = verify(records)
+    if errors:
+        raise ValueError(str(errors))
+    paths = {"manifest.json", "gallery.html"}
+    for row in records:
+        if row["status"] != "archived-blob-verified":
+            continue
+        if row["license"] != "MIT":
+            raise ValueError("unapproved license")
+        for key in ("path", "license_path"):
+            rel = row[key]
+            if not re.fullmatch(r"media/[a-z0-9-]+/[a-zA-Z0-9_.-]+", rel):
+                raise ValueError("unapproved public path")
+            paths.add(rel)
+    if output.exists() and any(output.iterdir()):
+        raise ValueError("output must be empty")
+    for rel in sorted(paths):
+        target = output / rel
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(LIB / rel, target)
+    return len(paths)
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("query", nargs="?", default="")
     parser.add_argument("--kind", choices=["image","gif","video","demo","documentation"])
     parser.add_argument("--status", choices=["archived-blob-verified","link-only"])
     parser.add_argument("--verify", action="store_true")
+    parser.add_argument("--export-public", type=Path)
     args = parser.parse_args()
     rows = load()
+    if args.export_public:
+        print(json.dumps({"exported": export_public(rows, args.export_public)}))
+        return 0
     if args.verify:
         errors = verify(rows)
         print(json.dumps({"ok":not errors,"records":len(rows),"errors":errors}, ensure_ascii=False))

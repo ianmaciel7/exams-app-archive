@@ -44,3 +44,8 @@ The GitHub Pages site is a static interface. Local imports are not transmitted. 
 ## General-purpose interface pattern library
 
 - [Expanded UI/UX pattern library](https://github.com/ianmaciel7/exams-app-archive/tree/main/docs/references/interface-pattern-library): general visual languages, interaction, motion, AI UX and data visualization; structured records, provenance and validation. Independent of project-specific proposals.
+
+## Visual evidence library
+
+- [Visual evidence manifest](https://github.com/ianmaciel7/exams-app-archive/blob/main/docs/references/visual-evidence-library/manifest.json): archived image, GIF, video and official link-only records. Do not infer playback or measured production timing from blob identity.
+- [Visual reference CLI](https://github.com/ianmaciel7/exams-app-archive/blob/main/scripts/visual_reference_index.py): search by terms, media type and availability; verify local Git blob hashes.

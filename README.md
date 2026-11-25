@@ -105,3 +105,8 @@ correspondente e use o comando `recover` documentado no guia.
 ## General-purpose interface pattern library
 
 - [Expanded UI/UX pattern library](https://github.com/ianmaciel7/exams-app-archive/tree/main/docs/references/interface-pattern-library): general visual languages, interaction, motion, AI UX and data visualization; structured records, provenance and validation. Independent of project-specific proposals.
+
+## Visual evidence library
+
+- [Visual media catalog](docs/references/visual-evidence-library/README.md): licensed screenshots, GIFs and videos with pinned provenance; official link-only references are tracked separately.
+- Search locally: `python scripts/visual_reference_index.py "side panel"`; integrity: `python scripts/visual_reference_index.py --verify`.
