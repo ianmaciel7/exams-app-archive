@@ -16,9 +16,29 @@ if (!depsPrefix || !blobsDir || !outCss) {
   process.exit(1);
 }
 
-const resolvedBlobs = path.resolve(blobsDir).replace(/\\/g, "/");
+const resolvedBlobs = path.resolve(blobsDir);
+const scanFile = path.resolve(depsPrefix, "_tailwind_scan_corpus.tsx");
+const chunks = [];
+function collectTextBlobs(dir) {
+  for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, ent.name);
+    if (ent.isDirectory()) collectTextBlobs(full);
+    else if (ent.isFile()) {
+      const st = fs.statSync(full);
+      if (st.size > 0 && st.size <= 256 * 1024) {
+        const buf = fs.readFileSync(full);
+        if (!buf.includes(0)) chunks.push(buf.toString("utf8"));
+      }
+    }
+  }
+}
+collectTextBlobs(resolvedBlobs);
+// Also include runtime UI utility classes used by StageShell
+chunks.push('min-h-screen flex flex-col bg-background text-foreground items-center justify-between gap-2 gap-3 gap-5 gap-6 px-2 px-2.5 px-3.5 py-1 py-2 p-5 p-6 border border-b border-border bg-muted/40 bg-card bg-sidebar text-sidebar-foreground text-muted-foreground text-xs text-sm font-medium font-semibold uppercase tracking-wider rounded-md rounded-xl shadow-xs shadow-sm w-full w-64 max-w-2xl mb-3 truncate hover:bg-accent overflow-hidden min-h-0 flex-wrap');
+fs.writeFileSync(scanFile, chunks.join("\n"), "utf8");
+
 const entryCss = `@import "tailwindcss";
-@source "${resolvedBlobs}";
+@source "./_tailwind_scan_corpus.tsx";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -150,5 +170,6 @@ execFileSync(twBin, ["-i", tmpEntry, "-o", path.resolve(outCss), "--minify"], {
   stdio: "inherit",
 });
 fs.unlinkSync(tmpEntry);
+if (fs.existsSync(scanFile)) fs.unlinkSync(scanFile);
 const stat = fs.statSync(outCss);
 console.log(JSON.stringify({ tailwind_css: outCss, bytes: stat.size }));

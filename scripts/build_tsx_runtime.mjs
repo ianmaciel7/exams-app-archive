@@ -206,6 +206,12 @@ window.renderArchiveComponent = function renderArchiveComponent(container, entry
         const Img = ({ src, alt, ...rest }) => React.createElement("img", { src: typeof src === "string" ? src : "", alt: alt || "", ...rest });
         return { __esModule: true, default: Img };
       }
+      if (spec === "@base-ui/react/button") {
+        const BaseBtn = React.forwardRef(({ render, nativeButton, ...props }, ref) =>
+          React.createElement("button", { ref, type: props.type || "button", ...props })
+        );
+        return { __esModule: true, Button: BaseBtn, default: BaseBtn };
+      }
       if (spec === "@base-ui/react/merge-props") {
         return {
           __esModule: true,
