@@ -1933,6 +1933,166 @@
       "status": "Search-index evidence",
       "storage": "link-only",
       "notes": "Progressbar, busy and live status semantics."
+    },
+    {
+      "id": "behavior-device-handoff",
+      "title": "UI Patterns — Device Handoff",
+      "url": "https://ui-patterns.com/patterns/DeviceHandoff",
+      "kind": "pattern-library",
+      "recorded_on": "2026-11-25",
+      "status": "Cited in completed deep-research report; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "behavior-android-continue-on",
+      "title": "Android — Enable and customize cross-device handoff",
+      "url": "https://developer.android.com/develop/better-together/continue-on/enable-support",
+      "kind": "primary-platform",
+      "recorded_on": "2026-11-25",
+      "status": "Cited in completed deep-research report; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "behavior-nng-reset-cancel",
+      "title": "NN/g — Reset and Cancel Buttons",
+      "url": "https://www.nngroup.com/articles/reset-and-cancel-buttons/",
+      "kind": "usability-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Cited in completed deep-research report; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "behavior-nng-expectations",
+      "title": "NN/g — Don’t Prioritize Efficiency Over Expectations",
+      "url": "https://www.nngroup.com/articles/efficiency-vs-expectations/",
+      "kind": "usability-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Cited in completed deep-research report; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "behavior-nng-disclosure",
+      "title": "NN/g — Progressive Disclosure",
+      "url": "https://www.nngroup.com/articles/progressive-disclosure/",
+      "kind": "usability-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Cited in completed deep-research report; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "behavior-optimistic-ui",
+      "title": "Smashing Magazine — True Lies of Optimistic User Interfaces",
+      "url": "https://www.smashingmagazine.com/2016/11/true-lies-of-optimistic-user-interfaces/",
+      "kind": "practitioner-article",
+      "recorded_on": "2026-11-25",
+      "status": "Cited in completed deep-research report; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "behavior-wcag22-status",
+      "title": "W3C — Understanding SC 4.1.3 Status Messages",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html",
+      "kind": "accessibility-standard-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Cited in completed deep-research report; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "behavior-nng-tabs-accordions",
+      "title": "NN/g — Tabs vs. Accordions",
+      "url": "https://www.nngroup.com/videos/tabs-vs-accordions/",
+      "kind": "usability-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Cited in completed deep-research report; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "behavior-nng-design-guidance",
+      "title": "NN/g — Design Guidance",
+      "url": "https://www.nngroup.com/articles/design-guidance/",
+      "kind": "usability-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation or reference catalog; revalidate before reuse",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "behavior-nng-pattern-guidelines",
+      "title": "NN/g — Design-Pattern Guidelines",
+      "url": "https://www.nngroup.com/articles/design-pattern-guidelines/",
+      "kind": "usability-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation or reference catalog; revalidate before reuse",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "behavior-ixdf-pattern-language",
+      "title": "IxDF — Interaction Design Patterns",
+      "url": "https://ixdf.org/literature/book/the-glossary-of-human-computer-interaction/interaction-design-patterns",
+      "kind": "education",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation or reference catalog; revalidate before reuse",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "behavior-baymard-guidelines",
+      "title": "Baymard — UX Best Practice Guidelines",
+      "url": "https://baymard.com/product/ux-best-practice-guidelines",
+      "kind": "research-catalog",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation or reference catalog; revalidate before reuse",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "behavior-wcag22",
+      "title": "W3C — WCAG 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "kind": "accessibility-standard",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation or reference catalog; revalidate before reuse",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "behavior-iso110",
+      "title": "ISO 9241-110 — Interaction principles",
+      "url": "https://www.iso.org/standard/75258.html",
+      "kind": "standard-catalog",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation or reference catalog; revalidate before reuse",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "behavior-gov-guidelines",
+      "title": "Research-Based Web Design & Usability Guidelines",
+      "url": "https://www.govinfo.gov/app/details/GOVPUB-HE-PURL-LPS73842",
+      "kind": "historical-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation or reference catalog; revalidate before reuse",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "behavior-pattern-form",
+      "title": "Hillside — A Pattern Language for Pattern Writing",
+      "url": "https://www.hillside.net/index.php/a-pattern-language-for-pattern-writing",
+      "kind": "pattern-writing-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation or reference catalog; revalidate before reuse",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
     }
   ],
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",

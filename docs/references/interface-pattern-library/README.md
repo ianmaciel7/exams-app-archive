@@ -47,3 +47,9 @@ No claims of a market-share ranking or universal effectiveness. Primary document
 - [Pattern family and evidence](../ui-ux-research-sources/asynchronous-non-blocking-ux.md)
 - [Structured pattern catalog](../ui-ux-research-sources/asynchronous-non-blocking-ux.json)
 - 13 patterns in a separate family; 12 additional source URLs, 193 total. Original 47-pattern catalog preserved. Evidence and access limitations recorded.
+
+## Behavioral UX Quality — 2026 deep research
+
+- [Catalog and verification checklist](../ui-ux-research-sources/behavioral-ux-quality-2026.md)
+- [Machine-readable catalog](../ui-ux-research-sources/behavioral-ux-quality-2026.json)
+- 58 indexed entries in 12 families, 209 source URLs total (+16); overlaps prior catalogs. Plugin synchronization tracked separately, pending publication.

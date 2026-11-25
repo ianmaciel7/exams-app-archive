@@ -1,0 +1,1174 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-25",
+  "title": "Behavioral UX Quality — Interaction Design Patterns and Guidelines",
+  "scope": "General, product-independent web/SaaS/mobile/desktop/AI; contextual not universal.",
+  "provenance": "Completed ChatGPT Deep Research report: Padrões e Diretrizes de UI/UX para Aplicações Web Modernas (2026); 12 thematic sections, checklist and document taxonomy. Curated consolidation with corrections; not a verbatim transcript.",
+  "pattern_count": 58,
+  "families": [
+    {
+      "id": "async",
+      "title": "Asynchronous work and multitasking",
+      "count": 7
+    },
+    {
+      "id": "continuity",
+      "title": "Cross-device and session continuity",
+      "count": 5
+    },
+    {
+      "id": "navigation",
+      "title": "Navigation and workspace",
+      "count": 7
+    },
+    {
+      "id": "editing",
+      "title": "Editing and data protection",
+      "count": 6
+    },
+    {
+      "id": "resilience",
+      "title": "Connectivity and recovery",
+      "count": 5
+    },
+    {
+      "id": "feedback",
+      "title": "Visibility and feedback",
+      "count": 4
+    },
+    {
+      "id": "discovery",
+      "title": "Discoverability and contextual interaction",
+      "count": 4
+    },
+    {
+      "id": "accessibility",
+      "title": "Accessibility and responsive interaction",
+      "count": 6
+    },
+    {
+      "id": "errors",
+      "title": "Error prevention and recovery",
+      "count": 4
+    },
+    {
+      "id": "trust",
+      "title": "Privacy, security and user control",
+      "count": 3
+    },
+    {
+      "id": "collaboration",
+      "title": "Collaboration and sharing",
+      "count": 3
+    },
+    {
+      "id": "ai",
+      "title": "Human-AI interaction",
+      "count": 4
+    }
+  ],
+  "patterns": [
+    {
+      "id": "background-execution",
+      "family": "async",
+      "name": "Background Tasks / Non-blocking Interaction",
+      "behavior": "Run long jobs without disabling unrelated work; only block genuinely conflicting operations.",
+      "acceptance": "Start a job, open another view and continue editing; navigate away and verify actual job state.",
+      "priority": "contextual",
+      "source_ids": [
+        "nng-waits",
+        "logrocket-async"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "concurrent-task-management",
+      "family": "async",
+      "name": "Concurrent Tasks",
+      "behavior": "Separate each task's identity, status and results; respect concurrency limits.",
+      "acceptance": "Run two independent tasks, switch between them, and verify neither state is overwritten.",
+      "priority": "contextual",
+      "source_ids": [
+        "nng-waits",
+        "logrocket-async"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "task-tray",
+      "family": "async",
+      "name": "Task Center / Job Queue",
+      "behavior": "Expose queued, running, awaiting input, finished and failed tasks; no fake ETA.",
+      "acceptance": "Locate a job after navigation and inspect its actual status and result.",
+      "priority": "contextual",
+      "source_ids": [
+        "logrocket-async"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "modeless-progress",
+      "family": "async",
+      "name": "Modeless Progress",
+      "behavior": "Show determinate progress when measurable; otherwise state or stage, without locking the workspace.",
+      "acceptance": "Unknown work shows no invented percentage; measured progress agrees with backend.",
+      "priority": "contextual",
+      "source_ids": [
+        "nng-waits",
+        "behavior-wcag22-status"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "cancel-retry",
+      "family": "async",
+      "name": "Cancellation / Retry",
+      "behavior": "Allow cancel or retry only if supported; distinguish request, confirmed cancellation and completion.",
+      "acceptance": "Race cancel against completion; no duplicate irreversible effect on retry.",
+      "priority": "contextual",
+      "source_ids": [
+        "nng-waits",
+        "logrocket-async"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "completion-feedback",
+      "family": "async",
+      "name": "Completion Notification",
+      "behavior": "Report outcome with task identity and link; interrupt only for consequential decisions.",
+      "acceptance": "Find finished/failed work without watching its progress; don't steal focus unnecessarily.",
+      "priority": "contextual",
+      "source_ids": [
+        "nng-waits",
+        "behavior-wcag22-status"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "partial-results",
+      "family": "async",
+      "name": "Partial Results / Streaming",
+      "behavior": "Present available meaningful output, distinguish partial from final and preserve failure state.",
+      "acceptance": "Interrupt stream and reconnect; distinguish saved output from incomplete output.",
+      "priority": "contextual",
+      "source_ids": [
+        "logrocket-async"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "device-handoff",
+      "family": "continuity",
+      "name": "Device Handoff / Cross-Device Continuity / Continue On",
+      "behavior": "Resume the same authorized task on a second device; transfer context, not reusable authentication secrets.",
+      "acceptance": "Open on mobile after desktop; restore permitted item, draft and stage; reject expired or unauthorized link.",
+      "priority": "contextual",
+      "source_ids": [
+        "behavior-device-handoff",
+        "behavior-android-continue-on"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "session-restore",
+      "family": "continuity",
+      "name": "Session Restore / Workspace Persistence",
+      "behavior": "Restore meaningful view, scroll, selection and drafts after reload or restart; avoid shared-device leakage.",
+      "acceptance": "Reload and relaunch, verify expected state and account isolation.",
+      "priority": "contextual",
+      "source_ids": [
+        "behavior-device-handoff",
+        "nng-complex"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "state-sync",
+      "family": "continuity",
+      "name": "Cross-device State Synchronization",
+      "behavior": "Synchronize committed state across authorized clients; distinguish local drafts, pending sync and conflicts.",
+      "acceptance": "Edit on A; resume B; resolve concurrent edits without silent overwrite.",
+      "priority": "contextual",
+      "source_ids": [
+        "behavior-device-handoff",
+        "ink-localfirst"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "durable-task-state",
+      "family": "continuity",
+      "name": "Persistent Task State / Task Re-entry",
+      "behavior": "Jobs survive navigation and, if supported by backend, closing client; reopen same task identity.",
+      "acceptance": "Close browser, open another device and query job; never promise durability without support.",
+      "priority": "contextual",
+      "source_ids": [
+        "nng-waits",
+        "logrocket-async"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "handoff-confirmation",
+      "family": "continuity",
+      "name": "Handoff Confirmation",
+      "behavior": "Clearly indicate source/target transfer status; expire transfer links and enforce permissions.",
+      "acceptance": "Failed or expired transfer explains recovery without losing original work.",
+      "priority": "contextual",
+      "source_ids": [
+        "behavior-device-handoff",
+        "behavior-android-continue-on"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "deep-link",
+      "family": "navigation",
+      "name": "Deep Linking / Addressable State",
+      "behavior": "Provide stable authorized URLs for shareable content and meaningful view state; keep secrets out of URLs.",
+      "acceptance": "Open link in fresh authorized client, back/forward works; unauthorized user denied.",
+      "priority": "contextual",
+      "source_ids": [
+        "nng-complex",
+        "behavior-device-handoff"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "state-preserving-navigation",
+      "family": "navigation",
+      "name": "State-preserving Navigation",
+      "behavior": "Preserve relevant scroll, filters, selection and navigation history where expected.",
+      "acceptance": "Open detail then Back; return to prior list location and filters.",
+      "priority": "contextual",
+      "source_ids": [
+        "nng-complex"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "staged-flow",
+      "family": "navigation",
+      "name": "Wizard / Stepper / Progressive Navigation",
+      "behavior": "Show step and progress; preserve valid data when going back or pausing.",
+      "acceptance": "Back/next, reload or validation failure does not erase draft.",
+      "priority": "contextual",
+      "source_ids": [
+        "nng-waits",
+        "nng-complex"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "workspace-tabs",
+      "family": "navigation",
+      "name": "Tabbed Workspace / Split View",
+      "behavior": "Use independent stateful document views where multiple work items are needed; not identical to section tabs.",
+      "acceptance": "Switch panels/tabs without losing edits; keyboard navigation and close behavior consistent.",
+      "priority": "contextual",
+      "source_ids": [
+        "nng-complex",
+        "apg",
+        "behavior-nng-tabs-accordions"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "command-palette",
+      "family": "navigation",
+      "name": "Command Palette",
+      "behavior": "Search actions and objects via keyboard and discoverable button; avoid shortcut conflicts.",
+      "acceptance": "Find/execute via keyboard and touch alternative; Escape restores focus.",
+      "priority": "contextual",
+      "source_ids": [
+        "command-palette-detail",
+        "apg"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "global-search",
+      "family": "navigation",
+      "name": "Global Search / Faceted Search",
+      "behavior": "Find relevant items with clear scope, filters, meaningful empty/error results.",
+      "acceptance": "Search across permitted content, distinguish zero results from network failure.",
+      "priority": "contextual",
+      "source_ids": [
+        "nng-complex"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "keyboard-shortcuts",
+      "family": "navigation",
+      "name": "Keyboard Accelerators",
+      "behavior": "Offer discoverable shortcuts for frequent actions with equivalent visible controls.",
+      "acceptance": "Operate common actions without pointer; respect system/browser and assistive shortcuts.",
+      "priority": "contextual",
+      "source_ids": [
+        "apg",
+        "behavior-wcag22"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "autosave",
+      "family": "editing",
+      "name": "Autosave / Draft Persistence",
+      "behavior": "Save drafts reliably and show saving/saved/pending/error; distinguish drafts from published changes.",
+      "acceptance": "Edit, disconnect, reload; show true save state; prevent silent loss.",
+      "priority": "contextual",
+      "source_ids": [
+        "behavior-nng-expectations",
+        "ink-localfirst"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "explicit-commit",
+      "family": "editing",
+      "name": "Explicit Save / Apply / Publish",
+      "behavior": "Use explicit commit when changes have meaningful side effects or expectation of cancellation.",
+      "acceptance": "Cancel does not commit unintended changes; autosave can coexist with publish.",
+      "priority": "fundamental",
+      "source_ids": [
+        "behavior-nng-expectations",
+        "behavior-nng-reset-cancel"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "undo-redo",
+      "family": "editing",
+      "name": "Undo / Redo",
+      "behavior": "Support reversible meaningful edits with appropriate scope and clear limits.",
+      "acceptance": "Undo/redo via keyboard and touch; no claim of undo for irreversible external effects.",
+      "priority": "contextual",
+      "source_ids": [
+        "behavior-nng-reset-cancel"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "optimistic-ui",
+      "family": "editing",
+      "name": "Optimistic UI / Optimistic Update",
+      "behavior": "Show provisional low-risk reversible effects; reconcile with authoritative response and explain failure.",
+      "acceptance": "Force rejection and concurrent changes; rollback or resolve and preserve user intent.",
+      "priority": "contextual",
+      "source_ids": [
+        "behavior-optimistic-ui"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "cancel-discard",
+      "family": "editing",
+      "name": "Cancel / Discard Changes",
+      "behavior": "Provide explicit safe exit; confirm discarding unsaved meaningful work only when needed.",
+      "acceptance": "Escape and Cancel perform intended semantics; no silent commit or data loss.",
+      "priority": "fundamental",
+      "source_ids": [
+        "behavior-nng-reset-cancel",
+        "behavior-nng-expectations"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "version-history",
+      "family": "editing",
+      "name": "Version History / Restore",
+      "behavior": "Expose relevant prior versions and recovery when durable history is needed.",
+      "acceptance": "Restore intended version with authorization; do not silently overwrite newer work.",
+      "priority": "contextual",
+      "source_ids": [
+        "nng-waits",
+        "ink-localfirst"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "offline-capability",
+      "family": "resilience",
+      "name": "Offline-capable / Local-first UX",
+      "behavior": "Choose offline reading or editing based on actual needs and security; communicate limits.",
+      "acceptance": "Disconnect, perform supported actions and verify actual local persistence and sync.",
+      "priority": "contextual",
+      "source_ids": [
+        "ink-localfirst"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "reconnection",
+      "family": "resilience",
+      "name": "Reconnect and Resume",
+      "behavior": "Recover connection transparently when safe, show stale/pending status and allow retry.",
+      "acceptance": "Drop network during edit/job; reconnect without duplicate submission or loss.",
+      "priority": "contextual",
+      "source_ids": [
+        "ink-localfirst",
+        "logrocket-async"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "pending-sync",
+      "family": "resilience",
+      "name": "Pending Sync / Outbox",
+      "behavior": "Queue eligible operations durably; display pending, blocked and conflict states.",
+      "acceptance": "Restart while offline; reconnect and replay idempotently with authorization.",
+      "priority": "contextual",
+      "source_ids": [
+        "ink-localfirst"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "conflict-resolution",
+      "family": "resilience",
+      "name": "Conflict Resolution",
+      "behavior": "Avoid silent last-write-wins for consequential conflicts; present merge or recovery options.",
+      "acceptance": "Concurrent conflicting edits give predictable resolution without hiding discarded changes.",
+      "priority": "contextual",
+      "source_ids": [
+        "ink-localfirst"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "offline-constraints",
+      "family": "resilience",
+      "name": "Graceful Degradation",
+      "behavior": "Explain unavailable network-dependent actions and offer useful alternatives; no fake success.",
+      "acceptance": "Attempt payment offline; prevent unsafe submission, explain next step.",
+      "priority": "fundamental",
+      "source_ids": [
+        "ink-localfirst"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "immediate-feedback",
+      "family": "feedback",
+      "name": "Immediate Action Feedback",
+      "behavior": "Acknowledge meaningful interactions without excessive animation; do not conflate acknowledgement with success.",
+      "acceptance": "Slow network: pending state appears; actual outcome subsequently shown.",
+      "priority": "fundamental",
+      "source_ids": [
+        "behavior-nng-expectations",
+        "behavior-wcag22-status"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "status-messages",
+      "family": "feedback",
+      "name": "Accessible Status Messages",
+      "behavior": "Expose status messages programmatically without forcing focus, as WCAG 4.1.3 applies.",
+      "acceptance": "Screen reader announces meaningful waiting, result and error messages without spam.",
+      "priority": "fundamental",
+      "source_ids": [
+        "behavior-wcag22-status",
+        "behavior-wcag22"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "contextual-outcome",
+      "family": "feedback",
+      "name": "Contextual Success and Error Feedback",
+      "behavior": "Describe affected object, outcome and next action where useful.",
+      "acceptance": "User can tell which of multiple operations succeeded or failed.",
+      "priority": "fundamental",
+      "source_ids": [
+        "nng-waits",
+        "behavior-nng-expectations"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "interruption-management",
+      "family": "feedback",
+      "name": "Interruption Management / Notification Prioritization",
+      "behavior": "Prefer noninterruptive notices for ordinary results; use blocking dialogs only when context warrants.",
+      "acceptance": "Background completion does not disrupt unrelated typing; urgent required decision remains findable.",
+      "priority": "contextual",
+      "source_ids": [
+        "nng-waits"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "progressive-disclosure",
+      "family": "discovery",
+      "name": "Progressive Disclosure",
+      "behavior": "Reveal secondary complexity without hiding essential controls; labels indicate available options.",
+      "acceptance": "Novice completes primary path; expert discovers advanced options using keyboard/touch.",
+      "priority": "contextual",
+      "source_ids": [
+        "behavior-nng-disclosure"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "contextual-actions",
+      "family": "discovery",
+      "name": "Contextual Actions / Hover-Reveal / Focus-Reveal",
+      "behavior": "Expose object-specific secondary commands on hover/focus with explicit touch fallback.",
+      "acceptance": "Keyboard and touch can discover and invoke every action; no lost focus or hover-only essential control.",
+      "priority": "contextual",
+      "source_ids": [
+        "nng-context-guidelines",
+        "wcag-hover",
+        "apg"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "tooltips",
+      "family": "discovery",
+      "name": "Tooltips / Contextual Help",
+      "behavior": "Use supplementary concise help; essential instructions must be available without hover.",
+      "acceptance": "Keyboard focus and touch equivalent; dismissible/hoverable/persistent where SC 1.4.13 applies.",
+      "priority": "contextual",
+      "source_ids": [
+        "wcag-hover",
+        "apg"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "contextual-permission",
+      "family": "discovery",
+      "name": "Just-in-time Permission Prompt",
+      "behavior": "Explain permission purpose when relevant; offer safe refusal path.",
+      "acceptance": "Reject optional permission; core unaffected functionality remains usable.",
+      "priority": "contextual",
+      "source_ids": [
+        "hax-patterns"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "keyboard-access",
+      "family": "accessibility",
+      "name": "Keyboard Operability / Focus Management",
+      "behavior": "Support all applicable functionality by keyboard, logical focus order and visible focus; no traps.",
+      "acceptance": "Keyboard-only complete tasks, dialogs return focus, tab order logical.",
+      "priority": "fundamental",
+      "source_ids": [
+        "behavior-wcag22",
+        "apg"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "contrast",
+      "family": "accessibility",
+      "name": "Contrast and Readability",
+      "behavior": "Use WCAG thresholds and exceptions as applicable; normal text AA generally 4.5:1.",
+      "acceptance": "Measure contrast and test zoom/reflow; do not rely on color alone.",
+      "priority": "fundamental",
+      "source_ids": [
+        "behavior-wcag22"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "responsive-reflow",
+      "family": "accessibility",
+      "name": "Responsive Reflow / Adaptive Layout",
+      "behavior": "Adapt by content and input capability; maintain task parity and accessible reflow.",
+      "acceptance": "Test narrow viewport, 400% zoom where applicable, touch and mixed input.",
+      "priority": "fundamental",
+      "source_ids": [
+        "behavior-wcag22",
+        "wcag-hover"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "target-size",
+      "family": "accessibility",
+      "name": "Touch Target Size / Pointer Alternatives",
+      "behavior": "Use adequate target sizes and alternatives for dragging and complex gestures; apply WCAG exceptions.",
+      "acceptance": "Test touch targets, dragging alternatives and single-pointer access.",
+      "priority": "fundamental",
+      "source_ids": [
+        "behavior-wcag22"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "reduced-motion",
+      "family": "accessibility",
+      "name": "Motion Sensitivity / Reduced Motion",
+      "behavior": "Avoid flashing and unnecessary motion; respect preferences and applicable criteria.",
+      "acceptance": "Reduced-motion setting preserves information and interaction; pause applicable moving content.",
+      "priority": "fundamental",
+      "source_ids": [
+        "behavior-wcag22"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "semantic-labels",
+      "family": "accessibility",
+      "name": "Accessible Names and Semantic Controls",
+      "behavior": "Use native semantic controls and correct roles, labels, relationships and error descriptions.",
+      "acceptance": "Inspect accessible tree and screen reader controls; keyboard interaction matches role.",
+      "priority": "fundamental",
+      "source_ids": [
+        "behavior-wcag22",
+        "apg"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "inline-validation",
+      "family": "errors",
+      "name": "Inline Validation / Error Identification",
+      "behavior": "Validate at appropriate timing, identify field and explain correction; preserve entered data.",
+      "acceptance": "Invalid submission gives precise accessible message, retained data and valid correction path.",
+      "priority": "fundamental",
+      "source_ids": [
+        "behavior-wcag22",
+        "behavior-nng-expectations"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "destructive-action",
+      "family": "errors",
+      "name": "Destructive Action Safeguards",
+      "behavior": "Use proportionate confirmation, preview or undo for consequential changes.",
+      "acceptance": "Accidental action has safe exit/recovery; irreversible operation explicitly explained.",
+      "priority": "fundamental",
+      "source_ids": [
+        "behavior-nng-reset-cancel",
+        "behavior-wcag22"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "error-recovery",
+      "family": "errors",
+      "name": "Actionable Error Recovery",
+      "behavior": "Explain what happened, impact and recovery; avoid raw internal errors and sensitive data.",
+      "acceptance": "Force failure, retain relevant input, retry safely; support accessible feedback.",
+      "priority": "fundamental",
+      "source_ids": [
+        "behavior-wcag22-status",
+        "logrocket-async"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "unsaved-warning",
+      "family": "errors",
+      "name": "Unsaved Changes Protection",
+      "behavior": "Warn only when real unsaved work may be lost; don't rely solely on unload events.",
+      "acceptance": "Reload/close, crash simulation and mobile suspension; durable draft or truthful warning.",
+      "priority": "contextual",
+      "source_ids": [
+        "behavior-nng-expectations",
+        "ink-localfirst"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "privacy-control",
+      "family": "trust",
+      "name": "Privacy Controls / Consent Management",
+      "behavior": "Make choices transparent and reversible where applicable; lawful basis and jurisdiction matter, consent is not universal.",
+      "acceptance": "Inspect permissions, withdraw optional consent, preserve account isolation.",
+      "priority": "fundamental",
+      "source_ids": [
+        "hax-patterns"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "risk-based-auth",
+      "family": "trust",
+      "name": "Risk-based Reauthentication",
+      "behavior": "Apply proportionate additional verification for sensitive operations; do not transfer credentials via handoff links.",
+      "acceptance": "Attempt unauthorized and expired handoff; high-risk operation follows actual security policy.",
+      "priority": "contextual",
+      "source_ids": [
+        "behavior-device-handoff"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "user-control",
+      "family": "trust",
+      "name": "User Control and Freedom",
+      "behavior": "Provide understandable options, safe exit and ability to correct or stop where possible.",
+      "acceptance": "User can dismiss, change settings or recover from unintended state.",
+      "priority": "fundamental",
+      "source_ids": [
+        "behavior-nng-reset-cancel"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "real-time-collaboration",
+      "family": "collaboration",
+      "name": "Real-time Collaboration / Presence",
+      "behavior": "Synchronize shared objects, surface meaningful presence and changes only where collaborative work is needed.",
+      "acceptance": "Two authorized editors see expected changes; conflicts and offline cases are handled.",
+      "priority": "contextual",
+      "source_ids": [
+        "ink-localfirst"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "sharing",
+      "family": "collaboration",
+      "name": "Permission-aware Sharing / Share Links",
+      "behavior": "Allow sharing via stable links with explicit access scope, revocation and no accidental disclosure.",
+      "acceptance": "Test invite, revoke and unauthorized access; link does not grant more than intended.",
+      "priority": "contextual",
+      "source_ids": [
+        "behavior-device-handoff",
+        "ink-localfirst"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "comments",
+      "family": "collaboration",
+      "name": "Contextual Comments / Historical Activity",
+      "behavior": "Attach notes to relevant objects; show provenance and useful history to resume interrupted work.",
+      "acceptance": "Return to item, locate prior decisions/notes and relevant activity; respect permissions.",
+      "priority": "contextual",
+      "source_ids": [
+        "nng-waits"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "ai-transparency",
+      "family": "ai",
+      "name": "AI Transparency / Capability Disclosure",
+      "behavior": "Distinguish generated content, supported actions and limitations; show meaningful execution status.",
+      "acceptance": "User can identify AI output and understand actions and limitations.",
+      "priority": "contextual",
+      "source_ids": [
+        "hax-patterns"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "ai-action-review",
+      "family": "ai",
+      "name": "Action Preview / Human Approval",
+      "behavior": "Preview consequential agent actions with scope and effects before approval as appropriate.",
+      "acceptance": "Reject or edit proposed action; nothing executes beyond authorized scope.",
+      "priority": "contextual",
+      "source_ids": [
+        "hax-patterns"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "ai-interruption",
+      "family": "ai",
+      "name": "Human Override / Stop / Correction",
+      "behavior": "Allow interrupt, steer, correct or restart where supported; distinguish stop request and actual cessation.",
+      "acceptance": "Stop agent, verify side effects and subsequent state; offer safe recovery.",
+      "priority": "contextual",
+      "source_ids": [
+        "hax-patterns",
+        "logrocket-async"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    },
+    {
+      "id": "ai-uncertainty",
+      "family": "ai",
+      "name": "Calibrated Uncertainty / Graceful Failure",
+      "behavior": "Communicate meaningful uncertainty and evidence; offer correction or human escalation.",
+      "acceptance": "Unsupported or low-confidence request produces honest limits, not invented certainty.",
+      "priority": "contextual",
+      "source_ids": [
+        "hax-patterns"
+      ],
+      "evidence_status": "Synthesis from completed report and supporting catalog; source-to-claim fit must be checked before treating as formal requirement",
+      "example_type": "illustrative acceptance scenario"
+    }
+  ],
+  "taxonomy": [
+    [
+      "Design Principle",
+      "General design objective or underlying concept"
+    ],
+    [
+      "Usability Heuristic",
+      "Evaluation criterion"
+    ],
+    [
+      "Design Guideline / UX Best Practice Guideline",
+      "Contextual recommendation; cite evidence and conditions"
+    ],
+    [
+      "Interaction Design Pattern / HCI Design Pattern",
+      "Reusable problem-context-solution with rationale and examples"
+    ],
+    [
+      "Pattern Language",
+      "Related patterns, dependencies and alternatives"
+    ],
+    [
+      "Standard",
+      "Normative document in its specified scope"
+    ],
+    [
+      "Interaction Design Specification",
+      "Precise expected states, inputs, outputs and acceptance"
+    ],
+    [
+      "Anti-pattern",
+      "Recurring harmful approach and alternative"
+    ],
+    [
+      "RFC",
+      "Proposed change for review"
+    ],
+    [
+      "DDR / ADR",
+      "Recorded decision and rationale"
+    ],
+    [
+      "Research Report",
+      "Methods, evidence, results and limitations"
+    ]
+  ],
+  "caveats": [
+    "This is a curated consolidation of the completed deep research, not an independently validated market ranking or an assertion that every recommendation was empirically tested.",
+    "2026 is the review date, not the invention or publication date of all patterns. Preserve historical guidance and validate applicability.",
+    "Optimistic UI: no universal 97% success threshold or two-second failure rule; use risk, reversibility, measured latency and actual reconciliation. Never fake confirmed success.",
+    "Progress: no universal spinner cutoff or precise ETA; show actual measured progress or meaningful indeterminate state. Completion dialogs only where consequence warrants interruption.",
+    "Offline, realtime collaboration, multiple tabs, command palette and cross-device handoff are contextual, not mandatory for all sites. Offline does not imply storing sensitive information locally.",
+    "Session continuity preserves authorized task state, not transfer of authentication tokens; distinguish authentication, UI state, persisted domain data and job durability.",
+    "WCAG success criteria are normative within the selected conformance target; Understanding pages and APG are informative. Do not announce every dynamic change, or use color alone.",
+    "Consent is not universally the only lawful basis for processing; use applicable law and actual product requirements. Avoid claims of undo for irreversible actions.",
+    "Do not adopt arbitrary 90% disclosure thresholds, unsupported Google Drive keyboard shortcuts, or unverified product examples from the report. The acceptance scenarios here are illustrative.",
+    "Documentation names: RFC is a proposal/discussion mechanism, not a synonym for a pattern; RFC can be used internally for proposed UX changes. HCI Design Pattern Form is a general format, not a universally mandated schema."
+  ],
+  "sources": [
+    {
+      "id": "nng-waits",
+      "title": "NN/g — Designing for Long Waits and Interruptions",
+      "url": "https://www.nngroup.com/articles/designing-for-waits-and-interruptions/",
+      "kind": "independent-ux-research",
+      "recorded_on": "2026-11-25",
+      "status": "Opened article; 2021-09-05",
+      "storage": "link-only",
+      "notes": "Background execution, task resumption, history, notes and contextual completion."
+    },
+    {
+      "id": "logrocket-async",
+      "title": "LogRocket — UI patterns for async workflows",
+      "url": "https://blog.logrocket.com/ux-design/ui-patterns-for-async-workflows-background-jobs-and-data-pipelines",
+      "kind": "practitioner-article",
+      "recorded_on": "2026-11-25",
+      "status": "Opened article; 2026-02-13",
+      "storage": "link-only",
+      "notes": "Lifecycle, queue, progress, partial outcomes, refresh and disconnect tests."
+    },
+    {
+      "id": "behavior-device-handoff",
+      "title": "UI Patterns — Device Handoff",
+      "url": "https://ui-patterns.com/patterns/DeviceHandoff",
+      "kind": "pattern-library",
+      "recorded_on": "2026-11-25",
+      "status": "Cited in completed deep-research report; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "behavior-android-continue-on",
+      "title": "Android — Enable and customize cross-device handoff",
+      "url": "https://developer.android.com/develop/better-together/continue-on/enable-support",
+      "kind": "primary-platform",
+      "recorded_on": "2026-11-25",
+      "status": "Cited in completed deep-research report; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "behavior-nng-reset-cancel",
+      "title": "NN/g — Reset and Cancel Buttons",
+      "url": "https://www.nngroup.com/articles/reset-and-cancel-buttons/",
+      "kind": "usability-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Cited in completed deep-research report; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "behavior-nng-expectations",
+      "title": "NN/g — Don’t Prioritize Efficiency Over Expectations",
+      "url": "https://www.nngroup.com/articles/efficiency-vs-expectations/",
+      "kind": "usability-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Cited in completed deep-research report; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "behavior-nng-disclosure",
+      "title": "NN/g — Progressive Disclosure",
+      "url": "https://www.nngroup.com/articles/progressive-disclosure/",
+      "kind": "usability-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Cited in completed deep-research report; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "behavior-optimistic-ui",
+      "title": "Smashing Magazine — True Lies of Optimistic User Interfaces",
+      "url": "https://www.smashingmagazine.com/2016/11/true-lies-of-optimistic-user-interfaces/",
+      "kind": "practitioner-article",
+      "recorded_on": "2026-11-25",
+      "status": "Cited in completed deep-research report; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "behavior-wcag22-status",
+      "title": "W3C — Understanding SC 4.1.3 Status Messages",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html",
+      "kind": "accessibility-standard-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Cited in completed deep-research report; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "behavior-nng-tabs-accordions",
+      "title": "NN/g — Tabs vs. Accordions",
+      "url": "https://www.nngroup.com/videos/tabs-vs-accordions/",
+      "kind": "usability-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Cited in completed deep-research report; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "behavior-nng-design-guidance",
+      "title": "NN/g — Design Guidance",
+      "url": "https://www.nngroup.com/articles/design-guidance/",
+      "kind": "usability-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation or reference catalog; revalidate before reuse",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "behavior-nng-pattern-guidelines",
+      "title": "NN/g — Design-Pattern Guidelines",
+      "url": "https://www.nngroup.com/articles/design-pattern-guidelines/",
+      "kind": "usability-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation or reference catalog; revalidate before reuse",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "behavior-ixdf-pattern-language",
+      "title": "IxDF — Interaction Design Patterns",
+      "url": "https://ixdf.org/literature/book/the-glossary-of-human-computer-interaction/interaction-design-patterns",
+      "kind": "education",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation or reference catalog; revalidate before reuse",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "behavior-baymard-guidelines",
+      "title": "Baymard — UX Best Practice Guidelines",
+      "url": "https://baymard.com/product/ux-best-practice-guidelines",
+      "kind": "research-catalog",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation or reference catalog; revalidate before reuse",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "behavior-wcag22",
+      "title": "W3C — WCAG 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "kind": "accessibility-standard",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation or reference catalog; revalidate before reuse",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "ink-localfirst",
+      "title": "Ink & Switch — Local-first software",
+      "url": "https://www.inkandswitch.com/essay/local-first/",
+      "kind": "research-essay",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; revalidate full source before specific claims",
+      "storage": "link-only",
+      "notes": "Proposta de controle dos dados pelo usuário, acesso local e colaboração.",
+      "application": "Testar offline, conflito, exportação, persistência e sincronização; não reduzir local-first a cache."
+    },
+    {
+      "id": "hax-patterns",
+      "title": "Microsoft HAX — Design patterns",
+      "url": "https://www.microsoft.com/en-us/haxtoolkit/design-patterns/",
+      "kind": "primary-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Padrões humano-IA com problema, solução, condições, benefícios e riscos; complementar referências independentes."
+    },
+    {
+      "id": "apg",
+      "title": "W3C — ARIA APG example index",
+      "url": "https://www.w3.org/WAI/ARIA/apg/example-index/",
+      "kind": "primary-guidance",
+      "notes": "Widget patterns and working accessibility examples; APG guidance, not certification.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "nng-context-guidelines",
+      "title": "NN/g Contextual Menu Guidelines",
+      "url": "https://www.nngroup.com/articles/contextual-menus-guidelines/",
+      "kind": "usability-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "verified",
+      "notes": "Placement, grouping, recognizability, labels and discoverability.",
+      "storage": "link-only"
+    },
+    {
+      "id": "wcag-hover",
+      "title": "WCAG 2.2 Content on Hover or Focus",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/content-on-hover-or-focus",
+      "kind": "normative-support",
+      "recorded_on": "2026-11-25",
+      "status": "carried forward; not revalidated in this batch",
+      "notes": "SC 1.4.13 understanding; dismissible, hoverable, persistent as applicable to additional content.",
+      "storage": "link-only"
+    },
+    {
+      "id": "command-palette-detail",
+      "title": "UX Patterns — Command Palette",
+      "url": "https://uxpatterns.dev/patterns/advanced/command-palette",
+      "kind": "community-pattern-library",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; revalidate full source before specific claims",
+      "storage": "link-only",
+      "notes": "Página específica de command palette, descoberta, comandos e destinos.",
+      "application": "Testar foco, escape, ranking, estados vazios e execução explícita."
+    },
+    {
+      "id": "nng-complex",
+      "title": "NN/g — 8 Design Guidelines for Complex Applications",
+      "url": "https://www.nngroup.com/articles/complex-application-design/",
+      "kind": "usability-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; revalidate full source before specific claims",
+      "storage": "link-only",
+      "notes": "Orientações sobre fluxos complexos, interrupções e alternância de aplicações.",
+      "application": "Preservar estado, permitir retomada, ajudar a localizar funções e testar tarefas reais."
+    },
+    {
+      "id": "behavior-iso110",
+      "title": "ISO 9241-110 — Interaction principles",
+      "url": "https://www.iso.org/standard/75258.html",
+      "kind": "standard-catalog",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation or reference catalog; revalidate before reuse",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "behavior-gov-guidelines",
+      "title": "Research-Based Web Design & Usability Guidelines",
+      "url": "https://www.govinfo.gov/app/details/GOVPUB-HE-PURL-LPS73842",
+      "kind": "historical-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation or reference catalog; revalidate before reuse",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "behavior-pattern-form",
+      "title": "Hillside — A Pattern Language for Pattern Writing",
+      "url": "https://www.hillside.net/index.php/a-pattern-language-for-pattern-writing",
+      "kind": "pattern-writing-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation or reference catalog; revalidate before reuse",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    }
+  ]
+}

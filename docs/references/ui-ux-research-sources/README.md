@@ -81,3 +81,9 @@ Registrar URLs originais e redirects, datas de consulta, fonte e status (verific
 - [Chrome Natural Interactions](https://developer.chrome.com/docs/modern-web-guidance/guides/user-experience/natural-interactions) — technical-guidance; carried forward; already cataloged. Hover/focus and touch fallback; retain source once.
 - [Mobbin alternatives 2026](https://mobbin.com/blog/best-mobbin-alternatives) — commercial-secondary; verified. Competitor overview and reported historical mergers; not independent ranking.
 - [Cupertino reference directory](https://cupertino.design/) — secondary-directory; verified. Discovery of platform and motion sources; follow original links.
+
+## Behavioral quality research — 2026-11-25
+
+- [Catalog and criteria](./behavioral-ux-quality-2026.md)
+- [Structured index](./behavioral-ux-quality-2026.json)
+- [Canonical source register](../interface-pattern-library/sources.json)

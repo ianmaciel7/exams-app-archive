@@ -3,22 +3,32 @@
   "verified_on": "2026-11-25",
   "plugin": "especialista-ui-ux",
   "plugin_version": "1.8.6",
-  "previous_research_commit": "3c3b4b11be2ab180e6fa4325607229dff6a8050a",
+  "previous_research_commit": "0d7d26be550bb068cc8b33bd712b486d8069952a",
   "patterns": 47,
   "additional_pattern_families": [
     {
       "id": "asynchronous-non-blocking-ux",
       "count": 13,
       "path": "docs/references/ui-ux-research-sources/asynchronous-non-blocking-ux.json"
+    },
+    {
+      "id": "behavioral-ux-quality-2026",
+      "count": 58,
+      "path": "docs/references/ui-ux-research-sources/behavioral-ux-quality-2026.json",
+      "overlap": "Cross-indexed existing patterns; no claim of net-new unique patterns"
     }
   ],
-  "source_urls": 193,
-  "added_source_urls": 12,
+  "source_urls": 209,
+  "added_source_urls": 16,
   "verification": {
     "plugin_release_confirmed": true,
-    "plugin_reference_files_read": true,
-    "source_url_sets_equal": true
+    "plugin_reference_files_read": false,
+    "source_url_sets_equal": false
   },
-  "scope": "General UI/UX; async and non-blocking interactions; manual synchronization",
-  "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets."
+  "scope": "General UI/UX behavioral quality, deep research consolidation",
+  "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",
+  "pending_sync": {
+    "target": "plugin 1.8.7",
+    "reason": "Repository updated; plugin overlay pending publication and readback"
+  }
 }
