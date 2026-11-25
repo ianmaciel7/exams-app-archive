@@ -17,6 +17,10 @@ EMOJI_REGEX = re.compile(r"[\U00010000-\U0010ffff]")
 # write scopes) will fail this test unless explicitly justified here and
 # documented in docs/WORKFLOW-PERMISSIONS.md.
 JUSTIFIED_WRITE_WORKFLOWS: dict[str, tuple[set[str], str]] = {
+    "extract-visual-segments.yml": (
+        {"contents"},
+        "Commits only verified public media derivatives and their manifest to main; no release or private archive access.",
+    ),
     "archive-audit-complement.yml": (
         {"contents"},
         "Commits manifests/release-2026-11-23-audit-complements.json and uploads private release bundles.",

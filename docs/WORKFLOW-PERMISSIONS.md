@@ -9,6 +9,7 @@ This document catalogs every GitHub Actions workflow in `.github/workflows/`, it
 | `tests.yml` | Active CI | `pull_request`, `push` (`main` paths), `workflow_dispatch` | `contents: read` | None (read-only) |
 | `archive-plugin-test.yml` | Active CI | `pull_request`, `push` (`main` paths) | `contents: read` | None (read-only; uses `GH_TOKEN` to read private release index) |
 | `plugin-validation.yml` | Active CI | `pull_request`, `push` (`main` paths), `workflow_dispatch` | `contents: read` | None (read-only; uploads workflow artifact only) |
+| `extract-visual-segments.yml` | Public visual evidence | `workflow_dispatch`, `push` (`main`: extractor script or self) | `contents: write` | Commits only verified licensed public derivatives under `docs/references/visual-evidence-library/media/segments/` and its manifest; no private archive access, no forced pushes. |
 | `archive-pages.yml` | Active deployment | `workflow_dispatch`, `push` (`main`: `site/**`) | `contents: read`, `pages: write`, `id-token: write` | Deploys static public shell to GitHub Pages via OIDC |
 | `archive-private-search.yml` | Active query bridge | `push` (`archive-search-queries`) | `contents: write` | Commits bounded query results to `.archive-search/results` on branch `archive-search-queries` |
 | `receive-notes-transfer.yml` | Preservation / transfer | `push` (`notes-private-import`) | `contents: write` | Publishes private release `notes-app-2026-11-23-private-full` and deletes transfer branch `notes-private-import` |
