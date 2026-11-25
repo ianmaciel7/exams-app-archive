@@ -51,3 +51,9 @@ The GitHub Pages site is a static interface. Local imports are not transmitted. 
 - [Visual reference CLI](https://github.com/ianmaciel7/exams-app-archive/blob/main/scripts/visual_reference_index.py): search by terms, media type and availability; verify local Git blob hashes.
 
 - [Unified public research index](https://github.com/ianmaciel7/exams-app-archive/blob/main/docs/RESEARCH-INDEX.md): offline FTS5 over public patterns, sources and visual references; distinct from the authenticated historical index.
+
+## Segment-first visual evidence
+
+- [Media policy](https://github.com/ianmaciel7/exams-app-archive/blob/main/docs/references/visual-evidence-library/MEDIA-POLICY.md): source links, sampled keyframes, short excerpts, rights and provenance.
+- [Visual evidence manifest](https://github.com/ianmaciel7/exams-app-archive/blob/main/docs/references/visual-evidence-library/manifest.json): nine sampled demos, timestamped reviewed frames, observations and source/blob hashes. Search by pattern, component and state; exact motion timing and easing remain unknown unless measured.
+- [Public gallery](https://ianmaciel7.github.io/exams-app-archive/visual/gallery.html): derivative frames and short clips when deployed; original source remains linked.
