@@ -431,6 +431,7 @@ async function select(entry) {
       $("render-preview").hidden = false;
       $("render-live").hidden = state.mode !== "local";
       $("preview-note").textContent = "HTML isolado. Scripts bloqueados no modo estático.";
+      setMode("split");
     }
   } catch (e) {
     if (epoch === state.epoch) $("source-code").textContent = e.message;
