@@ -35,3 +35,9 @@ class CatalogTests(unittest.TestCase):
         data = mod.build({"repositories":["ianmaciel7/exams-app"]}, request)
         self.assertEqual(data["snapshots"][0]["files"], [])
         self.assertEqual(data["coverage"][0]["refs"], 3)
+
+    def test_historical_only_origins_are_explicit_and_not_queried(self):
+        data=mod.build({"repositories":["ianmaciel7/exams-app"],"historical_unavailable":["ianmaciel7/exams-app-old"]},self.request)
+        self.assertEqual(data["coverage"][1]["status"],"historical-only")
+        self.assertEqual(data["coverage"][1]["refs"],0)
+        self.assertEqual(len(data["snapshots"]),1)

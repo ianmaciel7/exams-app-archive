@@ -27,3 +27,7 @@
 3. Private repo or truncated tree fails closed; failed build does not replace deployed catalog.
 4. Graph semantic extraction and component build coverage tracked separately; no false claims of complete coverage.
 5. Regression tests validate new refs, path filtering, private rejection, and browser search. Deployment success must be confirmed separately.
+
+## Public source availability (2026-11-25)
+
+The connected GitHub check returned HTTP 404 for four legacy origins. The live catalog policy now queries only the currently confirmed public Exams App; legacy sources are explicitly marked historical-only, not counted as indexed live files. Restore authorized central bundles locally. This is an intentional coverage limitation, not a claim of lost history. The separate public research projection and visual gallery do not depend on legacy origin availability. Any unexpected failure for an approved live repository still fails closed.

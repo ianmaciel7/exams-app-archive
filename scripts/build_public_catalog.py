@@ -57,6 +57,12 @@ def build(policy, request=api):
                 trees[tree]=[{"path":e["path"],"blob":e["sha"],"size":e.get("size",0)} for e in data["tree"] if eligible(e)]
             snapshots.append({"repo":repo.split("/")[1],"sha":sha,"refs":sorted(aliases),"files":trees[tree]})
         coverage.append({"repo":repo,"refs":sum(map(len,refs.values())),"commits":len(refs),"trees":len(trees)})
+    # Explicit retired/unavailable origins are not queried or silently counted as covered.
+    for repo in policy.get("historical_unavailable", []):
+        if not re.fullmatch(r"ianmaciel7/[A-Za-z0-9_.-]+", repo) or repo in policy["repositories"]:
+            raise ValueError("Invalid historical-only source")
+        coverage.append({"repo":repo,"refs":0,"commits":0,"trees":0,
+                         "status":"historical-only","reason":"origin unavailable; restore authorized archive locally"})
     return {"version":2,"generated_at":datetime.now(timezone.utc).isoformat(),"coverage":coverage,"snapshots":snapshots}
 
 def main():

@@ -1,9 +1,12 @@
 {
   "repositories": [
-    "ianmaciel7/exams-app",
+    "ianmaciel7/exams-app"
+  ],
+  "historical_unavailable": [
     "ianmaciel7/exams-app-old",
     "ianmaciel7/exams-app-antigo-2",
     "ianmaciel7/shadcn-template",
     "ianmaciel7/shadcn-firebase-template"
-  ]
+  ],
+  "historical_access": "Restore authorized central archive bundles locally; do not publish historical private metadata. Origins returned HTTP 404 in connected verification 2026-11-25."
 }
