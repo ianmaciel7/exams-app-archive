@@ -182,9 +182,22 @@ function renderEquivalents(entry) {
     .replace(/\.(tsx|jsx|ts|js|html?|md|css)$/i, "");
   const seen = new Map();
 
+  const branchRank = (refs) => {
+    const names = (refs || []).map((r) => r.replace(/^branch:/, ""));
+    if (names.some((n) => /^(main|master|dev|HEAD)$/i.test(n))) return 3;
+    if (names.some((n) => !/^dependabot\//i.test(n))) return 2;
+    return 1;
+  };
+  const pickBranch = (refs) => {
+    const names = (refs || []).map((r) => r.replace(/^branch:/, ""));
+    const primary = names.find((n) => /^(main|master|dev|HEAD)$/i.test(n)) || names.find((n) => !/^dependabot\//i.test(n)) || names[0] || "";
+    return primary;
+  };
+
   for (const snap of publicSnapshots) {
     if (!allowedRepos.has(snap.repo)) continue;
-    const branchLabel = (snap.refs || []).map((r) => r.replace(/^branch:/, "")).slice(0, 2).join(", ");
+    const branchLabel = pickBranch(snap.refs);
+    const rank = branchRank(snap.refs);
     for (const f of snap.files || []) {
       if (snap.repo === state.repo && snap.sha === state.sha && f.path === entry.path) continue;
       const fBase = f.path.split("/").pop().toLowerCase();
@@ -196,11 +209,13 @@ function renderEquivalents(entry) {
       if (!score) continue;
 
       const dedupKey = snap.repo + "|" + f.path + "|" + f.blob;
-      if (!seen.has(dedupKey)) {
+      const prev = seen.get(dedupKey);
+      if (!prev || rank > prev.rank || (rank === prev.rank && branchLabel.length < prev.branch.length)) {
         seen.set(dedupKey, {
           repo: snap.repo,
           sha: snap.sha,
           branch: branchLabel,
+          rank,
           path: f.path,
           blob: f.blob,
           sameBlob: f.blob === entry.blob,
@@ -212,7 +227,7 @@ function renderEquivalents(entry) {
   }
 
   const items = [...seen.values()]
-    .sort((a, b) => b.score - a.score || Number(a.sameBlob) - Number(b.sameBlob) || a.repo.localeCompare(b.repo))
+    .sort((a, b) => b.score - a.score || b.rank - a.rank || Number(a.sameBlob) - Number(b.sameBlob) || a.repo.localeCompare(b.repo))
     .slice(0, 12);
 
   if (!items.length) {
@@ -225,7 +240,8 @@ function renderEquivalents(entry) {
     const btn = node("button", undefined, "equiv-pill" + (item.sameBlob ? " is-same" : " is-diff"));
     btn.type = "button";
     btn.title = item.repo + " @ " + item.branch + " — " + item.path + (item.sameBlob ? " (mesmo conteúdo)" : " (versão diferente)");
-    const label = item.repo + " · " + item.branch + (item.fBase !== baseName ? " · " + item.fBase : "");
+    const shortBranch = item.branch.length > 22 ? item.branch.slice(0, 20) + "…" : item.branch;
+    const label = item.repo + " · " + shortBranch + (item.fBase !== baseName ? " · " + item.fBase : "");
     btn.append(
       node("span", label, "equiv-text"),
       node("span", item.sameBlob ? "igual" : "diff", "equiv-tag")
