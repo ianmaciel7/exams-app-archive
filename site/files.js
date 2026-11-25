@@ -148,6 +148,10 @@ function clearSelection() {
   state.selected = null;
   resetPreview();
   $("file-evidence").hidden = true;
+  if ($("equiv-bar")) {
+    $("equiv-bar").hidden = true;
+    $("equiv-bar").replaceChildren();
+  }
   $("selected-path").textContent = "Selecione um arquivo na árvore";
   $("source-code").textContent = "Selecione um arquivo na árvore à esquerda para ver o código ou preview.";
   $("source-info").textContent = "";
@@ -162,6 +166,90 @@ function clearSelection() {
   $("render-live").hidden = true;
   $("component-help").hidden = true;
   setMode("code");
+}
+
+function renderEquivalents(entry) {
+  const bar = $("equiv-bar");
+  if (!bar) return;
+  bar.replaceChildren();
+  if (state.mode !== "public" || !entry || !publicSnapshots.length) {
+    bar.hidden = true;
+    return;
+  }
+  const baseName = entry.path.split("/").pop().toLowerCase();
+  const stem = baseName
+    .replace(/\.(stories|test|spec)\.(tsx|jsx|ts|js)$/i, "")
+    .replace(/\.(tsx|jsx|ts|js|html?|md|css)$/i, "");
+  const seen = new Map();
+
+  for (const snap of publicSnapshots) {
+    if (!allowedRepos.has(snap.repo)) continue;
+    const branchLabel = (snap.refs || []).map((r) => r.replace(/^branch:/, "")).slice(0, 2).join(", ");
+    for (const f of snap.files || []) {
+      if (snap.repo === state.repo && snap.sha === state.sha && f.path === entry.path) continue;
+      const fBase = f.path.split("/").pop().toLowerCase();
+      if (/\.test\.|\.spec\./i.test(fBase)) continue;
+      let score = 0;
+      if (fBase === baseName) score = 3;
+      else if (stem.length >= 4 && fBase.startsWith(stem + ".")) score = 2;
+      else if (stem.length >= 5 && fBase.includes(stem) && (isReact(fBase) || isHtml(fBase))) score = 1;
+      if (!score) continue;
+
+      const dedupKey = snap.repo + "|" + f.path + "|" + f.blob;
+      if (!seen.has(dedupKey)) {
+        seen.set(dedupKey, {
+          repo: snap.repo,
+          sha: snap.sha,
+          branch: branchLabel,
+          path: f.path,
+          blob: f.blob,
+          sameBlob: f.blob === entry.blob,
+          score,
+          fBase,
+        });
+      }
+    }
+  }
+
+  const items = [...seen.values()]
+    .sort((a, b) => b.score - a.score || Number(a.sameBlob) - Number(b.sameBlob) || a.repo.localeCompare(b.repo))
+    .slice(0, 12);
+
+  if (!items.length) {
+    bar.hidden = true;
+    return;
+  }
+
+  bar.append(node("span", "Equivalentes:", "equiv-label"));
+  for (const item of items) {
+    const btn = node("button", undefined, "equiv-pill" + (item.sameBlob ? " is-same" : " is-diff"));
+    btn.type = "button";
+    btn.title = item.repo + " @ " + item.branch + " — " + item.path + (item.sameBlob ? " (mesmo conteúdo)" : " (versão diferente)");
+    const label = item.repo + " · " + item.branch + (item.fBase !== baseName ? " · " + item.fBase : "");
+    btn.append(
+      node("span", label, "equiv-text"),
+      node("span", item.sameBlob ? "igual" : "diff", "equiv-tag")
+    );
+    btn.addEventListener("click", async () => {
+      $("source-repo").value = item.repo;
+      refreshRefs();
+      $("source-ref").value = item.sha;
+      const snap = publicSnapshots.find((s) => s.repo === item.repo && s.sha === item.sha);
+      if (!snap) return;
+      install(
+        "public",
+        snap.files.map((x) => ({ path: x.path, size: x.size, blob: x.blob, cached: !!x.cached })),
+        item.repo,
+        item.sha
+      );
+      const parts = item.path.split("/");
+      for (let i = 1; i < parts.length; i++) state.expanded.add(parts.slice(0, i).join("/"));
+      const target = state.entries.find((e) => e.path === item.path);
+      if (target) await select(target);
+    });
+    bar.append(btn);
+  }
+  bar.hidden = false;
 }
 
 function setMode(mode) {
@@ -356,6 +444,7 @@ async function select(entry) {
   resetPreview();
   setMode("code");
   $("selected-path").textContent = (state.mode === "public" ? state.repo + " / " : "") + entry.path.split("/").join(" / ");
+  renderEquivalents(entry);
   $("source-info").textContent = [
     state.sha ? state.sha.slice(0, 12) : "",
     entry.blob ? "blob " + entry.blob.slice(0, 12) : "",

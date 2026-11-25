@@ -309,7 +309,7 @@ const pinned=new Map(), allowedRepos=new Set(["exams-app","exams-app-old","exams
 let currentView="files";
 function syncLayoutChrome(){const layout=document.querySelector(".ws-layout");if(!layout)return;const searching=Boolean($("query").value.trim()||$("repository").value||$("kind").value||$("deleted").checked);const showLeft=currentView!=="files"||searching;layout.dataset.showSearch=showLeft?"true":"false";}
 function publicRow(r){return !!r&&graphOrigin==="catálogo público gerado"&&allowedRepos.has(r.repository)&&/^[a-f0-9]{40}$/.test(r.sha)&&typeof r.path==="string"&&!!r.path&&!!r.publicUrl;}
-function setView(name){currentView=name;for(const key of ["graph","files","preview","agents"]){$("view-"+key).hidden=key!==name;$("tab-"+key).setAttribute("aria-pressed",String(key===name));}if(name==="files"&&!$("workspace-files").hasAttribute("src"))$("workspace-files").src="./files.html?embed=1&v=workspace-4";if(name==="preview"&&!$("workspace-preview").hasAttribute("src"))renderReviewed();syncLayoutChrome();}
+function setView(name){currentView=name;for(const key of ["graph","files","preview","agents"]){$("view-"+key).hidden=key!==name;$("tab-"+key).setAttribute("aria-pressed",String(key===name));}if(name==="files"&&!$("workspace-files").hasAttribute("src"))$("workspace-files").src="./files.html?embed=1&v=workspace-6";if(name==="preview"&&!$("workspace-preview").hasAttribute("src"))renderReviewed();syncLayoutChrome();}
 for(const key of ["graph","files","preview","agents"])$("tab-"+key).addEventListener("click",()=>setView(key));
 for(const id of ["query","repository","kind","deleted"])$(id).addEventListener(id==="query"?"input":"change",syncLayoutChrome);
 $("clear").addEventListener("click",syncLayoutChrome);
@@ -317,7 +317,7 @@ function toggleContextDrawer(force){const drawer=$("context-drawer");if(!drawer)
 $("toggle-context")?.addEventListener("click",()=>toggleContextDrawer());
 $("close-context")?.addEventListener("click",()=>toggleContextDrawer(false));
 document.addEventListener("keydown",e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="k"){e.preventDefault();$("query").focus();}});
-function openFile(row){if(!publicRow(row))return;const query=new URLSearchParams({embed:"1",repo:row.repository,sha:row.sha,path:row.path,v:"workspace-4"});$("workspace-files").src="./files.html?"+query.toString();setView("files");}
+function openFile(row){if(!publicRow(row))return;const query=new URLSearchParams({embed:"1",repo:row.repository,sha:row.sha,path:row.path,v:"workspace-6"});$("workspace-files").src="./files.html?"+query.toString();setView("files");}
 function renderReviewed(){const type=$("preview-choice").value==="loading"?"loading":"error";$("workspace-preview").src="./preview-"+type+".html";const sha="b86b70c304e574022416e8e2ecdc3816f1b386f1",path="src/app/"+(type==="loading"?"loading":"error")+".tsx";const a=element("a","ws-button","Fonte original · "+path);a.href="https://github.com/ianmaciel7/exams-app-old/blob/"+sha+"/"+path;a.target="_blank";a.rel="noopener noreferrer";$("preview-provenance").replaceChildren(a,element("span","hint"," Commit "+sha.slice(0,12)+" · CSS equivalente, fixture revisada."));}
 $("preview-choice").addEventListener("change",renderReviewed);$("preview-reset").addEventListener("click",renderReviewed);
 $("preview-width").addEventListener("change",()=>$("workspace-preview-wrap").dataset.viewport=$("preview-width").value);
