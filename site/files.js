@@ -480,7 +480,7 @@ async function select(entry) {
   $("render-tsx").hidden = true;
   $("render-reviewed").hidden = true;
   $("render-live").hidden = true;
-  $("component-help").hidden = !isReact(entry.path);
+  $("component-help").hidden = state.mode === "public" || !isReact(entry.path);
   $("source-code").textContent = "Carregando…";
   try {
     if (entry.size > limit) throw Error("Arquivo maior que 2 MiB; abra no GitHub ou localmente.");
@@ -537,6 +537,7 @@ async function select(entry) {
       $("render-live").hidden = state.mode !== "local";
       $("preview-note").textContent = "HTML isolado. Scripts bloqueados no modo estático.";
       setMode("split");
+      render(false);
     }
   } catch (e) {
     if (epoch === state.epoch) $("source-code").textContent = e.message;

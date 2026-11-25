@@ -1,12 +1,44 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
-<title>Pesquisa UI/UX — Exams Archive</title><link rel="stylesheet" href="./style.css"><script defer src="./research.js"></script></head>
-<body><main><a href="./index.html">Voltar ao explorador</a><h1>Pesquisa UI/UX</h1>
-<p>Catálogos públicos. Disponibilidade declarada não comprova reprodução ou recuperação histórica.</p>
-<label>Buscar <input id="search" type="search"></label>
-<label>Tipo <select id="kind"><option value="">Todos</option><option>pattern</option><option>source</option><option>visual</option></select></label>
-<label>Produto <select id="product"><option value="">Todos</option></select></label>
-<label>Disponibilidade <select id="availability"><option value="">Todas</option></select></label>
-<p id="status" role="status" aria-live="polite">Carregando catálogo...</p>
-<a href="./research.json">JSON e auditoria</a><section id="records" aria-label="Resultados"></section></main></body></html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
+  <title>Pesquisa UI/UX — Exams Archive</title>
+  <link rel="stylesheet" href="./style.css?v=workspace-8">
+  <script defer src="./research.js?v=workspace-8"></script>
+</head>
+<body class="research-page">
+  <div class="shell research-shell">
+    <header class="topbar">
+      <a class="brand" href="./index.html"><span class="brand-mark">EA</span>Exams Archive</a>
+      <nav class="research-nav">
+        <a href="./index.html" class="ws-button">Voltar ao explorador</a>
+        <a href="./research.json" class="ws-button">JSON e auditoria</a>
+      </nav>
+    </header>
+    <main class="research-main">
+      <header class="research-hero">
+        <span class="eyebrow">REFERÊNCIAS DE INTERFACE</span>
+        <h1>Pesquisa UI/UX</h1>
+        <p>Catálogos públicos de padrões de interface, fontes e referências visuais. Disponibilidade declarada não comprova reprodução ou recuperação histórica.</p>
+      </header>
+      <section class="research-filters" aria-label="Filtros">
+        <label class="rf-search">Buscar <input id="search" type="search" placeholder="Filtrar padrões, fontes, produtos…"></label>
+        <label>Tipo
+          <select id="kind">
+            <option value="">Todos</option>
+            <option>pattern</option>
+            <option>source</option>
+            <option>visual</option>
+          </select>
+        </label>
+        <label>Produto <select id="product"><option value="">Todos</option></select></label>
+        <label>Disponibilidade <select id="availability"><option value="">Todas</option></select></label>
+      </section>
+      <p id="status" class="research-status" role="status" aria-live="polite">Carregando catálogo...</p>
+      <section id="records" class="research-grid" aria-label="Resultados"></section>
+    </main>
+  </div>
+</body>
+</html>

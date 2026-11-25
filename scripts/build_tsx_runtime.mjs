@@ -152,6 +152,9 @@ function makeFallbackModule(name) {
       if (typeof prop === "string" && /^[A-Z]/.test(prop)) {
         return makeRecursiveComponent(prop);
       }
+      if (typeof prop === "string" && /^use(Translations|T)$/i.test(prop)) {
+        return () => (key) => String(key || "Texto").replace(/([A-Z])/g, " $1").trim();
+      }
       if (typeof prop === "string" && prop.startsWith("use")) {
         return () => ({
           push: () => {}, replace: () => {}, back: () => {}, prefetch: () => {},
@@ -250,10 +253,31 @@ window.renderArchiveComponent = function renderArchiveComponent(container, entry
         return { __esModule: true, default: Img };
       }
       if (spec === "@base-ui/react/button") {
-        const BaseBtn = React.forwardRef(({ render, nativeButton, ...props }, ref) =>
+        const BaseBtn = React.forwardRef(({ render, nativeButton, items, error, reset, retry, ...props }, ref) =>
           React.createElement("button", { ref, type: props.type || "button", ...props })
         );
         return { __esModule: true, Button: BaseBtn, default: BaseBtn };
+      }
+      if (spec === "next-intl" || spec.startsWith("next-intl/")) {
+        const makeT = (ns) => {
+          const t = (key) => {
+            const clean = String(key || "").replace(/([A-Z])/g, " $1").replace(/[._-]+/g, " ").trim();
+            return clean ? clean.charAt(0).toUpperCase() + clean.slice(1) : (ns || "Texto");
+          };
+          t.rich = (key) => t(key);
+          t.raw = (key) => t(key);
+          t.markup = (key) => t(key);
+          t.has = () => true;
+          return t;
+        };
+        return {
+          __esModule: true,
+          useTranslations: (ns) => makeT(ns),
+          getTranslations: async (ns) => makeT(ns),
+          useLocale: () => "pt-BR",
+          useFormatter: () => ({ number: (n) => String(n), dateTime: (d) => String(d), relativeTime: () => "agora" }),
+          NextIntlClientProvider: ({ children }) => React.createElement(React.Fragment, null, children),
+        };
       }
       if (spec === "@base-ui/react/merge-props") {
         return {
@@ -419,17 +443,14 @@ window.renderArchiveComponent = function renderArchiveComponent(container, entry
       }
 
       const Provider = exportsObj.SidebarProvider || exportsObj.TooltipProvider || null;
+      const isErrorComp = /error/i.test(entryPath);
+      const isSkeletonComp = /skeleton/i.test(entryPath);
       const sampleProps = {
         title: "Preview",
         label: "Exemplo",
-        children: "Conteudo de demonstracao",
-        items: [
-          { id: "1", title: "Inicio", label: "Inicio", href: "#" },
-          { id: "2", title: "Questoes", label: "Questoes", href: "#" },
-          { id: "3", title: "Caderno de erros", label: "Caderno de erros", href: "#" },
-        ],
-        error: new Error("Erro simulado de preview"),
-        reset: () => {},
+        children: isSkeletonComp ? undefined : "Conteudo de demonstracao",
+        ...(isSkeletonComp ? { className: "h-10 w-56" } : {}),
+        ...(isErrorComp ? { error: new Error("Erro simulado de preview"), reset: () => {}, retry: () => {} } : {}),
       };
       element = React.createElement(Comp, sampleProps);
       if (Provider && Provider !== Comp) {
