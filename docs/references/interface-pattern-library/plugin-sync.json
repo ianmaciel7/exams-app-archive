@@ -2,8 +2,8 @@
   "schema_version": 1,
   "verified_on": "2026-11-25",
   "plugin": "especialista-ui-ux",
-  "plugin_version": "1.8.12",
-  "previous_research_commit": "3188a869c68f97eadfdd5d476d0a5d9b950aca8b",
+  "plugin_version": "1.8.13",
+  "previous_research_commit": "63e2deb8cfc18d406f53ec4acfb025ff8fc26fad",
   "patterns": 47,
   "additional_pattern_families": [
     {
@@ -48,8 +48,8 @@
       "overlap": "163 cross-indexed labels across ten families, not 163 unique discoveries."
     }
   ],
-  "source_urls": 387,
-  "added_source_urls": 10,
+  "source_urls": 388,
+  "added_source_urls": 1,
   "verification": {
     "plugin_release_confirmed": true,
     "plugin_reference_files_read": true,
@@ -58,7 +58,7 @@
     "new_source_records_equal": true,
     "full_catalog_equal": true,
     "markdown_equal": true,
-    "metadata_note": "AI-native Markdown exactly matches archive; structured JSON matches semantically. Plugin source-register union (289 historical + 88 getdesign + 14 AI-native links, deduplicated) matches all 387 normalized archive URLs. Historical metadata differences may remain."
+    "metadata_note": "Shoogle source delta read back in private plugin; all 388 normalized URLs match GitHub, no missing or extra. Prior AI-native catalog validation retained; historical source metadata differences may remain."
   },
   "scope": "General UI/UX: AI-native product design and Beyond Chat; manual synchronization verified",
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",
@@ -85,5 +85,13 @@
     "source_register_layout": "archive consolidated; plugin base plus deltas",
     "source_revision": "3188a869c68f97eadfdd5d476d0a5d9b950aca8b",
     "evidence": "Partial public catalog and guide review; no exhaustive example audit or user testing."
+  },
+  "shoogle": {
+    "url": "https://shoogle.dev/",
+    "source_type": "component-registry-discovery",
+    "added_source_urls": 1,
+    "source_sets_equal": true,
+    "library_upload_confirmed": true,
+    "memory_persistence": "not independently verifiable"
   }
 }
