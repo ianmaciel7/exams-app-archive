@@ -1,0 +1,455 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-25",
+  "evidence_boundary": "Synthesis from prior conversation, partial public documentation; no exhaustive example audit; cross-index labels not unique discoveries.",
+  "family_count": 10,
+  "label_count": 163,
+  "records": [
+    {
+      "id": "ai-native-layout",
+      "title": "Architecture and layout",
+      "category": "synthesis",
+      "patterns": [
+        "Embedded AI",
+        "Inline AI",
+        "Contextual Overlay",
+        "AI Sidebar",
+        "Split View",
+        "AI Workspace",
+        "Command Palette",
+        "AI Studio",
+        "Spatial Canvas",
+        "Node Workflow",
+        "AI Dashboard",
+        "Agent Control Center",
+        "Conversational UI",
+        "Search-first UI",
+        "Copilot Layout",
+        "AI Document Editor",
+        "Block-based Editor",
+        "Multi-pane Workspace",
+        "Comparison View",
+        "Generative Gallery",
+        "Wizard",
+        "Property Inspector",
+        "Agent Timeline",
+        "Multi-agent Workspace",
+        "Adaptive Interface",
+        "Multimodal Workspace",
+        "Ambient AI"
+      ],
+      "principle": "Choose surface by task, object, risk and input; prefer conventional direct controls for deterministic actions.",
+      "acceptance": "Retain focus, scroll, context and keyboard access; responsive fallback for panels; compare time/errors with non-AI flow.",
+      "source_ids": [
+        "ai-layout-library",
+        "beyond-chat-examples",
+        "shape-of-ai"
+      ]
+    },
+    {
+      "id": "ai-native-discovery",
+      "title": "Discovery and input",
+      "category": "synthesis",
+      "patterns": [
+        "Prompt Starters",
+        "Smart Empty State",
+        "Example Gallery",
+        "Templates",
+        "Smart Onboarding",
+        "Multimodal Input",
+        "Context Picker",
+        "@Mentions",
+        "Context Chips",
+        "Mode Selector",
+        "Parameter Controls",
+        "Prompt Enhancer",
+        "Natural Language Filters",
+        "Auto-fill"
+      ],
+      "principle": "Make capabilities and input scope discoverable; distinguish suggestions from selected context.",
+      "acceptance": "Expose editable/removable context, clear permissions and accessible input labels; never silently add private sources.",
+      "source_ids": [
+        "aiverse-patterns",
+        "shape-of-ai",
+        "pair-guidebook"
+      ]
+    },
+    {
+      "id": "ai-native-editing",
+      "title": "Editing and refinement",
+      "category": "synthesis",
+      "patterns": [
+        "Select & Transform",
+        "Inline Editing",
+        "Ghost Text",
+        "Inline Suggestions",
+        "Selective Regeneration",
+        "Region Lock",
+        "Style Presets",
+        "Variations",
+        "Semantic Zoom",
+        "Progressive Disclosure",
+        "Diff View",
+        "Accept / Reject",
+        "Undo / Redo",
+        "Version History"
+      ],
+      "principle": "Make edits bounded, inspectable and recoverable; preserve unrelated content.",
+      "acceptance": "Test partial selection, acceptance/rejection, undo, focus, failure and preservation of untouched regions.",
+      "source_ids": [
+        "shape-of-ai",
+        "aiverse-patterns",
+        "aiux-playground-patterns"
+      ]
+    },
+    {
+      "id": "ai-native-output",
+      "title": "Results and generative UI",
+      "category": "synthesis",
+      "patterns": [
+        "Structured Output",
+        "Generative UI",
+        "Interactive Artifacts",
+        "Live Preview",
+        "Streaming",
+        "Parallel Alternatives",
+        "Smart Recommendations",
+        "AI Insights",
+        "Follow-up Actions",
+        "Reactive Blocks",
+        "Output Skeleton"
+      ],
+      "principle": "Render the useful object, not just prose; validate structured output and distinguish drafts from saved objects.",
+      "acceptance": "Schema validation, source attribution, safe actions, keyboard navigation, cancel/retry, fallback to readable text.",
+      "source_ids": [
+        "beyond-chat-examples",
+        "aiverse-patterns",
+        "aiux-playground-patterns"
+      ]
+    },
+    {
+      "id": "ai-native-agent",
+      "title": "Agentic UX",
+      "category": "synthesis",
+      "patterns": [
+        "Intent Preview",
+        "Editable Plan",
+        "Approval Gates",
+        "Autonomy Control",
+        "Stage Tracker",
+        "Task Queue",
+        "Tool Visibility",
+        "Mid-run Steering",
+        "Action Audit",
+        "Checkpoints",
+        "Rollback",
+        "Agent Handoff",
+        "Parallel Execution",
+        "Completion Evidence",
+        "Escalation",
+        "Cancel / Pause",
+        "Cost Estimate",
+        "Scheduling"
+      ],
+      "principle": "Expose actual plan, scope, status, permissions, consequences and completion evidence; approval for consequential actions.",
+      "acceptance": "Simulate failure, permission expansion, cancellation, timeout, retry and partial completion; do not fake progress or reasoning.",
+      "source_ids": [
+        "agentcat",
+        "beyond-chat-examples",
+        "hax-toolkit",
+        "pair-guidebook"
+      ]
+    },
+    {
+      "id": "ai-native-components",
+      "title": "AI design system",
+      "category": "synthesis",
+      "patterns": [
+        "Prompt Input",
+        "Attachment Picker",
+        "Context Chip",
+        "AI Action Button",
+        "Contextual Menu",
+        "Parameter Slider",
+        "Model Selector",
+        "Autonomy Selector",
+        "Step Tracker",
+        "Progress Indicator",
+        "Streaming Indicator",
+        "Artifact",
+        "Result Card",
+        "Interactive Table",
+        "Diff Viewer",
+        "Revision Toolbar",
+        "Variation Selector",
+        "Approval Dialog",
+        "Stop Button",
+        "AI Label",
+        "Citation",
+        "Source Preview",
+        "Explanation Popover",
+        "Memory Editor",
+        "Context Indicator",
+        "Knowledge Source Picker",
+        "Rating",
+        "Correction Input",
+        "Report Action"
+      ],
+      "principle": "Extend existing semantic components instead of replacing them; AI labels should convey real provenance.",
+      "acceptance": "Document anatomy, states, keyboard, screen-reader names, focus, validation and design tokens. No decorative AI icon alone as disclosure.",
+      "source_ids": [
+        "carbon-ai",
+        "intelliface",
+        "hax-toolkit"
+      ]
+    },
+    {
+      "id": "ai-native-motion",
+      "title": "Motion and states",
+      "category": "synthesis",
+      "patterns": [
+        "Streaming Reveal",
+        "Skeleton Loading",
+        "Progress Transition",
+        "Morphing",
+        "Expand / Collapse",
+        "Panel Transition",
+        "Inline Insertion",
+        "Diff Highlight",
+        "Completion Feedback",
+        "Error Recovery",
+        "Drag and Drop",
+        "Hover Disclosure",
+        "Focus Transition",
+        "Reduced Motion"
+      ],
+      "principle": "Use motion to communicate real state changes and preserve spatial continuity, not simulate activity.",
+      "acceptance": "Respect reduced motion; provide non-motion and non-hover alternatives; measure progress only when available; stable geometry.",
+      "source_ids": [
+        "pair-guidebook",
+        "hax-toolkit"
+      ]
+    },
+    {
+      "id": "ai-native-trust",
+      "title": "Trust and human control",
+      "category": "synthesis",
+      "patterns": [
+        "Capability Disclosure",
+        "Limitation Disclosure",
+        "Context Transparency",
+        "Explainability",
+        "Provenance",
+        "Calibrated Uncertainty",
+        "Permission Scope",
+        "Feedback",
+        "Memory Review",
+        "Error Recovery",
+        "Human Override"
+      ],
+      "principle": "Communicate capabilities before use, relevance during use, correction when wrong and adaptation over time.",
+      "acceptance": "Check sources and uncertainty, accessible dismissal/correction, inspect/edit memory, revocable permissions and safe manual fallback.",
+      "source_ids": [
+        "pair-guidebook",
+        "hax-toolkit",
+        "carbon-ai"
+      ]
+    },
+    {
+      "id": "ai-native-visual",
+      "title": "Visual and responsive design",
+      "category": "synthesis",
+      "patterns": [
+        "Typography",
+        "Semantic Color",
+        "Iconography",
+        "Spacing",
+        "Borders",
+        "Elevation",
+        "Optional Gradients",
+        "Resizable Panels",
+        "State Differentiation",
+        "Responsive Adaptation",
+        "Accessibility",
+        "Consistency"
+      ],
+      "principle": "No mandatory AI aesthetic; optimize hierarchy, density, contrast and conventional affordances.",
+      "acceptance": "Check contrast, zoom, reflow, keyboard, touch, screen reader, state differentiation; no color-only meaning.",
+      "source_ids": [
+        "carbon-ai",
+        "intelliface",
+        "saasui-ai",
+        "mobbin"
+      ]
+    },
+    {
+      "id": "ai-native-antipatterns",
+      "title": "Antipatterns",
+      "category": "synthesis",
+      "patterns": [
+        "Chat-first for Everything",
+        "AI Washing",
+        "Prompt-only Controls",
+        "Black-box Automation",
+        "Fake Progress",
+        "Forced AI",
+        "Hidden Context",
+        "Unrecoverable Actions",
+        "Uncalibrated Confidence",
+        "Excessive Anthropomorphism",
+        "AI Decoration",
+        "Infinite Suggestions",
+        "Inconsistent Interactions"
+      ],
+      "principle": "Avoid unnecessary AI, opaque automation and irreversible actions; do not mistake decoration for utility.",
+      "acceptance": "Compare conventional alternative, test dismissal, correction, transparent scope, actual status, and recovery.",
+      "source_ids": [
+        "hax-toolkit",
+        "pair-guidebook",
+        "beyond-chat-examples"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "shape-of-ai",
+      "title": "The Shape of AI",
+      "url": "https://www.shapeof.ai/",
+      "kind": "editorial-pattern-catalog",
+      "notes": "Interaction families; inspect individual patterns before implementation.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Prior conversation public catalog/guide review; individual pages, counts and media not exhaustively revalidated."
+    },
+    {
+      "id": "aiux-playground-patterns",
+      "title": "AI UX Playground",
+      "url": "https://www.aiuxplayground.com/patterns",
+      "kind": "editorial-pattern-catalog",
+      "notes": "Product examples and interaction patterns; access varies.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Prior conversation public catalog/guide review; individual pages, counts and media not exhaustively revalidated."
+    },
+    {
+      "id": "aiverse-patterns",
+      "title": "Aiverse",
+      "url": "https://aiverse.design/patterns",
+      "kind": "editorial-pattern-catalog",
+      "notes": "Five-phase lifecycle: discovering, instructing, observing, refining, adapting.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Prior conversation public catalog/guide review; individual pages, counts and media not exhaustively revalidated."
+    },
+    {
+      "id": "ai-layout-library",
+      "title": "AI Layout Library",
+      "url": "https://ai.designdhaval.com/",
+      "kind": "editorial-layout-catalog",
+      "notes": "Layout alternatives; names below are an original synthesis, not a copy.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Prior conversation public catalog/guide review; individual pages, counts and media not exhaustively revalidated."
+    },
+    {
+      "id": "beyond-chat-examples",
+      "title": "Beyond Chat",
+      "url": "https://www.beyondchat.design/examples/",
+      "kind": "editorial-pattern-catalog",
+      "notes": "Non-chat interfaces; directability, observability, predictability, explainability.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Prior conversation public catalog/guide review; individual pages, counts and media not exhaustively revalidated."
+    },
+    {
+      "id": "agentcat",
+      "title": "AI Design Guide",
+      "url": "https://www.aidesign.guide/agentic-ux-patterns",
+      "kind": "editorial-pattern-catalog",
+      "notes": "Agent interactions; examples are not universal evidence.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Prior conversation public catalog/guide review; individual pages, counts and media not exhaustively revalidated."
+    },
+    {
+      "id": "intelliface",
+      "title": "Intelliface",
+      "url": "https://www.intelliface.in/",
+      "kind": "editorial-pattern-catalog",
+      "notes": "AI UI examples and components.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Prior conversation public catalog/guide review; individual pages, counts and media not exhaustively revalidated."
+    },
+    {
+      "id": "pair-guidebook",
+      "title": "Google People + AI Guidebook",
+      "url": "https://pair.withgoogle.com/guidebook-v2/",
+      "kind": "primary-design-guidance",
+      "notes": "User needs, mental models, trust, feedback, graceful failure and control.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Prior conversation public catalog/guide review; individual pages, counts and media not exhaustively revalidated."
+    },
+    {
+      "id": "hax-toolkit",
+      "title": "Microsoft HAX Toolkit",
+      "url": "https://www.microsoft.com/en-us/haxtoolkit/",
+      "kind": "primary-research-guidance",
+      "notes": "18 guidelines organized around initial, ongoing, erroneous and long-term interaction.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Prior conversation public catalog/guide review; individual pages, counts and media not exhaustively revalidated."
+    },
+    {
+      "id": "carbon-ai",
+      "title": "IBM Carbon for AI",
+      "url": "https://www.carbondesignsystem.com/building-blocks/foundations/carbon-for-ai",
+      "kind": "primary-design-system",
+      "notes": "AI identification and explainability; check component status.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Prior conversation public catalog/guide review; individual pages, counts and media not exhaustively revalidated."
+    },
+    {
+      "id": "saasui-ai",
+      "title": "SaaSUI AI App UI Design",
+      "url": "https://www.saasui.design/ai-app-ui-design",
+      "kind": "visual-gallery",
+      "notes": "Product screenshots; link only.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Prior conversation public catalog/guide review; individual pages, counts and media not exhaustively revalidated."
+    },
+    {
+      "id": "mobbin",
+      "title": "Mobbin",
+      "url": "https://mobbin.com/",
+      "kind": "visual-gallery",
+      "notes": "Product screens and flows; access and rights vary.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Prior conversation public catalog/guide review; individual pages, counts and media not exhaustively revalidated."
+    },
+    {
+      "id": "sap-design",
+      "title": "SAP Design System",
+      "url": "https://www.sap.com/design-system/",
+      "kind": "primary-design-system",
+      "notes": "Enterprise patterns; specific AI guidance not exhaustively inspected.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Prior conversation public catalog/guide review; individual pages, counts and media not exhaustively revalidated."
+    },
+    {
+      "id": "atlassian-design",
+      "title": "Atlassian Design System",
+      "url": "https://atlassian.design/",
+      "kind": "primary-design-system",
+      "notes": "Productivity components; specific AI guidance not exhaustively inspected.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Prior conversation public catalog/guide review; individual pages, counts and media not exhaustively revalidated."
+    }
+  ]
+}

@@ -68,3 +68,8 @@ No claims of a market-share ranking or universal effectiveness. Primary document
 
 - [Catalog and source review](../ui-ux-research-sources/agent-ready-design-system-completeness.md), [structured JSON](../ui-ux-research-sources/agent-ready-design-system-completeness.json).
 - 26 indexed recommendations, 36 reviewed references, 289 retained source URLs (+35).
+
+## AI-native product design and Beyond Chat
+
+- [Research synthesis](../ui-ux-research-sources/ai-native-product-design.md) and [structured cross-index](../ui-ux-research-sources/ai-native-product-design.json).
+- 10 families; 163 cross-indexed labels, 10 new source URLs, 387 retained. Publication to other destinations not yet verified.

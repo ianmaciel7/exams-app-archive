@@ -3773,6 +3773,106 @@
       "status": "full text retrieved; programmatic extraction and synthesis",
       "storage": "link-only",
       "notes": "Independent visual analysis; not official brand specification."
+    },
+    {
+      "id": "aiux-playground-patterns",
+      "title": "AI UX Playground",
+      "url": "https://www.aiuxplayground.com/patterns",
+      "kind": "editorial-pattern-catalog",
+      "notes": "Product examples and interaction patterns; access varies.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Prior conversation public catalog/guide review; individual pages, counts and media not exhaustively revalidated."
+    },
+    {
+      "id": "aiverse-patterns",
+      "title": "Aiverse",
+      "url": "https://aiverse.design/patterns",
+      "kind": "editorial-pattern-catalog",
+      "notes": "Five-phase lifecycle: discovering, instructing, observing, refining, adapting.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Prior conversation public catalog/guide review; individual pages, counts and media not exhaustively revalidated."
+    },
+    {
+      "id": "ai-layout-library",
+      "title": "AI Layout Library",
+      "url": "https://ai.designdhaval.com/",
+      "kind": "editorial-layout-catalog",
+      "notes": "Layout alternatives; names below are an original synthesis, not a copy.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Prior conversation public catalog/guide review; individual pages, counts and media not exhaustively revalidated."
+    },
+    {
+      "id": "beyond-chat-examples",
+      "title": "Beyond Chat",
+      "url": "https://www.beyondchat.design/examples/",
+      "kind": "editorial-pattern-catalog",
+      "notes": "Non-chat interfaces; directability, observability, predictability, explainability.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Prior conversation public catalog/guide review; individual pages, counts and media not exhaustively revalidated."
+    },
+    {
+      "id": "pair-guidebook",
+      "title": "Google People + AI Guidebook",
+      "url": "https://pair.withgoogle.com/guidebook-v2/",
+      "kind": "primary-design-guidance",
+      "notes": "User needs, mental models, trust, feedback, graceful failure and control.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Prior conversation public catalog/guide review; individual pages, counts and media not exhaustively revalidated."
+    },
+    {
+      "id": "hax-toolkit",
+      "title": "Microsoft HAX Toolkit",
+      "url": "https://www.microsoft.com/en-us/haxtoolkit/",
+      "kind": "primary-research-guidance",
+      "notes": "18 guidelines organized around initial, ongoing, erroneous and long-term interaction.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Prior conversation public catalog/guide review; individual pages, counts and media not exhaustively revalidated."
+    },
+    {
+      "id": "carbon-ai",
+      "title": "IBM Carbon for AI",
+      "url": "https://www.carbondesignsystem.com/building-blocks/foundations/carbon-for-ai",
+      "kind": "primary-design-system",
+      "notes": "AI identification and explainability; check component status.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Prior conversation public catalog/guide review; individual pages, counts and media not exhaustively revalidated."
+    },
+    {
+      "id": "saasui-ai",
+      "title": "SaaSUI AI App UI Design",
+      "url": "https://www.saasui.design/ai-app-ui-design",
+      "kind": "visual-gallery",
+      "notes": "Product screenshots; link only.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Prior conversation public catalog/guide review; individual pages, counts and media not exhaustively revalidated."
+    },
+    {
+      "id": "sap-design",
+      "title": "SAP Design System",
+      "url": "https://www.sap.com/design-system/",
+      "kind": "primary-design-system",
+      "notes": "Enterprise patterns; specific AI guidance not exhaustively inspected.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Prior conversation public catalog/guide review; individual pages, counts and media not exhaustively revalidated."
+    },
+    {
+      "id": "atlassian-design",
+      "title": "Atlassian Design System",
+      "url": "https://atlassian.design/",
+      "kind": "primary-design-system",
+      "notes": "Productivity components; specific AI guidance not exhaustively inspected.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only",
+      "evidence": "Prior conversation public catalog/guide review; individual pages, counts and media not exhaustively revalidated."
     }
   ],
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",
