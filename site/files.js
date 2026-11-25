@@ -142,25 +142,36 @@ function clearSelection() {
   state.selected = null;
   resetPreview();
   $("file-evidence").hidden = true;
-  $("selected-path").textContent = "Nenhum arquivo selecionado";
-  $("source-code").textContent = "Selecione um arquivo na árvore.";
+  $("selected-path").textContent = "Selecione um arquivo na árvore";
+  $("source-code").textContent = "Selecione um arquivo na árvore à esquerda para ver o código ou preview.";
   $("source-info").textContent = "";
   $("source-link").hidden = true;
   $("copy-code").hidden = true;
+  $("split-tab").disabled = true;
   $("preview-tab").disabled = true;
+  $("viewport-group").hidden = true;
   $("render-preview").hidden = true;
   $("render-tsx").hidden = true;
   $("render-reviewed").hidden = true;
   $("render-live").hidden = true;
   $("component-help").hidden = true;
-  tab(false);
+  setMode("code");
+}
+
+function setMode(mode) {
+  const stage = $("viewer-stage");
+  if (stage) stage.dataset.mode = mode;
+  $("source-code").hidden = mode === "preview";
+  $("preview-area").hidden = mode === "code";
+  $("code-tab").setAttribute("aria-pressed", String(mode === "code"));
+  $("split-tab").setAttribute("aria-pressed", String(mode === "split"));
+  $("preview-tab").setAttribute("aria-pressed", String(mode === "preview"));
+  const vpGroup = $("viewport-group");
+  if (vpGroup) vpGroup.hidden = mode === "code";
 }
 
 function tab(preview) {
-  $("source-code").hidden = preview;
-  $("preview-area").hidden = !preview;
-  $("code-tab").setAttribute("aria-pressed", String(!preview));
-  $("preview-tab").setAttribute("aria-pressed", String(preview));
+  setMode(preview ? "preview" : "code");
 }
 
 function renderTree() {
@@ -293,10 +304,9 @@ async function select(entry) {
   state.selected = entry;
   renderTree();
   resetPreview();
-  tab(false);
-  $("selected-path").textContent = entry.path;
+  setMode("code");
+  $("selected-path").textContent = (state.mode === "public" ? state.repo + " / " : "") + entry.path.split("/").join(" / ");
   $("source-info").textContent = [
-    state.mode === "public" ? state.repo : "local",
     state.sha ? state.sha.slice(0, 12) : "",
     entry.blob ? "blob " + entry.blob.slice(0, 12) : "",
     Number(entry.size || 0).toLocaleString("pt-BR") + " bytes",
@@ -309,6 +319,7 @@ async function select(entry) {
       "https://github.com/ianmaciel7/" + state.repo + "/blob/" + state.sha + "/" + pathEncoded(entry.path);
   }
   $("copy-code").hidden = true;
+  $("split-tab").disabled = true;
   $("preview-tab").disabled = true;
   $("render-preview").hidden = true;
   $("render-tsx").hidden = true;
@@ -328,7 +339,7 @@ async function select(entry) {
       $("preview-note").textContent = "Imagem original do repositório arquivado.";
       $("source-code").textContent = "Arquivo de imagem (" + imageType + ").";
       $("preview-tab").disabled = false;
-      tab(true);
+      setMode("preview");
       return;
     }
     if (bytes.includes(0)) throw Error("Arquivo binário sem visualização.");
@@ -342,22 +353,25 @@ async function select(entry) {
 
     const approved = reviewedEntry(entry);
     if (approved) {
+      $("split-tab").disabled = false;
       $("preview-tab").disabled = false;
       $("render-reviewed").hidden = false;
       $("render-tsx").hidden = false;
-      $("preview-note").textContent = "Build React revisado disponível para este arquivo (ou use o preview TSX experimental).";
+      $("preview-note").textContent = "Build React revisado disponível (ou use o preview TSX experimental).";
     } else if (isReact(entry.path)) {
+      $("split-tab").disabled = false;
       $("preview-tab").disabled = false;
       $("render-tsx").hidden = false;
       $("preview-note").textContent =
-        "Componente React/TSX. Clique em Renderizar TSX (experimental) para transpilar e testar isoladamente no navegador.";
+        "Componente React/TSX. Clique em Renderizar TSX (experimental) para visualizar isoladamente.";
     }
     if (isHtml(entry.path)) {
+      $("split-tab").disabled = false;
       $("preview-tab").disabled = false;
       $("render-preview").hidden = false;
       $("render-live").hidden = state.mode !== "local";
       $("preview-note").textContent =
-        "HTML isolado. Scripts bloqueados no modo estático. Builds locais revisados podem ser executados por escolha explícita.";
+        "HTML isolado. Scripts bloqueados no modo estático.";
     }
   } catch (e) {
     if (epoch === state.epoch) $("source-code").textContent = e.message;
@@ -371,15 +385,26 @@ $("copy-code").addEventListener("click", async () => {
     await navigator.clipboard.writeText(entry.text);
     $("copy-code").textContent = "Copiado";
     setTimeout(() => {
-      $("copy-code").textContent = "Copiar código";
+      $("copy-code").textContent = "Copiar";
     }, 1500);
   } catch {
     status("Não foi possível copiar automaticamente.");
   }
 });
 
-$("code-tab").addEventListener("click", () => tab(false));
-$("preview-tab").addEventListener("click", () => tab(true));
+$("code-tab").addEventListener("click", () => setMode("code"));
+$("split-tab").addEventListener("click", () => setMode("split"));
+$("preview-tab").addEventListener("click", () => setMode("preview"));
+$("vp-desktop")?.addEventListener("click", () => {
+  $("preview-stage-wrap").dataset.vp = "desktop";
+  $("vp-desktop").setAttribute("aria-pressed", "true");
+  $("vp-mobile").setAttribute("aria-pressed", "false");
+});
+$("vp-mobile")?.addEventListener("click", () => {
+  $("preview-stage-wrap").dataset.vp = "mobile";
+  $("vp-desktop").setAttribute("aria-pressed", "false");
+  $("vp-mobile").setAttribute("aria-pressed", "true");
+});
 
 function render(live) {
   const entry = state.selected;

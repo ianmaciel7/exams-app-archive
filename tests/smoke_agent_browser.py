@@ -70,6 +70,8 @@ def check_browser():
             page.goto(f"http://127.0.0.1:{server.server_port}/")
             expect(page.locator("#query")).to_be_enabled()
             assert page.locator("#query").is_enabled()
+            expect(page.locator("#view-files")).to_be_visible()
+            page.locator("#tab-graph").click()
             assert page.locator("#graph .graph-node").count() > 2
             assert page.locator("#graph-groups button").count() >= 2
             page.locator("#zoom-in").click()
@@ -79,6 +81,7 @@ def check_browser():
             expect(page.locator("#results article").filter(has_text="prototipo-sidebar.html").first).to_be_visible()
             assert page.locator("#results article").count() >= 30
             page.locator("#results article").filter(has_text="prototipo-sidebar.html").first.get_by_role("button", name="＋ Contexto").click()
+            page.locator("#toggle-context").click()
             expect(page.locator("#context-count")).to_have_text("1/30")
             assert page.locator("#context-export").is_enabled()
             page.locator("#tab-preview").click()
@@ -88,6 +91,7 @@ def check_browser():
             page.locator("#tab-graph").click()
             page.locator("#context-clear").click()
             expect(page.locator("#context-count")).to_have_text("0/30")
+            page.locator("#close-context").click()
             page.locator("#kind").select_option("image")
             expect(page.locator("#results article").filter(has_text="capturas/").first).to_be_visible()
             page.locator("#clear").click()
@@ -115,7 +119,9 @@ def check_browser():
             expect(page.locator("#graph")).to_have_attribute("data-layout", "settled")
             assert page.locator("#group-title").inner_text() == "Comunidades"
             page.get_by_role("button", name="Sidebar", exact=True).locator("circle").last.click()
+            page.locator("#toggle-context").click()
             assert "Sidebar" in page.locator("#graph-detail").inner_text()
+            page.locator("#close-context").click()
             page.locator("#confidence").select_option("EXTRACTED")
             assert page.locator("#graph line").count() == 0
             page.locator("#confidence").select_option("INFERRED")

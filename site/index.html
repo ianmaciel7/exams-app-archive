@@ -3,25 +3,189 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Explorador local e privado do histórico do Exams App">
+  <meta name="description" content="Explorador limpo e verificável do histórico do Exams App">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self'; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
   <title>Exams Archive · Explorador histórico</title>
-  <link rel="stylesheet" href="./style.css?v=workspace-2">
-  <script src="./app.js?v=workspace-2" defer></script>
+  <link rel="stylesheet" href="./style.css?v=workspace-3">
+  <script src="./app.js?v=workspace-3" defer></script>
   <link rel="describedby" href="./llms.txt">
 </head>
-<body class="ws-body"><a class="skip-link" href="#results">Ir para resultados</a><header class="ws-top"><a class="ws-brand" href="./"><span class="brand-mark" aria-hidden="true">EA</span><span><strong>Exams Archive</strong><small>Knowledge workspace</small></span></a><div class="search-field"><span aria-hidden="true">⌕</span><input id="query" type="search" aria-label="Termos de busca" placeholder="Buscar arquivos, componentes, ADRs..." disabled><kbd>Ctrl K</kbd></div><nav aria-label="Ações do arquivo"><button id="reload-catalog" class="ws-button">Atualizar</button><label class="ws-button" for="file">Importar JSON</label><input id="file" type="file" class="ws-visually-hidden" accept=".json,application/json"><a class="ws-button" href="./research.html">Pesquisa UI/UX</a><a class="ws-button" href="./visual/gallery.html">Referências visuais</a><a class="ws-button" href="./llms.txt">LLMs</a><a class="ws-button" href="https://github.com/ianmaciel7/exams-app-archive">GitHub ↗</a></nav></header><main class="ws-layout"><aside class="ws-left"><div class="ws-pane-title"><h1>Explorador</h1><span id="dataset" class="dataset">Carregando catálogo…</span></div><div class="filters">
-          <label>Repositório <select id="repository" disabled><option value="">Todos os repositórios</option></select></label>
-          <label>Tipo <select id="kind" disabled>
-            <option value="">Todos</option><option value="commit">Commits</option>
-            <option value="file">Arquivos</option><option value="image">Imagens</option><option value="node">Entidades</option><option value="component">React</option><option value="document">Documentos</option>
-          </select></label>
-          <label class="check"><input id="deleted" type="checkbox" disabled> Apenas arquivos/imagens excluídos</label>
-        </div><div class="result-header"><p id="status" role="status" aria-live="polite">Importe o índice para começar.</p><button id="clear" class="text-button" disabled>Limpar filtros</button></div>
-        <div id="results" class="results" tabindex="-1">
-          <div class="empty"><div aria-hidden="true" class="empty-mark">⌕</div><h3>Seu histórico, no seu navegador.</h3><p>Escolha um índice JSON local para habilitar a pesquisa.</p></div>
+<body class="ws-body">
+  <a class="skip-link" href="#results">Ir para resultados</a>
+  <header class="ws-top">
+    <a class="ws-brand" href="./">
+      <span class="brand-mark" aria-hidden="true">EA</span>
+      <strong>Exams Archive</strong>
+    </a>
+    <div class="search-field">
+      <svg class="ui-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input id="query" type="search" aria-label="Termos de busca" placeholder="Buscar arquivos, componentes, sidebars..." disabled>
+      <kbd>Ctrl K</kbd>
+    </div>
+    <div class="ws-tabs" role="group" aria-label="Visualização">
+      <button id="tab-files" type="button" aria-pressed="true">Arquivos</button>
+      <button id="tab-preview" type="button" aria-pressed="false">Componentes</button>
+      <button id="tab-graph" type="button" aria-pressed="false">Grafo</button>
+      <button id="tab-agents" type="button" aria-pressed="false">Agentes</button>
+    </div>
+    <nav class="ws-nav-actions" aria-label="Ações do arquivo">
+      <button id="toggle-context" type="button" class="ws-button ws-context-trigger" aria-expanded="false">Contexto (<span id="context-badge">0</span>)</button>
+      <a class="ws-button" href="./research.html">Pesquisa</a>
+      <a class="ws-button" href="./visual/gallery.html">Visual</a>
+      <a class="ws-button" href="https://github.com/ianmaciel7/exams-app-archive" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </nav>
+  </header>
+
+  <main class="ws-layout">
+    <aside class="ws-left">
+      <div class="ws-pane-title">
+        <div class="ws-pane-row">
+          <h1>Busca global</h1>
+          <div class="ws-mini-actions">
+            <button id="reload-catalog" type="button" class="text-button" title="Atualizar catálogo">Atualizar</button>
+            <label class="text-button" for="file" title="Importar índice JSON local">JSON</label>
+            <input id="file" type="file" class="ws-visually-hidden" accept=".json,application/json">
+          </div>
         </div>
-        <button id="more" class="more-button" hidden>Mostrar mais resultados</button>
-<details class="ws-help"><summary>Fontes e privacidade</summary><p>Busca por caminhos e refs de repositórios públicos. JSON importado fica nesta aba. Conteúdo histórico privado exige recuperação local.</p><a href="./files.html">Explorador independente ↗</a></details></aside><section class="ws-center" aria-label="Área de trabalho"><div class="ws-tabs" role="group" aria-label="Visualização"><button id="tab-graph" aria-pressed="true">Grafo</button><button id="tab-files" aria-pressed="false">Arquivos e leitura</button><button id="tab-preview" aria-pressed="false">Componentes</button><button id="tab-agents" aria-pressed="false">Agentes</button></div><div id="view-graph" class="ws-view"><section class="graph-panel" id="graph-panel"><div class="graph-head"><div><span class="eyebrow">KNOWLEDGE GRAPH</span><h2>Mapa de conexões</h2><p id="graph-meta"></p></div><div class="graph-actions"><button id="zoom-out" type="button" aria-label="Reduzir zoom">−</button><button id="zoom-in" type="button" aria-label="Aumentar zoom">+</button><button id="graph-fit" type="button">Ajustar</button><label class="motion-toggle"><input type="checkbox" id="graph-motion" checked> Animações</label><button id="graph-reset" type="button">Visão geral</button></div></div><div class="graph-workspace"><aside class="graph-filters"><h3 id="group-title">Grupos</h3><p class="graph-subtitle" id="group-description"></p><div id="graph-groups"></div><label>Relações<select id="confidence"><option value="">Todas</option><option>EXTRACTED</option><option>INFERRED</option><option>UNSPECIFIED</option></select></label><label>Profundidade<select id="graph-hops"><option value="1">1 conexão</option><option value="2" selected>2 conexões</option><option value="3">3 conexões</option></select></label><label>Visão<select id="graph-mode"><option value="auto">Automática</option><option value="groups">Grupos</option><option value="nodes">Nós</option></select></label></aside><div class="graph-canvas"><svg id="graph" viewBox="0 0 900 560" role="group" aria-label="Grafo interativo"></svg><div class="graph-legend"><span>● Tamanho: conexões</span><span>— Extraída</span><span>– – Inferida / não classificada</span><span>Arraste nós ou o fundo · Ctrl + rolagem para zoom</span></div></div></div></section></div><section id="view-files" class="ws-view ws-embedded" hidden><iframe id="workspace-files" title="Explorador de arquivos e código" referrerpolicy="no-referrer"></iframe></section><section id="view-preview" class="ws-view ws-preview" hidden><div class="ws-preview-head"><div><h2>Componentes revisados</h2><p>Renderização original com fixture; não é a aplicação completa.</p></div><select id="preview-choice" aria-label="Componente"><option value="error">ErrorBoundary · React interativo</option><option value="loading">Loading · React SSR</option></select><select id="preview-width" aria-label="Viewport"><option value="wide">Desktop</option><option value="tablet">Tablet · 768px</option><option value="mobile">Mobile · 390px</option></select><button id="preview-reset" class="ws-button">Reiniciar</button></div><div id="preview-provenance"></div><div id="workspace-preview-wrap"><iframe id="workspace-preview" title="Preview React isolado" sandbox="allow-scripts" referrerpolicy="no-referrer"></iframe></div><p class="hint">Outros componentes: use as stories originais ou importe um build local revisado em Arquivos e leitura.</p></section><section id="view-agents" class="ws-view ws-agent" hidden><h2>Contexto para agentes</h2><p>Selecione referências no explorador ou grafo, adicione trechos pelo leitor e exporte o contexto à direita. Este site não executa agentes.</p><div class="ws-agent-links"><a href="./llms.txt">llms.txt — instruções e descoberta</a><a href="./catalog.json">catalog.json — manifesto público</a><a href="https://github.com/ianmaciel7/exams-app-archive/blob/main/docs/AGENT-ACCESS.md">CLI / MCP local</a><a href="https://github.com/ianmaciel7/exams-app-archive/blob/main/docs/COMPONENT-EXPLORER.md">React, screenshots e SQLite</a></div><h3>Consulta</h3><pre>python plugins/exams-archive-native/scripts/archive_query.py search "sidebar" --limit 20</pre><h3>Renderização e captura</h3><pre>python scripts/component_catalog.py list
-python scripts/component_catalog.py render error-boundary
-python scripts/component_catalog.py capture error-boundary --state retry --theme dark</pre><h3>Servidor MCP local</h3><pre>python scripts/archive_mcp.py</pre><p>Preserve repo, commit, blob, caminho, intervalo de linhas e confiança da relação. Metadados não provam recuperação de bytes.</p></section></section><aside class="ws-right"><div class="ws-pane-title"><h2>Inspetor</h2></div><aside class="graph-inspector"><h3>Inspetor</h3><p id="graph-detail" role="status">Selecione um nó para explorar.</p><div id="graph-source"></div><h4>Conexões</h4><div id="graph-neighbors"></div></aside><div class="ws-selection-actions"><button id="pin-node" class="ws-button" disabled>Adicionar seleção</button><button id="read-node" class="ws-button" disabled>Ler arquivo</button></div><section class="ws-context"><div class="ws-context-title"><h2>Contexto para IA</h2><span id="context-count">0/30</span></div><p class="hint">Evidências selecionadas, mantidas nesta sessão.</p><div id="context-list"></div><div class="ws-context-actions"><button id="context-copy" class="ws-button" disabled>Copiar Markdown</button><button id="context-export" class="ws-button" disabled>Exportar JSON</button><button id="context-clear" class="ws-button">Limpar</button></div><p id="context-status" role="status" aria-live="polite"></p></section></aside></main><footer class="ws-footer">Somente leitura · Catálogo público e dados locais <a href="https://github.com/ianmaciel7/exams-app-archive/blob/main/docs/EXTRACTION-GUIDE.md">Guia de recuperação ↗</a></footer></body></html>
+        <span id="dataset" class="dataset">Carregando catálogo…</span>
+      </div>
+      <div class="filters">
+        <label>Repositório <select id="repository" disabled><option value="">Todos os repositórios</option></select></label>
+        <label>Tipo <select id="kind" disabled>
+          <option value="">Todos</option><option value="commit">Commits</option>
+          <option value="file">Arquivos</option><option value="image">Imagens</option><option value="node">Entidades</option><option value="component">React</option><option value="document">Documentos</option>
+        </select></label>
+        <label class="check"><input id="deleted" type="checkbox" disabled> Apenas excluídos</label>
+      </div>
+      <div class="result-header">
+        <p id="status" role="status" aria-live="polite">Carregando catálogo…</p>
+        <button id="clear" type="button" class="text-button" disabled>Limpar</button>
+      </div>
+      <div id="results" class="results" tabindex="-1">
+        <div class="empty"><h3>Seu histórico, no navegador.</h3><p>Pesquise por qualquer arquivo ou componente dos 5 repositórios.</p></div>
+      </div>
+      <button id="more" type="button" class="more-button" hidden>Mostrar mais</button>
+      <details class="ws-help">
+        <summary>Fontes e privacidade</summary>
+        <p>Catálogo gerado dos 5 repositórios públicos arquivados. Dados privados exigem recuperação local.</p>
+        <a href="./files.html">Abrir explorador em tela cheia</a> · <a href="./llms.txt">llms.txt</a>
+      </details>
+    </aside>
+
+    <section class="ws-center" aria-label="Área de trabalho">
+      <section id="view-files" class="ws-view ws-embedded">
+        <iframe id="workspace-files" title="Explorador de arquivos e código" referrerpolicy="no-referrer"></iframe>
+      </section>
+
+      <section id="view-preview" class="ws-view ws-preview" hidden>
+        <div class="ws-preview-head">
+          <div>
+            <h2>Componentes revisados</h2>
+            <p>Renderização original com fixture e CSS equivalente.</p>
+          </div>
+          <select id="preview-choice" aria-label="Componente">
+            <option value="error">ErrorBoundary · React interativo</option>
+            <option value="loading">Loading · React SSR</option>
+          </select>
+          <select id="preview-width" aria-label="Viewport">
+            <option value="wide">Desktop</option>
+            <option value="tablet">Tablet · 768px</option>
+            <option value="mobile">Mobile · 390px</option>
+          </select>
+          <button id="preview-reset" type="button" class="ws-button">Reiniciar</button>
+        </div>
+        <div id="preview-provenance"></div>
+        <div id="workspace-preview-wrap">
+          <iframe id="workspace-preview" title="Preview React isolado" sandbox="allow-scripts" referrerpolicy="no-referrer"></iframe>
+        </div>
+        <p class="hint">Para testar qualquer outro arquivo .tsx/.jsx, selecione-o na aba Arquivos e use o modo Dividido ou Preview.</p>
+      </section>
+
+      <div id="view-graph" class="ws-view" hidden>
+        <section class="graph-panel" id="graph-panel">
+          <div class="graph-head">
+            <div>
+              <span class="eyebrow">KNOWLEDGE GRAPH</span>
+              <h2>Mapa de conexões</h2>
+              <p id="graph-meta"></p>
+            </div>
+            <div class="graph-actions">
+              <button id="zoom-out" type="button" aria-label="Reduzir zoom">−</button>
+              <button id="zoom-in" type="button" aria-label="Aumentar zoom">+</button>
+              <button id="graph-fit" type="button">Ajustar</button>
+              <label class="motion-toggle"><input type="checkbox" id="graph-motion" checked> Animações</label>
+              <button id="graph-reset" type="button">Visão geral</button>
+            </div>
+          </div>
+          <div class="graph-workspace">
+            <aside class="graph-filters">
+              <h3 id="group-title">Grupos</h3>
+              <p class="graph-subtitle" id="group-description"></p>
+              <div id="graph-groups"></div>
+              <label>Relações<select id="confidence"><option value="">Todas</option><option>EXTRACTED</option><option>INFERRED</option><option>UNSPECIFIED</option></select></label>
+              <label>Profundidade<select id="graph-hops"><option value="1">1 conexão</option><option value="2" selected>2 conexões</option><option value="3">3 conexões</option></select></label>
+              <label>Visão<select id="graph-mode"><option value="auto">Automática</option><option value="groups">Grupos</option><option value="nodes">Nós</option></select></label>
+            </aside>
+            <div class="graph-canvas">
+              <svg id="graph" viewBox="0 0 900 560" role="group" aria-label="Grafo interativo"></svg>
+              <div class="graph-legend"><span>● Tamanho: conexões</span><span>— Extraída</span><span>– – Inferida</span><span>Arraste nós ou fundo · Ctrl + rolagem para zoom</span></div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <section id="view-agents" class="ws-view ws-agent" hidden>
+        <h2>Contexto para agentes</h2>
+        <p>Selecione referências na busca ou no leitor e exporte o pacote estruturado pelo painel Contexto.</p>
+        <div class="ws-agent-links">
+          <a href="./llms.txt">llms.txt — instruções e descoberta</a>
+          <a href="./catalog.json">catalog.json — manifesto público dos 5 repositórios</a>
+          <a href="https://github.com/ianmaciel7/exams-app-archive/blob/main/docs/AGENT-ACCESS.md" target="_blank" rel="noopener noreferrer">CLI / MCP local</a>
+          <a href="https://github.com/ianmaciel7/exams-app-archive/blob/main/docs/COMPONENT-EXPLORER.md" target="_blank" rel="noopener noreferrer">React, screenshots e SQLite</a>
+        </div>
+        <h3>Consulta CLI</h3>
+        <pre>python plugins/exams-archive-native/scripts/archive_query.py search "sidebar" --limit 20</pre>
+        <h3>Servidor MCP local</h3>
+        <pre>python scripts/archive_mcp.py</pre>
+      </section>
+    </section>
+
+    <aside id="context-drawer" class="ws-right" hidden>
+      <div class="ws-pane-title ws-pane-row">
+        <h2>Contexto e Inspetor</h2>
+        <button id="close-context" type="button" class="text-button" aria-label="Fechar painel">Fechar</button>
+      </div>
+      <section class="ws-context">
+        <div class="ws-context-title">
+          <h2>Contexto para IA</h2>
+          <span id="context-count">0/30</span>
+        </div>
+        <p class="hint">Evidências selecionadas nesta sessão.</p>
+        <div id="context-list"></div>
+        <div class="ws-context-actions">
+          <button id="context-copy" type="button" class="ws-button" disabled>Copiar Markdown</button>
+          <button id="context-export" type="button" class="ws-button" disabled>Exportar JSON</button>
+          <button id="context-clear" type="button" class="ws-button">Limpar</button>
+        </div>
+        <p id="context-status" role="status" aria-live="polite"></p>
+      </section>
+      <aside class="graph-inspector">
+        <h3>Inspetor de nó</h3>
+        <p id="graph-detail" role="status">Selecione um nó no grafo para inspecionar.</p>
+        <div id="graph-source"></div>
+        <div class="ws-selection-actions">
+          <button id="pin-node" type="button" class="ws-button" disabled>Adicionar seleção</button>
+          <button id="read-node" type="button" class="ws-button" disabled>Ler arquivo</button>
+        </div>
+        <h4>Conexões</h4>
+        <div id="graph-neighbors"></div>
+      </aside>
+    </aside>
+  </main>
+
+  <footer class="ws-footer">
+    <span>Somente leitura · 5 repositórios públicos arquivados</span>
+    <a href="https://github.com/ianmaciel7/exams-app-archive/blob/main/docs/EXTRACTION-GUIDE.md" target="_blank" rel="noopener noreferrer">Guia de recuperação</a>
+  </footer>
+</body>
+</html>
