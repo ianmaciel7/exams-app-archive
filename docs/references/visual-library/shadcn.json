@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "path": "media/shadcn/dashboard-light.png",
+      "kind": "png",
+      "tags": [
+        "dashboard",
+        "charts",
+        "cards",
+        "light theme"
+      ],
+      "source_repo": "shadcn-ui/ui",
+      "source_commit": "055aa6b7837b1808456a24beb4c97a677864aa82",
+      "source_path": "apps/v4/public/examples/dashboard-light.png",
+      "source_url": "https://github.com/shadcn-ui/ui/blob/055aa6b7837b1808456a24beb4c97a677864aa82/apps/v4/public/examples/dashboard-light.png",
+      "blob_sha": "fca14b5b4709f792b1d5261f8412ee36d75867d6",
+      "bytes": 208758,
+      "license": "MIT",
+      "license_path": "media/shadcn/LICENSE",
+      "status": "bytes-verified",
+      "visual_review": "not-performed"
+    },
+    {
+      "path": "media/shadcn/dashboard-dark.png",
+      "kind": "png",
+      "tags": [
+        "dashboard",
+        "charts",
+        "cards",
+        "dark theme"
+      ],
+      "source_repo": "shadcn-ui/ui",
+      "source_commit": "055aa6b7837b1808456a24beb4c97a677864aa82",
+      "source_path": "apps/v4/public/examples/dashboard-dark.png",
+      "source_url": "https://github.com/shadcn-ui/ui/blob/055aa6b7837b1808456a24beb4c97a677864aa82/apps/v4/public/examples/dashboard-dark.png",
+      "blob_sha": "4ca59cf593c8c9a1cb558a5e53bd981e4e593705",
+      "bytes": 198270,
+      "license": "MIT",
+      "license_path": "media/shadcn/LICENSE",
+      "status": "bytes-verified",
+      "visual_review": "not-performed"
+    },
+    {
+      "path": "media/shadcn/sidebar-demo-light.png",
+      "kind": "png",
+      "tags": [
+        "app shell",
+        "sidebar",
+        "navigation",
+        "light theme"
+      ],
+      "source_repo": "shadcn-ui/ui",
+      "source_commit": "055aa6b7837b1808456a24beb4c97a677864aa82",
+      "source_path": "apps/v4/public/r/styles/new-york/sidebar-demo-light.png",
+      "source_url": "https://github.com/shadcn-ui/ui/blob/055aa6b7837b1808456a24beb4c97a677864aa82/apps/v4/public/r/styles/new-york/sidebar-demo-light.png",
+      "blob_sha": "e66a7e58f9f8bde4acfe98b9f30bea4d2d9f3cc6",
+      "bytes": 105028,
+      "license": "MIT",
+      "license_path": "media/shadcn/LICENSE",
+      "status": "bytes-verified",
+      "visual_review": "not-performed"
+    },
+    {
+      "path": "media/shadcn/sidebar-demo-dark.png",
+      "kind": "png",
+      "tags": [
+        "app shell",
+        "sidebar",
+        "navigation",
+        "dark theme"
+      ],
+      "source_repo": "shadcn-ui/ui",
+      "source_commit": "055aa6b7837b1808456a24beb4c97a677864aa82",
+      "source_path": "apps/v4/public/r/styles/new-york/sidebar-demo-dark.png",
+      "source_url": "https://github.com/shadcn-ui/ui/blob/055aa6b7837b1808456a24beb4c97a677864aa82/apps/v4/public/r/styles/new-york/sidebar-demo-dark.png",
+      "blob_sha": "43a9fb16d7aaa8e2bf80668c5197560a3e730c9b",
+      "bytes": 105899,
+      "license": "MIT",
+      "license_path": "media/shadcn/LICENSE",
+      "status": "bytes-verified",
+      "visual_review": "not-performed"
+    },
+    {
+      "path": "media/shadcn/tasks-light.png",
+      "kind": "png",
+      "tags": [
+        "table",
+        "filters",
+        "tasks",
+        "light theme"
+      ],
+      "source_repo": "shadcn-ui/ui",
+      "source_commit": "055aa6b7837b1808456a24beb4c97a677864aa82",
+      "source_path": "apps/v4/public/examples/tasks-light.png",
+      "source_url": "https://github.com/shadcn-ui/ui/blob/055aa6b7837b1808456a24beb4c97a677864aa82/apps/v4/public/examples/tasks-light.png",
+      "blob_sha": "951fd037f6638a2745e9b9f1c8cdd3e5e34dd976",
+      "bytes": 248223,
+      "license": "MIT",
+      "license_path": "media/shadcn/LICENSE",
+      "status": "bytes-verified",
+      "visual_review": "not-performed"
+    }
+  ],
+  "failures": []
+}
