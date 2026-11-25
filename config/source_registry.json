@@ -1,0 +1,930 @@
+{
+  "schema_version": 1,
+  "registry_version": "1.0.0",
+  "updated_at": "2026-11-25",
+  "description": "Declarative source registry consolidating public repositories, authenticated historical archives, reference catalogs, visual libraries, and taxonomy policies.",
+  "compatibility": {
+    "legacy_config": "config/public-catalog-sources.json",
+    "repositories": [
+      "ianmaciel7/exams-app"
+    ],
+    "historical_unavailable": [
+      "ianmaciel7/exams-app-old",
+      "ianmaciel7/exams-app-antigo-2",
+      "ianmaciel7/shadcn-template",
+      "ianmaciel7/shadcn-firebase-template"
+    ],
+    "historical_access": "Restore authorized central archive bundles locally; do not publish historical private metadata. Origins returned HTTP 404 in connected verification 2026-11-25."
+  },
+  "global_policies": {
+    "egress_policy": "offline-local-only",
+    "external_third_party_upload": false,
+    "exclusion_precedence": true,
+    "authorization_precedence": true,
+    "preserve_historical_revisions": true,
+    "max_text_bytes": 262144,
+    "max_image_bytes": 1572864,
+    "max_doc_bytes": 8388608,
+    "default_exclude_patterns": [
+      "**/.git/**",
+      "**/node_modules/**",
+      "**/.cache/**",
+      "**/.env",
+      "**/.env.*",
+      "**/secrets/**",
+      "**/*credential*",
+      "**/*secret*",
+      "**/.ssh/**",
+      "**/.aws/**",
+      "**/.gnupg/**",
+      "**/*.pem",
+      "**/*.key",
+      "**/*.p12",
+      "**/*.pfx",
+      "**/*.jks",
+      "**/*.keystore",
+      "**/*.kdbx",
+      "**/package-lock.json",
+      "**/yarn.lock",
+      "**/pnpm-lock.yaml"
+    ],
+    "default_exclude_urls": [
+      "http://*",
+      "ftp://*",
+      "file://*"
+    ],
+    "allowed_formats": [
+      ".ts",
+      ".tsx",
+      ".mts",
+      ".cts",
+      ".js",
+      ".jsx",
+      ".mjs",
+      ".cjs",
+      ".py",
+      ".pyi",
+      ".cs",
+      ".sql",
+      ".css",
+      ".scss",
+      ".html",
+      ".htm",
+      ".md",
+      ".mdx",
+      ".markdown",
+      ".txt",
+      ".rst",
+      ".json",
+      ".jsonc",
+      ".yaml",
+      ".yml",
+      ".toml",
+      ".pdf",
+      ".png",
+      ".jpg",
+      ".jpeg",
+      ".webp",
+      ".gif",
+      ".svg",
+      ".mp4",
+      ".drawio",
+      ".excalidraw"
+    ]
+  },
+  "sources": [
+    {
+      "source_id": "repo.exams-app",
+      "context_key": "public::engenharia::repo.exams-app",
+      "title": "ianmaciel7/exams-app (Public Repository)",
+      "source_type": "git_repository",
+      "adapter": "github_api",
+      "scope": "public",
+      "authorization_required": false,
+      "origin_status": "online",
+      "license": "proprietary-owner-public",
+      "repo": "ianmaciel7/exams-app",
+      "pinned_refs": [
+        "refs/heads/main",
+        "refs/heads/dev",
+        "refs/heads/chore/consolidate-legacy-sources-20261123",
+        "refs/heads/claude/project-thread-o4dym1",
+        "refs/pull/1/head"
+      ],
+      "pinned_revisions": {
+        "refs/heads/main": "70247f40f1495ad5660578cd90bef28fc489e59f",
+        "refs/heads/dev": "dfc277cd98239c92d2a6b9f6dea44393b15a626b",
+        "refs/heads/chore/consolidate-legacy-sources-20261123": "b67c7c1e36e09676192382112590a203a2113cbc",
+        "refs/heads/claude/project-thread-o4dym1": "c6d50b2096e397ee2819b4d5ef84a2a799cca247",
+        "refs/pull/1/head": "b67c7c1e36e09676192382112590a203a2113cbc"
+      },
+      "preserve_history": true,
+      "freshness_policy": {
+        "mode": "pinned_snapshot",
+        "ttl_hours": 168,
+        "last_verified_at": "2026-11-25"
+      },
+      "formats": [
+        ".ts",
+        ".tsx",
+        ".js",
+        ".jsx",
+        ".css",
+        ".md",
+        ".json",
+        ".png",
+        ".jpg",
+        ".svg"
+      ],
+      "include_paths": [
+        "src/**",
+        "app/**",
+        "components/**",
+        "docs/**",
+        "public/**",
+        "*.md",
+        "*.json"
+      ],
+      "exclude_paths": [
+        "**/.env*",
+        "**/node_modules/**",
+        "**/dist/**",
+        "**/.next/**"
+      ],
+      "include_extensions": [
+        ".ts",
+        ".tsx",
+        ".js",
+        ".jsx",
+        ".css",
+        ".scss",
+        ".html",
+        ".md",
+        ".mdx",
+        ".json",
+        ".yaml",
+        ".yml",
+        ".png",
+        ".jpg",
+        ".jpeg",
+        ".webp",
+        ".gif",
+        ".svg",
+        ".pdf"
+      ],
+      "exclude_extensions": [
+        ".pem",
+        ".key",
+        ".env",
+        ".lock"
+      ],
+      "include_urls": [
+        "https://github.com/ianmaciel7/exams-app"
+      ],
+      "exclude_urls": [],
+      "manifest_ref": "manifests/exams-app-complete-2026-11-23.json",
+      "bundle_fallback": {
+        "adapter": "git_bundle",
+        "release_tag": "exams-app-2026-11-23-complete",
+        "asset_name": "exams-app-all-refs.bundle",
+        "sha256": "31ccb5296ec49af841641d969b1bf6d7c162b1a73ba9435bb2dce84bf7f0702c"
+      }
+    },
+    {
+      "source_id": "bundle.exams-app-old",
+      "context_key": "authenticated-archive::historico::bundle.exams-app-old",
+      "title": "ianmaciel7/exams-app-old (Historical Archive Bundle)",
+      "source_type": "git_bundle",
+      "adapter": "git_bundle",
+      "scope": "authenticated_archive",
+      "authorization_required": true,
+      "origin_status": "historical_unavailable",
+      "license": "proprietary-owner-archive",
+      "repo": "ianmaciel7/exams-app-old",
+      "pinned_refs": [
+        "refs/heads/main",
+        "refs/heads/dev",
+        "refs/heads/backup/dev-20261111-1903",
+        "refs/heads/backup/dev-before-adr2",
+        "refs/heads/backup/old-1",
+        "refs/heads/claude/project-thread-u76ueb"
+      ],
+      "pinned_revisions": {
+        "refs/heads/main": "30a94c44277e869dc4ae1b9080828886ce405f2f",
+        "refs/heads/dev": "b86b70c304e574022416e8e2ecdc3816f1b386f1",
+        "refs/heads/backup/dev-20261111-1903": "a8d9797ed47bd8d2e2987e12d7bb478841c78671",
+        "refs/heads/backup/dev-before-adr2": "1db80ad136bbab8720637fbd33315d08bf6a5def",
+        "refs/heads/backup/old-1": "cc43fb998824101d68da7fad237fd5457986e1cb"
+      },
+      "preserve_history": true,
+      "freshness_policy": {
+        "mode": "immutable_archive",
+        "ttl_hours": null,
+        "last_verified_at": "2026-11-24"
+      },
+      "formats": [
+        ".ts",
+        ".tsx",
+        ".js",
+        ".jsx",
+        ".css",
+        ".md",
+        ".json",
+        ".png",
+        ".jpg",
+        ".svg"
+      ],
+      "include_paths": [
+        "**/*"
+      ],
+      "exclude_paths": [
+        "**/.env*",
+        "**/node_modules/**",
+        "**/secrets/**"
+      ],
+      "include_extensions": [
+        ".ts",
+        ".tsx",
+        ".js",
+        ".jsx",
+        ".css",
+        ".scss",
+        ".html",
+        ".md",
+        ".mdx",
+        ".json",
+        ".yaml",
+        ".yml",
+        ".py",
+        ".png",
+        ".jpg",
+        ".jpeg",
+        ".webp",
+        ".gif",
+        ".svg",
+        ".pdf"
+      ],
+      "exclude_extensions": [
+        ".pem",
+        ".key",
+        ".env"
+      ],
+      "include_urls": [],
+      "exclude_urls": [],
+      "manifest_ref": "manifests/release-2026-11-23-all-refs.json",
+      "bundle_asset": {
+        "release_tag": "archive-2026-11-23-all-refs",
+        "asset_name": "exams-app-old.bundle",
+        "sha256": "09ddd85acba14f1412bbfdd5841eed7e2da3e42c926cb803ba70fb55e6003bf7"
+      }
+    },
+    {
+      "source_id": "bundle.exams-app-antigo-2",
+      "context_key": "authenticated-archive::historico::bundle.exams-app-antigo-2",
+      "title": "ianmaciel7/exams-app-antigo-2 (Historical Archive Bundle)",
+      "source_type": "git_bundle",
+      "adapter": "git_bundle",
+      "scope": "authenticated_archive",
+      "authorization_required": true,
+      "origin_status": "historical_unavailable",
+      "license": "proprietary-owner-archive",
+      "repo": "ianmaciel7/exams-app-antigo-2",
+      "pinned_refs": [
+        "refs/heads/main",
+        "refs/heads/dev",
+        "refs/heads/chore/type-workspace-e2e-evidence-84",
+        "refs/heads/claude/downloads-grafo-png"
+      ],
+      "pinned_revisions": {
+        "refs/heads/chore/type-workspace-e2e-evidence-84": "a14153c52acc412099c58c2fd8c1b695a6447115",
+        "refs/heads/claude/downloads-grafo-png": "3bc92b289b6a30cc069eecb8733f5779b1566562"
+      },
+      "preserve_history": true,
+      "freshness_policy": {
+        "mode": "immutable_archive",
+        "ttl_hours": null,
+        "last_verified_at": "2026-11-24"
+      },
+      "formats": [
+        ".ts",
+        ".tsx",
+        ".js",
+        ".jsx",
+        ".css",
+        ".md",
+        ".json",
+        ".png",
+        ".jpg",
+        ".svg",
+        ".pdf"
+      ],
+      "include_paths": [
+        "**/*"
+      ],
+      "exclude_paths": [
+        "**/.env*",
+        "**/node_modules/**",
+        "**/secrets/**"
+      ],
+      "include_extensions": [
+        ".ts",
+        ".tsx",
+        ".js",
+        ".jsx",
+        ".css",
+        ".scss",
+        ".html",
+        ".md",
+        ".mdx",
+        ".json",
+        ".yaml",
+        ".yml",
+        ".py",
+        ".png",
+        ".jpg",
+        ".jpeg",
+        ".webp",
+        ".gif",
+        ".svg",
+        ".pdf"
+      ],
+      "exclude_extensions": [
+        ".pem",
+        ".key",
+        ".env"
+      ],
+      "include_urls": [],
+      "exclude_urls": [],
+      "manifest_ref": "manifests/release-2026-11-23-all-refs.json",
+      "bundle_asset": {
+        "release_tag": "archive-2026-11-23-all-refs",
+        "asset_name": "exams-app-antigo-2.bundle",
+        "sha256": "076ae0c0f7dbcc22e180e3fd1e4bbcfa830981d709659f873a14ef2fe3ac5fde"
+      }
+    },
+    {
+      "source_id": "bundle.shadcn-template",
+      "context_key": "authenticated-archive::historico::bundle.shadcn-template",
+      "title": "ianmaciel7/shadcn-template (Historical Archive Bundle)",
+      "source_type": "git_bundle",
+      "adapter": "git_bundle",
+      "scope": "authenticated_archive",
+      "authorization_required": true,
+      "origin_status": "historical_unavailable",
+      "license": "MIT",
+      "repo": "ianmaciel7/shadcn-template",
+      "pinned_refs": [
+        "refs/heads/main",
+        "refs/heads/feat/setup-github-and-standards",
+        "refs/heads/chore/declarative-ruleset-as-code"
+      ],
+      "pinned_revisions": {
+        "refs/heads/main": "c091632dfc03519862950dcffc6c3a41a9360b9c",
+        "refs/heads/feat/setup-github-and-standards": "bb30ac75f3c48fda2aa5f7bedea6f46faf0c6fa8",
+        "refs/heads/chore/declarative-ruleset-as-code": "6ceb812e4397cfd0364b8233dea076747af73861"
+      },
+      "preserve_history": true,
+      "freshness_policy": {
+        "mode": "immutable_archive",
+        "ttl_hours": null,
+        "last_verified_at": "2026-11-24"
+      },
+      "formats": [
+        ".ts",
+        ".tsx",
+        ".js",
+        ".css",
+        ".md",
+        ".json"
+      ],
+      "include_paths": [
+        "**/*"
+      ],
+      "exclude_paths": [
+        "**/.env*",
+        "**/node_modules/**"
+      ],
+      "include_extensions": [
+        ".ts",
+        ".tsx",
+        ".js",
+        ".jsx",
+        ".css",
+        ".md",
+        ".json",
+        ".yaml",
+        ".yml",
+        ".png",
+        ".svg"
+      ],
+      "exclude_extensions": [
+        ".pem",
+        ".key",
+        ".env"
+      ],
+      "include_urls": [],
+      "exclude_urls": [],
+      "manifest_ref": "manifests/release-2026-11-23-audit-complements.json",
+      "bundle_asset": {
+        "release_tag": "archive-2026-11-23-audit-complements",
+        "asset_name": "shadcn-template.bundle",
+        "sha256": "0a251265797e6b1cc614eb495dd2c369182150ebb95646979a6a06a052fbdf42"
+      }
+    },
+    {
+      "source_id": "bundle.shadcn-firebase-template",
+      "context_key": "authenticated-archive::historico::bundle.shadcn-firebase-template",
+      "title": "ianmaciel7/shadcn-firebase-template (Historical Archive Bundle)",
+      "source_type": "git_bundle",
+      "adapter": "git_bundle",
+      "scope": "authenticated_archive",
+      "authorization_required": true,
+      "origin_status": "historical_unavailable",
+      "license": "MIT",
+      "repo": "ianmaciel7/shadcn-firebase-template",
+      "pinned_refs": [
+        "refs/heads/main"
+      ],
+      "pinned_revisions": {
+        "refs/heads/main": "4d706df638738c3babe5df562e38fb830832f238"
+      },
+      "preserve_history": true,
+      "freshness_policy": {
+        "mode": "immutable_archive",
+        "ttl_hours": null,
+        "last_verified_at": "2026-11-24"
+      },
+      "formats": [
+        ".ts",
+        ".tsx",
+        ".js",
+        ".css",
+        ".md",
+        ".json"
+      ],
+      "include_paths": [
+        "**/*"
+      ],
+      "exclude_paths": [
+        "**/.env*",
+        "**/node_modules/**"
+      ],
+      "include_extensions": [
+        ".ts",
+        ".tsx",
+        ".js",
+        ".jsx",
+        ".css",
+        ".md",
+        ".json",
+        ".yaml",
+        ".yml",
+        ".png",
+        ".svg"
+      ],
+      "exclude_extensions": [
+        ".pem",
+        ".key",
+        ".env"
+      ],
+      "include_urls": [],
+      "exclude_urls": [],
+      "manifest_ref": "manifests/release-2026-11-23-audit-complements.json",
+      "bundle_asset": {
+        "release_tag": "archive-2026-11-23-audit-complements",
+        "asset_name": "shadcn-firebase-template.bundle",
+        "sha256": "1c3a404c21e19735bdd83068a06d3e554b1c98c24be0e214c1677331e1cb9f16"
+      }
+    },
+    {
+      "source_id": "bundle.notes-app",
+      "context_key": "authenticated-archive::historico::bundle.notes-app",
+      "title": "ianmaciel7/notes-app (Authenticated Private Archive Bundle)",
+      "source_type": "git_bundle",
+      "adapter": "git_bundle",
+      "scope": "authenticated_archive",
+      "authorization_required": true,
+      "origin_status": "private_authenticated",
+      "license": "proprietary-owner-private",
+      "repo": "ianmaciel7/notes-app",
+      "pinned_refs": [
+        "refs/heads/main",
+        "refs/heads/dev",
+        "refs/heads/stag",
+        "refs/heads/firebase/file",
+        "refs/heads/old",
+        "refs/heads/old-1",
+        "refs/heads/old-2",
+        "refs/heads/old-3",
+        "refs/heads/old-4",
+        "refs/heads/old-5",
+        "refs/heads/old-6",
+        "refs/heads/old-7",
+        "refs/heads/old-8",
+        "refs/heads/old-9",
+        "refs/heads/old-10",
+        "refs/heads/old-11"
+      ],
+      "pinned_revisions": {
+        "refs/heads/main": "4d466873440b84e9f20b285550a14d0ae0e9f0c9",
+        "refs/heads/dev": "93505f253bd913475e52b626f63cdf4baeac91bd",
+        "refs/heads/old-5": "0857a9977d1f66f1ba2b26d46bb6084344d489c8",
+        "refs/heads/old-10": "cabcec2e8227fc7f06aa5c9c5afcc0e8944802c6",
+        "refs/heads/old-11": "f513fc91cdebd0adf8ba708d8108f9808af698c6"
+      },
+      "preserve_history": true,
+      "freshness_policy": {
+        "mode": "immutable_archive",
+        "ttl_hours": null,
+        "last_verified_at": "2026-11-24"
+      },
+      "formats": [
+        ".ts",
+        ".tsx",
+        ".js",
+        ".css",
+        ".md",
+        ".json",
+        ".png",
+        ".jpg",
+        ".svg"
+      ],
+      "include_paths": [
+        "**/*"
+      ],
+      "exclude_paths": [
+        "**/.env*",
+        "**/node_modules/**",
+        "**/secrets/**"
+      ],
+      "include_extensions": [
+        ".ts",
+        ".tsx",
+        ".js",
+        ".jsx",
+        ".css",
+        ".scss",
+        ".md",
+        ".json",
+        ".png",
+        ".jpg",
+        ".jpeg",
+        ".svg"
+      ],
+      "exclude_extensions": [
+        ".pem",
+        ".key",
+        ".env"
+      ],
+      "include_urls": [],
+      "exclude_urls": [],
+      "manifest_ref": "manifests/notes-app-private-full.json"
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "context_key": "public::governanca::local.archive-docs-and-reports",
+      "title": "Archive Governance Docs, Inventories, and Reports",
+      "source_type": "documentation_corpus",
+      "adapter": "local_fs",
+      "scope": "public",
+      "authorization_required": false,
+      "origin_status": "online",
+      "license": "repository-public",
+      "root_path": ".",
+      "pinned_refs": [
+        "HEAD"
+      ],
+      "pinned_revisions": {},
+      "preserve_history": true,
+      "freshness_policy": {
+        "mode": "incremental_content_hash",
+        "ttl_hours": 24,
+        "last_verified_at": "2026-11-25"
+      },
+      "formats": [
+        ".md",
+        ".json",
+        ".py"
+      ],
+      "include_paths": [
+        "README.md",
+        "AGENTS.md",
+        "docs/*.md",
+        "docs/*.json",
+        "reports/*.md",
+        "reports/*.json",
+        "config/*.json",
+        "manifests/*.json",
+        "inventory/*.json"
+      ],
+      "exclude_paths": [
+        "**/.env*",
+        "**/node_modules/**",
+        "**/.cache/**",
+        "**/secrets/**"
+      ],
+      "include_extensions": [
+        ".md",
+        ".mdx",
+        ".json",
+        ".txt"
+      ],
+      "exclude_extensions": [
+        ".pem",
+        ".key",
+        ".env"
+      ],
+      "include_urls": [],
+      "exclude_urls": []
+    },
+    {
+      "source_id": "local.research-catalogs",
+      "context_key": "public::referencias-externas::local.research-catalogs",
+      "title": "Public UI/UX Research Catalogs and Pattern Libraries",
+      "source_type": "research_catalog",
+      "adapter": "local_fs",
+      "scope": "public",
+      "authorization_required": false,
+      "origin_status": "online",
+      "license": "curated-public-references",
+      "root_path": "docs/references",
+      "pinned_refs": [
+        "HEAD"
+      ],
+      "pinned_revisions": {},
+      "preserve_history": true,
+      "freshness_policy": {
+        "mode": "incremental_content_hash",
+        "ttl_hours": 168,
+        "last_verified_at": "2026-11-25"
+      },
+      "formats": [
+        ".json",
+        ".md"
+      ],
+      "include_paths": [
+        "interface-pattern-library/**",
+        "ui-ux-patterns-2026-11-25/**",
+        "ui-ux-research-sources/**",
+        "grok-bot/*.md",
+        "grok-bot/*.json"
+      ],
+      "exclude_paths": [
+        "**/.env*",
+        "**/node_modules/**",
+        "**/secrets/**"
+      ],
+      "include_extensions": [
+        ".json",
+        ".md"
+      ],
+      "exclude_extensions": [
+        ".pem",
+        ".key",
+        ".env"
+      ],
+      "include_urls": [
+        "https://*"
+      ],
+      "exclude_urls": [
+        "http://*",
+        "https://localhost*",
+        "https://127.0.0.1*"
+      ]
+    },
+    {
+      "source_id": "local.visual-evidence-library",
+      "context_key": "public::midia::local.visual-evidence-library",
+      "title": "Licensed Visual Evidence Library (Screenshots, GIFs, Videos)",
+      "source_type": "visual_media_library",
+      "adapter": "local_fs",
+      "scope": "public",
+      "authorization_required": false,
+      "origin_status": "online",
+      "license": "MIT-and-verified-upstreams",
+      "root_path": "docs/references/visual-evidence-library",
+      "pinned_refs": [
+        "HEAD"
+      ],
+      "pinned_revisions": {},
+      "preserve_history": true,
+      "freshness_policy": {
+        "mode": "content_addressed_manifest",
+        "ttl_hours": 168,
+        "last_verified_at": "2026-11-25"
+      },
+      "formats": [
+        ".json",
+        ".md",
+        ".html",
+        ".png",
+        ".jpg",
+        ".jpeg",
+        ".gif",
+        ".webp",
+        ".svg",
+        ".mp4"
+      ],
+      "include_paths": [
+        "manifest.json",
+        "README.md",
+        "MEDIA-POLICY.md",
+        "gallery.html",
+        "media/**/*"
+      ],
+      "exclude_paths": [
+        "**/.env*",
+        "**/secrets/**"
+      ],
+      "include_extensions": [
+        ".json",
+        ".md",
+        ".html",
+        ".png",
+        ".jpg",
+        ".jpeg",
+        ".gif",
+        ".webp",
+        ".svg",
+        ".mp4"
+      ],
+      "exclude_extensions": [
+        ".pem",
+        ".key",
+        ".env"
+      ],
+      "include_urls": [
+        "https://github.com/*"
+      ],
+      "exclude_urls": [],
+      "manifest_ref": "docs/references/visual-evidence-library/manifest.json"
+    },
+    {
+      "source_id": "local.grok-bot-media",
+      "context_key": "public::midia::local.grok-bot-media",
+      "title": "Grok Bot UI & Motion Media Library",
+      "source_type": "visual_media_library",
+      "adapter": "local_fs",
+      "scope": "public",
+      "authorization_required": false,
+      "origin_status": "online",
+      "license": "MIT",
+      "root_path": "docs/references/grok-bot/media",
+      "pinned_refs": [
+        "HEAD"
+      ],
+      "pinned_revisions": {},
+      "preserve_history": true,
+      "freshness_policy": {
+        "mode": "content_addressed_manifest",
+        "ttl_hours": 168,
+        "last_verified_at": "2026-11-25"
+      },
+      "formats": [
+        ".json",
+        ".png",
+        ".gif",
+        ".svg",
+        ".md"
+      ],
+      "include_paths": [
+        "manifest.json",
+        "**/*"
+      ],
+      "exclude_paths": [
+        "**/.env*",
+        "**/secrets/**"
+      ],
+      "include_extensions": [
+        ".json",
+        ".png",
+        ".gif",
+        ".svg",
+        ".md"
+      ],
+      "exclude_extensions": [
+        ".pem",
+        ".key",
+        ".env"
+      ],
+      "include_urls": [
+        "https://github.com/*"
+      ],
+      "exclude_urls": [],
+      "manifest_ref": "docs/references/grok-bot/media/manifest.json"
+    },
+    {
+      "source_id": "local.visual-library-legacy",
+      "context_key": "public::midia::local.visual-library-legacy",
+      "title": "Visual Library (Excalidraw, Shadcn, Storybook)",
+      "source_type": "visual_media_library",
+      "adapter": "local_fs",
+      "scope": "public",
+      "authorization_required": false,
+      "origin_status": "online",
+      "license": "MIT",
+      "root_path": "docs/references/visual-library",
+      "pinned_refs": [
+        "HEAD"
+      ],
+      "pinned_revisions": {},
+      "preserve_history": true,
+      "freshness_policy": {
+        "mode": "content_addressed_manifest",
+        "ttl_hours": 168,
+        "last_verified_at": "2026-11-25"
+      },
+      "formats": [
+        ".json",
+        ".md",
+        ".png",
+        ".svg"
+      ],
+      "include_paths": [
+        "**/*"
+      ],
+      "exclude_paths": [
+        "**/.env*",
+        "**/secrets/**"
+      ],
+      "include_extensions": [
+        ".json",
+        ".md",
+        ".png",
+        ".jpg",
+        ".svg",
+        ".gif"
+      ],
+      "exclude_extensions": [
+        ".pem",
+        ".key",
+        ".env"
+      ],
+      "include_urls": [],
+      "exclude_urls": []
+    },
+    {
+      "source_id": "local.code-and-tests",
+      "context_key": "public::engenharia::local.code-and-tests",
+      "title": "Archive Tooling Scripts, Plugins, and Verification Tests",
+      "source_type": "source_code",
+      "adapter": "local_fs",
+      "scope": "public",
+      "authorization_required": false,
+      "origin_status": "online",
+      "license": "repository-public",
+      "root_path": ".",
+      "pinned_refs": [
+        "HEAD"
+      ],
+      "pinned_revisions": {},
+      "preserve_history": true,
+      "freshness_policy": {
+        "mode": "incremental_content_hash",
+        "ttl_hours": 24,
+        "last_verified_at": "2026-11-25"
+      },
+      "formats": [
+        ".py",
+        ".mjs",
+        ".js",
+        ".html",
+        ".css",
+        ".json",
+        ".yml"
+      ],
+      "include_paths": [
+        "scripts/**",
+        "tests/**",
+        "plugins/**",
+        "site/**",
+        ".github/workflows/**"
+      ],
+      "exclude_paths": [
+        "**/__pycache__/**",
+        "**/.env*",
+        "**/node_modules/**",
+        "**/secrets/**"
+      ],
+      "include_extensions": [
+        ".py",
+        ".mjs",
+        ".js",
+        ".html",
+        ".css",
+        ".json",
+        ".yml",
+        ".yaml",
+        ".md"
+      ],
+      "exclude_extensions": [
+        ".pyc",
+        ".pem",
+        ".key",
+        ".env"
+      ],
+      "include_urls": [],
+      "exclude_urls": []
+    }
+  ]
+}

@@ -1,0 +1,1342 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-25T22:31:17.586837+00:00",
+  "registry_version": "1.0.0",
+  "registry_hash": "9224f9c30c7624754c23be8ac8be79ea0096ca2e24c86b4504d47c452594dabe",
+  "egress_policy": "offline-local-only",
+  "lifecycle_vocabulary": [
+    "located",
+    "retrieved",
+    "extracted",
+    "indexed",
+    "queryable",
+    "verified",
+    "partial",
+    "unavailable"
+  ],
+  "summary": {
+    "total_sources": 12,
+    "files_included": 419,
+    "files_excluded": 1034,
+    "knowledge_units_total": 2443,
+    "by_lifecycle_state": {
+      "extracted": 30,
+      "indexed": 111,
+      "partial": 1,
+      "queryable": 48,
+      "unavailable": 5,
+      "verified": 230
+    },
+    "by_modality_files": {
+      "ast_code": 105,
+      "document": 125,
+      "media_visual": 74,
+      "metadata": 115
+    },
+    "by_modality_units": {
+      "ast_code": 1406,
+      "document": 817,
+      "media_visual": 74,
+      "metadata": 85
+    },
+    "mime_types_count": 11,
+    "top_mime_types": {
+      "text/markdown": 125,
+      "text/x-python": 93,
+      "application/json": 85,
+      "application/yaml": 30,
+      "image/png": 29,
+      "image/jpeg": 27,
+      "image/gif": 9,
+      "video/mp4": 9,
+      "application/javascript": 7,
+      "text/html": 4,
+      "text/css": 1
+    }
+  },
+  "visual_media_audit": {
+    "total_visual_records": 61,
+    "verified_blobs": 35,
+    "link_only": 26,
+    "sampled_frames_reviewed": 9,
+    "uninspected_media": 52,
+    "duplicate_blob_groups": 0,
+    "duplicate_blobs": {}
+  },
+  "traceability_graph": {
+    "nodes_count": 245,
+    "edges_count": 367,
+    "node_types": {
+      "decision_or_doc": 55,
+      "implementation": 56,
+      "requirement": 37,
+      "test": 35,
+      "version": 1,
+      "visual_evidence": 61
+    },
+    "orphan_count": 3,
+    "orphans_sample": [
+      "test:tests/smoke_component_preview.py",
+      "test:tests/test_archive_plugin.py",
+      "test:tests/test_workflow_permissions.py"
+    ],
+    "edges_sample": [
+      {
+        "source": "impl:scripts/archive_mcp.py",
+        "target": "test:tests/smoke_agent_browser.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/archive_context.py",
+        "target": "test:tests/test_archive_context.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/concept_packs.py",
+        "target": "test:tests/test_archive_context.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/research_index.py",
+        "target": "test:tests/test_archive_context.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/archive_flow.py",
+        "target": "test:tests/test_archive_flow.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/content_index.py",
+        "target": "test:tests/test_archive_flow.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/archive_index.py",
+        "target": "test:tests/test_archive_index.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/export_public_research.py",
+        "target": "test:tests/test_archive_pages.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/archive_remote_query.py",
+        "target": "test:tests/test_archive_remote_query.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/context_linker.py",
+        "target": "test:tests/test_archive_remote_query.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/graph_linker.py",
+        "target": "test:tests/test_archive_remote_query.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/ast_chunker.py",
+        "target": "test:tests/test_ast_chunker.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/branch_cleanup_readiness.py",
+        "target": "test:tests/test_branch_cleanup_readiness.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/concept_packs.py",
+        "target": "test:tests/test_concept_packs.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/research_index.py",
+        "target": "test:tests/test_concept_packs.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/content_index.py",
+        "target": "test:tests/test_content_index.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/context_coverage.py",
+        "target": "test:tests/test_context_coverage.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/ast_chunker.py",
+        "target": "test:tests/test_context_coverage.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/context_linker.py",
+        "target": "test:tests/test_context_coverage.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/graph_linker.py",
+        "target": "test:tests/test_context_coverage.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "req:issue-29",
+        "target": "test:tests/test_context_coverage.py",
+        "type": "TESTED_FOR"
+      },
+      {
+        "source": "impl:scripts/context_linker.py",
+        "target": "test:tests/test_context_linker.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/document_extractor.py",
+        "target": "test:tests/test_document_extractor.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/domain_ontology.py",
+        "target": "test:tests/test_domain_ontology.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/concept_packs.py",
+        "target": "test:tests/test_domain_ontology.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/knowledge_indexer.py",
+        "target": "test:tests/test_domain_ontology.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/research_index.py",
+        "target": "test:tests/test_domain_ontology.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/search_expansion.py",
+        "target": "test:tests/test_domain_ontology.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "req:issue-79",
+        "target": "test:tests/test_domain_ontology.py",
+        "type": "TESTED_FOR"
+      },
+      {
+        "source": "req:issue-85",
+        "target": "test:tests/test_domain_ontology.py",
+        "type": "TESTED_FOR"
+      },
+      {
+        "source": "impl:scripts/evidence_graph.py",
+        "target": "test:tests/test_evidence_graph.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/graph_linker.py",
+        "target": "test:tests/test_graph_linker.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/image_catalog.py",
+        "target": "test:tests/test_image_catalog.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "req:issue-36",
+        "target": "test:tests/test_integration_matrix.py",
+        "type": "TESTED_FOR"
+      },
+      {
+        "source": "impl:scripts/knowledge_indexer.py",
+        "target": "test:tests/test_knowledge_indexer.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/component_catalog.py",
+        "target": "test:tests/test_multiagent_plugin.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/offsite_backup_checklist.py",
+        "target": "test:tests/test_offsite_backup.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/offsite_export_and_restore.py",
+        "target": "test:tests/test_offsite_export_and_restore.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/authenticated_archive_query.py",
+        "target": "test:tests/test_pinned_historical_context.py",
+        "type": "VERIFIED_BY_TEST"
+      },
+      {
+        "source": "impl:scripts/pre_deletion_audit.py",
+        "target": "test:tests/test_pre_deletion_audit.py",
+        "type": "VERIFIED_BY_TEST"
+      }
+    ]
+  },
+  "bundle_recovery_verification": [
+    {
+      "source_id": "repo.exams-app",
+      "repo": "ianmaciel7/exams-app",
+      "scope": "public",
+      "origin_status": "online",
+      "manifest_ref": "manifests/exams-app-complete-2026-11-23.json",
+      "manifest_present": true,
+      "bundle_sha256_pinned": true,
+      "pinned_refs_count": 5,
+      "recovery_verified_in_manifest": true,
+      "operational_index_separated": true
+    },
+    {
+      "source_id": "bundle.exams-app-old",
+      "repo": "ianmaciel7/exams-app-old",
+      "scope": "authenticated_archive",
+      "origin_status": "historical_unavailable",
+      "manifest_ref": "manifests/release-2026-11-23-all-refs.json",
+      "manifest_present": true,
+      "bundle_sha256_pinned": true,
+      "pinned_refs_count": 6,
+      "recovery_verified_in_manifest": true,
+      "operational_index_separated": true
+    },
+    {
+      "source_id": "bundle.exams-app-antigo-2",
+      "repo": "ianmaciel7/exams-app-antigo-2",
+      "scope": "authenticated_archive",
+      "origin_status": "historical_unavailable",
+      "manifest_ref": "manifests/release-2026-11-23-all-refs.json",
+      "manifest_present": true,
+      "bundle_sha256_pinned": true,
+      "pinned_refs_count": 4,
+      "recovery_verified_in_manifest": true,
+      "operational_index_separated": true
+    },
+    {
+      "source_id": "bundle.shadcn-template",
+      "repo": "ianmaciel7/shadcn-template",
+      "scope": "authenticated_archive",
+      "origin_status": "historical_unavailable",
+      "manifest_ref": "manifests/release-2026-11-23-audit-complements.json",
+      "manifest_present": true,
+      "bundle_sha256_pinned": true,
+      "pinned_refs_count": 3,
+      "recovery_verified_in_manifest": true,
+      "operational_index_separated": true
+    },
+    {
+      "source_id": "bundle.shadcn-firebase-template",
+      "repo": "ianmaciel7/shadcn-firebase-template",
+      "scope": "authenticated_archive",
+      "origin_status": "historical_unavailable",
+      "manifest_ref": "manifests/release-2026-11-23-audit-complements.json",
+      "manifest_present": true,
+      "bundle_sha256_pinned": true,
+      "pinned_refs_count": 1,
+      "recovery_verified_in_manifest": true,
+      "operational_index_separated": true
+    },
+    {
+      "source_id": "bundle.notes-app",
+      "repo": "ianmaciel7/notes-app",
+      "scope": "authenticated_archive",
+      "origin_status": "private_authenticated",
+      "manifest_ref": "manifests/notes-app-private-full.json",
+      "manifest_present": true,
+      "bundle_sha256_pinned": false,
+      "pinned_refs_count": 16,
+      "recovery_verified_in_manifest": true,
+      "operational_index_separated": true
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "repo.exams-app",
+      "context_key": "public::engenharia::repo.exams-app",
+      "adapter": "github_api",
+      "scope": "public",
+      "license": "proprietary-owner-public",
+      "origin_status": "online",
+      "pinned_refs_count": 5,
+      "files_evaluated": 1,
+      "files_included": 0,
+      "files_excluded": 0,
+      "knowledge_units": 0,
+      "lifecycle_states": {
+        "partial": 1
+      }
+    },
+    {
+      "source_id": "bundle.exams-app-old",
+      "context_key": "authenticated-archive::historico::bundle.exams-app-old",
+      "adapter": "git_bundle",
+      "scope": "authenticated_archive",
+      "license": "proprietary-owner-archive",
+      "origin_status": "historical_unavailable",
+      "pinned_refs_count": 6,
+      "files_evaluated": 1,
+      "files_included": 0,
+      "files_excluded": 1,
+      "knowledge_units": 0,
+      "lifecycle_states": {
+        "unavailable": 1
+      }
+    },
+    {
+      "source_id": "bundle.exams-app-antigo-2",
+      "context_key": "authenticated-archive::historico::bundle.exams-app-antigo-2",
+      "adapter": "git_bundle",
+      "scope": "authenticated_archive",
+      "license": "proprietary-owner-archive",
+      "origin_status": "historical_unavailable",
+      "pinned_refs_count": 4,
+      "files_evaluated": 1,
+      "files_included": 0,
+      "files_excluded": 1,
+      "knowledge_units": 0,
+      "lifecycle_states": {
+        "unavailable": 1
+      }
+    },
+    {
+      "source_id": "bundle.shadcn-template",
+      "context_key": "authenticated-archive::historico::bundle.shadcn-template",
+      "adapter": "git_bundle",
+      "scope": "authenticated_archive",
+      "license": "MIT",
+      "origin_status": "historical_unavailable",
+      "pinned_refs_count": 3,
+      "files_evaluated": 1,
+      "files_included": 0,
+      "files_excluded": 1,
+      "knowledge_units": 0,
+      "lifecycle_states": {
+        "unavailable": 1
+      }
+    },
+    {
+      "source_id": "bundle.shadcn-firebase-template",
+      "context_key": "authenticated-archive::historico::bundle.shadcn-firebase-template",
+      "adapter": "git_bundle",
+      "scope": "authenticated_archive",
+      "license": "MIT",
+      "origin_status": "historical_unavailable",
+      "pinned_refs_count": 1,
+      "files_evaluated": 1,
+      "files_included": 0,
+      "files_excluded": 1,
+      "knowledge_units": 0,
+      "lifecycle_states": {
+        "unavailable": 1
+      }
+    },
+    {
+      "source_id": "bundle.notes-app",
+      "context_key": "authenticated-archive::historico::bundle.notes-app",
+      "adapter": "git_bundle",
+      "scope": "authenticated_archive",
+      "license": "proprietary-owner-private",
+      "origin_status": "private_authenticated",
+      "pinned_refs_count": 16,
+      "files_evaluated": 1,
+      "files_included": 0,
+      "files_excluded": 1,
+      "knowledge_units": 0,
+      "lifecycle_states": {
+        "unavailable": 1
+      }
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "context_key": "public::governanca::local.archive-docs-and-reports",
+      "adapter": "local_fs",
+      "scope": "public",
+      "license": "repository-public",
+      "origin_status": "online",
+      "pinned_refs_count": 1,
+      "files_evaluated": 595,
+      "files_included": 130,
+      "files_excluded": 465,
+      "knowledge_units": 560,
+      "lifecycle_states": {
+        "indexed": 30,
+        "queryable": 25,
+        "verified": 75
+      }
+    },
+    {
+      "source_id": "local.research-catalogs",
+      "context_key": "public::referencias-externas::local.research-catalogs",
+      "adapter": "local_fs",
+      "scope": "public",
+      "license": "curated-public-references",
+      "origin_status": "online",
+      "pinned_refs_count": 1,
+      "files_evaluated": 156,
+      "files_included": 46,
+      "files_excluded": 110,
+      "knowledge_units": 203,
+      "lifecycle_states": {
+        "queryable": 18,
+        "verified": 28
+      }
+    },
+    {
+      "source_id": "local.visual-evidence-library",
+      "context_key": "public::midia::local.visual-evidence-library",
+      "adapter": "local_fs",
+      "scope": "public",
+      "license": "MIT-and-verified-upstreams",
+      "origin_status": "online",
+      "pinned_refs_count": 1,
+      "files_evaluated": 64,
+      "files_included": 56,
+      "files_excluded": 8,
+      "knowledge_units": 72,
+      "lifecycle_states": {
+        "indexed": 52,
+        "queryable": 1,
+        "verified": 3
+      }
+    },
+    {
+      "source_id": "local.grok-bot-media",
+      "context_key": "public::midia::local.grok-bot-media",
+      "adapter": "local_fs",
+      "scope": "public",
+      "license": "MIT",
+      "origin_status": "online",
+      "pinned_refs_count": 1,
+      "files_evaluated": 17,
+      "files_included": 14,
+      "files_excluded": 3,
+      "knowledge_units": 30,
+      "lifecycle_states": {
+        "indexed": 12,
+        "queryable": 1,
+        "verified": 1
+      }
+    },
+    {
+      "source_id": "local.visual-library-legacy",
+      "context_key": "public::midia::local.visual-library-legacy",
+      "adapter": "local_fs",
+      "scope": "public",
+      "license": "MIT",
+      "origin_status": "online",
+      "pinned_refs_count": 1,
+      "files_evaluated": 21,
+      "files_included": 14,
+      "files_excluded": 7,
+      "knowledge_units": 14,
+      "lifecycle_states": {
+        "indexed": 10,
+        "queryable": 3,
+        "verified": 1
+      }
+    },
+    {
+      "source_id": "local.code-and-tests",
+      "context_key": "public::engenharia::local.code-and-tests",
+      "adapter": "local_fs",
+      "scope": "public",
+      "license": "repository-public",
+      "origin_status": "online",
+      "pinned_refs_count": 1,
+      "files_evaluated": 595,
+      "files_included": 159,
+      "files_excluded": 436,
+      "knowledge_units": 1503,
+      "lifecycle_states": {
+        "extracted": 30,
+        "indexed": 7,
+        "verified": 122
+      }
+    }
+  ],
+  "traceable_samples": [
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": "AGENTS.md",
+      "sha256": "23b3b38561e37316ec82cc876adfd2eed39185ed13b5a81a26b71c6468c14a56",
+      "bytes": 907,
+      "mime_type": "text/markdown",
+      "modality": "document",
+      "license": "repository-public",
+      "scope": "public",
+      "lifecycle_state": "verified",
+      "knowledge_units": 1,
+      "sample_unit": {
+        "unit_id": "doc:AGENTS.md:sec-0001",
+        "modality": "document",
+        "kind": "document_section",
+        "name": "Agent entry point",
+        "path": "AGENTS.md",
+        "start_line": 1,
+        "end_line": 5,
+        "observation_status": "verified_document_structure"
+      }
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": "README.md",
+      "sha256": "e60a3e7f7596ffdd042fd725eb570761d4c11c576295b8df49696d7969afde5b",
+      "bytes": 10456,
+      "mime_type": "text/markdown",
+      "modality": "document",
+      "license": "repository-public",
+      "scope": "public",
+      "lifecycle_state": "verified",
+      "knowledge_units": 14,
+      "sample_unit": {
+        "unit_id": "doc:README.md:sec-0001",
+        "modality": "document",
+        "kind": "document_section",
+        "name": "Exams App Archive",
+        "path": "README.md",
+        "start_line": 1,
+        "end_line": 2,
+        "observation_status": "verified_document_structure"
+      }
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": "config/knowledge-concepts.json",
+      "sha256": "634ff75c1f869cf0c1188ccbe51ba7af1c8c49f38879ada6f0d8891ba98f4ec6",
+      "bytes": 20639,
+      "mime_type": "application/json",
+      "modality": "metadata",
+      "license": "repository-public",
+      "scope": "public",
+      "lifecycle_state": "queryable",
+      "knowledge_units": 1,
+      "sample_unit": {
+        "unit_id": "meta:config/knowledge-concepts.json",
+        "modality": "metadata",
+        "kind": "structured_metadata",
+        "keys": [
+          "version",
+          "concepts"
+        ],
+        "observation_status": "verified_json_schema"
+      }
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": "config/public-catalog-sources.json",
+      "sha256": "6e7078aabf52a832013510369fd7be78e86e57ed8e5ee577d03ed1008a83b111",
+      "bytes": 421,
+      "mime_type": "application/json",
+      "modality": "metadata",
+      "license": "repository-public",
+      "scope": "public",
+      "lifecycle_state": "queryable",
+      "knowledge_units": 1,
+      "sample_unit": {
+        "unit_id": "meta:config/public-catalog-sources.json",
+        "modality": "metadata",
+        "kind": "structured_metadata",
+        "keys": [
+          "repositories",
+          "historical_unavailable",
+          "historical_access"
+        ],
+        "observation_status": "verified_json_schema"
+      }
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": "config/source_registry.json",
+      "sha256": "870c013ab9864b016848b9ac099211bffbf41136cc97bfd1d665a31a50c36533",
+      "bytes": 24061,
+      "mime_type": "application/json",
+      "modality": "metadata",
+      "license": "repository-public",
+      "scope": "public",
+      "lifecycle_state": "queryable",
+      "knowledge_units": 1,
+      "sample_unit": {
+        "unit_id": "meta:config/source_registry.json",
+        "modality": "metadata",
+        "kind": "structured_metadata",
+        "keys": [
+          "schema_version",
+          "registry_version",
+          "updated_at",
+          "description",
+          "compatibility",
+          "global_policies",
+          "sources"
+        ],
+        "observation_status": "verified_json_schema"
+      }
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": "docs/AGENT-ACCESS.md",
+      "sha256": "2f1b20b60b58dd7960b87ba73a046aac07291345bcf965a3706e6e1d0340bcb8",
+      "bytes": 2582,
+      "mime_type": "text/markdown",
+      "modality": "document",
+      "license": "repository-public",
+      "scope": "public",
+      "lifecycle_state": "verified",
+      "knowledge_units": 5,
+      "sample_unit": {
+        "unit_id": "doc:docs/AGENT-ACCESS.md:sec-0001",
+        "modality": "document",
+        "kind": "document_section",
+        "name": "Agent access",
+        "path": "docs/AGENT-ACCESS.md",
+        "start_line": 1,
+        "end_line": 4,
+        "observation_status": "verified_document_structure"
+      }
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": "docs/AUDIT-COVERAGE-2026-11-23.md",
+      "sha256": "7325b04e4fc5b761815013c30e1ca4e883df4bd157ce06a85559327bafac7842",
+      "bytes": 10456,
+      "mime_type": "text/markdown",
+      "modality": "document",
+      "license": "repository-public",
+      "scope": "public",
+      "lifecycle_state": "verified",
+      "knowledge_units": 12,
+      "sample_unit": {
+        "unit_id": "doc:docs/AUDIT-COVERAGE-2026-11-23.md:sec-0001",
+        "modality": "document",
+        "kind": "document_section",
+        "name": "Auditoria completa de cobertura — 23/11/2026",
+        "path": "docs/AUDIT-COVERAGE-2026-11-23.md",
+        "start_line": 1,
+        "end_line": 5,
+        "observation_status": "verified_document_structure"
+      }
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": "docs/COMPONENT-EXPLORER.md",
+      "sha256": "f0b6bd14ac77f2caa39bbea2dd73a0c687b5f602df27450692ccf9228dca0978",
+      "bytes": 5589,
+      "mime_type": "text/markdown",
+      "modality": "document",
+      "license": "repository-public",
+      "scope": "public",
+      "lifecycle_state": "verified",
+      "knowledge_units": 6,
+      "sample_unit": {
+        "unit_id": "doc:docs/COMPONENT-EXPLORER.md:sec-0001",
+        "modality": "document",
+        "kind": "document_section",
+        "name": "Historical file and component explorer",
+        "path": "docs/COMPONENT-EXPLORER.md",
+        "start_line": 1,
+        "end_line": 4,
+        "observation_status": "verified_document_structure"
+      }
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": "docs/CONCEPT-KNOWLEDGE.md",
+      "sha256": "802945826843f79a16798edb4d8aa3deade07afb1e3bb06869f17f4126ec1d8b",
+      "bytes": 3458,
+      "mime_type": "text/markdown",
+      "modality": "document",
+      "license": "repository-public",
+      "scope": "public",
+      "lifecycle_state": "verified",
+      "knowledge_units": 4,
+      "sample_unit": {
+        "unit_id": "doc:docs/CONCEPT-KNOWLEDGE.md:sec-0001",
+        "modality": "document",
+        "kind": "document_section",
+        "name": "Concept-organized knowledge",
+        "path": "docs/CONCEPT-KNOWLEDGE.md",
+        "start_line": 1,
+        "end_line": 4,
+        "observation_status": "verified_document_structure"
+      }
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": "docs/CONTEXT-RETRIEVAL.md",
+      "sha256": "b641f1f8c02c6e35df9a2408256005d508f891736fbf95daca1fd10cf6836902",
+      "bytes": 4714,
+      "mime_type": "text/markdown",
+      "modality": "document",
+      "license": "repository-public",
+      "scope": "public",
+      "lifecycle_state": "verified",
+      "knowledge_units": 5,
+      "sample_unit": {
+        "unit_id": "doc:docs/CONTEXT-RETRIEVAL.md:sec-0001",
+        "modality": "document",
+        "kind": "document_section",
+        "name": "Context-oriented retrieval (Context7-inspired)",
+        "path": "docs/CONTEXT-RETRIEVAL.md",
+        "start_line": 1,
+        "end_line": 2,
+        "observation_status": "verified_document_structure"
+      }
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": "docs/DELETE-READINESS.md",
+      "sha256": "6d9e074005af26da204d3963e1e9a6eb6c04ce06b0debce18dfb9ae763267230",
+      "bytes": 6183,
+      "mime_type": "text/markdown",
+      "modality": "document",
+      "license": "repository-public",
+      "scope": "public",
+      "lifecycle_state": "verified",
+      "knowledge_units": 5,
+      "sample_unit": {
+        "unit_id": "doc:docs/DELETE-READINESS.md:sec-0001",
+        "modality": "document",
+        "kind": "document_section",
+        "name": "Critérios de exclusão dos repositórios antigos",
+        "path": "docs/DELETE-READINESS.md",
+        "start_line": 1,
+        "end_line": 7,
+        "observation_status": "verified_document_structure"
+      }
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": "docs/DYNAMIC-ARCHIVE.md",
+      "sha256": "e3014690d6839dd4aeec2988e0681faee9893a0adb35821d7fe25e624255c0a4",
+      "bytes": 2886,
+      "mime_type": "text/markdown",
+      "modality": "document",
+      "license": "repository-public",
+      "scope": "public",
+      "lifecycle_state": "verified",
+      "knowledge_units": 5,
+      "sample_unit": {
+        "unit_id": "doc:docs/DYNAMIC-ARCHIVE.md:sec-0001",
+        "modality": "document",
+        "kind": "document_section",
+        "name": "Dynamic archive architecture",
+        "path": "docs/DYNAMIC-ARCHIVE.md",
+        "start_line": 1,
+        "end_line": 2,
+        "observation_status": "verified_document_structure"
+      }
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": "docs/ENCRYPTED-ARCHIVE-TRANSFER.md",
+      "sha256": "2275092168d90f26d20d9a3771245d5eb342596a004f19daf9998f8fd219e366",
+      "bytes": 1997,
+      "mime_type": "text/markdown",
+      "modality": "document",
+      "license": "repository-public",
+      "scope": "public",
+      "lifecycle_state": "verified",
+      "knowledge_units": 4,
+      "sample_unit": {
+        "unit_id": "doc:docs/ENCRYPTED-ARCHIVE-TRANSFER.md:sec-0001",
+        "modality": "document",
+        "kind": "document_section",
+        "name": "Consolidar releases sem tornar o arquivo privado",
+        "path": "docs/ENCRYPTED-ARCHIVE-TRANSFER.md",
+        "start_line": 1,
+        "end_line": 4,
+        "observation_status": "verified_document_structure"
+      }
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": "docs/ENHANCEMENT-INTEGRATION-MATRIX.md",
+      "sha256": "656b5dd5c40d22d237870379a4ea1ee5de5bcc7b1748fb6f84cf09e56e35743a",
+      "bytes": 11602,
+      "mime_type": "text/markdown",
+      "modality": "document",
+      "license": "repository-public",
+      "scope": "public",
+      "lifecycle_state": "verified",
+      "knowledge_units": 5,
+      "sample_unit": {
+        "unit_id": "doc:docs/ENHANCEMENT-INTEGRATION-MATRIX.md:sec-0001",
+        "modality": "document",
+        "kind": "document_section",
+        "name": "Matriz de Integracao de Melhorias Aprovadas (Issue #36)",
+        "path": "docs/ENHANCEMENT-INTEGRATION-MATRIX.md",
+        "start_line": 1,
+        "end_line": 8,
+        "observation_status": "verified_document_structure"
+      }
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": "docs/EXAMS-APP-COMPLETE.md",
+      "sha256": "8f18a7ade981ef2f4315ea7a37de4e1d2655334ca3794d0160031b07a3cb240e",
+      "bytes": 2259,
+      "mime_type": "text/markdown",
+      "modality": "document",
+      "license": "repository-public",
+      "scope": "public",
+      "lifecycle_state": "verified",
+      "knowledge_units": 3,
+      "sample_unit": {
+        "unit_id": "doc:docs/EXAMS-APP-COMPLETE.md:sec-0001",
+        "modality": "document",
+        "kind": "document_section",
+        "name": "Exams App — verificação de preservação completa",
+        "path": "docs/EXAMS-APP-COMPLETE.md",
+        "start_line": 1,
+        "end_line": 20,
+        "observation_status": "verified_document_structure"
+      }
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": "docs/EXTRACTION-GUIDE.md",
+      "sha256": "007b6907af975c1fcb46fbf0b5317150020c5091eced957d02f598c8a690f422",
+      "bytes": 7036,
+      "mime_type": "text/markdown",
+      "modality": "document",
+      "license": "repository-public",
+      "scope": "public",
+      "lifecycle_state": "verified",
+      "knowledge_units": 7,
+      "sample_unit": {
+        "unit_id": "doc:docs/EXTRACTION-GUIDE.md:sec-0001",
+        "modality": "document",
+        "kind": "document_section",
+        "name": "Como encontrar e recuperar informações antigas",
+        "path": "docs/EXTRACTION-GUIDE.md",
+        "start_line": 1,
+        "end_line": 10,
+        "observation_status": "verified_document_structure"
+      }
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": "docs/OFFSITE-BACKUP-CHECKLIST.md",
+      "sha256": "42d6af87338f3882a9ff5d5c3dfe31e886967107ad4922eecbd280b5ee5df115",
+      "bytes": 9435,
+      "mime_type": "text/markdown",
+      "modality": "document",
+      "license": "repository-public",
+      "scope": "public",
+      "lifecycle_state": "verified",
+      "knowledge_units": 16,
+      "sample_unit": {
+        "unit_id": "doc:docs/OFFSITE-BACKUP-CHECKLIST.md:sec-0001",
+        "modality": "document",
+        "kind": "document_section",
+        "name": "Checklist de Backup Independente (Offsite) e Safety Gate de Exclusao",
+        "path": "docs/OFFSITE-BACKUP-CHECKLIST.md",
+        "start_line": 1,
+        "end_line": 8,
+        "observation_status": "verified_document_structure"
+      }
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": "docs/PLUGIN-SYNC-VERIFICATION.md",
+      "sha256": "b1d5a961c1281625b3e80af068685bacc3310599cec14add6711c0b15dc95f41",
+      "bytes": 8237,
+      "mime_type": "text/markdown",
+      "modality": "document",
+      "license": "repository-public",
+      "scope": "public",
+      "lifecycle_state": "verified",
+      "knowledge_units": 13,
+      "sample_unit": {
+        "unit_id": "doc:docs/PLUGIN-SYNC-VERIFICATION.md:sec-0001",
+        "modality": "document",
+        "kind": "document_section",
+        "name": "Exams Archive — Plugin Synchronization and Multi-Client Verification (v0.6.0)",
+        "path": "docs/PLUGIN-SYNC-VERIFICATION.md",
+        "start_line": 1,
+        "end_line": 2,
+        "observation_status": "verified_document_structure"
+      }
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": "docs/PLUGIN-SYNC.md",
+      "sha256": "48453fa54102e4357fb75217d974cee99a7d55fb8c294be6f31e1824e209c4a0",
+      "bytes": 2456,
+      "mime_type": "text/markdown",
+      "modality": "document",
+      "license": "repository-public",
+      "scope": "public",
+      "lifecycle_state": "verified",
+      "knowledge_units": 3,
+      "sample_unit": {
+        "unit_id": "doc:docs/PLUGIN-SYNC.md:sec-0001",
+        "modality": "document",
+        "kind": "document_section",
+        "name": "Exams Archive — GitHub as canonical source, four clients",
+        "path": "docs/PLUGIN-SYNC.md",
+        "start_line": 1,
+        "end_line": 5,
+        "observation_status": "verified_document_structure"
+      }
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": "docs/PRIVATE-CHATGPT-SEARCH.md",
+      "sha256": "2528aedde8403c4252dc26a1463d5e3f8c17f411678d6c0529e847af4554d040",
+      "bytes": 3231,
+      "mime_type": "text/markdown",
+      "modality": "document",
+      "license": "repository-public",
+      "scope": "public",
+      "lifecycle_state": "verified",
+      "knowledge_units": 4,
+      "sample_unit": {
+        "unit_id": "doc:docs/PRIVATE-CHATGPT-SEARCH.md:sec-0001",
+        "modality": "document",
+        "kind": "document_section",
+        "name": "Consulta nativa ao SQLite FTS5 via GitHub privado",
+        "path": "docs/PRIVATE-CHATGPT-SEARCH.md",
+        "start_line": 1,
+        "end_line": 4,
+        "observation_status": "verified_document_structure"
+      }
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": "docs/RESEARCH-INDEX.md",
+      "sha256": "f6ce76e5b78cd302045b370407526af30ab3b7b8f616ecb43304b592ba496384",
+      "bytes": 2102,
+      "mime_type": "text/markdown",
+      "modality": "document",
+      "license": "repository-public",
+      "scope": "public",
+      "lifecycle_state": "verified",
+      "knowledge_units": 2,
+      "sample_unit": {
+        "unit_id": "doc:docs/RESEARCH-INDEX.md:sec-0001",
+        "modality": "document",
+        "kind": "document_section",
+        "name": "Unified public research index",
+        "path": "docs/RESEARCH-INDEX.md",
+        "start_line": 1,
+        "end_line": 13,
+        "observation_status": "verified_document_structure"
+      }
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": "docs/SELECTIVE-CONTEXT-BENCHMARK.md",
+      "sha256": "caa09e9499bdd64eddcfcc5c69ccee43a1809acd4ffed0f630929e18c8935f68",
+      "bytes": 6384,
+      "mime_type": "text/markdown",
+      "modality": "document",
+      "license": "repository-public",
+      "scope": "public",
+      "lifecycle_state": "verified",
+      "knowledge_units": 6,
+      "sample_unit": {
+        "unit_id": "doc:docs/SELECTIVE-CONTEXT-BENCHMARK.md:sec-0001",
+        "modality": "document",
+        "kind": "document_section",
+        "name": "Selective Context Export & Repomix Benchmark (Issue #10)",
+        "path": "docs/SELECTIVE-CONTEXT-BENCHMARK.md",
+        "start_line": 1,
+        "end_line": 4,
+        "observation_status": "verified_document_structure"
+      }
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": "docs/TOOL-LICENSES-PRIVACY.md",
+      "sha256": "a87714c5d0f1496dfac5f43016d7cb780b41f2eea53c661e57179379d37a257c",
+      "bytes": 20286,
+      "mime_type": "text/markdown",
+      "modality": "document",
+      "license": "repository-public",
+      "scope": "public",
+      "lifecycle_state": "verified",
+      "knowledge_units": 6,
+      "sample_unit": {
+        "unit_id": "doc:docs/TOOL-LICENSES-PRIVACY.md:sec-0001",
+        "modality": "document",
+        "kind": "document_section",
+        "name": "Auditoria de Licencas, Telemetria/Egress e Privacidade para Indexadores e Ferramentas Externas (2026)",
+        "path": "docs/TOOL-LICENSES-PRIVACY.md",
+        "start_line": 1,
+        "end_line": 4,
+        "observation_status": "verified_document_structure"
+      }
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": "docs/UI-COMPONENT-CATALOG.md",
+      "sha256": "111743786334a09909f9220aef07bc95b1c8eef074bca446e5c4c03c71815ddd",
+      "bytes": 12415,
+      "mime_type": "text/markdown",
+      "modality": "document",
+      "license": "repository-public",
+      "scope": "public",
+      "lifecycle_state": "verified",
+      "knowledge_units": 24,
+      "sample_unit": {
+        "unit_id": "doc:docs/UI-COMPONENT-CATALOG.md:sec-0001",
+        "modality": "document",
+        "kind": "document_section",
+        "name": "UI Component Catalog and Architecture Specification",
+        "path": "docs/UI-COMPONENT-CATALOG.md",
+        "start_line": 1,
+        "end_line": 9,
+        "observation_status": "verified_document_structure"
+      }
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": "docs/UI-DESIGN-TOKENS.md",
+      "sha256": "d0bf2d402aed463bebc52b130247f36a187f2fb90f50e9a1b669b303277ee408",
+      "bytes": 11533,
+      "mime_type": "text/markdown",
+      "modality": "document",
+      "license": "repository-public",
+      "scope": "public",
+      "lifecycle_state": "verified",
+      "knowledge_units": 20,
+      "sample_unit": {
+        "unit_id": "doc:docs/UI-DESIGN-TOKENS.md:sec-0001",
+        "modality": "document",
+        "kind": "document_section",
+        "name": "UI Design Tokens Specification",
+        "path": "docs/UI-DESIGN-TOKENS.md",
+        "start_line": 1,
+        "end_line": 9,
+        "observation_status": "verified_document_structure"
+      }
+    }
+  ],
+  "excluded_samples": [
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": ".agents/plugins/marketplace.json",
+      "reason_code": "not_in_include_paths",
+      "reason_detail": "Did not match any include_paths rule."
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": ".claude-plugin/marketplace.json",
+      "reason_code": "not_in_include_paths",
+      "reason_detail": "Did not match any include_paths rule."
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": ".git/COMMIT_EDITMSG",
+      "reason_code": "mandatory_dir_excluded",
+      "reason_detail": "Blocked mandatory excluded directory part: .git"
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": ".git/FETCH_HEAD",
+      "reason_code": "mandatory_dir_excluded",
+      "reason_detail": "Blocked mandatory excluded directory part: .git"
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": ".git/HEAD",
+      "reason_code": "mandatory_dir_excluded",
+      "reason_detail": "Blocked mandatory excluded directory part: .git"
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": ".git/ORIG_HEAD",
+      "reason_code": "mandatory_dir_excluded",
+      "reason_detail": "Blocked mandatory excluded directory part: .git"
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": ".git/config",
+      "reason_code": "mandatory_dir_excluded",
+      "reason_detail": "Blocked mandatory excluded directory part: .git"
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": ".git/description",
+      "reason_code": "mandatory_dir_excluded",
+      "reason_detail": "Blocked mandatory excluded directory part: .git"
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": ".git/hooks/applypatch-msg.sample",
+      "reason_code": "mandatory_dir_excluded",
+      "reason_detail": "Blocked mandatory excluded directory part: .git"
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": ".git/hooks/commit-msg.sample",
+      "reason_code": "mandatory_dir_excluded",
+      "reason_detail": "Blocked mandatory excluded directory part: .git"
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": ".git/hooks/fsmonitor-watchman.sample",
+      "reason_code": "mandatory_dir_excluded",
+      "reason_detail": "Blocked mandatory excluded directory part: .git"
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": ".git/hooks/post-update.sample",
+      "reason_code": "mandatory_dir_excluded",
+      "reason_detail": "Blocked mandatory excluded directory part: .git"
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": ".git/hooks/pre-applypatch.sample",
+      "reason_code": "mandatory_dir_excluded",
+      "reason_detail": "Blocked mandatory excluded directory part: .git"
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": ".git/hooks/pre-commit.sample",
+      "reason_code": "mandatory_dir_excluded",
+      "reason_detail": "Blocked mandatory excluded directory part: .git"
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": ".git/hooks/pre-merge-commit.sample",
+      "reason_code": "mandatory_dir_excluded",
+      "reason_detail": "Blocked mandatory excluded directory part: .git"
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": ".git/hooks/pre-push.sample",
+      "reason_code": "mandatory_dir_excluded",
+      "reason_detail": "Blocked mandatory excluded directory part: .git"
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": ".git/hooks/pre-rebase.sample",
+      "reason_code": "mandatory_dir_excluded",
+      "reason_detail": "Blocked mandatory excluded directory part: .git"
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": ".git/hooks/pre-receive.sample",
+      "reason_code": "mandatory_dir_excluded",
+      "reason_detail": "Blocked mandatory excluded directory part: .git"
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": ".git/hooks/prepare-commit-msg.sample",
+      "reason_code": "mandatory_dir_excluded",
+      "reason_detail": "Blocked mandatory excluded directory part: .git"
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": ".git/hooks/push-to-checkout.sample",
+      "reason_code": "mandatory_dir_excluded",
+      "reason_detail": "Blocked mandatory excluded directory part: .git"
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": ".git/hooks/sendemail-validate.sample",
+      "reason_code": "mandatory_dir_excluded",
+      "reason_detail": "Blocked mandatory excluded directory part: .git"
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": ".git/hooks/update.sample",
+      "reason_code": "mandatory_dir_excluded",
+      "reason_detail": "Blocked mandatory excluded directory part: .git"
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": ".git/index",
+      "reason_code": "mandatory_dir_excluded",
+      "reason_detail": "Blocked mandatory excluded directory part: .git"
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": ".git/info/exclude",
+      "reason_code": "mandatory_dir_excluded",
+      "reason_detail": "Blocked mandatory excluded directory part: .git"
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": ".git/logs/HEAD",
+      "reason_code": "mandatory_dir_excluded",
+      "reason_detail": "Blocked mandatory excluded directory part: .git"
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": ".git/logs/refs/heads/fix/ingestion-registry-lineage-issues-84-82-87",
+      "reason_code": "mandatory_dir_excluded",
+      "reason_detail": "Blocked mandatory excluded directory part: .git"
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": ".git/logs/refs/heads/main",
+      "reason_code": "mandatory_dir_excluded",
+      "reason_detail": "Blocked mandatory excluded directory part: .git"
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": ".git/logs/refs/remotes/origin/HEAD",
+      "reason_code": "mandatory_dir_excluded",
+      "reason_detail": "Blocked mandatory excluded directory part: .git"
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": ".git/logs/refs/remotes/origin/main",
+      "reason_code": "mandatory_dir_excluded",
+      "reason_detail": "Blocked mandatory excluded directory part: .git"
+    },
+    {
+      "source_id": "local.archive-docs-and-reports",
+      "path": ".git/objects/00/b4373dcfabd2530708da00abc55696dcd4d019",
+      "reason_code": "mandatory_dir_excluded",
+      "reason_detail": "Blocked mandatory excluded directory part: .git"
+    }
+  ],
+  "backlog_gaps": [
+    {
+      "source_id": "repo.exams-app",
+      "gap_type": "bundle_blobs_not_mounted_locally",
+      "detail": "Manifest 'manifests/exams-app-complete-2026-11-23.json' is verified locally; full Git objects live in release bundle."
+    },
+    {
+      "source_id": "bundle.exams-app-old",
+      "gap_type": "authorization_or_bundle_restore_required",
+      "detail": "Source 'bundle.exams-app-old' (historical_unavailable) requires authenticated bundle restoration locally; not indexed publicly."
+    },
+    {
+      "source_id": "bundle.exams-app-antigo-2",
+      "gap_type": "authorization_or_bundle_restore_required",
+      "detail": "Source 'bundle.exams-app-antigo-2' (historical_unavailable) requires authenticated bundle restoration locally; not indexed publicly."
+    },
+    {
+      "source_id": "bundle.shadcn-template",
+      "gap_type": "authorization_or_bundle_restore_required",
+      "detail": "Source 'bundle.shadcn-template' (historical_unavailable) requires authenticated bundle restoration locally; not indexed publicly."
+    },
+    {
+      "source_id": "bundle.shadcn-firebase-template",
+      "gap_type": "authorization_or_bundle_restore_required",
+      "detail": "Source 'bundle.shadcn-firebase-template' (historical_unavailable) requires authenticated bundle restoration locally; not indexed publicly."
+    },
+    {
+      "source_id": "bundle.notes-app",
+      "gap_type": "authorization_or_bundle_restore_required",
+      "detail": "Source 'bundle.notes-app' (private_authenticated) requires authenticated bundle restoration locally; not indexed publicly."
+    },
+    {
+      "source_id": "local.visual-evidence-library",
+      "gap_type": "visual_semantic_inspection_incomplete",
+      "detail": "52 visual media records lack human/sampled-frame semantic inspection; never infer UI behavior from filename alone."
+    }
+  ]
+}
