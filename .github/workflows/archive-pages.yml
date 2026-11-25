@@ -38,15 +38,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - name: Build reviewed React preview
+      - name: Build reviewed React previews and TSX runtime
         run: |
-          npm install --prefix "$RUNNER_TEMP/preview-deps" --no-save --ignore-scripts react@19.1.1 react-dom@19.1.1 typescript@5.9.3 esbuild@0.25.5
+          npm install --prefix "$RUNNER_TEMP/preview-deps" --no-save --ignore-scripts react@19.1.1 react-dom@19.1.1 typescript@5.9.3 esbuild@0.25.5 sucrase@3.35.0
           node scripts/build_loading_preview.mjs "$RUNNER_TEMP/preview-deps" "$RUNNER_TEMP/preview-loading.html"
           node scripts/build_error_preview.mjs "$RUNNER_TEMP/preview-deps" "$RUNNER_TEMP/preview-error.html"
-      - name: Generate public catalog from live branches and tags
+          node scripts/build_tsx_runtime.mjs "$RUNNER_TEMP/preview-deps" "$RUNNER_TEMP/tsx-preview-runtime.js"
+      - name: Generate public catalog and blobs from archived public release bundles
         env:
           GH_TOKEN: ${{ github.token }}
-        run: python scripts/build_public_catalog.py --output "$RUNNER_TEMP/catalog.json"
+        run: python scripts/build_public_catalog.py --from-release archive-2026-11-23-all-refs --output "$RUNNER_TEMP/catalog.json" --blobs-dir "$RUNNER_TEMP/blobs"
       - name: Assert only public static shell is packaged
         shell: bash
         run: |
@@ -54,9 +55,11 @@ jobs:
           cp site/index.html site/style.css site/app.js site/.nojekyll site/llms.txt site/files.html site/files.js site/research.html site/research.js "$RUNNER_TEMP/website/"
           cp "$RUNNER_TEMP/preview-loading.html" "$RUNNER_TEMP/website/"
           cp "$RUNNER_TEMP/preview-error.html" "$RUNNER_TEMP/website/"
+          cp "$RUNNER_TEMP/tsx-preview-runtime.js" "$RUNNER_TEMP/website/"
           cp "$RUNNER_TEMP/catalog.json" "$RUNNER_TEMP/website/"
           python scripts/export_public_research.py "$RUNNER_TEMP/website/research.json"
-          test "$(find "$RUNNER_TEMP/website" -type f | wc -l)" -eq 13
+          test "$(find "$RUNNER_TEMP/website" -maxdepth 1 -type f | wc -l)" -eq 14
+          cp -r "$RUNNER_TEMP/blobs" "$RUNNER_TEMP/website/blobs"
           python scripts/visual_reference_index.py --export-public "$RUNNER_TEMP/website/visual"
           ! grep -RIl -E '(ghp_[[:alnum:]]{20,}|github_pat_|BEGIN [A-Z ]+PRIVATE KEY)' "$RUNNER_TEMP/website"
       - name: Check GitHub Pages availability

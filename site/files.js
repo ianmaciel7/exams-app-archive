@@ -1,96 +1,562 @@
 "use strict";
-const $=id=>document.getElementById(id);
-const publicRepos=new Set();
-const allowedRepos=new Set(["exams-app","exams-app-old","exams-app-antigo-2","shadcn-template","shadcn-firebase-template"]);
-const embed=new URLSearchParams(location.search).get("embed")==="1";if(embed)document.body.classList.add("embedded-files");
-const reviewed={"src/app/error.tsx":{blob:"936e638aa231a2533e866c12e4d97a429c524d6c",page:"preview-error.html"},"src/app/loading.tsx":{blob:"5850f0972153976a33e3e42e0891f9f23ac8bad8",page:"preview-loading.html"}};
-function reviewedEntry(entry){const item=reviewed[entry?.path];return state.mode==="public"&&state.repo==="exams-app-old"&&item&&item.blob===entry.blob?item:null;}
-let publicSnapshots=[];
-async function loadPublicSources(){try{const r=await fetch("./catalog.json",{credentials:"omit",cache:"no-cache"});if(!r.ok)throw Error("HTTP "+r.status);const data=await r.json();if(data.version!==2)throw Error("Formato inválido");publicSnapshots=data.snapshots;for(const s of publicSnapshots){if(allowedRepos.has(s.repo))publicRepos.add(s.repo);}const select=$("source-repo");select.replaceChildren(...[...publicRepos].sort().map(r=>new Option(r,r)));refreshRefs();$("load-public").disabled=!publicRepos.size;status("Catálogo público carregado.");await openRequestedFile();}catch(e){status("Catálogo indisponível: "+e.message+". Use uma pasta local.");}}
-function refreshRefs(){const repo=$("source-repo").value,sel=$("source-ref");sel.replaceChildren();for(const s of publicSnapshots.filter(s=>s.repo===repo))for(const ref of s.refs)sel.append(new Option(ref,s.sha));}
-const state={mode:"",repo:"",sha:"",entries:[],selected:null,expanded:new Set(),epoch:0,url:null};
-const limit=2*1024*1024;
-const isReact=p=>/\.(tsx|jsx)$/i.test(p);
-const isHtml=p=>/\.html?$/i.test(p);
-const mime=p=>({png:"image/png",jpg:"image/jpeg",jpeg:"image/jpeg",webp:"image/webp",gif:"image/gif"}[p.split(".").pop().toLowerCase()]||"");
-function node(tag,text,cls){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;}
-function status(s){$("file-status").textContent=s;}
-function pathEncoded(path){return path.split("/").map(encodeURIComponent).join("/");}
-async function api(repo,endpoint){
-  if(!publicRepos.has(repo))throw Error("Origem não permitida.");
-  const response=await fetch("https://api.github.com/repos/ianmaciel7/"+repo+"/"+endpoint,{credentials:"omit",redirect:"error",referrerPolicy:"no-referrer",headers:{Accept:"application/vnd.github+json"}});
-  if(!response.ok)throw Error("GitHub HTTP "+response.status+" (limite público ou revisão indisponível)");
+const $ = (id) => document.getElementById(id);
+const publicRepos = new Set();
+const allowedRepos = new Set([
+  "exams-app",
+  "exams-app-old",
+  "exams-app-antigo-2",
+  "shadcn-template",
+  "shadcn-firebase-template",
+]);
+const embed = new URLSearchParams(location.search).get("embed") === "1";
+if (embed) document.body.classList.add("embedded-files");
+
+const reviewed = {
+  "src/app/error.tsx": {
+    blob: "936e638aa231a2533e866c12e4d97a429c524d6c",
+    page: "preview-error.html",
+  },
+  "src/app/loading.tsx": {
+    blob: "5850f0972153976a33e3e42e0891f9f23ac8bad8",
+    page: "preview-loading.html",
+  },
+};
+
+function reviewedEntry(entry) {
+  const item = reviewed[entry?.path];
+  return state.mode === "public" && state.repo === "exams-app-old" && item && item.blob === entry.blob
+    ? item
+    : null;
+}
+
+let publicSnapshots = [];
+let blobsBase = "";
+
+async function loadPublicSources() {
+  try {
+    const r = await fetch("./catalog.json", { credentials: "omit", cache: "no-cache" });
+    if (!r.ok) throw Error("HTTP " + r.status);
+    const data = await r.json();
+    if (data.version !== 2) throw Error("Formato inválido");
+    publicSnapshots = data.snapshots || [];
+    blobsBase = typeof data.blobs_base === "string" ? data.blobs_base.replace(/\/$/, "") : "";
+    publicRepos.clear();
+    for (const s of publicSnapshots) {
+      if (allowedRepos.has(s.repo) && (s.files || []).length > 0) publicRepos.add(s.repo);
+    }
+    for (const s of publicSnapshots) {
+      if (allowedRepos.has(s.repo)) publicRepos.add(s.repo);
+    }
+    const select = $("source-repo");
+    const sortedRepos = [...publicRepos].sort();
+    select.replaceChildren(...sortedRepos.map((repo) => new Option(repo, repo)));
+    refreshRefs();
+    $("load-public").disabled = !publicRepos.size;
+    const opened = await openRequestedFile();
+    if (!opened && publicRepos.size) {
+      loadSelectedSnapshot();
+    } else if (!publicRepos.size) {
+      status("Nenhum repositório público disponível. Use uma pasta local.");
+    }
+  } catch (e) {
+    status("Catálogo indisponível: " + e.message + ". Use uma pasta local.");
+  }
+}
+
+function refreshRefs() {
+  const repo = $("source-repo").value;
+  const sel = $("source-ref");
+  sel.replaceChildren();
+  const snaps = publicSnapshots
+    .filter((s) => s.repo === repo)
+    .sort((a, b) => (b.files?.length || 0) - (a.files?.length || 0));
+  for (const s of snaps) {
+    const label = (s.refs || []).join(", ") + " (" + (s.files?.length || 0) + " arquivos)";
+    sel.append(new Option(label, s.sha));
+  }
+}
+
+const state = { mode: "", repo: "", sha: "", entries: [], selected: null, expanded: new Set(), epoch: 0, url: null };
+const limit = 2 * 1024 * 1024;
+const isReact = (p) => /\.(tsx|jsx)$/i.test(p);
+const isHtml = (p) => /\.html?$/i.test(p);
+const mime = (p) =>
+  ({ png: "image/png", jpg: "image/jpeg", jpeg: "image/jpeg", webp: "image/webp", gif: "image/gif", svg: "image/svg+xml" }[
+    p.split(".").pop().toLowerCase()
+  ] || "");
+
+function node(tag, text, cls) {
+  const n = document.createElement(tag);
+  if (text !== undefined) n.textContent = text;
+  if (cls) n.className = cls;
+  return n;
+}
+function status(s) {
+  $("file-status").textContent = s;
+}
+function pathEncoded(path) {
+  return path.split("/").map(encodeURIComponent).join("/");
+}
+
+async function api(repo, endpoint) {
+  if (!publicRepos.has(repo)) throw Error("Origem não permitida.");
+  const response = await fetch("https://api.github.com/repos/ianmaciel7/" + repo + "/" + endpoint, {
+    credentials: "omit",
+    redirect: "error",
+    referrerPolicy: "no-referrer",
+    headers: { Accept: "application/vnd.github+json" },
+  });
+  if (!response.ok) throw Error("GitHub HTTP " + response.status + " (repositório arquivado ou limite público)");
   return response.json();
 }
-function resetPreview(){const frame=$("preview-frame");frame.removeAttribute("srcdoc");frame.removeAttribute("src");frame.setAttribute("sandbox","");frame.hidden=true;$("preview-image").hidden=true;$("preview-image").removeAttribute("src");if(state.url){URL.revokeObjectURL(state.url);state.url=null;}}
-function clearSelection(){state.selected=null;resetPreview();$("file-evidence").hidden=true;$("selected-path").textContent="Nenhum arquivo selecionado";$("source-code").textContent="Selecione um arquivo na árvore.";$("source-info").textContent="";$("source-link").hidden=true;$("preview-tab").disabled=true;$("component-help").hidden=true;tab(false);}
-function tab(preview){$("source-code").hidden=preview;$("preview-area").hidden=!preview;$("code-tab").setAttribute("aria-pressed",String(!preview));$("preview-tab").setAttribute("aria-pressed",String(preview));}
-function renderTree(){
-  const root=$("tree");root.replaceChildren();
-  const query=$("tree-search").value.trim().toLowerCase(),only=$("components-only").checked;
-  const filtered=state.entries.filter(e=>(!only||isReact(e.path))&&(!query||e.path.toLowerCase().includes(query)));
-  const tree={children:new Map(),entry:null};
-  for(const e of filtered){
-    let cur=tree;for(const part of e.path.split("/")){if(!cur.children.has(part))cur.children.set(part,{children:new Map(),entry:null});cur=cur.children.get(part);}cur.entry=e;
+
+async function fetchBlobBytes(entry) {
+  if (state.mode === "local") {
+    return new Uint8Array(await entry.file.arrayBuffer());
   }
-  let shown=0;
-  function walk(parent,branch,prefix,depth){
-    const entries=[...branch.children.entries()].sort((a,b)=>Number(!a[1].children.size)-Number(!b[1].children.size)||a[0].localeCompare(b[0]));
-    for(const [name,item] of entries){
-      if(shown++>=1500)return;
-      const path=prefix?prefix+"/"+name:name,folder=item.children.size>0;
-      const row=node("button",undefined,"tree-row");row.type="button";
-      const indent=node("span",undefined,"tree-indent");indent.textContent="\u00a0".repeat(Math.min(depth,12)*3);row.append(indent,node("span",folder?(state.expanded.has(path)||query?"▾":"▸"):(isReact(path)?"R":"·"),"tree-glyph"),node("span",name,"tree-name"));row.title=path;
-      if(folder){const open=state.expanded.has(path)||!!query;row.setAttribute("aria-expanded",String(open));row.addEventListener("click",()=>{if(state.expanded.has(path))state.expanded.delete(path);else state.expanded.add(path);renderTree();});parent.append(row);if(open)walk(parent,item,path,depth+1);}
-      else{row.setAttribute("aria-current",String(state.selected?.path===path));row.addEventListener("click",()=>select(item.entry));parent.append(row);}
+  if (blobsBase && entry.blob && /^[0-9a-f]{40}$/.test(entry.blob)) {
+    const localUrl = blobsBase + "/" + entry.blob.slice(0, 2) + "/" + entry.blob;
+    const res = await fetch(localUrl, { credentials: "omit" });
+    if (res.ok) return new Uint8Array(await res.arrayBuffer());
+  }
+  const data = await api(state.repo, "git/blobs/" + entry.blob);
+  if (data.encoding !== "base64") throw Error("Formato de blob não suportado.");
+  return Uint8Array.from(atob(data.content.replace(/\s/g, "")), (c) => c.charCodeAt(0));
+}
+
+function resetPreview() {
+  const frame = $("preview-frame");
+  frame.removeAttribute("srcdoc");
+  frame.removeAttribute("src");
+  frame.setAttribute("sandbox", "");
+  frame.hidden = true;
+  $("preview-image").hidden = true;
+  $("preview-image").removeAttribute("src");
+  if (state.url) {
+    URL.revokeObjectURL(state.url);
+    state.url = null;
+  }
+}
+
+function clearSelection() {
+  state.selected = null;
+  resetPreview();
+  $("file-evidence").hidden = true;
+  $("selected-path").textContent = "Nenhum arquivo selecionado";
+  $("source-code").textContent = "Selecione um arquivo na árvore.";
+  $("source-info").textContent = "";
+  $("source-link").hidden = true;
+  $("copy-code").hidden = true;
+  $("preview-tab").disabled = true;
+  $("render-preview").hidden = true;
+  $("render-tsx").hidden = true;
+  $("render-reviewed").hidden = true;
+  $("render-live").hidden = true;
+  $("component-help").hidden = true;
+  tab(false);
+}
+
+function tab(preview) {
+  $("source-code").hidden = preview;
+  $("preview-area").hidden = !preview;
+  $("code-tab").setAttribute("aria-pressed", String(!preview));
+  $("preview-tab").setAttribute("aria-pressed", String(preview));
+}
+
+function renderTree() {
+  const root = $("tree");
+  root.replaceChildren();
+  const query = $("tree-search").value.trim().toLowerCase();
+  const only = $("components-only").checked;
+  const filtered = state.entries.filter(
+    (e) => (!only || isReact(e.path)) && (!query || e.path.toLowerCase().includes(query))
+  );
+  const tree = { children: new Map(), entry: null };
+  for (const e of filtered) {
+    let cur = tree;
+    for (const part of e.path.split("/")) {
+      if (!cur.children.has(part)) cur.children.set(part, { children: new Map(), entry: null });
+      cur = cur.children.get(part);
+    }
+    cur.entry = e;
+  }
+  let shown = 0;
+  function walk(parent, branch, prefix, depth) {
+    const entries = [...branch.children.entries()].sort(
+      (a, b) => Number(!a[1].children.size) - Number(!b[1].children.size) || a[0].localeCompare(b[0])
+    );
+    for (const [name, item] of entries) {
+      if (shown++ >= 1500) return;
+      const path = prefix ? prefix + "/" + name : name;
+      const folder = item.children.size > 0;
+      const row = node("button", undefined, "tree-row");
+      row.type = "button";
+      const indent = node("span", undefined, "tree-indent");
+      indent.textContent = "\u00a0".repeat(Math.min(depth, 12) * 3);
+      const glyph = folder
+        ? state.expanded.has(path) || query
+          ? "▾"
+          : "▸"
+        : isReact(path)
+        ? "R"
+        : "·";
+      row.append(indent, node("span", glyph, "tree-glyph"), node("span", name, "tree-name"));
+      row.title = path;
+      if (folder) {
+        const open = state.expanded.has(path) || !!query;
+        row.setAttribute("aria-expanded", String(open));
+        row.addEventListener("click", () => {
+          if (state.expanded.has(path)) state.expanded.delete(path);
+          else state.expanded.add(path);
+          renderTree();
+        });
+        parent.append(row);
+        if (open) walk(parent, item, path, depth + 1);
+      } else {
+        row.setAttribute("aria-current", String(state.selected?.path === path));
+        row.addEventListener("click", () => select(item.entry));
+        parent.append(row);
+      }
     }
   }
-  walk(root,tree,"",0);
-  if(!filtered.length)root.append(node("p","Nenhum arquivo nesta seleção.","hint"));
-  if(shown>=1500)root.append(node("p","Exibição limitada; use o filtro para restringir.","hint"));
+  walk(root, tree, "", 0);
+  if (!filtered.length) root.append(node("p", "Nenhum arquivo nesta seleção.", "hint"));
+  if (shown >= 1500) root.append(node("p", "Exibição limitada; use o filtro para restringir.", "hint"));
 }
-function install(mode,entries,repo="",sha=""){
-  state.mode=mode;state.repo=repo;state.sha=sha;state.entries=entries;state.expanded=new Set();$("tree-search").value="";$("components-only").checked=false;clearSelection();renderTree();status(entries.length+" arquivos · "+(mode==="public"?repo+" @ "+sha.slice(0,12):"pasta local"));
-}
-$("load-refs").addEventListener("click",loadPublicSources);
-$("source-repo").addEventListener("change",refreshRefs);
-$("load-public").addEventListener("click",async()=>{
-  const epoch=++state.epoch,repo=$("source-repo").value,ref=$("source-ref").value;
-  try{const snapshot=publicSnapshots.find(s=>s.repo===repo&&s.sha===ref);if(!snapshot)throw Error("Revisão não encontrada no catálogo.");if(epoch!==state.epoch)return;install("public",snapshot.files.map(x=>({path:x.path,size:x.size,blob:x.blob})),repo,ref);
-  }catch(e){if(epoch===state.epoch)status(e.message);}
-});
-for(const id of ["local-folder","local-files"]){$(id).addEventListener("change",e=>{++state.epoch;const files=[...e.target.files];if(files.length)install("local",files.map(file=>({path:file.webkitRelativePath||file.name,size:file.size,file})));e.target.value="";});}
-$("tree-search").addEventListener("input",renderTree);$("components-only").addEventListener("change",renderTree);
-async function select(entry){
-  if(!entry)return;const epoch=++state.epoch;resetPreview();$("file-evidence").hidden=true;$("render-reviewed").hidden=true;state.selected=entry;renderTree();tab(false);$("selected-path").textContent=entry.path;$("source-info").textContent=(entry.size??0).toLocaleString("pt-BR")+" bytes · "+(state.mode==="public"?state.sha:"Local");
-  $("source-code").textContent="Carregando…";$("component-help").hidden=!isReact(entry.path);$("preview-tab").disabled=true;$("source-link").hidden=state.mode!=="public";
-  if(state.mode==="public")$("source-link").href="https://github.com/ianmaciel7/"+state.repo+"/blob/"+state.sha+"/"+pathEncoded(entry.path);
-  try{
-    if(entry.size>limit)throw Error("Arquivo acima de 2 MiB. Abra o original ou recupere localmente.");
-    let bytes;
-    if(state.mode==="local")bytes=new Uint8Array(await entry.file.arrayBuffer());
-    else{const data=await api(state.repo,"git/blobs/"+entry.blob);if(data.encoding!=="base64")throw Error("Formato de blob não suportado.");bytes=Uint8Array.from(atob(data.content.replace(/\s/g,"")),c=>c.charCodeAt(0));}
-    if(epoch!==state.epoch)return;
-    const imageType=mime(entry.path);
-    if(imageType){state.url=URL.createObjectURL(new Blob([bytes],{type:imageType}));$("preview-image").src=state.url;$("preview-image").hidden=false;$("render-preview").hidden=true;$("render-live").hidden=true;$("preview-note").textContent="Imagem original.";$("source-code").textContent="Arquivo de imagem binário.";$("preview-tab").disabled=false;tab(true);return;}
-    if(bytes.includes(0))throw Error("Arquivo binário sem visualização.");
-    entry.text=new TextDecoder("utf-8",{fatal:true}).decode(bytes);$("source-code").textContent=entry.text;$("file-evidence").hidden=!embed;$("excerpt-start").value="1";$("excerpt-end").value=String(Math.min(80,entry.text.split(/\r?\n/).length));$("excerpt-status").textContent="";const approved=reviewedEntry(entry);if(approved){$("preview-tab").disabled=false;$("render-preview").hidden=true;$("render-live").hidden=true;$("render-reviewed").hidden=false;$("preview-note").textContent="Build React revisado para este blob original. Fixture e CSS equivalente.";}
-    if(isHtml(entry.path)){$("preview-tab").disabled=false;$("render-preview").hidden=false;$("render-live").hidden=state.mode!=="local";$("preview-note").textContent="HTML isolado. Scripts bloqueados no modo estático. Builds locais revisados podem ser executados por escolha explícita.";}
-  }catch(e){if(epoch===state.epoch)$("source-code").textContent=e.message;}
-}
-$("code-tab").addEventListener("click",()=>tab(false));$("preview-tab").addEventListener("click",()=>tab(true));
-function render(live){
-  const entry=state.selected;if(!entry||!isHtml(entry.path)||typeof entry.text!=="string")return;
-  if(live&&(state.mode!=="local"||!confirm("Executar este build local? Use apenas código que você revisou. O sandbox reduz riscos, mas não substitui isolamento de sistema.")))return;
-  resetPreview();const frame=$("preview-frame");
-  frame.setAttribute("sandbox",live?"allow-scripts":"");
-  const policy="default-src 'none'; script-src "+(live?"'unsafe-inline'":"'none'")+"; style-src 'unsafe-inline'; img-src data: blob:; font-src data:; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'";
-  frame.srcdoc='<!doctype html><meta http-equiv="Content-Security-Policy" content="'+policy+'">'+entry.text;frame.hidden=false;
-}
-$("render-preview").addEventListener("click",()=>render(false));$("render-live").addEventListener("click",()=>render(true));
 
-let requestedOpened=false;
-async function openRequestedFile(){if(requestedOpened)return;requestedOpened=true;const params=new URLSearchParams(location.search),repo=params.get("repo"),sha=params.get("sha"),path=params.get("path");if(!repo||!sha||!path||!publicRepos.has(repo))return;const snapshot=publicSnapshots.find(s=>s.repo===repo&&s.sha===sha);if(!snapshot)return;const match=snapshot.files.find(f=>f.path===path);if(!match)return;$("source-repo").value=repo;refreshRefs();$("source-ref").value=sha;install("public",snapshot.files.map(x=>({path:x.path,size:x.size,blob:x.blob})),repo,sha);for(const part of path.split("/").slice(0,-1).map((_,i)=>path.split("/").slice(0,i+1).join("/")))state.expanded.add(part);await select(state.entries.find(x=>x.path===path));}
-$("render-reviewed").addEventListener("click",()=>{const item=reviewedEntry(state.selected);if(!item)return;resetPreview();const frame=$("preview-frame");frame.setAttribute("sandbox","allow-scripts");frame.src="./"+item.page;frame.hidden=false;});
-$("send-excerpt").addEventListener("click",()=>{const entry=state.selected;if(!embed||!entry||typeof entry.text!=="string"||window.parent===window)return;const lines=entry.text.split(/\r?\n/),start=Math.max(1,Math.min(lines.length,Math.floor(Number($("excerpt-start").value)||1))),end=Math.max(start,Math.min(lines.length,start+199,Math.floor(Number($("excerpt-end").value)||start))),text=lines.slice(start-1,end).join("\n");if(text.length>12000){$("excerpt-status").textContent="Reduza o trecho a 12.000 caracteres.";return;}window.parent.postMessage({type:"archive-evidence",repository:state.mode==="public"?state.repo:"local",commit:state.sha,path:entry.path,blob:entry.blob||null,start,end,text},location.origin);$("excerpt-status").textContent="Trecho enviado ao contexto desta aba.";});
+function install(mode, entries, repo = "", sha = "") {
+  state.mode = mode;
+  state.repo = repo;
+  state.sha = sha;
+  state.entries = entries;
+  state.expanded = new Set();
+  // Auto-expand top-level src or app folders for quick discovery
+  for (const e of entries) {
+    const first = e.path.split("/")[0];
+    if (first === "src" || first === "app" || first === "components") state.expanded.add(first);
+  }
+  $("tree-search").value = "";
+  $("components-only").checked = false;
+  clearSelection();
+  renderTree();
+  status(
+    entries.length.toLocaleString("pt-BR") +
+      " arquivos · " +
+      (mode === "public" ? repo + " @ " + sha.slice(0, 12) : "pasta local")
+  );
+}
+
+function loadSelectedSnapshot() {
+  const epoch = ++state.epoch;
+  const repo = $("source-repo").value;
+  const ref = $("source-ref").value;
+  try {
+    const snapshot = publicSnapshots.find((s) => s.repo === repo && s.sha === ref);
+    if (!snapshot) throw Error("Revisão não encontrada no catálogo.");
+    if (epoch !== state.epoch) return;
+    install(
+      "public",
+      snapshot.files.map((x) => ({ path: x.path, size: x.size, blob: x.blob, cached: !!x.cached })),
+      repo,
+      ref
+    );
+  } catch (e) {
+    if (epoch === state.epoch) status(e.message);
+  }
+}
+
+$("load-refs").addEventListener("click", loadPublicSources);
+$("source-repo").addEventListener("change", () => {
+  refreshRefs();
+  loadSelectedSnapshot();
+});
+$("source-ref").addEventListener("change", loadSelectedSnapshot);
+$("load-public").addEventListener("click", loadSelectedSnapshot);
+
+function loadLocal(files) {
+  const list = [...files]
+    .filter((f) => !/(^|\/)(node_modules|\.git)\//.test(f.webkitRelativePath || f.name))
+    .map((f) => ({ path: (f.webkitRelativePath || f.name).replace(/^\/+/, ""), size: f.size, file: f }));
+  if (!list.length) {
+    status("Nenhum arquivo selecionado.");
+    return;
+  }
+  install("local", list);
+}
+$("local-folder").addEventListener("change", (e) => loadLocal(e.target.files || []));
+$("local-files").addEventListener("change", (e) => loadLocal(e.target.files || []));
+$("tree-search").addEventListener("input", renderTree);
+$("components-only").addEventListener("change", renderTree);
+
+async function select(entry) {
+  const epoch = ++state.epoch;
+  state.selected = entry;
+  renderTree();
+  resetPreview();
+  tab(false);
+  $("selected-path").textContent = entry.path;
+  $("source-info").textContent = [
+    state.mode === "public" ? state.repo : "local",
+    state.sha ? state.sha.slice(0, 12) : "",
+    entry.blob ? "blob " + entry.blob.slice(0, 12) : "",
+    Number(entry.size || 0).toLocaleString("pt-BR") + " bytes",
+  ]
+    .filter(Boolean)
+    .join(" · ");
+  $("source-link").hidden = state.mode !== "public";
+  if (state.mode === "public") {
+    $("source-link").href =
+      "https://github.com/ianmaciel7/" + state.repo + "/blob/" + state.sha + "/" + pathEncoded(entry.path);
+  }
+  $("copy-code").hidden = true;
+  $("preview-tab").disabled = true;
+  $("render-preview").hidden = true;
+  $("render-tsx").hidden = true;
+  $("render-reviewed").hidden = true;
+  $("render-live").hidden = true;
+  $("component-help").hidden = !isReact(entry.path);
+  $("source-code").textContent = "Carregando…";
+  try {
+    if (entry.size > limit) throw Error("Arquivo maior que 2 MiB; abra no GitHub ou localmente.");
+    const bytes = await fetchBlobBytes(entry);
+    if (epoch !== state.epoch) return;
+    const imageType = mime(entry.path);
+    if (imageType) {
+      state.url = URL.createObjectURL(new Blob([bytes], { type: imageType }));
+      $("preview-image").src = state.url;
+      $("preview-image").hidden = false;
+      $("preview-note").textContent = "Imagem original do repositório arquivado.";
+      $("source-code").textContent = "Arquivo de imagem (" + imageType + ").";
+      $("preview-tab").disabled = false;
+      tab(true);
+      return;
+    }
+    if (bytes.includes(0)) throw Error("Arquivo binário sem visualização.");
+    entry.text = new TextDecoder("utf-8", { fatal: true }).decode(bytes);
+    $("source-code").textContent = entry.text;
+    $("copy-code").hidden = false;
+    $("file-evidence").hidden = !embed;
+    $("excerpt-start").value = "1";
+    $("excerpt-end").value = String(Math.min(80, entry.text.split(/\r?\n/).length));
+    $("excerpt-status").textContent = "";
+
+    const approved = reviewedEntry(entry);
+    if (approved) {
+      $("preview-tab").disabled = false;
+      $("render-reviewed").hidden = false;
+      $("render-tsx").hidden = false;
+      $("preview-note").textContent = "Build React revisado disponível para este arquivo (ou use o preview TSX experimental).";
+    } else if (isReact(entry.path)) {
+      $("preview-tab").disabled = false;
+      $("render-tsx").hidden = false;
+      $("preview-note").textContent =
+        "Componente React/TSX. Clique em Renderizar TSX (experimental) para transpilar e testar isoladamente no navegador.";
+    }
+    if (isHtml(entry.path)) {
+      $("preview-tab").disabled = false;
+      $("render-preview").hidden = false;
+      $("render-live").hidden = state.mode !== "local";
+      $("preview-note").textContent =
+        "HTML isolado. Scripts bloqueados no modo estático. Builds locais revisados podem ser executados por escolha explícita.";
+    }
+  } catch (e) {
+    if (epoch === state.epoch) $("source-code").textContent = e.message;
+  }
+}
+
+$("copy-code").addEventListener("click", async () => {
+  const entry = state.selected;
+  if (!entry || typeof entry.text !== "string") return;
+  try {
+    await navigator.clipboard.writeText(entry.text);
+    $("copy-code").textContent = "Copiado";
+    setTimeout(() => {
+      $("copy-code").textContent = "Copiar código";
+    }, 1500);
+  } catch {
+    status("Não foi possível copiar automaticamente.");
+  }
+});
+
+$("code-tab").addEventListener("click", () => tab(false));
+$("preview-tab").addEventListener("click", () => tab(true));
+
+function render(live) {
+  const entry = state.selected;
+  if (!entry || !isHtml(entry.path) || typeof entry.text !== "string") return;
+  if (
+    live &&
+    (state.mode !== "local" ||
+      !confirm(
+        "Executar este build local? Use apenas código que você revisou. O sandbox reduz riscos, mas não substitui isolamento de sistema."
+      ))
+  )
+    return;
+  resetPreview();
+  const frame = $("preview-frame");
+  frame.setAttribute("sandbox", live ? "allow-scripts" : "");
+  const policy =
+    "default-src 'none'; script-src " +
+    (live ? "'unsafe-inline'" : "'none'") +
+    "; style-src 'unsafe-inline'; img-src data: blob:; font-src data:; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'";
+  frame.srcdoc = '<!doctype html><meta http-equiv="Content-Security-Policy" content="' + policy + '">' + entry.text;
+  frame.hidden = false;
+}
+
+async function renderTsxExperimental() {
+  const entry = state.selected;
+  if (!entry || !isReact(entry.path) || typeof entry.text !== "string") return;
+  resetPreview();
+  $("preview-note").textContent = "Carregando dependências locais do snapshot e transpilando TSX…";
+
+  const fileMap = {};
+  const importRegex = /from\s+["'](\.[^"']+|@\/[^"']+)["']/g;
+  const toFetch = [];
+  let match;
+  while ((match = importRegex.exec(entry.text)) !== null) {
+    const spec = match[1];
+    const baseParts = entry.path.split("/").slice(0, -1);
+    let prefix = "";
+    if (spec.startsWith("@/")) {
+      prefix = spec.slice(2);
+    } else {
+      const parts = [...baseParts];
+      for (const seg of spec.split("/")) {
+        if (!seg || seg === ".") continue;
+        if (seg === "..") parts.pop();
+        else parts.push(seg);
+      }
+      prefix = parts.join("/");
+    }
+    const candidate = state.entries.find(
+      (e) =>
+        e.path === prefix ||
+        e.path === "src/" + prefix ||
+        /\.(tsx|ts|jsx|js)$/.test(e.path) &&
+          (e.path.startsWith(prefix + ".") ||
+            e.path.startsWith("src/" + prefix + ".") ||
+            e.path.startsWith(prefix + "/index.") ||
+            e.path.startsWith("src/" + prefix + "/index."))
+    );
+    if (candidate && candidate.path !== entry.path && toFetch.length < 12) {
+      toFetch.push(candidate);
+    }
+  }
+
+  for (const dep of toFetch) {
+    try {
+      const b = await fetchBlobBytes(dep);
+      if (!b.includes(0)) fileMap[dep.path] = new TextDecoder("utf-8").decode(b);
+    } catch {
+      // Fallback proxy will handle missing dependency
+    }
+  }
+
+  const runtimeUrl = new URL("./tsx-preview-runtime.js", location.href).href;
+  const payload = JSON.stringify({ path: entry.path, code: entry.text, files: fileMap }).replace(/<\//g, "<\\/");
+  const previewCss = [
+    "*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,sans-serif;font-size:14px;color:#0f172a;background:#ffffff}",
+    ".pv-stage{min-height:100vh;display:flex;flex-direction:column}",
+    ".pv-banner{padding:8px 14px;background:#f8fafc;border-bottom:1px solid #e2e8f0;font-size:12px;color:#475569}",
+    ".pv-canvas{padding:20px;flex:1;display:flex;flex-direction:column;gap:12px}",
+    ".pv-error{margin:16px;padding:14px;border:1px solid #fecaca;background:#fef2f2;color:#991b1b;border-radius:8px;font-size:13px}",
+    ".pv-error pre{white-space:pre-wrap;font-size:12px;margin:8px 0 0}",
+    ".pv-info{margin:16px;padding:14px;border:1px solid #cbd5e1;background:#f8fafc;border-radius:8px;font-size:13px}",
+    "button{cursor:pointer;border:1px solid #cbd5e1;background:#fff;border-radius:6px;padding:6px 10px;font:inherit}",
+    "button:hover{background:#f1f5f9}",
+    ".flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-between{justify-content:space-between}.gap-2{gap:8px}.gap-4{gap:16px}.p-2{padding:8px}.p-4{padding:16px}.w-full{width:100%}.rounded-md{border-radius:6px}.border{border:1px solid #e2e8f0}",
+  ].join("");
+
+  const html =
+    "<!doctype html><html lang='pt-BR'><head><meta charset='utf-8'>" +
+    "<style>" + previewCss + "</style>" +
+    "<script src='" + runtimeUrl + "'></script></head>" +
+    "<body><div id='root'></div>" +
+    "<script id='pv-data' type='application/json'>" + payload + "</script>" +
+    "<script>" +
+    "(function(){var d=JSON.parse(document.getElementById('pv-data').textContent);" +
+    "if(typeof window.renderArchiveComponent==='function'){window.renderArchiveComponent(document.getElementById('root'),d.path,d.code,d.files);}" +
+    "else{document.getElementById('root').innerHTML='<div class=\"pv-info\">Runtime TSX indisponivel neste ambiente local. Publique via GitHub Pages ou execute o build de preview.</div>';}" +
+    "})();</script></body></html>";
+
+  const frame = $("preview-frame");
+  frame.setAttribute("sandbox", "allow-scripts");
+  frame.srcdoc = html;
+  frame.hidden = false;
+  $("preview-note").textContent = "Preview TSX experimental renderizado em iframe isolado.";
+}
+
+$("render-preview").addEventListener("click", () => render(false));
+$("render-live").addEventListener("click", () => render(true));
+$("render-tsx").addEventListener("click", renderTsxExperimental);
+
+let requestedOpened = false;
+async function openRequestedFile() {
+  if (requestedOpened) return false;
+  requestedOpened = true;
+  const params = new URLSearchParams(location.search);
+  const repo = params.get("repo");
+  const sha = params.get("sha");
+  const path = params.get("path");
+  if (!repo || !sha || !path || !publicRepos.has(repo)) return false;
+  const snapshot = publicSnapshots.find((s) => s.repo === repo && s.sha === sha);
+  if (!snapshot) return false;
+  const match = snapshot.files.find((f) => f.path === path);
+  if (!match) return false;
+  $("source-repo").value = repo;
+  refreshRefs();
+  $("source-ref").value = sha;
+  install(
+    "public",
+    snapshot.files.map((x) => ({ path: x.path, size: x.size, blob: x.blob, cached: !!x.cached })),
+    repo,
+    sha
+  );
+  for (const part of path
+    .split("/")
+    .slice(0, -1)
+    .map((_, i) => path.split("/").slice(0, i + 1).join("/"))) {
+    state.expanded.add(part);
+  }
+  await select(state.entries.find((x) => x.path === path));
+  return true;
+}
+
+$("render-reviewed").addEventListener("click", () => {
+  const item = reviewedEntry(state.selected);
+  if (!item) return;
+  resetPreview();
+  const frame = $("preview-frame");
+  frame.setAttribute("sandbox", "allow-scripts");
+  frame.src = "./" + item.page;
+  frame.hidden = false;
+});
+
+$("send-excerpt").addEventListener("click", () => {
+  const entry = state.selected;
+  if (!embed || !entry || typeof entry.text !== "string" || window.parent === window) return;
+  const lines = entry.text.split(/\r?\n/);
+  const start = Math.max(1, Math.min(lines.length, Math.floor(Number($("excerpt-start").value) || 1)));
+  const end = Math.max(start, Math.min(lines.length, start + 199, Math.floor(Number($("excerpt-end").value) || start)));
+  const text = lines.slice(start - 1, end).join("\n");
+  if (text.length > 12000) {
+    $("excerpt-status").textContent = "Reduza o trecho a 12.000 caracteres.";
+    return;
+  }
+  window.parent.postMessage(
+    {
+      type: "archive-evidence",
+      repository: state.mode === "public" ? state.repo : "local",
+      commit: state.sha,
+      path: entry.path,
+      blob: entry.blob || null,
+      start,
+      end,
+      text,
+    },
+    location.origin
+  );
+  $("excerpt-status").textContent = "Trecho enviado ao contexto desta aba.";
+});
+
 loadPublicSources();
