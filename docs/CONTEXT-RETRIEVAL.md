@@ -26,3 +26,9 @@ The result is compact JSON with an exact UTF-8 output budget (not an estimated t
 ## Remaining work (#77)
 
 Unify the public and authenticated historical adapters using a scope-aware common interface, with immutable version references, a freshness manifest, incremental content-hash invalidation, semantic chunking (code symbols, document sections, motion sequences), precise citations, concept summaries with supporting evidence and real gold-set evaluations. Expose through existing CLI/MCP and each installed plugin only after regression and access tests. Do not send historical data to Context7 or other third parties. Do not claim installed plugin synchronization from a repository commit.
+
+## Shared local MCP and pinned historical adapter
+
+The existing optional stdio server now exposes `resolve_concept` and `query_concept_context` for the public projection. Both reuse the same implementation as the CLI; snapshot is required in MCP. The real MCP handshake smoke test exercises both calls against the repository catalogs.
+
+The authenticated worker accepts an opt-in `concept_context` operation with explicit repo, ref, full source SHA, concept ID, focused query and expected index SHA-256. It checks the verified index checksum before searching, disables cross-concept legacy pin expansion, and filters by source SHA/ref before ranking. This is a pinned lexical adapter, not proof that every matched record belongs to the supplied concept. The private queue/client deployment and real historical evaluation remain required; never submit the request to a public branch or service.

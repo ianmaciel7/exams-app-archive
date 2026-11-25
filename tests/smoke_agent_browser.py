@@ -38,7 +38,7 @@ async def check_mcp():
             async with ClientSession(read, write) as session:
                 await session.initialize()
                 names = {tool.name for tool in (await session.list_tools()).tools}
-                assert names == {"search", "graph", "context", "images", "stats", "components_list", "component_render", "component_capture", "component_screenshots", "component_screenshot_image", "research_search", "research_audit"}, names
+                assert names == {"search", "graph", "context", "images", "stats", "components_list", "component_render", "component_capture", "component_screenshots", "component_screenshot_image", "research_search", "research_audit", "resolve_concept", "query_concept_context"}, names
                 stats = await session.call_tool("stats", {})
                 assert not stats.isError, stats
                 assert "fixture" in str(stats.content), stats
@@ -50,9 +50,19 @@ async def check_mcp():
                 assert not research.isError and "dnd-kit" in str(research.content), research
                 audit = await session.call_tool("research_audit", {})
                 assert not audit.isError and "visual_matrix" in str(audit.content), audit
+                resolved = await session.call_tool("resolve_concept", {"query": "painel lateral"})
+                assert not resolved.isError, resolved
+                result = getattr(resolved, "structuredContent", None)
+                if not result:
+                    result = json.loads(resolved.content[0].text)
+                assert result["matches"][0]["id"] == "ui.navigation.side-panel", result
+                context_result = await session.call_tool("query_concept_context", {
+                    "concept_id": "ui.navigation.side-panel", "query": "side panel redesign",
+                    "snapshot": result["snapshot"], "product": "Capacities", "max_bytes": 5000})
+                assert not context_result.isError and "official-capacities-1" in str(context_result.content), context_result
                 invalid = await session.call_tool("search", {"query": "--help"})
                 assert invalid.isError, invalid
-        print("MCP: handshake, twelve tool registrations, real CLI stats/images, invalid query rejection passed")
+        print("MCP: handshake, fourteen tool registrations, real CLI stats/images, invalid query rejection passed")
 
 
 def check_browser():
