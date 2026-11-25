@@ -2093,6 +2093,346 @@
       "status": "Prior conversation or reference catalog; revalidate before reuse",
       "storage": "link-only",
       "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "component-sidebar",
+      "title": "UX Patterns — Sidebar",
+      "url": "https://uxpatterns.dev/patterns/navigation/sidebar",
+      "kind": "pattern-library",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-favorites",
+      "title": "UI Patterns — Favorites",
+      "url": "https://ui-patterns.com/patterns/favorites",
+      "kind": "pattern-library",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-drag",
+      "title": "UI Patterns — Drag and drop",
+      "url": "https://ui-patterns.com/patterns/drag-and-drop",
+      "kind": "pattern-library",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-linear-favorites",
+      "title": "Linear — Favorites",
+      "url": "https://linear.app/docs/favorites",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-linear-sidebar",
+      "title": "Linear — Personalized sidebar",
+      "url": "https://linear.app/changelog/2024-12-18-personalized-sidebar",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-linear-mobile",
+      "title": "Linear — Customize mobile navigation (2026-01-22)",
+      "url": "https://linear.app/changelog/2026-01-22-customize-your-navigation-in-linear-mobile",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-capacities",
+      "title": "Capacities — Sections",
+      "url": "https://docs.capacities.io/reference/sections",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-capacities-ui",
+      "title": "Capacities — User interface",
+      "url": "https://docs.capacities.io/reference/user-interface",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-notion-sidebar",
+      "title": "Notion — Navigate with sidebar",
+      "url": "https://www.notion.com/help/navigate-with-the-sidebar",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-slack",
+      "title": "Slack — Custom sections",
+      "url": "https://slack.com/help/articles/360043207674",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-linear-display",
+      "title": "Linear — Display options",
+      "url": "https://linear.app/docs/display-options",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-linear-board",
+      "title": "Linear — Board layout",
+      "url": "https://linear.app/docs/board-layout",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-linear-views",
+      "title": "Linear — Custom views",
+      "url": "https://linear.app/docs/custom-views",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-linear-reorder",
+      "title": "Linear — Group reordering (2026-05-21)",
+      "url": "https://linear.app/changelog/2026-05-21-project-slack-channels",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-notion-views",
+      "title": "Notion — Database views, filters, sorts and groups",
+      "url": "https://www.notion.com/help/views-filters-and-sorts",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-notion-dashboard",
+      "title": "Notion — Dashboards",
+      "url": "https://www.notion.com/help/dashboards",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-chatgpt-projects",
+      "title": "ChatGPT — Projects",
+      "url": "https://help.openai.com/en/articles/10169521-projects-in-chatgpt",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-claude-projects",
+      "title": "Claude — Create and manage projects",
+      "url": "https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-antigravity-search",
+      "title": "Antigravity — Search and command palette",
+      "url": "https://antigravity.google/docs/search",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-antigravity-changelog",
+      "title": "Antigravity — Changelog, conversation management",
+      "url": "https://antigravity.google/docs/changelog?tab=hub&version=2.29.0",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-wcag-drag",
+      "title": "W3C — Understanding SC 2.5.7 Dragging Movements",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements",
+      "kind": "accessibility-standard-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-apple-icons",
+      "title": "Apple HIG — Icons",
+      "url": "https://developer.apple.com/design/human-interface-guidelines/icons",
+      "kind": "primary-platform",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-nng-consistency",
+      "title": "NN/g — Consistency and Standards",
+      "url": "https://www.nngroup.com/articles/consistency-and-standards/",
+      "kind": "usability-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-nng-heuristics",
+      "title": "NN/g — Ten Usability Heuristics",
+      "url": "https://www.nngroup.com/articles/ten-usability-heuristics/",
+      "kind": "usability-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-tidwell-preview",
+      "title": "Designing Interfaces — historical Alternative Views entry (publisher preview)",
+      "url": "https://api.pageplace.de/preview/DT0400.9780596519087_A23629407/preview-9780596519087_A23629407.pdf",
+      "kind": "book-preview",
+      "recorded_on": "2026-11-25",
+      "status": "Historical book preview, search-index only; full text not inspected",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-lucide",
+      "title": "Lucide",
+      "url": "https://lucide.dev/",
+      "kind": "icon-library",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-phosphor",
+      "title": "Phosphor Icons",
+      "url": "https://phosphoricons.com/",
+      "kind": "icon-library",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-tabler",
+      "title": "Tabler Icons",
+      "url": "https://tabler.io/icons",
+      "kind": "icon-library",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-heroicons",
+      "title": "Heroicons",
+      "url": "https://heroicons.com/",
+      "kind": "icon-library",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-sf-symbols",
+      "title": "Apple — SF Symbols",
+      "url": "https://developer.apple.com/sf-symbols/",
+      "kind": "icon-library",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-setproduct",
+      "title": "Setproduct — Sidebar navigation UI design",
+      "url": "https://www.setproduct.com/blog/sidebar-navigation-ui-design",
+      "kind": "editorial",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-uxcel",
+      "title": "Uxcel — Navigation architecture",
+      "url": "https://uxcel.com/lessons/navigation-architecture-159",
+      "kind": "education",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-saasui",
+      "title": "SaaSUI — Sidebar UX patterns",
+      "url": "https://www.saasui.design/blog/saas-sidebar-navigation-ux-patterns",
+      "kind": "editorial",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-uiindex",
+      "title": "The UI Index — Patterns",
+      "url": "https://theuiindex.com/patterns",
+      "kind": "pattern-library",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
     }
   ],
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",

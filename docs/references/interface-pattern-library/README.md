@@ -53,3 +53,8 @@ No claims of a market-share ranking or universal effectiveness. Primary document
 - [Catalog and verification checklist](../ui-ux-research-sources/behavioral-ux-quality-2026.md)
 - [Machine-readable catalog](../ui-ux-research-sources/behavioral-ux-quality-2026.json)
 - 58 indexed entries in 12 families, 209 source URLs total (+16); overlaps prior catalogs. Plugin v1.8.7 published and read back; all 58 pattern records and 209 source URLs match. Some historical source metadata differs; see synchronization record.
+
+## Component Interaction & Behavior Patterns
+
+- [Catalog](../ui-ux-research-sources/component-interaction-behavior-patterns.md) and [JSON](../ui-ux-research-sources/component-interaction-behavior-patterns.json).
+- 29 indexed patterns across navigation, manipulation, alternative views and iconography; 243 source URLs (+34). See sync record for publication status.

@@ -87,3 +87,8 @@ Registrar URLs originais e redirects, datas de consulta, fonte e status (verific
 - [Catalog and criteria](./behavioral-ux-quality-2026.md)
 - [Structured index](./behavioral-ux-quality-2026.json)
 - [Canonical source register](../interface-pattern-library/sources.json)
+
+## Component interaction and behavior patterns
+
+- [Catalog and capability matrix](./component-interaction-behavior-patterns.md)
+- [Structured records](./component-interaction-behavior-patterns.json)

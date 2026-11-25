@@ -1,0 +1,819 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-25",
+  "title": "Component Interaction & Behavior Patterns",
+  "scope": "General product-independent UI/UX, with navigation, manipulation, alternative views and iconography.",
+  "pattern_count": 29,
+  "patterns": [
+    {
+      "family": "navigation",
+      "id": "persistent-sidebar",
+      "name": "Persistent Sidebar Navigation",
+      "aliases": "Sidebar navigation; navigation rail",
+      "behavior": "Keep primary destinations reachable while working; collapse when space is scarce.",
+      "acceptance": "Navigate without losing work; test compact/mobile presentation.",
+      "source_ids": [
+        "component-sidebar",
+        "component-capacities-ui"
+      ],
+      "priority": "contextual; accessibility requirements apply independently",
+      "evidence_status": "Synthesis; product examples establish existence, not universal adoption or effectiveness."
+    },
+    {
+      "family": "navigation",
+      "id": "collapsible-sections",
+      "name": "Collapsible Sections",
+      "aliases": "Disclosure; expandable groups",
+      "behavior": "Expand or collapse secondary groups; preserve essential paths and expose expanded state.",
+      "acceptance": "Keyboard/touch toggle, meaningful accessible name and state; reopening restores group.",
+      "source_ids": [
+        "component-sidebar",
+        "component-notion-sidebar"
+      ],
+      "priority": "contextual; accessibility requirements apply independently",
+      "evidence_status": "Synthesis; product examples establish existence, not universal adoption or effectiveness."
+    },
+    {
+      "family": "navigation",
+      "id": "pinned-items",
+      "name": "Pinned Items",
+      "aliases": "Pin/unpin; quick access",
+      "behavior": "Keep selected references prominent independently of recency; pinning is not moving the underlying object.",
+      "acceptance": "Pin and unpin without duplication or deletion; reload preserves intended preference.",
+      "source_ids": [
+        "component-capacities",
+        "component-linear-mobile",
+        "component-antigravity-search"
+      ],
+      "priority": "contextual; accessibility requirements apply independently",
+      "evidence_status": "Synthesis; product examples establish existence, not universal adoption or effectiveness."
+    },
+    {
+      "family": "navigation",
+      "id": "favorites",
+      "name": "Favorites",
+      "aliases": "Starred items; bookmarks",
+      "behavior": "Provide user-controlled quick access to frequently used objects; distinguish favorite from pin if both exist.",
+      "acceptance": "Toggle favorite from accessible control; reflect same status in other views.",
+      "source_ids": [
+        "component-favorites",
+        "component-linear-favorites",
+        "component-claude-projects"
+      ],
+      "priority": "contextual; accessibility requirements apply independently",
+      "evidence_status": "Synthesis; product examples establish existence, not universal adoption or effectiveness."
+    },
+    {
+      "family": "navigation",
+      "id": "custom-sections",
+      "name": "Custom Sections",
+      "aliases": "User-defined groups; sidebar sections",
+      "behavior": "Let people create, rename, order and remove navigation groups where workflows differ.",
+      "acceptance": "Create section, move links, remove section with clear consequences; do not delete underlying objects inadvertently.",
+      "source_ids": [
+        "component-capacities",
+        "component-slack",
+        "component-linear-sidebar"
+      ],
+      "priority": "contextual; accessibility requirements apply independently",
+      "evidence_status": "Synthesis; product examples establish existence, not universal adoption or effectiveness."
+    },
+    {
+      "family": "navigation",
+      "id": "nested-navigation",
+      "name": "Nested Navigation",
+      "aliases": "Tree navigation; favorite folders",
+      "behavior": "Use hierarchy for real parent-child organization or explicitly labeled shortcut grouping.",
+      "acceptance": "Expand/collapse with keyboard and touch; avoid cycles and unbounded depth.",
+      "source_ids": [
+        "component-sidebar",
+        "component-notion-sidebar",
+        "component-linear-favorites"
+      ],
+      "priority": "contextual; accessibility requirements apply independently",
+      "evidence_status": "Synthesis; product examples establish existence, not universal adoption or effectiveness."
+    },
+    {
+      "family": "navigation",
+      "id": "workspace-switcher",
+      "name": "Workspace Switcher",
+      "aliases": "Space switcher; context selector",
+      "behavior": "Switch workspace scope with visible active context; preserve authorized state per workspace.",
+      "acceptance": "Switch A/B; check no stale or unauthorized content; restore prior view where supported.",
+      "source_ids": [
+        "component-capacities-ui",
+        "component-notion-sidebar"
+      ],
+      "priority": "contextual; accessibility requirements apply independently",
+      "evidence_status": "Synthesis; product examples establish existence, not universal adoption or effectiveness."
+    },
+    {
+      "family": "navigation",
+      "id": "recent-items",
+      "name": "Recently Visited Items",
+      "aliases": "Recents; history",
+      "behavior": "Offer recent destinations as dynamic shortcuts without implying stable pin order.",
+      "acceptance": "Recent items reflect visits and permissions; provide clear empty state.",
+      "source_ids": [
+        "component-notion-sidebar"
+      ],
+      "priority": "contextual; accessibility requirements apply independently",
+      "evidence_status": "Synthesis; product examples establish existence, not universal adoption or effectiveness."
+    },
+    {
+      "family": "navigation",
+      "id": "navigation-personalization",
+      "name": "Navigation Personalization",
+      "aliases": "Customizable sidebar; hide/show destinations",
+      "behavior": "Permit reordering or hiding secondary destinations; preserve a recoverable default.",
+      "acceptance": "Hide and restore navigation; refresh and verify preference scope.",
+      "source_ids": [
+        "component-linear-sidebar",
+        "component-linear-mobile"
+      ],
+      "priority": "contextual; accessibility requirements apply independently",
+      "evidence_status": "Synthesis; product examples establish existence, not universal adoption or effectiveness."
+    },
+    {
+      "family": "navigation",
+      "id": "navigation-badges",
+      "name": "Navigation Badges",
+      "aliases": "Unread dot; counters",
+      "behavior": "Use meaningful counts or status markers, not ornamental noise.",
+      "acceptance": "Status is readable without color alone and reflects actual count semantics.",
+      "source_ids": [
+        "component-linear-sidebar"
+      ],
+      "priority": "contextual; accessibility requirements apply independently",
+      "evidence_status": "Synthesis; product examples establish existence, not universal adoption or effectiveness."
+    },
+    {
+      "family": "navigation",
+      "id": "overflow-navigation",
+      "name": "Overflow Navigation",
+      "aliases": "More menu; secondary destinations",
+      "behavior": "Keep frequent actions discoverable and group less-used actions in a labeled overflow.",
+      "acceptance": "Keyboard/touch can access hidden items; active destination remains apparent.",
+      "source_ids": [
+        "component-sidebar",
+        "component-linear-sidebar"
+      ],
+      "priority": "contextual; accessibility requirements apply independently",
+      "evidence_status": "Synthesis; product examples establish existence, not universal adoption or effectiveness."
+    },
+    {
+      "family": "navigation",
+      "id": "sidebar-sizing-peek",
+      "name": "Resizable / Collapsible Sidebar and Sidebar Peek",
+      "aliases": "Panel resize; temporary reveal",
+      "behavior": "Offer size adjustment or temporary reveal when useful; separate peek from persistent open state.",
+      "acceptance": "Test min/max size, keyboard/touch alternative, focus, and no inadvertent overlay.",
+      "source_ids": [
+        "component-sidebar"
+      ],
+      "priority": "contextual; accessibility requirements apply independently",
+      "evidence_status": "Synthesis; product examples establish existence, not universal adoption or effectiveness."
+    },
+    {
+      "family": "manipulation",
+      "id": "drag-reorder",
+      "name": "Drag-and-Drop Reordering",
+      "aliases": "Sortable items; manual ordering",
+      "behavior": "Reorder within a collection; make target, drag state, insertion and result clear.",
+      "acceptance": "Drag and non-drag pointer alternative; keyboard reorder; persist order and handle failures.",
+      "source_ids": [
+        "component-drag",
+        "component-linear-reorder",
+        "component-wcag-drag"
+      ],
+      "priority": "contextual; accessibility requirements apply independently",
+      "evidence_status": "Synthesis; product examples establish existence, not universal adoption or effectiveness."
+    },
+    {
+      "family": "manipulation",
+      "id": "cross-section-move",
+      "name": "Move Between Groups",
+      "aliases": "Cross-section drag/drop; Move to menu",
+      "behavior": "Move reference or underlying object with clear destination and consequences; distinguish copy, move, pin and grouping.",
+      "acceptance": "Move via menu or drag; validate permissions and consequences; preserve identity.",
+      "source_ids": [
+        "component-chatgpt-projects",
+        "component-claude-projects",
+        "component-slack",
+        "component-wcag-drag"
+      ],
+      "priority": "contextual; accessibility requirements apply independently",
+      "evidence_status": "Synthesis; product examples establish existence, not universal adoption or effectiveness."
+    },
+    {
+      "family": "manipulation",
+      "id": "inline-creation",
+      "name": "Inline Creation",
+      "aliases": "Quick create; section-level create",
+      "behavior": "Create in current context without unnecessary navigation; make default destination visible.",
+      "acceptance": "Create in correct group; allow cancel; invalid data remains recoverable.",
+      "source_ids": [
+        "component-notion-sidebar"
+      ],
+      "priority": "contextual; accessibility requirements apply independently",
+      "evidence_status": "Synthesis; product examples establish existence, not universal adoption or effectiveness."
+    },
+    {
+      "family": "manipulation",
+      "id": "inline-rename",
+      "name": "Inline Renaming",
+      "aliases": "In-place edit; quick rename",
+      "behavior": "Edit simple name near object; explicit save/cancel semantics.",
+      "acceptance": "Rename via keyboard/touch, cancel restores old title, error retains edit.",
+      "source_ids": [
+        "component-antigravity-changelog"
+      ],
+      "priority": "contextual; accessibility requirements apply independently",
+      "evidence_status": "Synthesis; product examples establish existence, not universal adoption or effectiveness."
+    },
+    {
+      "family": "manipulation",
+      "id": "contextual-tools",
+      "name": "Contextual Tools",
+      "aliases": "Hover-reveal actions; focus-reveal; context menu",
+      "behavior": "Keep secondary commands close to object; visible essential actions and accessible alternative to hover/right-click.",
+      "acceptance": "Focus and touch reveal same relevant actions; no accidental selection or focus loss.",
+      "source_ids": [
+        "component-sidebar",
+        "component-slack",
+        "component-antigravity-search"
+      ],
+      "priority": "contextual; accessibility requirements apply independently",
+      "evidence_status": "Synthesis; product examples establish existence, not universal adoption or effectiveness."
+    },
+    {
+      "family": "manipulation",
+      "id": "multi-selection-bulk",
+      "name": "Multi-selection and Bulk Actions",
+      "aliases": "Batch selection; batch toolbar",
+      "behavior": "Select multiple items with clear selection scope and applicable actions.",
+      "acceptance": "Count selected, select/clear range, bulk failure reports partial outcomes; keyboard and touch supported.",
+      "source_ids": [
+        "component-drag"
+      ],
+      "priority": "contextual; accessibility requirements apply independently",
+      "evidence_status": "Synthesis; product examples establish existence, not universal adoption or effectiveness."
+    },
+    {
+      "family": "manipulation",
+      "id": "direct-manipulation",
+      "name": "Direct Manipulation",
+      "aliases": "Move; resize; reorder",
+      "behavior": "Manipulate visible objects with immediate feedback and reversible edits where practical.",
+      "acceptance": "Input targets and feedback remain clear; cancel drag; offer pointer and keyboard alternatives.",
+      "source_ids": [
+        "component-drag",
+        "component-wcag-drag"
+      ],
+      "priority": "contextual; accessibility requirements apply independently",
+      "evidence_status": "Synthesis; product examples establish existence, not universal adoption or effectiveness."
+    },
+    {
+      "family": "views",
+      "id": "alternative-views",
+      "name": "Alternative Views",
+      "aliases": "View Switching; View Toggle; Multiple Views",
+      "behavior": "Present same underlying objects in task-appropriate list, table, card/grid, board, calendar or timeline views; view toggle changes presentation, not object identity.",
+      "acceptance": "Switch layouts, preserve shared filters/selection where meaningful; clarify per-view settings and no data duplication.",
+      "source_ids": [
+        "component-tidwell-preview",
+        "component-linear-display",
+        "component-notion-views"
+      ],
+      "priority": "contextual; accessibility requirements apply independently",
+      "evidence_status": "Synthesis; product examples establish existence, not universal adoption or effectiveness."
+    },
+    {
+      "family": "views",
+      "id": "saved-views",
+      "name": "Saved Views",
+      "aliases": "Custom Views; named views; saved search",
+      "behavior": "Persist a named query/layout configuration independent of underlying data; define personal/shared scope.",
+      "acceptance": "Save, rename and reopen a filtered view; permissions and changes remain explicit.",
+      "source_ids": [
+        "component-linear-views",
+        "component-notion-views"
+      ],
+      "priority": "contextual; accessibility requirements apply independently",
+      "evidence_status": "Synthesis; product examples establish existence, not universal adoption or effectiveness."
+    },
+    {
+      "family": "views",
+      "id": "sorting-filtering-grouping",
+      "name": "Sorting, Filtering and Grouping",
+      "aliases": "Sort; faceted filter; group by",
+      "behavior": "Allow task-relevant query refinement; visible active criteria, reset and clear results.",
+      "acceptance": "Combine filters, change sort/group, clear; distinguish zero matches from loading/error.",
+      "source_ids": [
+        "component-linear-display",
+        "component-notion-views"
+      ],
+      "priority": "contextual; accessibility requirements apply independently",
+      "evidence_status": "Synthesis; product examples establish existence, not universal adoption or effectiveness."
+    },
+    {
+      "family": "views",
+      "id": "display-options",
+      "name": "Display Options",
+      "aliases": "Property visibility; density; field selection",
+      "behavior": "Configure visible fields and layout density as appropriate without changing data or access.",
+      "acceptance": "Hide/show field, restore defaults; personal/shared scope and accessibility preserved.",
+      "source_ids": [
+        "component-linear-display",
+        "component-notion-views"
+      ],
+      "priority": "contextual; accessibility requirements apply independently",
+      "evidence_status": "Synthesis; product examples establish existence, not universal adoption or effectiveness."
+    },
+    {
+      "family": "views",
+      "id": "swimlanes",
+      "name": "Swimlanes and Sub-grouping",
+      "aliases": "Board lanes; nested grouping",
+      "behavior": "Use a second grouping dimension only when it improves understanding of work.",
+      "acceptance": "Group and regroup same records; keep accessible navigation across lanes and avoid lost items.",
+      "source_ids": [
+        "component-linear-board",
+        "component-linear-reorder"
+      ],
+      "priority": "contextual; accessibility requirements apply independently",
+      "evidence_status": "Synthesis; product examples establish existence, not universal adoption or effectiveness."
+    },
+    {
+      "family": "views",
+      "id": "persistent-view-state",
+      "name": "Persistent View State",
+      "aliases": "Remember layout; personal preferences",
+      "behavior": "Persist chosen layout, sorting, grouping and filters at the intended user/view scope.",
+      "acceptance": "Reload, return from detail and switch devices if supported; do not overwrite shared defaults silently.",
+      "source_ids": [
+        "component-linear-display",
+        "component-linear-views",
+        "component-notion-views"
+      ],
+      "priority": "contextual; accessibility requirements apply independently",
+      "evidence_status": "Synthesis; product examples establish existence, not universal adoption or effectiveness."
+    },
+    {
+      "family": "views",
+      "id": "dashboard-composition",
+      "name": "Customizable Dashboard Layout",
+      "aliases": "Widget arrangement; multi-view composition",
+      "behavior": "Arrange different views of shared data for a task; widgets retain permissions and meaningful filters.",
+      "acceptance": "Change layout and inspect each widget; view configuration does not bypass underlying access.",
+      "source_ids": [
+        "component-notion-dashboard"
+      ],
+      "priority": "contextual; accessibility requirements apply independently",
+      "evidence_status": "Synthesis; product examples establish existence, not universal adoption or effectiveness."
+    },
+    {
+      "family": "iconography",
+      "id": "semantic-iconography",
+      "name": "Semantic Iconography",
+      "aliases": "Familiar symbols; icon-and-label navigation",
+      "behavior": "Use consistent understandable symbols for actions and destinations; label ambiguous icons.",
+      "acceptance": "Compare icon stroke, size and meaning; accessible names and visible text for ambiguous actions.",
+      "source_ids": [
+        "component-apple-icons",
+        "component-nng-consistency"
+      ],
+      "priority": "contextual; accessibility requirements apply independently",
+      "evidence_status": "Synthesis; product examples establish existence, not universal adoption or effectiveness."
+    },
+    {
+      "family": "iconography",
+      "id": "outline-iconography",
+      "name": "Monochromatic Outline Iconography",
+      "aliases": "Outline icons; low-chrome UI",
+      "behavior": "Use restrained coherent visual language where it improves clarity; outline style is a choice, not standard.",
+      "acceptance": "Contrast and active state clear; no inference of specific icon library from appearance.",
+      "source_ids": [
+        "component-apple-icons"
+      ],
+      "priority": "contextual; accessibility requirements apply independently",
+      "evidence_status": "Synthesis; product examples establish existence, not universal adoption or effectiveness."
+    },
+    {
+      "family": "iconography",
+      "id": "consistent-navigation",
+      "name": "Consistency and Standards",
+      "aliases": "Jakob's Law; familiar conventions",
+      "behavior": "Reuse learned conventions unless evidence justifies a departure; consistency is not identical visuals.",
+      "acceptance": "Same action has same meaning, labels, and behavior; validate unfamiliar symbols with users.",
+      "source_ids": [
+        "component-nng-consistency",
+        "component-nng-heuristics"
+      ],
+      "priority": "contextual; accessibility requirements apply independently",
+      "evidence_status": "Synthesis; product examples establish existence, not universal adoption or effectiveness."
+    }
+  ],
+  "component_matrix": [
+    [
+      "Lists",
+      "Alternative Views; sorting/filtering/grouping; multi-selection; bulk actions"
+    ],
+    [
+      "Tables",
+      "Column resizing/reordering; inline edit; frozen columns; sorting/filtering; selection"
+    ],
+    [
+      "Sidebars",
+      "Pin/favorite; sections; move/reorder; contextual tools; peek; width"
+    ],
+    [
+      "Cards",
+      "Quick actions; expandable details; move/reorder"
+    ],
+    [
+      "Tabs",
+      "Pin; reorder; duplicate; split view; state preservation"
+    ],
+    [
+      "Dashboards",
+      "Widget layout; resize/reorder; drill-down; multi-view"
+    ],
+    [
+      "Editors",
+      "Autosave; undo/redo; version history; inline formatting"
+    ],
+    [
+      "Search",
+      "Autocomplete; recent/saved searches; scope"
+    ],
+    [
+      "Calendars",
+      "Alternative Views; move/resize events"
+    ],
+    [
+      "Forms",
+      "Inline validation; conditional fields; draft persistence"
+    ]
+  ],
+  "caveats": [
+    "Component Interaction & Behavior Patterns is a proposed internal catalog name; established umbrella is Interaction Design Patterns / Application Design Patterns / HCI Design Patterns.",
+    "Workspace Customization, Navigation Interaction Patterns, Direct Manipulation, Alternative Views, Saved Views and Display Options are useful research terms. Alternative Views is historical; the 2026 date is review date, not invention date.",
+    "A component is a UI structure; a pattern solves a recurring interaction problem; a capability is a specific behavior. Do not mandate all capabilities on every component. Separate UI presentation, domain data, permissions, and personal/shared view configuration.",
+    "Capacities sections are shortcuts, not necessarily folders; moving a ChatGPT chat into a project may change project context. Antigravity documented conversation commands do not establish identical web-sidebar affordances; Claude features vary with rollout. No authenticated DOM inspection or icon-library identification.",
+    "WCAG 2.2 SC 2.5.7 requires a non-drag single-pointer alternative where applicable, with stated exceptions; keyboard accessibility is separate. Do not rely on hover or drag alone. Validate focus, touch, status announcements, error recovery, and permissions.",
+    "The component matrix is a discovery checklist, not independently researched prescriptions for every component. Cross-index existing patterns instead of treating all entries as net-new. Prior links not revalidated are labeled."
+  ],
+  "sources": [
+    {
+      "id": "component-sidebar",
+      "title": "UX Patterns — Sidebar",
+      "url": "https://uxpatterns.dev/patterns/navigation/sidebar",
+      "kind": "pattern-library",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-favorites",
+      "title": "UI Patterns — Favorites",
+      "url": "https://ui-patterns.com/patterns/favorites",
+      "kind": "pattern-library",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-drag",
+      "title": "UI Patterns — Drag and drop",
+      "url": "https://ui-patterns.com/patterns/drag-and-drop",
+      "kind": "pattern-library",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-linear-favorites",
+      "title": "Linear — Favorites",
+      "url": "https://linear.app/docs/favorites",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-linear-sidebar",
+      "title": "Linear — Personalized sidebar",
+      "url": "https://linear.app/changelog/2024-12-18-personalized-sidebar",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-linear-mobile",
+      "title": "Linear — Customize mobile navigation (2026-01-22)",
+      "url": "https://linear.app/changelog/2026-01-22-customize-your-navigation-in-linear-mobile",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-capacities",
+      "title": "Capacities — Sections",
+      "url": "https://docs.capacities.io/reference/sections",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-capacities-ui",
+      "title": "Capacities — User interface",
+      "url": "https://docs.capacities.io/reference/user-interface",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-notion-sidebar",
+      "title": "Notion — Navigate with sidebar",
+      "url": "https://www.notion.com/help/navigate-with-the-sidebar",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-slack",
+      "title": "Slack — Custom sections",
+      "url": "https://slack.com/help/articles/360043207674",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-linear-display",
+      "title": "Linear — Display options",
+      "url": "https://linear.app/docs/display-options",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-linear-board",
+      "title": "Linear — Board layout",
+      "url": "https://linear.app/docs/board-layout",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-linear-views",
+      "title": "Linear — Custom views",
+      "url": "https://linear.app/docs/custom-views",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-linear-reorder",
+      "title": "Linear — Group reordering (2026-05-21)",
+      "url": "https://linear.app/changelog/2026-05-21-project-slack-channels",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-notion-views",
+      "title": "Notion — Database views, filters, sorts and groups",
+      "url": "https://www.notion.com/help/views-filters-and-sorts",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-notion-dashboard",
+      "title": "Notion — Dashboards",
+      "url": "https://www.notion.com/help/dashboards",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-chatgpt-projects",
+      "title": "ChatGPT — Projects",
+      "url": "https://help.openai.com/en/articles/10169521-projects-in-chatgpt",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-claude-projects",
+      "title": "Claude — Create and manage projects",
+      "url": "https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-antigravity-search",
+      "title": "Antigravity — Search and command palette",
+      "url": "https://antigravity.google/docs/search",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-antigravity-changelog",
+      "title": "Antigravity — Changelog, conversation management",
+      "url": "https://antigravity.google/docs/changelog?tab=hub&version=2.29.0",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-wcag-drag",
+      "title": "W3C — Understanding SC 2.5.7 Dragging Movements",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements",
+      "kind": "accessibility-standard-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-apple-icons",
+      "title": "Apple HIG — Icons",
+      "url": "https://developer.apple.com/design/human-interface-guidelines/icons",
+      "kind": "primary-platform",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-nng-consistency",
+      "title": "NN/g — Consistency and Standards",
+      "url": "https://www.nngroup.com/articles/consistency-and-standards/",
+      "kind": "usability-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-nng-heuristics",
+      "title": "NN/g — Ten Usability Heuristics",
+      "url": "https://www.nngroup.com/articles/ten-usability-heuristics/",
+      "kind": "usability-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Public search-index evidence; revalidate scope before reuse",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "tidwell-book",
+      "title": "Designing Interfaces, 3rd edition",
+      "url": "https://www.oreilly.com/library/view/designing-interfaces-3rd/9781492051954/",
+      "kind": "book-reference",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Referência clássica de padrões de interação de Jenifer Tidwell, Charles Brewer e Aynne Valencia; página editorial, texto integral não consultado."
+    },
+    {
+      "id": "component-tidwell-preview",
+      "title": "Designing Interfaces — historical Alternative Views entry (publisher preview)",
+      "url": "https://api.pageplace.de/preview/DT0400.9780596519087_A23629407/preview-9780596519087_A23629407.pdf",
+      "kind": "book-preview",
+      "recorded_on": "2026-11-25",
+      "status": "Historical book preview, search-index only; full text not inspected",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-lucide",
+      "title": "Lucide",
+      "url": "https://lucide.dev/",
+      "kind": "icon-library",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-phosphor",
+      "title": "Phosphor Icons",
+      "url": "https://phosphoricons.com/",
+      "kind": "icon-library",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-tabler",
+      "title": "Tabler Icons",
+      "url": "https://tabler.io/icons",
+      "kind": "icon-library",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-heroicons",
+      "title": "Heroicons",
+      "url": "https://heroicons.com/",
+      "kind": "icon-library",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-sf-symbols",
+      "title": "Apple — SF Symbols",
+      "url": "https://developer.apple.com/sf-symbols/",
+      "kind": "icon-library",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-setproduct",
+      "title": "Setproduct — Sidebar navigation UI design",
+      "url": "https://www.setproduct.com/blog/sidebar-navigation-ui-design",
+      "kind": "editorial",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-uxcel",
+      "title": "Uxcel — Navigation architecture",
+      "url": "https://uxcel.com/lessons/navigation-architecture-159",
+      "kind": "education",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-saasui",
+      "title": "SaaSUI — Sidebar UX patterns",
+      "url": "https://www.saasui.design/blog/saas-sidebar-navigation-ux-patterns",
+      "kind": "editorial",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "component-uiindex",
+      "title": "The UI Index — Patterns",
+      "url": "https://theuiindex.com/patterns",
+      "kind": "pattern-library",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation; not independently re-fetched in this consolidation",
+      "storage": "link-only",
+      "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    }
+  ]
+}
