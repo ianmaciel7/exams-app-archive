@@ -2433,6 +2433,116 @@
       "status": "Prior conversation; not independently re-fetched in this consolidation",
       "storage": "link-only",
       "notes": "Component interaction and behavior patterns; no inference of universal adoption."
+    },
+    {
+      "id": "micro-vercel",
+      "title": "Vercel — Web Interface Guidelines",
+      "url": "https://vercel.com/design/guidelines",
+      "kind": "practitioner-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Reopened 2026-11-25; living guidance, not a formal standard",
+      "storage": "link-only",
+      "notes": "Microinteraction behavior, component states, timing and motion; check scope and support before adoption."
+    },
+    {
+      "id": "micro-nng-tooltip",
+      "title": "NN/g — Tooltip Guidelines",
+      "url": "https://www.nngroup.com/articles/tooltip-guidelines/",
+      "kind": "usability-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Reopened 2026-11-25",
+      "storage": "link-only",
+      "notes": "Microinteraction behavior, component states, timing and motion; check scope and support before adoption."
+    },
+    {
+      "id": "micro-floating-hover",
+      "title": "Floating UI — useHover",
+      "url": "https://floating-ui.com/docs/usehover",
+      "kind": "primary-library",
+      "recorded_on": "2026-11-25",
+      "status": "Reopened 2026-11-25",
+      "storage": "link-only",
+      "notes": "Microinteraction behavior, component states, timing and motion; check scope and support before adoption."
+    },
+    {
+      "id": "micro-floating-delay",
+      "title": "Floating UI — FloatingDelayGroup",
+      "url": "https://floating-ui.com/docs/floatingdelaygroup",
+      "kind": "primary-library",
+      "recorded_on": "2026-11-25",
+      "status": "Reopened 2026-11-25",
+      "storage": "link-only",
+      "notes": "Microinteraction behavior, component states, timing and motion; check scope and support before adoption."
+    },
+    {
+      "id": "micro-radix-tooltip",
+      "title": "Radix — Tooltip",
+      "url": "https://www.radix-ui.com/primitives/docs/components/tooltip",
+      "kind": "primary-library",
+      "recorded_on": "2026-11-25",
+      "status": "Reopened 2026-11-25",
+      "storage": "link-only",
+      "notes": "Microinteraction behavior, component states, timing and motion; check scope and support before adoption."
+    },
+    {
+      "id": "micro-apg-tooltip",
+      "title": "W3C APG — Tooltip Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/tooltip/",
+      "kind": "accessibility-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Reopened 2026-11-25; work in progress, no task force consensus",
+      "storage": "link-only",
+      "notes": "Microinteraction behavior, component states, timing and motion; check scope and support before adoption."
+    },
+    {
+      "id": "micro-emil-taste",
+      "title": "Emil Kowalski — Agents with Taste",
+      "url": "https://emilkowal.ski/ui/agents-with-taste",
+      "kind": "practitioner-essay",
+      "recorded_on": "2026-11-25",
+      "status": "Reopened 2026-11-25",
+      "storage": "link-only",
+      "notes": "Microinteraction behavior, component states, timing and motion; check scope and support before adoption."
+    },
+    {
+      "id": "micro-saffer",
+      "title": "Dan Saffer — Microinteractions",
+      "url": "https://www.oreilly.com/library/view/microinteractions/9781449342760/",
+      "kind": "book-reference",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation; full book not inspected",
+      "storage": "link-only",
+      "notes": "Microinteraction behavior, component states, timing and motion; check scope and support before adoption."
+    },
+    {
+      "id": "micro-floating-shift",
+      "title": "Floating UI — shift",
+      "url": "https://floating-ui.com/docs/shift",
+      "kind": "primary-library",
+      "recorded_on": "2026-11-25",
+      "status": "Linked by reopened useHover documentation; individual body not re-fetched",
+      "storage": "link-only",
+      "notes": "Microinteraction behavior, component states, timing and motion; check scope and support before adoption."
+    },
+    {
+      "id": "micro-floating-flip",
+      "title": "Floating UI — flip",
+      "url": "https://floating-ui.com/docs/flip",
+      "kind": "primary-library",
+      "recorded_on": "2026-11-25",
+      "status": "Linked by reopened useHover documentation; individual body not re-fetched",
+      "storage": "link-only",
+      "notes": "Microinteraction behavior, component states, timing and motion; check scope and support before adoption."
+    },
+    {
+      "id": "micro-floating-transition",
+      "title": "Floating UI — useTransition",
+      "url": "https://floating-ui.com/docs/usetransition",
+      "kind": "primary-library",
+      "recorded_on": "2026-11-25",
+      "status": "Linked by reopened useHover documentation; individual body not re-fetched",
+      "storage": "link-only",
+      "notes": "Microinteraction behavior, component states, timing and motion; check scope and support before adoption."
     }
   ],
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",

@@ -92,3 +92,8 @@ Registrar URLs originais e redirects, datas de consulta, fonte e status (verific
 
 - [Catalog and capability matrix](./component-interaction-behavior-patterns.md)
 - [Structured records](./component-interaction-behavior-patterns.json)
+
+## Microinteraction states and polish
+
+- [Catalog and interaction contract](./microinteraction-state-and-polish.md)
+- [Structured records](./microinteraction-state-and-polish.json)

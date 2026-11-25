@@ -1,0 +1,678 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-25",
+  "title": "Microinteraction Design Patterns — States, Contextual Interaction and Motion Polish",
+  "scope": "General product-independent UI/UX; desktop, web, keyboard and touch.",
+  "pattern_count": 33,
+  "patterns": [
+    {
+      "family": "states",
+      "id": "hover-state",
+      "name": "Hover State / Hover Highlight",
+      "behavior": "Pointer over an interactive target; distinguish from persistent selection.",
+      "acceptance": "Visual feedback changes only relevant affordance; mouseout restores prior state; no hover-only access.",
+      "source_ids": [
+        "natural",
+        "micro-vercel"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "states",
+      "id": "pressed-state",
+      "name": "Pressed State",
+      "behavior": "Transient press feedback distinct from toggle's persistent pressed semantics.",
+      "acceptance": "Pointer down/up and keyboard activation work; cancel press when appropriate; no layout shift.",
+      "source_ids": [
+        "natural",
+        "micro-vercel"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "states",
+      "id": "focus-visible",
+      "name": "Focus Visible",
+      "behavior": "Visible keyboard focus, not merely pointer hover.",
+      "acceptance": "Tab through controls; focus is visible and not obscured; avoid removing outline without replacement.",
+      "source_ids": [
+        "micro-vercel",
+        "behavior-wcag22"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "states",
+      "id": "focus-within",
+      "name": "Focus Within",
+      "behavior": "Highlight parent or reveal actions when a descendant receives focus.",
+      "acceptance": "Move focus among actions; row remains usable until focus leaves; no keyboard-only disappearing controls.",
+      "source_ids": [
+        "micro-vercel"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "states",
+      "id": "selected-state",
+      "name": "Selected State",
+      "behavior": "Persistent selection separate from hover, focus and current destination.",
+      "acceptance": "Selection survives pointer movement; accessible semantics fit actual widget; combine states coherently.",
+      "source_ids": [
+        "apg",
+        "behavior-wcag22"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "states",
+      "id": "disabled-state",
+      "name": "Disabled State",
+      "behavior": "Communicate unavailable action and reason where useful; use actual semantics.",
+      "acceptance": "Disabled action cannot accidentally execute; explain missing prerequisites accessibly.",
+      "source_ids": [
+        "apg",
+        "behavior-wcag22"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "states",
+      "id": "loading-state",
+      "name": "Loading / Busy State",
+      "behavior": "Represent ongoing work without implying success or blocking unrelated actions.",
+      "acceptance": "Loading and completion match actual work; screen reader receives relevant updates; failure recoverable.",
+      "source_ids": [
+        "behavior-wcag22",
+        "natural"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "states",
+      "id": "dragging-state",
+      "name": "Dragging State",
+      "behavior": "Show held item, original position and relevant drag feedback.",
+      "acceptance": "Drag cancel restores state; touch/keyboard and single-pointer alternative available.",
+      "source_ids": [
+        "natural",
+        "behavior-wcag22"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "states",
+      "id": "drop-target-state",
+      "name": "Drop Target / Insertion Indicator",
+      "behavior": "Distinguish valid target and insertion position; do not rely only on color.",
+      "acceptance": "Valid and invalid drop targets clear; no accidental reorder; alternative move command works.",
+      "source_ids": [
+        "natural",
+        "behavior-wcag22"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "states",
+      "id": "state-layers",
+      "name": "State Layers",
+      "behavior": "Compose state-dependent surface or overlay styling for interaction feedback; design-system technique rather than universal requirement.",
+      "acceptance": "Selected+hover+focus combination stays legible in light/dark modes.",
+      "source_ids": [
+        "natural",
+        "micro-vercel"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "contextual",
+      "id": "hover-reveal",
+      "name": "Hover-Reveal Actions",
+      "behavior": "Reveal secondary row controls on pointer intent without hiding essentials.",
+      "acceptance": "No row resizing or click interception; move pointer to child action without disappearance.",
+      "source_ids": [
+        "natural",
+        "rauno-interaction"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "contextual",
+      "id": "focus-reveal",
+      "name": "Focus-Reveal Actions",
+      "behavior": "Reveal equivalent controls via keyboard; touch fallback through explicit affordance.",
+      "acceptance": "Tab to actions; controls remain visible and operable on touch-only device.",
+      "source_ids": [
+        "micro-vercel",
+        "wcag-hover"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "contextual",
+      "id": "overflow-trigger",
+      "name": "Overflow Menu Trigger / More Actions",
+      "behavior": "Use recognizable control to access secondary actions in context.",
+      "acceptance": "Accessible name, keyboard open/close, correct item scope, focus return; label ambiguous icons.",
+      "source_ids": [
+        "apg",
+        "micro-vercel"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "contextual",
+      "id": "hover-intent",
+      "name": "Hover Intent",
+      "behavior": "Delay or infer intentional hover for secondary surfaces to reduce accidental activation.",
+      "acceptance": "Rapid cursor transit doesn't open unwanted panels; deliberate dwell works; no fixed universal delay.",
+      "source_ids": [
+        "micro-floating-hover"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "contextual",
+      "id": "delayed-tooltip",
+      "name": "Delayed Tooltip",
+      "behavior": "Short noninteractive explanation for a labeled or unfamiliar control; not sole source of essential information.",
+      "acceptance": "Pointer/focus opens; Escape dismisses; no interactive controls inside tooltip; preserve accessible name.",
+      "source_ids": [
+        "micro-nng-tooltip",
+        "micro-radix-tooltip",
+        "micro-apg-tooltip",
+        "wcag-hover"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "contextual",
+      "id": "tooltip-delay-group",
+      "name": "Tooltip Delay Group / Skip Delay",
+      "behavior": "After deliberate opening, allow faster neighboring tooltips during a bounded group interval.",
+      "acceptance": "First opening delayed; adjacent labels appear promptly; delay resets after leaving group; no focus stealing.",
+      "source_ids": [
+        "micro-floating-delay",
+        "micro-radix-tooltip"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "contextual",
+      "id": "hover-card",
+      "name": "Hover Card",
+      "behavior": "Contextual preview beyond a brief label; interactive content requires suitable popover/dialog semantics.",
+      "acceptance": "Preview can be dismissed; keyboard/touch path; important information accessible without hover.",
+      "source_ids": [
+        "micro-floating-hover",
+        "wcag-hover",
+        "micro-apg-tooltip"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "contextual",
+      "id": "interest-preview",
+      "name": "Interest-Triggered Preview",
+      "behavior": "Preview an item before committing navigation; product-specific trigger may be hover, focus or explicit action.",
+      "acceptance": "Preview does not change committed selection or navigation; explicit opening path works.",
+      "source_ids": [
+        "natural",
+        "micro-floating-hover"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "contextual",
+      "id": "anchored-popover",
+      "name": "Anchored Popover",
+      "behavior": "Position contextual surface relative to its trigger; semantics depend on content.",
+      "acceptance": "Scroll/resize keeps anchor relationship; Escape, focus behavior and touch supported.",
+      "source_ids": [
+        "micro-floating-hover",
+        "apg"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "contextual",
+      "id": "safe-polygon",
+      "name": "Safe Polygon / Pointer Travel Corridor",
+      "behavior": "Implementation technique to preserve hover surface during intentional pointer travel.",
+      "acceptance": "Diagonal movement into menu stays open; moving away closes; no reliance on pointer-only interaction.",
+      "source_ids": [
+        "micro-floating-hover"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "contextual",
+      "id": "adaptive-placement",
+      "name": "Adaptive Placement / Collision Avoidance",
+      "behavior": "Flip or shift overlay to remain available near viewport boundaries.",
+      "acceptance": "Test edges, scroll, zoom, narrow viewport and content clipping.",
+      "source_ids": [
+        "micro-floating-shift",
+        "micro-floating-flip"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "contextual",
+      "id": "expanded-hit-area",
+      "name": "Expanded Hit Area",
+      "behavior": "Increase operable target around small visual icon while preserving distinct targets.",
+      "acceptance": "Test adjacent target overlap, touch and keyboard; apply WCAG target-size criteria and exceptions.",
+      "source_ids": [
+        "micro-vercel",
+        "behavior-wcag22"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "motion",
+      "id": "color-transition",
+      "name": "Color Transition",
+      "behavior": "Animate changes of visual state when helpful; prioritize instant semantic feedback.",
+      "acceptance": "Rapid enter/leave reverses smoothly; contrast and selected/focus distinction remain clear.",
+      "source_ids": [
+        "natural",
+        "emil-great-animation"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "motion",
+      "id": "opacity-transition",
+      "name": "Opacity Transition",
+      "behavior": "Fade nonessential visuals on state change; distinguish invisible from noninteractive.",
+      "acceptance": "Hidden controls don't capture input invisibly; reveal on focus/touch; no delayed essential feedback.",
+      "source_ids": [
+        "natural",
+        "micro-vercel"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "motion",
+      "id": "press-feedback",
+      "name": "Press Feedback",
+      "behavior": "Subtle response to activation; avoid compulsory scaling or movement.",
+      "acceptance": "Keyboard and touch receive feedback; reduced-motion alternative retains state cue.",
+      "source_ids": [
+        "natural",
+        "micro-vercel"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "motion",
+      "id": "icon-morphing",
+      "name": "Icon Morphing",
+      "behavior": "Transition icon shape for closely related states only if meaning remains obvious.",
+      "acceptance": "Accessible name/state update immediately; reduced-motion alternative; no unrelated visual confusion.",
+      "source_ids": [
+        "emil-great-animation",
+        "rauno-interaction"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "motion",
+      "id": "origin-aware",
+      "name": "Origin-Aware Animation",
+      "behavior": "Maintain spatial link from triggering control to resulting surface.",
+      "acceptance": "Popover enters/exits from meaningful anchor; works after collision reposition; no animation prerequisite.",
+      "source_ids": [
+        "emil-origin"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "motion",
+      "id": "interruptible",
+      "name": "Interruptible / Reversible Animation",
+      "behavior": "New user input supersedes ongoing transition rather than queues stale motion.",
+      "acceptance": "Rapid reopen/close and repeated toggles converge on current state; no delayed input.",
+      "source_ids": [
+        "emil-great-animation",
+        "emil-animation-frequency"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "motion",
+      "id": "layout-animation",
+      "name": "Layout Animation",
+      "behavior": "Preserve spatial continuity when items add, remove or reorder.",
+      "acceptance": "Actual order and focus stay correct; no overlap or blocked interactions.",
+      "source_ids": [
+        "motion",
+        "natural"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "motion",
+      "id": "shared-element",
+      "name": "Shared Element Transition",
+      "behavior": "Preserve visible identity between two presentations of same element.",
+      "acceptance": "No duplicate accessible objects or stale focus; skip safely when identity or support missing.",
+      "source_ids": [
+        "motion"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "motion",
+      "id": "spring-animation",
+      "name": "Spring Animation",
+      "behavior": "Physics-inspired easing for appropriate direct manipulation, not universal motion default.",
+      "acceptance": "Tune to task; avoid excessive oscillation; repeated interactions remain responsive.",
+      "source_ids": [
+        "emil-great-animation",
+        "motion"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "motion",
+      "id": "enter-exit",
+      "name": "Enter / Exit Transition",
+      "behavior": "Reveal or dismiss contextual surface without interrupting interaction.",
+      "acceptance": "Exit doesn't leave hidden focusable controls or intercept input; interruption supported.",
+      "source_ids": [
+        "micro-floating-transition",
+        "emil-origin"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    },
+    {
+      "family": "motion",
+      "id": "reduced-motion",
+      "name": "Reduced Motion",
+      "behavior": "Respect motion preference and applicable accessibility requirements; preserve meaning.",
+      "acceptance": "With reduced motion enabled, all actions, state cues and content remain available.",
+      "source_ids": [
+        "micro-vercel",
+        "behavior-wcag22"
+      ],
+      "priority": "contextual; normative accessibility requirements apply independently",
+      "evidence_status": "Synthesis of prior research and documented guidance; not a market adoption claim"
+    }
+  ],
+  "caveats": [
+    "Microinteraction Design Patterns, Component Interaction States, Interaction Design Details, UI Craft, Interaction Polish and Design Engineering Guidelines are search terms; the umbrella taxonomy here is a proposed knowledge organization, not a formal universal standard.",
+    "Static user screenshot supports an observed row highlight, visible secondary actions and tooltip label, not causation, exact hover trigger, timings, CSS, actual motion or component library; no private image or labels published.",
+    "Use a behavior contract: trigger, state before/after, rules, visual feedback, input modality, timing/interruptibility, persistence, accessibility, failure and acceptance. Distinguish observable interaction from implementation choice.",
+    "Tooltip is noninteractive explanatory content; an interactive hover card needs appropriate semantics. APG tooltip pattern is still work in progress. WCAG 1.4.13 applies to additional hover/focus content where applicable: dismissible, hoverable and persistent, subject to exceptions. Test touch and keyboard separately.",
+    "Do not prescribe a universal duration, delay, scale, opacity or animation for all controls. Use feedback without blocking action; reduced-motion preference must preserve essential cues. State layers and safe polygon are techniques, not formal UX standards.",
+    "An outline icon, hidden controls or dark theme is not evidence that an application uses a specific library. Design galleries are existence evidence; examples are not population-level adoption or usability findings.",
+    "Cross-reference prior contextual-tool, motion, accessibility and component-behavior catalogs. Counts are indexed entries, not net-new distinct patterns. Preserve original URLs and prior metadata."
+  ],
+  "sources": [
+    {
+      "id": "natural",
+      "title": "Chrome — Natural interactions",
+      "url": "https://developer.chrome.com/docs/modern-web-guidance/guides/user-experience/natural-interactions",
+      "kind": "primary-technical",
+      "notes": "Press/focus feedback, natural movement and keyboard access.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "micro-vercel",
+      "title": "Vercel — Web Interface Guidelines",
+      "url": "https://vercel.com/design/guidelines",
+      "kind": "practitioner-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Reopened 2026-11-25; living guidance, not a formal standard",
+      "storage": "link-only",
+      "notes": "Microinteraction behavior, component states, timing and motion; check scope and support before adoption."
+    },
+    {
+      "id": "micro-nng-tooltip",
+      "title": "NN/g — Tooltip Guidelines",
+      "url": "https://www.nngroup.com/articles/tooltip-guidelines/",
+      "kind": "usability-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Reopened 2026-11-25",
+      "storage": "link-only",
+      "notes": "Microinteraction behavior, component states, timing and motion; check scope and support before adoption."
+    },
+    {
+      "id": "micro-floating-hover",
+      "title": "Floating UI — useHover",
+      "url": "https://floating-ui.com/docs/usehover",
+      "kind": "primary-library",
+      "recorded_on": "2026-11-25",
+      "status": "Reopened 2026-11-25",
+      "storage": "link-only",
+      "notes": "Microinteraction behavior, component states, timing and motion; check scope and support before adoption."
+    },
+    {
+      "id": "micro-floating-delay",
+      "title": "Floating UI — FloatingDelayGroup",
+      "url": "https://floating-ui.com/docs/floatingdelaygroup",
+      "kind": "primary-library",
+      "recorded_on": "2026-11-25",
+      "status": "Reopened 2026-11-25",
+      "storage": "link-only",
+      "notes": "Microinteraction behavior, component states, timing and motion; check scope and support before adoption."
+    },
+    {
+      "id": "micro-radix-tooltip",
+      "title": "Radix — Tooltip",
+      "url": "https://www.radix-ui.com/primitives/docs/components/tooltip",
+      "kind": "primary-library",
+      "recorded_on": "2026-11-25",
+      "status": "Reopened 2026-11-25",
+      "storage": "link-only",
+      "notes": "Microinteraction behavior, component states, timing and motion; check scope and support before adoption."
+    },
+    {
+      "id": "micro-apg-tooltip",
+      "title": "W3C APG — Tooltip Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/tooltip/",
+      "kind": "accessibility-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Reopened 2026-11-25; work in progress, no task force consensus",
+      "storage": "link-only",
+      "notes": "Microinteraction behavior, component states, timing and motion; check scope and support before adoption."
+    },
+    {
+      "id": "micro-emil-taste",
+      "title": "Emil Kowalski — Agents with Taste",
+      "url": "https://emilkowal.ski/ui/agents-with-taste",
+      "kind": "practitioner-essay",
+      "recorded_on": "2026-11-25",
+      "status": "Reopened 2026-11-25",
+      "storage": "link-only",
+      "notes": "Microinteraction behavior, component states, timing and motion; check scope and support before adoption."
+    },
+    {
+      "id": "micro-saffer",
+      "title": "Dan Saffer — Microinteractions",
+      "url": "https://www.oreilly.com/library/view/microinteractions/9781449342760/",
+      "kind": "book-reference",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation; full book not inspected",
+      "storage": "link-only",
+      "notes": "Microinteraction behavior, component states, timing and motion; check scope and support before adoption."
+    },
+    {
+      "id": "rauno-interaction",
+      "title": "Rauno Freiberg — Invisible Details of Interaction Design",
+      "url": "https://rauno.me/craft/interaction-design",
+      "kind": "practitioner-essay",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; revalidate full source before specific claims",
+      "storage": "link-only",
+      "notes": "Analisa sutilezas de interfaces, gestos, feedback e expectativas.",
+      "application": "Usar exemplos para hipótese e crítica, não como prova causal."
+    },
+    {
+      "id": "emil-origin",
+      "title": "Emil Kowalski — Origin-aware animations",
+      "url": "https://emilkowal.ski/ui/origin-aware-animations",
+      "kind": "practitioner-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; revalidate full source before specific claims",
+      "storage": "link-only",
+      "notes": "Exemplos de origem espacial de transições.",
+      "application": "Relacionar movimento ao elemento disparador; manter foco e estado sem depender da animação."
+    },
+    {
+      "id": "emil-great-animation",
+      "title": "Emil Kowalski — Great Animations",
+      "url": "https://emilkowal.ski/ui/great-animations",
+      "kind": "practitioner-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; revalidate full source before specific claims",
+      "storage": "link-only",
+      "notes": "Discute qualidade de motion, desempenho e preferências de movimento.",
+      "application": "Medir desempenho real e respeitar reduced motion."
+    },
+    {
+      "id": "emil-animation-frequency",
+      "title": "Emil Kowalski — You Don’t Need Animations",
+      "url": "https://emilkowal.ski/ui/you-dont-need-animations",
+      "kind": "practitioner-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; revalidate full source before specific claims",
+      "storage": "link-only",
+      "notes": "Discute frequência, percepção e custo do motion.",
+      "application": "Reduzir ou eliminar animação em ações repetidas; tempos sugeridos são heurísticas."
+    },
+    {
+      "id": "motion",
+      "title": "Motion — Layout animations",
+      "url": "https://motion.dev/docs/react-layout-animations",
+      "kind": "primary-library",
+      "notes": "Shared identity and layout projection.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "wcag-hover",
+      "title": "WCAG 2.2 Content on Hover or Focus",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/content-on-hover-or-focus",
+      "kind": "normative-support",
+      "recorded_on": "2026-11-25",
+      "status": "carried forward; not revalidated in this batch",
+      "notes": "SC 1.4.13 understanding; dismissible, hoverable, persistent as applicable to additional content.",
+      "storage": "link-only"
+    },
+    {
+      "id": "behavior-wcag22",
+      "title": "W3C — WCAG 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "kind": "accessibility-standard",
+      "recorded_on": "2026-11-25",
+      "status": "Prior conversation or reference catalog; revalidate before reuse",
+      "storage": "link-only",
+      "notes": "Behavioral UX quality research and documentation taxonomy; use within source scope."
+    },
+    {
+      "id": "apg",
+      "title": "W3C — ARIA APG example index",
+      "url": "https://www.w3.org/WAI/ARIA/apg/example-index/",
+      "kind": "primary-guidance",
+      "notes": "Widget patterns and working accessibility examples; APG guidance, not certification.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "detail",
+      "title": "Detail",
+      "url": "https://detail.design/",
+      "kind": "independent-interaction-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Detalhes de produto classificados por interação, motion, texto e acessibilidade; observar trigger e feedback."
+    },
+    {
+      "id": "designspells",
+      "title": "Design Spells",
+      "url": "https://designspells.com/",
+      "kind": "microinteraction-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "verified",
+      "notes": "Small delightful product interactions; examples are not universal recommendations.",
+      "storage": "link-only"
+    },
+    {
+      "id": "uxpatterns",
+      "title": "UX Patterns for Developers",
+      "url": "https://uxpatterns.dev/",
+      "kind": "pattern-library",
+      "recorded_on": "2026-11-25",
+      "status": "verified",
+      "notes": "Specimens, comparison guides, glossary and implementation trade-offs.",
+      "storage": "link-only"
+    },
+    {
+      "id": "micro-floating-shift",
+      "title": "Floating UI — shift",
+      "url": "https://floating-ui.com/docs/shift",
+      "kind": "primary-library",
+      "recorded_on": "2026-11-25",
+      "status": "Linked by reopened useHover documentation; individual body not re-fetched",
+      "storage": "link-only",
+      "notes": "Microinteraction behavior, component states, timing and motion; check scope and support before adoption."
+    },
+    {
+      "id": "micro-floating-flip",
+      "title": "Floating UI — flip",
+      "url": "https://floating-ui.com/docs/flip",
+      "kind": "primary-library",
+      "recorded_on": "2026-11-25",
+      "status": "Linked by reopened useHover documentation; individual body not re-fetched",
+      "storage": "link-only",
+      "notes": "Microinteraction behavior, component states, timing and motion; check scope and support before adoption."
+    },
+    {
+      "id": "micro-floating-transition",
+      "title": "Floating UI — useTransition",
+      "url": "https://floating-ui.com/docs/usetransition",
+      "kind": "primary-library",
+      "recorded_on": "2026-11-25",
+      "status": "Linked by reopened useHover documentation; individual body not re-fetched",
+      "storage": "link-only",
+      "notes": "Microinteraction behavior, component states, timing and motion; check scope and support before adoption."
+    }
+  ]
+}

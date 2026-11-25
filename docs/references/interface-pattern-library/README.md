@@ -58,3 +58,8 @@ No claims of a market-share ranking or universal effectiveness. Primary document
 
 - [Catalog](../ui-ux-research-sources/component-interaction-behavior-patterns.md) and [JSON](../ui-ux-research-sources/component-interaction-behavior-patterns.json).
 - 29 indexed patterns across navigation, manipulation, alternative views and iconography; 243 source URLs (+34). See sync record for publication status.
+
+## Microinteraction states and polish
+
+- [Catalog](../ui-ux-research-sources/microinteraction-state-and-polish.md) and [JSON](../ui-ux-research-sources/microinteraction-state-and-polish.json).
+- 33 indexed entries; 254 retained URLs (+11); see sync record.
