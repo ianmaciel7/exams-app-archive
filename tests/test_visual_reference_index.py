@@ -13,7 +13,11 @@ class VisualReferenceTests(unittest.TestCase):
         self.assertEqual(mod.verify(rows), [])
     def test_search(self):
         self.assertTrue(mod.search(mod.load(), "side panel"))
-        self.assertEqual(len(mod.search(mod.load(), kind="video", status="archived-blob-verified")), 3)
+        videos = mod.search(mod.load(), kind="video", status="archived-blob-verified")
+        self.assertGreaterEqual(len(videos), 7)
+        self.assertTrue(mod.search(videos, "storybook accessibility"))
+        self.assertTrue(mod.search(mod.load(), "shadcn sidebar"))
+        self.assertTrue(mod.search(mod.load(), "excalidraw wireframe"))
         self.assertTrue(mod.search(mod.load(), "kanban drag"))
 
 if __name__ == "__main__":
