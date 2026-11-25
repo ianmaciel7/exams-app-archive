@@ -3873,6 +3873,15 @@
       "checked_on": "2026-11-25",
       "storage": "link-only",
       "evidence": "Prior conversation public catalog/guide review; individual pages, counts and media not exhaustively revalidated."
+    },
+    {
+      "id": "shoogle",
+      "title": "Shoogle — shadcn UI search engine",
+      "url": "https://shoogle.dev/",
+      "kind": "component-registry-discovery",
+      "notes": "Searches shadcn components, blocks and templates across registries; includes AI elements, charts, themes, presets and registry directory; offers MCP and skill. Discovery source, not normative design guidance. Verify upstream licenses, dependencies, accessibility and compatibility before installation.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
     }
   ],
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",

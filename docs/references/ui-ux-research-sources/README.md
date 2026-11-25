@@ -114,3 +114,7 @@ Registrar URLs originais e redirects, datas de consulta, fonte e status (verific
 - [Synthesis and acceptance criteria](./ai-native-product-design.md)
 - [Structured cross-index](./ai-native-product-design.json)
 - 10 families, 163 cross-indexed labels, 14 source links; 10 added to the canonical register (387 retained). Partial public documentation, not exhaustive audit.
+
+## Component registry discovery
+
+- [Shoogle](https://shoogle.dev/) — search shadcn/ui registries for components, blocks, templates, AI elements, charts and themes; directory and MCP available. Verify upstream license, dependencies, accessibility and compatibility. Reviewed 2026-11-25; discovery, not a design standard.
