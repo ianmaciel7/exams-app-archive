@@ -26,10 +26,11 @@ from typing import Any
 
 CANONICAL_SOURCE = "ianmaciel7/exams-app-archive@main:plugins/exams-archive-native/"
 EXPECTED_PLUGIN_ID = "plugins_6b04aaa9fd848191a24525011f76e2bb"
-EXPECTED_VERSION = "0.8.0"
-VALID_VERSIONS = {"0.6.0", "0.7.0", "0.8.0"}
-EXPECTED_RELEASE_ID = "pluginrel_6b05cabf4a84819182a5509e963ada1f"
+EXPECTED_VERSION = "0.8.1"
+VALID_VERSIONS = {"0.6.0", "0.7.0", "0.8.0", "0.8.1"}
+EXPECTED_RELEASE_ID = "pluginrel_6b06df1a59188191af956d00ec226ee5"
 VALID_RELEASE_IDS = {
+    "pluginrel_6b06df1a59188191af956d00ec226ee5",
     "pluginrel_6b05cabf4a84819182a5509e963ada1f",
     "pluginrel_6b04c63bd96c8191bda2c535f2b62e1b",
     "pluginrel_6b05737fc5ac8191901dc20c99f82da6",
@@ -51,6 +52,7 @@ CANONICAL_FILES: tuple[str, ...] = (
     "skills/archive-search/SKILL.md",
     "skills/component-explorer/SKILL.md",
     "skills/sync-bridge/SKILL.md",
+    "skills/sync-ux-knowledge/SKILL.md",
     "skills/ui-fidelity/references/chat-preview-contract.md",
     "skills/ui-fidelity/references/source-map.md",
     "skills/ui-fidelity/references/visual-qa.md",
