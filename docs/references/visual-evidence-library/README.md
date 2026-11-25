@@ -1,6 +1,6 @@
 # Visual evidence library
 
-Indexed research for #67 and #75. This batch preserves 10 exact upstream media blobs (5 PNG, 2 GIF, 3 videos) with MIT notices and 26 official link-only records. Git blob identity verified on transfer; visual playback, duration and exact interaction timing not tested. No proprietary product videos copied. Links to documentation containing media are not archived videos. Do not infer current product implementation from independent demos.
+Indexed research for #67 and #75. This catalog preserves 23 unique upstream media blobs (14 images, 2 GIFs, 7 videos) with MIT notices and 26 official link-only records. Git blob identity verified on transfer; visual playback, duration and exact interaction timing not tested. No proprietary product videos copied. Links to documentation containing media are not archived videos. Do not infer current product implementation from independent demos.
 
 - [Machine-readable manifest](manifest.json)
 - [Searchable local HTML gallery](gallery.html) (serve this folder over local HTTP)
@@ -53,3 +53,19 @@ Indexed research for #67 and #75. This batch preserves 10 exact upstream media b
 - Exact video chapter times, playback and browser/viewport QA remain unverified. No claim of complete coverage across products or states.
 - Actual private captures, original product media and historical bundles are outside this public collection. Only publish with rights and authorization.
 - Next: integrate this manifest into canonical search/context packs (#64/#45), then validate cross-client recovery (#70). Record media availability separately from links; use the existing #67 capture protocol.
+
+## Added shadcn, Excalidraw and Storybook references
+
+- [whats a story](media/storybook/whats-a-story.mp4) — video; [source](https://github.com/storybookjs/storybook/blob/fbefbde26e5557f38ed695153761bc58038feae6/docs/_assets/get-started/whats-a-story.mp4); [license](media/storybook/LICENSE).
+- [component accessibility testing](media/storybook/component-accessibility-testing.mp4) — video; [source](https://github.com/storybookjs/storybook/blob/fbefbde26e5557f38ed695153761bc58038feae6/docs/_assets/writing-tests/component-accessibility-testing.mp4); [license](media/storybook/LICENSE).
+- [component interaction testing](media/storybook/component-interaction-testing.mp4) — video; [source](https://github.com/storybookjs/storybook/blob/fbefbde26e5557f38ed695153761bc58038feae6/docs/_assets/writing-tests/component-interaction-testing.mp4); [license](media/storybook/LICENSE).
+- [component visual testing optimized](media/storybook/component-visual-testing-optimized.mp4) — video; [source](https://github.com/storybookjs/storybook/blob/fbefbde26e5557f38ed695153761bc58038feae6/docs/_assets/writing-tests/component-visual-testing-optimized.mp4); [license](media/storybook/LICENSE).
+- [dashboard light](media/shadcn/dashboard-light.png) — image; [source](https://github.com/shadcn-ui/ui/blob/055aa6b7837b1808456a24beb4c97a677864aa82/apps/v4/public/examples/dashboard-light.png); [license](media/shadcn/LICENSE).
+- [dashboard dark](media/shadcn/dashboard-dark.png) — image; [source](https://github.com/shadcn-ui/ui/blob/055aa6b7837b1808456a24beb4c97a677864aa82/apps/v4/public/examples/dashboard-dark.png); [license](media/shadcn/LICENSE).
+- [sidebar demo light](media/shadcn/sidebar-demo-light.png) — image; [source](https://github.com/shadcn-ui/ui/blob/055aa6b7837b1808456a24beb4c97a677864aa82/apps/v4/public/r/styles/new-york/sidebar-demo-light.png); [license](media/shadcn/LICENSE).
+- [sidebar demo dark](media/shadcn/sidebar-demo-dark.png) — image; [source](https://github.com/shadcn-ui/ui/blob/055aa6b7837b1808456a24beb4c97a677864aa82/apps/v4/public/r/styles/new-york/sidebar-demo-dark.png); [license](media/shadcn/LICENSE).
+- [tasks light](media/shadcn/tasks-light.png) — image; [source](https://github.com/shadcn-ui/ui/blob/055aa6b7837b1808456a24beb4c97a677864aa82/apps/v4/public/examples/tasks-light.png); [license](media/shadcn/LICENSE).
+- [collaboration](media/excalidraw/collaboration.png) — image; [source](https://github.com/excalidraw/excalidraw/blob/5681e7d8be319092b13979e947afe632d5a4a525/public/screenshots/collaboration.png); [license](media/excalidraw/LICENSE).
+- [export](media/excalidraw/export.png) — image; [source](https://github.com/excalidraw/excalidraw/blob/5681e7d8be319092b13979e947afe632d5a4a525/public/screenshots/export.png); [license](media/excalidraw/LICENSE).
+- [virtual whiteboard](media/excalidraw/virtual-whiteboard.png) — image; [source](https://github.com/excalidraw/excalidraw/blob/5681e7d8be319092b13979e947afe632d5a4a525/public/screenshots/virtual-whiteboard.png); [license](media/excalidraw/LICENSE).
+- [wireframe](media/excalidraw/wireframe.png) — image; [source](https://github.com/excalidraw/excalidraw/blob/5681e7d8be319092b13979e947afe632d5a4a525/public/screenshots/wireframe.png); [license](media/excalidraw/LICENSE).
