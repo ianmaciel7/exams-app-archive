@@ -23,3 +23,9 @@ No claims of a market-share ranking or universal effectiveness. Primary document
 - [Research method, contextual tools and directory](../ui-ux-research-sources/README.md)
 - [New source records](../ui-ux-research-sources/sources.json)
 - General source register expanded to 69 distinct URLs; plugin v1.8.2 verified. Existing links retained. Restricted and historical sources explicitly labeled. No new third-party visual media copied.
+
+## Independent source expansion — v1.8.3
+
+- [Research workflow and new reference directory](../ui-ux-research-sources/discovery-2026-11-25.md)
+- [New source records](../ui-ux-research-sources/discovery-2026-11-25.json)
+- 39 added URLs; 108 retained in total. Source types and limits documented; search-index evidence only, no new third-party media copied.

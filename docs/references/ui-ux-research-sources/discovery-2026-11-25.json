@@ -1,0 +1,396 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-11-25",
+  "sources": [
+    {
+      "id": "welie",
+      "title": "Welie — Interaction Design Pattern Library",
+      "url": "https://www.welie.com/patterns/",
+      "kind": "historical-pattern-library",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Vocabulário histórico de padrões de interação; referência antiga, não evidência de adoção em 2026."
+    },
+    {
+      "id": "detail",
+      "title": "Detail",
+      "url": "https://detail.design/",
+      "kind": "independent-interaction-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Detalhes de produto classificados por interação, motion, texto e acessibilidade; observar trigger e feedback."
+    },
+    {
+      "id": "detail-resources",
+      "title": "Detail — Resources",
+      "url": "https://detail.design/resource",
+      "kind": "independent-reading-directory",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Leituras sobre craft, ícones, microinterações e decisões de interface."
+    },
+    {
+      "id": "memorables-motion",
+      "title": "Memorables — UI Animation",
+      "url": "https://memorabl.es/inspiration/ui-animation",
+      "kind": "independent-motion-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Animações de interface com exemplos atribuídos; buscar contexto e origem antes de reutilizar."
+    },
+    {
+      "id": "memorables-micro",
+      "title": "Memorables — Micro-interactions",
+      "url": "https://memorabl.es/inspiration/micro-interactions",
+      "kind": "independent-motion-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Hover, botões, toggles, morphing e feedback; distinguir conceito de produto lançado."
+    },
+    {
+      "id": "motionvault",
+      "title": "MotionVault",
+      "url": "https://motionvault.dev/",
+      "kind": "independent-motion-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Curadoria de trabalhos publicados por criadores, incluindo motion, microinterações e produto."
+    },
+    {
+      "id": "layerwise",
+      "title": "Layerwise — Design",
+      "url": "https://layerwise.app/design",
+      "kind": "commercial-demo-library",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Glossário visual e exemplos com código, de progressive blur a feedback e transições; validar acesso e licença."
+    },
+    {
+      "id": "animations-dev",
+      "title": "Animations.dev",
+      "url": "https://animations.dev/",
+      "kind": "independent-education",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Curso de motion e animação de interfaces; parte do material exige compra, não afirmar acesso integral."
+    },
+    {
+      "id": "aimran-micro",
+      "title": "AIMRAN — Microinteractions",
+      "url": "https://library.aimran.es/components/microinteractions",
+      "kind": "independent-demo-library",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Demos de feedback e gestos; verificar licença e se o exemplo é reconstrução ou captura."
+    },
+    {
+      "id": "webflow-micro",
+      "title": "Webflow — Microinteraction examples",
+      "url": "https://webflow.com/blog/microinteractions",
+      "kind": "editorial-vendor",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Casos de microinterações web; artigo editorial, não teste comparativo."
+    },
+    {
+      "id": "saasframe",
+      "title": "SaaSFrame",
+      "url": "https://www.saasframe.io/",
+      "kind": "commercial-real-product-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Telas, fluxos e busca por texto em produtos SaaS; acesso e licenças por plano."
+    },
+    {
+      "id": "saasframe-patterns",
+      "title": "SaaSFrame — Patterns",
+      "url": "https://www.saasframe.io/patterns",
+      "kind": "commercial-real-product-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Índice de padrões com exemplos reais, incluindo abas, painéis, estados de IA e edição inline."
+    },
+    {
+      "id": "saasui",
+      "title": "SaaSUI — Design inspiration",
+      "url": "https://www.saasui.design/saas-design-inspiration",
+      "kind": "commercial-real-product-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Telas SaaS agrupadas por função, onboarding, filtros, tabelas, dashboards e configurações."
+    },
+    {
+      "id": "saasinterface",
+      "title": "SaaS Interface",
+      "url": "https://saasinterface.com/",
+      "kind": "commercial-real-product-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Galeria de interfaces SaaS por tipos de tela; verificar captura e contexto."
+    },
+    {
+      "id": "seesaw",
+      "title": "SEESAW",
+      "url": "https://www.seesaw.website/",
+      "kind": "independent-visual-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Curadoria de design web; inspiração estética, não validação de usabilidade."
+    },
+    {
+      "id": "fourangled",
+      "title": "Fourangled Design Gallery",
+      "url": "https://designgallery.fourangled.com/",
+      "kind": "independent-visual-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Curadoria de UI, web e mobile compartilhados por designers; inclui conceitos e motion."
+    },
+    {
+      "id": "builtformars",
+      "title": "Built for Mars — Case studies",
+      "url": "https://builtformars.com/case-studies",
+      "kind": "independent-ux-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Análises editoriais de produtos reais; observações e hipóteses não equivalem a estudos controlados."
+    },
+    {
+      "id": "builtformars-bites",
+      "title": "Built for Mars — UX Bites",
+      "url": "https://builtformars.com/ux-bites",
+      "kind": "independent-ux-analysis",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Pequenos exemplos capturados de produtos com contexto; algumas áreas podem ser restritas."
+    },
+    {
+      "id": "goodui",
+      "title": "GoodUI — Patterns",
+      "url": "https://goodui.org/patterns/list/",
+      "kind": "experiment-catalog",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Catálogo de padrões com testes A/B; resultados completos podem exigir conta; efeito não se generaliza."
+    },
+    {
+      "id": "goodui-insights",
+      "title": "GoodUI — Insights",
+      "url": "https://www.goodui.org/insights/",
+      "kind": "experiment-methodology",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Discussão de tamanho de efeito, poder estatístico e confundimento; foco em conversão."
+    },
+    {
+      "id": "checklist-design",
+      "title": "Checklist Design",
+      "url": "https://www.checklist.design/",
+      "kind": "independent-checklist",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Checklists práticos de revisão; não substituir testes com usuários."
+    },
+    {
+      "id": "deceptive-types",
+      "title": "Deceptive Patterns — Types",
+      "url": "https://deceptive.design/types/browse/",
+      "kind": "independent-ethics-taxonomy",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Taxonomia de práticas manipulativas; avaliar escolha livre e transparência."
+    },
+    {
+      "id": "deceptive-reading",
+      "title": "Deceptive Patterns — Reading list",
+      "url": "https://deceptive.design/reading-list/",
+      "kind": "research-bibliography",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Bibliografia sobre manipulação e privacidade; consultar estudos originais."
+    },
+    {
+      "id": "a11y-checklist",
+      "title": "The A11Y Project — Checklist",
+      "url": "https://www.a11yproject.com/checklist/",
+      "kind": "community-accessibility",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Revisão de foco, teclado, semântica e alternativas para gráficos; checklist não certifica conformidade."
+    },
+    {
+      "id": "a11y-resources",
+      "title": "The A11Y Project — Resources",
+      "url": "https://www.a11yproject.com/resources/",
+      "kind": "community-accessibility",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Diretório de recursos inclusivos e acessibilidade."
+    },
+    {
+      "id": "aiuxplayground",
+      "title": "AI UX Playground",
+      "url": "https://aiuxplayground.com/",
+      "kind": "independent-ai-pattern-library",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Padrões nomeados, demos, teardowns e recursos para agentes e chat; verificar exemplos e evidência."
+    },
+    {
+      "id": "aiuxplayground-faq",
+      "title": "AI UX Playground — FAQ",
+      "url": "https://aiuxplayground.com/faq",
+      "kind": "independent-ai-pattern-library",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Escopo do catálogo: interações, estados, alternativas, exemplos e antipadrões."
+    },
+    {
+      "id": "shape-of-ai",
+      "title": "The Shape of AI",
+      "url": "https://www.shapeof.ai/",
+      "kind": "independent-ai-pattern-library",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Padrões de prompting, ajustes, fontes e confiança em interfaces de IA."
+    },
+    {
+      "id": "intelliface",
+      "title": "Intelliface",
+      "url": "https://www.intelliface.in/",
+      "kind": "independent-ai-pattern-library",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Biblioteca de princípios, padrões e componentes de produtos de IA; evidência por entrada."
+    },
+    {
+      "id": "illinois-uxd-ai",
+      "title": "University of Illinois — UXD+AI Knowledge Library",
+      "url": "https://invite.illinois.edu/uxd/",
+      "kind": "academic-resource-directory",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Diretório acadêmico de recursos de interação humano-IA; cada fonte deve ser avaliada separadamente."
+    },
+    {
+      "id": "p0stman-agentux",
+      "title": "p0stman — Agent UX",
+      "url": "https://p0stman.com/agent-ux",
+      "kind": "independent-ai-pattern-library",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Padrões de citações, ferramentas, custos e voz com demos; autoria e evidência por padrão."
+    },
+    {
+      "id": "datavizcatalogue",
+      "title": "The Data Visualisation Catalogue",
+      "url": "https://datavizcatalogue.com/",
+      "kind": "independent-dataviz-catalog",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Famílias de visualizações por tarefa e forma; escolher por pergunta, dados e acessibilidade."
+    },
+    {
+      "id": "data-to-viz",
+      "title": "From Data to Viz",
+      "url": "https://www.data-to-viz.com/",
+      "kind": "independent-dataviz-catalog",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Árvore de decisão por formato de dados; evitar seleção automática sem contexto."
+    },
+    {
+      "id": "dvs",
+      "title": "Data Visualization Society — New to Data Viz",
+      "url": "https://new.datavisualizationsociety.org/new-to-data-viz/",
+      "kind": "professional-learning-directory",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Recursos de gráficos, cor, tipografia e princípios; consultar originais."
+    },
+    {
+      "id": "eu-dataviz",
+      "title": "EU Data Visualisation Guide",
+      "url": "https://data.europa.eu/apps/data-visualisation-guide/",
+      "kind": "institutional-education",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Guia de comunicação de dados, escolhas de gráficos, armadilhas estatísticas e acessibilidade."
+    },
+    {
+      "id": "uxlibrary",
+      "title": "UX Library — UI patterns and inspiration",
+      "url": "https://www.uxlibrary.org/explore/ui-design/ui-patterns-and-inspiration",
+      "kind": "independent-resource-directory",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Diretório de bibliotecas e galerias; verificar links originais antes de uso."
+    },
+    {
+      "id": "myopentabs",
+      "title": "My Open Tabs — Inspiration",
+      "url": "https://www.myopentabs.design/inspiration",
+      "kind": "independent-resource-directory",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Diretório curado de referências de interface e motion, não evidência primária."
+    },
+    {
+      "id": "uiuxshop",
+      "title": "UIUXshop — Design resources",
+      "url": "https://uiuxshop.com/resources/design-resources",
+      "kind": "independent-resource-directory",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Diretório de recursos por tarefa e disciplina; verificar cada fonte separadamente."
+    },
+    {
+      "id": "textbook-usability",
+      "title": "Textbook of Usability — References",
+      "url": "https://www.textbookofusability.com/references",
+      "kind": "research-bibliography",
+      "recorded_on": "2026-11-25",
+      "status": "search-index result consulted; full-site audit and access/licence not verified",
+      "storage": "link-only",
+      "notes": "Bibliografia de heurísticas, HCI, padrões e métodos; consultar publicações originais."
+    }
+  ]
+}
