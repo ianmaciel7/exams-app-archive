@@ -24,3 +24,14 @@ class CatalogTests(unittest.TestCase):
     def test_private_fails_closed(self):
         with self.assertRaises(ValueError):
             mod.build({"repositories":["ianmaciel7/exams-app"]},lambda *a:{"private":True,"visibility":"private"})
+
+    def test_canonical_empty_tree_does_not_require_api_object(self):
+        def request(path, paginate=False):
+            if "/commits/" in path:
+                return {"commit":{"tree":{"sha":"4b825dc642cb6eb9a060e54bf8d69288fbee4904"}}}
+            if "/git/trees/" in path:
+                raise AssertionError("Empty tree must not be fetched")
+            return self.request(path, paginate)
+        data = mod.build({"repositories":["ianmaciel7/exams-app"]}, request)
+        self.assertEqual(data["snapshots"][0]["files"], [])
+        self.assertEqual(data["coverage"][0]["refs"], 3)

@@ -51,7 +51,8 @@ def build(policy, request=api):
             tree=commit["commit"]["tree"]["sha"]
             if not SHA.fullmatch(tree): raise ValueError("Invalid tree SHA")
             if tree not in trees:
-                data=request(base+"/git/trees/"+tree+"?recursive=1")
+                # Git defines this SHA as the canonical empty tree. The API may return 404 for it.
+                data = {"truncated": False, "tree": []} if tree == "4b825dc642cb6eb9a060e54bf8d69288fbee4904" else request(base+"/git/trees/"+tree+"?recursive=1")
                 if data.get("truncated"): raise ValueError("Truncated tree: "+repo)
                 trees[tree]=[{"path":e["path"],"blob":e["sha"],"size":e.get("size",0)} for e in data["tree"] if eligible(e)]
             snapshots.append({"repo":repo.split("/")[1],"sha":sha,"refs":sorted(aliases),"files":trees[tree]})
