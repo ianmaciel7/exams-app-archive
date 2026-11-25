@@ -1,0 +1,366 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-11-25",
+  "sources": [
+    {
+      "id": "ui-patterns",
+      "title": "UI Patterns",
+      "url": "https://ui-patterns.com/patterns",
+      "kind": "pattern-library",
+      "recorded_on": "2026-11-25",
+      "status": "verified",
+      "notes": "Named problem/solution patterns; start here for vocabulary.",
+      "storage": "link-only"
+    },
+    {
+      "id": "uxpatterns",
+      "title": "UX Patterns for Developers",
+      "url": "https://uxpatterns.dev/",
+      "kind": "pattern-library",
+      "recorded_on": "2026-11-25",
+      "status": "verified",
+      "notes": "Specimens, comparison guides, glossary and implementation trade-offs.",
+      "storage": "link-only"
+    },
+    {
+      "id": "uxologist",
+      "title": "The UXologist",
+      "url": "https://theuxologist.com/patterns",
+      "kind": "pattern-library",
+      "recorded_on": "2026-11-25",
+      "status": "verified",
+      "notes": "Problem-led pattern discovery.",
+      "storage": "link-only"
+    },
+    {
+      "id": "component-gallery",
+      "title": "The Component Gallery",
+      "url": "https://component.gallery/components/",
+      "kind": "cross-system-catalog",
+      "recorded_on": "2026-11-25",
+      "status": "verified",
+      "notes": "Compare component names, aliases and variants; not a single design system.",
+      "storage": "link-only"
+    },
+    {
+      "id": "critical-patterns",
+      "title": "Critical Web Design Pattern Library",
+      "url": "https://criticalwebdesign.github.io/pattern-library/about/",
+      "kind": "pattern-library",
+      "recorded_on": "2026-11-25",
+      "status": "verified",
+      "notes": "Tagged interface patterns from websites, apps and games; curated evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "ixdf",
+      "title": "Interaction Design Foundation",
+      "url": "https://www.interaction-design.org/",
+      "kind": "education",
+      "recorded_on": "2026-11-25",
+      "status": "redirect to https://ixdf.org/",
+      "notes": "Concepts and education; follow original studies for empirical claims.",
+      "storage": "link-only"
+    },
+    {
+      "id": "mobbin",
+      "title": "Mobbin",
+      "url": "https://mobbin.com/",
+      "kind": "product-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "verified",
+      "notes": "Shipped app and web screens; search by component, flow and product; access may be gated.",
+      "storage": "link-only"
+    },
+    {
+      "id": "refero",
+      "title": "Refero",
+      "url": "https://refero.design/",
+      "kind": "product-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "page title retrieved; body unavailable",
+      "notes": "Web/iOS references by pattern, element and flow; revalidate direct content.",
+      "storage": "link-only"
+    },
+    {
+      "id": "pageflows",
+      "title": "Page Flows",
+      "url": "https://pageflows.com/",
+      "kind": "flow-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "403 on direct fetch; secondary confirmation",
+      "notes": "Recorded journeys; keep URL and verify access separately.",
+      "storage": "link-only"
+    },
+    {
+      "id": "ui-sources",
+      "title": "UI Sources",
+      "url": "https://www.uisources.com/",
+      "kind": "flow-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "legacy; reported merged into ScreensDesign",
+      "notes": "Keep historical URL; do not count as independent current service.",
+      "storage": "link-only"
+    },
+    {
+      "id": "screensdesign",
+      "title": "ScreensDesign",
+      "url": "https://screensdesign.com/",
+      "kind": "flow-motion-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "verified",
+      "notes": "App recordings, tagged screens, animation explorer; access varies.",
+      "storage": "link-only"
+    },
+    {
+      "id": "pttrns",
+      "title": "Pttrns",
+      "url": "https://pttrns.com/",
+      "kind": "mobile-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "verified; redirects to www.pttrns.com",
+      "notes": "Curated mobile screenshots and patterns.",
+      "storage": "link-only"
+    },
+    {
+      "id": "nicelydone",
+      "title": "Nicelydone",
+      "url": "https://nicelydone.club/",
+      "kind": "web-app-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "verified",
+      "notes": "Production web-app screens, components and flows.",
+      "storage": "link-only"
+    },
+    {
+      "id": "60fps",
+      "title": "60fps",
+      "url": "https://60fps.design/",
+      "kind": "motion-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "verified",
+      "notes": "Real interaction recordings; useful for continuity and timing observation.",
+      "storage": "link-only"
+    },
+    {
+      "id": "designspells",
+      "title": "Design Spells",
+      "url": "https://designspells.com/",
+      "kind": "microinteraction-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "verified",
+      "notes": "Small delightful product interactions; examples are not universal recommendations.",
+      "storage": "link-only"
+    },
+    {
+      "id": "designmotionhq",
+      "title": "DesignMotionHQ",
+      "url": "https://designmotionhq.com/patterns",
+      "kind": "motion-pattern-library",
+      "recorded_on": "2026-11-25",
+      "status": "verified",
+      "notes": "Motion and interface breakdowns with text; editorial advice.",
+      "storage": "link-only"
+    },
+    {
+      "id": "nng",
+      "title": "Nielsen Norman Group",
+      "url": "https://www.nngroup.com/articles/",
+      "kind": "usability-research",
+      "recorded_on": "2026-11-25",
+      "status": "individual articles verified",
+      "notes": "Research and applied guidance; inspect methods and scope.",
+      "storage": "link-only"
+    },
+    {
+      "id": "baymard",
+      "title": "Baymard Institute",
+      "url": "https://baymard.com/research",
+      "kind": "usability-research",
+      "recorded_on": "2026-11-25",
+      "status": "verified",
+      "notes": "Research and annotated examples, especially ecommerce; domain limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "smashing",
+      "title": "Smashing Magazine UX",
+      "url": "https://www.smashingmagazine.com/category/ux/",
+      "kind": "technical-editorial",
+      "recorded_on": "2026-11-25",
+      "status": "verified",
+      "notes": "Technical and UX articles; evaluate author evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "uxcollective",
+      "title": "UX Collective",
+      "url": "https://uxdesign.cc/",
+      "kind": "editorial",
+      "recorded_on": "2026-11-25",
+      "status": "verified",
+      "notes": "Practitioner case studies and commentary, not automatically research evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "laws",
+      "title": "Laws of UX",
+      "url": "https://lawsofux.com/",
+      "kind": "education",
+      "recorded_on": "2026-11-25",
+      "status": "verified",
+      "notes": "Psychology and design concepts; distinguish laws from heuristics.",
+      "storage": "link-only"
+    },
+    {
+      "id": "contextual-tools",
+      "title": "Designing Web Interfaces — Contextual Tools",
+      "url": "https://www.oreilly.com/library/view/designing-web-interfaces/9780596155353/ch04.html",
+      "kind": "book",
+      "recorded_on": "2026-11-25",
+      "status": "table of contents verified; full chapter not read",
+      "notes": "Scott and Neil taxonomy and antipattern names; historical, not a new 2026 invention.",
+      "storage": "link-only"
+    },
+    {
+      "id": "mobile-tools",
+      "title": "Mobile Design Pattern Gallery — Tools",
+      "url": "https://www.oreilly.com/library/view/mobile-design-pattern/9781449336455/ch05.html",
+      "kind": "book",
+      "recorded_on": "2026-11-25",
+      "status": "chapter listing verified",
+      "notes": "Touch-oriented contextual tools, inline and bulk actions.",
+      "storage": "link-only"
+    },
+    {
+      "id": "rich-interaction",
+      "title": "Principles and Patterns for Rich Interaction",
+      "url": "https://principles.design/examples/principles-and-patterns-for-rich-interaction",
+      "kind": "secondary-catalog",
+      "recorded_on": "2026-11-25",
+      "status": "verified",
+      "notes": "Historical framework summary: manipulation, context, lightweight interactions.",
+      "storage": "link-only"
+    },
+    {
+      "id": "nng-context",
+      "title": "NN/g Contextual Menus",
+      "url": "https://www.nngroup.com/articles/contextual-menus/",
+      "kind": "usability-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "verified",
+      "notes": "Relevant local tools and alternative activation routes.",
+      "storage": "link-only"
+    },
+    {
+      "id": "nng-context-guidelines",
+      "title": "NN/g Contextual Menu Guidelines",
+      "url": "https://www.nngroup.com/articles/contextual-menus-guidelines/",
+      "kind": "usability-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "verified",
+      "notes": "Placement, grouping, recognizability, labels and discoverability.",
+      "storage": "link-only"
+    },
+    {
+      "id": "nng-timing",
+      "title": "NN/g Timing Guidelines for Exposing Hidden Content",
+      "url": "https://www.nngroup.com/articles/timing-exposing-content/",
+      "kind": "usability-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "verified",
+      "notes": "Separate immediate target feedback, intentional reveal and dismissal.",
+      "storage": "link-only"
+    },
+    {
+      "id": "nng-hidden-nav",
+      "title": "NN/g Hidden Navigation",
+      "url": "https://www.nngroup.com/articles/hamburger-menus/",
+      "kind": "usability-study",
+      "recorded_on": "2026-11-25",
+      "status": "verified",
+      "notes": "Hidden primary navigation can harm discoverability; not a direct test of row actions.",
+      "storage": "link-only"
+    },
+    {
+      "id": "smashing-a11y",
+      "title": "Smashing — Accessible Components",
+      "url": "https://www.smashingmagazine.com/2021/06/css-javascript-requirements-accessible-components/",
+      "kind": "technical-editorial",
+      "recorded_on": "2026-11-25",
+      "status": "verified",
+      "notes": "CSS visibility alone does not implement full accessible interactions.",
+      "storage": "link-only"
+    },
+    {
+      "id": "flickr-context",
+      "title": "Designing Web Interfaces historical gallery",
+      "url": "https://www.flickr.com/photos/designingwebinterfaces/collections/72157606817815788/",
+      "kind": "historical-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "carried forward; not revalidated in this batch",
+      "notes": "Historical visual examples; verify individual media rights.",
+      "storage": "link-only"
+    },
+    {
+      "id": "creativebloq-context",
+      "title": "Creative Bloq — Web Design Patterns",
+      "url": "https://www.creativebloq.com/ux/web-design-patterns-81412535",
+      "kind": "editorial",
+      "recorded_on": "2026-11-25",
+      "status": "carried forward; not revalidated in this batch",
+      "notes": "Historical contextual-tool examples.",
+      "storage": "link-only"
+    },
+    {
+      "id": "servicenow-hidden",
+      "title": "ServiceNow Invisible Controls",
+      "url": "https://horizon.servicenow.com/guidelines/accessibility/invisible-controls",
+      "kind": "supporting-design-system",
+      "recorded_on": "2026-11-25",
+      "status": "carried forward; not revalidated in this batch",
+      "notes": "Invisible controls guidance.",
+      "storage": "link-only"
+    },
+    {
+      "id": "gitlab-affordance",
+      "title": "GitLab Affordance",
+      "url": "https://design.gitlab.com/patterns/affordance/",
+      "kind": "supporting-design-system",
+      "recorded_on": "2026-11-25",
+      "status": "carried forward; not revalidated in this batch",
+      "notes": "Affordance and discoverability reference.",
+      "storage": "link-only"
+    },
+    {
+      "id": "wcag-hover",
+      "title": "WCAG 2.2 Content on Hover or Focus",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/content-on-hover-or-focus",
+      "kind": "normative-support",
+      "recorded_on": "2026-11-25",
+      "status": "carried forward; not revalidated in this batch",
+      "notes": "SC 1.4.13 understanding; dismissible, hoverable, persistent as applicable to additional content.",
+      "storage": "link-only"
+    },
+    {
+      "id": "mobbin-alternatives",
+      "title": "Mobbin alternatives 2026",
+      "url": "https://mobbin.com/blog/best-mobbin-alternatives",
+      "kind": "commercial-secondary",
+      "recorded_on": "2026-11-25",
+      "status": "verified",
+      "notes": "Competitor overview and reported historical mergers; not independent ranking.",
+      "storage": "link-only"
+    },
+    {
+      "id": "cupertino",
+      "title": "Cupertino reference directory",
+      "url": "https://cupertino.design/",
+      "kind": "secondary-directory",
+      "recorded_on": "2026-11-25",
+      "status": "verified",
+      "notes": "Discovery of platform and motion sources; follow original links.",
+      "storage": "link-only"
+    }
+  ]
+}

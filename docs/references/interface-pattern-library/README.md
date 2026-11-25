@@ -17,3 +17,9 @@ No claims of a market-share ranking or universal effectiveness. Primary document
 - [Synchronization record](plugin-sync.json)
 - Preserve original URLs, dates, source types, and provenance. Append relevant new sources, deduplicate without silently deleting older URLs, mark obsolete links, and revalidate availability and licensing before reuse. Never publish private URLs or credentials.
 - This documents a completed synchronization; it does not claim an automated synchronization process.
+
+## Independent research sources and contextual tools — 2026-11-25
+
+- [Research method, contextual tools and directory](../ui-ux-research-sources/README.md)
+- [New source records](../ui-ux-research-sources/sources.json)
+- General source register expanded to 69 distinct URLs; plugin v1.8.2 verified. Existing links retained. Restricted and historical sources explicitly labeled. No new third-party visual media copied.

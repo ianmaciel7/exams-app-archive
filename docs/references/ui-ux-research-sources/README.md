@@ -1,0 +1,83 @@
+# Pesquisa independente de UI/UX: fontes e ferramentas contextuais
+
+Data: 2026-11-25. Conhecimento geral, sem vinculação automática a projeto. Sites de inspiração são evidência de existência, não de eficácia ou popularidade. Preferir fontes de padrões, pesquisa, livros e galerias independentes; design systems são validação complementar. Não confundir descrição estética, padrão, técnica de implementação e norma.
+
+## Roteiro de pesquisa
+
+1. Nome e sinônimos: UI Patterns, UX Patterns for Developers, UXologist e Component Gallery. Buscar por problema, não apenas por nome visual. Comparar taxonomias e identificar sinônimos; não chamar toda denominação de termo oficial.
+2. Produtos reais: Mobbin, Refero, Nicelydone e Pttrns. Registrar produto, plataforma, versão/data quando disponível, tela, contexto e ação; não deduzir hover de screenshot estático.
+3. Fluxos e motion: Page Flows, ScreensDesign, 60fps e Design Spells. Observar antes/durante/depois, entrada/saída, interrupção e relação espacial; medir duração apenas se houver vídeo ou instrumentação; não inventar easing.
+4. Evidência de usabilidade: NN/g, Baymard, IxDF, livros e estudos originais. Diferenciar estudo, orientação profissional, exemplo e hipótese; respeitar domínio e método.
+5. Implementação: UX Patterns, Smashing, APG/WCAG, documentação da plataforma; verificar suporte, teclado, touch, reduced motion, estado e licenças. Não copiar mídias de galerias sem autorização.
+
+## Ferramentas contextuais: taxonomia e decisões
+
+Scott e Neil (Designing Web Interfaces, 2009, capítulo Contextual Tools; sumário consultado, não capítulo integral) distinguem Always-Visible Tools, Hover-Reveal Tools, Toggle-Reveal Tools, Multi-Level Tools e Secondary Menu; contextual toolbar e radial menu aparecem no detalhamento. A classificação é histórica. Hover-to-reveal, focus-to-reveal e swipe-to-reveal descrevem mecanismos de ativação, não famílias incompatíveis. Low-chrome é uma estratégia visual; progressive disclosure é mais ampla que hover.
+
+| Padrão | Quando considerar | Limite / alternativa |
+|---|---|---|
+| Always-visible tools | Ação primária, frequente, essencial ou que precisa ser descoberta | Agrupar secundárias em overflow; não ocultar navegação principal por estética |
+| Hover-reveal tools | Muitas linhas repetidas com ações secundárias | Foco equivalente, toque por menu persistente, não depender só do mouse |
+| Focus-reveal tools | Navegação por teclado e foco dentro do objeto | Não esconder botão ao mover foco para descendente; foco visível |
+| Toggle-reveal tools | Usuário quer abrir explicitamente controles | Indicar estado expandido; permitir fechar/retornar foco |
+| Selection-based toolbar | Seleção única ou múltipla | Mostrar contagem, alcance e limpar seleção; confirmar ações irreversíveis |
+| Contextual menu | Agrupar operações de um objeto | Gatilho próximo, rótulo acessível; alternativa a clique direito |
+| Multi-level tools | Muitos comandos relacionados | Hierarquia rasa, sem submenu exclusivamente por hover |
+| Radial menu | Comandos espaciais especializados | Não é padrão universal; oferecer alternativa linear e de teclado |
+| Swipe-to-reveal | Ações secundárias em listas touch | Alternativa explícita visível; gesto não é único meio |
+| Ghost controls | Controles discretos mas perceptíveis | Contraste, foco e affordance; não confundir botão ghost com invisibilidade |
+
+## Comportamento e acessibilidade
+
+- Estados: repouso, pointer hover, focus-visible/focus-within, menu aberto, selecionado, touch/no-hover, desabilitado, pending, erro. Reservar área quando necessário para evitar salto de layout; overlay não deve encobrir informação essencial.
+- Revelar ações do objeto sob hover e foco; manter enquanto cursor/foco passa para as ações. Ações essenciais visíveis. Para touchscreen e dispositivos híbridos, botão de overflow acessível sempre disponível; usar media queries de capacidade de entrada como melhoria, não detecção infalível do dispositivo.
+- Não usar opacity:0 isoladamente para elementos interativos: podem continuar capturando clique e foco invisível. Testar ordem de tabulação, foco, leitor de tela, pointer events e semântica. Menu real requer comportamento de menu; grupo simples pode usar botões nativos.
+- WCAG 1.4.13 trata de conteúdo adicional mostrado por hover/foco, quando aplicável; não é regra universal para todos os controles ocultos. Para popovers/tooltip relevantes, assegurar possibilidade de dispensar, mover cursor até conteúdo e manter aberto conforme aplicável. Validar teclado e alvos conforme critérios WCAG pertinentes.
+- Timing: feedback de alvo imediato; revelar conteúdo após intenção quando disparos acidentais forem problema; evitar desaparecer ao cruzar espaço até a superfície. NN/g discute timing de conteúdo oculto; não transferir um número universal para qualquer hover. Testar delay, interrupção, touch, teclado, reduced motion.
+- Antipadrões históricos: Hover and Cover, Mystery Meat Activation, Tiny Targets. Outros riscos de implementação: hover-only, layout shift, foco perdido, overflow ambíguo, seleção que desaparece, menus encobertos/clipped, ações destrutivas sem confirmação adequada.
+- Medir encontrabilidade, tempo, erro de acionamento, sucesso com teclado/touch e recuperação. Estudo NN/g sobre navegação principal oculta não é evidência direta para toda ação secundária de linha.
+
+## Como preservar evidência
+
+Registrar URLs originais e redirects, datas de consulta, fonte e status (verificada, parcial, bloqueada, candidata, histórica), licença, tipo de evidência e contexto. Não apagar URL desatualizada: preservar com status. Para vídeo/GIF/screenshot incluir fonte, hash, data, direitos de reprodução e descrição do comportamento. Links são preservados mesmo quando não é possível copiar mídia. Nunca guardar URLs privadas, credenciais ou contornar paywalls. Ao reutilizar, revalidar fonte. Não fazer alegações de cobertura completa, ranking 2026 ou testes de produto sem evidência.
+
+## Diretório das fontes
+
+- [UI Patterns](https://ui-patterns.com/patterns) — pattern-library; verified. Named problem/solution patterns; start here for vocabulary.
+- [UX Patterns for Developers](https://uxpatterns.dev/) — pattern-library; verified. Specimens, comparison guides, glossary and implementation trade-offs.
+- [The UXologist](https://theuxologist.com/patterns) — pattern-library; verified. Problem-led pattern discovery.
+- [The Component Gallery](https://component.gallery/components/) — cross-system-catalog; verified. Compare component names, aliases and variants; not a single design system.
+- [Critical Web Design Pattern Library](https://criticalwebdesign.github.io/pattern-library/about/) — pattern-library; verified. Tagged interface patterns from websites, apps and games; curated evidence.
+- [Interaction Design Foundation](https://www.interaction-design.org/) — education; redirect to https://ixdf.org/. Concepts and education; follow original studies for empirical claims.
+- [Mobbin](https://mobbin.com/) — product-gallery; verified. Shipped app and web screens; search by component, flow and product; access may be gated.
+- [Refero](https://refero.design/) — product-gallery; page title retrieved; body unavailable. Web/iOS references by pattern, element and flow; revalidate direct content.
+- [Page Flows](https://pageflows.com/) — flow-gallery; 403 on direct fetch; secondary confirmation. Recorded journeys; keep URL and verify access separately.
+- [UI Sources](https://www.uisources.com/) — flow-gallery; legacy; reported merged into ScreensDesign. Keep historical URL; do not count as independent current service.
+- [ScreensDesign](https://screensdesign.com/) — flow-motion-gallery; verified. App recordings, tagged screens, animation explorer; access varies.
+- [Pttrns](https://pttrns.com/) — mobile-gallery; verified; redirects to www.pttrns.com. Curated mobile screenshots and patterns.
+- [Nicelydone](https://nicelydone.club/) — web-app-gallery; verified. Production web-app screens, components and flows.
+- [60fps](https://60fps.design/) — motion-gallery; verified. Real interaction recordings; useful for continuity and timing observation.
+- [Design Spells](https://designspells.com/) — microinteraction-gallery; verified. Small delightful product interactions; examples are not universal recommendations.
+- [DesignMotionHQ](https://designmotionhq.com/patterns) — motion-pattern-library; verified. Motion and interface breakdowns with text; editorial advice.
+- [Nielsen Norman Group](https://www.nngroup.com/articles/) — usability-research; individual articles verified. Research and applied guidance; inspect methods and scope.
+- [Baymard Institute](https://baymard.com/research) — usability-research; verified. Research and annotated examples, especially ecommerce; domain limits.
+- [Smashing Magazine UX](https://www.smashingmagazine.com/category/ux/) — technical-editorial; verified. Technical and UX articles; evaluate author evidence.
+- [UX Collective](https://uxdesign.cc/) — editorial; verified. Practitioner case studies and commentary, not automatically research evidence.
+- [Laws of UX](https://lawsofux.com/) — education; verified. Psychology and design concepts; distinguish laws from heuristics.
+- [Designing Web Interfaces — Contextual Tools](https://www.oreilly.com/library/view/designing-web-interfaces/9780596155353/ch04.html) — book; table of contents verified; full chapter not read. Scott and Neil taxonomy and antipattern names; historical, not a new 2026 invention.
+- [Mobile Design Pattern Gallery — Tools](https://www.oreilly.com/library/view/mobile-design-pattern/9781449336455/ch05.html) — book; chapter listing verified. Touch-oriented contextual tools, inline and bulk actions.
+- [Principles and Patterns for Rich Interaction](https://principles.design/examples/principles-and-patterns-for-rich-interaction) — secondary-catalog; verified. Historical framework summary: manipulation, context, lightweight interactions.
+- [NN/g Contextual Menus](https://www.nngroup.com/articles/contextual-menus/) — usability-guidance; verified. Relevant local tools and alternative activation routes.
+- [NN/g Contextual Menu Guidelines](https://www.nngroup.com/articles/contextual-menus-guidelines/) — usability-guidance; verified. Placement, grouping, recognizability, labels and discoverability.
+- [NN/g Timing Guidelines for Exposing Hidden Content](https://www.nngroup.com/articles/timing-exposing-content/) — usability-guidance; verified. Separate immediate target feedback, intentional reveal and dismissal.
+- [NN/g Hidden Navigation](https://www.nngroup.com/articles/hamburger-menus/) — usability-study; verified. Hidden primary navigation can harm discoverability; not a direct test of row actions.
+- [Smashing — Accessible Components](https://www.smashingmagazine.com/2021/06/css-javascript-requirements-accessible-components/) — technical-editorial; verified. CSS visibility alone does not implement full accessible interactions.
+- [Designing Web Interfaces historical gallery](https://www.flickr.com/photos/designingwebinterfaces/collections/72157606817815788/) — historical-gallery; carried forward; not revalidated in this batch. Historical visual examples; verify individual media rights.
+- [Creative Bloq — Web Design Patterns](https://www.creativebloq.com/ux/web-design-patterns-81412535) — editorial; carried forward; not revalidated in this batch. Historical contextual-tool examples.
+- [Carbon data table](https://www.carbondesignsystem.com/building-blocks/core/components/data-table/guidelines) — supporting-design-system; carried forward; not revalidated in this batch. Reference implementation, not the main research catalog.
+- [ServiceNow Invisible Controls](https://horizon.servicenow.com/guidelines/accessibility/invisible-controls) — supporting-design-system; carried forward; not revalidated in this batch. Invisible controls guidance.
+- [GitLab Affordance](https://design.gitlab.com/patterns/affordance/) — supporting-design-system; carried forward; not revalidated in this batch. Affordance and discoverability reference.
+- [WCAG 2.2 Content on Hover or Focus](https://www.w3.org/WAI/WCAG22/Understanding/content-on-hover-or-focus) — normative-support; carried forward; not revalidated in this batch. SC 1.4.13 understanding; dismissible, hoverable, persistent as applicable to additional content.
+- [Chrome Natural Interactions](https://developer.chrome.com/docs/modern-web-guidance/guides/user-experience/natural-interactions) — technical-guidance; carried forward; already cataloged. Hover/focus and touch fallback; retain source once.
+- [Mobbin alternatives 2026](https://mobbin.com/blog/best-mobbin-alternatives) — commercial-secondary; verified. Competitor overview and reported historical mergers; not independent ranking.
+- [Cupertino reference directory](https://cupertino.design/) — secondary-directory; verified. Discovery of platform and motion sources; follow original links.
