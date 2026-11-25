@@ -131,5 +131,29 @@ def research_audit():
     return research_index.audit(research_index.load_records())
 
 
+@mcp.tool()
+def resolve_concept(query: str):
+    """Resolve a public research concept to canonical ID and catalog snapshot before querying."""
+    import archive_context
+    import concept_packs
+    import research_index
+    return archive_context.discover(checked(query), research_index.load_records(),
+                                    concept_packs.load_taxonomy())
+
+
+@mcp.tool()
+def query_concept_context(concept_id: str, query: str, snapshot: str,
+                          product: str | None = None, limit: int = 12,
+                          max_bytes: int = 12000):
+    """Retrieve public catalog excerpts only, pinned to the resolved snapshot; no private history."""
+    import archive_context
+    import concept_packs
+    import research_index
+    return archive_context.retrieve(checked(concept_id), checked(query),
+                                    research_index.load_records(), concept_packs.load_taxonomy(),
+                                    revision=checked(snapshot), product=product,
+                                    limit=limit, max_bytes=max_bytes)
+
+
 if __name__ == "__main__":
     mcp.run(transport="stdio")

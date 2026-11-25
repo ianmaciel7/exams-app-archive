@@ -28,7 +28,7 @@ OWNER = "ianmaciel7/notes-app"
 HISTORY = "archive-index-private-2026-11-24"
 ADVANCED = "archive-content-private-2026-11-24"
 ALLOWED = set(BUNDLES) | {"notes-app@worktrees"}
-OPS = {"search", "images", "stats", "content_search", "linked_context", "context_pack", "get_evidence", "coverage", "graph_neighbors"}
+OPS = {"search", "images", "stats", "content_search", "linked_context", "context_pack", "get_evidence", "coverage", "graph_neighbors", "concept_context"}
 
 def open_asset(root, tag, name):
     # The private job supplies a runner-local manifest of independently verified,
@@ -74,7 +74,7 @@ def open_asset(root, tag, name):
     return conn, {"index_release":tag,"index_checksum":sha,"asset":name}
 
 def validate(req):
-    if not isinstance(req,dict) or set(req)-{"version","id","operation","query","repo","ref","path","sha","start_line","end_line","limit","kind","language","concept_id","entity_type","edge_type","hops","source_sha","token_budget"}:
+    if not isinstance(req,dict) or set(req)-{"version","id","operation","query","repo","ref","path","sha","start_line","end_line","limit","kind","language","concept_id","entity_type","edge_type","hops","source_sha","token_budget","expected_index_checksum"}:
         raise ValueError("unsupported fields")
     if req.get("version")!=1 or req.get("operation") not in OPS:
         raise ValueError("invalid contract")
@@ -105,6 +105,17 @@ def validate(req):
         raise ValueError("full SHA required")
     if req["operation"] in {"search","content_search","linked_context","context_pack"} and not req.get("query","").strip():
         raise ValueError("query required")
+    if req["operation"] == "concept_context":
+        if not all(req.get(k) for k in ("repo", "ref", "source_sha", "concept_id", "query", "expected_index_checksum")):
+            raise ValueError("concept context requires explicit source, revision and index checksum")
+        if not re.fullmatch(r"[a-z][a-z0-9_.-]{1,159}", req["concept_id"]):
+            raise ValueError("invalid concept ID")
+        if not isinstance(req["expected_index_checksum"], str) or not re.fullmatch(r"[a-f0-9]{64}", req["expected_index_checksum"]):
+            raise ValueError("invalid expected index checksum")
+        if not req["query"].strip():
+            raise ValueError("query required")
+    elif "expected_index_checksum" in req:
+        raise ValueError("checksum pin supported by concept_context only")
     if req["operation"]=="get_evidence":
         if not all(req.get(k) for k in ("repo","sha","path")):
             raise ValueError("exact provenance required")
@@ -159,13 +170,16 @@ def execute(root, req):
             else:
                 out=[dict(x) for x in conn.execute("SELECT p.name repository,count(r.name) refs FROM repositories p LEFT JOIN refs r ON p.id=r.repo_id GROUP BY p.name ORDER BY p.name")]
         conn.close()
-    elif op in {"content_search","context_pack","linked_context"}:
+    elif op in {"content_search","context_pack","linked_context","concept_context"}:
         conn,prov=open_asset(root,ADVANCED,"links.sqlite.gz" if op=="linked_context" else "content.sqlite.gz")
+        if op == "concept_context" and prov["index_checksum"] != req["expected_index_checksum"]:
+            conn.close()
+            raise ValueError("index_digest_mismatch")
         if op=="linked_context":
             out=compact_history(context_linker.query_history(conn,q,repo=repo,limit=limit),min(limit,5))
         else:
             terms=[q]
-            pin_feature=q.casefold().strip() in {"fixar aba","pin tab","fixar abas"}
+            pin_feature=op != "concept_context" and q.casefold().strip() in {"fixar aba","pin tab","fixar abas"}
             if pin_feature:
                 terms=["togglePin","Fixados"]
             hits=[]
@@ -195,13 +209,18 @@ def execute(root, req):
                     paths.add(key);preferred.append(h)
             preferred.extend(h for h in hits if h not in preferred)
             hits=preferred[:limit]
-            if op=="context_pack":
+            if op in {"context_pack", "concept_context"}:
                 selected=[];seen=set()
                 for h in hits:
                     key=(h.get("repository"),h.get("path"),h.get("blob_sha"))
                     if key in seen: continue
                     seen.add(key);selected.append(h)
                 out={"items":selected,"mode":"bounded indexed snippets","not_full_file_recovery":True}
+                if op == "concept_context":
+                    out.update({"scope":"authenticated-history", "concept_id":req["concept_id"],
+                                "repo":repo, "ref":req["ref"], "source_sha":req["source_sha"],
+                                "concept_membership":"caller-selected; lexical evidence, not verified ontology mapping",
+                                "coverage_note":"Only pinned indexed text; visual, decision and graph coverage not established."})
             else: out=hits
         conn.close()
     else:
@@ -215,7 +234,7 @@ def execute(root, req):
         out=archive_flow.flow_fetch(source=source,source_repo=repo,sha=req["sha"],ref=req.get("ref"),path=req["path"],start_line=req.get("start_line",1),end_line=req.get("end_line",40),max_bytes=1024*1024,max_payload_bytes=48*1024)
     clean,redactions=secrets_gate.sanitize_json_value(out)
     serialized=json.dumps(clean,ensure_ascii=False,sort_keys=True).encode()
-    if op=="context_pack" and req.get("token_budget"):
+    if op in {"context_pack", "concept_context"} and req.get("token_budget"):
         items=clean.get("items",[])
         while items and len(serialized)>req["token_budget"]*3:
             items.pop()

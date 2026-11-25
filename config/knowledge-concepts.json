@@ -1,0 +1,284 @@
+{
+  "version": 1,
+  "concepts": [
+    {
+      "id": "ui.navigation",
+      "en": "Navigation",
+      "pt": "Navegação",
+      "parent": null,
+      "aliases": [],
+      "members": []
+    },
+    {
+      "id": "ui.navigation.sidebar",
+      "en": "Sidebar",
+      "pt": "Barra lateral",
+      "parent": "ui.navigation",
+      "aliases": [
+        "sidebar",
+        "barra lateral",
+        "navigation sidebar"
+      ],
+      "members": [
+        "visual:official-linear-15",
+        "visual:shadcn-sidebar-demo-light",
+        "visual:shadcn-sidebar-demo-dark"
+      ]
+    },
+    {
+      "id": "ui.navigation.side-panel",
+      "en": "Side panel",
+      "pt": "Painel lateral",
+      "parent": "ui.navigation",
+      "aliases": [
+        "side panel",
+        "painel lateral",
+        "side peek",
+        "painel direito"
+      ],
+      "members": [
+        "workspace:side-panel",
+        "workspace:inspector",
+        "visual:official-capacities-1",
+        "visual:official-capacities-4",
+        "visual:official-notion-16"
+      ]
+    },
+    {
+      "id": "ui.navigation.tabs",
+      "en": "Tabs",
+      "pt": "Abas",
+      "parent": "ui.navigation",
+      "aliases": [
+        "tabs",
+        "abas",
+        "main tabs",
+        "tab navigation"
+      ],
+      "members": [
+        "workspace:main-tabs"
+      ]
+    },
+    {
+      "id": "ui.collection",
+      "en": "Collection views",
+      "pt": "Visualizações de coleção",
+      "parent": null,
+      "aliases": [
+        "collection views",
+        "visualizações de coleção"
+      ],
+      "members": [
+        "workspace:object-list",
+        "workspace:object-table",
+        "workspace:gallery",
+        "workspace:wall",
+        "workspace:grid",
+        "workspace:manual-collection"
+      ]
+    },
+    {
+      "id": "ui.collection.kanban",
+      "en": "Kanban",
+      "pt": "Kanban",
+      "parent": "ui.collection",
+      "aliases": [
+        "kanban",
+        "quadro kanban"
+      ],
+      "members": [
+        "workspace:kanban",
+        "visual:dnd-kit-closest-center-kanban",
+        "visual:dnd-kit-sortable-multiple-containers-example"
+      ]
+    },
+    {
+      "id": "ui.interaction",
+      "en": "Interaction",
+      "pt": "Interação",
+      "parent": null,
+      "aliases": [],
+      "members": []
+    },
+    {
+      "id": "ui.interaction.reorder",
+      "en": "Drag and reorder",
+      "pt": "Arrastar e reordenar",
+      "parent": "ui.interaction",
+      "aliases": [
+        "drag",
+        "reorder",
+        "arrastar",
+        "reordenar",
+        "ordenação",
+        "drag and drop"
+      ],
+      "members": [
+        "workspace:reorder",
+        "general:drag-spring",
+        "visual:dnd-kit-sortable-list",
+        "visual:dnd-kit-sortable-multiple-containers-example",
+        "visual:dnd-kit-drag-overlay",
+        "visual:official-motion-23",
+        "visual:leva-circle-drag"
+      ]
+    },
+    {
+      "id": "ui.interaction.filter",
+      "en": "Filtering",
+      "pt": "Filtros",
+      "parent": "ui.interaction",
+      "aliases": [
+        "filter",
+        "filtering",
+        "filtros",
+        "filtragem"
+      ],
+      "members": [
+        "general:instant-filters",
+        "general:batch-filters",
+        "general:cross-filtering",
+        "workspace:saved-query",
+        "visual:official-qconcursos-25"
+      ]
+    },
+    {
+      "id": "ui.motion",
+      "en": "Motion",
+      "pt": "Animação",
+      "parent": null,
+      "aliases": [
+        "motion",
+        "animation",
+        "animação",
+        "transição"
+      ],
+      "members": [
+        "general:origin-transition",
+        "general:shared-element",
+        "general:element-scoped",
+        "general:spring",
+        "general:morph",
+        "general:scroll-timeline",
+        "general:scroll-triggered",
+        "general:stagger",
+        "general:discrete-entry-exit",
+        "workspace:layout-motion",
+        "visual:official-motion-22",
+        "visual:official-figma-20",
+        "visual:reanimated-wobble",
+        "visual:reanimated-fade_dark",
+        "visual:reanimated-ios_exiting_custom"
+      ]
+    },
+    {
+      "id": "ui.ai",
+      "en": "AI interface",
+      "pt": "Interface de IA",
+      "parent": null,
+      "aliases": [
+        "ai interface",
+        "interface de ia",
+        "generative ui",
+        "interface generativa"
+      ],
+      "members": [
+        "general:agent-entry",
+        "general:approval-gate",
+        "general:explainability",
+        "general:confidence",
+        "general:feedback",
+        "general:graceful-failure",
+        "general:declarative-genui",
+        "general:scoped-permission",
+        "general:streaming-status",
+        "general:agent-mascot",
+        "visual:official-chatgpt-6",
+        "visual:official-chatgpt-7",
+        "visual:official-chatgpt-8"
+      ]
+    },
+    {
+      "id": "ui.ai.artifact",
+      "en": "Artifacts",
+      "pt": "Artefatos",
+      "parent": "ui.ai",
+      "aliases": [
+        "artifact",
+        "artifacts",
+        "artefato",
+        "artefatos"
+      ],
+      "members": [
+        "workspace:artifact",
+        "workspace:design-canvas",
+        "visual:official-claude-9",
+        "visual:official-claude-10"
+      ]
+    },
+    {
+      "id": "ui.visualization",
+      "en": "Data visualization",
+      "pt": "Visualização de dados",
+      "parent": null,
+      "aliases": [
+        "data visualization",
+        "visualização de dados",
+        "dashboard",
+        "painel de dados"
+      ],
+      "members": [
+        "workspace:interactive-chart",
+        "workspace:diagram",
+        "workspace:map",
+        "workspace:dashboard",
+        "general:linked-views",
+        "general:details-on-demand",
+        "general:overview-focus",
+        "general:small-multiples",
+        "general:dashboard-multipage",
+        "general:dashboard-density",
+        "visual:shadcn-dashboard-light",
+        "visual:shadcn-dashboard-dark"
+      ]
+    },
+    {
+      "id": "ui.whiteboard",
+      "en": "Whiteboard",
+      "pt": "Quadro branco",
+      "parent": null,
+      "aliases": [
+        "whiteboard",
+        "quadro branco",
+        "wireframe"
+      ],
+      "members": [
+        "workspace:whiteboard",
+        "visual:official-claude-12",
+        "visual:excalidraw-welcome-screen-overview",
+        "visual:excalidraw-virtual-whiteboard",
+        "visual:excalidraw-wireframe",
+        "visual:excalidraw-collaboration"
+      ]
+    },
+    {
+      "id": "ui.visual-language",
+      "en": "Visual language",
+      "pt": "Linguagem visual",
+      "parent": null,
+      "aliases": [
+        "visual language",
+        "linguagem visual",
+        "design tokens"
+      ],
+      "members": [
+        "general:liquid-glass",
+        "general:expressive-material",
+        "general:progressive-blur",
+        "general:content-first",
+        "general:variable-type",
+        "general:semantic-tokens"
+      ]
+    }
+  ]
+}
