@@ -1,0 +1,574 @@
+{
+  "schema_version": 1,
+  "research_date": "2026-11-25",
+  "language": "en",
+  "evidence_types": [
+    "official",
+    "third-party-example",
+    "proposal"
+  ],
+  "sources": {
+    "C1": "https://docs.capacities.io/reference/views",
+    "C2": "https://docs.capacities.io/reference/navigation",
+    "C3": "https://docs.capacities.io/reference/user-interface",
+    "C4": "https://docs.capacities.io/reference/content-types",
+    "C5": "https://docs.capacities.io/reference/queries",
+    "C6": "https://docs.capacities.io/reference/collections",
+    "C7": "https://docs.capacities.io/faq/editing/open-same-page-main-and-side-panel",
+    "C8": "https://docs.capacities.io/reference/mobile",
+    "C9": "https://docs.capacities.io/reference/tablet",
+    "C10": "https://docs.capacities.io/reference/sections",
+    "C11": "https://docs.capacities.io/reference/bulk-actions",
+    "O1": "https://developers.openai.com/plugins/concepts/ui-guidelines",
+    "O2": "https://openai.com/index/gpt-6-for-everyone/",
+    "A1": "https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them",
+    "A2": "https://support.claude.com/en/articles/13979539-custom-visuals-in-chat-and-cowork",
+    "A3": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+    "A4": "https://support.claude.com/en/articles/18324319-get-started-with-claude-whiteboards",
+    "M1": "https://motion.dev/docs/react-layout-animations",
+    "M2": "https://motion.dev/docs/react-accessibility",
+    "M3": "https://motion.dev/docs/react-reorder",
+    "M4": "https://motion.dev/docs/ai-kit",
+    "T1": "https://www.assistant-ui.com/examples/chatgpt",
+    "T2": "https://www.assistant-ui.com/examples/claude",
+    "T3": "https://styles.refero.design/style/d469cba4-c448-4a43-a033-883f8bfcdc42",
+    "W1": "https://www.w3.org/TR/WCAG22/"
+  },
+  "patterns": [
+    {
+      "id": "object-list",
+      "category": "collection",
+      "name": "List / lista",
+      "product": "Capacities",
+      "purpose": "Scan text-heavy objects",
+      "anatomy": "Icon, title, metadata",
+      "behavior": "sort, filter, selection, empty",
+      "accessibility": "Semantic list; visible focus",
+      "source_ids": [
+        "C1"
+      ],
+      "evidence": "official",
+      "exam_app_example": "Questões, concursos"
+    },
+    {
+      "id": "object-table",
+      "category": "collection",
+      "name": "Table / tabela",
+      "product": "Capacities",
+      "purpose": "Compare properties",
+      "anatomy": "Headers, rows, property cells",
+      "behavior": "sort, filter, selection, edit",
+      "accessibility": "Header associations; keyboard",
+      "source_ids": [
+        "C1"
+      ],
+      "evidence": "official",
+      "exam_app_example": "Questões com metadados"
+    },
+    {
+      "id": "gallery",
+      "category": "collection",
+      "name": "Gallery / galeria",
+      "product": "Capacities",
+      "purpose": "Compare visual objects",
+      "anatomy": "Uniform image cards, title",
+      "behavior": "resize, select, filter",
+      "accessibility": "Alt text; reflow",
+      "source_ids": [
+        "C1"
+      ],
+      "evidence": "official",
+      "exam_app_example": "Capas de provas"
+    },
+    {
+      "id": "wall",
+      "category": "collection",
+      "name": "Wall / mural",
+      "product": "Capacities",
+      "purpose": "Browse variable-size visual objects",
+      "anatomy": "Variable-height tiles",
+      "behavior": "select, filter",
+      "accessibility": "Logical reading order",
+      "source_ids": [
+        "C1"
+      ],
+      "evidence": "official",
+      "exam_app_example": "Referências visuais"
+    },
+    {
+      "id": "kanban",
+      "category": "collection",
+      "name": "Kanban",
+      "product": "Capacities",
+      "purpose": "Group objects by workflow",
+      "anatomy": "Columns, cards, group heading",
+      "behavior": "move, reorder, filter",
+      "accessibility": "Non-drag move controls",
+      "source_ids": [
+        "C1"
+      ],
+      "evidence": "official",
+      "exam_app_example": "Status de estudo"
+    },
+    {
+      "id": "saved-query",
+      "category": "data",
+      "name": "Saved query",
+      "product": "Capacities",
+      "purpose": "Dynamic filtered object set",
+      "anatomy": "Filters, sort, saved view",
+      "behavior": "create, update, empty",
+      "accessibility": "Label filters and announce results",
+      "source_ids": [
+        "C5"
+      ],
+      "evidence": "official",
+      "exam_app_example": "Questões erradas"
+    },
+    {
+      "id": "manual-collection",
+      "category": "data",
+      "name": "Collection",
+      "product": "Capacities",
+      "purpose": "Curate one object type",
+      "anatomy": "Collection name, members, view",
+      "behavior": "add, remove",
+      "accessibility": "Accessible selection",
+      "source_ids": [
+        "C6"
+      ],
+      "evidence": "official",
+      "exam_app_example": "Lista de revisão manual"
+    },
+    {
+      "id": "object-dashboard",
+      "category": "workspace",
+      "name": "Object-type dashboard",
+      "product": "Capacities",
+      "purpose": "Explore an object type",
+      "anatomy": "Sections, view controls, objects",
+      "behavior": "switch, filter, save",
+      "accessibility": "Keyboard-accessible tabs",
+      "source_ids": [
+        "C4",
+        "C10"
+      ],
+      "evidence": "official",
+      "exam_app_example": "Dashboard de concursos"
+    },
+    {
+      "id": "object-preview",
+      "category": "workspace",
+      "name": "Preview",
+      "product": "Capacities",
+      "purpose": "Inspect without losing context",
+      "anatomy": "Object content, close, navigation",
+      "behavior": "open, next, previous, close",
+      "accessibility": "Escape; restore focus",
+      "source_ids": [
+        "C2"
+      ],
+      "evidence": "official",
+      "exam_app_example": "Prévia de questão"
+    },
+    {
+      "id": "main-tabs",
+      "category": "workspace",
+      "name": "Main tabs",
+      "product": "Capacities",
+      "purpose": "Maintain workspaces",
+      "anatomy": "Tab list, active tab, close",
+      "behavior": "open, switch, reorder, close",
+      "accessibility": "Tab semantics and focus",
+      "source_ids": [
+        "C2",
+        "C7"
+      ],
+      "evidence": "official",
+      "exam_app_example": "Documentos e simulados"
+    },
+    {
+      "id": "side-panel",
+      "category": "workspace",
+      "name": "Right side panel",
+      "product": "Capacities",
+      "purpose": "Work with two objects",
+      "anatomy": "Secondary tabs, content",
+      "behavior": "shift-click, open, close",
+      "accessibility": "Keyboard access; maintain focus",
+      "source_ids": [
+        "C2",
+        "C3",
+        "C7"
+      ],
+      "evidence": "official",
+      "exam_app_example": "Questão e material"
+    },
+    {
+      "id": "inspector",
+      "category": "workspace",
+      "name": "Inspector",
+      "product": "Capacities",
+      "purpose": "Inspect context and navigation",
+      "anatomy": "Inspector tabs, outline",
+      "behavior": "toggle, empty",
+      "accessibility": "Label regions",
+      "source_ids": [
+        "C3"
+      ],
+      "evidence": "official",
+      "exam_app_example": "Propriedades e relações"
+    },
+    {
+      "id": "bulk-actions",
+      "category": "collection",
+      "name": "Bulk actions",
+      "product": "Capacities",
+      "purpose": "Operate on selected objects",
+      "anatomy": "Selection, actions",
+      "behavior": "select, apply",
+      "accessibility": "Announce count",
+      "source_ids": [
+        "C11"
+      ],
+      "evidence": "official",
+      "exam_app_example": "Mover questões"
+    },
+    {
+      "id": "inline-card",
+      "category": "conversation",
+      "name": "Inline card",
+      "product": "ChatGPT",
+      "purpose": "Show small structured result",
+      "anatomy": "Title, media, details, action",
+      "behavior": "loading, ready, error",
+      "accessibility": "Label controls; no nested scroll",
+      "source_ids": [
+        "O1"
+      ],
+      "evidence": "official",
+      "exam_app_example": "Resumo de desempenho"
+    },
+    {
+      "id": "inline-carousel",
+      "category": "conversation",
+      "name": "Inline carousel",
+      "product": "ChatGPT",
+      "purpose": "Browse short visual alternatives",
+      "anatomy": "Image, title, metadata, CTA",
+      "behavior": "scroll, select",
+      "accessibility": "Keyboard; accessible alternatives",
+      "source_ids": [
+        "O1"
+      ],
+      "evidence": "official",
+      "exam_app_example": "Escolher provas"
+    },
+    {
+      "id": "fullscreen",
+      "category": "surface",
+      "name": "Fullscreen",
+      "product": "ChatGPT",
+      "purpose": "Deep exploration",
+      "anatomy": "Expanded app surface, close, composer",
+      "behavior": "expand, stream, collapse",
+      "accessibility": "Manage focus; maintain context",
+      "source_ids": [
+        "O1"
+      ],
+      "evidence": "official",
+      "exam_app_example": "Simulado ou leitor"
+    },
+    {
+      "id": "pip",
+      "category": "surface",
+      "name": "Picture-in-picture",
+      "product": "ChatGPT",
+      "purpose": "Keep small active view alongside chat",
+      "anatomy": "Floating surface, controls",
+      "behavior": "open, close",
+      "accessibility": "Accessible controls",
+      "source_ids": [
+        "O1"
+      ],
+      "evidence": "official",
+      "exam_app_example": "Timer opcional"
+    },
+    {
+      "id": "interactive-chart",
+      "category": "visualization",
+      "name": "Interactive chart",
+      "product": "ChatGPT, Claude",
+      "purpose": "Explore quantitative data",
+      "anatomy": "Axes, legend, values, controls",
+      "behavior": "filter, inspect, loading",
+      "accessibility": "Text summary and data alternative",
+      "source_ids": [
+        "O2",
+        "A2"
+      ],
+      "evidence": "official",
+      "exam_app_example": "Evolução de acertos"
+    },
+    {
+      "id": "diagram",
+      "category": "visualization",
+      "name": "Diagram / flowchart",
+      "product": "Claude",
+      "purpose": "Explain relationships",
+      "anatomy": "Nodes, links, labels",
+      "behavior": "inspect, zoom if applicable",
+      "accessibility": "Text equivalent",
+      "source_ids": [
+        "A1",
+        "A2"
+      ],
+      "evidence": "official",
+      "exam_app_example": "Mapa de tópicos"
+    },
+    {
+      "id": "artifact",
+      "category": "surface",
+      "name": "Artifact",
+      "product": "Claude",
+      "purpose": "Create persistent deliverable",
+      "anatomy": "Dedicated workspace, content, revision actions",
+      "behavior": "create, edit, revisit",
+      "accessibility": "Keyboard access; clear save state",
+      "source_ids": [
+        "A1"
+      ],
+      "evidence": "official",
+      "exam_app_example": "Material de estudo"
+    },
+    {
+      "id": "design-canvas",
+      "category": "surface",
+      "name": "Design canvas",
+      "product": "Claude",
+      "purpose": "Create and edit visual prototypes",
+      "anatomy": "Canvas, elements, editing controls",
+      "behavior": "select, edit, preview",
+      "accessibility": "Accessible alternatives",
+      "source_ids": [
+        "A3"
+      ],
+      "evidence": "official",
+      "exam_app_example": "Prototipação"
+    },
+    {
+      "id": "whiteboard",
+      "category": "surface",
+      "name": "Whiteboard",
+      "product": "Claude",
+      "purpose": "Organize ideas spatially",
+      "anatomy": "Nodes, groups, connectors",
+      "behavior": "edit, arrange",
+      "accessibility": "Equivalent ordered content",
+      "source_ids": [
+        "A4"
+      ],
+      "evidence": "official",
+      "exam_app_example": "Planejamento"
+    },
+    {
+      "id": "form",
+      "category": "conversation",
+      "name": "Interactive form",
+      "product": "ChatGPT",
+      "purpose": "Gather structured answers",
+      "anatomy": "Labels, inputs, submit",
+      "behavior": "idle, invalid, pending, success",
+      "accessibility": "Errors associated with inputs",
+      "source_ids": [
+        "O2"
+      ],
+      "evidence": "official",
+      "exam_app_example": "Configurar simulado"
+    },
+    {
+      "id": "map",
+      "category": "visualization",
+      "name": "Map",
+      "product": "ChatGPT",
+      "purpose": "Explore geography",
+      "anatomy": "Pins, controls, optional details",
+      "behavior": "pan, zoom, select",
+      "accessibility": "List alternative",
+      "source_ids": [
+        "O1"
+      ],
+      "evidence": "official",
+      "exam_app_example": "Locais de prova"
+    },
+    {
+      "id": "message-actions",
+      "category": "conversation",
+      "name": "Message actions",
+      "product": "ChatGPT, Claude",
+      "purpose": "Operate on messages",
+      "anatomy": "Copy, feedback, optional actions",
+      "behavior": "hover, focus, touch",
+      "accessibility": "Never hover-only",
+      "source_ids": [
+        "T1",
+        "T2"
+      ],
+      "evidence": "third-party-example",
+      "exam_app_example": "Copiar explicação"
+    },
+    {
+      "id": "composer",
+      "category": "conversation",
+      "name": "Composer",
+      "product": "ChatGPT, Claude",
+      "purpose": "Input or cancel task",
+      "anatomy": "Text field, attachments, primary action",
+      "behavior": "idle, typing, recording, running",
+      "accessibility": "Accessible names; live status",
+      "source_ids": [
+        "T1",
+        "T2"
+      ],
+      "evidence": "third-party-example",
+      "exam_app_example": "Assistente de estudo"
+    },
+    {
+      "id": "grid",
+      "category": "collection",
+      "name": "Grid",
+      "product": "General",
+      "purpose": "Compare uniform items",
+      "anatomy": "Responsive cells, headings",
+      "behavior": "select, resize",
+      "accessibility": "Reflow; logical order",
+      "source_ids": [
+        "W1"
+      ],
+      "evidence": "proposal",
+      "exam_app_example": "Catálogo"
+    },
+    {
+      "id": "code-block",
+      "category": "content",
+      "name": "Code block",
+      "product": "General",
+      "purpose": "Read and copy source",
+      "anatomy": "Language, code, copy action",
+      "behavior": "focus, copy, error",
+      "accessibility": "Selectable text; no trap",
+      "source_ids": [
+        "W1"
+      ],
+      "evidence": "proposal",
+      "exam_app_example": "Questões de programação"
+    },
+    {
+      "id": "dashboard",
+      "category": "visualization",
+      "name": "Dashboard",
+      "product": "Claude",
+      "purpose": "Combine metrics and charts",
+      "anatomy": "Metric cards, chart, context",
+      "behavior": "filter, refresh, empty",
+      "accessibility": "Data equivalents",
+      "source_ids": [
+        "A1"
+      ],
+      "evidence": "official",
+      "exam_app_example": "Relatório de estudo"
+    },
+    {
+      "id": "document",
+      "category": "content",
+      "name": "Document",
+      "product": "Claude",
+      "purpose": "Read or edit long-form work",
+      "anatomy": "Title, sections, editing surface",
+      "behavior": "edit, save, export",
+      "accessibility": "Semantic headings",
+      "source_ids": [
+        "A1"
+      ],
+      "evidence": "official",
+      "exam_app_example": "Resumo de edital"
+    },
+    {
+      "id": "shimmer",
+      "category": "motion",
+      "name": "Streaming shimmer",
+      "product": "ChatGPT",
+      "purpose": "Indicate streaming in composer",
+      "anatomy": "Animated status cue",
+      "behavior": "thinking, completed",
+      "accessibility": "Static alternative; status text",
+      "source_ids": [
+        "O1"
+      ],
+      "evidence": "official",
+      "exam_app_example": "Geração de explicação"
+    },
+    {
+      "id": "layout-motion",
+      "category": "motion",
+      "name": "Layout animation",
+      "product": "Motion",
+      "purpose": "Maintain spatial continuity",
+      "anatomy": "Layout transition, shared identity",
+      "behavior": "enter, exit, reorder",
+      "accessibility": "Reduced motion",
+      "source_ids": [
+        "M1",
+        "M2"
+      ],
+      "evidence": "official",
+      "exam_app_example": "Abrir painel"
+    },
+    {
+      "id": "reorder",
+      "category": "motion",
+      "name": "Reorder animation",
+      "product": "Motion",
+      "purpose": "Rearrange lists",
+      "anatomy": "Draggable items, handles",
+      "behavior": "drag, drop, cancel",
+      "accessibility": "Alternative move commands",
+      "source_ids": [
+        "M3",
+        "M2"
+      ],
+      "evidence": "official",
+      "exam_app_example": "Ordenar abas"
+    },
+    {
+      "id": "loading-error",
+      "category": "state",
+      "name": "Loading / error / empty",
+      "product": "General",
+      "purpose": "Communicate system status",
+      "anatomy": "Message, skeleton, retry",
+      "behavior": "loading, error, empty, success",
+      "accessibility": "Live status, no color-only cues",
+      "source_ids": [
+        "W1"
+      ],
+      "evidence": "proposal",
+      "exam_app_example": "Busca de questões"
+    },
+    {
+      "id": "modal-drawer",
+      "category": "surface",
+      "name": "Modal / drawer",
+      "product": "General",
+      "purpose": "Focused secondary flow",
+      "anatomy": "Title, content, close",
+      "behavior": "open, dismiss, confirm",
+      "accessibility": "Focus trap only when modal",
+      "source_ids": [
+        "W1"
+      ],
+      "evidence": "proposal",
+      "exam_app_example": "Filtros mobile"
+    }
+  ]
+}
