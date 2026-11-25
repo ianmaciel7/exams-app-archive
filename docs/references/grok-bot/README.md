@@ -22,3 +22,8 @@ The source registry links to the actual third-party clips, interactive demos, la
 
 ## Gaps
 Exact production animation curves, durations, source-code license and complete state-to-state transition graph are not verified. Third-party descriptions of SVG architecture and state counts are attributed, not promoted to official facts. No claim of exhaustive capture. For future captures record platform, version, date, input, state, source, permission, frame rate, timing measurement method and checksum. Do not publish account data, private screenshots or restricted assets.
+
+## Visual archive
+
+- [Visual evidence gallery](media/README.md): preserved upstream PNGs and animated GIFs with pinned source revision and MIT notices.
+- [Media provenance manifest](media/manifest.json): paths, source blob SHAs, byte sizes, license and official link-only resources.
