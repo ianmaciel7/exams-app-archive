@@ -27,3 +27,5 @@ The versioned taxonomy in `config/knowledge-concepts.json` uses stable IDs, bili
 ## Scope
 
 This module does not change existing FTS5 behavior, execute archived code, use embeddings, summarize private records, or guarantee complete historical coverage. The taxonomy is intentionally small and auditable. Expand it via review of the unassigned report; do not force every record into a group.
+
+Each occurrence exposes compact, source-authored catalog statements and original media pointers where present. The result is evidence navigation rather than an AI-generated synthesis. Multiple independently named concepts are returned separately, even when one phrase is longer.

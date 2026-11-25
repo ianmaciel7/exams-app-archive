@@ -52,13 +52,18 @@ def resolve(query, concepts):
     exact = [c["id"] for c in concepts.values() if q in labels(c)]
     if exact:
         return sorted(exact)
-    matches = [(len(term.split()), c["id"]) for c in concepts.values()
-               for term in labels(c) if " " + term + " " in " " + q + " "]
-    if not matches:
-        return []
-    # Keep equally specific concepts, rather than arbitrarily choosing one.
-    best = max(n for n, _ in matches)
-    return sorted({ident for n, ident in matches if n == best})
+    words = q.split()
+    matches = []
+    for c in concepts.values():
+        for term in labels(c):
+            parts = term.split()
+            for start in range(len(words) - len(parts) + 1):
+                if words[start:start + len(parts)] == parts:
+                    matches.append((start, start + len(parts), c["id"]))
+    # Remove only matches contained in a longer phrase, not separate concepts.
+    return sorted({ident for start, end, ident in matches
+                   if not any(a <= start and end <= b and b-a > end-start
+                              for a, b, _ in matches)})
 
 
 def group_records(records, taxonomy):
@@ -111,13 +116,20 @@ def build_pack(query, records, taxonomy, limit=20):
             r = indexed[rid]
             blob = r.get("record", {}).get("blob_sha") if r["kind"] == "visual" else None
             key = ("blob", blob) if blob else ("id", rid)
-            bucket = buckets.setdefault(key, {"kind": r["kind"], "occurrences": []})
+            bucket = buckets.setdefault(key, {"kind": r["kind"], "blob_sha": blob, "occurrences": []})
+            source = r.get("record", {})
+            # Extract compact catalog statements, not newly generated claims.
+            statements = {k: source[k] for k in ("definition", "purpose", "anatomy", "behavior",
+                          "accessibility", "guardrail") if isinstance(source.get(k), str)}
+            pointer = {k: source[k] for k in ("source_repo", "source_commit", "source_path", "path",
+                       "blob_sha", "duration_seconds", "playback") if k in source}
             bucket["occurrences"].append({
                 "id": rid, "title": r["title"], "product": r.get("product"),
                 "date": r.get("date"), "availability": r.get("availability"),
                 "source_confidence": r.get("confidence"), "license": r.get("license"),
                 "catalog_path": r.get("catalog_path"), "catalog_sha256": r.get("catalog_sha256"),
                 "record_sha256": r.get("record_sha256"), "sources": r.get("sources", []),
+                "source_pointer": pointer, "catalog_statements": statements,
                 **membership})
         # Round-robin evidence kinds so one modality cannot consume the budget.
         kinds = defaultdict(list)

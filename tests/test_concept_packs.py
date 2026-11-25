@@ -20,6 +20,10 @@ class ConceptPackTests(unittest.TestCase):
         self.assertEqual(en["packs"][0]["concept"]["id"], "ui.navigation.sidebar")
         self.assertEqual(mod.build_pack("painel lateral", self.records, self.taxonomy)["packs"][0]["concept"]["id"], "ui.navigation.side-panel")
         self.assertEqual(mod.build_pack("pin", self.records, self.taxonomy)["status"], "unresolved")
+        both = mod.build_pack("side panel and sidebar", self.records, self.taxonomy)
+        self.assertEqual(both["status"], "multiple-concepts")
+        self.assertEqual({p["concept"]["id"] for p in both["packs"]},
+                         {"ui.navigation.side-panel", "ui.navigation.sidebar"})
 
     def test_cross_catalog_and_budget(self):
         pack = mod.build_pack("reorder", self.records, self.taxonomy, 2)["packs"][0]
