@@ -1,0 +1,722 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-25",
+  "scope": "public visual UX research, not historic backups",
+  "records": [
+    {
+      "id": "dnd-kit-sortable-list",
+      "product": "dnd-kit",
+      "title": "Sortable list",
+      "kind": "image",
+      "keywords": [
+        "drag",
+        "reorder",
+        "list",
+        "ordenação"
+      ],
+      "status": "archived-blob-verified",
+      "path": "media/dnd-kit/sortable-list.png",
+      "blob_sha": "643f1eae41b84aecacfb95946c14ee216e7c9c09",
+      "bytes": 133214,
+      "source_repo": "clauderic/dnd-kit",
+      "source_commit": "ccaf3d583903a5d0b68616310a24aec891ee0d69",
+      "source_path": "apps/docs/docs/images/legacy/sortable-list.png",
+      "source_url": "https://github.com/clauderic/dnd-kit/blob/ccaf3d583903a5d0b68616310a24aec891ee0d69/apps/docs/docs/images/legacy/sortable-list.png",
+      "license": "MIT",
+      "license_path": "media/dnd-kit/LICENSE",
+      "classification": "upstream documentation demo; not measured production UI",
+      "playback": "not-tested",
+      "duration_seconds": null
+    },
+    {
+      "id": "dnd-kit-sortable-multiple-containers-example",
+      "product": "dnd-kit",
+      "title": "Multiple sortable containers",
+      "kind": "image",
+      "keywords": [
+        "kanban",
+        "board",
+        "drag",
+        "drop"
+      ],
+      "status": "archived-blob-verified",
+      "path": "media/dnd-kit/sortable-multiple-containers-example.png",
+      "blob_sha": "522b659a47103211bee1d9c0279a40b700fb62d5",
+      "bytes": 236227,
+      "source_repo": "clauderic/dnd-kit",
+      "source_commit": "ccaf3d583903a5d0b68616310a24aec891ee0d69",
+      "source_path": "apps/docs/docs/images/legacy/sortable-multiple-containers-example.png",
+      "source_url": "https://github.com/clauderic/dnd-kit/blob/ccaf3d583903a5d0b68616310a24aec891ee0d69/apps/docs/docs/images/legacy/sortable-multiple-containers-example.png",
+      "license": "MIT",
+      "license_path": "media/dnd-kit/LICENSE",
+      "classification": "upstream documentation demo; not measured production UI",
+      "playback": "not-tested",
+      "duration_seconds": null
+    },
+    {
+      "id": "dnd-kit-closest-center-kanban",
+      "product": "dnd-kit",
+      "title": "Kanban collision detection",
+      "kind": "image",
+      "keywords": [
+        "kanban",
+        "gesture",
+        "collision"
+      ],
+      "status": "archived-blob-verified",
+      "path": "media/dnd-kit/closest-center-kanban.png",
+      "blob_sha": "e44de061a3836e5ff85f87b2dcc515ce69393d89",
+      "bytes": 190265,
+      "source_repo": "clauderic/dnd-kit",
+      "source_commit": "ccaf3d583903a5d0b68616310a24aec891ee0d69",
+      "source_path": "apps/docs/docs/images/legacy/closest-center-kanban.png",
+      "source_url": "https://github.com/clauderic/dnd-kit/blob/ccaf3d583903a5d0b68616310a24aec891ee0d69/apps/docs/docs/images/legacy/closest-center-kanban.png",
+      "license": "MIT",
+      "license_path": "media/dnd-kit/LICENSE",
+      "classification": "upstream documentation demo; not measured production UI",
+      "playback": "not-tested",
+      "duration_seconds": null
+    },
+    {
+      "id": "dnd-kit-drag-overlay",
+      "product": "dnd-kit",
+      "title": "Drag overlay",
+      "kind": "image",
+      "keywords": [
+        "drag",
+        "overlay",
+        "feedback"
+      ],
+      "status": "archived-blob-verified",
+      "path": "media/dnd-kit/drag-overlay.png",
+      "blob_sha": "72c9193488b123c7f87f72f03a8a2838e42a79c9",
+      "bytes": 82250,
+      "source_repo": "clauderic/dnd-kit",
+      "source_commit": "ccaf3d583903a5d0b68616310a24aec891ee0d69",
+      "source_path": "apps/docs/docs/images/draggable/drag-overlay.png",
+      "source_url": "https://github.com/clauderic/dnd-kit/blob/ccaf3d583903a5d0b68616310a24aec891ee0d69/apps/docs/docs/images/draggable/drag-overlay.png",
+      "license": "MIT",
+      "license_path": "media/dnd-kit/LICENSE",
+      "classification": "upstream documentation demo; not measured production UI",
+      "playback": "not-tested",
+      "duration_seconds": null
+    },
+    {
+      "id": "reanimated-wobble",
+      "product": "reanimated",
+      "title": "Spring wobble",
+      "kind": "gif",
+      "keywords": [
+        "motion",
+        "spring",
+        "feedback"
+      ],
+      "status": "archived-blob-verified",
+      "path": "media/reanimated/wobble.gif",
+      "blob_sha": "199f3a3e69ef62e44dd166f99fbb37476a4030d4",
+      "bytes": 284520,
+      "source_repo": "software-mansion/react-native-reanimated",
+      "source_commit": "2dbb6b4affaf5b231246d3e92dafc979de00f952",
+      "source_path": "docs/docs-reanimated/static/docs/animations/wobble.gif",
+      "source_url": "https://github.com/software-mansion/react-native-reanimated/blob/2dbb6b4affaf5b231246d3e92dafc979de00f952/docs/docs-reanimated/static/docs/animations/wobble.gif",
+      "license": "MIT",
+      "license_path": "media/reanimated/LICENSE",
+      "classification": "upstream documentation demo; not measured production UI",
+      "playback": "not-tested",
+      "duration_seconds": null
+    },
+    {
+      "id": "reanimated-switch_android",
+      "product": "reanimated",
+      "title": "Android switch",
+      "kind": "video",
+      "keywords": [
+        "motion",
+        "toggle",
+        "mobile"
+      ],
+      "status": "archived-blob-verified",
+      "path": "media/reanimated/switch_android.mp4",
+      "blob_sha": "85a5b5279ec8b2a9c02d291a8c10a49aacb09234",
+      "bytes": 292147,
+      "source_repo": "software-mansion/react-native-reanimated",
+      "source_commit": "2dbb6b4affaf5b231246d3e92dafc979de00f952",
+      "source_path": "docs/docs-reanimated/static/recordings/examples/switch_android.mp4",
+      "source_url": "https://github.com/software-mansion/react-native-reanimated/blob/2dbb6b4affaf5b231246d3e92dafc979de00f952/docs/docs-reanimated/static/recordings/examples/switch_android.mp4",
+      "license": "MIT",
+      "license_path": "media/reanimated/LICENSE",
+      "classification": "upstream documentation demo; not measured production UI",
+      "playback": "not-tested",
+      "duration_seconds": null
+    },
+    {
+      "id": "reanimated-fade_dark",
+      "product": "reanimated",
+      "title": "Fade layout dark",
+      "kind": "video",
+      "keywords": [
+        "motion",
+        "fade",
+        "transition",
+        "dark"
+      ],
+      "status": "archived-blob-verified",
+      "path": "media/reanimated/fade_dark.mov",
+      "blob_sha": "414d265ac7767747f8407f649c5ec954116ce2b0",
+      "bytes": 296557,
+      "source_repo": "software-mansion/react-native-reanimated",
+      "source_commit": "2dbb6b4affaf5b231246d3e92dafc979de00f952",
+      "source_path": "docs/docs-reanimated/static/recordings/layout-animations/fade_dark.mov",
+      "source_url": "https://github.com/software-mansion/react-native-reanimated/blob/2dbb6b4affaf5b231246d3e92dafc979de00f952/docs/docs-reanimated/static/recordings/layout-animations/fade_dark.mov",
+      "license": "MIT",
+      "license_path": "media/reanimated/LICENSE",
+      "classification": "upstream documentation demo; not measured production UI",
+      "playback": "not-tested",
+      "duration_seconds": null
+    },
+    {
+      "id": "reanimated-ios_exiting_custom",
+      "product": "reanimated",
+      "title": "Custom iOS exit",
+      "kind": "video",
+      "keywords": [
+        "motion",
+        "exit",
+        "transition",
+        "mobile"
+      ],
+      "status": "archived-blob-verified",
+      "path": "media/reanimated/ios_exiting_custom.mov",
+      "blob_sha": "a17f99e61795353c83023645adeb83d3884fb3fb",
+      "bytes": 287660,
+      "source_repo": "software-mansion/react-native-reanimated",
+      "source_commit": "2dbb6b4affaf5b231246d3e92dafc979de00f952",
+      "source_path": "docs/docs-reanimated/static/recordings/custom_animations/ios_exiting_custom.mov",
+      "source_url": "https://github.com/software-mansion/react-native-reanimated/blob/2dbb6b4affaf5b231246d3e92dafc979de00f952/docs/docs-reanimated/static/recordings/custom_animations/ios_exiting_custom.mov",
+      "license": "MIT",
+      "license_path": "media/reanimated/LICENSE",
+      "classification": "upstream documentation demo; not measured production UI",
+      "playback": "not-tested",
+      "duration_seconds": null
+    },
+    {
+      "id": "leva-circle-drag",
+      "product": "leva",
+      "title": "Circle drag control",
+      "kind": "gif",
+      "keywords": [
+        "gesture",
+        "inspector",
+        "direct",
+        "manipulation"
+      ],
+      "status": "archived-blob-verified",
+      "path": "media/leva/circle-drag.gif",
+      "blob_sha": "a0fa7b533e18da4ff0d8dce54871e177d56ef63d",
+      "bytes": 335500,
+      "source_repo": "pmndrs/leva",
+      "source_commit": "402a1e9d0899e6d384993aaffe8dc0d2c39110e1",
+      "source_path": "docs/advanced/circle-drag.gif",
+      "source_url": "https://github.com/pmndrs/leva/blob/402a1e9d0899e6d384993aaffe8dc0d2c39110e1/docs/advanced/circle-drag.gif",
+      "license": "MIT",
+      "license_path": "media/leva/LICENSE",
+      "classification": "upstream documentation demo; not measured production UI",
+      "playback": "not-tested",
+      "duration_seconds": null
+    },
+    {
+      "id": "excalidraw-welcome-screen-overview",
+      "product": "excalidraw",
+      "title": "Whiteboard welcome screen",
+      "kind": "image",
+      "keywords": [
+        "canvas",
+        "whiteboard",
+        "onboarding",
+        "quadro"
+      ],
+      "status": "archived-blob-verified",
+      "path": "media/excalidraw/welcome-screen-overview.png",
+      "blob_sha": "1067761629614e099f46546305af0efd50cf2aa8",
+      "bytes": 103250,
+      "source_repo": "excalidraw/excalidraw",
+      "source_commit": "5681e7d8be319092b13979e947afe632d5a4a525",
+      "source_path": "dev-docs/static/img/welcome-screen-overview.png",
+      "source_url": "https://github.com/excalidraw/excalidraw/blob/5681e7d8be319092b13979e947afe632d5a4a525/dev-docs/static/img/welcome-screen-overview.png",
+      "license": "MIT",
+      "license_path": "media/excalidraw/LICENSE",
+      "classification": "upstream documentation demo; not measured production UI",
+      "playback": "not-tested",
+      "duration_seconds": null
+    },
+    {
+      "id": "official-capacities-1",
+      "product": "capacities",
+      "title": "Side panel redesign — release 60",
+      "kind": "video",
+      "keywords": [
+        "side",
+        "panel",
+        "tabs",
+        "stack",
+        "resize",
+        "backlinks"
+      ],
+      "status": "link-only",
+      "source_url": "https://capacities.io/whats-new/release-60",
+      "media_url": "https://www.youtube.com/embed/wDukatJGkQg",
+      "notes": "Official page contains video; embed fetch failed; playback unverified",
+      "license": "redistribution not established",
+      "duration_seconds": null
+    },
+    {
+      "id": "official-capacities-2",
+      "product": "capacities",
+      "title": "Getting started",
+      "kind": "video",
+      "keywords": [
+        "objects",
+        "templates",
+        "graph",
+        "workspace"
+      ],
+      "status": "link-only",
+      "source_url": "https://docs.capacities.io/tutorials/getting-started",
+      "media_url": "https://i.ytimg.com/vi_webp/tWeo9bVAfqM/maxresdefault.webp",
+      "notes": "Official page and thumbnail inspected; playback unverified",
+      "license": "redistribution not established",
+      "duration_seconds": null
+    },
+    {
+      "id": "official-capacities-3",
+      "product": "capacities",
+      "title": "Whiteboards and global graph — release 72",
+      "kind": "image",
+      "keywords": [
+        "whiteboard",
+        "graph",
+        "selection",
+        "pin",
+        "tabs",
+        "mobile"
+      ],
+      "status": "link-only",
+      "source_url": "https://capacities.io/whats-new/release-72",
+      "media_url": null,
+      "notes": "Official documentation or demo located; media playback and exact timing unverified.",
+      "license": "redistribution not established",
+      "duration_seconds": null
+    },
+    {
+      "id": "official-capacities-4",
+      "product": "capacities",
+      "title": "Side panel edge drag — release 66",
+      "kind": "documentation",
+      "keywords": [
+        "drag",
+        "drop",
+        "tabs",
+        "panel"
+      ],
+      "status": "link-only",
+      "source_url": "https://capacities.io/whats-new/release-66",
+      "media_url": null,
+      "notes": "Official documentation or demo located; media playback and exact timing unverified.",
+      "license": "redistribution not established",
+      "duration_seconds": null
+    },
+    {
+      "id": "official-capacities-5",
+      "product": "capacities",
+      "title": "Navigation",
+      "kind": "documentation",
+      "keywords": [
+        "tab",
+        "history",
+        "split",
+        "panel",
+        "pin"
+      ],
+      "status": "link-only",
+      "source_url": "https://docs.capacities.io/reference/navigation",
+      "media_url": null,
+      "notes": "Official documentation or demo located; media playback and exact timing unverified.",
+      "license": "redistribution not established",
+      "duration_seconds": null
+    },
+    {
+      "id": "official-chatgpt-6",
+      "product": "chatgpt",
+      "title": "Intelligent UI announcement",
+      "kind": "demo",
+      "keywords": [
+        "generative",
+        "UI",
+        "interactive",
+        "chart",
+        "form"
+      ],
+      "status": "link-only",
+      "source_url": "https://openai.com/index/gpt-6-for-everyone/",
+      "media_url": null,
+      "notes": "Official documentation or demo located; media playback and exact timing unverified.",
+      "license": "redistribution not established",
+      "duration_seconds": null
+    },
+    {
+      "id": "official-chatgpt-7",
+      "product": "chatgpt",
+      "title": "Intelligent UI help",
+      "kind": "documentation",
+      "keywords": [
+        "interactive",
+        "visualization",
+        "settings"
+      ],
+      "status": "link-only",
+      "source_url": "https://help.openai.com/en/articles/20001598-intelligent-ui-in-chatgpt",
+      "media_url": null,
+      "notes": "Official documentation or demo located; media playback and exact timing unverified.",
+      "license": "redistribution not established",
+      "duration_seconds": null
+    },
+    {
+      "id": "official-chatgpt-8",
+      "product": "chatgpt",
+      "title": "Apps and Apps SDK",
+      "kind": "demo",
+      "keywords": [
+        "inline",
+        "app",
+        "card",
+        "map",
+        "presentation"
+      ],
+      "status": "link-only",
+      "source_url": "https://openai.com/index/introducing-apps-in-chatgpt/",
+      "media_url": null,
+      "notes": "Official documentation or demo located; media playback and exact timing unverified.",
+      "license": "redistribution not established",
+      "duration_seconds": null
+    },
+    {
+      "id": "official-claude-9",
+      "product": "claude",
+      "title": "Artifacts",
+      "kind": "documentation",
+      "keywords": [
+        "artifacts",
+        "persistent",
+        "dashboards",
+        "tools"
+      ],
+      "status": "link-only",
+      "source_url": "https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them",
+      "media_url": null,
+      "notes": "Official documentation or demo located; media playback and exact timing unverified.",
+      "license": "redistribution not established",
+      "duration_seconds": null
+    },
+    {
+      "id": "official-claude-10",
+      "product": "claude",
+      "title": "Claude Design",
+      "kind": "documentation",
+      "keywords": [
+        "prototype",
+        "canvas",
+        "design",
+        "system"
+      ],
+      "status": "link-only",
+      "source_url": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+      "media_url": null,
+      "notes": "Official documentation or demo located; media playback and exact timing unverified.",
+      "license": "redistribution not established",
+      "duration_seconds": null
+    },
+    {
+      "id": "official-claude-11",
+      "product": "claude",
+      "title": "Claude Motion",
+      "kind": "documentation",
+      "keywords": [
+        "animated",
+        "charts",
+        "walkthrough"
+      ],
+      "status": "link-only",
+      "source_url": "https://support.claude.com/en/articles/17454997-get-started-with-claude-motion",
+      "media_url": null,
+      "notes": "Official documentation or demo located; media playback and exact timing unverified.",
+      "license": "redistribution not established",
+      "duration_seconds": null
+    },
+    {
+      "id": "official-claude-12",
+      "product": "claude",
+      "title": "Claude Whiteboards",
+      "kind": "documentation",
+      "keywords": [
+        "canvas",
+        "diagram",
+        "flow"
+      ],
+      "status": "link-only",
+      "source_url": "https://support.claude.com/en/articles/18324319-get-started-with-claude-whiteboards",
+      "media_url": null,
+      "notes": "Official documentation or demo located; media playback and exact timing unverified.",
+      "license": "redistribution not established",
+      "duration_seconds": null
+    },
+    {
+      "id": "official-linear-13",
+      "product": "linear",
+      "title": "Display options",
+      "kind": "documentation",
+      "keywords": [
+        "board",
+        "list",
+        "groups",
+        "density"
+      ],
+      "status": "link-only",
+      "source_url": "https://linear.app/docs/display-options",
+      "media_url": null,
+      "notes": "Official documentation or demo located; media playback and exact timing unverified.",
+      "license": "redistribution not established",
+      "duration_seconds": null
+    },
+    {
+      "id": "official-linear-14",
+      "product": "linear",
+      "title": "Custom views and peek",
+      "kind": "documentation",
+      "keywords": [
+        "peek",
+        "filters",
+        "saved",
+        "view"
+      ],
+      "status": "link-only",
+      "source_url": "https://linear.app/docs/custom-views",
+      "media_url": null,
+      "notes": "Official documentation or demo located; media playback and exact timing unverified.",
+      "license": "redistribution not established",
+      "duration_seconds": null
+    },
+    {
+      "id": "official-linear-15",
+      "product": "linear",
+      "title": "Personalized sidebar",
+      "kind": "documentation",
+      "keywords": [
+        "sidebar",
+        "pinned",
+        "tabs"
+      ],
+      "status": "link-only",
+      "source_url": "https://linear.app/changelog/2024-12-18-personalized-sidebar",
+      "media_url": null,
+      "notes": "Official documentation or demo located; media playback and exact timing unverified.",
+      "license": "redistribution not established",
+      "duration_seconds": null
+    },
+    {
+      "id": "official-notion-16",
+      "product": "notion",
+      "title": "Database views and side peek",
+      "kind": "image",
+      "keywords": [
+        "table",
+        "board",
+        "gallery",
+        "timeline",
+        "side",
+        "peek"
+      ],
+      "status": "link-only",
+      "source_url": "https://www.notion.com/help/views-filters-and-sorts",
+      "media_url": null,
+      "notes": "Official documentation or demo located; media playback and exact timing unverified.",
+      "license": "redistribution not established",
+      "duration_seconds": null
+    },
+    {
+      "id": "official-readwise-17",
+      "product": "readwise",
+      "title": "PDF reader",
+      "kind": "documentation",
+      "keywords": [
+        "pdf",
+        "highlight",
+        "annotate",
+        "text",
+        "mode"
+      ],
+      "status": "link-only",
+      "source_url": "https://docs.readwise.io/reader/docs/faqs/pdfs",
+      "media_url": null,
+      "notes": "Official documentation or demo located; media playback and exact timing unverified.",
+      "license": "redistribution not established",
+      "duration_seconds": null
+    },
+    {
+      "id": "official-readwise-18",
+      "product": "readwise",
+      "title": "Video and transcript",
+      "kind": "documentation",
+      "keywords": [
+        "video",
+        "transcript",
+        "timecode",
+        "highlight"
+      ],
+      "status": "link-only",
+      "source_url": "https://docs.readwise.io/reader/docs/faqs/videos",
+      "media_url": null,
+      "notes": "Official documentation or demo located; media playback and exact timing unverified.",
+      "license": "redistribution not established",
+      "duration_seconds": null
+    },
+    {
+      "id": "official-vscode-19",
+      "product": "vscode",
+      "title": "Custom layout",
+      "kind": "documentation",
+      "keywords": [
+        "editor",
+        "groups",
+        "tabs",
+        "split",
+        "panes"
+      ],
+      "status": "link-only",
+      "source_url": "https://code.visualstudio.com/docs/configure/custom-layout",
+      "media_url": null,
+      "notes": "Official documentation or demo located; media playback and exact timing unverified.",
+      "license": "redistribution not established",
+      "duration_seconds": null
+    },
+    {
+      "id": "official-figma-20",
+      "product": "figma",
+      "title": "Prototype animations",
+      "kind": "image",
+      "keywords": [
+        "smart",
+        "animate",
+        "easing",
+        "prototype"
+      ],
+      "status": "link-only",
+      "source_url": "https://help.figma.com/hc/en-us/articles/360040522373-Prototype-animations",
+      "media_url": null,
+      "notes": "Official documentation or demo located; media playback and exact timing unverified.",
+      "license": "redistribution not established",
+      "duration_seconds": null
+    },
+    {
+      "id": "official-figma-21",
+      "product": "figma",
+      "title": "Videos in prototypes",
+      "kind": "image",
+      "keywords": [
+        "video",
+        "playback",
+        "prototype"
+      ],
+      "status": "link-only",
+      "source_url": "https://help.figma.com/hc/en-us/articles/8878274530455-Use-videos-in-prototypes",
+      "media_url": null,
+      "notes": "Official documentation or demo located; media playback and exact timing unverified.",
+      "license": "redistribution not established",
+      "duration_seconds": null
+    },
+    {
+      "id": "official-motion-22",
+      "product": "motion",
+      "title": "Layout animation live example",
+      "kind": "demo",
+      "keywords": [
+        "layout",
+        "spring"
+      ],
+      "status": "link-only",
+      "source_url": "https://motion.dev/examples/react-layout-animation",
+      "media_url": null,
+      "notes": "Official documentation or demo located; media playback and exact timing unverified.",
+      "license": "redistribution not established",
+      "duration_seconds": null
+    },
+    {
+      "id": "official-motion-23",
+      "product": "motion",
+      "title": "Reorder live example",
+      "kind": "demo",
+      "keywords": [
+        "reorder",
+        "drag"
+      ],
+      "status": "link-only",
+      "source_url": "https://motion.dev/examples/react-reorder-items",
+      "media_url": null,
+      "notes": "Official documentation or demo located; media playback and exact timing unverified.",
+      "license": "redistribution not established",
+      "duration_seconds": null
+    },
+    {
+      "id": "official-motion-24",
+      "product": "motion",
+      "title": "Examples catalog",
+      "kind": "demo",
+      "keywords": [
+        "motion",
+        "examples",
+        "premium",
+        "check"
+      ],
+      "status": "link-only",
+      "source_url": "https://motion.dev/examples",
+      "media_url": null,
+      "notes": "Official documentation or demo located; media playback and exact timing unverified.",
+      "license": "redistribution not established",
+      "duration_seconds": null
+    },
+    {
+      "id": "official-qconcursos-25",
+      "product": "qconcursos",
+      "title": "Question filters",
+      "kind": "documentation",
+      "keywords": [
+        "questões",
+        "filtros",
+        "caderno",
+        "simulado"
+      ],
+      "status": "link-only",
+      "source_url": "https://suporte.qconcursos.com/pt-BR/articles/12118570-como-usar-os-filtros-de-questoes",
+      "media_url": null,
+      "notes": "Official documentation or demo located; media playback and exact timing unverified.",
+      "license": "redistribution not established",
+      "duration_seconds": null
+    },
+    {
+      "id": "official-qconcursos-26",
+      "product": "qconcursos",
+      "title": "Question notebook",
+      "kind": "documentation",
+      "keywords": [
+        "caderno",
+        "questões",
+        "filtro"
+      ],
+      "status": "link-only",
+      "source_url": "https://suporte.qconcursos.com/pt-BR/articles/11655308-como-criar-um-caderno-de-questoes",
+      "media_url": null,
+      "notes": "Official documentation or demo located; media playback and exact timing unverified.",
+      "license": "redistribution not established",
+      "duration_seconds": null
+    }
+  ]
+}
