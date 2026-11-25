@@ -210,6 +210,24 @@ window.renderArchiveComponent = function renderArchiveComponent(container, entry
         const Img = ({ src, alt, ...rest }) => React.createElement("img", { src: typeof src === "string" ? src : "", alt: alt || "", ...rest });
         return { __esModule: true, default: Img };
       }
+      if (spec === "@base-ui/react/merge-props") {
+        return {
+          __esModule: true,
+          mergeProps: (...objs) => Object.assign({}, ...objs.filter((o) => o && typeof o === "object")),
+        };
+      }
+      if (spec === "@base-ui/react/use-render") {
+        return {
+          __esModule: true,
+          useRender: ({ defaultTagName = "div", props = {}, render } = {}) => {
+            const clean = { ...props };
+            delete clean.render;
+            if (typeof render === "function") return render(clean);
+            if (React.isValidElement(render)) return React.cloneElement(render, clean);
+            return React.createElement(defaultTagName || "div", clean);
+          },
+        };
+      }
       if (spec.endsWith(".css") || spec.endsWith(".scss")) return {};
       const resolved = resolveFromMap(files, modPath, spec);
       if (resolved) return loadModule(resolved);
@@ -232,52 +250,100 @@ window.renderArchiveComponent = function renderArchiveComponent(container, entry
   try {
     const exportsObj = loadModule(entryPath);
     const exportedNames = Object.keys(exportsObj).filter((k) => k !== "__esModule");
-    let Comp = null;
-    if (typeof exportsObj.default === "function" || (exportsObj.default && exportsObj.default.$$typeof)) {
-      Comp = exportsObj.default;
+
+    let element = null;
+    if (exportsObj.SidebarProvider && exportsObj.Sidebar && exportsObj.SidebarMenu && exportsObj.SidebarMenuButton) {
+      const {
+        SidebarProvider,
+        Sidebar,
+        SidebarHeader,
+        SidebarContent,
+        SidebarGroup,
+        SidebarGroupLabel,
+        SidebarGroupContent,
+        SidebarMenu,
+        SidebarMenuItem,
+        SidebarMenuButton,
+      } = exportsObj;
+      const navItems = [
+        { label: "Inicio", active: true },
+        { label: "Questoes", active: false },
+        { label: "Simulados", active: false },
+        { label: "Caderno de Erros", active: false },
+        { label: "Revisao", active: false },
+      ];
+      const menuItems = navItems.map((item) =>
+        React.createElement(
+          SidebarMenuItem,
+          { key: item.label },
+          React.createElement(SidebarMenuButton, { isActive: item.active }, item.label)
+        )
+      );
+      const menu = React.createElement(SidebarMenu, null, menuItems);
+      const groupInner = SidebarGroupContent ? React.createElement(SidebarGroupContent, null, menu) : menu;
+      const group = SidebarGroup
+        ? React.createElement(
+            SidebarGroup,
+            null,
+            SidebarGroupLabel ? React.createElement(SidebarGroupLabel, null, "Exams App") : null,
+            groupInner
+          )
+        : groupInner;
+      const content = SidebarContent ? React.createElement(SidebarContent, null, group) : group;
+      const header = SidebarHeader ? React.createElement(SidebarHeader, null, React.createElement("strong", null, "Exams App")) : null;
+      element = React.createElement(
+        SidebarProvider,
+        { defaultOpen: true },
+        React.createElement(Sidebar, { collapsible: "none" }, header, content)
+      );
     } else {
-      for (const name of exportedNames) {
-        if (/^[A-Z]/.test(name) && !/Provider|Context$/i.test(name)) {
-          const val = exportsObj[name];
-          if (typeof val === "function" || (val && val.$$typeof)) {
-            Comp = val;
-            break;
+      let Comp = null;
+      if (typeof exportsObj.default === "function" || (exportsObj.default && exportsObj.default.$$typeof)) {
+        Comp = exportsObj.default;
+      } else {
+        for (const name of exportedNames) {
+          if (/^[A-Z]/.test(name) && !/Provider|Context$/i.test(name)) {
+            const val = exportsObj[name];
+            if (typeof val === "function" || (val && val.$$typeof)) {
+              Comp = val;
+              break;
+            }
           }
         }
       }
-    }
 
-    if (!Comp) {
-      root.render(React.createElement("div", { className: "pv-info" },
-        React.createElement("strong", null, "Modulo carregado sem componente padrao renderizavel"),
-        React.createElement("p", null, "Exportacoes encontradas: " + (exportedNames.join(", ") || "nenhuma"))
-      ));
-      return;
-    }
+      if (!Comp) {
+        root.render(React.createElement("div", { className: "pv-info" },
+          React.createElement("strong", null, "Modulo carregado sem componente padrao renderizavel"),
+          React.createElement("p", null, "Exportacoes encontradas: " + (exportedNames.join(", ") || "nenhuma"))
+        ));
+        return;
+      }
 
-    const Provider = exportsObj.SidebarProvider || exportsObj.TooltipProvider || null;
-    const sampleProps = {
-      title: "Preview",
-      label: "Exemplo",
-      children: "Conteudo de demonstracao",
-      items: [
-        { id: "1", title: "Inicio", label: "Inicio", href: "#" },
-        { id: "2", title: "Questoes", label: "Questoes", href: "#" },
-        { id: "3", title: "Caderno de erros", label: "Caderno de erros", href: "#" },
-      ],
-      error: new Error("Erro simulado de preview"),
-      reset: () => {},
-    };
-    let element = React.createElement(Comp, sampleProps);
-    if (Provider && Provider !== Comp) {
-      element = React.createElement(Provider, { defaultOpen: true }, element);
+      const Provider = exportsObj.SidebarProvider || exportsObj.TooltipProvider || null;
+      const sampleProps = {
+        title: "Preview",
+        label: "Exemplo",
+        children: "Conteudo de demonstracao",
+        items: [
+          { id: "1", title: "Inicio", label: "Inicio", href: "#" },
+          { id: "2", title: "Questoes", label: "Questoes", href: "#" },
+          { id: "3", title: "Caderno de erros", label: "Caderno de erros", href: "#" },
+        ],
+        error: new Error("Erro simulado de preview"),
+        reset: () => {},
+      };
+      element = React.createElement(Comp, sampleProps);
+      if (Provider && Provider !== Comp) {
+        element = React.createElement(Provider, { defaultOpen: true }, element);
+      }
     }
 
     root.render(
       React.createElement(PreviewErrorBoundary, null,
         React.createElement("div", { className: "pv-stage" },
           React.createElement("div", { className: "pv-banner" },
-            "Preview experimental TSX · " + entryPath + " · Exports: " + exportedNames.slice(0, 8).join(", ")
+            "Preview TSX · " + entryPath + " · " + exportedNames.length + " exports"
           ),
           React.createElement("div", { className: "pv-canvas" }, element)
         )
