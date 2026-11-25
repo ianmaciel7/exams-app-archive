@@ -11,6 +11,17 @@ class VisualReferenceTests(unittest.TestCase):
         rows = mod.load()
         self.assertGreaterEqual(len(rows), 36)
         self.assertEqual(mod.verify(rows), [])
+    def test_segments(self):
+        rows = mod.load()
+        timed = [r for r in rows if r.get("segment_evidence")]
+        for row in timed:
+            e = row["segment_evidence"]
+            self.assertEqual(e["source_blob_sha"], row["blob_sha"])
+            self.assertGreaterEqual(len(e["keyframes"]), 2)
+            self.assertLessEqual(len(e["keyframes"]), 3)
+            self.assertEqual(e["semantic_review"], "not-inspected")
+            if e["clip"]:
+                self.assertLessEqual(e["clip"]["duration_seconds"], 8.1)
     def test_search(self):
         self.assertTrue(mod.search(mod.load(), "side panel"))
         videos = mod.search(mod.load(), kind="video", status="archived-blob-verified")

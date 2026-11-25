@@ -1,0 +1,37 @@
+name: Extract public visual evidence
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scripts/extract_visual_segments.py
+      - .github/workflows/extract-visual-segments.yml
+permissions:
+  contents: write
+concurrency:
+  group: public-visual-segment-extraction
+  cancel-in-progress: false
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decode licensed sources and verify derived evidence
+        run: |
+          set -euo pipefail
+          command -v ffmpeg
+          command -v ffprobe
+          python scripts/extract_visual_segments.py
+          python scripts/visual_reference_index.py --verify
+          python scripts/research_index.py --coverage
+          python -m unittest discover -s tests -p 'test_visual_reference_index.py'
+      - name: Commit only approved public derivatives
+        run: |
+          set -euo pipefail
+          git add -- docs/references/visual-evidence-library/manifest.json docs/references/visual-evidence-library/media/segments/
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Extract verified lightweight visual timelines (refs #67 #75)'
+          git push origin HEAD:main

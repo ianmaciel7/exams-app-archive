@@ -37,6 +37,22 @@ def verify(records):
             sha = hashlib.sha1(f"blob {len(data)}\0".encode() + data).hexdigest()
             if sha != r["blob_sha"] or len(data) != r["bytes"]:
                 errors.append(f"blob mismatch: {ident}")
+            ev = r.get("segment_evidence")
+            if ev:
+                if ev["source_blob_sha"] != r["blob_sha"] or not 0 <= ev["segment"]["start_seconds"] < ev["segment"]["end_seconds"] <= ev["duration_seconds"]:
+                    errors.append(f"invalid segment: {ident}")
+                for asset in ev["keyframes"] + ([ev["clip"]] if ev.get("clip") else []):
+                    rel = asset["path"]
+                    if not re.fullmatch(r"media/segments/[a-zA-Z0-9_.-]+", rel):
+                        errors.append(f"unsafe derivative: {ident}"); continue
+                    file = (LIB / rel).resolve()
+                    if not file.is_relative_to(LIB.resolve()) or not file.is_file():
+                        errors.append(f"missing derivative: {ident}"); continue
+                    data = file.read_bytes()
+                    if len(data) != asset["bytes"] or hashlib.sha256(data).hexdigest() != asset["sha256"]:
+                        errors.append(f"derivative mismatch: {ident}")
+                    if "timestamp_seconds" in asset and not 0 <= asset["timestamp_seconds"] <= ev["duration_seconds"]:
+                        errors.append(f"invalid timestamp: {ident}")
         elif r["status"] == "link-only":
             if "path" in r: errors.append(f"link-only has local path: {ident}")
         else: errors.append(f"unknown status: {ident}")
@@ -57,7 +73,12 @@ def export_public(records, output):
             rel = row[key]
             if not re.fullmatch(r"media/[a-z0-9-]+/[a-zA-Z0-9_.-]+", rel):
                 raise ValueError("unapproved public path")
-            paths.add(rel)
+            if key != "path" or not row.get("segment_evidence"):
+                paths.add(rel)
+        ev = row.get("segment_evidence")
+        if ev:
+            for asset in ev["keyframes"] + ([ev["clip"]] if ev.get("clip") else []):
+                paths.add(asset["path"])
     if output.exists() and any(output.iterdir()):
         raise ValueError("output must be empty")
     for rel in sorted(paths):
