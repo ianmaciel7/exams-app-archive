@@ -48,13 +48,18 @@ async function loadPublicSources() {
       if (allowedRepos.has(s.repo)) publicRepos.add(s.repo);
     }
     const select = $("source-repo");
-    const sortedRepos = [...publicRepos].sort();
+    const repoOrder = ["exams-app-old", "exams-app-antigo-2", "exams-app", "shadcn-template", "shadcn-firebase-template"];
+    const sortedRepos = [...publicRepos].sort((a, b) => {
+      const ia = repoOrder.indexOf(a);
+      const ib = repoOrder.indexOf(b);
+      return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib) || a.localeCompare(b);
+    });
     select.replaceChildren(...sortedRepos.map((repo) => new Option(repo, repo)));
     refreshRefs();
     $("load-public").disabled = !publicRepos.size;
     const opened = await openRequestedFile();
     if (!opened && publicRepos.size) {
-      loadSelectedSnapshot();
+      await loadSelectedSnapshot(true);
     } else if (!publicRepos.size) {
       status("Nenhum repositório público disponível. Use uma pasta local.");
     }
@@ -71,7 +76,8 @@ function refreshRefs() {
     .filter((s) => s.repo === repo)
     .sort((a, b) => (b.files?.length || 0) - (a.files?.length || 0));
   for (const s of snaps) {
-    const label = (s.refs || []).join(", ") + " (" + (s.files?.length || 0) + " arquivos)";
+    const cleanRefs = (s.refs || []).map((r) => r.replace(/^branch:/, "")).join(", ");
+    const label = cleanRefs + " (" + (s.files?.length || 0) + ")";
     sel.append(new Option(label, s.sha));
   }
 }
@@ -174,6 +180,32 @@ function tab(preview) {
   setMode(preview ? "preview" : "code");
 }
 
+function svgIcon(kind) {
+  const ns = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(ns, "svg");
+  svg.setAttribute("width", "14");
+  svg.setAttribute("height", "14");
+  svg.setAttribute("viewBox", "0 0 24 24");
+  svg.setAttribute("fill", "none");
+  svg.setAttribute("stroke", "currentColor");
+  svg.setAttribute("stroke-width", "1.8");
+  svg.setAttribute("stroke-linecap", "round");
+  svg.setAttribute("stroke-linejoin", "round");
+  svg.setAttribute("aria-hidden", "true");
+  svg.classList.add("tree-svg", "tree-svg-" + kind);
+  const paths = {
+    folder: ["M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"],
+    react: ["M12 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0", "M12 5c5 0 9 3.1 9 7s-4 7-9 7-9-3.1-9-7 4-7 9-7z"],
+    file: ["M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", "M14 2v4a2 2 0 0 0 2 2h4"],
+  }[kind] || [];
+  for (const d of paths) {
+    const p = document.createElementNS(ns, "path");
+    p.setAttribute("d", d);
+    svg.append(p);
+  }
+  return svg;
+}
+
 function renderTree() {
   const root = $("tree");
   root.replaceChildren();
@@ -202,19 +234,11 @@ function renderTree() {
       const folder = item.children.size > 0;
       const row = node("button", undefined, "tree-row");
       row.type = "button";
-      const indent = node("span", undefined, "tree-indent");
-      indent.textContent = "\u00a0".repeat(Math.min(depth, 12) * 3);
-      const glyph = folder
-        ? state.expanded.has(path) || query
-          ? "▾"
-          : "▸"
-        : isReact(path)
-        ? "R"
-        : "·";
-      row.append(indent, node("span", glyph, "tree-glyph"), node("span", name, "tree-name"));
-      row.title = path;
+      row.style.paddingLeft = String(8 + Math.min(depth, 10) * 14) + "px";
       if (folder) {
         const open = state.expanded.has(path) || !!query;
+        row.append(node("span", open ? "▾" : "▸", "tree-chevron"), svgIcon("folder"), node("span", name, "tree-name"));
+        row.title = path;
         row.setAttribute("aria-expanded", String(open));
         row.addEventListener("click", () => {
           if (state.expanded.has(path)) state.expanded.delete(path);
@@ -224,6 +248,8 @@ function renderTree() {
         parent.append(row);
         if (open) walk(parent, item, path, depth + 1);
       } else {
+        row.append(node("span", "", "tree-chevron"), svgIcon(isReact(path) ? "react" : "file"), node("span", name, "tree-name"));
+        row.title = path;
         row.setAttribute("aria-current", String(state.selected?.path === path));
         row.addEventListener("click", () => select(item.entry));
         parent.append(row);
@@ -241,7 +267,6 @@ function install(mode, entries, repo = "", sha = "") {
   state.sha = sha;
   state.entries = entries;
   state.expanded = new Set();
-  // Auto-expand top-level src or app folders for quick discovery
   for (const e of entries) {
     const first = e.path.split("/")[0];
     if (first === "src" || first === "app" || first === "components") state.expanded.add(first);
@@ -257,7 +282,7 @@ function install(mode, entries, repo = "", sha = "") {
   );
 }
 
-function loadSelectedSnapshot() {
+async function loadSelectedSnapshot(autoPick = false) {
   const epoch = ++state.epoch;
   const repo = $("source-repo").value;
   const ref = $("source-ref").value;
@@ -265,12 +290,24 @@ function loadSelectedSnapshot() {
     const snapshot = publicSnapshots.find((s) => s.repo === repo && s.sha === ref);
     if (!snapshot) throw Error("Revisão não encontrada no catálogo.");
     if (epoch !== state.epoch) return;
-    install(
-      "public",
-      snapshot.files.map((x) => ({ path: x.path, size: x.size, blob: x.blob, cached: !!x.cached })),
-      repo,
-      ref
-    );
+    const entries = snapshot.files.map((x) => ({ path: x.path, size: x.size, blob: x.blob, cached: !!x.cached }));
+    install("public", entries, repo, ref);
+    if (autoPick && entries.length) {
+      const preferred =
+        entries.find((e) => /sidebar\.tsx$/i.test(e.path) && !/test/i.test(e.path)) ||
+        entries.find((e) => /sidebar/i.test(e.path) && isReact(e.path)) ||
+        entries.find((e) => isReact(e.path)) ||
+        entries.find((e) => /readme\.md$/i.test(e.path)) ||
+        entries[0];
+      if (preferred) {
+        const parts = preferred.path.split("/");
+        for (let i = 1; i < parts.length; i++) state.expanded.add(parts.slice(0, i).join("/"));
+        await select(preferred);
+        if (isReact(preferred.path)) {
+          setMode("split");
+        }
+      }
+    }
   } catch (e) {
     if (epoch === state.epoch) status(e.message);
   }
@@ -279,10 +316,10 @@ function loadSelectedSnapshot() {
 $("load-refs").addEventListener("click", loadPublicSources);
 $("source-repo").addEventListener("change", () => {
   refreshRefs();
-  loadSelectedSnapshot();
+  loadSelectedSnapshot(true);
 });
-$("source-ref").addEventListener("change", loadSelectedSnapshot);
-$("load-public").addEventListener("click", loadSelectedSnapshot);
+$("source-ref").addEventListener("change", () => loadSelectedSnapshot(true));
+$("load-public").addEventListener("click", () => loadSelectedSnapshot(false));
 
 function loadLocal(files) {
   const list = [...files]

@@ -33,8 +33,10 @@
 .ws-button:hover{background:#f8fafc;border-color:#cbd5e1}
 .ws-context-trigger[aria-expanded=true]{background:#eff6ff;border-color:#93c5fd;color:#1d4ed8}
 
-/* 2-column layout by default; right drawer overlays cleanly when opened */
+/* 2-column layout by default; hide duplicate search sidebar when in Files view with no active query */
 .ws-layout{display:grid;grid-template-columns:270px minmax(0,1fr);height:calc(100dvh - 86px);min-height:580px;position:relative}
+.ws-layout[data-show-search=false]{grid-template-columns:minmax(0,1fr)}
+.ws-layout[data-show-search=false] .ws-left{display:none}
 .ws-left{background:#f8fafc;border-right:1px solid #e2e8f0}
 .ws-center{background:#ffffff}
 .ws-right{position:fixed;top:54px;right:0;bottom:32px;width:330px;max-width:92vw;background:#ffffff;border-left:1px solid #e2e8f0;box-shadow:-8px 0 24px rgba(15,23,42,.08);z-index:30}
@@ -56,25 +58,28 @@
 .files-intro h1{font-size:1.35rem;margin:0 0 4px;letter-spacing:-.02em}
 .files-intro p{margin:0;color:#64748b;font-size:13px}
 .files-page .file-layout{display:grid;grid-template-columns:265px minmax(0,1fr);gap:0;min-height:calc(100dvh - 54px)}
-.embedded-files .file-layout{grid-template-columns:250px minmax(0,1fr);min-height:100dvh}
+.embedded-files .file-layout{grid-template-columns:260px minmax(0,1fr);min-height:100dvh}
 .embedded-files .files-intro,.embedded-files .topbar,.embedded-files footer{display:none}
 .embedded-files .files-shell{padding:0}
 .embedded-files .file-workspace{padding:0}
 
-.files-page .tree-pane{background:#f8fafc;border:0;border-right:1px solid #e2e8f0;border-radius:0;padding:14px 12px;display:flex;flex-direction:column;gap:10px}
-.tree-selectors{display:grid;gap:8px}
-.tree-selectors label{display:grid;gap:4px;font-size:11.5px;font-weight:600;color:#475569}
-.tree-selectors select{width:100%;border:1px solid #e2e8f0;border-radius:7px;padding:6px 8px;background:#ffffff;color:#0f172a;font-size:12.5px}
-.tree-selector-actions{display:flex;gap:6px}
-.tree-selector-actions button{flex:1;padding:5px 8px;font-size:11.5px}
+.files-page .tree-pane{background:#f8fafc;border:0;border-right:1px solid #e2e8f0;border-radius:0;padding:16px 14px;display:flex;flex-direction:column;gap:12px}
+.tree-selectors{display:grid;gap:10px}
+.tree-selectors label{display:grid;gap:5px;font-size:12px;font-weight:600;color:#334155}
+.tree-selectors select{width:100%;border:1px solid #e2e8f0;border-radius:8px;padding:7px 10px;background:#ffffff;color:#0f172a;font-size:13px}
+.tree-selector-actions{display:none}
 .tree-toggle-row{padding:2px 0}
-.tree-switch{display:flex;align-items:center;gap:7px;font-size:12px;color:#334155;cursor:pointer}
-.tree-switch input{accent-color:#2563eb}
-.files-page .tree-pane input[type=search]{margin:0;border:1px solid #e2e8f0;border-radius:7px;padding:7px 9px;background:#ffffff;font-size:12.5px}
-.files-page .file-tree{flex:1;max-height:none;min-height:240px;overflow:auto}
-.tree-row{font-size:12.5px;padding:5px 7px;border-radius:6px;color:#334155}
-.tree-row:hover{background:#e2e8f055}
+.tree-switch{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12.5px;font-weight:500;color:#334155;cursor:pointer}
+.tree-switch input{accent-color:#2563eb;width:15px;height:15px}
+.files-page .tree-pane input[type=search]{margin:0;border:1px solid #e2e8f0;border-radius:8px;padding:7px 10px;background:#ffffff;font-size:12.5px}
+.files-page .file-tree{flex:1;max-height:none;min-height:240px;overflow:auto;display:flex;flex-direction:column;gap:1px}
+.tree-row{display:flex;align-items:center;gap:6px;font-size:13px;padding:6px 8px;border-radius:7px;color:#334155}
+.tree-row:hover{background:#e2e8f066}
 .tree-row[aria-current=true]{background:#dbeafe;color:#1d4ed8;font-weight:600}
+.tree-chevron{width:10px;flex-shrink:0;font-size:11px;color:#64748b;text-align:center}
+.tree-svg{flex-shrink:0;color:#64748b}
+.tree-row[aria-current=true] .tree-svg{color:#2563eb}
+.tree-svg-react{color:#3b82f6}
 .tree-local-footer{display:flex;gap:6px;padding-top:8px;border-top:1px solid #e2e8f0}
 .tree-local-footer .local-btn{flex:1;text-align:center;font-size:11.5px;padding:5px 6px}
 .files-page #file-status{margin:0;font-size:11px;color:#64748b}
