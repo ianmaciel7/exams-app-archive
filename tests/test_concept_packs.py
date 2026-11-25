@@ -46,3 +46,39 @@ class ConceptPackTests(unittest.TestCase):
         pack = mod.build_pack("navigation", self.records, self.taxonomy)["packs"][0]
         self.assertGreater(pack["record_count"], 4)
         self.assertTrue(all(o["classification"] in {"curated", "lexical-candidate"} for b in pack["evidence"] for o in b["occurrences"]))
+
+    def test_23_domains_and_backward_compatibility(self):
+        by_id = mod.validate(self.taxonomy, self.records)
+        concepts, _ = mod.group_records(self.records, self.taxonomy)
+        expected_23 = {
+            "produto", "concursos", "aprendizagem", "avaliacao", "ia-informacao",
+            "workspace", "objetos", "visualizacoes", "design-system", "interacao",
+            "motion", "acessibilidade", "responsividade", "ai-native-ux",
+            "engenharia", "arquitetura-tecnica", "qualidade", "historico",
+            "midia", "referencias-externas", "conhecimento-humano", "operacoes",
+            "governanca",
+        }
+        for domain in sorted(expected_23):
+            cid = f"domain.{domain}"
+            self.assertIn(cid, by_id)
+            self.assertEqual(mod.resolve(cid, concepts), [cid], f"Failed to resolve {cid}")
+        pack = mod.build_pack("domain.concursos", self.records, self.taxonomy)
+        self.assertEqual(pack["status"], "resolved")
+        self.assertEqual(pack["packs"][0]["concept"]["id"], "domain.concursos")
+        # Preserve original 15 concepts intact
+        original_15 = {
+            "ui.navigation", "ui.navigation.sidebar", "ui.navigation.side-panel",
+            "ui.navigation.tabs", "ui.collection", "ui.collection.kanban",
+            "ui.interaction", "ui.interaction.reorder", "ui.interaction.filter",
+            "ui.motion", "ui.ai", "ui.ai.artifact", "ui.visualization",
+            "ui.whiteboard", "ui.visual-language",
+        }
+        self.assertTrue(original_15.issubset(by_id.keys()))
+        self.assertEqual(by_id["ui.navigation.sidebar"]["parent"], "ui.navigation")
+        self.assertEqual(by_id["ui.navigation.side-panel"]["parent"], "ui.navigation")
+        self.assertEqual(by_id["ui.navigation.tabs"]["parent"], "ui.navigation")
+        self.assertEqual(by_id["ui.collection.kanban"]["parent"], "ui.collection")
+        self.assertEqual(by_id["ui.interaction.reorder"]["parent"], "ui.interaction")
+        self.assertEqual(by_id["ui.interaction.filter"]["parent"], "ui.interaction")
+        self.assertEqual(by_id["ui.ai.artifact"]["parent"], "ui.ai")
+

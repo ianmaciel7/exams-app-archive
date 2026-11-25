@@ -44,6 +44,18 @@ VALID_PROVENANCE_STATUSES = frozenset({"verified", "unverified", "not-recovered"
 ARTIFICIAL_SHA_PREFIXES = ("b000", "d000", "q000", "f000", "s000", "g000")
 GIT_SHA1_RE = re.compile(r"^[0-9a-fA-F]{40}$")
 
+
+def resolve_with_ontology(query: str, domain: str | None = None, **kwargs: Any) -> dict[str, Any]:
+    """Delegate multidomain resolution, ContextKey lookup, and rule retrieval to domain_ontology."""
+    import domain_ontology
+    return domain_ontology.resolve_query(query, domain=domain, **kwargs)
+
+
+def sanitize_indexed_text(text: Any, *, max_length: int = 800) -> tuple[str, bool]:
+    """Sanitize untrusted indexed text against prompt-injection directives via domain_ontology."""
+    import domain_ontology
+    return domain_ontology.sanitize_untrusted_text(text, max_length=max_length)
+
 DEFAULT_INVESTIGATED_REFS = [
     "refs/heads/main",
     "refs/heads/dev",
