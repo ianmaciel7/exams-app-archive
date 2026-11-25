@@ -3,12 +3,14 @@
   "source_of_truth": "ianmaciel7/exams-app-archive@main:plugins/exams-archive-native/",
   "plugin_id": "plugins_6b04aaa9fd848191a24525011f76e2bb",
   "desired_version": "0.8.1",
-  "last_published_release_id": "pluginrel_6b05cabf4a84819182a5509e963ada1f",
-  "last_published_version": "0.8.0",
-  "status": "pending-publication",
-  "note": "sync-ux-knowledge workflow added to canonical source; private plugin publication and readback pending",
-  "verified_files": 20,
+  "last_published_release_id": "pluginrel_6b06df1a59188191af956d00ec226ee5",
+  "last_published_version": "0.8.1",
+  "status": "verified-synced",
+  "note": "20 of 21 source files byte-identical; Codex manifest JSON semantically identical (formatting differs). New sync-ux-knowledge skill byte-identical. Workflow runtime test and other client validation not yet performed.",
+  "verified_files": 21,
   "byte_identical_files": 20,
-  "json_semantic_equivalent_files": [],
-  "verified_commit": "aa52b6ee382b2dce70f67dcbf0aae2fe7445e8c7"
+  "json_semantic_equivalent_files": [
+    ".codex-plugin/plugin.json"
+  ],
+  "verified_commit": "181cba665937089c37e91239c2d97e06ddc0eb90"
 }
