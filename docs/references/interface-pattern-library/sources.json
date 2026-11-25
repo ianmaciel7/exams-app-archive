@@ -2543,6 +2543,356 @@
       "status": "Linked by reopened useHover documentation; individual body not re-fetched",
       "storage": "link-only",
       "notes": "Microinteraction behavior, component states, timing and motion; check scope and support before adoption."
+    },
+    {
+      "id": "agent-design-vaeghi",
+      "title": "Component Contracts: The missing piece for AI-era Design System handoff",
+      "url": "https://medium.com/design-bootcamp/component-contracts-the-missing-piece-for-ai-era-design-system-handoff-41edb55bf031",
+      "kind": "practitioner-or-educational",
+      "recorded_on": "2026-11-25",
+      "status": "article-body",
+      "storage": "link-only",
+      "notes": "Behavioral JSON contracts capture props, transitions, triggers, events, accessibility, responsiveness and composition; tokens/Figma cover appearance. Practitioner case, not universal validation."
+    },
+    {
+      "id": "agent-design-spiegel",
+      "title": "Agentic Design Systems",
+      "url": "https://peter-spiegel.medium.com/agentic-design-systems-86829290139e",
+      "kind": "practitioner-or-educational",
+      "recorded_on": "2026-11-25",
+      "status": "article-body",
+      "storage": "link-only",
+      "notes": "Separate UI and UX contracts; link behavioral requirements to evidence and tests, keep human interpretation and decisions."
+    },
+    {
+      "id": "agent-design-vallaure",
+      "title": "Design system contracts: the component lives in neither Figma nor code",
+      "url": "https://uxdesign.cc/design-system-contracts-the-component-lives-in-neither-figma-nor-code-3032d94ca067",
+      "kind": "practitioner-or-educational",
+      "recorded_on": "2026-11-25",
+      "status": "article-body",
+      "storage": "link-only",
+      "notes": "Structured shared contract limits drift across design and code; reported A/B numbers are attributed to Southleft, not independently replicated."
+    },
+    {
+      "id": "agent-design-madhesh",
+      "title": "Your Buttons Need More Than Names: Documenting Component Intent",
+      "url": "https://madheshp.medium.com/your-buttons-need-more-than-names-documenting-component-intent-52f227da864c",
+      "kind": "practitioner-or-educational",
+      "recorded_on": "2026-11-25",
+      "status": "indexed-body-direct-failed",
+      "storage": "link-only",
+      "notes": "Purpose, use and avoid contexts, expected activation outcome, feedback, accessibility and exceptions; proposed template, not validated trial."
+    },
+    {
+      "id": "agent-design-feng-variants",
+      "title": "States vs. Variants: The Most Misunderstood Concept in Design Systems",
+      "url": "https://medium.com/%40EthanFeng/states-vs-variants-the-most-misunderstood-concept-in-design-systems-8f832f854fe6",
+      "kind": "practitioner-or-educational",
+      "recorded_on": "2026-11-25",
+      "status": "member-preview",
+      "storage": "link-only",
+      "notes": "Available introduction distinguishes temporary behavior from structural identity; full member-only body not inspected."
+    },
+    {
+      "id": "agent-design-feng-states",
+      "title": "The Illusion of the Perfect Screen",
+      "url": "https://medium.com/%40EthanFeng/the-illusion-of-the-perfect-screen-why-component-states-are-the-true-test-of-product-design-e5d247fd403e",
+      "kind": "practitioner-or-educational",
+      "recorded_on": "2026-11-25",
+      "status": "indexed-excerpt-direct-failed",
+      "storage": "link-only",
+      "notes": "Search-index excerpt emphasizes transitions and non-default states; full member-only article not read."
+    },
+    {
+      "id": "agent-design-daggett",
+      "title": "The Realities of Getting a Design System Ready for AI",
+      "url": "https://medium.com/societe-generale-design/the-realities-of-getting-a-design-system-ready-for-ai-08073cf642cf",
+      "kind": "practitioner-or-educational",
+      "recorded_on": "2026-11-25",
+      "status": "article-body",
+      "storage": "link-only",
+      "notes": "Societe Generale case: structured asset markup, prop tables, examples, guidelines, instructions, skills and testing; context scope matters."
+    },
+    {
+      "id": "agent-design-horner",
+      "title": "How to Make Your Design System Agent-Ready",
+      "url": "https://medium.com/design-bootcamp/how-to-make-your-design-system-agent-ready-ea4cfc062270",
+      "kind": "practitioner-or-educational",
+      "recorded_on": "2026-11-25",
+      "status": "article-body",
+      "storage": "link-only",
+      "notes": "Tokens plus concise global DESIGN.md, registries and individual component/pattern/template files; separate authoring, specification and delivery."
+    },
+    {
+      "id": "agent-design-caillet",
+      "title": "DESIGN.md + a skill",
+      "url": "https://medium.com/%40guillaumeclt/design-md-a-skill-how-i-turned-my-design-system-into-something-an-ai-can-actually-really-use-1eff5699b05b",
+      "kind": "practitioner-or-educational",
+      "recorded_on": "2026-11-25",
+      "status": "article-body",
+      "storage": "link-only",
+      "notes": "Separate method from product content, route to references on demand, compare same briefs and require explicit review before changing system knowledge."
+    },
+    {
+      "id": "agent-design-nguyen",
+      "title": "AI-generated UI - from generic defaults to production-ready screens",
+      "url": "https://medium.com/design-bootcamp/ai-generated-ui-from-generic-defaults-to-production-ready-screens-0e7d1639ce38",
+      "kind": "practitioner-or-educational",
+      "recorded_on": "2026-11-25",
+      "status": "article-body",
+      "storage": "link-only",
+      "notes": "Proposed repeatable validation of generated screens: responsive/accessibility, coherence across flows, brand and contextual suitability, repair rather than appearance alone."
+    },
+    {
+      "id": "agent-design-queiroz",
+      "title": "Como preparei meu design system para ser lido por uma IA",
+      "url": "https://brasil.uxdesign.cc/como-preparei-meu-design-system-para-ser-lido-por-uma-ia-cdab30ae2981",
+      "kind": "practitioner-or-educational",
+      "recorded_on": "2026-11-25",
+      "status": "article-body",
+      "storage": "link-only",
+      "notes": "Separate system creation from consumption; primitive-semantic-component token chain and consult existing Storybook before assembling screens."
+    },
+    {
+      "id": "agent-design-wolosin",
+      "title": "Fully Machine-Readable Design Systems",
+      "url": "https://www.designsystemscollective.com/fully-machine-readable-design-systems-3d43329ec3e3",
+      "kind": "practitioner-or-educational",
+      "recorded_on": "2026-11-25",
+      "status": "article-body",
+      "storage": "link-only",
+      "notes": "MCP supplies current component facts, plugin supplies use, composition, spacing and taste; progressive context disclosure; one case study is not a universal benchmark."
+    },
+    {
+      "id": "agent-design-curtis-contracts",
+      "title": "Component Contracts and Schemas",
+      "url": "https://nathanacurtis.substack.com/p/component-contracts-and-schemas",
+      "kind": "practitioner-or-educational",
+      "recorded_on": "2026-11-25",
+      "status": "article-body",
+      "storage": "link-only",
+      "notes": "Typed, constrained properties and explicit relationships make design intent checkable and allow deterministic transformations."
+    },
+    {
+      "id": "agent-design-curtis-roundtrip",
+      "title": "What Component Specs Leave Behind",
+      "url": "https://nathanacurtis.substack.com/p/what-component-specs-leave-behind",
+      "kind": "practitioner-or-educational",
+      "recorded_on": "2026-11-25",
+      "status": "article-body",
+      "storage": "link-only",
+      "notes": "Generate baseline spec, render asset, generate new spec, diff; detect dropped, distorted or invented information."
+    },
+    {
+      "id": "agent-design-curtis-spec",
+      "title": "Spec-Driven UI Component Development",
+      "url": "https://nathanacurtis.substack.com/p/spec-driven-ui-component-development",
+      "kind": "practitioner-or-educational",
+      "recorded_on": "2026-11-25",
+      "status": "article-body",
+      "storage": "link-only",
+      "notes": "Normalize and version intent across authoring surfaces; use deterministic generation where possible, verify parity across Figma, prototypes and code."
+    },
+    {
+      "id": "agent-design-ahmed",
+      "title": "Foundations, Rules, and Context",
+      "url": "https://www.designsystemscollective.com/foundations-rules-and-context-rethinking-design-systems-for-the-ai-era-56c9a872e831",
+      "kind": "practitioner-or-educational",
+      "recorded_on": "2026-11-25",
+      "status": "member-preview",
+      "storage": "link-only",
+      "notes": "Title and introduction support three layers and warn that scraping code also inherits legacy inconsistencies; full body unavailable."
+    },
+    {
+      "id": "agent-design-metadata",
+      "title": "Design system documentation as structured metadata",
+      "url": "https://www.designsystemscollective.com/design-system-documentation-as-structured-metadata-315f62c6eab1",
+      "kind": "practitioner-or-educational",
+      "recorded_on": "2026-11-25",
+      "status": "article-body",
+      "storage": "link-only",
+      "notes": "Queryable usage, variant purpose, selection criteria and antipatterns with reasons and alternatives; proposed metadata, not a universal schema."
+    },
+    {
+      "id": "agent-design-lou",
+      "title": "The Art of Putting Things Back Together",
+      "url": "https://www.designsystemscollective.com/the-art-of-putting-things-back-together-a0b93bc086c6",
+      "kind": "practitioner-or-educational",
+      "recorded_on": "2026-11-25",
+      "status": "article-body",
+      "storage": "link-only",
+      "notes": "Component quality in isolation does not assure composition quality; respect boundaries and evaluate relationships and whole workflows."
+    },
+    {
+      "id": "agent-design-saglitz",
+      "title": "Visual Craft Standards",
+      "url": "https://saglitz.com/design/visual-craft-standards",
+      "kind": "practitioner-or-educational",
+      "recorded_on": "2026-11-25",
+      "status": "article-body",
+      "storage": "link-only",
+      "notes": "Distinguish brand and product registers; grouping, hierarchy, spacing, alignment and restrained containers. Numeric thresholds are author heuristics, not requirements."
+    },
+    {
+      "id": "agent-design-pujari",
+      "title": "The Design System as the Control Plane for AI-Generated UI",
+      "url": "https://www.oreilly.com/radar/the-design-system-as-the-control-plane-for-ai-generated-ui/",
+      "kind": "practitioner-or-educational",
+      "recorded_on": "2026-11-25",
+      "status": "article-body",
+      "storage": "link-only",
+      "notes": "Govern component APIs and agent rules; review gaps and new patterns intentionally rather than letting almost-standard components proliferate."
+    },
+    {
+      "id": "agent-design-figma-context",
+      "title": "LLM Context Design",
+      "url": "https://www.figma.com/resource-library/llm-context-design/",
+      "kind": "primary-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "official-guidance",
+      "storage": "link-only",
+      "notes": "Three layers: semantic tokens, usage specs and audit loop; explicit rules needed for edge cases."
+    },
+    {
+      "id": "agent-design-ixdf-align",
+      "title": "Visual Alignment",
+      "url": "https://ixdf.org/literature/topics/visual-alignment",
+      "kind": "practitioner-or-educational",
+      "recorded_on": "2026-11-25",
+      "status": "educational-body",
+      "storage": "link-only",
+      "notes": "Optical versus mathematical alignment, grouping, baseline rhythm and whitespace; adjust by perceptual evidence."
+    },
+    {
+      "id": "agent-design-nng-good",
+      "title": "Why Does a Design Look Good?",
+      "url": "https://www.nngroup.com/articles/why-does-design-look-good/",
+      "kind": "practitioner-or-educational",
+      "recorded_on": "2026-11-25",
+      "status": "educational-body",
+      "storage": "link-only",
+      "notes": "2021 examples of consistent type, hierarchy, restrained color palette and alignment grid; not a 2026 invention."
+    },
+    {
+      "id": "agent-design-crosley",
+      "title": "Design Principles for Software Engineers",
+      "url": "https://blakecrosley.com/guides/design",
+      "kind": "practitioner-or-educational",
+      "recorded_on": "2026-11-25",
+      "status": "educational-body",
+      "storage": "link-only",
+      "notes": "Guide updated August 2026 covers proximity, visual fundamentals, motion, web and AI patterns; spacing examples are illustrative."
+    },
+    {
+      "id": "agent-design-designspecs",
+      "title": "DesignSpecs preprint",
+      "url": "https://arxiv.org/abs/2611.17713",
+      "kind": "preprint",
+      "recorded_on": "2026-11-25",
+      "status": "abstract-access",
+      "storage": "link-only",
+      "notes": "13 Nov 2026 preprint: repository corpus, not a causal evaluation of generated UI or all design systems; earlier reported section frequencies are not comprehensive behavior analysis."
+    },
+    {
+      "id": "agent-design-designspecs-data",
+      "title": "DesignSpecs dataset",
+      "url": "https://huggingface.co/datasets/Jl-wei/DesignSpecs",
+      "kind": "dataset",
+      "recorded_on": "2026-11-25",
+      "status": "inaccessible",
+      "storage": "link-only",
+      "notes": "Dataset endpoint could not be reopened; retain URL without asserting independent inspection."
+    },
+    {
+      "id": "agent-design-google-spec",
+      "title": "Google DESIGN.md specification",
+      "url": "https://github.com/google-labs-code/design.md/blob/main/docs/spec.md",
+      "kind": "primary-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "official-guidance",
+      "storage": "link-only",
+      "notes": "Current spec supports root-relative external references in code spans and optional ordered sections; validate actual version and reference targets."
+    },
+    {
+      "id": "agent-design-atlassian-md",
+      "title": "Atlassian DESIGN.md",
+      "url": "https://atlassian.design/DESIGN.md",
+      "kind": "primary-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "official-example",
+      "storage": "link-only",
+      "notes": "Actual versioned portable token/prose example; not evidence that this artifact alone captures all production requirements."
+    },
+    {
+      "id": "agent-design-atlassian-eval",
+      "title": "Atlassian DESIGN.md practical test",
+      "url": "https://www.atlassian.com/blog/ai-at-work/atlassians-design-md-is-here-what-we-learned-testing-portable-design-context-in-practice",
+      "kind": "primary-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "official-case",
+      "storage": "link-only",
+      "notes": "June 15 2026 login-task test: DESIGN.md 7.21M vs MCP 3.75M average tokens, about 92% more, and reported 2.7x variance; authors explicitly caution results are inconclusive."
+    },
+    {
+      "id": "agent-design-uianatomy",
+      "title": "UI Anatomy methodology",
+      "url": "https://uianatomy.dev/methodology",
+      "kind": "practitioner-or-educational",
+      "recorded_on": "2026-11-25",
+      "status": "methodology",
+      "storage": "link-only",
+      "notes": "Document component anatomy independently of implementation, then map to implementations."
+    },
+    {
+      "id": "agent-design-carbon-checklist",
+      "title": "Carbon component checklist",
+      "url": "https://www.carbondesignsystem.com/getting-started/contributing/component-checklist",
+      "kind": "primary-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "official-guidance",
+      "storage": "link-only",
+      "notes": "Component specs must describe behavior such as reflow, overflow, expansion, scrolling and accessibility for implementation."
+    },
+    {
+      "id": "agent-design-openai-frontend",
+      "title": "OpenAI Frontend prompt instructions",
+      "url": "https://developers.openai.com/api/docs/guides/frontend-prompt",
+      "kind": "primary-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "official-guidance",
+      "storage": "link-only",
+      "notes": "Avoid generic nested cards and decorative clutter; stable layouts, fitting text and desktop/mobile rendered verification; adapt to existing systems."
+    },
+    {
+      "id": "agent-design-openai-delight",
+      "title": "Designing delightful frontends with GPT-5.4",
+      "url": "https://developers.openai.com/blog/designing-delightful-frontends-with-gpt-5-4",
+      "kind": "primary-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "official-guidance",
+      "storage": "link-only",
+      "notes": "Visual thesis, composition, reference imagery and constraints; promotional hero advice should not be imposed on dense applications."
+    },
+    {
+      "id": "agent-design-storybook",
+      "title": "Storybook interaction tests",
+      "url": "https://storybook.js.org/docs/writing-tests/interaction-testing",
+      "kind": "primary-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "official-guidance",
+      "storage": "link-only",
+      "notes": "Stories define initial state; play functions simulate actions and assert results. Isolated tests complement, not replace, end-to-end and accessibility tests."
+    },
+    {
+      "id": "agent-design-awesome",
+      "title": "Awesome DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md",
+      "kind": "practitioner-or-educational",
+      "recorded_on": "2026-11-25",
+      "status": "community-catalog",
+      "storage": "link-only",
+      "notes": "Collection of brand-derived design files for examples; not official specifications for every brand or proof of completeness."
     }
   ],
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",

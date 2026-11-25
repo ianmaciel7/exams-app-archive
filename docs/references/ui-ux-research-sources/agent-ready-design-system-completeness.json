@@ -1,0 +1,600 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-25",
+  "title": "Agent-ready Design System Completeness — Contracts, Composition and Design Craft",
+  "scope": "Product-independent research synthesis; not a product design system or implementation.",
+  "pattern_count": 26,
+  "patterns": [
+    {
+      "id": "intent",
+      "name": "Component Intent / Selection Rules",
+      "behavior": "Document purpose, use/avoid conditions, action outcome and alternatives, rather than only names.",
+      "acceptance": "Given submit, save and continue, select the correct action and explain its outcome.",
+      "source_ids": [
+        "agent-design-madhesh",
+        "agent-design-metadata",
+        "agent-design-figma-context"
+      ],
+      "priority": "context-dependent",
+      "evidence_status": "Synthesized recommendation; not a formal universal standard"
+    },
+    {
+      "id": "contract",
+      "name": "Component Behavioral Contract",
+      "behavior": "Specify props, events, guards, transitions, accessibility, responsiveness and composition; separate visual appearance from behavior.",
+      "acceptance": "Given allowed state and trigger, expected next state and side effects are testable.",
+      "source_ids": [
+        "agent-design-vaeghi",
+        "agent-design-spiegel",
+        "agent-design-carbon-checklist"
+      ],
+      "priority": "context-dependent",
+      "evidence_status": "Synthesized recommendation; not a formal universal standard"
+    },
+    {
+      "id": "states",
+      "name": "State vs Variant / State Matrix",
+      "behavior": "Separate configuration axes from runtime states, including valid combinations and error paths.",
+      "acceptance": "Loading+disabled and selected+focus combinations render and behave predictably.",
+      "source_ids": [
+        "agent-design-feng-variants",
+        "agent-design-feng-states",
+        "agent-design-vaeghi"
+      ],
+      "priority": "context-dependent",
+      "evidence_status": "Synthesized recommendation; not a formal universal standard"
+    },
+    {
+      "id": "anatomy",
+      "name": "Component Anatomy and Slots",
+      "behavior": "Define parts, slots, boundaries, required content and semantic relationships before choosing a framework.",
+      "acceptance": "Map each slot to an implementation and test missing/long content.",
+      "source_ids": [
+        "agent-design-uianatomy",
+        "agent-design-curtis-spec"
+      ],
+      "priority": "context-dependent",
+      "evidence_status": "Synthesized recommendation; not a formal universal standard"
+    },
+    {
+      "id": "typed",
+      "name": "Typed Component Schema",
+      "behavior": "Encode valid values, defaults, references and constraints using structured data; do not rely on name inference.",
+      "acceptance": "Reject invalid enum, unsupported prop and illegal composition in validation.",
+      "source_ids": [
+        "agent-design-curtis-contracts",
+        "agent-design-vallaure"
+      ],
+      "priority": "context-dependent",
+      "evidence_status": "Synthesized recommendation; not a formal universal standard"
+    },
+    {
+      "id": "tokens",
+      "name": "Semantic Token Chain",
+      "behavior": "Map primitives to semantic intent and component role where appropriate; avoid unapproved raw values.",
+      "acceptance": "Trace token from role to theme value and check light/dark usage.",
+      "source_ids": [
+        "agent-design-queiroz",
+        "agent-design-figma-context"
+      ],
+      "priority": "context-dependent",
+      "evidence_status": "Synthesized recommendation; not a formal universal standard"
+    },
+    {
+      "id": "composition",
+      "name": "Composition Rules / Design Grammar",
+      "behavior": "Define allowed structures and relationships, negative constraints, dependencies and alternatives; assess the assembled screen.",
+      "acceptance": "Compare whole screen with task and hierarchy, not isolated specimens.",
+      "source_ids": [
+        "agent-design-lou",
+        "agent-design-metadata",
+        "agent-design-wolosin"
+      ],
+      "priority": "context-dependent",
+      "evidence_status": "Synthesized recommendation; not a formal universal standard"
+    },
+    {
+      "id": "recipes",
+      "name": "Composition Recipes / Templates",
+      "behavior": "Provide representative combinations with context, variants, slots and counterexamples; avoid mandatory generic layouts.",
+      "acceptance": "Assemble two realistic flows from approved recipes and identify unsupported cases.",
+      "source_ids": [
+        "agent-design-horner",
+        "agent-design-wolosin",
+        "agent-design-lou"
+      ],
+      "priority": "context-dependent",
+      "evidence_status": "Synthesized recommendation; not a formal universal standard"
+    },
+    {
+      "id": "rhythm",
+      "name": "Spatial Rhythm / Information Density",
+      "behavior": "Define relationships between internal spacing and separation of groups, density by task and size.",
+      "acceptance": "Compare dense workspace and reading layout; no clipping or false grouping.",
+      "source_ids": [
+        "agent-design-wolosin",
+        "agent-design-ixdf-align",
+        "agent-design-crosley"
+      ],
+      "priority": "context-dependent",
+      "evidence_status": "Synthesized recommendation; not a formal universal standard"
+    },
+    {
+      "id": "optical",
+      "name": "Optical Alignment / Visual Weight",
+      "behavior": "Use perceptual correction for icons, typography and alignment; document justified exceptions.",
+      "acceptance": "Inspect rendered alignment at actual sizes and compare with reference.",
+      "source_ids": [
+        "agent-design-ixdf-align",
+        "agent-design-nng-good",
+        "agent-design-saglitz"
+      ],
+      "priority": "context-dependent",
+      "evidence_status": "Synthesized recommendation; not a formal universal standard"
+    },
+    {
+      "id": "hierarchy",
+      "name": "Visual Hierarchy / Art Direction",
+      "behavior": "Prioritize content using scale, weight, spacing, contrast and visual thesis appropriate to product type.",
+      "acceptance": "User can identify primary task; visual references and rendered review support hierarchy.",
+      "source_ids": [
+        "agent-design-nng-good",
+        "agent-design-saglitz",
+        "agent-design-openai-delight"
+      ],
+      "priority": "context-dependent",
+      "evidence_status": "Synthesized recommendation; not a formal universal standard"
+    },
+    {
+      "id": "restraint",
+      "name": "Visual Restraint / Container Discipline",
+      "behavior": "Use grouping and surfaces for meaningful content boundaries, not generic card nesting or decoration.",
+      "acceptance": "Remove unnecessary borders/cards while preserving information and affordance.",
+      "source_ids": [
+        "agent-design-saglitz",
+        "agent-design-openai-frontend"
+      ],
+      "priority": "context-dependent",
+      "evidence_status": "Synthesized recommendation; not a formal universal standard"
+    },
+    {
+      "id": "adaptation",
+      "name": "Responsive / Overflow Contract",
+      "behavior": "Define container behavior, long content, reflow, scroll, expansion, input modalities and edge cases.",
+      "acceptance": "Test narrow and wide layouts, zoom, long text and actual input behavior.",
+      "source_ids": [
+        "agent-design-carbon-checklist",
+        "agent-design-openai-frontend",
+        "micro-vercel"
+      ],
+      "priority": "context-dependent",
+      "evidence_status": "Synthesized recommendation; not a formal universal standard"
+    },
+    {
+      "id": "motion",
+      "name": "Microinteraction and Motion Contract",
+      "behavior": "Reference existing state, tooltip, motion and workspace behavior catalogs; define trigger, feedback, timing and interruption per component.",
+      "acceptance": "Hover/focus/touch and reduced-motion scenarios work without semantic delays.",
+      "source_ids": [
+        "micro-vercel",
+        "agent-design-carbon-checklist"
+      ],
+      "priority": "context-dependent",
+      "evidence_status": "Synthesized recommendation; not a formal universal standard"
+    },
+    {
+      "id": "flow",
+      "name": "UX Contract / Cross-screen Coherence",
+      "behavior": "Record user task, behavior, failure recovery and evidence-linked requirements across flow boundaries.",
+      "acceptance": "Follow end-to-end task with errors and return navigation; verify consistency.",
+      "source_ids": [
+        "agent-design-spiegel",
+        "agent-design-nguyen"
+      ],
+      "priority": "context-dependent",
+      "evidence_status": "Synthesized recommendation; not a formal universal standard"
+    },
+    {
+      "id": "retrieval",
+      "name": "Progressive Context Disclosure",
+      "behavior": "Keep global direction compact; index task-specific specs and fetch only relevant authoritative details.",
+      "acceptance": "Agent finds correct registry/spec with bounded context; unresolved dependency is explicit.",
+      "source_ids": [
+        "agent-design-horner",
+        "agent-design-caillet",
+        "agent-design-google-spec",
+        "agent-design-wolosin"
+      ],
+      "priority": "context-dependent",
+      "evidence_status": "Synthesized recommendation; not a formal universal standard"
+    },
+    {
+      "id": "authority",
+      "name": "Machine-readable Context / MCP plus Skills",
+      "behavior": "Separate live component facts from composition, usage and interaction guidance; test tool access and fallback.",
+      "acceptance": "Agent selects existing component from authoritative registry instead of inventing it.",
+      "source_ids": [
+        "agent-design-wolosin",
+        "agent-design-daggett",
+        "agent-design-atlassian-eval"
+      ],
+      "priority": "context-dependent",
+      "evidence_status": "Synthesized recommendation; not a formal universal standard"
+    },
+    {
+      "id": "metadata",
+      "name": "Queryable Usage and Anti-pattern Metadata",
+      "behavior": "Encode use cases, selection conditions, exclusions, rationale and alternatives; preserve prose for nuance.",
+      "acceptance": "Query suitable component and reject documented misuse; avoid treating heuristic as universal.",
+      "source_ids": [
+        "agent-design-metadata",
+        "agent-design-madhesh"
+      ],
+      "priority": "context-dependent",
+      "evidence_status": "Synthesized recommendation; not a formal universal standard"
+    },
+    {
+      "id": "pipeline",
+      "name": "Spec-driven Component Development",
+      "behavior": "Normalize shared intent and deterministic transforms where feasible; separate authoring, publishing and consumption.",
+      "acceptance": "Compare spec to design/code/docs; verify generated outputs before use.",
+      "source_ids": [
+        "agent-design-curtis-spec",
+        "agent-design-queiroz",
+        "agent-design-horner"
+      ],
+      "priority": "context-dependent",
+      "evidence_status": "Synthesized recommendation; not a formal universal standard"
+    },
+    {
+      "id": "roundtrip",
+      "name": "Specification Round-trip Fidelity",
+      "behavior": "Reconstruct from spec, re-extract, diff dropped/distorted/invented information; include semantic and visual checks.",
+      "acceptance": "Baseline vs re-extracted data highlights losses; no claim of fidelity from schema alone.",
+      "source_ids": [
+        "agent-design-curtis-roundtrip",
+        "agent-design-curtis-contracts"
+      ],
+      "priority": "context-dependent",
+      "evidence_status": "Synthesized recommendation; not a formal universal standard"
+    },
+    {
+      "id": "governance",
+      "name": "Design System Governance / Drift Control",
+      "behavior": "Define approved source, version and human review; propose missing capabilities instead of silent custom forks.",
+      "acceptance": "Detect invented props/tokens, review gaps, record approved changes and exceptions.",
+      "source_ids": [
+        "agent-design-pujari",
+        "agent-design-vallaure",
+        "agent-design-caillet"
+      ],
+      "priority": "context-dependent",
+      "evidence_status": "Synthesized recommendation; not a formal universal standard"
+    },
+    {
+      "id": "quality",
+      "name": "Design Quality Gates",
+      "behavior": "Review rendered visuals, task fit, states, accessibility, responsiveness and cross-screen consistency before acceptance.",
+      "acceptance": "Evidence matrix records pass/fail/untested and fixes; static screenshot alone insufficient.",
+      "source_ids": [
+        "agent-design-nguyen",
+        "agent-design-figma-context",
+        "agent-design-openai-frontend"
+      ],
+      "priority": "context-dependent",
+      "evidence_status": "Synthesized recommendation; not a formal universal standard"
+    },
+    {
+      "id": "tests",
+      "name": "Interaction and Visual Acceptance Testing",
+      "behavior": "Use isolated initial states and interaction assertions plus visual comparison and end-to-end tasks where relevant.",
+      "acceptance": "Run keyboard/touch, pending/error/empty and responsive scenarios; verify actual outcomes.",
+      "source_ids": [
+        "agent-design-storybook",
+        "agent-design-carbon-checklist",
+        "micro-vercel"
+      ],
+      "priority": "context-dependent",
+      "evidence_status": "Synthesized recommendation; not a formal universal standard"
+    },
+    {
+      "id": "evaluation",
+      "name": "Context Strategy Evaluation",
+      "behavior": "Compare same task and conditions across design artifacts, skills and MCP; measure tokens, latency and quality separately.",
+      "acceptance": "Record baselines, model/version, sample and scope; don't generalize single-task results.",
+      "source_ids": [
+        "agent-design-atlassian-eval",
+        "agent-design-caillet"
+      ],
+      "priority": "context-dependent",
+      "evidence_status": "Synthesized recommendation; not a formal universal standard"
+    },
+    {
+      "id": "completeness",
+      "name": "Design System Completeness Audit",
+      "behavior": "Check foundations, anatomy, states, behavior, composition, content, responsive, motion, accessibility and verification; use references rather than duplicating all knowledge.",
+      "acceptance": "Identify missing contract fields, evidence and explicit not-applicable cases.",
+      "source_ids": [
+        "agent-design-designspecs",
+        "agent-design-google-spec",
+        "agent-design-carbon-checklist"
+      ],
+      "priority": "context-dependent",
+      "evidence_status": "Synthesized recommendation; not a formal universal standard"
+    },
+    {
+      "id": "reference",
+      "name": "Visual Reference and Evidence",
+      "behavior": "Use relevant rendered examples, reference images and real product structure to guide composition; check rights and distinguish observation from inference.",
+      "acceptance": "Inspect desktop/mobile screenshot and actual behavior; record source and limits.",
+      "source_ids": [
+        "agent-design-openai-delight",
+        "agent-design-openai-frontend",
+        "agent-design-crosley"
+      ],
+      "priority": "context-dependent",
+      "evidence_status": "Synthesized recommendation; not a formal universal standard"
+    }
+  ],
+  "sources": [
+    {
+      "id": "agent-design-vaeghi",
+      "title": "Component Contracts: The missing piece for AI-era Design System handoff",
+      "url": "https://medium.com/design-bootcamp/component-contracts-the-missing-piece-for-ai-era-design-system-handoff-41edb55bf031",
+      "access": "article-body",
+      "finding": "Behavioral JSON contracts capture props, transitions, triggers, events, accessibility, responsiveness and composition; tokens/Figma cover appearance. Practitioner case, not universal validation."
+    },
+    {
+      "id": "agent-design-spiegel",
+      "title": "Agentic Design Systems",
+      "url": "https://peter-spiegel.medium.com/agentic-design-systems-86829290139e",
+      "access": "article-body",
+      "finding": "Separate UI and UX contracts; link behavioral requirements to evidence and tests, keep human interpretation and decisions."
+    },
+    {
+      "id": "agent-design-vallaure",
+      "title": "Design system contracts: the component lives in neither Figma nor code",
+      "url": "https://uxdesign.cc/design-system-contracts-the-component-lives-in-neither-figma-nor-code-3032d94ca067",
+      "access": "article-body",
+      "finding": "Structured shared contract limits drift across design and code; reported A/B numbers are attributed to Southleft, not independently replicated."
+    },
+    {
+      "id": "agent-design-madhesh",
+      "title": "Your Buttons Need More Than Names: Documenting Component Intent",
+      "url": "https://madheshp.medium.com/your-buttons-need-more-than-names-documenting-component-intent-52f227da864c",
+      "access": "indexed-body-direct-failed",
+      "finding": "Purpose, use and avoid contexts, expected activation outcome, feedback, accessibility and exceptions; proposed template, not validated trial."
+    },
+    {
+      "id": "agent-design-feng-variants",
+      "title": "States vs. Variants: The Most Misunderstood Concept in Design Systems",
+      "url": "https://medium.com/%40EthanFeng/states-vs-variants-the-most-misunderstood-concept-in-design-systems-8f832f854fe6",
+      "access": "member-preview",
+      "finding": "Available introduction distinguishes temporary behavior from structural identity; full member-only body not inspected."
+    },
+    {
+      "id": "agent-design-feng-states",
+      "title": "The Illusion of the Perfect Screen",
+      "url": "https://medium.com/%40EthanFeng/the-illusion-of-the-perfect-screen-why-component-states-are-the-true-test-of-product-design-e5d247fd403e",
+      "access": "indexed-excerpt-direct-failed",
+      "finding": "Search-index excerpt emphasizes transitions and non-default states; full member-only article not read."
+    },
+    {
+      "id": "agent-design-daggett",
+      "title": "The Realities of Getting a Design System Ready for AI",
+      "url": "https://medium.com/societe-generale-design/the-realities-of-getting-a-design-system-ready-for-ai-08073cf642cf",
+      "access": "article-body",
+      "finding": "Societe Generale case: structured asset markup, prop tables, examples, guidelines, instructions, skills and testing; context scope matters."
+    },
+    {
+      "id": "agent-design-horner",
+      "title": "How to Make Your Design System Agent-Ready",
+      "url": "https://medium.com/design-bootcamp/how-to-make-your-design-system-agent-ready-ea4cfc062270",
+      "access": "article-body",
+      "finding": "Tokens plus concise global DESIGN.md, registries and individual component/pattern/template files; separate authoring, specification and delivery."
+    },
+    {
+      "id": "agent-design-caillet",
+      "title": "DESIGN.md + a skill",
+      "url": "https://medium.com/%40guillaumeclt/design-md-a-skill-how-i-turned-my-design-system-into-something-an-ai-can-actually-really-use-1eff5699b05b",
+      "access": "article-body",
+      "finding": "Separate method from product content, route to references on demand, compare same briefs and require explicit review before changing system knowledge."
+    },
+    {
+      "id": "agent-design-nguyen",
+      "title": "AI-generated UI - from generic defaults to production-ready screens",
+      "url": "https://medium.com/design-bootcamp/ai-generated-ui-from-generic-defaults-to-production-ready-screens-0e7d1639ce38",
+      "access": "article-body",
+      "finding": "Proposed repeatable validation of generated screens: responsive/accessibility, coherence across flows, brand and contextual suitability, repair rather than appearance alone."
+    },
+    {
+      "id": "agent-design-queiroz",
+      "title": "Como preparei meu design system para ser lido por uma IA",
+      "url": "https://brasil.uxdesign.cc/como-preparei-meu-design-system-para-ser-lido-por-uma-ia-cdab30ae2981",
+      "access": "article-body",
+      "finding": "Separate system creation from consumption; primitive-semantic-component token chain and consult existing Storybook before assembling screens."
+    },
+    {
+      "id": "agent-design-wolosin",
+      "title": "Fully Machine-Readable Design Systems",
+      "url": "https://www.designsystemscollective.com/fully-machine-readable-design-systems-3d43329ec3e3",
+      "access": "article-body",
+      "finding": "MCP supplies current component facts, plugin supplies use, composition, spacing and taste; progressive context disclosure; one case study is not a universal benchmark."
+    },
+    {
+      "id": "agent-design-curtis-contracts",
+      "title": "Component Contracts and Schemas",
+      "url": "https://nathanacurtis.substack.com/p/component-contracts-and-schemas",
+      "access": "article-body",
+      "finding": "Typed, constrained properties and explicit relationships make design intent checkable and allow deterministic transformations."
+    },
+    {
+      "id": "agent-design-curtis-roundtrip",
+      "title": "What Component Specs Leave Behind",
+      "url": "https://nathanacurtis.substack.com/p/what-component-specs-leave-behind",
+      "access": "article-body",
+      "finding": "Generate baseline spec, render asset, generate new spec, diff; detect dropped, distorted or invented information."
+    },
+    {
+      "id": "agent-design-curtis-spec",
+      "title": "Spec-Driven UI Component Development",
+      "url": "https://nathanacurtis.substack.com/p/spec-driven-ui-component-development",
+      "access": "article-body",
+      "finding": "Normalize and version intent across authoring surfaces; use deterministic generation where possible, verify parity across Figma, prototypes and code."
+    },
+    {
+      "id": "agent-design-ahmed",
+      "title": "Foundations, Rules, and Context",
+      "url": "https://www.designsystemscollective.com/foundations-rules-and-context-rethinking-design-systems-for-the-ai-era-56c9a872e831",
+      "access": "member-preview",
+      "finding": "Title and introduction support three layers and warn that scraping code also inherits legacy inconsistencies; full body unavailable."
+    },
+    {
+      "id": "agent-design-metadata",
+      "title": "Design system documentation as structured metadata",
+      "url": "https://www.designsystemscollective.com/design-system-documentation-as-structured-metadata-315f62c6eab1",
+      "access": "article-body",
+      "finding": "Queryable usage, variant purpose, selection criteria and antipatterns with reasons and alternatives; proposed metadata, not a universal schema."
+    },
+    {
+      "id": "agent-design-lou",
+      "title": "The Art of Putting Things Back Together",
+      "url": "https://www.designsystemscollective.com/the-art-of-putting-things-back-together-a0b93bc086c6",
+      "access": "article-body",
+      "finding": "Component quality in isolation does not assure composition quality; respect boundaries and evaluate relationships and whole workflows."
+    },
+    {
+      "id": "agent-design-saglitz",
+      "title": "Visual Craft Standards",
+      "url": "https://saglitz.com/design/visual-craft-standards",
+      "access": "article-body",
+      "finding": "Distinguish brand and product registers; grouping, hierarchy, spacing, alignment and restrained containers. Numeric thresholds are author heuristics, not requirements."
+    },
+    {
+      "id": "agent-design-pujari",
+      "title": "The Design System as the Control Plane for AI-Generated UI",
+      "url": "https://www.oreilly.com/radar/the-design-system-as-the-control-plane-for-ai-generated-ui/",
+      "access": "article-body",
+      "finding": "Govern component APIs and agent rules; review gaps and new patterns intentionally rather than letting almost-standard components proliferate."
+    },
+    {
+      "id": "agent-design-figma-context",
+      "title": "LLM Context Design",
+      "url": "https://www.figma.com/resource-library/llm-context-design/",
+      "access": "official-guidance",
+      "finding": "Three layers: semantic tokens, usage specs and audit loop; explicit rules needed for edge cases."
+    },
+    {
+      "id": "agent-design-ixdf-align",
+      "title": "Visual Alignment",
+      "url": "https://ixdf.org/literature/topics/visual-alignment",
+      "access": "educational-body",
+      "finding": "Optical versus mathematical alignment, grouping, baseline rhythm and whitespace; adjust by perceptual evidence."
+    },
+    {
+      "id": "agent-design-nng-good",
+      "title": "Why Does a Design Look Good?",
+      "url": "https://www.nngroup.com/articles/why-does-design-look-good/",
+      "access": "educational-body",
+      "finding": "2021 examples of consistent type, hierarchy, restrained color palette and alignment grid; not a 2026 invention."
+    },
+    {
+      "id": "agent-design-crosley",
+      "title": "Design Principles for Software Engineers",
+      "url": "https://blakecrosley.com/guides/design",
+      "access": "educational-body",
+      "finding": "Guide updated August 2026 covers proximity, visual fundamentals, motion, web and AI patterns; spacing examples are illustrative."
+    },
+    {
+      "id": "agent-design-designspecs",
+      "title": "DesignSpecs preprint",
+      "url": "https://arxiv.org/abs/2611.17713",
+      "access": "abstract-access",
+      "finding": "13 Nov 2026 preprint: repository corpus, not a causal evaluation of generated UI or all design systems; earlier reported section frequencies are not comprehensive behavior analysis."
+    },
+    {
+      "id": "agent-design-designspecs-data",
+      "title": "DesignSpecs dataset",
+      "url": "https://huggingface.co/datasets/Jl-wei/DesignSpecs",
+      "access": "inaccessible",
+      "finding": "Dataset endpoint could not be reopened; retain URL without asserting independent inspection."
+    },
+    {
+      "id": "agent-design-google-spec",
+      "title": "Google DESIGN.md specification",
+      "url": "https://github.com/google-labs-code/design.md/blob/main/docs/spec.md",
+      "access": "official-guidance",
+      "finding": "Current spec supports root-relative external references in code spans and optional ordered sections; validate actual version and reference targets."
+    },
+    {
+      "id": "agent-design-atlassian-md",
+      "title": "Atlassian DESIGN.md",
+      "url": "https://atlassian.design/DESIGN.md",
+      "access": "official-example",
+      "finding": "Actual versioned portable token/prose example; not evidence that this artifact alone captures all production requirements."
+    },
+    {
+      "id": "agent-design-atlassian-eval",
+      "title": "Atlassian DESIGN.md practical test",
+      "url": "https://www.atlassian.com/blog/ai-at-work/atlassians-design-md-is-here-what-we-learned-testing-portable-design-context-in-practice",
+      "access": "official-case",
+      "finding": "June 15 2026 login-task test: DESIGN.md 7.21M vs MCP 3.75M average tokens, about 92% more, and reported 2.7x variance; authors explicitly caution results are inconclusive."
+    },
+    {
+      "id": "agent-design-uianatomy",
+      "title": "UI Anatomy methodology",
+      "url": "https://uianatomy.dev/methodology",
+      "access": "methodology",
+      "finding": "Document component anatomy independently of implementation, then map to implementations."
+    },
+    {
+      "id": "agent-design-carbon-checklist",
+      "title": "Carbon component checklist",
+      "url": "https://www.carbondesignsystem.com/getting-started/contributing/component-checklist",
+      "access": "official-guidance",
+      "finding": "Component specs must describe behavior such as reflow, overflow, expansion, scrolling and accessibility for implementation."
+    },
+    {
+      "id": "micro-vercel",
+      "title": "Vercel Web Interface Guidelines",
+      "url": "https://vercel.com/design/guidelines",
+      "access": "official-guidance",
+      "finding": "Living practical guidance on interaction, layout, accessibility and performance; not a formal standard."
+    },
+    {
+      "id": "agent-design-openai-frontend",
+      "title": "OpenAI Frontend prompt instructions",
+      "url": "https://developers.openai.com/api/docs/guides/frontend-prompt",
+      "access": "official-guidance",
+      "finding": "Avoid generic nested cards and decorative clutter; stable layouts, fitting text and desktop/mobile rendered verification; adapt to existing systems."
+    },
+    {
+      "id": "agent-design-openai-delight",
+      "title": "Designing delightful frontends with GPT-5.4",
+      "url": "https://developers.openai.com/blog/designing-delightful-frontends-with-gpt-5-4",
+      "access": "official-guidance",
+      "finding": "Visual thesis, composition, reference imagery and constraints; promotional hero advice should not be imposed on dense applications."
+    },
+    {
+      "id": "agent-design-storybook",
+      "title": "Storybook interaction tests",
+      "url": "https://storybook.js.org/docs/writing-tests/interaction-testing",
+      "access": "official-guidance",
+      "finding": "Stories define initial state; play functions simulate actions and assert results. Isolated tests complement, not replace, end-to-end and accessibility tests."
+    },
+    {
+      "id": "agent-design-awesome",
+      "title": "Awesome DESIGN.md",
+      "url": "https://github.com/VoltAgent/awesome-design-md",
+      "access": "community-catalog",
+      "finding": "Collection of brand-derived design files for examples; not official specifications for every brand or proof of completeness."
+    }
+  ],
+  "caveats": [
+    "Review date 2026-11-25. All 24 links from the latest answer attempted; additional 12 earlier references included. Article-body means relevant public sections inspected, not exhaustive reading. Two direct article fetches failed and indexed material was used; two other articles were member previews. Dataset inaccessible.",
+    "No paywall bypass, verbatim article copying, private screenshots, or claims of population-wide adoption. Source cases and numbers are not independently replicated. Preserve existing URLs and source metadata.",
+    "Use actual system requirements and reference examples; do not turn visual heuristics, generic marketing defaults, or author-specific thresholds into universal rules. DESIGN.md is a portable artifact, not inherently a deficient format; completeness depends on contents, references, tools and evaluation.",
+    "Keep canonical contracts and component implementation authoritative. Treat external references as version-specific; Google specification paths resolve from DESIGN.md directory, not the referencing file. Avoid duplicate contradictory instructions.",
+    "This catalog cross-indexes earlier behavioral, workspace, microinteraction and motion patterns; counts are indexed entries rather than all-new unique concepts."
+  ]
+}

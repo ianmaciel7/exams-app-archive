@@ -3,7 +3,7 @@
   "verified_on": "2026-11-25",
   "plugin": "especialista-ui-ux",
   "plugin_version": "1.8.9",
-  "previous_research_commit": "1e247b254404a04b51887ade6d7c45ff07c2efb9",
+  "previous_research_commit": "11f6aa93d91a8b45667c6cb303c6099d68fc7d9e",
   "patterns": 47,
   "additional_pattern_families": [
     {
@@ -28,21 +28,26 @@
       "count": 33,
       "path": "docs/references/ui-ux-research-sources/microinteraction-state-and-polish.json",
       "overlap": "Cross-indexed existing microinteraction and motion patterns"
+    },
+    {
+      "id": "agent-ready-design-system-completeness",
+      "count": 26,
+      "path": "docs/references/ui-ux-research-sources/agent-ready-design-system-completeness.json",
+      "overlap": "Cross-indexed general patterns and new documentary practices"
     }
   ],
-  "source_urls": 254,
-  "added_source_urls": 11,
+  "source_urls": 289,
+  "added_source_urls": 35,
   "verification": {
-    "plugin_release_confirmed": true,
-    "plugin_reference_files_read": true,
-    "source_url_sets_equal": true,
-    "pattern_records_equal": true,
-    "new_source_records_equal": true,
-    "catalog_source_metadata_equal": true,
-    "full_catalog_equal": true,
-    "metadata_note": "New microinteraction catalog and its sources match; all 254 source URLs match; historical metadata differences may remain."
+    "plugin_release_confirmed": false,
+    "plugin_reference_files_read": false,
+    "source_url_sets_equal": false
   },
   "scope": "General UI/UX: microinteraction states, contextual tools, tooltip timing and motion polish; manual knowledge synchronization verified",
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",
-  "plugin_release_id": "pluginrel_6b06e49c99108191941aaa0c8e87f224"
+  "plugin_release_id": "pluginrel_6b06e49c99108191941aaa0c8e87f224",
+  "pending_sync": {
+    "target": "plugin 1.8.10",
+    "reason": "Archive committed; publication/readback pending"
+  }
 }

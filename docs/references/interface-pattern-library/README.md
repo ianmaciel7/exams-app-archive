@@ -63,3 +63,8 @@ No claims of a market-share ranking or universal effectiveness. Primary document
 
 - [Catalog](../ui-ux-research-sources/microinteraction-state-and-polish.md) and [JSON](../ui-ux-research-sources/microinteraction-state-and-polish.json).
 - 33 indexed entries; 254 retained URLs (+11); see sync record.
+
+## Agent-ready design system completeness
+
+- [Catalog and source review](../ui-ux-research-sources/agent-ready-design-system-completeness.md), [structured JSON](../ui-ux-research-sources/agent-ready-design-system-completeness.json).
+- 26 indexed recommendations, 36 reviewed references, 289 retained source URLs (+35).

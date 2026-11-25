@@ -97,3 +97,8 @@ Registrar URLs originais e redirects, datas de consulta, fonte e status (verific
 
 - [Catalog and interaction contract](./microinteraction-state-and-polish.md)
 - [Structured records](./microinteraction-state-and-polish.json)
+
+## Agent-ready design system completeness
+
+- [Catalog and source reviews](./agent-ready-design-system-completeness.md)
+- [Structured index](./agent-ready-design-system-completeness.json)
