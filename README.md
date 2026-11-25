@@ -110,3 +110,5 @@ correspondente e use o comando `recover` documentado no guia.
 
 - [Visual media catalog](docs/references/visual-evidence-library/README.md): licensed screenshots, GIFs and videos with pinned provenance; official link-only references are tracked separately.
 - Search locally: `python scripts/visual_reference_index.py "side panel"`; integrity: `python scripts/visual_reference_index.py --verify`.
+
+- [Unified public research index](docs/RESEARCH-INDEX.md): offline FTS5 search over explicitly approved public catalogs, with source resolution and coverage reporting.
