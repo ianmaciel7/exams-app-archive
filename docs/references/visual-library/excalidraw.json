@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "path": "media/excalidraw/collaboration.png",
+      "kind": "png",
+      "tags": [
+        "collaboration",
+        "whiteboard"
+      ],
+      "source_repo": "excalidraw/excalidraw",
+      "source_commit": "5681e7d8be319092b13979e947afe632d5a4a525",
+      "source_path": "public/screenshots/collaboration.png",
+      "source_url": "https://github.com/excalidraw/excalidraw/blob/5681e7d8be319092b13979e947afe632d5a4a525/public/screenshots/collaboration.png",
+      "blob_sha": "c902ac6ce7f06c877e826bb9d2799a9a94c876bd",
+      "bytes": 29035,
+      "license": "MIT",
+      "license_path": "media/excalidraw/LICENSE",
+      "status": "bytes-verified",
+      "visual_review": "not-performed"
+    },
+    {
+      "path": "media/excalidraw/export.png",
+      "kind": "png",
+      "tags": [
+        "export",
+        "canvas"
+      ],
+      "source_repo": "excalidraw/excalidraw",
+      "source_commit": "5681e7d8be319092b13979e947afe632d5a4a525",
+      "source_path": "public/screenshots/export.png",
+      "source_url": "https://github.com/excalidraw/excalidraw/blob/5681e7d8be319092b13979e947afe632d5a4a525/public/screenshots/export.png",
+      "blob_sha": "b25253a71dc38f42f3756b4f2dcfc1d015ef7f49",
+      "bytes": 25959,
+      "license": "MIT",
+      "license_path": "media/excalidraw/LICENSE",
+      "status": "bytes-verified",
+      "visual_review": "not-performed"
+    },
+    {
+      "path": "media/excalidraw/virtual-whiteboard.png",
+      "kind": "png",
+      "tags": [
+        "whiteboard",
+        "canvas"
+      ],
+      "source_repo": "excalidraw/excalidraw",
+      "source_commit": "5681e7d8be319092b13979e947afe632d5a4a525",
+      "source_path": "public/screenshots/virtual-whiteboard.png",
+      "source_url": "https://github.com/excalidraw/excalidraw/blob/5681e7d8be319092b13979e947afe632d5a4a525/public/screenshots/virtual-whiteboard.png",
+      "blob_sha": "6a99fbc78dfb309fbe2b2807c183ee115226db3c",
+      "bytes": 27910,
+      "license": "MIT",
+      "license_path": "media/excalidraw/LICENSE",
+      "status": "bytes-verified",
+      "visual_review": "not-performed"
+    },
+    {
+      "path": "media/excalidraw/wireframe.png",
+      "kind": "png",
+      "tags": [
+        "wireframe",
+        "low fidelity"
+      ],
+      "source_repo": "excalidraw/excalidraw",
+      "source_commit": "5681e7d8be319092b13979e947afe632d5a4a525",
+      "source_path": "public/screenshots/wireframe.png",
+      "source_url": "https://github.com/excalidraw/excalidraw/blob/5681e7d8be319092b13979e947afe632d5a4a525/public/screenshots/wireframe.png",
+      "blob_sha": "8d284cf8603ee79baa89d4dc62b58a102467dffa",
+      "bytes": 27243,
+      "license": "MIT",
+      "license_path": "media/excalidraw/LICENSE",
+      "status": "bytes-verified",
+      "visual_review": "not-performed"
+    },
+    {
+      "path": "media/excalidraw/welcome-screen-overview.png",
+      "kind": "png",
+      "tags": [
+        "onboarding",
+        "empty state",
+        "canvas"
+      ],
+      "source_repo": "excalidraw/excalidraw",
+      "source_commit": "5681e7d8be319092b13979e947afe632d5a4a525",
+      "source_path": "dev-docs/static/img/welcome-screen-overview.png",
+      "source_url": "https://github.com/excalidraw/excalidraw/blob/5681e7d8be319092b13979e947afe632d5a4a525/dev-docs/static/img/welcome-screen-overview.png",
+      "blob_sha": "1067761629614e099f46546305af0efd50cf2aa8",
+      "bytes": 103250,
+      "license": "MIT",
+      "license_path": "media/excalidraw/LICENSE",
+      "status": "bytes-verified",
+      "visual_review": "not-performed"
+    }
+  ],
+  "failures": []
+}
