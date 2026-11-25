@@ -279,6 +279,577 @@
         "general:variable-type",
         "general:semantic-tokens"
       ]
+    },
+    {
+      "id": "domain.produto",
+      "domain": "produto",
+      "en": "Product & Requirements",
+      "pt": "Produto e Requisitos",
+      "parent": null,
+      "aliases": [
+        "produto",
+        "product",
+        "requisitos",
+        "requirements",
+        "prd",
+        "escopo",
+        "product scope"
+      ],
+      "members": [
+        "visual:official-capacities-2",
+        "visual:official-linear-13"
+      ]
+    },
+    {
+      "id": "domain.concursos",
+      "domain": "concursos",
+      "en": "Public Exams & Competitions",
+      "pt": "Concursos e Bancas",
+      "parent": null,
+      "aliases": [
+        "concursos",
+        "concurso",
+        "banca",
+        "bancas",
+        "edital",
+        "editais",
+        "qconcursos",
+        "public exam",
+        "public exams"
+      ],
+      "members": [
+        "visual:official-qconcursos-25",
+        "visual:official-qconcursos-26"
+      ]
+    },
+    {
+      "id": "domain.aprendizagem",
+      "domain": "aprendizagem",
+      "en": "Learning & Spaced Repetition",
+      "pt": "Aprendizagem e Repeticao Espacada",
+      "parent": null,
+      "aliases": [
+        "aprendizagem",
+        "learning",
+        "estudo",
+        "study",
+        "srs",
+        "fsrs",
+        "flashcard",
+        "flashcards",
+        "spaced repetition",
+        "repeticao espacada",
+        "revisao espacada",
+        "recall"
+      ],
+      "members": [
+        "visual:official-readwise-17",
+        "visual:official-readwise-18"
+      ]
+    },
+    {
+      "id": "domain.avaliacao",
+      "domain": "avaliacao",
+      "en": "Assessment & Mock Exams",
+      "pt": "Avaliacao e Simulados",
+      "parent": null,
+      "aliases": [
+        "avaliacao",
+        "assessment",
+        "simulado",
+        "simulados",
+        "mock exam",
+        "prova",
+        "provas",
+        "questao",
+        "questoes",
+        "question",
+        "questions",
+        "gabarito"
+      ],
+      "members": [
+        "workspace:form",
+        "visual:official-qconcursos-25"
+      ]
+    },
+    {
+      "id": "domain.ia-informacao",
+      "domain": "ia-informacao",
+      "en": "AI & Information Architecture",
+      "pt": "IA e Arquitetura da Informacao",
+      "parent": null,
+      "aliases": [
+        "ia informacao",
+        "ai information",
+        "information architecture",
+        "arquitetura da informacao",
+        "taxonomia",
+        "taxonomy",
+        "ontologia",
+        "ontology",
+        "grafo de conhecimento",
+        "knowledge graph"
+      ],
+      "members": [
+        "workspace:saved-query",
+        "visual:official-capacities-3"
+      ]
+    },
+    {
+      "id": "domain.workspace",
+      "domain": "workspace",
+      "en": "Workspace & Surfaces",
+      "pt": "Workspace e Superficies",
+      "parent": null,
+      "aliases": [
+        "workspace",
+        "area de trabalho",
+        "space",
+        "espaco",
+        "app shell",
+        "surface",
+        "surfaces",
+        "superficie"
+      ],
+      "members": [
+        "workspace:object-dashboard",
+        "workspace:object-preview",
+        "workspace:fullscreen",
+        "workspace:pip",
+        "workspace:modal-drawer",
+        "visual:official-vscode-19",
+        "visual:official-capacities-5"
+      ]
+    },
+    {
+      "id": "domain.objetos",
+      "domain": "objetos",
+      "en": "Domain Objects & Entities",
+      "pt": "Objetos e Entidades",
+      "parent": null,
+      "aliases": [
+        "objetos",
+        "objeto",
+        "objects",
+        "object",
+        "entidade",
+        "entidades",
+        "entity",
+        "entities",
+        "caderno",
+        "notebook",
+        "anotacao",
+        "note",
+        "object type"
+      ],
+      "members": [
+        "workspace:document",
+        "workspace:code-block",
+        "visual:official-qconcursos-26",
+        "visual:shadcn-tasks-light"
+      ]
+    },
+    {
+      "id": "domain.visualizacoes",
+      "domain": "visualizacoes",
+      "en": "Visualizations & Graph Views",
+      "pt": "Visualizacoes e Grafos",
+      "parent": "ui.visualization",
+      "aliases": [
+        "visualizacoes",
+        "visualizations",
+        "grafo",
+        "graph view",
+        "diagrama",
+        "diagram",
+        "chart",
+        "charts"
+      ],
+      "members": [
+        "workspace:interactive-chart",
+        "workspace:diagram",
+        "workspace:map",
+        "workspace:dashboard",
+        "visual:official-capacities-3"
+      ]
+    },
+    {
+      "id": "domain.design-system",
+      "domain": "design-system",
+      "en": "Design System & Tokens",
+      "pt": "Design System e Tokens",
+      "parent": "ui.visual-language",
+      "aliases": [
+        "design system",
+        "tokens",
+        "theme",
+        "tema",
+        "dark mode",
+        "light mode",
+        "shadcn",
+        "component library"
+      ],
+      "members": [
+        "general:semantic-tokens",
+        "general:variable-type",
+        "general:liquid-glass",
+        "general:expressive-material",
+        "visual:shadcn-dashboard-light",
+        "visual:shadcn-dashboard-dark"
+      ]
+    },
+    {
+      "id": "domain.interacao",
+      "domain": "interacao",
+      "en": "Interaction & Commands",
+      "pt": "Interacao e Comandos",
+      "parent": "ui.interaction",
+      "aliases": [
+        "domain interacao",
+        "inline edit",
+        "popover",
+        "bulk actions",
+        "combobox",
+        "keyboard shortcut",
+        "atalho"
+      ],
+      "members": [
+        "general:anchored-popover",
+        "general:inline-edit",
+        "general:expandable-row",
+        "general:batch-selection",
+        "general:editable-combobox",
+        "general:contextual-hint",
+        "workspace:bulk-actions",
+        "visual:storybook-component-interaction-testing"
+      ]
+    },
+    {
+      "id": "domain.motion",
+      "domain": "motion",
+      "en": "Motion & Choreography",
+      "pt": "Motion e Coreografia",
+      "parent": "ui.motion",
+      "aliases": [
+        "domain motion",
+        "choreography",
+        "coreografia",
+        "spring physics",
+        "view transition",
+        "reduced motion"
+      ],
+      "members": [
+        "workspace:shimmer",
+        "workspace:reorder",
+        "visual:official-claude-11",
+        "visual:reanimated-switch_android",
+        "grok-assets:27467baeb547d24d06a4"
+      ]
+    },
+    {
+      "id": "domain.acessibilidade",
+      "domain": "acessibilidade",
+      "en": "Accessibility & WCAG",
+      "pt": "Acessibilidade e WCAG",
+      "parent": null,
+      "aliases": [
+        "acessibilidade",
+        "accessibility",
+        "a11y",
+        "wcag",
+        "aria",
+        "screen reader",
+        "leitor de tela",
+        "keyboard navigation",
+        "navegacao por teclado"
+      ],
+      "members": [
+        "visual:storybook-component-accessibility-testing",
+        "general-sources:wcag-hover",
+        "general-sources:a11y-checklist",
+        "general-sources:w3c-aria12"
+      ]
+    },
+    {
+      "id": "domain.responsividade",
+      "domain": "responsividade",
+      "en": "Responsiveness & Adaptive Layout",
+      "pt": "Responsividade e Layout Adaptativo",
+      "parent": null,
+      "aliases": [
+        "responsividade",
+        "responsiveness",
+        "responsive",
+        "responsivo",
+        "mobile",
+        "desktop",
+        "breakpoint",
+        "breakpoints",
+        "bottom sheet",
+        "overflow"
+      ],
+      "members": [
+        "general:responsive-overflow",
+        "general:bottom-sheet",
+        "general:state-preserving-reparent",
+        "workspace:modal-drawer"
+      ]
+    },
+    {
+      "id": "domain.ai-native-ux",
+      "domain": "ai-native-ux",
+      "en": "AI-Native UX & Agent Workflows",
+      "pt": "UX Nativa de IA e Agentes",
+      "parent": "ui.ai",
+      "aliases": [
+        "ai native ux",
+        "ai-native ux",
+        "ux nativa de ia",
+        "agent ux",
+        "approval gate",
+        "streaming",
+        "composer",
+        "explainability"
+      ],
+      "members": [
+        "workspace:composer",
+        "workspace:inline-card",
+        "workspace:inline-carousel",
+        "workspace:message-actions",
+        "general:agent-entry",
+        "general:approval-gate",
+        "general:streaming-status"
+      ]
+    },
+    {
+      "id": "domain.engenharia",
+      "domain": "engenharia",
+      "en": "Software Engineering & Codebase",
+      "pt": "Engenharia de Software e Codigo",
+      "parent": null,
+      "aliases": [
+        "engenharia",
+        "engineering",
+        "software engineering",
+        "codigo",
+        "code",
+        "refactor",
+        "refatoracao",
+        "typescript",
+        "python",
+        "ast"
+      ],
+      "members": [
+        "workspace:code-block",
+        "visual:official-vscode-19",
+        "visual:storybook-whats-a-story"
+      ]
+    },
+    {
+      "id": "domain.arquitetura-tecnica",
+      "domain": "arquitetura-tecnica",
+      "en": "Technical Architecture & ADRs",
+      "pt": "Arquitetura Tecnica e ADRs",
+      "parent": null,
+      "aliases": [
+        "arquitetura tecnica",
+        "technical architecture",
+        "arquitetura",
+        "architecture",
+        "adr",
+        "adrs",
+        "decisao arquitetural",
+        "sqlite",
+        "fts5",
+        "firebase"
+      ],
+      "members": [
+        "general-sources:azure-bg-jobs",
+        "general-sources:ink-localfirst"
+      ]
+    },
+    {
+      "id": "domain.qualidade",
+      "domain": "qualidade",
+      "en": "Quality, Testing & Verification",
+      "pt": "Qualidade, Testes e Verificacao",
+      "parent": null,
+      "aliases": [
+        "qualidade",
+        "quality",
+        "teste",
+        "testes",
+        "test",
+        "tests",
+        "testing",
+        "qa",
+        "ci",
+        "regressao",
+        "regression",
+        "visual testing"
+      ],
+      "members": [
+        "visual:storybook-component-visual-testing-optimized",
+        "visual:storybook-component-interaction-testing",
+        "visual:storybook-component-accessibility-testing",
+        "general-sources:digitalgov-testing"
+      ]
+    },
+    {
+      "id": "domain.historico",
+      "domain": "historico",
+      "en": "Historical Archive & Provenance",
+      "pt": "Historico, Git e Proveniencia",
+      "parent": null,
+      "aliases": [
+        "historico",
+        "history",
+        "git",
+        "commit",
+        "commits",
+        "branch",
+        "branches",
+        "bundle",
+        "bundles",
+        "blob sha",
+        "proveniencia",
+        "provenance",
+        "arquivo morto"
+      ],
+      "members": [
+        "general-sources:welie",
+        "general-sources:flickr-context"
+      ]
+    },
+    {
+      "id": "domain.midia",
+      "domain": "midia",
+      "en": "Visual Media & Recordings",
+      "pt": "Midia Visual e Gravacoes",
+      "parent": null,
+      "aliases": [
+        "midia",
+        "media",
+        "imagem",
+        "imagens",
+        "image",
+        "images",
+        "screenshot",
+        "screenshots",
+        "captura",
+        "capturas",
+        "video",
+        "videos",
+        "gif",
+        "svg"
+      ],
+      "members": [
+        "visual:official-figma-21",
+        "visual:official-readwise-18",
+        "grok-assets:372a799230be3b2f0077",
+        "grok-assets:3bb0e07d1a020620ab5f"
+      ]
+    },
+    {
+      "id": "domain.referencias-externas",
+      "domain": "referencias-externas",
+      "en": "External Benchmarks & References",
+      "pt": "Referencias Externas e Benchmarks",
+      "parent": null,
+      "aliases": [
+        "referencias externas",
+        "external references",
+        "benchmark",
+        "benchmarks",
+        "capacities",
+        "notion",
+        "linear",
+        "readwise",
+        "excalidraw",
+        "grok"
+      ],
+      "members": [
+        "visual:official-notion-16",
+        "visual:official-linear-14",
+        "visual:official-capacities-1",
+        "grok-links:b266a67cd1975332b892",
+        "research-sources:mobbin"
+      ]
+    },
+    {
+      "id": "domain.conhecimento-humano",
+      "domain": "conhecimento-humano",
+      "en": "Human Knowledge & Curation",
+      "pt": "Conhecimento Humano e Curadoria",
+      "parent": null,
+      "aliases": [
+        "conhecimento humano",
+        "human knowledge",
+        "curadoria",
+        "curation",
+        "glossario",
+        "glossary",
+        "sintese",
+        "synthesis",
+        "documentacao",
+        "documentation"
+      ],
+      "members": [
+        "general-sources:ixdf",
+        "general-sources:nng",
+        "research-sources:laws"
+      ]
+    },
+    {
+      "id": "domain.operacoes",
+      "domain": "operacoes",
+      "en": "Operations, Backup & Releases",
+      "pt": "Operacoes, Backup e Releases",
+      "parent": null,
+      "aliases": [
+        "operacoes",
+        "operations",
+        "ops",
+        "backup",
+        "restore",
+        "restauracao",
+        "release",
+        "releases",
+        "deploy",
+        "sync",
+        "pipeline"
+      ],
+      "members": [
+        "general:stateful-empty",
+        "workspace:loading-error"
+      ]
+    },
+    {
+      "id": "domain.governanca",
+      "domain": "governanca",
+      "en": "Governance, Security & Compliance",
+      "pt": "Governanca, Seguranca e Privacidade",
+      "parent": null,
+      "aliases": [
+        "governanca",
+        "governance",
+        "seguranca",
+        "security",
+        "privacidade",
+        "privacy",
+        "secrets gate",
+        "acl",
+        "licenca",
+        "license",
+        "compliance",
+        "auditoria",
+        "audit"
+      ],
+      "members": [
+        "general:scoped-permission",
+        "general:approval-gate",
+        "general-sources:deceptive-types"
+      ]
     }
   ]
 }

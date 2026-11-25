@@ -64,6 +64,37 @@ class SearchExpansionTests(unittest.TestCase):
         self.assertIn("barra-lateral", terms)
         self.assertIn("barra_lateral", terms)
 
+    def test_multidomain_case_splitting_and_lexical_fallback(self):
+        # camelCase, snake_case, kebab-case normalization
+        self.assertEqual(search_expansion.normalize_text("barraLateral"), "barra lateral")
+        self.assertEqual(search_expansion.normalize_text("barra_lateral"), "barra lateral")
+        self.assertEqual(search_expansion.normalize_text("barra-lateral"), "barra lateral")
+
+        camel_exp = search_expansion.expand_query("mockExam")
+        self.assertIn("simulado", camel_exp["expanded_terms"])
+
+        # Inflection & typo lexical fallback with confidence
+        inflect = search_expansion.expand_query("bancas")
+        self.assertIn("exam board", inflect["expanded_terms"])
+
+        fb = search_expansion.lexical_fallback_candidates("simuladoo")
+        self.assertTrue(fb)
+        self.assertIn(fb[0]["term"], {"simulado", "simulados"})
+        self.assertIn("simulado", [c["term"] for c in fb])
+        self.assertGreater(fb[0]["confidence"], 0.7)
+
+        # Coverage across engineering, SRS/FSRS, concursos, governance, and ops
+        for query, expected in [
+            ("banca", "exam board"),
+            ("fsrs", "spaced repetition"),
+            ("adr", "architecture decision"),
+            ("regressao", "regression"),
+            ("governanca", "governance"),
+            ("backup", "copia de seguranca"),
+        ]:
+            res = search_expansion.expand_query(query)
+            self.assertIn(expected, res["expanded_terms"], f"Missing {expected} for {query}")
+
 
 class SearchBenchmarkTests(unittest.TestCase):
     def test_ir_metric_calculations(self):
