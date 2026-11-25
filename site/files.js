@@ -268,7 +268,10 @@ function renderTree() {
   if (!filtered.length) root.append(node("p", "Nenhum arquivo nesta seleção.", "hint"));
   if (shown >= 1500) root.append(node("p", "Exibição limitada; use o filtro para restringir.", "hint"));
   const activeRow = root.querySelector('.tree-row[aria-current="true"]');
-  if (activeRow) activeRow.scrollIntoView({ block: "nearest" });
+  if (activeRow) {
+    const targetTop = activeRow.offsetTop - root.offsetTop - 80;
+    if (targetTop > 0) root.scrollTop = targetTop;
+  }
 }
 
 function install(mode, entries, repo = "", sha = "") {
