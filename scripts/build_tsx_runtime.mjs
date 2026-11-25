@@ -216,7 +216,14 @@ window.renderArchiveComponent = function renderArchiveComponent(container, entry
       return makeFallbackModule(spec);
     }
 
-    const fn = new Function("require", "module", "exports", "React", compiled);
+    const key = "__archiveMod_" + Math.random().toString(36).slice(2);
+    const scriptEl = document.createElement("script");
+    scriptEl.textContent = "window[" + JSON.stringify(key) + "] = function(require, module, exports, React) {\n" + compiled + "\n};";
+    document.head.appendChild(scriptEl);
+    scriptEl.remove();
+    const fn = window[key];
+    delete window[key];
+    if (typeof fn !== "function") throw new Error("Falha ao carregar modulo transpilado.");
     fn(localRequire, mod, mod.exports, React);
     return mod.exports;
   }

@@ -225,9 +225,17 @@ function renderTree() {
   }
   let shown = 0;
   function walk(parent, branch, prefix, depth) {
-    const entries = [...branch.children.entries()].sort(
-      (a, b) => Number(!a[1].children.size) - Number(!b[1].children.size) || a[0].localeCompare(b[0])
-    );
+    const entries = [...branch.children.entries()].sort((a, b) => {
+      const fa = a[1].children.size > 0;
+      const fb = b[1].children.size > 0;
+      if (fa !== fb) return fa ? -1 : 1;
+      const da = a[0].startsWith(".");
+      const db = b[0].startsWith(".");
+      if (da !== db) return da ? 1 : -1;
+      if (a[0] === "src") return -1;
+      if (b[0] === "src") return 1;
+      return a[0].localeCompare(b[0]);
+    });
     for (const [name, item] of entries) {
       if (shown++ >= 1500) return;
       const path = prefix ? prefix + "/" + name : name;
