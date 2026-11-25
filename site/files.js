@@ -500,17 +500,14 @@ async function renderTsxExperimental() {
       }
       prefix = parts.join("/");
     }
-    const candidate = state.entries.find(
-      (e) =>
-        e.path === prefix ||
-        e.path === "src/" + prefix ||
-        /\.(tsx|ts|jsx|js)$/.test(e.path) &&
-          (e.path.startsWith(prefix + ".") ||
-            e.path.startsWith("src/" + prefix + ".") ||
-            e.path.startsWith(prefix + "/index.") ||
-            e.path.startsWith("src/" + prefix + "/index."))
-    );
-    if (candidate && candidate.path !== entry.path && toFetch.length < 12) {
+    const exts = ["", ".tsx", ".ts", ".jsx", ".js", "/index.tsx", "/index.ts", "/index.jsx", "/index.js"];
+    const wanted = new Set();
+    for (const ext of exts) {
+      wanted.add(prefix + ext);
+      wanted.add("src/" + prefix + ext);
+    }
+    const candidate = state.entries.find((e) => e.path !== entry.path && wanted.has(e.path));
+    if (candidate && toFetch.length < 12) {
       toFetch.push(candidate);
     }
   }
