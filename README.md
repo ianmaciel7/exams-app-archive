@@ -97,3 +97,7 @@ correspondente e use o comando `recover` documentado no guia.
 - `docs/`: guia operacional e decisões de preservação.
 
 **Fora do Git:** bundles grandes e índices ficam em releases. A visibilidade pública é intencional; não presuma confidencialidade das releases ou branches. Não publique novos dados privados ou índices não sanitizados.
+
+## External UI/UX references
+
+- [Grok Bot — UI and motion research](docs/references/grok-bot/README.md): official references, visual media links, original interactive lab, animated SVG/GIF and state sheet. External research, not recovered project source.

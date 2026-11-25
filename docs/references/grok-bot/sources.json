@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "scope": "grok-bot",
+  "sources": [
+    {
+      "id": "official-design",
+      "title": "Official product design",
+      "url": "https://x.ai/news/designing-grok-bot",
+      "kind": "primary",
+      "notes": "Avatar variants and six states; activity details, computer access levels, structured response UI. Media and interactive examples on source page.",
+      "storage": "link-only",
+      "reviewed_on": "2026-11-25"
+    },
+    {
+      "id": "official-guide",
+      "title": "Designing Grok Bot with Grok Bot",
+      "url": "https://x.ai/bot/guides/designing-grok-bot-with-grok-bot",
+      "kind": "primary",
+      "notes": "Notch, corner peek, cursor companion and motion playground; explicitly exploratory rather than shipped features.",
+      "storage": "link-only",
+      "reviewed_on": "2026-11-25"
+    },
+    {
+      "id": "official-product",
+      "title": "Grok Bot product",
+      "url": "https://x.ai/bot",
+      "kind": "primary",
+      "notes": "Product entry point and live web character presentation.",
+      "storage": "link-only",
+      "reviewed_on": "2026-11-25"
+    },
+    {
+      "id": "launch",
+      "title": "Introducing Grok Bot",
+      "url": "https://www.youtube.com/watch?v=F1_0Lkp16Rc",
+      "kind": "primary-video",
+      "notes": "Launch video; product and mascot context.",
+      "storage": "link-only",
+      "reviewed_on": "2026-11-25"
+    },
+    {
+      "id": "launch-1",
+      "title": "Grok Bot 1.0 launch video",
+      "url": "https://launchscene.app/v/xai-grok-bot-introducing-grok-bot-1-0-ai-teammates-that-work?play=1&s=5",
+      "kind": "secondary-video",
+      "notes": "Indexed launch video scenes; UI and character choreography.",
+      "storage": "link-only",
+      "reviewed_on": "2026-11-25"
+    },
+    {
+      "id": "availability",
+      "title": "Grok Bot availability announcement",
+      "url": "https://www.clueso.io/showcase/were-making-grok-bot-more-widely-available",
+      "kind": "secondary-video",
+      "notes": "12-second announcement, stacking and tumbling characters; source description.",
+      "storage": "link-only",
+      "reviewed_on": "2026-11-25"
+    },
+    {
+      "id": "novra",
+      "title": "Taking Grok Bot outside the app",
+      "url": "https://www.novra.design/case-studies/grokbot",
+      "kind": "independent-concept",
+      "notes": "Interactive Rive demo; greeting, working, error, finished, upload, restart; Mac notch, widgets and lock screen.",
+      "storage": "link-only",
+      "reviewed_on": "2026-11-25"
+    },
+    {
+      "id": "60fps",
+      "title": "Grok Bot iOS motion gallery",
+      "url": "https://60fps.design/apps/grok-bot",
+      "kind": "secondary-gallery",
+      "notes": "Splash expression animation; some shots gated by subscription.",
+      "storage": "link-only",
+      "reviewed_on": "2026-11-25"
+    },
+    {
+      "id": "peeps",
+      "title": "Grok Bot Characters",
+      "url": "https://github.com/ThePeeps191/grok-bot-characters",
+      "kind": "community-code",
+      "notes": "Vanilla SVG/JS recreation; MIT code; author claims no original assets. Design rights remain separate.",
+      "storage": "link-only",
+      "reviewed_on": "2026-11-25"
+    },
+    {
+      "id": "antler",
+      "title": "GrokBotIcon",
+      "url": "https://github.com/AntlerPotato/GrokBotIcon",
+      "kind": "community-code",
+      "notes": "Vue/SVG reconstruction, 14 measured states, timeline and SVG/PNG/GIF/MP4 exports; MIT code only.",
+      "storage": "link-only",
+      "reviewed_on": "2026-11-25"
+    },
+    {
+      "id": "bloub",
+      "title": "Bloub live playground",
+      "url": "https://bloub.vercel.app",
+      "kind": "community-demo",
+      "notes": "Live playground linked by GrokBotIcon README.",
+      "storage": "link-only",
+      "reviewed_on": "2026-11-25"
+    },
+    {
+      "id": "morph",
+      "title": "Morph Bot",
+      "url": "https://github.com/scrya-com/grokbot-animation",
+      "kind": "community-code",
+      "notes": "39 states, 18 shapes, 14 one-shot morphs, native Web Component, Flutter port; upstream warns about reference-derived rights.",
+      "storage": "link-only",
+      "reviewed_on": "2026-11-25"
+    },
+    {
+      "id": "iduu",
+      "title": "DOM and animation analysis",
+      "url": "https://github.com/iduu/grokbot-animation/blob/main/ANALYSIS.md",
+      "kind": "community-analysis",
+      "notes": "Third-party inspection dated 2026-08-13; SVG fallback, lazy loading, state catalog. Not official verification.",
+      "storage": "link-only",
+      "reviewed_on": "2026-11-25"
+    },
+    {
+      "id": "blooby",
+      "title": "Blooby mascot animator",
+      "url": "https://github.com/divyanshu-patil/blooby",
+      "kind": "community-tool",
+      "notes": "Animation editor, timeline, procedural modifiers and Lottie export; license not assessed.",
+      "storage": "link-only",
+      "reviewed_on": "2026-11-25"
+    },
+    {
+      "id": "rive-rebuild",
+      "title": "Grok Bot rebuilt in Rive",
+      "url": "https://contra.com/p/6YgmEmqU-grok-bot-rebuilt-in-rive",
+      "kind": "community-demo",
+      "notes": "Independent Rive animation portfolio; license not assessed.",
+      "storage": "link-only",
+      "reviewed_on": "2026-11-25"
+    },
+    {
+      "id": "allo",
+      "title": "Allo × Grok Bot announcement",
+      "url": "https://www.bitmapstudio.com/work/allo-grok-bot",
+      "kind": "studio-case",
+      "notes": "Character animation and product motion case study.",
+      "storage": "link-only",
+      "reviewed_on": "2026-11-25"
+    },
+    {
+      "id": "reduced-motion",
+      "title": "Reduced motion media query",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion",
+      "kind": "implementation",
+      "notes": "Accessibility reference; not Grok-specific evidence.",
+      "storage": "link-only",
+      "reviewed_on": "2026-11-25"
+    }
+  ]
+}
