@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "monitor_version": "1.0.0",
+  "generated_at": "2026-11-25T23:04:41.874316+00:00",
+  "total_gaps_recorded": 0,
+  "by_gap_type": {},
+  "promoted_to_dev_count": 0,
+  "holdout_contamination_blocked_count": 0,
+  "holdout_isolation_verified": true,
+  "entries": []
+}
