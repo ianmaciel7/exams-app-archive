@@ -2,8 +2,8 @@
   "schema_version": 1,
   "verified_on": "2026-11-25",
   "plugin": "especialista-ui-ux",
-  "plugin_version": "1.8.11",
-  "previous_research_commit": "d5cfe8614a6104871c48586ec2aef22d67ae12d0",
+  "plugin_version": "1.8.12",
+  "previous_research_commit": "3188a869c68f97eadfdd5d476d0a5d9b950aca8b",
   "patterns": 47,
   "additional_pattern_families": [
     {
@@ -40,10 +40,16 @@
       "count": 8,
       "path": "docs/references/ui-ux-research-sources/getdesign-public-corpus-2026-11-25.json",
       "overlap": "Eight cross-indexed practices, not eight new unique patterns; 84 document records and ten analytical visual families."
+    },
+    {
+      "id": "ai-native-product-design",
+      "count": 163,
+      "path": "docs/references/ui-ux-research-sources/ai-native-product-design.json",
+      "overlap": "163 cross-indexed labels across ten families, not 163 unique discoveries."
     }
   ],
-  "source_urls": 377,
-  "added_source_urls": 88,
+  "source_urls": 387,
+  "added_source_urls": 10,
   "verification": {
     "plugin_release_confirmed": true,
     "plugin_reference_files_read": true,
@@ -52,9 +58,9 @@
     "new_source_records_equal": true,
     "full_catalog_equal": true,
     "markdown_equal": true,
-    "metadata_note": "Getdesign corpus Markdown and JSON are byte-identical across archive and plugin. Plugin source register is the union of 289 preserved records and an 88-record delta; its normalized URL set matches the 377-source archive register. New source records match. Historical metadata differences may remain."
+    "metadata_note": "AI-native Markdown exactly matches archive; structured JSON matches semantically. Plugin source-register union (289 historical + 88 getdesign + 14 AI-native links, deduplicated) matches all 387 normalized archive URLs. Historical metadata differences may remain."
   },
-  "scope": "General UI/UX: Getdesign public corpus, visual families and agent-ready design documentation; manual synchronization verified",
+  "scope": "General UI/UX: AI-native product design and Beyond Chat; manual synchronization verified",
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",
   "release_identifier_omitted": "Internal release identifiers are not published.",
   "getdesign_public_corpus": {
@@ -67,5 +73,17 @@
     "skill": "design-md-corpus",
     "source_register_layout": "archive consolidated; plugin base plus delta",
     "source_revision": "d5cfe8614a6104871c48586ec2aef22d67ae12d0"
+  },
+  "ai_native_product_design": {
+    "families": 10,
+    "cross_indexed_labels": 163,
+    "source_links": 14,
+    "added_source_urls": 10,
+    "private_library_update_verified": true,
+    "memory_persistence": "not independently verifiable",
+    "skill": "ai-native-product-design",
+    "source_register_layout": "archive consolidated; plugin base plus deltas",
+    "source_revision": "3188a869c68f97eadfdd5d476d0a5d9b950aca8b",
+    "evidence": "Partial public catalog and guide review; no exhaustive example audit or user testing."
   }
 }

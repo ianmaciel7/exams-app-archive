@@ -72,4 +72,4 @@ No claims of a market-share ranking or universal effectiveness. Primary document
 ## AI-native product design and Beyond Chat
 
 - [Research synthesis](../ui-ux-research-sources/ai-native-product-design.md) and [structured cross-index](../ui-ux-research-sources/ai-native-product-design.json).
-- 10 families; 163 cross-indexed labels, 10 new source URLs, 387 retained. Publication to other destinations not yet verified.
+- 10 families; 163 cross-indexed labels, 10 new source URLs, 387 retained. Especialista em UI/UX v1.8.12 and private Library readback verified; normalized source sets match. ChatGPT memory persistence unconfirmed. See [synchronization record](plugin-sync.json).
