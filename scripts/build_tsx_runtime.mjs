@@ -66,20 +66,70 @@ function makeIconProxy() {
   });
 }
 
-function makeFallbackModule(name) {
-  const FallbackComponent = React.forwardRef(function ArchiveFallback(props, ref) {
-    const tag = props.asChild ? React.Fragment : "div";
-    const pass = props.asChild
-      ? {}
-      : { ref, className: props.className, style: props.style, "data-mock": name };
-    return React.createElement(tag, pass, props.children);
+function makeRecursiveComponent(name) {
+  const isButton = /Trigger|Button|Close/i.test(name);
+  const Comp = React.forwardRef(function ArchivePrimitive(props, ref) {
+    if (props && props.asChild && React.isValidElement(props.children)) {
+      return React.cloneElement(props.children, { ref });
+    }
+    const clean = {};
+    for (const [k, v] of Object.entries(props || {})) {
+      if (
+        k === "children" ||
+        k === "asChild" ||
+        k === "render" ||
+        k === "nativeButton" ||
+        k === "keepMounted" ||
+        k === "sideOffset" ||
+        k === "alignOffset" ||
+        k === "collisionPadding" ||
+        k === "defaultOpen" ||
+        k === "onOpenChange" ||
+        k === "onValueChange"
+      ) {
+        continue;
+      }
+      if (typeof v !== "function" || k.startsWith("on")) {
+        clean[k] = v;
+      }
+    }
+    if (typeof props?.render === "function") {
+      return props.render(clean);
+    }
+    if (React.isValidElement(props?.render)) {
+      return React.cloneElement(props.render, clean, props.children);
+    }
+    const tag = isButton ? "button" : "div";
+    if (isButton && !clean.type) clean.type = "button";
+    return React.createElement(tag, { ...clean, ref }, props?.children);
   });
+  Comp.displayName = name;
+
+  return new Proxy(Comp, {
+    get(target, prop) {
+      if (prop in target) return target[prop];
+      if (prop === "$$typeof" || prop === "render" || prop === "displayName" || prop === "propTypes" || prop === "defaultProps") {
+        return target[prop];
+      }
+      if (typeof prop === "symbol") return target[prop];
+      if (typeof prop === "string" && /^[A-Z]/.test(prop)) {
+        return makeRecursiveComponent(name + "." + prop);
+      }
+      return target[prop];
+    },
+  });
+}
+
+function makeFallbackModule(name) {
+  const FallbackComponent = makeRecursiveComponent(name);
   return new Proxy(FallbackComponent, {
     get(target, prop) {
       if (prop === "__esModule") return true;
       if (prop === "default") return FallbackComponent;
-      if (prop === "cn" || prop === "clsx" || prop === "twMerge") return cn;
-      if (prop === "cva") return (base) => () => base || "";
+      if (prop === "cn") return cn;
+      if (prop === "clsx") return clsx;
+      if (prop === "twMerge") return twMerge;
+      if (prop === "cva") return cva;
       if (prop === "Slot") return FallbackComponent;
       if (prop === "AnimatePresence" || prop === "MotionConfig") {
         return ({ children }) => React.createElement(React.Fragment, null, children);
@@ -100,14 +150,7 @@ function makeFallbackModule(name) {
         });
       }
       if (typeof prop === "string" && /^[A-Z]/.test(prop)) {
-        const Sub = React.forwardRef((props, ref) => {
-          const isButton = /Trigger|Button|Close/i.test(prop);
-          const tag = isButton ? "button" : "div";
-          const extra = isButton ? { type: props.type || "button", onClick: props.onClick } : {};
-          return React.createElement(tag, { ref, className: props.className, style: props.style, ...extra }, props.children);
-        });
-        Sub.displayName = prop;
-        return Sub;
+        return makeRecursiveComponent(prop);
       }
       if (typeof prop === "string" && prop.startsWith("use")) {
         return () => ({
