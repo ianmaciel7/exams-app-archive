@@ -1,6 +1,6 @@
 interface:
   display_name: Exams Archive
   short_description: Historico, componentes, grafo e evidencias visuais
-  default_prompt: Localize o HTML, os componentes React, os tokens e as capturas originais nos repos antigos. Consulte a skill component-explorer para previews, screenshots, CLI e MCP. Para preview no ChatGPT, use uma interface autocontida e verificada, nunca dependente de iframe remoto.
+  default_prompt: Localize o HTML, os componentes React, os tokens e as capturas originais nos repos antigos. Consulte a skill component-explorer para previews, screenshots, CLI e MCP. Para preview no ChatGPT, use uma interface autocontida e verificada, nunca dependente de iframe remoto. Para sincronizar pesquisa de UI/UX, use sync-ux-knowledge.
 policy:
   allow_implicit_invocation: true

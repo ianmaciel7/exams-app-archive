@@ -1,4 +1,4 @@
-# Exams Archive — pacote único multiagente (v0.7.0)
+# Exams Archive — pacote único multiagente (v0.8.1)
 
 Fonte canônica do plugin privado para **ChatGPT, Codex, Claude Code e Antigravity**: `plugins/exams-archive-native/` na branch `main` deste repositório. Nenhum backup histórico é publicado no pacote.
 
@@ -24,3 +24,7 @@ O repositório foi tornado público em 24/11/2026. Verifique a visibilidade ante
 
 ## Componentes e capturas (0.7.0)
 A skill `component-explorer` orienta árvore de arquivos, grafo, Pages, `llms.txt`, renderização React revisada, captura Playwright e catálogo SQLite. Leia `docs/COMPONENT-EXPLORER.md` no repositório para a CLI `components` e o MCP stdio local. Os comandos novos precisam do checkout canônico e dependências; não são ferramentas MCP remotas instaladas no ChatGPT.
+
+## Sincronização de conhecimento UI/UX
+
+- `skills/sync-ux-knowledge`: comando explícito "mande tudo memoria,plugin,github"; consolida uma única delta e sincroniza Especialista em UI/UX, arquivo GitHub, referência privada da Biblioteca e memória do ChatGPT quando suportada. Verifica os quatro destinos de forma independente; não promete gravação automática na memória.

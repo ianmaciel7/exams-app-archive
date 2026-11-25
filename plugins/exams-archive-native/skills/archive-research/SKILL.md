@@ -9,6 +9,8 @@ Fonte do **backup histórico**: repositório **público desde 24/11/2026** (conf
 
 ## Roteamento: decidir antes de buscar
 
+- **Salvar/sincronizar pesquisa UI/UX** ("mande tudo memoria,plugin,github" ou variantes): carregar `skills/sync-ux-knowledge/SKILL.md` antes de consultar novamente fontes ou modificar arquivos. O destino plugin é o Especialista em UI/UX; este plugin apenas orquestra.
+
 - **Criação, reprodução ou preview de UI (sidebar, shell, layout, design, HTML, imagem de referência)**: leia a skill **`ui-fidelity`**, `visual-source-catalog.md`, `chat-preview-contract.md` e `source-map.md` **antes** de qualquer FTS5. Primeiro obtenha os arquivos e screenshots originais, não um índice genérico.
 - **Auditoria de backup/restauração**: leia `README.md`, `docs/VERIFICATION-2026-11-23.md`, `docs/DELETE-READINESS.md` e `docs/EXTRACTION-GUIDE.md` conforme necessidade. Verifique o status presente; jamais conclua que o Notes privado está 100% restaurado só por histórico.
 - **Busca histórica sem caminho conhecido**: relatórios primeiro, busca autenticada privada depois (`references/private-fts5.md`).
