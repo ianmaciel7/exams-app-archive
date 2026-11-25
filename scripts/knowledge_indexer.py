@@ -40,6 +40,9 @@ EMOJI_REGEX = re.compile(r"[\U00010000-\U0010ffff]")
 
 VALID_STATUSES = frozenset({"proposed", "accepted", "superseded", "rejected", "not-recovered"})
 VALID_RELATIONSHIPS = frozenset({"same-as", "alias", "related", "conflicts-with", "ambiguous-with"})
+VALID_PROVENANCE_STATUSES = frozenset({"verified", "unverified", "not-recovered", "synthetic"})
+ARTIFICIAL_SHA_PREFIXES = ("b000", "d000", "q000", "f000", "s000", "g000")
+GIT_SHA1_RE = re.compile(r"^[0-9a-fA-F]{40}$")
 
 DEFAULT_INVESTIGATED_REFS = [
     "refs/heads/main",
@@ -71,7 +74,9 @@ CREATE TABLE IF NOT EXISTS decision_records (
     path TEXT,
     line_start INTEGER,
     line_end INTEGER,
-    investigated_refs_json TEXT
+    investigated_refs_json TEXT,
+    provenance_status TEXT NOT NULL DEFAULT 'unverified' CHECK(provenance_status IN ('verified', 'unverified', 'not-recovered', 'synthetic')),
+    is_synthetic BOOLEAN NOT NULL DEFAULT 0
 );
 
 CREATE TABLE IF NOT EXISTS decision_occurrences (
@@ -97,7 +102,9 @@ CREATE TABLE IF NOT EXISTS glossary_concepts (
     canonical_term_pt TEXT NOT NULL,
     description TEXT,
     implementation_file TEXT,
-    implementation_sha TEXT
+    implementation_sha TEXT,
+    provenance_status TEXT NOT NULL DEFAULT 'unverified' CHECK(provenance_status IN ('verified', 'unverified', 'not-recovered', 'synthetic')),
+    is_synthetic BOOLEAN NOT NULL DEFAULT 0
 );
 
 CREATE TABLE IF NOT EXISTS glossary_terms (
@@ -133,6 +140,8 @@ CANONICAL_CONCEPTS: list[dict[str, Any]] = [
         "description": "Fixar uma aba aberta no cabecalho do workspace para manter acesso permanente sem fechar na navegacao.",
         "implementation_file": "notes-app@old-5/src/app/_components/workspace/app-header-tabs.tsx",
         "implementation_sha": "4eb93c5013c27ba6724b4f116cc9fe5846398eb8",
+        "provenance_status": "verified",
+        "is_synthetic": False,
         "terms": [
             ("pin tab", "en", "same-as", None, "app-header-tabs.tsx"),
             ("fixar uma aba", "pt", "same-as", None, "app-header-tabs.tsx"),
@@ -151,6 +160,8 @@ CANONICAL_CONCEPTS: list[dict[str, Any]] = [
         "description": "Entidade fixada na barra lateral (sidebar overview) para atalho rapido e persistente.",
         "implementation_file": "notes-app@old-5/src/app/_components/workspace/app-sidebar-overview.tsx",
         "implementation_sha": "a020d635de368b755992e1282e18af9fdc2b8a03",
+        "provenance_status": "verified",
+        "is_synthetic": False,
         "terms": [
             ("pinned sidebar entity", "en", "same-as", None, "app-sidebar-overview.tsx"),
             ("fixados sidebar", "pt", "same-as", None, "app-sidebar-overview.tsx"),
@@ -169,6 +180,8 @@ CANONICAL_CONCEPTS: list[dict[str, Any]] = [
         "description": "Vinculo ou fixacao de um tipo de objeto (anotacao, questao, etc.) a visoes e layouts do workspace.",
         "implementation_file": "notes-app@old-5/src/app/_components/workspace/app-sidebar-overview.tsx",
         "implementation_sha": "a020d635de368b755992e1282e18af9fdc2b8a03",
+        "provenance_status": "verified",
+        "is_synthetic": False,
         "terms": [
             ("pin object type", "en", "same-as", None, "object-type-contract"),
             ("fixar objeto", "pt", "same-as", None, "object-type-contract"),
@@ -186,6 +199,8 @@ CANONICAL_CONCEPTS: list[dict[str, Any]] = [
         "description": "Colecao de entidades marcadas como favoritas pelo usuario.",
         "implementation_file": "notes-app@old-5/src/app/_components/workspace/app-sidebar-overview.tsx",
         "implementation_sha": "a020d635de368b755992e1282e18af9fdc2b8a03",
+        "provenance_status": "verified",
+        "is_synthetic": False,
         "terms": [
             ("favorites", "en", "same-as", None, "ui-favorites"),
             ("favoritos", "pt", "same-as", None, "ui-favorites"),
@@ -203,7 +218,9 @@ CANONICAL_CONCEPTS: list[dict[str, Any]] = [
         "canonical_term_pt": "Espaco",
         "description": "Container de nivel superior para organizacao e agrupamento de cadernos e conteudos de estudo.",
         "implementation_file": "docs/Documentos/01-planejamento/revisao/app-shell/decisoes.md",
-        "implementation_sha": "d000space000000000000000000000000000000",
+        "implementation_sha": "d811241f0a0f694694d35e4636ed46d2e38478c9",
+        "provenance_status": "verified",
+        "is_synthetic": False,
         "terms": [
             ("space", "en", "same-as", None, "domain-space"),
             ("espaco", "pt", "same-as", None, "domain-space"),
@@ -221,6 +238,8 @@ CANONICAL_CONCEPTS: list[dict[str, Any]] = [
         "description": "Area de trabalho e visualizacao ativa do usuario onde paineis, abas e editores residem.",
         "implementation_file": "notes-app@old-5/src/app/_components/workspace/app-header-tabs.tsx",
         "implementation_sha": "4eb93c5013c27ba6724b4f116cc9fe5846398eb8",
+        "provenance_status": "verified",
+        "is_synthetic": False,
         "terms": [
             ("workspace", "en", "same-as", None, "domain-workspace"),
             ("area de trabalho", "pt", "same-as", None, "domain-workspace"),
@@ -235,17 +254,22 @@ CANONICAL_CONCEPTS: list[dict[str, Any]] = [
         "category": "domain",
         "canonical_term_en": "Question",
         "canonical_term_pt": "Questao",
-        "description": "Item avaliativo formal contendo enunciado, opcoes de resposta e justificativa/resolucao.",
+        "description": (
+            "Item avaliativo formal contendo enunciado, opcoes de resposta e justificativa/resolucao. "
+            "[Proveniencia nao verificada: blob SHA de implementacao nao recuperado nas fontes auditadas.]"
+        ),
         "implementation_file": "src/domain/question.ts",
-        "implementation_sha": "q000domain00000000000000000000000000000",
+        "implementation_sha": None,
+        "provenance_status": "unverified",
+        "is_synthetic": False,
         "terms": [
-            ("question", "en", "same-as", None, "domain-question"),
-            ("questao", "pt", "same-as", None, "domain-question"),
-            ("questions", "en", "alias", None, "domain-question"),
-            ("questoes", "pt", "alias", None, "domain-question"),
-            ("item", "any", "related", None, "domain-question"),
-            ("flashcard", "en", "conflicts-with", "domain.flashcard", "domain-question"),
-            ("simulado", "pt", "conflicts-with", "domain.simulado", "domain-question"),
+            ("question", "en", "same-as", None, "domain-question (provenance: unverified)"),
+            ("questao", "pt", "same-as", None, "domain-question (provenance: unverified)"),
+            ("questions", "en", "alias", None, "domain-question (provenance: unverified)"),
+            ("questoes", "pt", "alias", None, "domain-question (provenance: unverified)"),
+            ("item", "any", "related", None, "domain-question (provenance: unverified)"),
+            ("flashcard", "en", "conflicts-with", "domain.flashcard", "domain-question (provenance: unverified)"),
+            ("simulado", "pt", "conflicts-with", "domain.simulado", "domain-question (provenance: unverified)"),
         ],
     },
     {
@@ -253,18 +277,23 @@ CANONICAL_CONCEPTS: list[dict[str, Any]] = [
         "category": "domain",
         "canonical_term_en": "Flashcard",
         "canonical_term_pt": "Cartao de Memorizacao",
-        "description": "Cartao de estudo frente e verso agendado por algoritmo de repeticao espacada (SRS/FSRS).",
+        "description": (
+            "Cartao de estudo frente e verso agendado por algoritmo de repeticao espacada (SRS/FSRS). "
+            "[Proveniencia nao verificada: blob SHA de implementacao nao recuperado nas fontes auditadas.]"
+        ),
         "implementation_file": "src/domain/flashcard.ts",
-        "implementation_sha": "f000domain00000000000000000000000000000",
+        "implementation_sha": None,
+        "provenance_status": "unverified",
+        "is_synthetic": False,
         "terms": [
-            ("flashcard", "en", "same-as", None, "domain-flashcard"),
-            ("cartao", "pt", "same-as", None, "domain-flashcard"),
-            ("flashcards", "en", "alias", None, "domain-flashcard"),
-            ("cartoes", "pt", "alias", None, "domain-flashcard"),
-            ("card", "en", "alias", None, "domain-flashcard"),
-            ("srs", "en", "related", None, "domain-flashcard"),
-            ("repeticao espacada", "pt", "related", None, "domain-flashcard"),
-            ("question", "en", "conflicts-with", "domain.question", "domain-flashcard"),
+            ("flashcard", "en", "same-as", None, "domain-flashcard (provenance: unverified)"),
+            ("cartao", "pt", "same-as", None, "domain-flashcard (provenance: unverified)"),
+            ("flashcards", "en", "alias", None, "domain-flashcard (provenance: unverified)"),
+            ("cartoes", "pt", "alias", None, "domain-flashcard (provenance: unverified)"),
+            ("card", "en", "alias", None, "domain-flashcard (provenance: unverified)"),
+            ("srs", "en", "related", None, "domain-flashcard (provenance: unverified)"),
+            ("repeticao espacada", "pt", "related", None, "domain-flashcard (provenance: unverified)"),
+            ("question", "en", "conflicts-with", "domain.question", "domain-flashcard (provenance: unverified)"),
         ],
     },
     {
@@ -272,17 +301,22 @@ CANONICAL_CONCEPTS: list[dict[str, Any]] = [
         "category": "domain",
         "canonical_term_en": "Mock Exam",
         "canonical_term_pt": "Simulado",
-        "description": "Sessao cronometrada com conjunto estruturado de questoes reproduzindo condicoes reais de prova.",
+        "description": (
+            "Sessao cronometrada com conjunto estruturado de questoes reproduzindo condicoes reais de prova. "
+            "[Proveniencia nao verificada: blob SHA de implementacao nao recuperado nas fontes auditadas.]"
+        ),
         "implementation_file": "src/domain/exam.ts",
-        "implementation_sha": "s000domain00000000000000000000000000000",
+        "implementation_sha": None,
+        "provenance_status": "unverified",
+        "is_synthetic": False,
         "terms": [
-            ("simulado", "pt", "same-as", None, "domain-simulado"),
-            ("mock exam", "en", "same-as", None, "domain-simulado"),
-            ("simulados", "pt", "alias", None, "domain-simulado"),
-            ("practice test", "en", "alias", None, "domain-simulado"),
-            ("prova", "pt", "related", None, "domain-simulado"),
-            ("exam", "en", "related", None, "domain-simulado"),
-            ("question", "en", "conflicts-with", "domain.question", "domain-simulado"),
+            ("simulado", "pt", "same-as", None, "domain-simulado (provenance: unverified)"),
+            ("mock exam", "en", "same-as", None, "domain-simulado (provenance: unverified)"),
+            ("simulados", "pt", "alias", None, "domain-simulado (provenance: unverified)"),
+            ("practice test", "en", "alias", None, "domain-simulado (provenance: unverified)"),
+            ("prova", "pt", "related", None, "domain-simulado (provenance: unverified)"),
+            ("exam", "en", "related", None, "domain-simulado (provenance: unverified)"),
+            ("question", "en", "conflicts-with", "domain.question", "domain-simulado (provenance: unverified)"),
         ],
     },
     {
@@ -290,17 +324,22 @@ CANONICAL_CONCEPTS: list[dict[str, Any]] = [
         "category": "ui",
         "canonical_term_en": "UI Graph View",
         "canonical_term_pt": "Visualizacao em Grafo",
-        "description": "Componente interativo e responsivo de exibicao visual de nos e arestas no canvas.",
+        "description": (
+            "Componente interativo e responsivo de exibicao visual de nos e arestas no canvas. "
+            "[Proveniencia nao verificada: blob SHA de implementacao nao recuperado nas fontes auditadas.]"
+        ),
         "implementation_file": "src/components/graph-view.tsx",
-        "implementation_sha": "g000uigraph0000000000000000000000000000",
+        "implementation_sha": None,
+        "provenance_status": "unverified",
+        "is_synthetic": False,
         "terms": [
-            ("graph view", "en", "same-as", None, "ui-graph"),
-            ("visualizacao em grafo", "pt", "same-as", None, "ui-graph"),
-            ("ui graph", "en", "alias", None, "ui-graph"),
-            ("grafo interativo", "pt", "alias", None, "ui-graph"),
-            ("graph", "en", "ambiguous-with", "domain.grafo", "ui-graph"),
-            ("grafo", "pt", "ambiguous-with", "domain.grafo", "ui-graph"),
-            ("domain grafo", "en", "conflicts-with", "domain.grafo", "ui-graph"),
+            ("graph view", "en", "same-as", None, "ui-graph (provenance: unverified)"),
+            ("visualizacao em grafo", "pt", "same-as", None, "ui-graph (provenance: unverified)"),
+            ("ui graph", "en", "alias", None, "ui-graph (provenance: unverified)"),
+            ("grafo interativo", "pt", "alias", None, "ui-graph (provenance: unverified)"),
+            ("graph", "en", "ambiguous-with", "domain.grafo", "ui-graph (provenance: unverified)"),
+            ("grafo", "pt", "ambiguous-with", "domain.grafo", "ui-graph (provenance: unverified)"),
+            ("domain grafo", "en", "conflicts-with", "domain.grafo", "ui-graph (provenance: unverified)"),
         ],
     },
     {
@@ -308,17 +347,22 @@ CANONICAL_CONCEPTS: list[dict[str, Any]] = [
         "category": "domain",
         "canonical_term_en": "Domain Knowledge Graph",
         "canonical_term_pt": "Grafo de Dominio",
-        "description": "Estrutura de dados relacional e ontologica de nos, tags, arestas e pesos do conhecimento.",
+        "description": (
+            "Estrutura de dados relacional e ontologica de nos, tags, arestas e pesos do conhecimento. "
+            "[Proveniencia nao verificada: blob SHA canonico nao atribuido a implementacao historica no inventario.]"
+        ),
         "implementation_file": "scripts/graph_linker.py",
-        "implementation_sha": "g000domaingrafo000000000000000000000000",
+        "implementation_sha": None,
+        "provenance_status": "unverified",
+        "is_synthetic": False,
         "terms": [
-            ("knowledge graph", "en", "same-as", None, "domain-grafo"),
-            ("grafo de conhecimento", "pt", "same-as", None, "domain-grafo"),
-            ("graph data structure", "en", "alias", None, "domain-grafo"),
-            ("modelo de grafo", "pt", "alias", None, "domain-grafo"),
-            ("graph", "en", "ambiguous-with", "ui.graph", "domain-grafo"),
-            ("grafo", "pt", "ambiguous-with", "ui.graph", "domain-grafo"),
-            ("ui graph", "en", "conflicts-with", "ui.graph", "domain-grafo"),
+            ("knowledge graph", "en", "same-as", None, "domain-grafo (provenance: unverified)"),
+            ("grafo de conhecimento", "pt", "same-as", None, "domain-grafo (provenance: unverified)"),
+            ("graph data structure", "en", "alias", None, "domain-grafo (provenance: unverified)"),
+            ("modelo de grafo", "pt", "alias", None, "domain-grafo (provenance: unverified)"),
+            ("graph", "en", "ambiguous-with", "ui.graph", "domain-grafo (provenance: unverified)"),
+            ("grafo", "pt", "ambiguous-with", "ui.graph", "domain-grafo (provenance: unverified)"),
+            ("ui graph", "en", "conflicts-with", "ui.graph", "domain-grafo (provenance: unverified)"),
         ],
     },
     {
@@ -329,6 +373,8 @@ CANONICAL_CONCEPTS: list[dict[str, Any]] = [
         "description": "Abertura temporaria por sobreposicao da barra lateral sem alterar o estado colapsado persistido.",
         "implementation_file": "notes-app@old-5/src/app/_components/workspace/app-sidebar-overview.tsx",
         "implementation_sha": "a020d635de368b755992e1282e18af9fdc2b8a03",
+        "provenance_status": "verified",
+        "is_synthetic": False,
         "terms": [
             ("peek", "en", "same-as", None, "ui-sidebar-peek"),
             ("espiar", "pt", "same-as", None, "ui-sidebar-peek"),
@@ -346,6 +392,8 @@ CANONICAL_CONCEPTS: list[dict[str, Any]] = [
         "description": "Recolhimento persistente da barra lateral para maximizar a visao do espaco de trabalho.",
         "implementation_file": "notes-app@old-5/src/app/_components/workspace/app-sidebar-overview.tsx",
         "implementation_sha": "a020d635de368b755992e1282e18af9fdc2b8a03",
+        "provenance_status": "verified",
+        "is_synthetic": False,
         "terms": [
             ("collapse", "en", "same-as", None, "ui-sidebar-collapse"),
             ("recolher", "pt", "same-as", None, "ui-sidebar-collapse"),
@@ -375,11 +423,13 @@ SEED_DECISIONS: list[dict[str, Any]] = [
         "source_repo": "exams-app-old",
         "source_ref": "refs/heads/backup/old-1",
         "commit_sha": "c2fca6232c45ce4d64d0088036e1ddd0742944d4",
-        "blob_sha": "b000adr00050000000000000000000000000000",
+        "blob_sha": "5f2eadd87895150960d5b0086f3772bfc70299f3",
         "path": "docs/adr/0005-configure-testing.md",
         "line_start": 1,
         "line_end": 50,
         "investigated_refs_json": None,
+        "provenance_status": "verified",
+        "is_synthetic": False,
     },
     {
         "decision_id": "ADR-0002",
@@ -396,11 +446,13 @@ SEED_DECISIONS: list[dict[str, Any]] = [
         "source_repo": "exams-app-old",
         "source_ref": "refs/heads/backup/dev-before-adr2",
         "commit_sha": "1db80ad136bbab8720637fbd33315d08bf6a5def",
-        "blob_sha": "b000adr00020000000000000000000000000000",
+        "blob_sha": "b1b64da0374bb002f797793d0953a7bcf54ae22d",
         "path": "docs/adr/0002-add-basic-skills.md",
         "line_start": 1,
         "line_end": 45,
         "investigated_refs_json": None,
+        "provenance_status": "verified",
+        "is_synthetic": False,
     },
     {
         "decision_id": "ADR-0008",
@@ -417,11 +469,13 @@ SEED_DECISIONS: list[dict[str, Any]] = [
         "source_repo": "exams-app-old",
         "source_ref": "refs/heads/backup/old-1",
         "commit_sha": "c2fca6232c45ce4d64d0088036e1ddd0742944d4",
-        "blob_sha": "b000adr00080000000000000000000000000000",
+        "blob_sha": "eb3e0712276da0b61ea0058369aca95b5160d59b",
         "path": "docs/adr/0008-install-firebase-ui-registry.md",
         "line_start": 1,
         "line_end": 52,
         "investigated_refs_json": None,
+        "provenance_status": "verified",
+        "is_synthetic": False,
     },
     {
         "decision_id": "DEC-APP-SHELL-01",
@@ -438,11 +492,13 @@ SEED_DECISIONS: list[dict[str, Any]] = [
         "source_repo": "notes-app",
         "source_ref": "refs/heads/old-5",
         "commit_sha": "4eb93c5013c27ba6724b4f116cc9fe5846398eb8",
-        "blob_sha": "b000decappshell000000000000000000000000",
+        "blob_sha": "d811241f0a0f694694d35e4636ed46d2e38478c9",
         "path": "docs/Documentos/01-planejamento/revisao/app-shell/decisoes.md",
         "line_start": 1,
         "line_end": 38,
         "investigated_refs_json": None,
+        "provenance_status": "verified",
+        "is_synthetic": False,
     },
     {
         "decision_id": "DEC-SIDEBAR-PROTOTIPO-01",
@@ -459,11 +515,13 @@ SEED_DECISIONS: list[dict[str, Any]] = [
         "source_repo": "notes-app",
         "source_ref": "refs/heads/old-5",
         "commit_sha": "a020d635de368b755992e1282e18af9fdc2b8a03",
-        "blob_sha": "b000decsidebar0000000000000000000000000",
+        "blob_sha": "5a6b72be94ccfe4316e65dcd9fafaba9fa9accf1",
         "path": "docs/Documentos/01-planejamento/revisao/sidebar-prototipo/decisoes.md",
         "line_start": 1,
         "line_end": 42,
         "investigated_refs_json": None,
+        "provenance_status": "verified",
+        "is_synthetic": False,
     },
 ]
 
@@ -506,6 +564,56 @@ def normalize_status(status_str: str) -> str:
     return "proposed"
 
 
+def is_artificial_sha(sha: str | None) -> bool:
+    """Return True if sha matches known artificial/placeholder patterns."""
+    if not sha or not isinstance(sha, str):
+        return False
+    lowered = sha.strip().lower()
+    if not lowered:
+        return False
+    if any(lowered.startswith(prefix) for prefix in ARTIFICIAL_SHA_PREFIXES):
+        return True
+    if lowered == "0" * 40 or lowered.endswith("0" * 16):
+        return True
+    return False
+
+
+def validate_git_sha(sha: str | None) -> bool:
+    """Validate that a SHA string is a genuine 40-char hex Git SHA-1 and not artificial."""
+    if not sha or not isinstance(sha, str):
+        return False
+    candidate = sha.strip()
+    if not GIT_SHA1_RE.match(candidate):
+        return False
+    if is_artificial_sha(candidate):
+        return False
+    return True
+
+
+def _resolve_provenance_fields(
+    sha: str | None,
+    requested_status: str | None = None,
+    requested_synthetic: bool = False,
+) -> tuple[str | None, str, int]:
+    """Normalize (sha, provenance_status, is_synthetic) without allowing artificial SHAs as verified."""
+    if requested_status in VALID_PROVENANCE_STATUSES:
+        status = requested_status
+    else:
+        status = "unverified"
+
+    if sha is not None and str(sha).strip() != "":
+        sha_str = str(sha).strip()
+        if not validate_git_sha(sha_str):
+            if is_artificial_sha(sha_str):
+                return None, "synthetic" if requested_synthetic else "unverified", 1 if requested_synthetic else 0
+            return None, "unverified", 1 if requested_synthetic else 0
+        return sha_str, status, 1 if (requested_synthetic or status == "synthetic") else 0
+
+    if status == "verified":
+        status = "unverified"
+    return None, status, 1 if (requested_synthetic or status == "synthetic") else 0
+
+
 def compute_git_blob_sha(content_bytes: bytes) -> str:
     """Compute standard Git blob SHA-1 hash."""
     header = f"blob {len(content_bytes)}\0".encode("utf-8")
@@ -537,12 +645,18 @@ def seed_canonical_knowledge(conn: sqlite3.Connection) -> None:
     """Seed the database with canonical multilingual concepts, terms, and known ADRs."""
     # Seed concepts and terms
     for concept in CANONICAL_CONCEPTS:
+        impl_sha, prov_status, is_synth = _resolve_provenance_fields(
+            concept.get("implementation_sha"),
+            concept.get("provenance_status", "unverified"),
+            bool(concept.get("is_synthetic", False)),
+        )
         conn.execute(
             """
             INSERT OR REPLACE INTO glossary_concepts (
                 concept_id, category, canonical_term_en, canonical_term_pt,
-                description, implementation_file, implementation_sha
-            ) VALUES (?, ?, ?, ?, ?, ?, ?)
+                description, implementation_file, implementation_sha,
+                provenance_status, is_synthetic
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 concept["concept_id"],
@@ -551,7 +665,9 @@ def seed_canonical_knowledge(conn: sqlite3.Connection) -> None:
                 concept["canonical_term_pt"],
                 concept["description"],
                 concept.get("implementation_file"),
-                concept.get("implementation_sha"),
+                impl_sha,
+                prov_status,
+                is_synth,
             ),
         )
 
@@ -581,14 +697,23 @@ def seed_canonical_knowledge(conn: sqlite3.Connection) -> None:
 
     # Seed known architecture decisions
     for dec in SEED_DECISIONS:
+        blob_sha, prov_status, is_synth = _resolve_provenance_fields(
+            dec.get("blob_sha"),
+            dec.get("provenance_status", "unverified"),
+            bool(dec.get("is_synthetic", False)),
+        )
+        commit_sha = dec.get("commit_sha")
+        if commit_sha and not validate_git_sha(commit_sha):
+            commit_sha = None
         conn.execute(
             """
             INSERT OR REPLACE INTO decision_records (
                 decision_id, title, status, motivation, alternatives_json,
                 consequences, scope, valid_from_ref, valid_until_ref,
                 supersedes_id, superseded_by_id, source_repo, source_ref,
-                commit_sha, blob_sha, path, line_start, line_end, investigated_refs_json
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                commit_sha, blob_sha, path, line_start, line_end,
+                investigated_refs_json, provenance_status, is_synthetic
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 dec["decision_id"],
@@ -604,12 +729,14 @@ def seed_canonical_knowledge(conn: sqlite3.Connection) -> None:
                 dec.get("superseded_by_id"),
                 dec.get("source_repo"),
                 dec.get("source_ref"),
-                dec.get("commit_sha"),
-                dec.get("blob_sha"),
+                commit_sha,
+                blob_sha,
                 dec.get("path"),
                 dec.get("line_start", 1),
                 dec.get("line_end", 1),
                 dec.get("investigated_refs_json"),
+                prov_status,
+                is_synth,
             ),
         )
 
@@ -621,10 +748,10 @@ def seed_canonical_knowledge(conn: sqlite3.Connection) -> None:
             """,
             (
                 dec["decision_id"],
-                dec.get("blob_sha"),
+                blob_sha,
                 dec.get("source_repo"),
                 dec.get("source_ref"),
-                dec.get("commit_sha"),
+                commit_sha,
                 dec.get("path"),
                 dec.get("line_start", 1),
                 dec.get("line_end", 1),
@@ -668,8 +795,9 @@ def record_not_recovered_adr(
             decision_id, title, status, motivation, alternatives_json,
             consequences, scope, valid_from_ref, valid_until_ref,
             supersedes_id, superseded_by_id, source_repo, source_ref,
-            commit_sha, blob_sha, path, line_start, line_end, investigated_refs_json
-        ) VALUES (?, ?, 'not-recovered', ?, NULL, NULL, 'unrecovered', NULL, NULL, NULL, NULL, ?, NULL, NULL, NULL, NULL, NULL, NULL, ?)
+            commit_sha, blob_sha, path, line_start, line_end,
+            investigated_refs_json, provenance_status, is_synthetic
+        ) VALUES (?, ?, 'not-recovered', ?, NULL, NULL, 'unrecovered', NULL, NULL, NULL, NULL, ?, NULL, NULL, NULL, NULL, NULL, NULL, ?, 'not-recovered', 0)
         """,
         (norm_id, t, motivation, repo, refs_json),
     )
@@ -682,6 +810,9 @@ def record_not_recovered_adr(
         "motivation": motivation,
         "investigated_refs": refs,
         "source_repo": repo,
+        "provenance_status": "not-recovered",
+        "is_synthetic": False,
+        "verified": False,
     }
 
 
@@ -1031,14 +1162,23 @@ def index_document_file(
 
     indexed_ids = []
     for adr in parsed_adrs:
+        adr_blob_sha, adr_prov_status, adr_is_synth = _resolve_provenance_fields(
+            adr.get("blob_sha"),
+            "verified" if adr.get("blob_sha") else "unverified",
+            False,
+        )
+        adr_commit_sha = adr.get("commit_sha")
+        if adr_commit_sha and not validate_git_sha(adr_commit_sha):
+            adr_commit_sha = None
         conn.execute(
             """
             INSERT OR REPLACE INTO decision_records (
                 decision_id, title, status, motivation, alternatives_json,
                 consequences, scope, valid_from_ref, valid_until_ref,
                 supersedes_id, superseded_by_id, source_repo, source_ref,
-                commit_sha, blob_sha, path, line_start, line_end, investigated_refs_json
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                commit_sha, blob_sha, path, line_start, line_end,
+                investigated_refs_json, provenance_status, is_synthetic
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 adr["decision_id"],
@@ -1054,12 +1194,14 @@ def index_document_file(
                 adr["superseded_by_id"],
                 adr["source_repo"],
                 adr["source_ref"],
-                adr["commit_sha"],
-                adr["blob_sha"],
+                adr_commit_sha,
+                adr_blob_sha,
                 adr["path"],
                 adr["line_start"],
                 adr["line_end"],
                 adr["investigated_refs_json"],
+                adr_prov_status,
+                adr_is_synth,
             ),
         )
 
@@ -1071,10 +1213,10 @@ def index_document_file(
             """,
             (
                 adr["decision_id"],
-                adr["blob_sha"],
+                adr_blob_sha,
                 adr["source_repo"],
                 adr["source_ref"],
-                adr["commit_sha"],
+                adr_commit_sha,
                 adr["path"],
                 adr["line_start"],
                 adr["line_end"],
@@ -1120,9 +1262,32 @@ def index_directory(
     return count
 
 
+def _decision_summary_from_row(row: sqlite3.Row) -> dict[str, Any]:
+    """Build decision summary dictionary including explicit provenance verification flags."""
+    prov_status = row["provenance_status"] if "provenance_status" in row.keys() else "unverified"
+    is_synth = bool(row["is_synthetic"]) if "is_synthetic" in row.keys() else False
+    blob_sha = row["blob_sha"] if "blob_sha" in row.keys() else None
+    is_verified = (prov_status == "verified") and not is_synth and validate_git_sha(blob_sha)
+    return {
+        "decision_id": row["decision_id"],
+        "title": row["title"],
+        "status": row["status"],
+        "motivation": row["motivation"],
+        "consequences": row["consequences"],
+        "valid_from_ref": row["valid_from_ref"],
+        "valid_until_ref": row["valid_until_ref"],
+        "path": row["path"],
+        "blob_sha": blob_sha,
+        "provenance_status": prov_status,
+        "is_synthetic": is_synth,
+        "verified": is_verified,
+    }
+
+
 def get_applicable_decisions_for_concept(
     conn: sqlite3.Connection,
     concept_id: str,
+    verified_only: bool = False,
 ) -> list[dict[str, Any]]:
     """Retrieve decision records applicable to a specific concept."""
     decisions = []
@@ -1130,7 +1295,8 @@ def get_applicable_decisions_for_concept(
     rows = conn.execute(
         """
         SELECT decision_id, title, status, motivation, consequences,
-               valid_from_ref, valid_until_ref, source_repo, path
+               valid_from_ref, valid_until_ref, source_repo, path,
+               blob_sha, provenance_status, is_synthetic
         FROM decision_records
         WHERE scope = ?
            OR scope LIKE ?
@@ -1141,16 +1307,10 @@ def get_applicable_decisions_for_concept(
     ).fetchall()
 
     for r in rows:
-        decisions.append({
-            "decision_id": r["decision_id"],
-            "title": r["title"],
-            "status": r["status"],
-            "motivation": r["motivation"],
-            "consequences": r["consequences"],
-            "valid_from_ref": r["valid_from_ref"],
-            "valid_until_ref": r["valid_until_ref"],
-            "path": r["path"],
-        })
+        item = _decision_summary_from_row(r)
+        if verified_only and not item["verified"]:
+            continue
+        decisions.append(item)
 
     # Explicit known links
     if concept_id == "ui.tabs.pin_tab":
@@ -1158,31 +1318,17 @@ def get_applicable_decisions_for_concept(
             "SELECT * FROM decision_records WHERE decision_id = 'DEC-APP-SHELL-01'"
         ).fetchone()
         if app_shell_dec and not any(d["decision_id"] == "DEC-APP-SHELL-01" for d in decisions):
-            decisions.append({
-                "decision_id": app_shell_dec["decision_id"],
-                "title": app_shell_dec["title"],
-                "status": app_shell_dec["status"],
-                "motivation": app_shell_dec["motivation"],
-                "consequences": app_shell_dec["consequences"],
-                "valid_from_ref": app_shell_dec["valid_from_ref"],
-                "valid_until_ref": app_shell_dec["valid_until_ref"],
-                "path": app_shell_dec["path"],
-            })
+            item = _decision_summary_from_row(app_shell_dec)
+            if not verified_only or item["verified"]:
+                decisions.append(item)
     elif concept_id == "ui.sidebar.pinned_entity":
         sidebar_dec = conn.execute(
             "SELECT * FROM decision_records WHERE decision_id = 'DEC-SIDEBAR-PROTOTIPO-01'"
         ).fetchone()
         if sidebar_dec and not any(d["decision_id"] == "DEC-SIDEBAR-PROTOTIPO-01" for d in decisions):
-            decisions.append({
-                "decision_id": sidebar_dec["decision_id"],
-                "title": sidebar_dec["title"],
-                "status": sidebar_dec["status"],
-                "motivation": sidebar_dec["motivation"],
-                "consequences": sidebar_dec["consequences"],
-                "valid_from_ref": sidebar_dec["valid_from_ref"],
-                "valid_until_ref": sidebar_dec["valid_until_ref"],
-                "path": sidebar_dec["path"],
-            })
+            item = _decision_summary_from_row(sidebar_dec)
+            if not verified_only or item["verified"]:
+                decisions.append(item)
 
     return decisions
 
@@ -1190,11 +1336,13 @@ def get_applicable_decisions_for_concept(
 def query_knowledge(
     conn: sqlite3.Connection,
     query_str: str,
+    verified_only: bool = False,
 ) -> dict[str, Any]:
     """Query knowledge index with concept disambiguation and ADR retrieval.
 
     When an ambiguous query (e.g., 'fixar' or 'pin') matches multiple concepts
     flagged as ambiguous-with, returns candidate groups partitioned by concept_id.
+    Provenance uncertainty is surfaced via `provenance_status`, `is_synthetic`, and `verified`.
     """
     raw_query = query_str.strip()
     norm_q = normalize_term(raw_query)
@@ -1211,6 +1359,17 @@ def query_knowledge(
 
         if row:
             investigated = json.loads(row["investigated_refs_json"]) if row["investigated_refs_json"] else None
+            prov_status = row["provenance_status"] if "provenance_status" in row.keys() else "unverified"
+            is_synth = bool(row["is_synthetic"]) if "is_synthetic" in row.keys() else False
+            is_verified = (prov_status == "verified") and not is_synth and validate_git_sha(row["blob_sha"])
+            if verified_only and not is_verified:
+                return {
+                    "query": raw_query,
+                    "is_adr": True,
+                    "is_ambiguous": False,
+                    "verified_only": True,
+                    "decision": None,
+                }
             return {
                 "query": raw_query,
                 "is_adr": True,
@@ -1229,13 +1388,26 @@ def query_knowledge(
                     "superseded_by_id": row["superseded_by_id"],
                     "source_repo": row["source_repo"],
                     "source_ref": row["source_ref"],
+                    "commit_sha": row["commit_sha"],
+                    "blob_sha": row["blob_sha"],
                     "path": row["path"],
                     "investigated_refs": investigated,
+                    "provenance_status": prov_status,
+                    "is_synthetic": is_synth,
+                    "verified": is_verified,
                 },
             }
         else:
             # Not found in indexed records: track as not-recovered
             unrec = record_not_recovered_adr(conn, adr_norm)
+            if verified_only:
+                return {
+                    "query": raw_query,
+                    "is_adr": True,
+                    "is_ambiguous": False,
+                    "verified_only": True,
+                    "decision": None,
+                }
             return {
                 "query": raw_query,
                 "is_adr": True,
@@ -1254,8 +1426,13 @@ def query_knowledge(
                     "superseded_by_id": None,
                     "source_repo": unrec["source_repo"],
                     "source_ref": None,
+                    "commit_sha": None,
+                    "blob_sha": None,
                     "path": None,
                     "investigated_refs": unrec["investigated_refs"],
+                    "provenance_status": "not-recovered",
+                    "is_synthetic": False,
+                    "verified": False,
                 },
             }
 
@@ -1264,7 +1441,8 @@ def query_knowledge(
         """
         SELECT t.concept_id, t.term, t.language, t.relationship, t.related_concept_id,
                c.category, c.canonical_term_en, c.canonical_term_pt, c.description,
-               c.implementation_file, c.implementation_sha
+               c.implementation_file, c.implementation_sha,
+               c.provenance_status, c.is_synthetic
         FROM glossary_terms t
         JOIN glossary_concepts c ON t.concept_id = c.concept_id
         ORDER BY t.concept_id, t.relationship
@@ -1283,6 +1461,12 @@ def query_knowledge(
     matching_concepts: dict[str, dict[str, Any]] = {}
 
     for row in term_matches:
+        prov_status = row["provenance_status"] if "provenance_status" in row.keys() else "unverified"
+        is_synth = bool(row["is_synthetic"]) if "is_synthetic" in row.keys() else False
+        is_verified = (prov_status == "verified") and not is_synth and validate_git_sha(row["implementation_sha"])
+        if verified_only and not is_verified:
+            continue
+
         t_norm = normalize_term(row["term"])
         cid = row["concept_id"]
         rel = row["relationship"]
@@ -1313,6 +1497,9 @@ def query_knowledge(
                     "description": row["description"],
                     "implementation_file": row["implementation_file"],
                     "implementation_sha": row["implementation_sha"],
+                    "provenance_status": prov_status,
+                    "is_synthetic": is_synth,
+                    "verified": is_verified,
                     "matched_terms": [],
                     "relationships": set(),
                     "conflicts_with_concepts": [],
@@ -1332,12 +1519,6 @@ def query_knowledge(
             if rel == "conflicts-with" and row["related_concept_id"]:
                 info["conflicts_with_concepts"].append(row["related_concept_id"])
 
-    # Determine if this query is inherently ambiguous across multiple concepts
-    primary_matching = {
-        cid: info for cid, info in matching_concepts.items()
-        if info["has_primary_match"] or info["has_ambiguous_rel"]
-    }
-
     # If multiple concepts share the ambiguous-with relationship or multiple have primary matches
     ambiguous_concepts_count = sum(1 for info in matching_concepts.values() if info["has_ambiguous_rel"])
     primary_concepts_count = sum(1 for info in matching_concepts.values() if info["has_primary_match"])
@@ -1356,7 +1537,7 @@ def query_knowledge(
             # Filter out pure conflicts-with matches from ambiguous candidate groups
             if not info["has_primary_match"] and not info["has_ambiguous_rel"]:
                 continue
-            decisions = get_applicable_decisions_for_concept(conn, cid)
+            decisions = get_applicable_decisions_for_concept(conn, cid, verified_only=verified_only)
             candidate_groups.append({
                 "concept_id": cid,
                 "category": info["category"],
@@ -1365,6 +1546,9 @@ def query_knowledge(
                 "description": info["description"],
                 "implementation_file": info["implementation_file"],
                 "implementation_sha": info["implementation_sha"],
+                "provenance_status": info["provenance_status"],
+                "is_synthetic": info["is_synthetic"],
+                "verified": info["verified"],
                 "matched_terms": sorted(set(info["matched_terms"])),
                 "applicable_decisions": decisions,
             })
@@ -1384,7 +1568,7 @@ def query_knowledge(
         # Rank by best score
         sorted_concepts = sorted(matching_concepts.items(), key=lambda x: -x[1]["best_score"])
         cid, info = sorted_concepts[0]
-        decisions = get_applicable_decisions_for_concept(conn, cid)
+        decisions = get_applicable_decisions_for_concept(conn, cid, verified_only=verified_only)
         primary_concept = {
             "concept_id": cid,
             "category": info["category"],
@@ -1393,6 +1577,9 @@ def query_knowledge(
             "description": info["description"],
             "implementation_file": info["implementation_file"],
             "implementation_sha": info["implementation_sha"],
+            "provenance_status": info["provenance_status"],
+            "is_synthetic": info["is_synthetic"],
+            "verified": info["verified"],
             "matched_terms": sorted(set(info["matched_terms"])),
             "conflicts_with": sorted(set(info["conflicts_with_concepts"])),
             "applicable_decisions": decisions,
@@ -1418,11 +1605,39 @@ def query_knowledge(
 
     fts_results = []
     for r in fts_rows:
+        prov_status = "unverified"
+        is_synth = False
+        is_verified = False
+        if r["entity_type"] == "concept":
+            c_row = conn.execute(
+                "SELECT implementation_sha, provenance_status, is_synthetic FROM glossary_concepts WHERE concept_id = ?",
+                (r["entity_id"],),
+            ).fetchone()
+            if c_row:
+                prov_status = c_row["provenance_status"]
+                is_synth = bool(c_row["is_synthetic"])
+                is_verified = (prov_status == "verified") and not is_synth and validate_git_sha(c_row["implementation_sha"])
+        elif r["entity_type"] == "decision":
+            d_row = conn.execute(
+                "SELECT blob_sha, provenance_status, is_synthetic FROM decision_records WHERE decision_id = ?",
+                (r["entity_id"],),
+            ).fetchone()
+            if d_row:
+                prov_status = d_row["provenance_status"]
+                is_synth = bool(d_row["is_synthetic"])
+                is_verified = (prov_status == "verified") and not is_synth and validate_git_sha(d_row["blob_sha"])
+
+        if verified_only and not is_verified:
+            continue
+
         fts_results.append({
             "entity_type": r["entity_type"],
             "entity_id": r["entity_id"],
             "title": r["title"],
             "snippet": r["content"][:200],
+            "provenance_status": prov_status,
+            "is_synthetic": is_synth,
+            "verified": is_verified,
         })
 
     return {
@@ -1433,10 +1648,10 @@ def query_knowledge(
     }
 
 
-def get_adr(conn: sqlite3.Connection, adr_id: str) -> dict[str, Any]:
+def get_adr(conn: sqlite3.Connection, adr_id: str, verified_only: bool = False) -> dict[str, Any]:
     """Retrieve an ADR by ID or return its not-recovered status."""
-    res = query_knowledge(conn, adr_id)
-    if res.get("is_adr"):
+    res = query_knowledge(conn, adr_id, verified_only=verified_only)
+    if res.get("is_adr") and res.get("decision") is not None:
         return res["decision"]
     return {}
 
@@ -1444,6 +1659,7 @@ def get_adr(conn: sqlite3.Connection, adr_id: str) -> dict[str, Any]:
 def list_glossary(
     conn: sqlite3.Connection,
     filter_str: str | None = None,
+    verified_only: bool = False,
 ) -> list[dict[str, Any]]:
     """List all canonical glossary concepts with terms and relationships."""
     concepts_out = []
@@ -1454,6 +1670,12 @@ def list_glossary(
     for c in c_rows:
         cid = c["concept_id"]
         if filter_str and normalize_term(filter_str) not in normalize_term(cid + c["canonical_term_en"] + c["canonical_term_pt"]):
+            continue
+
+        prov_status = c["provenance_status"] if "provenance_status" in c.keys() else "unverified"
+        is_synth = bool(c["is_synthetic"]) if "is_synthetic" in c.keys() else False
+        is_verified = (prov_status == "verified") and not is_synth and validate_git_sha(c["implementation_sha"])
+        if verified_only and not is_verified:
             continue
 
         terms_rows = conn.execute(
@@ -1484,6 +1706,9 @@ def list_glossary(
             "description": c["description"],
             "implementation_file": c["implementation_file"],
             "implementation_sha": c["implementation_sha"],
+            "provenance_status": prov_status,
+            "is_synthetic": is_synth,
+            "verified": is_verified,
             "terms": terms_list,
         })
 
@@ -1502,6 +1727,15 @@ def get_knowledge_coverage(conn: sqlite3.Connection) -> dict[str, Any]:
     ).fetchall()
     for r in rows:
         status_counts[r["status"]] = r["cnt"]
+
+    # Count provenance status across decisions and concepts
+    dec_prov_counts: dict[str, int] = {st: 0 for st in VALID_PROVENANCE_STATUSES}
+    for r in conn.execute("SELECT provenance_status, COUNT(*) as cnt FROM decision_records GROUP BY provenance_status").fetchall():
+        dec_prov_counts[r["provenance_status"]] = r["cnt"]
+
+    concept_prov_counts: dict[str, int] = {st: 0 for st in VALID_PROVENANCE_STATUSES}
+    for r in conn.execute("SELECT provenance_status, COUNT(*) as cnt FROM glossary_concepts GROUP BY provenance_status").fetchall():
+        concept_prov_counts[r["provenance_status"]] = r["cnt"]
 
     # Count total occurrences
     total_occurrences = conn.execute(
@@ -1561,12 +1795,14 @@ def get_knowledge_coverage(conn: sqlite3.Connection) -> dict[str, Any]:
         "decisions": {
             "total": sum(status_counts.values()),
             "by_status": status_counts,
+            "by_provenance_status": dec_prov_counts,
             "total_occurrences": total_occurrences,
         },
         "glossary": {
             "concepts_count": concept_count,
             "terms_count": term_count,
             "by_relationship": rel_counts,
+            "by_provenance_status": concept_prov_counts,
         },
         "benchmark": {
             "queries_evaluated": len(test_queries),
@@ -1622,6 +1858,11 @@ def build_cli() -> argparse.ArgumentParser:
         help="Show knowledge coverage, status distribution, and recall@1 benchmark metrics.",
     )
     parser.add_argument(
+        "--verified-only",
+        action="store_true",
+        help="Return only records with verified git SHA provenance.",
+    )
+    parser.add_argument(
         "--json",
         action="store_true",
         help="Format command output as JSON.",
@@ -1670,46 +1911,58 @@ def main() -> int:
         # Retrieve specific ADR or list decisions
         if args.adr is not None:
             if args.adr.strip():
-                adr_record = get_adr(conn, args.adr.strip())
+                adr_record = get_adr(conn, args.adr.strip(), verified_only=args.verified_only)
                 if args.json:
                     print(json.dumps(adr_record, indent=2))
                 else:
                     if adr_record:
                         print(f"ADR: {adr_record['decision_id']} - {adr_record['title']}")
-                        print(f"Status: {adr_record['status']}")
+                        print(f"Status: {adr_record['status']} (provenance: {adr_record.get('provenance_status', 'unverified')})")
                         print(f"Motivation: {adr_record.get('motivation')}")
                         if adr_record.get("investigated_refs"):
                             print(f"Investigated Refs: {', '.join(adr_record['investigated_refs'])}")
                     else:
                         print(f"ADR {args.adr} not found.")
             else:
-                rows = conn.execute(
-                    "SELECT decision_id, title, status, scope, valid_from_ref FROM decision_records ORDER BY decision_id"
-                ).fetchall()
+                if args.verified_only:
+                    rows = conn.execute(
+                        "SELECT decision_id, title, status, scope, valid_from_ref, provenance_status, is_synthetic FROM decision_records WHERE provenance_status = 'verified' AND is_synthetic = 0 ORDER BY decision_id"
+                    ).fetchall()
+                else:
+                    rows = conn.execute(
+                        "SELECT decision_id, title, status, scope, valid_from_ref, provenance_status, is_synthetic FROM decision_records ORDER BY decision_id"
+                    ).fetchall()
                 adrs_list = [dict(r) for r in rows]
                 if args.json:
                     print(json.dumps(adrs_list, indent=2))
                 else:
                     print(f"Registered Decisions ({len(adrs_list)}):")
                     for a in adrs_list:
-                        print(f"  [{a['status']}] {a['decision_id']}: {a['title']}")
+                        print(f"  [{a['status']} | {a['provenance_status']}] {a['decision_id']}: {a['title']}")
 
         # Retrieve glossary concepts
         if args.glossary is not None:
-            gloss = list_glossary(conn, filter_str=args.glossary.strip() if args.glossary else None)
+            gloss = list_glossary(
+                conn,
+                filter_str=args.glossary.strip() if args.glossary else None,
+                verified_only=args.verified_only,
+            )
             if args.json:
                 print(json.dumps(gloss, indent=2))
             else:
                 print(f"Glossary Concepts ({len(gloss)}):")
                 for c in gloss:
-                    print(f"  * {c['concept_id']} ({c['category']}): {c['canonical_term_en']} / {c['canonical_term_pt']}")
+                    print(
+                        f"  * {c['concept_id']} ({c['category']}, provenance={c['provenance_status']}): "
+                        f"{c['canonical_term_en']} / {c['canonical_term_pt']}"
+                    )
                     for t in c["terms"]:
                         rel_info = f" -> {t['related_concept_id']}" if t['related_concept_id'] else ""
                         print(f"      - '{t['term']}' [{t['language']}, {t['relationship']}{rel_info}]")
 
         # Query knowledge
         if args.query:
-            result = query_knowledge(conn, args.query.strip())
+            result = query_knowledge(conn, args.query.strip(), verified_only=args.verified_only)
             if args.json:
                 print(json.dumps(result, indent=2))
             else:
@@ -1718,13 +1971,13 @@ def main() -> int:
                     print(f"Guidance: {result.get('disambiguation_guidance')}")
                     print(f"Candidate Groups ({len(result.get('candidate_groups', []))}):")
                     for cg in result.get("candidate_groups", []):
-                        print(f"  - {cg['concept_id']} ({cg['canonical_term_en']} / {cg['canonical_term_pt']})")
+                        print(f"  - {cg['concept_id']} ({cg['canonical_term_en']} / {cg['canonical_term_pt']}) [{cg.get('provenance_status')}]")
                         print(f"      Category: {cg['category']}")
                         print(f"      Implementation: {cg.get('implementation_file')}")
                         print(f"      Matched Terms: {', '.join(cg['matched_terms'])}")
                 elif result.get("concept"):
                     c = result["concept"]
-                    print(f"Concept: {c['concept_id']} ({c['canonical_term_en']} / {c['canonical_term_pt']})")
+                    print(f"Concept: {c['concept_id']} ({c['canonical_term_en']} / {c['canonical_term_pt']}) [{c.get('provenance_status')}]")
                     print(f"Category: {c['category']}")
                     print(f"Implementation: {c.get('implementation_file')}")
                     print(f"Description: {c.get('description')}")
@@ -1734,10 +1987,13 @@ def main() -> int:
                             print(f"  - {d['decision_id']}: {d['title']} [{d['status']}]")
                 elif result.get("is_adr"):
                     d = result["decision"]
-                    print(f"ADR: {d['decision_id']} - {d['title']} [{d['status']}]")
-                    print(f"Motivation: {d.get('motivation')}")
-                    if d.get("investigated_refs"):
-                        print(f"Investigated Refs: {', '.join(d['investigated_refs'])}")
+                    if d:
+                        print(f"ADR: {d['decision_id']} - {d['title']} [{d['status']} | {d.get('provenance_status')}]")
+                        print(f"Motivation: {d.get('motivation')}")
+                        if d.get("investigated_refs"):
+                            print(f"Investigated Refs: {', '.join(d['investigated_refs'])}")
+                    else:
+                        print(f"ADR '{args.query}' has no verified record.")
                 else:
                     print(f"Query: '{args.query}'")
                     matches = result.get("matches", [])
