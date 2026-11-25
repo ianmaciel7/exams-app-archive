@@ -35,3 +35,9 @@ No claims of a market-share ranking or universal effectiveness. Primary document
 - [Research synthesis and new references](../ui-ux-research-sources/discovery-2026-11-25-batch-2.md)
 - [Structured source records](../ui-ux-research-sources/discovery-2026-11-25-batch-2.json)
 - 37 additional URLs; 145 retained in total. Search-index or partial public-page evidence; no third-party media copied.
+
+## Independent source expansion — v1.8.5
+
+- [Research synthesis and new references](../ui-ux-research-sources/discovery-2026-11-25-batch-3.md)
+- [Structured source records](../ui-ux-research-sources/discovery-2026-11-25-batch-3.json)
+- 36 additional URLs; 181 retained in total. Public search-index evidence; no third-party media copied.
