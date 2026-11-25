@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "path": "media/storybook/whats-a-story.mp4",
+      "kind": "mp4",
+      "tags": [
+        "component story",
+        "preview"
+      ],
+      "source_repo": "storybookjs/storybook",
+      "source_commit": "fbefbde26e5557f38ed695153761bc58038feae6",
+      "source_path": "docs/_assets/get-started/whats-a-story.mp4",
+      "source_url": "https://github.com/storybookjs/storybook/blob/fbefbde26e5557f38ed695153761bc58038feae6/docs/_assets/get-started/whats-a-story.mp4",
+      "blob_sha": "134d76d1ad3367ecfdf762dd576f64e2d288a59a",
+      "bytes": 64132,
+      "license": "MIT",
+      "license_path": "media/storybook/LICENSE",
+      "status": "bytes-verified",
+      "visual_review": "not-performed",
+      "duration_seconds": null
+    },
+    {
+      "path": "media/storybook/component-accessibility-testing.mp4",
+      "kind": "mp4",
+      "tags": [
+        "accessibility testing",
+        "component preview"
+      ],
+      "source_repo": "storybookjs/storybook",
+      "source_commit": "fbefbde26e5557f38ed695153761bc58038feae6",
+      "source_path": "docs/_assets/writing-tests/component-accessibility-testing.mp4",
+      "source_url": "https://github.com/storybookjs/storybook/blob/fbefbde26e5557f38ed695153761bc58038feae6/docs/_assets/writing-tests/component-accessibility-testing.mp4",
+      "blob_sha": "d77ccd67a510dec488a16b003d948cdd49bfbdaf",
+      "bytes": 131790,
+      "license": "MIT",
+      "license_path": "media/storybook/LICENSE",
+      "status": "bytes-verified",
+      "visual_review": "not-performed",
+      "duration_seconds": null
+    },
+    {
+      "path": "media/storybook/component-interaction-testing.mp4",
+      "kind": "mp4",
+      "tags": [
+        "interaction testing",
+        "component states"
+      ],
+      "source_repo": "storybookjs/storybook",
+      "source_commit": "fbefbde26e5557f38ed695153761bc58038feae6",
+      "source_path": "docs/_assets/writing-tests/component-interaction-testing.mp4",
+      "source_url": "https://github.com/storybookjs/storybook/blob/fbefbde26e5557f38ed695153761bc58038feae6/docs/_assets/writing-tests/component-interaction-testing.mp4",
+      "blob_sha": "210a6c6e9457e7f0654109ffb88e8c6c126d73b3",
+      "bytes": 207273,
+      "license": "MIT",
+      "license_path": "media/storybook/LICENSE",
+      "status": "bytes-verified",
+      "visual_review": "not-performed",
+      "duration_seconds": null
+    },
+    {
+      "path": "media/storybook/component-visual-testing-optimized.mp4",
+      "kind": "mp4",
+      "tags": [
+        "visual regression",
+        "component preview"
+      ],
+      "source_repo": "storybookjs/storybook",
+      "source_commit": "fbefbde26e5557f38ed695153761bc58038feae6",
+      "source_path": "docs/_assets/writing-tests/component-visual-testing-optimized.mp4",
+      "source_url": "https://github.com/storybookjs/storybook/blob/fbefbde26e5557f38ed695153761bc58038feae6/docs/_assets/writing-tests/component-visual-testing-optimized.mp4",
+      "blob_sha": "34ce04dd09629a16ac300591fc41a3724cc813f9",
+      "bytes": 297788,
+      "license": "MIT",
+      "license_path": "media/storybook/LICENSE",
+      "status": "bytes-verified",
+      "visual_review": "not-performed",
+      "duration_seconds": null
+    }
+  ],
+  "failures": []
+}
