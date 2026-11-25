@@ -404,21 +404,30 @@ async function select(entry) {
       $("preview-tab").disabled = false;
       $("render-reviewed").hidden = false;
       $("render-tsx").hidden = false;
-      $("preview-note").textContent = "Build React revisado disponível (ou use o preview TSX experimental).";
+      $("preview-bar").hidden = false;
+      $("preview-note").textContent = "Build React revisado disponível.";
+      setMode("split");
+      renderReviewedComponent(approved);
     } else if (isReact(entry.path)) {
       $("split-tab").disabled = false;
       $("preview-tab").disabled = false;
       $("render-tsx").hidden = false;
-      $("preview-note").textContent =
-        "Componente React/TSX. Clique em Renderizar TSX (experimental) para visualizar isoladamente.";
+      if (state.mode === "public") {
+        $("preview-bar").hidden = true;
+        setMode("split");
+        renderTsxExperimental();
+      } else {
+        $("preview-bar").hidden = false;
+        $("preview-note").textContent = "Arquivo local React/TSX. Clique em Recarregar preview para executar.";
+      }
     }
     if (isHtml(entry.path)) {
       $("split-tab").disabled = false;
       $("preview-tab").disabled = false;
+      $("preview-bar").hidden = false;
       $("render-preview").hidden = false;
       $("render-live").hidden = state.mode !== "local";
-      $("preview-note").textContent =
-        "HTML isolado. Scripts bloqueados no modo estático.";
+      $("preview-note").textContent = "HTML isolado. Scripts bloqueados no modo estático.";
     }
   } catch (e) {
     if (epoch === state.epoch) $("source-code").textContent = e.message;
@@ -586,14 +595,17 @@ async function openRequestedFile() {
   return true;
 }
 
-$("render-reviewed").addEventListener("click", () => {
-  const item = reviewedEntry(state.selected);
+function renderReviewedComponent(item) {
   if (!item) return;
   resetPreview();
   const frame = $("preview-frame");
   frame.setAttribute("sandbox", "allow-scripts");
   frame.src = "./" + item.page;
   frame.hidden = false;
+}
+
+$("render-reviewed").addEventListener("click", () => {
+  renderReviewedComponent(reviewedEntry(state.selected));
 });
 
 $("send-excerpt").addEventListener("click", () => {

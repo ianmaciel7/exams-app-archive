@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://api.github.com; img-src 'self' data: blob:; frame-src 'self' blob:; font-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'">
   <title>Arquivos e componentes · Exams Archive</title>
-  <link rel="stylesheet" href="./style.css?v=workspace-4">
-  <script src="./files.js?v=workspace-4" defer></script>
+  <link rel="stylesheet" href="./style.css?v=workspace-5">
+  <script src="./files.js?v=workspace-5" defer></script>
 </head>
 <body class="files-page">
   <div class="shell files-shell">
@@ -61,7 +61,12 @@
               <p id="source-info"></p>
             </div>
             <div class="file-head-actions">
-              <a id="source-link" class="ws-button" hidden target="_blank" rel="noopener noreferrer">GitHub</a>
+              <div class="file-evidence" id="file-evidence" hidden>
+                <label>L<input id="excerpt-start" type="number" min="1" value="1">–<input id="excerpt-end" type="number" min="1" value="80"></label>
+                <button id="send-excerpt" type="button" class="ws-button">+ Contexto</button>
+                <span id="excerpt-status" role="status"></span>
+              </div>
+              <a id="source-link" class="ws-button" hidden target="_blank" rel="noopener noreferrer">Abrir no GitHub</a>
             </div>
           </div>
 
@@ -80,22 +85,16 @@
             </div>
           </div>
 
-          <div class="file-evidence" id="file-evidence" hidden>
-            <label>Linhas <input id="excerpt-start" type="number" min="1" value="1"> até <input id="excerpt-end" type="number" min="1" value="80"></label>
-            <button id="send-excerpt" type="button" class="ws-button">+ Contexto</button>
-            <span id="excerpt-status" role="status"></span>
-          </div>
-
           <div id="viewer-stage" class="viewer-stage" data-mode="code">
             <pre id="source-code" tabindex="0">Selecione um arquivo na árvore à esquerda para ver o código ou preview.</pre>
             <div id="preview-area" class="preview-canvas-pane" hidden>
-              <div class="preview-bar">
+              <div class="preview-bar" id="preview-bar">
                 <p id="preview-note"></p>
                 <div class="preview-actions">
                   <button id="render-preview" type="button" hidden>Renderizar HTML estático</button>
-                  <button id="render-tsx" type="button" hidden>Renderizar TSX (experimental)</button>
-                  <button id="render-reviewed" type="button" hidden>Executar componente revisado</button>
-                  <button id="render-live" type="button" hidden>Executar build local revisado</button>
+                  <button id="render-tsx" type="button" hidden>Recarregar preview</button>
+                  <button id="render-reviewed" type="button" hidden>Versão revisada</button>
+                  <button id="render-live" type="button" hidden>Executar build local</button>
                 </div>
               </div>
               <div id="preview-stage-wrap" class="preview-dot-grid" data-vp="desktop">
