@@ -47,3 +47,19 @@ class ResearchIndexTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 mod.build(db, [b, b])
             self.assertEqual(db.execute("SELECT count(*) FROM research").fetchone()[0], 1)
+
+    def test_filters_graph_and_audit(self):
+        records = mod.load_records()
+        graph = mod.provenance_graph(records)
+        ids = {n["id"] for n in graph["nodes"]}
+        self.assertTrue(all(e["source"] in ids and e["target"] in ids for e in graph["edges"]))
+        self.assertEqual(len(graph["edges"]), sum(len(set(r["sources"])) for r in records))
+        self.assertTrue(all(r["record_sha256"] for r in records))
+        with sqlite3.connect(":memory:") as db:
+            mod.build(db, records)
+            self.assertFalse(mod.search(db, "sidebar", product="nonexistent-product"))
+            self.assertTrue(mod.search(db, "sortable", product="dnd-kit", availability="archived-blob-verified"))
+            self.assertFalse(mod.search(db, "sortable", product="dnd-kit", availability="link-only"))
+        a = mod.audit(records)
+        self.assertEqual(sum(r["records"] for r in a["visual_matrix"]), sum(r["kind"] == "visual" for r in records))
+        self.assertEqual(a["graph"]["edges"], len(graph["edges"]))

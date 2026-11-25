@@ -1,5 +1,6 @@
 """Optional local MCP adapter for the canonical archive CLI."""
 import json
+import sqlite3
 import subprocess
 import sys
 from pathlib import Path
@@ -109,6 +110,25 @@ def component_screenshot_image(screenshot_id: str) -> Image:
     """Return the actual stored PNG image by id, not just a path."""
     from component_catalog import screenshot_bytes
     return Image(data=screenshot_bytes(screenshot_id),format="png")
+
+
+@mcp.tool()
+def research_search(query: str, kind: Literal["pattern", "source", "visual"] | None = None,
+                    product: str | None = None, availability: str | None = None,
+                    limit: int = 20):
+    """Search approved public research catalogs; independent from private history."""
+    import research_index
+    with sqlite3.connect(":memory:") as db:
+        research_index.build(db, research_index.load_records())
+        return research_index.search(db, checked(query), kind, max(1, min(limit, 50)),
+                                     product=product, availability=availability)
+
+
+@mcp.tool()
+def research_audit():
+    """Return public catalog coverage, declared visual availability and explicit gaps."""
+    import research_index
+    return research_index.audit(research_index.load_records())
 
 
 if __name__ == "__main__":

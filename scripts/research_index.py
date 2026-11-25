@@ -7,6 +7,8 @@ import re
 import sqlite3
 import unicodedata
 from pathlib import Path
+from collections import Counter
+from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = ROOT / "docs/references"
@@ -62,12 +64,17 @@ def load_records():
             direct = item.get("source_url") or item.get("url")
             if direct:
                 urls.append(direct)
-            if any(not u.startswith("https://") for u in urls):
+            if any(urlsplit(u).scheme != "https" or not urlsplit(u).hostname or urlsplit(u).username is not None for u in urls):
                 raise ValueError(f"Non-HTTPS source: {ident}")
             records.append({"id": ident, "title": title, "kind": kind,
                 "catalog": namespace, "record_id": local_id,
                 "catalog_path": str(path.relative_to(ROOT)).replace("\\", "/"),
                 "catalog_sha256": digest(data), "sources": list(dict.fromkeys(urls)),
+                "date": item.get("checked_on") or item.get("recorded_on") or doc.get("as_of") or doc.get("research_date") or doc.get("archived_on") or doc.get("updated_on") or doc.get("recorded_on"),
+                "record_sha256": digest(json.dumps(item, ensure_ascii=False, sort_keys=True).encode("utf-8")),
+                "product": item.get("product"),
+                "confidence": item.get("evidence") or item.get("classification"),
+                "license": item.get("license"),
                 "availability": item.get("status") if namespace == "visual" else
                     ("archived-blob-declared" if namespace == "grok-assets" else
                      "link-only" if namespace.endswith("sources") or namespace == "grok-links" else "documented"),
@@ -123,23 +130,81 @@ def query_expr(query):
         clauses.append("(" + " OR ".join('"' + t + '"' for t in sorted(synonyms)) + ")")
     return " AND ".join(clauses)
 
-def search(db, query, kind=None, limit=20):
+def search(db, query, kind=None, limit=20, *, product=None, source=None,
+           availability=None, confidence=None, since=None, until=None):
     match = query_expr(query)
     if not match:
         return []
     if not 1 <= limit <= 100:
         raise ValueError("limit must be 1..100")
     sql = """SELECT r.payload FROM research_fts JOIN research r ON r.id=research_fts.id
-        WHERE research_fts MATCH ? AND (? IS NULL OR r.kind=?)
-        ORDER BY bm25(research_fts,0,4,1), r.id LIMIT ?"""
-    return [json.loads(r[0]) for r in db.execute(sql, (match,kind,kind,limit))]
+        WHERE research_fts MATCH ? AND (? IS NULL OR r.kind=?)"""
+    args = [match, kind, kind]
+    for field, value in (("product", product), ("availability", availability), ("confidence", confidence)):
+        if value is not None:
+            sql += f" AND lower(json_extract(r.payload, '$.{field}')) = lower(?)"
+            args.append(value)
+    if source is not None:
+        sql += " AND EXISTS (SELECT 1 FROM json_each(r.payload, '$.sources') WHERE value=?)"
+        args.append(source)
+    for op, value in ((">=", since), ("<=", until)):
+        if value is not None:
+            sql += f" AND json_extract(r.payload, '$.date') {op} ?"
+            args.append(value)
+    sql += " ORDER BY bm25(research_fts,0,4,1), r.id LIMIT ?"
+    return [json.loads(r[0]) for r in db.execute(sql, (*args, limit))]
+
 
 def coverage(records):
-    counts = {}
+    counts = Counter(r["catalog"] for r in records)
+    return {"records": len(records), "catalogs": dict(counts),
+            "scope": "explicit public research catalogs only; historical and private index not included"}
+
+
+def provenance_graph(records):
+    """Exact URL relations only; no inferred equivalence."""
+    nodes, edges = {}, []
     for r in records:
-        counts[r["catalog"]] = counts.get(r["catalog"], 0) + 1
-    return {"records":len(records),"catalogs":counts,
-            "scope":"explicit public research catalogs only; historical and private index not included"}
+        ident = r["id"]
+        nodes[ident] = {"id": ident, "type": r["kind"], "title": r["title"],
+                        "catalog_path": r.get("catalog_path"), "catalog_sha256": r.get("catalog_sha256")}
+        for url in sorted(set(r.get("sources", []))):
+            target = "url:" + digest(url.encode("utf-8"))
+            nodes[target] = {"id": target, "type": "source_url", "url": url}
+            edges.append({"source": ident, "target": target, "type": "cites",
+                          "confidence": "explicit_catalog_link"})
+    return {"nodes": sorted(nodes.values(), key=lambda n: n["id"]),
+            "edges": sorted(edges, key=lambda e: (e["source"], e["target"])),
+            "scope": "explicit public catalog citations; not historical decisions or verified live links"}
+
+
+def audit(records):
+    visual = Counter()
+    gaps = Counter()
+    for r in records:
+        item = r.get("record", {})
+        if r["kind"] == "visual":
+            visual[(r.get("product") or "unknown", item.get("kind") or "unknown",
+                    r.get("availability") or "unknown")] += 1
+        for field in ("product", "date", "confidence", "license"):
+            if not r.get(field):
+                gaps[field] += 1
+        if not r.get("sources"):
+            gaps["sources"] += 1
+    graph = provenance_graph(records)
+    with sqlite3.connect(":memory:") as db:
+        build(db, records)
+        queries = {q: len(search(db, q, limit=20)) for q in
+                   ("side panel", "wall", "shared layout", "agent mascot", "generative UI", "vídeo", "kanban")}
+    return {**coverage(records), "unknown_metadata_counts": dict(gaps),
+            "visual_matrix": [{"product": p, "modality": k, "availability": a, "records": n}
+                              for (p,k,a),n in sorted(visual.items())],
+            "graph": {"nodes": len(graph["nodes"]), "edges": len(graph["edges"])},
+            "query_hit_counts_top20": queries,
+            "limitations": ["Hit counts are not precision or recall.",
+                            "Media status is declared by catalogs, not checked here.",
+                            "Unknown metadata is not evidence of absence.",
+                            "No live-link, private-data or historical restoration validation."]}
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
@@ -148,11 +213,24 @@ def main():
     p.add_argument("--limit", type=int, default=20)
     p.add_argument("--db", default=":memory:")
     p.add_argument("--coverage", action="store_true")
+    p.add_argument("--audit", action="store_true")
+    p.add_argument("--graph", action="store_true")
+    for name in ("product", "source", "availability", "confidence", "since", "until"):
+        p.add_argument("--" + name)
     args = p.parse_args()
     records = load_records()
     with sqlite3.connect(args.db) as db:
         build(db,records)
-        out = coverage(records) if args.coverage else search(db,args.query,args.kind,args.limit)
+        if args.audit:
+            out = audit(records)
+        elif args.graph:
+            out = provenance_graph(records)
+        elif args.coverage:
+            out = coverage(records)
+        else:
+            out = search(db, args.query, args.kind, args.limit, product=args.product,
+                         source=args.source, availability=args.availability,
+                         confidence=args.confidence, since=args.since, until=args.until)
     print(json.dumps(out,ensure_ascii=False,indent=2))
 
 if __name__ == "__main__":

@@ -10,3 +10,13 @@ python scripts/research_index.py 'shared layout' --db .cache/public-research.sql
 ```
 
 Rebuilds from source on every invocation; persisted databases are derived and should stay out of Git. Lexical search with limited PT/EN alias expansion is not semantic/vector search. No claim of historical context-pack or multi-agent runtime integration; those remain tracked in #45, #64, #65 and #70. Tests exercise ingestion, source resolution and queries. This is a first public research projection, not a replacement for the authenticated historical index.
+
+## Incremental reconciliation, filters and provenance
+
+```bash
+python scripts/research_index.py --audit
+python scripts/research_index.py --graph
+python scripts/research_index.py sortable --product dnd-kit --availability archived-blob-verified
+```
+
+A persisted database now reconciles added, changed and removed records. The public CLI filters by product, source URL, availability, confidence and date range before ranking/limit. The optional local MCP adapter exposes research_search and research_audit. The graph contains only explicit catalog-to-source URL citations; it does not imply equivalence, historical decisions, verified links or actual UI behavior. Audit counts distinguish modality, declared availability and unknown product, with query hit counts rather than invented recall. These are partial deliveries for #64, #65, #67, #72, #74 and #75; no private corpus is ingested and no agent runtime is asserted.
