@@ -41,3 +41,9 @@ No claims of a market-share ranking or universal effectiveness. Primary document
 - [Research synthesis and new references](../ui-ux-research-sources/discovery-2026-11-25-batch-3.md)
 - [Structured source records](../ui-ux-research-sources/discovery-2026-11-25-batch-3.json)
 - 36 additional URLs; 181 retained in total. Public search-index evidence; no third-party media copied.
+
+## Asynchronous & Non-blocking UX — v1.8.6
+
+- [Pattern family and evidence](../ui-ux-research-sources/asynchronous-non-blocking-ux.md)
+- [Structured pattern catalog](../ui-ux-research-sources/asynchronous-non-blocking-ux.json)
+- 13 patterns in a separate family; 12 additional source URLs, 193 total. Original 47-pattern catalog preserved. Evidence and access limitations recorded.

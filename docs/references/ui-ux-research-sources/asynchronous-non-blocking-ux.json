@@ -1,0 +1,258 @@
+{
+  "schema_version": 1,
+  "category": "asynchronous-non-blocking-ux",
+  "recorded_on": "2026-11-25",
+  "patterns": [
+    {
+      "id": "non-blocking-interaction",
+      "name": "Non-blocking Interaction",
+      "definition": "Manter ações independentes disponíveis enquanto outra operação executa.",
+      "limits": "Não permitir ações conflitantes sobre o mesmo recurso; explicar bloqueio local.",
+      "source_ids": [
+        "nng-waits",
+        "logrocket-async"
+      ]
+    },
+    {
+      "id": "background-execution",
+      "name": "Background Task Execution",
+      "definition": "Separar a execução da tela que iniciou a tarefa.",
+      "limits": "Só prometer persistência fora da tela, aba ou sessão quando o backend a garantir.",
+      "source_ids": [
+        "nng-waits",
+        "azure-bg-jobs"
+      ]
+    },
+    {
+      "id": "concurrent-task-management",
+      "name": "Concurrent Task Management",
+      "definition": "Gerenciar tarefas em paralelo ou fila, com identidade e escopo próprios.",
+      "limits": "Exibir limites reais, dependências e motivo da espera; não confundir fila com execução.",
+      "source_ids": [
+        "logrocket-async",
+        "azure-bg-jobs"
+      ]
+    },
+    {
+      "id": "task-tray",
+      "name": "Task Tray / Task Center",
+      "definition": "Área global acessível com tarefas ativas, pendentes, finalizadas e falhas.",
+      "limits": "Permitir voltar à origem e detalhes; não depender apenas de toast efêmero.",
+      "source_ids": [
+        "stepikin-background",
+        "vscode-notifications",
+        "nng-waits"
+      ]
+    },
+    {
+      "id": "persistent-task-state",
+      "name": "Persistent Task State",
+      "definition": "Restaurar status, resultados e contexto ao retornar ou reconectar.",
+      "limits": "Distinguir status desconhecido de falha; reconciliar com estado autoritativo.",
+      "source_ids": [
+        "azure-bg-jobs",
+        "logrocket-async"
+      ]
+    },
+    {
+      "id": "modeless-progress",
+      "name": "Modeless Progress",
+      "definition": "Feedback de progresso que não impede outras ações.",
+      "limits": "Preferir inline para operação local; barra de status ou painel global para tarefas persistentes.",
+      "source_ids": [
+        "ms-progress",
+        "vscode-status"
+      ]
+    },
+    {
+      "id": "determinate-progress",
+      "name": "Determinate Progress",
+      "definition": "Mostrar unidades concluídas, total ou percentual quando mensurável.",
+      "limits": "Não inventar percentuais ou ETA; 100% somente quando confirmado.",
+      "source_ids": [
+        "nng-progress",
+        "ms-vs-progress"
+      ]
+    },
+    {
+      "id": "indeterminate-progress",
+      "name": "Indeterminate Progress",
+      "definition": "Indicar atividade real quando o total não é conhecido.",
+      "limits": "Spinner não prova avanço; fornecer etapa conhecida, última atualização e recuperação.",
+      "source_ids": [
+        "ms-progress",
+        "logrocket-async"
+      ]
+    },
+    {
+      "id": "completion-notification",
+      "name": "Task Completion Notification",
+      "definition": "Avisar conclusão sem interromper tarefas independentes.",
+      "limits": "Incluir tarefa, resultado e link; respeitar preferências e evitar notificações repetidas.",
+      "source_ids": [
+        "ms-vs-progress",
+        "vscode-notifications"
+      ]
+    },
+    {
+      "id": "task-reentrance",
+      "name": "Task Reentrance",
+      "definition": "Retomar atividade de origem preservando contexto, histórico e anotações.",
+      "limits": "Não roubar foco ou substituir tela atual; oferecer retorno explícito.",
+      "source_ids": [
+        "nng-waits"
+      ]
+    },
+    {
+      "id": "cancel-retry-recovery",
+      "name": "Cancellation, Retry & Recovery",
+      "definition": "Permitir interromper, repetir ou recuperar uma tarefa conforme capacidade real.",
+      "limits": "Cancelamento solicitado não equivale a cancelado; explicar efeitos parciais e evitar duplicação.",
+      "source_ids": [
+        "logrocket-async",
+        "azure-bg-jobs"
+      ]
+    },
+    {
+      "id": "partial-results",
+      "name": "Partial Results & Partial Failure",
+      "definition": "Mostrar saídas já disponíveis e itens com falha separadamente.",
+      "limits": "Sinalizar incompletude e repetir apenas itens seguros; preservar sucessos.",
+      "source_ids": [
+        "logrocket-async"
+      ]
+    },
+    {
+      "id": "async-approval",
+      "name": "Human-in-the-loop / Awaiting Input",
+      "definition": "A tarefa aguarda decisão humana sem travar toda a aplicação.",
+      "limits": "Mostrar decisão, consequência, prazo real e retomada; não simular autorização.",
+      "source_ids": [
+        "logrocket-async",
+        "nng-waits"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "nng-waits",
+      "title": "NN/g — Designing for Long Waits and Interruptions",
+      "url": "https://www.nngroup.com/articles/designing-for-waits-and-interruptions/",
+      "kind": "independent-ux-research",
+      "recorded_on": "2026-11-25",
+      "status": "Opened article; 2021-09-05",
+      "storage": "link-only",
+      "notes": "Background execution, task resumption, history, notes and contextual completion."
+    },
+    {
+      "id": "logrocket-async",
+      "title": "LogRocket — UI patterns for async workflows",
+      "url": "https://blog.logrocket.com/ux-design/ui-patterns-for-async-workflows-background-jobs-and-data-pipelines",
+      "kind": "practitioner-article",
+      "recorded_on": "2026-11-25",
+      "status": "Opened article; 2026-02-13",
+      "storage": "link-only",
+      "notes": "Lifecycle, queue, progress, partial outcomes, refresh and disconnect tests."
+    },
+    {
+      "id": "nng-progress",
+      "title": "NN/g — Progress Indicators",
+      "url": "https://www.nngroup.com/articles/progress-indicators/",
+      "kind": "independent-ux-research",
+      "recorded_on": "2026-11-25",
+      "status": "Search-index evidence",
+      "storage": "link-only",
+      "notes": "Progress feedback and perceived waiting."
+    },
+    {
+      "id": "stepikin-background",
+      "title": "Stepikin — Background AI Tasks",
+      "url": "https://stepikin.com/llm-ux-patterns/background-tasks/",
+      "kind": "independent-pattern-library",
+      "recorded_on": "2026-11-25",
+      "status": "Search-index only; direct fetch failed",
+      "storage": "link-only",
+      "notes": "Handoff, task tray and completion notification; revalidate."
+    },
+    {
+      "id": "ms-progress",
+      "title": "Microsoft — Progress Bars",
+      "url": "https://learn.microsoft.com/en-us/windows/win32/uxguide/progress-bars",
+      "kind": "historical-platform-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Search-index; Windows 7 era guidance",
+      "storage": "link-only",
+      "notes": "Modeless, determinate and indeterminate progress; not current universal rules."
+    },
+    {
+      "id": "ms-vs-progress",
+      "title": "Microsoft — Notifications and Progress for Visual Studio",
+      "url": "https://learn.microsoft.com/en-us/visualstudio/extensibility/ux-guidelines/notifications-and-progress-for-visual-studio?view=visualstudio",
+      "kind": "primary-platform",
+      "recorded_on": "2026-11-25",
+      "status": "Search-index evidence",
+      "storage": "link-only",
+      "notes": "Ambient completion, scope and honest progress."
+    },
+    {
+      "id": "vscode-notifications",
+      "title": "VS Code — Notifications",
+      "url": "https://code.visualstudio.com/api/ux-guidelines/notifications",
+      "kind": "primary-platform",
+      "recorded_on": "2026-11-25",
+      "status": "Search-index evidence",
+      "storage": "link-only",
+      "notes": "Progress notifications and notification placement."
+    },
+    {
+      "id": "vscode-status",
+      "title": "VS Code — Status Bar",
+      "url": "https://code.visualstudio.com/api/ux-guidelines/status-bar",
+      "kind": "primary-platform",
+      "recorded_on": "2026-11-25",
+      "status": "Search-index evidence",
+      "storage": "link-only",
+      "notes": "Discreet background activity; escalate when attention needed."
+    },
+    {
+      "id": "w3c-status",
+      "title": "W3C — Understanding Status Messages",
+      "url": "https://www.w3.org/WAI/WCAG21/Understanding/status-messages",
+      "kind": "accessibility-standard-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "Search-index evidence",
+      "storage": "link-only",
+      "notes": "Expose meaningful status changes without stealing focus."
+    },
+    {
+      "id": "w3c-aria25",
+      "title": "W3C — ARIA25 Progress Status",
+      "url": "https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA25",
+      "kind": "accessibility-technique",
+      "recorded_on": "2026-11-25",
+      "status": "Search-index evidence",
+      "storage": "link-only",
+      "notes": "Announce meaningful progress via live region."
+    },
+    {
+      "id": "azure-bg-jobs",
+      "title": "Azure Architecture — Background Jobs",
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/best-practices/background-jobs",
+      "kind": "technical-architecture",
+      "recorded_on": "2026-11-25",
+      "status": "Search-index evidence",
+      "storage": "link-only",
+      "notes": "Persistent checkpoints, retries, idempotency; technical enabling mechanism."
+    },
+    {
+      "id": "w3c-aria12",
+      "title": "W3C — WAI-ARIA 1.2",
+      "url": "https://www.w3.org/TR/wai-aria/",
+      "kind": "accessibility-standard",
+      "recorded_on": "2026-11-25",
+      "status": "Search-index evidence",
+      "storage": "link-only",
+      "notes": "Progressbar, busy and live status semantics."
+    }
+  ]
+}

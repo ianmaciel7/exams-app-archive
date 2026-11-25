@@ -2,16 +2,23 @@
   "schema_version": 1,
   "verified_on": "2026-11-25",
   "plugin": "especialista-ui-ux",
-  "plugin_version": "1.8.5",
-  "previous_research_commit": "f690a043bf69d628e47299fb9201602275a049b7",
+  "plugin_version": "1.8.6",
+  "previous_research_commit": "3c3b4b11be2ab180e6fa4325607229dff6a8050a",
   "patterns": 47,
-  "source_urls": 181,
-  "added_source_urls": 36,
+  "additional_pattern_families": [
+    {
+      "id": "asynchronous-non-blocking-ux",
+      "count": 13,
+      "path": "docs/references/ui-ux-research-sources/asynchronous-non-blocking-ux.json"
+    }
+  ],
+  "source_urls": 193,
+  "added_source_urls": 12,
   "verification": {
     "plugin_release_confirmed": true,
     "plugin_reference_files_read": true,
     "source_url_sets_equal": true
   },
-  "scope": "General UI/UX; independent references, interaction, motion and research methods; manual synchronization",
+  "scope": "General UI/UX; async and non-blocking interactions; manual synchronization",
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets."
 }
