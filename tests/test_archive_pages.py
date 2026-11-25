@@ -33,6 +33,21 @@ class ArchivePagesTests(unittest.TestCase):
                              capture_output=True, text=True)
         self.assertEqual(res.returncode, 0, f"Syntax error in site/app.js: {res.stderr}")
 
+    def test_research_public_projection(self):
+        with tempfile.TemporaryDirectory() as folder:
+            target = Path(folder) / "research.json"
+            result = subprocess.run(["python", str(ROOT / "scripts/export_public_research.py"), str(target)],
+                                    capture_output=True, text=True)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            data = json.loads(target.read_text(encoding="utf-8"))
+            self.assertEqual(data["scope"], "public research metadata only")
+            self.assertEqual(data["audit"]["records"], len(data["records"]))
+            self.assertTrue(all(r["catalog_path"].startswith("docs/references/") for r in data["records"]))
+            self.assertTrue(all("record" not in r and "content" not in r for r in data["records"]))
+            self.assertTrue(all(url.startswith("https://") for r in data["records"] for url in r["sources"]))
+        result = subprocess.run(["node", "--check", str(SITE_DIR / "research.js")], capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+
     def test_files_js_syntax(self):
         res = subprocess.run(["node", "--check", str(SITE_DIR / "files.js")], capture_output=True, text=True)
         self.assertEqual(res.returncode, 0, res.stderr)
