@@ -101,3 +101,7 @@ correspondente e use o comando `recover` documentado no guia.
 ## External UI/UX references
 
 - [Grok Bot — UI and motion research](docs/references/grok-bot/README.md): official references, visual media links, original interactive lab, animated SVG/GIF and state sheet. External research, not recovered project source.
+
+## General-purpose interface pattern library
+
+- [Expanded UI/UX pattern library](https://github.com/ianmaciel7/exams-app-archive/tree/main/docs/references/interface-pattern-library): general visual languages, interaction, motion, AI UX and data visualization; structured records, provenance and validation. Independent of project-specific proposals.

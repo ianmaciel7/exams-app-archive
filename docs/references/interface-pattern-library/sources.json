@@ -1,0 +1,302 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "apple",
+      "title": "Apple HIG — Materials",
+      "url": "https://developer.apple.com/design/human-interface-guidelines/materials",
+      "kind": "primary-platform",
+      "notes": "Liquid Glass is a functional control/navigation layer above content.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "material",
+      "title": "Google Design — Expressive design research",
+      "url": "https://design.google/library/expressive-material-design-google-research",
+      "kind": "primary-research",
+      "notes": "Google reports research on color, shape, size, motion and containment; not universal validation.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "wear",
+      "title": "Android — Material 3 Expressive",
+      "url": "https://developer.android.com/design/ui/wear/guides/get-started/design-language",
+      "kind": "primary-platform",
+      "notes": "Shape-morphing controls, adaptive groups and variable font axes.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "chrome",
+      "title": "Chrome — What's new in web UI, I/O 2026",
+      "url": "https://developer.chrome.com/blog/new-in-web-ui-io26",
+      "kind": "primary-technical",
+      "notes": "Current features and proposals are mixed; check support per feature.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "modern",
+      "title": "Chrome — Modern Web Guidance",
+      "url": "https://developer.chrome.com/docs/modern-web-guidance/guides",
+      "kind": "primary-technical",
+      "notes": "Examples for anchored UI, state preservation, native interactions and motion.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "noise",
+      "title": "Chrome — Content first/noise reduction",
+      "url": "https://developer.chrome.com/docs/modern-web-guidance/guides/user-experience/content-first-noise-reduction",
+      "kind": "primary-technical",
+      "notes": "Compact navigation, disclosure and secondary controls.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "natural",
+      "title": "Chrome — Natural interactions",
+      "url": "https://developer.chrome.com/docs/modern-web-guidance/guides/user-experience/natural-interactions",
+      "kind": "primary-technical",
+      "notes": "Press/focus feedback, natural movement and keyboard access.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "popover",
+      "title": "Chrome — Viewport-aware dropdowns",
+      "url": "https://developer.chrome.com/docs/modern-web-guidance/guides/ui-atoms/viewport-aware-dropdowns",
+      "kind": "primary-technical",
+      "notes": "Anchoring and positioning do not provide menu semantics automatically.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "motion",
+      "title": "Motion — Layout animations",
+      "url": "https://motion.dev/docs/react-layout-animations",
+      "kind": "primary-library",
+      "notes": "Shared identity and layout projection.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "motionex",
+      "title": "Motion — Examples",
+      "url": "https://motion.dev/Examples",
+      "kind": "primary-library",
+      "notes": "Working examples; check whether individual examples require paid access.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "sheet",
+      "title": "Motion — Sheet modal",
+      "url": "https://motion.dev/examples/react-sheet-modal",
+      "kind": "primary-library",
+      "notes": "Spring, drag, swipe dismissal example.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "primitives",
+      "title": "Motion Primitives — Docs",
+      "url": "https://motion-primitives.com/docs",
+      "kind": "primary-library",
+      "notes": "Open-source component examples; verify license per imported asset.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "motionui",
+      "title": "Motion UI",
+      "url": "https://motion.dev/ui/",
+      "kind": "primary-library",
+      "notes": "Commercial Motion+ gallery; link-only.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "apg",
+      "title": "W3C — ARIA APG example index",
+      "url": "https://www.w3.org/WAI/ARIA/apg/example-index/",
+      "kind": "primary-guidance",
+      "notes": "Widget patterns and working accessibility examples; APG guidance, not certification.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "carbon",
+      "title": "Carbon — Pattern overview",
+      "url": "https://www.carbondesignsystem.com/building-blocks/core/patterns/overview",
+      "kind": "primary-design-system",
+      "notes": "Patterns combine components around a user need.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "filters",
+      "title": "Carbon — Filtering",
+      "url": "https://www.carbondesignsystem.com/building-blocks/core/patterns/filtering",
+      "kind": "primary-design-system",
+      "notes": "Instant or batch application; visible indicators for hidden active filters.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "table",
+      "title": "Carbon — Data table",
+      "url": "https://www.carbondesignsystem.com/building-blocks/core/components/data-table/guidelines",
+      "kind": "primary-design-system",
+      "notes": "Expandable rows, batch actions and loading skeleton.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "inline",
+      "title": "Atlassian — Inline edit",
+      "url": "https://atlassian.design/guidelines/product/patterns/inline-edit",
+      "kind": "primary-design-system",
+      "notes": "Read/edit views, confirm and cancellation considerations.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "empty",
+      "title": "Atlassian — Empty state",
+      "url": "https://atlassian.design/content/designing-messages/empty-state/",
+      "kind": "primary-design-system",
+      "notes": "Messages and next actions when no content is present.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "pair",
+      "title": "Google PAIR — Patterns",
+      "url": "https://pair.withgoogle.com/guidebook-v2/patterns",
+      "kind": "primary-guidance",
+      "notes": "Feedback, mental models, explanations, control and confidence where appropriate.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "paircases",
+      "title": "Google PAIR — Case studies",
+      "url": "https://pair.withgoogle.com/guidebook-v2/case-studies",
+      "kind": "primary-guidance",
+      "notes": "Product examples of AI supervision and failure recovery.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "ms",
+      "title": "Microsoft — Design for agents",
+      "url": "https://learn.microsoft.com/en-us/agents/design-guidelines/overview",
+      "kind": "primary-guidance",
+      "notes": "Agent anatomy, entry points and interaction system.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "msapproval",
+      "title": "Microsoft — Agent design framework",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/agent-design-canvas-framework",
+      "kind": "primary-guidance",
+      "notes": "Human approval for consequential actions.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "a2ui",
+      "title": "Google — A2UI introduction",
+      "url": "https://developers.googleblog.com/introducing-a2ui-an-open-project-for-agent-driven-interfaces/",
+      "kind": "primary-project",
+      "notes": "Declarative agent-generated UI, rendered using host components.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "agentcat",
+      "title": "AI Design Guide — Agentic UX patterns",
+      "url": "https://www.aidesign.guide/agentic-ux-patterns",
+      "kind": "secondary-catalog",
+      "notes": "Catalog reports 39 patterns, 74 screenshots, updated 2026-10-11; not an adoption survey.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "dash",
+      "title": "Dashboard Design Patterns",
+      "url": "https://dashboarddesignpatterns.github.io/patterns.html",
+      "kind": "research-catalog",
+      "notes": "Composition and interaction including brushing/linking, filtering and details on demand.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "tokens",
+      "title": "Figma — Design tokens",
+      "url": "https://www.figma.com/resource-library/design-tokens/",
+      "kind": "primary-tool",
+      "notes": "Primitive/semantic aliases and variable modes.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "figmodes",
+      "title": "Figma — Modes for variables",
+      "url": "https://help.figma.com/hc/en-us/articles/15343816063383-Modes-for-variables",
+      "kind": "primary-tool",
+      "notes": "Modes and DTCG-format import/export.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "daisy",
+      "title": "daisyUI — UI design trends gallery",
+      "url": "https://trends.daisyui.com/",
+      "kind": "secondary-visual-catalog",
+      "notes": "Style exploration; not evidence of user benefit or prevalence.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "waves",
+      "title": "Wavespace — UI design trends 2026",
+      "url": "https://www.wavespace.agency/blog/ui-design-trends",
+      "kind": "secondary-trend-report",
+      "notes": "Current discussion of expressive styles, physical motion and calm design; editorial selection.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "envato",
+      "title": "Envato — UI/UX trends 2026",
+      "url": "https://elements.envato.com/learn/ux-ui-design-trends",
+      "kind": "secondary-trend-report",
+      "notes": "Discussion of trust, multimodal interaction and calm interfaces; no population-wide adoption claim.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "scroll",
+      "title": "MDN — CSS scroll-driven animations",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Scroll-driven_animations",
+      "kind": "primary-technical",
+      "notes": "Scroll and view timelines.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    },
+    {
+      "id": "grok",
+      "title": "xAI — Designing Grok Bot",
+      "url": "https://x.ai/news/designing-grok-bot",
+      "kind": "primary-product",
+      "notes": "Existing research on agent avatar and state feedback; see sibling archive.",
+      "checked_on": "2026-11-25",
+      "storage": "link-only"
+    }
+  ]
+}

@@ -40,3 +40,7 @@ The GitHub Pages site is a static interface. Local imports are not transmitted. 
 
 ## External UI and motion references
 - [Grok Bot external reference pack](https://github.com/ianmaciel7/exams-app-archive/tree/main/docs/references/grok-bot): official design evidence, third-party motion and source registry, original six-state preview; not historical recovered source.
+
+## General-purpose interface pattern library
+
+- [Expanded UI/UX pattern library](https://github.com/ianmaciel7/exams-app-archive/tree/main/docs/references/interface-pattern-library): general visual languages, interaction, motion, AI UX and data visualization; structured records, provenance and validation. Independent of project-specific proposals.

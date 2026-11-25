@@ -1,0 +1,597 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-25",
+  "scope": "general UI/UX",
+  "patterns": [
+    {
+      "id": "liquid-glass",
+      "family": "visual",
+      "name": "Liquid Glass",
+      "kind": "Platform visual language",
+      "definition": "A translucent, dynamic functional layer separates controls from content.",
+      "guardrail": "Use sparingly for toolbars or navigation; provide opaque fallback and test contrast.",
+      "source_ids": [
+        "apple"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "expressive-material",
+      "family": "visual",
+      "name": "Material 3 Expressive",
+      "kind": "Platform design language",
+      "definition": "Shape, scale, color, containment and motion reinforce hierarchy.",
+      "guardrail": "Use meaningful emphasis, not arbitrary saturated colors.",
+      "source_ids": [
+        "material",
+        "wear"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "progressive-blur",
+      "family": "visual",
+      "name": "Progressive blur",
+      "kind": "Visual technique",
+      "definition": "Gradually reduce detail behind a control or edge rather than blur every surface.",
+      "guardrail": "Test readable content and contrast; opaque fallback.",
+      "source_ids": [
+        "waves",
+        "apple"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "content-first",
+      "family": "visual",
+      "name": "Content-first / calm UI",
+      "kind": "Design principle",
+      "definition": "Reduce permanent chrome and show secondary actions on demand.",
+      "guardrail": "Keep frequent actions discoverable; do not hide critical status.",
+      "source_ids": [
+        "noise",
+        "envato"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "variable-type",
+      "family": "visual",
+      "name": "Variable typography",
+      "kind": "Visual technique",
+      "definition": "Adjust type axes or styles for hierarchy and expressive emphasis.",
+      "guardrail": "Maintain readability, zoom and predictable layout.",
+      "source_ids": [
+        "wear",
+        "material"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "semantic-tokens",
+      "family": "visual",
+      "name": "Semantic tokens and modes",
+      "kind": "Design system architecture",
+      "definition": "Map design intent to tokens that change across themes or contexts.",
+      "guardrail": "Avoid per-component hardcoded values; test contrast per mode.",
+      "source_ids": [
+        "tokens",
+        "figmodes"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "anchored-popover",
+      "family": "navigation",
+      "name": "Anchored popover",
+      "kind": "Interaction pattern",
+      "definition": "A transient nonmodal surface opens adjacent to its invoker.",
+      "guardrail": "Use fallback positioning and appropriate keyboard/focus semantics.",
+      "source_ids": [
+        "popover",
+        "modern"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "responsive-overflow",
+      "family": "navigation",
+      "name": "Responsive overflow toolbar",
+      "kind": "Interaction pattern",
+      "definition": "Move secondary commands into an overflow control as space shrinks.",
+      "guardrail": "Preserve accessible command names and shortcuts; don't hide primary tasks.",
+      "source_ids": [
+        "modern",
+        "noise"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "origin-transition",
+      "family": "navigation",
+      "name": "Origin-aware transitions",
+      "kind": "Motion/navigation pattern",
+      "definition": "Open from a visible source to communicate where the destination came from.",
+      "guardrail": "Do not delay navigation or use motion as the sole cue.",
+      "source_ids": [
+        "natural",
+        "motion"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "contextual-hint",
+      "family": "navigation",
+      "name": "Contextual hint / hover card",
+      "kind": "Interaction pattern",
+      "definition": "Expose explanatory preview linked to an object without leaving the page.",
+      "guardrail": "Also support focus or explicit activation; dismiss without trapping input.",
+      "source_ids": [
+        "modern",
+        "apg"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "state-preserving-reparent",
+      "family": "navigation",
+      "name": "State-preserving reparenting",
+      "kind": "Implementation capability",
+      "definition": "Move a component between surfaces while preserving interaction state when supported.",
+      "guardrail": "Check browser support; test focused inputs, scroll and media.",
+      "source_ids": [
+        "modern"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "bottom-sheet",
+      "family": "navigation",
+      "name": "Gesture-enabled bottom sheet",
+      "kind": "Interaction pattern",
+      "definition": "A surface slides up from the bottom; optionally drag to resize or dismiss.",
+      "guardrail": "Provide explicit close, focus management and keyboard operation.",
+      "source_ids": [
+        "sheet",
+        "apg"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "inline-edit",
+      "family": "editing",
+      "name": "Inline editing",
+      "kind": "Interaction pattern",
+      "definition": "Switch a displayed value to an editor in the same place.",
+      "guardrail": "Save/cancel and validation; preserve focus and handle conflicts.",
+      "source_ids": [
+        "inline"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "expandable-row",
+      "family": "editing",
+      "name": "Expandable row",
+      "kind": "Interaction pattern",
+      "definition": "Reveal related details directly below an item.",
+      "guardrail": "Use explicit expand control and accessible expanded state.",
+      "source_ids": [
+        "table"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "batch-selection",
+      "family": "editing",
+      "name": "Contextual batch actions",
+      "kind": "Interaction pattern",
+      "definition": "Reveal relevant actions when one or more items are selected.",
+      "guardrail": "Show selection count and clear selection; confirm risky operations.",
+      "source_ids": [
+        "table"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "instant-filters",
+      "family": "editing",
+      "name": "Instant filtering",
+      "kind": "Interaction pattern",
+      "definition": "Apply each filter immediately while the user explores.",
+      "guardrail": "Keep results stable and announce change without overwhelming screen readers.",
+      "source_ids": [
+        "filters"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "batch-filters",
+      "family": "editing",
+      "name": "Apply-to-filter",
+      "kind": "Interaction pattern",
+      "definition": "Stage filter choices and apply them together.",
+      "guardrail": "Show unsaved changes and active filters; provide reset.",
+      "source_ids": [
+        "filters"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "editable-combobox",
+      "family": "editing",
+      "name": "Editable combobox",
+      "kind": "Widget pattern",
+      "definition": "Text entry and selectable suggestions share one control.",
+      "guardrail": "Follow APG focus and keyboard contract; don't use arbitrary menu roles.",
+      "source_ids": [
+        "apg"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "treegrid",
+      "family": "editing",
+      "name": "Treegrid",
+      "kind": "Widget pattern",
+      "definition": "Tabular properties combined with expandable hierarchy.",
+      "guardrail": "Use only when hierarchy and columns are both essential; test keyboard traversal.",
+      "source_ids": [
+        "apg"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "stateful-empty",
+      "family": "editing",
+      "name": "Actionable empty state",
+      "kind": "Interaction pattern",
+      "definition": "Differentiate no items, no matches and unavailable data.",
+      "guardrail": "Offer relevant recovery, reset or creation action; no fake data.",
+      "source_ids": [
+        "empty",
+        "carbon"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "skeleton",
+      "family": "editing",
+      "name": "Skeleton loading",
+      "kind": "Feedback pattern",
+      "definition": "Reserve expected content geometry while data loads.",
+      "guardrail": "Use busy/status semantics and timeout; static alternative.",
+      "source_ids": [
+        "table"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "shared-element",
+      "family": "motion",
+      "name": "Shared-element transition",
+      "kind": "Motion pattern",
+      "definition": "Preserve object identity across layouts with coordinated geometry.",
+      "guardrail": "Use stable identity; preserve focus independently of visual snapshots.",
+      "source_ids": [
+        "motion",
+        "chrome"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "element-scoped",
+      "family": "motion",
+      "name": "Element-scoped view transition",
+      "kind": "Implementation capability",
+      "definition": "Limit snapshot transitions to a region instead of the entire page.",
+      "guardrail": "Use fallback; browser support is not universally verified.",
+      "source_ids": [
+        "chrome"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "spring",
+      "family": "motion",
+      "name": "Physics-based spring",
+      "kind": "Motion technique",
+      "definition": "Motion responds to stiffness, damping and interruption.",
+      "guardrail": "Avoid excess oscillation; match semantic urgency and reduced-motion settings.",
+      "source_ids": [
+        "motion",
+        "motionex"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "morph",
+      "family": "motion",
+      "name": "Shape morphing",
+      "kind": "Motion technique",
+      "definition": "Interpolate compatible geometry to communicate transformation.",
+      "guardrail": "Maintain recognizable identity; avoid motion-only status signals.",
+      "source_ids": [
+        "wear",
+        "grok"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "scroll-timeline",
+      "family": "motion",
+      "name": "Scroll-linked animation",
+      "kind": "Motion technique",
+      "definition": "Animation progress follows scroll or visibility rather than elapsed time.",
+      "guardrail": "No essential content hidden by animation; reduced motion and support fallback.",
+      "source_ids": [
+        "scroll",
+        "chrome"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "scroll-triggered",
+      "family": "motion",
+      "name": "Scroll-triggered animation",
+      "kind": "Motion technique",
+      "definition": "A visibility/scroll threshold triggers a time-based sequence.",
+      "guardrail": "Distinguish from scroll-linked motion; check implementation support.",
+      "source_ids": [
+        "chrome"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "stagger",
+      "family": "motion",
+      "name": "Staggered reveal",
+      "kind": "Motion technique",
+      "definition": "Offset the entrance of related elements to establish sequence.",
+      "guardrail": "Keep total delay small; avoid delaying access to controls.",
+      "source_ids": [
+        "sheet",
+        "motionex"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "drag-spring",
+      "family": "motion",
+      "name": "Gesture-driven motion",
+      "kind": "Motion technique",
+      "definition": "Coordinate drag movement and spring return or settle.",
+      "guardrail": "Add keyboard and non-drag pointer alternative; support cancel.",
+      "source_ids": [
+        "sheet",
+        "natural"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "discrete-entry-exit",
+      "family": "motion",
+      "name": "Discrete entry/exit transitions",
+      "kind": "Implementation capability",
+      "definition": "Animate entering and leaving top-layer or display states with suitable CSS.",
+      "guardrail": "Check @starting-style and transition-behavior support and fallback.",
+      "source_ids": [
+        "chrome",
+        "modern"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "agent-mascot",
+      "family": "motion",
+      "name": "Stateful animated mascot",
+      "kind": "Feedback pattern",
+      "definition": "Avatar communicates lifecycle through expression, pose and text.",
+      "guardrail": "Don't infer completion from animation; pause and reduced motion.",
+      "source_ids": [
+        "grok"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "agent-entry",
+      "family": "ai",
+      "name": "Agent entry point",
+      "kind": "Interaction pattern",
+      "definition": "Expose an agent in the context of a task, capability or workspace.",
+      "guardrail": "Clearly communicate scope and limitations.",
+      "source_ids": [
+        "ms",
+        "pair"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "approval-gate",
+      "family": "ai",
+      "name": "Human approval gate",
+      "kind": "Interaction pattern",
+      "definition": "Pause before a consequential action and show an understandable request.",
+      "guardrail": "Show scope and consequence; allow reject or edit; never treat silence as consent.",
+      "source_ids": [
+        "msapproval",
+        "agentcat"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "explainability",
+      "family": "ai",
+      "name": "Progressive AI explanation",
+      "kind": "Interaction pattern",
+      "definition": "Provide concise explanation and deeper evidence on demand.",
+      "guardrail": "Separate verified sources from model estimates; don't fabricate rationale.",
+      "source_ids": [
+        "pair",
+        "paircases"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "confidence",
+      "family": "ai",
+      "name": "Calibrated uncertainty display",
+      "kind": "Interaction pattern",
+      "definition": "Communicate limitations or uncertainty when it helps the user decide.",
+      "guardrail": "Avoid arbitrary percentages or unwarranted precision.",
+      "source_ids": [
+        "pair"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "feedback",
+      "family": "ai",
+      "name": "AI feedback and correction",
+      "kind": "Interaction pattern",
+      "definition": "Users can correct, reject or refine an output.",
+      "guardrail": "Explain what feedback affects; make correction actionable.",
+      "source_ids": [
+        "pair"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "graceful-failure",
+      "family": "ai",
+      "name": "Graceful AI failure / handoff",
+      "kind": "Interaction pattern",
+      "definition": "Return control when automation cannot complete the task.",
+      "guardrail": "Show what failed and what remains; preserve user work.",
+      "source_ids": [
+        "paircases",
+        "ms"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "declarative-genui",
+      "family": "ai",
+      "name": "Declarative generative UI",
+      "kind": "Architecture pattern",
+      "definition": "Agent emits structured UI intent for a trusted host component catalog.",
+      "guardrail": "Validate schema; restrict actions and keep host permissions authoritative.",
+      "source_ids": [
+        "a2ui"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "scoped-permission",
+      "family": "ai",
+      "name": "Scoped agent permissions",
+      "kind": "Interaction pattern",
+      "definition": "Grant access to a specific action or resource instead of unrestricted authority.",
+      "guardrail": "Make duration and revocation clear; reapprove scope changes.",
+      "source_ids": [
+        "msapproval",
+        "agentcat"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "streaming-status",
+      "family": "ai",
+      "name": "Streaming response and activity",
+      "kind": "Feedback pattern",
+      "definition": "Show incremental results and meaningful activity as work progresses.",
+      "guardrail": "Don't invent internal thought or progress; support interruption and recovery.",
+      "source_ids": [
+        "ms",
+        "agentcat"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "linked-views",
+      "family": "data",
+      "name": "Brushing and linking",
+      "kind": "Data interaction pattern",
+      "definition": "Selecting a range or marks in one view highlights related items in another.",
+      "guardrail": "Make linked effects visible and reversible; provide non-drag alternatives.",
+      "source_ids": [
+        "dash"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "cross-filtering",
+      "family": "data",
+      "name": "Cross-filtering",
+      "kind": "Data interaction pattern",
+      "definition": "Selection in one chart filters another representation.",
+      "guardrail": "Show active filters and reset; distinguish filtering from highlighting.",
+      "source_ids": [
+        "dash",
+        "filters"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "details-on-demand",
+      "family": "data",
+      "name": "Details on demand",
+      "kind": "Data interaction pattern",
+      "definition": "Reveal exact values or record-level details when requested.",
+      "guardrail": "Support keyboard/touch and a structured data alternative.",
+      "source_ids": [
+        "dash"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "overview-focus",
+      "family": "data",
+      "name": "Overview + focus",
+      "kind": "Data interaction pattern",
+      "definition": "Show global context while enabling a focused subset or detail.",
+      "guardrail": "Preserve navigation back to overview and current context.",
+      "source_ids": [
+        "dash"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "small-multiples",
+      "family": "data",
+      "name": "Small multiples",
+      "kind": "Data composition pattern",
+      "definition": "Repeat the same chart design for comparable categories.",
+      "guardrail": "Use comparable scales and labels; avoid excessive panels.",
+      "source_ids": [
+        "dash"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "dashboard-multipage",
+      "family": "data",
+      "name": "Multi-page dashboard",
+      "kind": "Data composition pattern",
+      "definition": "Partition questions into coordinated dashboard surfaces.",
+      "guardrail": "Avoid duplicating inconsistent filters and preserve contextual state.",
+      "source_ids": [
+        "dash"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "dashboard-density",
+      "family": "data",
+      "name": "Dashboard density management",
+      "kind": "Data composition principle",
+      "definition": "Choose information amount and grouping for the user's decision.",
+      "guardrail": "Avoid sacrificing important context for empty space; test task time.",
+      "source_ids": [
+        "dash",
+        "noise"
+      ],
+      "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    }
+  ]
+}
