@@ -122,8 +122,54 @@
       "license": "MIT",
       "license_path": "media/reanimated/LICENSE",
       "classification": "upstream documentation demo; not measured production UI",
-      "playback": "not-tested",
-      "duration_seconds": null
+      "playback": "decoded-sampled-frames",
+      "duration_seconds": 2.28,
+      "segment_evidence": {
+        "schema_version": 1,
+        "source_blob_sha": "199f3a3e69ef62e44dd166f99fbb37476a4030d4",
+        "duration_seconds": 2.28,
+        "source_dimensions": [
+          640,
+          533
+        ],
+        "classification": "short-upstream-demo",
+        "selection_method": "13 evenly spaced grayscale samples; maximum adjacent pixel change",
+        "segment": {
+          "start_seconds": 0.0,
+          "end_seconds": 2.28
+        },
+        "candidate_change_interval": {
+          "start_seconds": 0.71,
+          "end_seconds": 0.887,
+          "mean_pixel_difference": 1.873
+        },
+        "keyframes": [
+          {
+            "path": "media/segments/reanimated-wobble-1.jpg",
+            "sha256": "1db2fc3fbf50b80ad37c2fb485c037cd1e2903d9789ec5ce7b296a1354d269ce",
+            "bytes": 19498,
+            "timestamp_seconds": 0.0
+          },
+          {
+            "path": "media/segments/reanimated-wobble-2.jpg",
+            "sha256": "a1baa9bb079dc6ba275e91cccc9e8aa905e18e54fec0243e713cac021e46fca5",
+            "bytes": 19789,
+            "timestamp_seconds": 1.065
+          },
+          {
+            "path": "media/segments/reanimated-wobble-3.jpg",
+            "sha256": "8f4ff28bdb0f2dccd40d626020e127e2309d25355ce81306884600998a286894",
+            "bytes": 19381,
+            "timestamp_seconds": 2.13
+          }
+        ],
+        "clip": null,
+        "semantic_review": "not-inspected",
+        "states": [],
+        "observations": [],
+        "verification": "decoded-frames-and-probed-duration",
+        "limits": "Sampled pixel change does not establish a semantic event or exact motion timing."
+      }
     },
     {
       "id": "reanimated-switch_android",
@@ -146,8 +192,54 @@
       "license": "MIT",
       "license_path": "media/reanimated/LICENSE",
       "classification": "upstream documentation demo; not measured production UI",
-      "playback": "not-tested",
-      "duration_seconds": null
+      "playback": "decoded-sampled-frames",
+      "duration_seconds": 5.817,
+      "segment_evidence": {
+        "schema_version": 1,
+        "source_blob_sha": "85a5b5279ec8b2a9c02d291a8c10a49aacb09234",
+        "duration_seconds": 5.817,
+        "source_dimensions": [
+          760,
+          1062
+        ],
+        "classification": "short-upstream-demo",
+        "selection_method": "13 evenly spaced grayscale samples; maximum adjacent pixel change",
+        "segment": {
+          "start_seconds": 0.0,
+          "end_seconds": 5.817
+        },
+        "candidate_change_interval": {
+          "start_seconds": 2.361,
+          "end_seconds": 2.833,
+          "mean_pixel_difference": 0.459
+        },
+        "keyframes": [
+          {
+            "path": "media/segments/reanimated-switch_android-1.jpg",
+            "sha256": "82dbec9e01edb1f2cb24d6f92ff9a25da8138959c01e23d3d336d622307fb898",
+            "bytes": 21946,
+            "timestamp_seconds": 0.0
+          },
+          {
+            "path": "media/segments/reanimated-switch_android-2.jpg",
+            "sha256": "214b8beca846cac5f9ad8c3ce5aabdad61ad96686e2b149b3ea450eaa3e0f5c2",
+            "bytes": 21717,
+            "timestamp_seconds": 2.833
+          },
+          {
+            "path": "media/segments/reanimated-switch_android-3.jpg",
+            "sha256": "928e9521d11d68a01585cbf37d7ffff297e03203be0e914748b6888133c14b79",
+            "bytes": 22056,
+            "timestamp_seconds": 5.667
+          }
+        ],
+        "clip": null,
+        "semantic_review": "not-inspected",
+        "states": [],
+        "observations": [],
+        "verification": "decoded-frames-and-probed-duration",
+        "limits": "Sampled pixel change does not establish a semantic event or exact motion timing."
+      }
     },
     {
       "id": "reanimated-fade_dark",
@@ -171,8 +263,54 @@
       "license": "MIT",
       "license_path": "media/reanimated/LICENSE",
       "classification": "upstream documentation demo; not measured production UI",
-      "playback": "not-tested",
-      "duration_seconds": null
+      "playback": "decoded-sampled-frames",
+      "duration_seconds": 4.314,
+      "segment_evidence": {
+        "schema_version": 1,
+        "source_blob_sha": "414d265ac7767747f8407f649c5ec954116ce2b0",
+        "duration_seconds": 4.314,
+        "source_dimensions": [
+          304,
+          368
+        ],
+        "classification": "short-upstream-demo",
+        "selection_method": "13 evenly spaced grayscale samples; maximum adjacent pixel change",
+        "segment": {
+          "start_seconds": 0.0,
+          "end_seconds": 4.314
+        },
+        "candidate_change_interval": {
+          "start_seconds": 1.041,
+          "end_seconds": 1.388,
+          "mean_pixel_difference": 13.716
+        },
+        "keyframes": [
+          {
+            "path": "media/segments/reanimated-fade_dark-1.jpg",
+            "sha256": "afdd9e3ac507e94f6bff8b09b58800d61f151f6a6c75fc6f53d00cd342dd3eba",
+            "bytes": 1269,
+            "timestamp_seconds": 0.0
+          },
+          {
+            "path": "media/segments/reanimated-fade_dark-2.jpg",
+            "sha256": "46c6dc6ef22bc690c063fbb48b8780d86d94c69c49f03cbba79c3a6d5b1c79d0",
+            "bytes": 8274,
+            "timestamp_seconds": 2.082
+          },
+          {
+            "path": "media/segments/reanimated-fade_dark-3.jpg",
+            "sha256": "0187c0c46e305ef7c0aac815b55a5315146a6a05d886332d0e099096cdd2d466",
+            "bytes": 13323,
+            "timestamp_seconds": 4.164
+          }
+        ],
+        "clip": null,
+        "semantic_review": "not-inspected",
+        "states": [],
+        "observations": [],
+        "verification": "decoded-frames-and-probed-duration",
+        "limits": "Sampled pixel change does not establish a semantic event or exact motion timing."
+      }
     },
     {
       "id": "reanimated-ios_exiting_custom",
@@ -196,8 +334,54 @@
       "license": "MIT",
       "license_path": "media/reanimated/LICENSE",
       "classification": "upstream documentation demo; not measured production UI",
-      "playback": "not-tested",
-      "duration_seconds": null
+      "playback": "decoded-sampled-frames",
+      "duration_seconds": 2.883,
+      "segment_evidence": {
+        "schema_version": 1,
+        "source_blob_sha": "a17f99e61795353c83023645adeb83d3884fb3fb",
+        "duration_seconds": 2.883,
+        "source_dimensions": [
+          690,
+          1192
+        ],
+        "classification": "short-upstream-demo",
+        "selection_method": "13 evenly spaced grayscale samples; maximum adjacent pixel change",
+        "segment": {
+          "start_seconds": 0.0,
+          "end_seconds": 2.883
+        },
+        "candidate_change_interval": {
+          "start_seconds": 1.594,
+          "end_seconds": 1.822,
+          "mean_pixel_difference": 3.076
+        },
+        "keyframes": [
+          {
+            "path": "media/segments/reanimated-ios_exiting_custom-1.jpg",
+            "sha256": "9859a0f3c11b4fd04e9c9c7f01fdba000cdf28d2b93d365a95e11fc5422653ad",
+            "bytes": 29064,
+            "timestamp_seconds": 0.0
+          },
+          {
+            "path": "media/segments/reanimated-ios_exiting_custom-2.jpg",
+            "sha256": "4484530ae80d47fb4fe70f5bb25ff436fdcc04a0b67ecf883981f01251686b35",
+            "bytes": 28951,
+            "timestamp_seconds": 1.367
+          },
+          {
+            "path": "media/segments/reanimated-ios_exiting_custom-3.jpg",
+            "sha256": "b9625f3a421a0a802ea2cb4c2d811b703a7aca839919a793d6d21737ce8f7747",
+            "bytes": 26688,
+            "timestamp_seconds": 2.733
+          }
+        ],
+        "clip": null,
+        "semantic_review": "not-inspected",
+        "states": [],
+        "observations": [],
+        "verification": "decoded-frames-and-probed-duration",
+        "limits": "Sampled pixel change does not establish a semantic event or exact motion timing."
+      }
     },
     {
       "id": "leva-circle-drag",
@@ -221,8 +405,54 @@
       "license": "MIT",
       "license_path": "media/leva/LICENSE",
       "classification": "upstream documentation demo; not measured production UI",
-      "playback": "not-tested",
-      "duration_seconds": null
+      "playback": "decoded-sampled-frames",
+      "duration_seconds": 5.28,
+      "segment_evidence": {
+        "schema_version": 1,
+        "source_blob_sha": "a0fa7b533e18da4ff0d8dce54871e177d56ef63d",
+        "duration_seconds": 5.28,
+        "source_dimensions": [
+          290,
+          320
+        ],
+        "classification": "short-upstream-demo",
+        "selection_method": "13 evenly spaced grayscale samples; maximum adjacent pixel change",
+        "segment": {
+          "start_seconds": 0.0,
+          "end_seconds": 5.28
+        },
+        "candidate_change_interval": {
+          "start_seconds": 4.275,
+          "end_seconds": 4.702,
+          "mean_pixel_difference": 9.376
+        },
+        "keyframes": [
+          {
+            "path": "media/segments/leva-circle-drag-1.jpg",
+            "sha256": "58332c5ec28b1839835eb17fd8dbcf4e63fc03255f231086148f80d9f6126670",
+            "bytes": 5572,
+            "timestamp_seconds": 0.0
+          },
+          {
+            "path": "media/segments/leva-circle-drag-2.jpg",
+            "sha256": "9e241902ae96a51e59cea6f378806c5379bbeadb3e4d8a20ca7b75f539ae9a54",
+            "bytes": 5868,
+            "timestamp_seconds": 2.565
+          },
+          {
+            "path": "media/segments/leva-circle-drag-3.jpg",
+            "sha256": "c829274c3485d9662696dd39fd7caaffbf4f570e0fe782e627f29e387459fa8b",
+            "bytes": 5501,
+            "timestamp_seconds": 5.13
+          }
+        ],
+        "clip": null,
+        "semantic_review": "not-inspected",
+        "states": [],
+        "observations": [],
+        "verification": "decoded-frames-and-probed-duration",
+        "limits": "Sampled pixel change does not establish a semantic event or exact motion timing."
+      }
     },
     {
       "id": "excalidraw-welcome-screen-overview",
@@ -738,9 +968,61 @@
       "license": "MIT",
       "license_path": "media/storybook/LICENSE",
       "classification": "upstream documentation media; not measured commercial product UI",
-      "playback": "not-tested",
-      "duration_seconds": null,
-      "visual_review": "not-performed"
+      "playback": "decoded-sampled-frames",
+      "duration_seconds": 8.933,
+      "visual_review": "not-performed",
+      "segment_evidence": {
+        "schema_version": 1,
+        "source_blob_sha": "134d76d1ad3367ecfdf762dd576f64e2d288a59a",
+        "duration_seconds": 8.933,
+        "source_dimensions": [
+          1440,
+          1080
+        ],
+        "classification": "longer-upstream-demo",
+        "selection_method": "13 evenly spaced grayscale samples; maximum adjacent pixel change",
+        "segment": {
+          "start_seconds": 4.933,
+          "end_seconds": 8.933
+        },
+        "candidate_change_interval": {
+          "start_seconds": 8.051,
+          "end_seconds": 8.783,
+          "mean_pixel_difference": 4.438
+        },
+        "keyframes": [
+          {
+            "path": "media/segments/storybook-whats-a-story-1.jpg",
+            "sha256": "c2e6a37a1a30b709fab2a58989c1a71510757cde799ab2049c3e297125c80cb2",
+            "bytes": 14862,
+            "timestamp_seconds": 5.124
+          },
+          {
+            "path": "media/segments/storybook-whats-a-story-2.jpg",
+            "sha256": "4cc042829dee242b1fa82fee7939b4715d7fc4e8c08a21a306b5ae44f43e67ab",
+            "bytes": 15560,
+            "timestamp_seconds": 6.587
+          },
+          {
+            "path": "media/segments/storybook-whats-a-story-3.jpg",
+            "sha256": "315ec4ee704c61291d6d8b685b7252f06646263abb33bb1813270aee9c4bc20b",
+            "bytes": 12087,
+            "timestamp_seconds": 8.783
+          }
+        ],
+        "clip": {
+          "path": "media/segments/storybook-whats-a-story-excerpt.mp4",
+          "sha256": "8ec2a4a48e75e1383457dda921fe712eedf2515b71a188fbc2573fdaf4dc77b3",
+          "bytes": 22039,
+          "duration_seconds": 4.0,
+          "audio": false
+        },
+        "semantic_review": "not-inspected",
+        "states": [],
+        "observations": [],
+        "verification": "decoded-frames-and-probed-duration",
+        "limits": "Sampled pixel change does not establish a semantic event or exact motion timing."
+      }
     },
     {
       "id": "storybook-component-accessibility-testing",
@@ -762,9 +1044,61 @@
       "license": "MIT",
       "license_path": "media/storybook/LICENSE",
       "classification": "upstream documentation media; not measured commercial product UI",
-      "playback": "not-tested",
-      "duration_seconds": null,
-      "visual_review": "not-performed"
+      "playback": "decoded-sampled-frames",
+      "duration_seconds": 10.9,
+      "visual_review": "not-performed",
+      "segment_evidence": {
+        "schema_version": 1,
+        "source_blob_sha": "d77ccd67a510dec488a16b003d948cdd49bfbdaf",
+        "duration_seconds": 10.9,
+        "source_dimensions": [
+          1440,
+          1080
+        ],
+        "classification": "longer-upstream-demo",
+        "selection_method": "13 evenly spaced grayscale samples; maximum adjacent pixel change",
+        "segment": {
+          "start_seconds": 0.0,
+          "end_seconds": 4.0
+        },
+        "candidate_change_interval": {
+          "start_seconds": 0.896,
+          "end_seconds": 1.792,
+          "mean_pixel_difference": 1.666
+        },
+        "keyframes": [
+          {
+            "path": "media/segments/storybook-component-accessibility-testing-1.jpg",
+            "sha256": "e65232d465c8d6b41db1def90e072ee04bcb4c3c4b4b6af018e22dc895919874",
+            "bytes": 7203,
+            "timestamp_seconds": 0.0
+          },
+          {
+            "path": "media/segments/storybook-component-accessibility-testing-2.jpg",
+            "sha256": "d24ce1aa2c73fe6def2aa0b52812d34b3169a23aa447e3aa43a8c3d0b3818403",
+            "bytes": 7757,
+            "timestamp_seconds": 1.792
+          },
+          {
+            "path": "media/segments/storybook-component-accessibility-testing-3.jpg",
+            "sha256": "e9d03fb674f6443fc8624fe090977d08a0ed0f03dce2d704c52f94f6061d9fec",
+            "bytes": 10508,
+            "timestamp_seconds": 3.583
+          }
+        ],
+        "clip": {
+          "path": "media/segments/storybook-component-accessibility-testing-excerpt.mp4",
+          "sha256": "f231694d87d368f714416d7bbce6b50d820603e7674f423dd40f90ac4e933b55",
+          "bytes": 22739,
+          "duration_seconds": 4.0,
+          "audio": false
+        },
+        "semantic_review": "not-inspected",
+        "states": [],
+        "observations": [],
+        "verification": "decoded-frames-and-probed-duration",
+        "limits": "Sampled pixel change does not establish a semantic event or exact motion timing."
+      }
     },
     {
       "id": "storybook-component-interaction-testing",
@@ -786,9 +1120,61 @@
       "license": "MIT",
       "license_path": "media/storybook/LICENSE",
       "classification": "upstream documentation media; not measured commercial product UI",
-      "playback": "not-tested",
-      "duration_seconds": null,
-      "visual_review": "not-performed"
+      "playback": "decoded-sampled-frames",
+      "duration_seconds": 9.0,
+      "visual_review": "not-performed",
+      "segment_evidence": {
+        "schema_version": 1,
+        "source_blob_sha": "210a6c6e9457e7f0654109ffb88e8c6c126d73b3",
+        "duration_seconds": 9.0,
+        "source_dimensions": [
+          1440,
+          1080
+        ],
+        "classification": "longer-upstream-demo",
+        "selection_method": "13 evenly spaced grayscale samples; maximum adjacent pixel change",
+        "segment": {
+          "start_seconds": 5.0,
+          "end_seconds": 9.0
+        },
+        "candidate_change_interval": {
+          "start_seconds": 8.112,
+          "end_seconds": 8.85,
+          "mean_pixel_difference": 47.905
+        },
+        "keyframes": [
+          {
+            "path": "media/segments/storybook-component-interaction-testing-1.jpg",
+            "sha256": "b6e5d338284024c409c7de096ec598590436088e77318c46512b74de90a33ddc",
+            "bytes": 13989,
+            "timestamp_seconds": 5.162
+          },
+          {
+            "path": "media/segments/storybook-component-interaction-testing-2.jpg",
+            "sha256": "41b341172e92d5eacb35b240ecb7d7700b4c9dd4ff7be5d93e287d86f873901c",
+            "bytes": 14265,
+            "timestamp_seconds": 6.637
+          },
+          {
+            "path": "media/segments/storybook-component-interaction-testing-3.jpg",
+            "sha256": "2d70c4044bbeb192e5fc33290ec0955fe2706228830fd26c76561b5688b3a4b1",
+            "bytes": 5850,
+            "timestamp_seconds": 8.85
+          }
+        ],
+        "clip": {
+          "path": "media/segments/storybook-component-interaction-testing-excerpt.mp4",
+          "sha256": "5829f5cff53ed6bf19614752a4bdcd6b597f80b9a39d4f29c8b31b9bd17d427c",
+          "bytes": 29944,
+          "duration_seconds": 4.0,
+          "audio": false
+        },
+        "semantic_review": "not-inspected",
+        "states": [],
+        "observations": [],
+        "verification": "decoded-frames-and-probed-duration",
+        "limits": "Sampled pixel change does not establish a semantic event or exact motion timing."
+      }
     },
     {
       "id": "storybook-component-visual-testing-optimized",
@@ -810,9 +1196,61 @@
       "license": "MIT",
       "license_path": "media/storybook/LICENSE",
       "classification": "upstream documentation media; not measured commercial product UI",
-      "playback": "not-tested",
-      "duration_seconds": null,
-      "visual_review": "not-performed"
+      "playback": "decoded-sampled-frames",
+      "duration_seconds": 14.5,
+      "visual_review": "not-performed",
+      "segment_evidence": {
+        "schema_version": 1,
+        "source_blob_sha": "34ce04dd09629a16ac300591fc41a3724cc813f9",
+        "duration_seconds": 14.5,
+        "source_dimensions": [
+          1440,
+          1080
+        ],
+        "classification": "longer-upstream-demo",
+        "selection_method": "13 evenly spaced grayscale samples; maximum adjacent pixel change",
+        "segment": {
+          "start_seconds": 4.577,
+          "end_seconds": 8.577
+        },
+        "candidate_change_interval": {
+          "start_seconds": 5.979,
+          "end_seconds": 7.175,
+          "mean_pixel_difference": 13.292
+        },
+        "keyframes": [
+          {
+            "path": "media/segments/storybook-component-visual-testing-optimized-1.jpg",
+            "sha256": "a4a18c0cbc55cd2e9b7a7896005b1a30c79d7eb1997a09c38719cddecd2e098b",
+            "bytes": 12856,
+            "timestamp_seconds": 4.783
+          },
+          {
+            "path": "media/segments/storybook-component-visual-testing-optimized-2.jpg",
+            "sha256": "323eabcc93c7f7081d91cfff79e3e777504f66db17ac9534ffd39a3c95cd911b",
+            "bytes": 7518,
+            "timestamp_seconds": 7.175
+          },
+          {
+            "path": "media/segments/storybook-component-visual-testing-optimized-3.jpg",
+            "sha256": "a76933419d3d1928e1a66b15cc44ad6bac6ab118f4b40d10a8be260f5b8555c0",
+            "bytes": 8332,
+            "timestamp_seconds": 8.371
+          }
+        ],
+        "clip": {
+          "path": "media/segments/storybook-component-visual-testing-optimized-excerpt.mp4",
+          "sha256": "1a744ab04db527e22885d0d67c4811ca961912b5dfc0ec9cf6a2f0a0cc543ece",
+          "bytes": 35257,
+          "duration_seconds": 3.967,
+          "audio": false
+        },
+        "semantic_review": "not-inspected",
+        "states": [],
+        "observations": [],
+        "verification": "decoded-frames-and-probed-duration",
+        "limits": "Sampled pixel change does not establish a semantic event or exact motion timing."
+      }
     },
     {
       "id": "shadcn-dashboard-light",
