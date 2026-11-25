@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "monitor_version": "1.0.0",
+  "generated_at": "2026-11-25T23:04:42.094952+00:00",
+  "gate_passed": true,
+  "thresholds": {
+    "resolution_rate_min": 0.95,
+    "recall_at_20_min": 0.9,
+    "precision_at_10_min": 0.85,
+    "claim_support_min": 0.9
+  },
+  "execution_tiers": {
+    "synthetic_and_unit_checks": {
+      "scope": "in-memory fixtures & adversarial grounding probes",
+      "status": "verified"
+    },
+    "real_catalog_and_gold_set": {
+      "scope": "573 approved public catalog records + 38 taxonomy concepts + 460 multidomain Gold Set queries",
+      "total_queries": 460,
+      "total_domains": 23,
+      "status": "verified"
+    },
+    "authenticated_historical_bundles": {
+      "scope": "local encrypted release bundles (not mounted in public CI)",
+      "status": "requires_authorized_local_restore"
+    }
+  },
+  "overall_metrics": {
+    "resolution_rate": 1.0,
+    "recall_at_20": 1.0,
+    "precision_at_10": 0.9928,
+    "mrr": 0.9967,
+    "ndcg_at_10": 0.9974,
+    "p95_latency_ms": 9.7089,
+    "claim_support_rate": 1.0,
+    "citation_accuracy": 1.0,
+    "abstention_accuracy": 1.0
+  },
+  "regressions": {
+    "overall_regressions": [],
+    "domain_regressions_count": 0,
+    "domain_regressions": []
+  },
+  "privacy_and_security": {
+    "passed": true,
+    "secret_findings_count": 0,
+    "secret_findings": [],
+    "public_private_isolation_leaks": []
+  },
+  "zero_emoji_compliance": {
+    "passed": true,
+    "violations": []
+  },
+  "plugin_sync": {
+    "valid": true,
+    "version": "0.8.1",
+    "release_id": "pluginrel_6b06df1a59188191af956d00ec226ee5",
+    "status": "verified-synced"
+  },
+  "freshness_summary": {
+    "registry_hash": "9224f9c30c7624754c23be8ac8be79ea0096ca2e24c86b4504d47c452594dabe",
+    "taxonomy_sha256": "634ff75c1f869cf0c1188ccbe51ba7af1c8c49f38879ada6f0d8891ba98f4ec6",
+    "public_catalog_snapshot_sha256": "6b15266cc6f5f95b40b42e3151727f4fb3456b258fc7761baa5928777b52bfcc",
+    "total_sources": 12,
+    "stale_sources_count": 0
+  },
+  "gap_learning_summary": {
+    "total_gaps_recorded": 0,
+    "promoted_to_dev_count": 0,
+    "holdout_isolation_verified": true
+  },
+  "deployment_and_rollback": {
+    "deployment_order": [
+      "1. Validate config/source_registry.json and config/gold_set_benchmark.json schemas.",
+      "2. Run incremental lineage refresh and emit reports/FRESHNESS-MANIFEST.json.",
+      "3. Run Gold Set Benchmark (#78) + Grounded Answer Eval (#88).",
+      "4. Execute CI Quality Gate (#83) verifying all 23 domains, zero leakage, zero emojis, and plugin sync.",
+      "5. Only after gate PASS, sync plugin overlays via docs/PLUGIN-SYNC.md protocol."
+    ],
+    "rollback_protocol": "On any domain regression, freshness mismatch, or secret finding, halt deployment, restore previous committed SQLite/lineage snapshot via incremental_lineage rollback, and preserve immutable historical bundles untouched."
+  }
+}
