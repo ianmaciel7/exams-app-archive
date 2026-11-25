@@ -218,7 +218,7 @@ window.renderArchiveComponent = function renderArchiveComponent(container, entry
 
     const key = "__archiveMod_" + Math.random().toString(36).slice(2);
     const scriptEl = document.createElement("script");
-    scriptEl.textContent = "window[" + JSON.stringify(key) + "] = function(require, module, exports, React) {\n" + compiled + "\n};";
+    scriptEl.textContent = "window[" + JSON.stringify(key) + "] = function(require, module, exports, React) {\\n" + compiled + "\\n};";
     document.head.appendChild(scriptEl);
     scriptEl.remove();
     const fn = window[key];
