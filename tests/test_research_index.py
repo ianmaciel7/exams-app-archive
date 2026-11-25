@@ -24,3 +24,26 @@ class ResearchIndexTests(unittest.TestCase):
             self.assertTrue(mod.search(db, "sidebar", "pattern"))
             self.assertFalse(mod.search(db, "zzzz-unfindable"))
             self.assertTrue(all(r["kind"] == "visual" for r in mod.search(db, "video","visual")))
+
+    def test_incremental_reconciliation(self):
+        def row(ident, title):
+            return {"id": ident, "kind": "pattern", "catalog": "fixture",
+                    "title": title, "catalog_sha256": "fixture"}
+        a, b = row("a", "oldword"), row("b", "stableword")
+        with sqlite3.connect(":memory:") as db:
+            self.assertEqual(mod.build(db, [a, b]),
+                             {"added": 2, "updated": 0, "removed": 0, "unchanged": 0})
+            original = db.execute("SELECT rowid FROM research_fts WHERE id='b'").fetchone()
+            self.assertEqual(mod.build(db, [a, b]),
+                             {"added": 0, "updated": 0, "removed": 0, "unchanged": 2})
+            self.assertEqual(mod.build(db, [row("a", "newword"), b, row("c", "extra")]),
+                             {"added": 1, "updated": 1, "removed": 0, "unchanged": 1})
+            self.assertFalse(mod.search(db, "oldword"))
+            self.assertEqual(mod.search(db, "newword")[0]["id"], "a")
+            self.assertEqual(db.execute("SELECT rowid FROM research_fts WHERE id='b'").fetchone(), original)
+            self.assertEqual(mod.build(db, [b])["removed"], 2)
+            self.assertFalse(mod.search(db, "newword"))
+            self.assertEqual(db.execute("SELECT count(*) FROM research_fts").fetchone()[0], 1)
+            with self.assertRaises(ValueError):
+                mod.build(db, [b, b])
+            self.assertEqual(db.execute("SELECT count(*) FROM research").fetchone()[0], 1)

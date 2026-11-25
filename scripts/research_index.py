@@ -75,17 +75,39 @@ def load_records():
     return records
 
 def build(db, records):
-    db.executescript("""
-    DROP TABLE IF EXISTS research_fts;
-    DROP TABLE IF EXISTS research;
-    CREATE TABLE research(id TEXT PRIMARY KEY, kind TEXT NOT NULL, catalog TEXT NOT NULL, payload TEXT NOT NULL);
-    CREATE VIRTUAL TABLE research_fts USING fts5(id UNINDEXED, title, body, tokenize='unicode61 remove_diacritics 2');
-    """)
+    """Reconcile the explicit catalog snapshot, preserving unchanged FTS rows.
+
+    The complete snapshot is authoritative: removed records cannot survive a
+    rebuild. Changes to the serialized payload (including provenance) update
+    the FTS entry atomically with its metadata.
+    """
+    incoming = {}
     for row in records:
-        payload = json.dumps(row, ensure_ascii=False, sort_keys=True)
-        db.execute("INSERT INTO research VALUES (?,?,?,?)", (row["id"],row["kind"],row["catalog"],payload))
-        db.execute("INSERT INTO research_fts VALUES (?,?,?)", (row["id"],row["title"],payload))
-    db.commit()
+        ident = row["id"]
+        if ident in incoming:
+            raise ValueError(f"Duplicate id: {ident}")
+        incoming[ident] = (row, json.dumps(row, ensure_ascii=False, sort_keys=True))
+    db.executescript("""
+    CREATE TABLE IF NOT EXISTS research(id TEXT PRIMARY KEY, kind TEXT NOT NULL, catalog TEXT NOT NULL, payload TEXT NOT NULL);
+    CREATE VIRTUAL TABLE IF NOT EXISTS research_fts USING fts5(id UNINDEXED, title, body, tokenize='unicode61 remove_diacritics 2');
+    """)
+    previous = dict(db.execute("SELECT id, payload FROM research"))
+    removed = sorted(previous.keys() - incoming.keys())
+    changed = sorted(ident for ident, (_, payload) in incoming.items()
+                     if previous.get(ident) != payload)
+    added = sum(ident not in previous for ident in changed)
+    with db:
+        for ident in removed:
+            db.execute("DELETE FROM research_fts WHERE id=?", (ident,))
+            db.execute("DELETE FROM research WHERE id=?", (ident,))
+        for ident in changed:
+            row, payload = incoming[ident]
+            db.execute("DELETE FROM research_fts WHERE id=?", (ident,))
+            db.execute("INSERT OR REPLACE INTO research VALUES (?,?,?,?)",
+                       (ident, row["kind"], row["catalog"], payload))
+            db.execute("INSERT INTO research_fts VALUES (?,?,?)", (ident, row["title"], payload))
+    return {"added": added, "updated": len(changed) - added,
+            "removed": len(removed), "unchanged": len(incoming) - len(changed)}
 
 def query_expr(query):
     tokens = re.findall(r"[\w]+", normalized(query))
