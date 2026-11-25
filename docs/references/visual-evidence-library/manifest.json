@@ -135,7 +135,7 @@
         "classification": "short-upstream-demo",
         "selection_method": "13 evenly spaced grayscale samples; maximum adjacent pixel change",
         "segment": {
-          "start_seconds": 0,
+          "start_seconds": 0.0,
           "end_seconds": 2.28
         },
         "candidate_change_interval": {
@@ -148,7 +148,7 @@
             "path": "media/segments/reanimated-wobble-1.jpg",
             "sha256": "1db2fc3fbf50b80ad37c2fb485c037cd1e2903d9789ec5ce7b296a1354d269ce",
             "bytes": 19498,
-            "timestamp_seconds": 0
+            "timestamp_seconds": 0.0
           },
           {
             "path": "media/segments/reanimated-wobble-2.jpg",
@@ -247,7 +247,7 @@
         "classification": "short-upstream-demo",
         "selection_method": "13 evenly spaced grayscale samples; maximum adjacent pixel change",
         "segment": {
-          "start_seconds": 0,
+          "start_seconds": 0.0,
           "end_seconds": 5.817
         },
         "candidate_change_interval": {
@@ -260,7 +260,7 @@
             "path": "media/segments/reanimated-switch_android-1.jpg",
             "sha256": "82dbec9e01edb1f2cb24d6f92ff9a25da8138959c01e23d3d336d622307fb898",
             "bytes": 21946,
-            "timestamp_seconds": 0
+            "timestamp_seconds": 0.0
           },
           {
             "path": "media/segments/reanimated-switch_android-2.jpg",
@@ -360,7 +360,7 @@
         "classification": "short-upstream-demo",
         "selection_method": "13 evenly spaced grayscale samples; maximum adjacent pixel change",
         "segment": {
-          "start_seconds": 0,
+          "start_seconds": 0.0,
           "end_seconds": 4.314
         },
         "candidate_change_interval": {
@@ -373,7 +373,7 @@
             "path": "media/segments/reanimated-fade_dark-1.jpg",
             "sha256": "afdd9e3ac507e94f6bff8b09b58800d61f151f6a6c75fc6f53d00cd342dd3eba",
             "bytes": 1269,
-            "timestamp_seconds": 0
+            "timestamp_seconds": 0.0
           },
           {
             "path": "media/segments/reanimated-fade_dark-2.jpg",
@@ -473,7 +473,7 @@
         "classification": "short-upstream-demo",
         "selection_method": "13 evenly spaced grayscale samples; maximum adjacent pixel change",
         "segment": {
-          "start_seconds": 0,
+          "start_seconds": 0.0,
           "end_seconds": 2.883
         },
         "candidate_change_interval": {
@@ -486,7 +486,7 @@
             "path": "media/segments/reanimated-ios_exiting_custom-1.jpg",
             "sha256": "9859a0f3c11b4fd04e9c9c7f01fdba000cdf28d2b93d365a95e11fc5422653ad",
             "bytes": 29064,
-            "timestamp_seconds": 0
+            "timestamp_seconds": 0.0
           },
           {
             "path": "media/segments/reanimated-ios_exiting_custom-2.jpg",
@@ -586,7 +586,7 @@
         "classification": "short-upstream-demo",
         "selection_method": "13 evenly spaced grayscale samples; maximum adjacent pixel change",
         "segment": {
-          "start_seconds": 0,
+          "start_seconds": 0.0,
           "end_seconds": 5.28
         },
         "candidate_change_interval": {
@@ -599,7 +599,7 @@
             "path": "media/segments/leva-circle-drag-1.jpg",
             "sha256": "58332c5ec28b1839835eb17fd8dbcf4e63fc03255f231086148f80d9f6126670",
             "bytes": 5572,
-            "timestamp_seconds": 0
+            "timestamp_seconds": 0.0
           },
           {
             "path": "media/segments/leva-circle-drag-2.jpg",
@@ -1224,7 +1224,7 @@
           "path": "media/segments/storybook-whats-a-story-excerpt.mp4",
           "sha256": "8ec2a4a48e75e1383457dda921fe712eedf2515b71a188fbc2573fdaf4dc77b3",
           "bytes": 22039,
-          "duration_seconds": 4,
+          "duration_seconds": 4.0,
           "audio": false
         },
         "semantic_review": "sampled-frames-reviewed",
@@ -1310,8 +1310,8 @@
         "classification": "longer-upstream-demo",
         "selection_method": "13 evenly spaced grayscale samples; maximum adjacent pixel change",
         "segment": {
-          "start_seconds": 0,
-          "end_seconds": 4
+          "start_seconds": 0.0,
+          "end_seconds": 4.0
         },
         "candidate_change_interval": {
           "start_seconds": 0.896,
@@ -1323,7 +1323,7 @@
             "path": "media/segments/storybook-component-accessibility-testing-1.jpg",
             "sha256": "e65232d465c8d6b41db1def90e072ee04bcb4c3c4b4b6af018e22dc895919874",
             "bytes": 7203,
-            "timestamp_seconds": 0
+            "timestamp_seconds": 0.0
           },
           {
             "path": "media/segments/storybook-component-accessibility-testing-2.jpg",
@@ -1342,7 +1342,7 @@
           "path": "media/segments/storybook-component-accessibility-testing-excerpt.mp4",
           "sha256": "f231694d87d368f714416d7bbce6b50d820603e7674f423dd40f90ac4e933b55",
           "bytes": 22739,
-          "duration_seconds": 4,
+          "duration_seconds": 4.0,
           "audio": false
         },
         "semantic_review": "sampled-frames-reviewed",
@@ -1415,12 +1415,12 @@
       "license_path": "media/storybook/LICENSE",
       "classification": "upstream documentation media; not measured commercial product UI",
       "playback": "decoded-sampled-frames",
-      "duration_seconds": 9,
+      "duration_seconds": 9.0,
       "visual_review": "not-performed",
       "segment_evidence": {
         "schema_version": 1,
         "source_blob_sha": "210a6c6e9457e7f0654109ffb88e8c6c126d73b3",
-        "duration_seconds": 9,
+        "duration_seconds": 9.0,
         "source_dimensions": [
           1440,
           1080
@@ -1428,8 +1428,8 @@
         "classification": "longer-upstream-demo",
         "selection_method": "13 evenly spaced grayscale samples; maximum adjacent pixel change",
         "segment": {
-          "start_seconds": 5,
-          "end_seconds": 9
+          "start_seconds": 5.0,
+          "end_seconds": 9.0
         },
         "candidate_change_interval": {
           "start_seconds": 8.112,
@@ -1460,7 +1460,7 @@
           "path": "media/segments/storybook-component-interaction-testing-excerpt.mp4",
           "sha256": "5829f5cff53ed6bf19614752a4bdcd6b597f80b9a39d4f29c8b31b9bd17d427c",
           "bytes": 29944,
-          "duration_seconds": 4,
+          "duration_seconds": 4.0,
           "audio": false
         },
         "semantic_review": "sampled-frames-reviewed",
