@@ -1047,6 +1047,376 @@
       "status": "search-index result consulted; full-site audit and access/licence not verified",
       "storage": "link-only",
       "notes": "Bibliografia de heurísticas, HCI, padrões e métodos; consultar publicações originais."
+    },
+    {
+      "id": "gummble",
+      "title": "Gummble",
+      "url": "https://gummble.com/",
+      "kind": "product-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Capturas e fluxos de aplicativos; oferece busca de padrões e integração MCP, sem presumir acesso pago ou instalado."
+    },
+    {
+      "id": "framebin",
+      "title": "Framebin",
+      "url": "https://framebin.co/",
+      "kind": "product-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Capturas de apps classificadas por elementos; útil para comparar barras de ações."
+    },
+    {
+      "id": "beforeclick",
+      "title": "Before.click",
+      "url": "https://www.before.click/",
+      "kind": "product-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Capturas publicadas em lojas de apps, onboarding, paywalls e ícones; distinguir material promocional da UI efetivamente observada."
+    },
+    {
+      "id": "navbar-gallery",
+      "title": "Navbar Gallery",
+      "url": "https://www.navbar.gallery/",
+      "kind": "specialized-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "public page opened; not full audit",
+      "storage": "link-only",
+      "notes": "Navegação real classificada por tipo, plataforma e estilo: sidebar, dropdown, mega menu, fullscreen e breadcrumbs."
+    },
+    {
+      "id": "ripplix",
+      "title": "Ripplix",
+      "url": "https://www.ripplix.com/",
+      "kind": "motion-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Registros de movimento e microinterações, com filtros por plataforma e elemento."
+    },
+    {
+      "id": "ripplix-browse",
+      "title": "Ripplix — Browse",
+      "url": "https://www.ripplix.com/browse",
+      "kind": "motion-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Explorar estados, efeitos, elementos e gestos; separar comportamento funcional de decoração."
+    },
+    {
+      "id": "ripplix-navbar",
+      "title": "Ripplix — Navbar",
+      "url": "https://www.ripplix.com/interaction/navbar-ui-animations",
+      "kind": "motion-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Animações de navegação, barras contextuais e hover."
+    },
+    {
+      "id": "ripplix-productivity",
+      "title": "Ripplix — Productivity",
+      "url": "https://www.ripplix.com/industry/productivity",
+      "kind": "motion-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Referências de movimento em aplicativos de produtividade, painéis e menus laterais."
+    },
+    {
+      "id": "hoverstates",
+      "title": "Hoverstat.es",
+      "url": "https://hoverstat.es/",
+      "kind": "experimental-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "public page opened; not full audit",
+      "storage": "link-only",
+      "notes": "Curadoria editorial de interfaces web alternativas e navegação experimental. Redireciona para www.hoverstat.es."
+    },
+    {
+      "id": "save-design",
+      "title": "Save.design",
+      "url": "https://save.design/",
+      "kind": "research-tool-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "public page opened; not full audit",
+      "storage": "link-only",
+      "notes": "Organização de referências, captura e recuperação; página pública consultada, não acesso às coleções privadas."
+    },
+    {
+      "id": "codrops-hub",
+      "title": "Codrops — Creative Hub",
+      "url": "https://tympanus.net/codrops/hub/",
+      "kind": "experimental-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Demos de interação e efeitos criativos, incluindo morph, overlays, drag e transições."
+    },
+    {
+      "id": "codrops-hover",
+      "title": "Codrops — Hover",
+      "url": "https://tympanus.net/codrops/hub/tag/hover/",
+      "kind": "experimental-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Demos específicas de hover e efeitos vinculados ao cursor; validar alternativa para teclado e toque."
+    },
+    {
+      "id": "codrops-all",
+      "title": "Codrops — All demos",
+      "url": "https://tympanus.net/codrops/hub/all/",
+      "kind": "implementation-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Índice de efeitos e tecnologias: filtros, tooltips, tabs, menus, scroll, SVG e WebGL."
+    },
+    {
+      "id": "whatthefrontend",
+      "title": "What the Frontend?",
+      "url": "https://www.whatthefrontend.com/",
+      "kind": "technical-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Decompõe sites por efeitos e técnicas, incluindo hover, estado de loading, layout e scroll."
+    },
+    {
+      "id": "style-gallery",
+      "title": "Style Gallery",
+      "url": "https://style.gallery/en/",
+      "kind": "experimental-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Referências de estilo e efeitos com links a exemplos e código original."
+    },
+    {
+      "id": "uiverse",
+      "title": "Uiverse",
+      "url": "https://uiverse.io/",
+      "kind": "implementation-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "public page opened; not full audit",
+      "storage": "link-only",
+      "notes": "Componentes comunitários em HTML/CSS e outros formatos; confirmar licença e qualidade acessível por item."
+    },
+    {
+      "id": "awwwards-collections",
+      "title": "Awwwards — Collections",
+      "url": "https://www.awwwards.com/awwwards/collections/",
+      "kind": "editorial-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "public page opened; not full audit",
+      "storage": "link-only",
+      "notes": "Coleções de design web, interação e tecnologia; seleção editorial, não evidência de facilidade de uso."
+    },
+    {
+      "id": "atlas-gallery",
+      "title": "ATLAS Gallery",
+      "url": "https://atlas-gallery.app/?collection=interactive",
+      "kind": "interactive-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Catálogo de exemplos interativos, incluindo UI, motion e controles de editores; validar individualmente."
+    },
+    {
+      "id": "memorables-interactive",
+      "title": "Memorables — Interactive websites",
+      "url": "https://memorabl.es/inspiration/interactive-websites",
+      "kind": "experimental-gallery",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Referências de gestos, física, desenho e respostas de interface; não confundir conceito com produto lançado."
+    },
+    {
+      "id": "regards-motion",
+      "title": "Regards — Animation inspiration comparison",
+      "url": "https://www.regards.design/blog/best-website-animation-inspiration-sites",
+      "kind": "secondary-directory",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Comparação editorial de galerias por tipo de interação e mecanismo de busca; útil para descoberta, não ranking independente."
+    },
+    {
+      "id": "uxmatters-interaction",
+      "title": "UXmatters — Interaction Design",
+      "url": "https://www.uxmatters.com/topics/design/interaction-design/",
+      "kind": "editorial-ux",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Artigos sobre modelos de interação, ética, padrões e movimento; avaliar fonte de cada artigo."
+    },
+    {
+      "id": "uxmatters-research",
+      "title": "UXmatters — UX Research",
+      "url": "https://www.uxmatters.com/topics/research/ux-research/",
+      "kind": "editorial-ux",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Métodos e aplicação de pesquisa; validar desenho de estudo antes de generalizar."
+    },
+    {
+      "id": "boxes-arrows",
+      "title": "Boxes and Arrows",
+      "url": "https://boxesandarrows.com/articles/",
+      "kind": "editorial-ux",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Acervo histórico de arquitetura da informação, padrões, pesquisa e casos de design."
+    },
+    {
+      "id": "usability-views",
+      "title": "Usability Views",
+      "url": "https://usabilityviews.com/",
+      "kind": "editorial-ux",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Publicação independente sobre formulários, erros, arquitetura e avaliação de usabilidade; conferir metodologia."
+    },
+    {
+      "id": "digitalgov-research",
+      "title": "Digital.gov — Research and collaboration",
+      "url": "https://digital.gov/guides/research-collaboration",
+      "kind": "primary-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Métodos de pesquisa centrada nas pessoas e colaboração."
+    },
+    {
+      "id": "digitalgov-testing",
+      "title": "Digital.gov — Usability testing",
+      "url": "https://digital.gov/guides/research-collaboration/testing/usability",
+      "kind": "primary-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Métodos para validar design e conteúdo com usuários."
+    },
+    {
+      "id": "tidwell-book",
+      "title": "Designing Interfaces, 3rd edition",
+      "url": "https://www.oreilly.com/library/view/designing-interfaces-3rd/9781492051954/",
+      "kind": "book-reference",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Referência clássica de padrões de interação de Jenifer Tidwell, Charles Brewer e Aynne Valencia; página editorial, texto integral não consultado."
+    },
+    {
+      "id": "hax-patterns",
+      "title": "Microsoft HAX — Design patterns",
+      "url": "https://www.microsoft.com/en-us/haxtoolkit/design-patterns/",
+      "kind": "primary-guidance",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Padrões humano-IA com problema, solução, condições, benefícios e riscos; complementar referências independentes."
+    },
+    {
+      "id": "ai-patterns-research",
+      "title": "AI Patterns — Research",
+      "url": "https://ai-patterns.app/research",
+      "kind": "independent-research",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Estudo de linguagem de padrões para IA generativa e agentes; verificar método e revisão antes de tratar como consenso."
+    },
+    {
+      "id": "beyond-chat",
+      "title": "Beyond Chat — Research",
+      "url": "https://beyondchat.design/research/",
+      "kind": "research-directory",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Modelos de interação além do chat; pesquisas e discussões sobre supervisão humana."
+    },
+    {
+      "id": "aiuxcourses",
+      "title": "AIUX.courses — Sources",
+      "url": "https://aiux.courses/sources",
+      "kind": "secondary-directory",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Diretório temático de fontes de design de IA; usar para encontrar originais."
+    },
+    {
+      "id": "human-ai-primitives",
+      "title": "Unpacking Human-AI interactions",
+      "url": "https://doi.org/10.1145%2F3664522",
+      "kind": "academic-paper",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Pesquisa sobre primitivas e espaço de design de interação humano-IA; registro bibliográfico/resumo, não revisão integral."
+    },
+    {
+      "id": "genai-ui-survey",
+      "title": "Survey of User Interface Design and Interaction Techniques in Generative AI Applications",
+      "url": "https://arxiv.org/abs/2410.22370",
+      "kind": "academic-preprint",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Levantamento de interfaces de IA generativa; verificar versão, amostragem e revisão por pares."
+    },
+    {
+      "id": "hai-coordination",
+      "title": "Human-AI Coordination Zones",
+      "url": "https://arxiv.org/abs/2606.09848",
+      "kind": "academic-preprint",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Proposta de framework intermediário para coordenação humano-agente; não tratar como norma."
+    },
+    {
+      "id": "chartability",
+      "title": "Chartability",
+      "url": "https://chartability.fizz.studio/",
+      "kind": "accessibility-research",
+      "recorded_on": "2026-11-25",
+      "status": "public page opened; not full audit",
+      "storage": "link-only",
+      "notes": "Heurísticas testáveis para acessibilidade de dados e gráficos; complementar WCAG e testes reais."
+    },
+    {
+      "id": "design-inspo-directory",
+      "title": "Design Inspo — curated directory",
+      "url": "https://github.com/pengsonal/design-inspo",
+      "kind": "secondary-directory",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Diretório comunitário de galerias; verificar destino e licença antes de uso."
+    },
+    {
+      "id": "ai-patterns-catalog",
+      "title": "AI UX Patterns — community catalog",
+      "url": "https://github.com/slb2248/ai-ux-patterns",
+      "kind": "community-pattern-library",
+      "recorded_on": "2026-11-25",
+      "status": "search-index evidence; full page not audited",
+      "storage": "link-only",
+      "notes": "Catálogo comunitário com definições e demos de padrões IA; validar exemplos e código antes de adotar."
     }
   ],
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",

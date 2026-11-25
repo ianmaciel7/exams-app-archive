@@ -2,16 +2,16 @@
   "schema_version": 1,
   "verified_on": "2026-11-25",
   "plugin": "especialista-ui-ux",
-  "plugin_version": "1.8.3",
-  "previous_research_commit": "8ba0e9f51dd9cfdf074edfc21e3afc8ae3df682c",
+  "plugin_version": "1.8.4",
+  "previous_research_commit": "843b227122f856ec3889022db2a44d573c4e0aa9",
   "patterns": 47,
-  "source_urls": 108,
-  "added_source_urls": 39,
+  "source_urls": 145,
+  "added_source_urls": 37,
   "verification": {
     "plugin_release_confirmed": true,
     "plugin_reference_files_read": true,
     "source_url_sets_equal": true
   },
-  "scope": "General UI/UX; independent resources, interaction and motion research; manual synchronization",
+  "scope": "General UI/UX; independent references and interaction research; manual synchronization",
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets."
 }
