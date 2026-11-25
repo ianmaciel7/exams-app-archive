@@ -110,7 +110,17 @@ def main():
     failures = []
     for row in rows:
         try:
-            row["segment_evidence"] = extract(row)
+            previous = row.get("segment_evidence", {})
+            new = extract(row)
+            # A reviewed observation is tied to immutable frames, not merely the source title.
+            if (previous.get("semantic_review") == "sampled-frames-reviewed"
+                and previous.get("source_blob_sha") == new["source_blob_sha"]
+                and previous.get("keyframes") == new["keyframes"]):
+                for key in ("semantic_review", "review_date", "review_scope", "pattern", "component",
+                            "trigger", "states", "observations", "reuse_guidance", "motion_contract"):
+                    if key in previous:
+                        new[key] = previous[key]
+            row["segment_evidence"] = new
             row["duration_seconds"] = row["segment_evidence"]["duration_seconds"]
             row["playback"] = "decoded-sampled-frames"
         except Exception as exc:
@@ -123,7 +133,7 @@ def main():
         raise ValueError(str(errors))
     print(json.dumps({"sources":len(rows),"frames":sum(len(r["segment_evidence"]["keyframes"]) for r in rows),
           "clips":sum(bool(r["segment_evidence"]["clip"]) for r in rows),
-          "semantic_review":"pending","durations":{r["id"]:r["duration_seconds"] for r in rows}}))
+          "reviewed_sources":sum(r["segment_evidence"]["semantic_review"]=="sampled-frames-reviewed" for r in rows),"durations":{r["id"]:r["duration_seconds"] for r in rows}}))
 
 if __name__ == "__main__":
     main()

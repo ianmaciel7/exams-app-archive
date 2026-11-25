@@ -69,3 +69,11 @@ Indexed research for #67 and #75. This catalog preserves 23 unique upstream medi
 - [export](media/excalidraw/export.png) — image; [source](https://github.com/excalidraw/excalidraw/blob/5681e7d8be319092b13979e947afe632d5a4a525/public/screenshots/export.png); [license](media/excalidraw/LICENSE).
 - [virtual whiteboard](media/excalidraw/virtual-whiteboard.png) — image; [source](https://github.com/excalidraw/excalidraw/blob/5681e7d8be319092b13979e947afe632d5a4a525/public/screenshots/virtual-whiteboard.png); [license](media/excalidraw/LICENSE).
 - [wireframe](media/excalidraw/wireframe.png) — image; [source](https://github.com/excalidraw/excalidraw/blob/5681e7d8be319092b13979e947afe632d5a4a525/public/screenshots/wireframe.png); [license](media/excalidraw/LICENSE).
+
+## Segment-first evidence (2026-11-25)
+
+- 9 licensed source demos processed; 27 timestamped JPEG keyframes; four 4-second silent excerpts for sources longer than 8 seconds. No duplicate clip for the five already short sources.
+- All 27 sampled frames inspected and annotated with visible states, component, pattern and suggested reuse. Exact input timing, animation duration/easing and complete playback review remain unknown.
+- The searchable manifest carries source blob SHA, frame SHA-256, clip duration, timeline and observations. The public gallery exports derivatives rather than duplicate full originals for these records. Original Git media remains preserved.
+- Rebuild using `python scripts/extract_visual_segments.py` with FFmpeg/FFprobe installed; review survives only if frame identities remain identical. See [media policy](MEDIA-POLICY.md).
+- Extraction validation: [GitHub Actions](https://github.com/ianmaciel7/exams-app-archive/actions/runs/45611118947); [generated commit](https://github.com/ianmaciel7/exams-app-archive/commit/8b0688c4800b2a82d69794142aff382ea57d6167).

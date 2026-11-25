@@ -135,7 +135,7 @@
         "classification": "short-upstream-demo",
         "selection_method": "13 evenly spaced grayscale samples; maximum adjacent pixel change",
         "segment": {
-          "start_seconds": 0.0,
+          "start_seconds": 0,
           "end_seconds": 2.28
         },
         "candidate_change_interval": {
@@ -148,7 +148,7 @@
             "path": "media/segments/reanimated-wobble-1.jpg",
             "sha256": "1db2fc3fbf50b80ad37c2fb485c037cd1e2903d9789ec5ce7b296a1354d269ce",
             "bytes": 19498,
-            "timestamp_seconds": 0.0
+            "timestamp_seconds": 0
           },
           {
             "path": "media/segments/reanimated-wobble-2.jpg",
@@ -164,11 +164,53 @@
           }
         ],
         "clip": null,
-        "semantic_review": "not-inspected",
-        "states": [],
-        "observations": [],
+        "semantic_review": "sampled-frames-reviewed",
+        "states": [
+          {
+            "timestamp_seconds": 0,
+            "label": "rest",
+            "frame_sha256": "1db2fc3fbf50b80ad37c2fb485c037cd1e2903d9789ec5ce7b296a1354d269ce"
+          },
+          {
+            "timestamp_seconds": 1.065,
+            "label": "rotated",
+            "frame_sha256": "a1baa9bb079dc6ba275e91cccc9e8aa905e18e54fec0243e713cac021e46fca5"
+          },
+          {
+            "timestamp_seconds": 2.13,
+            "label": "rest",
+            "frame_sha256": "8f4ff28bdb0f2dccd40d626020e127e2309d25355ce81306884600998a286894"
+          }
+        ],
+        "observations": [
+          {
+            "timestamp_seconds": 0,
+            "frame_sha256": "1db2fc3fbf50b80ad37c2fb485c037cd1e2903d9789ec5ce7b296a1354d269ce",
+            "description": "Blue rounded square is upright; Start control remains visible."
+          },
+          {
+            "timestamp_seconds": 1.065,
+            "frame_sha256": "a1baa9bb079dc6ba275e91cccc9e8aa905e18e54fec0243e713cac021e46fca5",
+            "description": "Square is rotated clockwise while its overall position is approximately unchanged."
+          },
+          {
+            "timestamp_seconds": 2.13,
+            "frame_sha256": "8f4ff28bdb0f2dccd40d626020e127e2309d25355ce81306884600998a286894",
+            "description": "Square is upright again."
+          }
+        ],
         "verification": "decoded-frames-and-probed-duration",
-        "limits": "Sampled pixel change does not establish a semantic event or exact motion timing."
+        "limits": "Sampled pixel change does not establish a semantic event or exact motion timing.",
+        "review_date": "2026-11-25",
+        "review_scope": "Visual inspection of all three stored keyframes only; not frame-by-frame playback, causal verification, or a measurement of animation easing or exact transition duration.",
+        "pattern": "rotational wobble feedback",
+        "component": "rounded square and start control",
+        "trigger": "Start control is visible; activation is not directly established by the sampled frames.",
+        "reuse_guidance": "Transient rotation feedback with return to rest.",
+        "motion_contract": {
+          "easing": null,
+          "transition_duration_seconds": null
+        }
       }
     },
     {
@@ -205,7 +247,7 @@
         "classification": "short-upstream-demo",
         "selection_method": "13 evenly spaced grayscale samples; maximum adjacent pixel change",
         "segment": {
-          "start_seconds": 0.0,
+          "start_seconds": 0,
           "end_seconds": 5.817
         },
         "candidate_change_interval": {
@@ -218,7 +260,7 @@
             "path": "media/segments/reanimated-switch_android-1.jpg",
             "sha256": "82dbec9e01edb1f2cb24d6f92ff9a25da8138959c01e23d3d336d622307fb898",
             "bytes": 21946,
-            "timestamp_seconds": 0.0
+            "timestamp_seconds": 0
           },
           {
             "path": "media/segments/reanimated-switch_android-2.jpg",
@@ -234,11 +276,53 @@
           }
         ],
         "clip": null,
-        "semantic_review": "not-inspected",
-        "states": [],
-        "observations": [],
+        "semantic_review": "sampled-frames-reviewed",
+        "states": [
+          {
+            "timestamp_seconds": 0,
+            "label": "all off",
+            "frame_sha256": "82dbec9e01edb1f2cb24d6f92ff9a25da8138959c01e23d3d336d622307fb898"
+          },
+          {
+            "timestamp_seconds": 2.833,
+            "label": "two on and one intermediate",
+            "frame_sha256": "214b8beca846cac5f9ad8c3ce5aabdad61ad96686e2b149b3ea450eaa3e0f5c2"
+          },
+          {
+            "timestamp_seconds": 5.667,
+            "label": "all off",
+            "frame_sha256": "928e9521d11d68a01585cbf37d7ffff297e03203be0e914748b6888133c14b79"
+          }
+        ],
+        "observations": [
+          {
+            "timestamp_seconds": 0,
+            "frame_sha256": "82dbec9e01edb1f2cb24d6f92ff9a25da8138959c01e23d3d336d622307fb898",
+            "description": "All three switches have pink tracks and white thumbs on the left."
+          },
+          {
+            "timestamp_seconds": 2.833,
+            "frame_sha256": "214b8beca846cac5f9ad8c3ce5aabdad61ad96686e2b149b3ea450eaa3e0f5c2",
+            "description": "First two tracks are green with thumbs on the right; third remains pink with thumb between the end positions."
+          },
+          {
+            "timestamp_seconds": 5.667,
+            "frame_sha256": "928e9521d11d68a01585cbf37d7ffff297e03203be0e914748b6888133c14b79",
+            "description": "All three tracks are pink with thumbs back on the left."
+          }
+        ],
         "verification": "decoded-frames-and-probed-duration",
-        "limits": "Sampled pixel change does not establish a semantic event or exact motion timing."
+        "limits": "Sampled pixel change does not establish a semantic event or exact motion timing.",
+        "review_date": "2026-11-25",
+        "review_scope": "Visual inspection of all three stored keyframes only; not frame-by-frame playback, causal verification, or a measurement of animation easing or exact transition duration.",
+        "pattern": "toggle switch state transition",
+        "component": "three settings switches",
+        "trigger": "Pointer is visible near the third switch in the middle frame; exact input timing is not established.",
+        "reuse_guidance": "Show state using both thumb position and color; do not rely on color alone.",
+        "motion_contract": {
+          "easing": null,
+          "transition_duration_seconds": null
+        }
       }
     },
     {
@@ -276,7 +360,7 @@
         "classification": "short-upstream-demo",
         "selection_method": "13 evenly spaced grayscale samples; maximum adjacent pixel change",
         "segment": {
-          "start_seconds": 0.0,
+          "start_seconds": 0,
           "end_seconds": 4.314
         },
         "candidate_change_interval": {
@@ -289,7 +373,7 @@
             "path": "media/segments/reanimated-fade_dark-1.jpg",
             "sha256": "afdd9e3ac507e94f6bff8b09b58800d61f151f6a6c75fc6f53d00cd342dd3eba",
             "bytes": 1269,
-            "timestamp_seconds": 0.0
+            "timestamp_seconds": 0
           },
           {
             "path": "media/segments/reanimated-fade_dark-2.jpg",
@@ -305,11 +389,53 @@
           }
         ],
         "clip": null,
-        "semantic_review": "not-inspected",
-        "states": [],
-        "observations": [],
+        "semantic_review": "sampled-frames-reviewed",
+        "states": [
+          {
+            "timestamp_seconds": 0,
+            "label": "faint entry",
+            "frame_sha256": "afdd9e3ac507e94f6bff8b09b58800d61f151f6a6c75fc6f53d00cd342dd3eba"
+          },
+          {
+            "timestamp_seconds": 2.082,
+            "label": "mixed filled and outline",
+            "frame_sha256": "46c6dc6ef22bc690c063fbb48b8780d86d94c69c49f03cbba79c3a6d5b1c79d0"
+          },
+          {
+            "timestamp_seconds": 4.164,
+            "label": "outline only",
+            "frame_sha256": "0187c0c46e305ef7c0aac815b55a5315146a6a05d886332d0e099096cdd2d466"
+          }
+        ],
+        "observations": [
+          {
+            "timestamp_seconds": 0,
+            "frame_sha256": "afdd9e3ac507e94f6bff8b09b58800d61f151f6a6c75fc6f53d00cd342dd3eba",
+            "description": "A single faint purple rectangular control appears on a dark background."
+          },
+          {
+            "timestamp_seconds": 2.082,
+            "frame_sha256": "46c6dc6ef22bc690c063fbb48b8780d86d94c69c49f03cbba79c3a6d5b1c79d0",
+            "description": "Five rows are visible; the top has a dashed outline and overlapping text while lower rows are filled purple."
+          },
+          {
+            "timestamp_seconds": 4.164,
+            "frame_sha256": "0187c0c46e305ef7c0aac815b55a5315146a6a05d886332d0e099096cdd2d466",
+            "description": "Five dashed outlines remain with FadeOut directional labels; filled controls are absent."
+          }
+        ],
         "verification": "decoded-frames-and-probed-duration",
-        "limits": "Sampled pixel change does not establish a semantic event or exact motion timing."
+        "limits": "Sampled pixel change does not establish a semantic event or exact motion timing.",
+        "review_date": "2026-11-25",
+        "review_scope": "Visual inspection of all three stored keyframes only; not frame-by-frame playback, causal verification, or a measurement of animation easing or exact transition duration.",
+        "pattern": "fade entry and exit",
+        "component": "directional fade controls in dark theme",
+        "trigger": null,
+        "reuse_guidance": "Compare entering and exiting variants while keeping the control layout stable.",
+        "motion_contract": {
+          "easing": null,
+          "transition_duration_seconds": null
+        }
       }
     },
     {
@@ -347,7 +473,7 @@
         "classification": "short-upstream-demo",
         "selection_method": "13 evenly spaced grayscale samples; maximum adjacent pixel change",
         "segment": {
-          "start_seconds": 0.0,
+          "start_seconds": 0,
           "end_seconds": 2.883
         },
         "candidate_change_interval": {
@@ -360,7 +486,7 @@
             "path": "media/segments/reanimated-ios_exiting_custom-1.jpg",
             "sha256": "9859a0f3c11b4fd04e9c9c7f01fdba000cdf28d2b93d365a95e11fc5422653ad",
             "bytes": 29064,
-            "timestamp_seconds": 0.0
+            "timestamp_seconds": 0
           },
           {
             "path": "media/segments/reanimated-ios_exiting_custom-2.jpg",
@@ -376,11 +502,53 @@
           }
         ],
         "clip": null,
-        "semantic_review": "not-inspected",
-        "states": [],
-        "observations": [],
+        "semantic_review": "sampled-frames-reviewed",
+        "states": [
+          {
+            "timestamp_seconds": 0,
+            "label": "visible",
+            "frame_sha256": "9859a0f3c11b4fd04e9c9c7f01fdba000cdf28d2b93d365a95e11fc5422653ad"
+          },
+          {
+            "timestamp_seconds": 1.367,
+            "label": "shifted or resized",
+            "frame_sha256": "4484530ae80d47fb4fe70f5bb25ff436fdcc04a0b67ecf883981f01251686b35"
+          },
+          {
+            "timestamp_seconds": 2.733,
+            "label": "removed",
+            "frame_sha256": "b9625f3a421a0a802ea2cb4c2d811b703a7aca839919a793d6d21737ce8f7747"
+          }
+        ],
+        "observations": [
+          {
+            "timestamp_seconds": 0,
+            "frame_sha256": "9859a0f3c11b4fd04e9c9c7f01fdba000cdf28d2b93d365a95e11fc5422653ad",
+            "description": "Large purple rounded rectangle is visible below the Click me control."
+          },
+          {
+            "timestamp_seconds": 1.367,
+            "frame_sha256": "4484530ae80d47fb4fe70f5bb25ff436fdcc04a0b67ecf883981f01251686b35",
+            "description": "Pointer overlaps the control; the rectangle is slightly smaller and farther right."
+          },
+          {
+            "timestamp_seconds": 2.733,
+            "frame_sha256": "b9625f3a421a0a802ea2cb4c2d811b703a7aca839919a793d6d21737ce8f7747",
+            "description": "The rectangle is no longer visible; the control remains."
+          }
+        ],
         "verification": "decoded-frames-and-probed-duration",
-        "limits": "Sampled pixel change does not establish a semantic event or exact motion timing."
+        "limits": "Sampled pixel change does not establish a semantic event or exact motion timing.",
+        "review_date": "2026-11-25",
+        "review_scope": "Visual inspection of all three stored keyframes only; not frame-by-frame playback, causal verification, or a measurement of animation easing or exact transition duration.",
+        "pattern": "custom exit transition",
+        "component": "rounded panel and click control",
+        "trigger": "Click me is the visible affordance; a pointer is over it, but the exact click instant is unknown.",
+        "reuse_guidance": "Animate removal without removing the surrounding control.",
+        "motion_contract": {
+          "easing": null,
+          "transition_duration_seconds": null
+        }
       }
     },
     {
@@ -418,7 +586,7 @@
         "classification": "short-upstream-demo",
         "selection_method": "13 evenly spaced grayscale samples; maximum adjacent pixel change",
         "segment": {
-          "start_seconds": 0.0,
+          "start_seconds": 0,
           "end_seconds": 5.28
         },
         "candidate_change_interval": {
@@ -431,7 +599,7 @@
             "path": "media/segments/leva-circle-drag-1.jpg",
             "sha256": "58332c5ec28b1839835eb17fd8dbcf4e63fc03255f231086148f80d9f6126670",
             "bytes": 5572,
-            "timestamp_seconds": 0.0
+            "timestamp_seconds": 0
           },
           {
             "path": "media/segments/leva-circle-drag-2.jpg",
@@ -447,11 +615,53 @@
           }
         ],
         "clip": null,
-        "semantic_review": "not-inspected",
-        "states": [],
-        "observations": [],
+        "semantic_review": "sampled-frames-reviewed",
+        "states": [
+          {
+            "timestamp_seconds": 0,
+            "label": "initial coordinates",
+            "frame_sha256": "58332c5ec28b1839835eb17fd8dbcf4e63fc03255f231086148f80d9f6126670"
+          },
+          {
+            "timestamp_seconds": 2.565,
+            "label": "updated coordinates",
+            "frame_sha256": "9e241902ae96a51e59cea6f378806c5379bbeadb3e4d8a20ca7b75f539ae9a54"
+          },
+          {
+            "timestamp_seconds": 5.13,
+            "label": "later coordinates",
+            "frame_sha256": "c829274c3485d9662696dd39fd7caaffbf4f570e0fe782e627f29e387459fa8b"
+          }
+        ],
+        "observations": [
+          {
+            "timestamp_seconds": 0,
+            "frame_sha256": "58332c5ec28b1839835eb17fd8dbcf4e63fc03255f231086148f80d9f6126670",
+            "description": "Circle is below a dark coordinate inspector, which shows 700 and 208; pointer is in the circle."
+          },
+          {
+            "timestamp_seconds": 2.565,
+            "frame_sha256": "9e241902ae96a51e59cea6f378806c5379bbeadb3e4d8a20ca7b75f539ae9a54",
+            "description": "Inspector shows 707 and 210, with pointer near the inspector; circle position changes slightly."
+          },
+          {
+            "timestamp_seconds": 5.13,
+            "frame_sha256": "c829274c3485d9662696dd39fd7caaffbf4f570e0fe782e627f29e387459fa8b",
+            "description": "Inspector shows 719 and 202, with circle farther right and slightly higher."
+          }
+        ],
         "verification": "decoded-frames-and-probed-duration",
-        "limits": "Sampled pixel change does not establish a semantic event or exact motion timing."
+        "limits": "Sampled pixel change does not establish a semantic event or exact motion timing.",
+        "review_date": "2026-11-25",
+        "review_scope": "Visual inspection of all three stored keyframes only; not frame-by-frame playback, causal verification, or a measurement of animation easing or exact transition duration.",
+        "pattern": "linked position control",
+        "component": "coordinate inspector and circle",
+        "trigger": "Pointer changes location; the precise drag gesture is not established from three frames.",
+        "reuse_guidance": "Keep visual object position and numeric inspector fields synchronized.",
+        "motion_contract": {
+          "easing": null,
+          "transition_duration_seconds": null
+        }
       }
     },
     {
@@ -1014,14 +1224,56 @@
           "path": "media/segments/storybook-whats-a-story-excerpt.mp4",
           "sha256": "8ec2a4a48e75e1383457dda921fe712eedf2515b71a188fbc2573fdaf4dc77b3",
           "bytes": 22039,
-          "duration_seconds": 4.0,
+          "duration_seconds": 4,
           "audio": false
         },
-        "semantic_review": "not-inspected",
-        "states": [],
-        "observations": [],
+        "semantic_review": "sampled-frames-reviewed",
+        "states": [
+          {
+            "timestamp_seconds": 5.124,
+            "label": "mapped inputs",
+            "frame_sha256": "c2e6a37a1a30b709fab2a58989c1a71510757cde799ab2049c3e297125c80cb2"
+          },
+          {
+            "timestamp_seconds": 6.587,
+            "label": "additional mapping",
+            "frame_sha256": "4cc042829dee242b1fa82fee7939b4715d7fc4e8c08a21a306b5ae44f43e67ab"
+          },
+          {
+            "timestamp_seconds": 8.783,
+            "label": "changed rendered state",
+            "frame_sha256": "315ec4ee704c61291d6d8b685b7252f06646263abb33bb1813270aee9c4bc20b"
+          }
+        ],
+        "observations": [
+          {
+            "timestamp_seconds": 5.124,
+            "frame_sha256": "c2e6a37a1a30b709fab2a58989c1a71510757cde799ab2049c3e297125c80cb2",
+            "description": "An inputs list connects two fields to a rendered histogram."
+          },
+          {
+            "timestamp_seconds": 6.587,
+            "frame_sha256": "4cc042829dee242b1fa82fee7939b4715d7fc4e8c08a21a306b5ae44f43e67ab",
+            "description": "A third arrow from the input list connects to the histogram."
+          },
+          {
+            "timestamp_seconds": 8.783,
+            "frame_sha256": "315ec4ee704c61291d6d8b685b7252f06646263abb33bb1813270aee9c4bc20b",
+            "description": "Arrows are absent and histogram bars are much shorter."
+          }
+        ],
         "verification": "decoded-frames-and-probed-duration",
-        "limits": "Sampled pixel change does not establish a semantic event or exact motion timing."
+        "limits": "Sampled pixel change does not establish a semantic event or exact motion timing.",
+        "review_date": "2026-11-25",
+        "review_scope": "Visual inspection of all three stored keyframes only; not frame-by-frame playback, causal verification, or a measurement of animation easing or exact transition duration.",
+        "pattern": "component input to story",
+        "component": "histogram story and input diagram",
+        "trigger": null,
+        "reuse_guidance": "Use explicit fixture inputs to define and reproduce component states.",
+        "motion_contract": {
+          "easing": null,
+          "transition_duration_seconds": null
+        }
       }
     },
     {
@@ -1058,8 +1310,8 @@
         "classification": "longer-upstream-demo",
         "selection_method": "13 evenly spaced grayscale samples; maximum adjacent pixel change",
         "segment": {
-          "start_seconds": 0.0,
-          "end_seconds": 4.0
+          "start_seconds": 0,
+          "end_seconds": 4
         },
         "candidate_change_interval": {
           "start_seconds": 0.896,
@@ -1071,7 +1323,7 @@
             "path": "media/segments/storybook-component-accessibility-testing-1.jpg",
             "sha256": "e65232d465c8d6b41db1def90e072ee04bcb4c3c4b4b6af018e22dc895919874",
             "bytes": 7203,
-            "timestamp_seconds": 0.0
+            "timestamp_seconds": 0
           },
           {
             "path": "media/segments/storybook-component-accessibility-testing-2.jpg",
@@ -1090,14 +1342,56 @@
           "path": "media/segments/storybook-component-accessibility-testing-excerpt.mp4",
           "sha256": "f231694d87d368f714416d7bbce6b50d820603e7674f423dd40f90ac4e933b55",
           "bytes": 22739,
-          "duration_seconds": 4.0,
+          "duration_seconds": 4,
           "audio": false
         },
-        "semantic_review": "not-inspected",
-        "states": [],
-        "observations": [],
+        "semantic_review": "sampled-frames-reviewed",
+        "states": [
+          {
+            "timestamp_seconds": 0,
+            "label": "unmarked chart",
+            "frame_sha256": "e65232d465c8d6b41db1def90e072ee04bcb4c3c4b4b6af018e22dc895919874"
+          },
+          {
+            "timestamp_seconds": 1.792,
+            "label": "warning visible",
+            "frame_sha256": "d24ce1aa2c73fe6def2aa0b52812d34b3169a23aa447e3aa43a8c3d0b3818403"
+          },
+          {
+            "timestamp_seconds": 3.583,
+            "label": "localized findings",
+            "frame_sha256": "e9d03fb674f6443fc8624fe090977d08a0ed0f03dce2d704c52f94f6061d9fec"
+          }
+        ],
+        "observations": [
+          {
+            "timestamp_seconds": 0,
+            "frame_sha256": "e65232d465c8d6b41db1def90e072ee04bcb4c3c4b4b6af018e22dc895919874",
+            "description": "Chart card is visible with faint axis labels and a scan caption."
+          },
+          {
+            "timestamp_seconds": 1.792,
+            "frame_sha256": "d24ce1aa2c73fe6def2aa0b52812d34b3169a23aa447e3aa43a8c3d0b3818403",
+            "description": "Yellow exclamation badge appears at the chart's upper-left corner."
+          },
+          {
+            "timestamp_seconds": 3.583,
+            "frame_sha256": "e9d03fb674f6443fc8624fe090977d08a0ed0f03dce2d704c52f94f6061d9fec",
+            "description": "Dotted boxes mark axis labels and the plot area."
+          }
+        ],
         "verification": "decoded-frames-and-probed-duration",
-        "limits": "Sampled pixel change does not establish a semantic event or exact motion timing."
+        "limits": "Sampled pixel change does not establish a semantic event or exact motion timing.",
+        "review_date": "2026-11-25",
+        "review_scope": "Visual inspection of all three stored keyframes only; not frame-by-frame playback, causal verification, or a measurement of animation easing or exact transition duration.",
+        "pattern": "accessibility scan feedback",
+        "component": "histogram accessibility illustration",
+        "trigger": null,
+        "reuse_guidance": "Surface a summary warning, then localize findings on the component. This is an educational illustration, not a verified accessibility audit.",
+        "motion_contract": {
+          "easing": null,
+          "transition_duration_seconds": null
+        }
       }
     },
     {
@@ -1121,12 +1415,12 @@
       "license_path": "media/storybook/LICENSE",
       "classification": "upstream documentation media; not measured commercial product UI",
       "playback": "decoded-sampled-frames",
-      "duration_seconds": 9.0,
+      "duration_seconds": 9,
       "visual_review": "not-performed",
       "segment_evidence": {
         "schema_version": 1,
         "source_blob_sha": "210a6c6e9457e7f0654109ffb88e8c6c126d73b3",
-        "duration_seconds": 9.0,
+        "duration_seconds": 9,
         "source_dimensions": [
           1440,
           1080
@@ -1134,8 +1428,8 @@
         "classification": "longer-upstream-demo",
         "selection_method": "13 evenly spaced grayscale samples; maximum adjacent pixel change",
         "segment": {
-          "start_seconds": 5.0,
-          "end_seconds": 9.0
+          "start_seconds": 5,
+          "end_seconds": 9
         },
         "candidate_change_interval": {
           "start_seconds": 8.112,
@@ -1166,14 +1460,56 @@
           "path": "media/segments/storybook-component-interaction-testing-excerpt.mp4",
           "sha256": "5829f5cff53ed6bf19614752a4bdcd6b597f80b9a39d4f29c8b31b9bd17d427c",
           "bytes": 29944,
-          "duration_seconds": 4.0,
+          "duration_seconds": 4,
           "audio": false
         },
-        "semantic_review": "not-inspected",
-        "states": [],
-        "observations": [],
+        "semantic_review": "sampled-frames-reviewed",
+        "states": [
+          {
+            "timestamp_seconds": 5.162,
+            "label": "checks progressing",
+            "frame_sha256": "b6e5d338284024c409c7de096ec598590436088e77318c46512b74de90a33ddc"
+          },
+          {
+            "timestamp_seconds": 6.637,
+            "label": "checks shown passed",
+            "frame_sha256": "41b341172e92d5eacb35b240ecb7d7700b4c9dd4ff7be5d93e287d86f873901c"
+          },
+          {
+            "timestamp_seconds": 8.85,
+            "label": "new interaction state",
+            "frame_sha256": "2d70c4044bbeb192e5fc33290ec0955fe2706228830fd26c76561b5688b3a4b1"
+          }
+        ],
+        "observations": [
+          {
+            "timestamp_seconds": 5.162,
+            "frame_sha256": "b6e5d338284024c409c7de096ec598590436088e77318c46512b74de90a33ddc",
+            "description": "Histogram and test panel show PASS with the first check marked."
+          },
+          {
+            "timestamp_seconds": 6.637,
+            "frame_sha256": "41b341172e92d5eacb35b240ecb7d7700b4c9dd4ff7be5d93e287d86f873901c",
+            "description": "All three displayed checks have green ticks."
+          },
+          {
+            "timestamp_seconds": 8.85,
+            "frame_sha256": "2d70c4044bbeb192e5fc33290ec0955fe2706228830fd26c76561b5688b3a4b1",
+            "description": "Test panel is absent and a shorter-bar histogram is shown with an interaction caption."
+          }
+        ],
         "verification": "decoded-frames-and-probed-duration",
-        "limits": "Sampled pixel change does not establish a semantic event or exact motion timing."
+        "limits": "Sampled pixel change does not establish a semantic event or exact motion timing.",
+        "review_date": "2026-11-25",
+        "review_scope": "Visual inspection of all three stored keyframes only; not frame-by-frame playback, causal verification, or a measurement of animation easing or exact transition duration.",
+        "pattern": "interaction verification",
+        "component": "histogram and test status",
+        "trigger": null,
+        "reuse_guidance": "Pair a component preview with explicit behavioral assertions; the frames illustrate a testing concept rather than results from our repository.",
+        "motion_contract": {
+          "easing": null,
+          "transition_duration_seconds": null
+        }
       }
     },
     {
@@ -1245,11 +1581,53 @@
           "duration_seconds": 3.967,
           "audio": false
         },
-        "semantic_review": "not-inspected",
-        "states": [],
-        "observations": [],
+        "semantic_review": "sampled-frames-reviewed",
+        "states": [
+          {
+            "timestamp_seconds": 4.783,
+            "label": "baseline comparison",
+            "frame_sha256": "a4a18c0cbc55cd2e9b7a7896005b1a30c79d7eb1997a09c38719cddecd2e098b"
+          },
+          {
+            "timestamp_seconds": 7.175,
+            "label": "overlay",
+            "frame_sha256": "323eabcc93c7f7081d91cfff79e3e777504f66db17ac9534ffd39a3c95cd911b"
+          },
+          {
+            "timestamp_seconds": 8.371,
+            "label": "highlighted differences",
+            "frame_sha256": "a76933419d3d1928e1a66b15cc44ad6bac6ab118f4b40d10a8be260f5b8555c0"
+          }
+        ],
+        "observations": [
+          {
+            "timestamp_seconds": 4.783,
+            "frame_sha256": "a4a18c0cbc55cd2e9b7a7896005b1a30c79d7eb1997a09c38719cddecd2e098b",
+            "description": "Old and New histograms are displayed side by side with different bar heights."
+          },
+          {
+            "timestamp_seconds": 7.175,
+            "frame_sha256": "323eabcc93c7f7081d91cfff79e3e777504f66db17ac9534ffd39a3c95cd911b",
+            "description": "A single chart overlays translucent and opaque bars."
+          },
+          {
+            "timestamp_seconds": 8.371,
+            "frame_sha256": "a76933419d3d1928e1a66b15cc44ad6bac6ab118f4b40d10a8be260f5b8555c0",
+            "description": "Changed regions are green and a yellow warning badge appears."
+          }
+        ],
         "verification": "decoded-frames-and-probed-duration",
-        "limits": "Sampled pixel change does not establish a semantic event or exact motion timing."
+        "limits": "Sampled pixel change does not establish a semantic event or exact motion timing.",
+        "review_date": "2026-11-25",
+        "review_scope": "Visual inspection of all three stored keyframes only; not frame-by-frame playback, causal verification, or a measurement of animation easing or exact transition duration.",
+        "pattern": "visual regression comparison",
+        "component": "histogram old/new and overlay",
+        "trigger": null,
+        "reuse_guidance": "Show baseline/current comparison, overlay and localized differences during visual regression review.",
+        "motion_contract": {
+          "easing": null,
+          "transition_duration_seconds": null
+        }
       }
     },
     {

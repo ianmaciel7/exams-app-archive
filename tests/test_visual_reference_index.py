@@ -19,7 +19,13 @@ class VisualReferenceTests(unittest.TestCase):
             self.assertEqual(e["source_blob_sha"], row["blob_sha"])
             self.assertGreaterEqual(len(e["keyframes"]), 2)
             self.assertLessEqual(len(e["keyframes"]), 3)
-            self.assertEqual(e["semantic_review"], "not-inspected")
+            self.assertIn(e["semantic_review"], {"not-inspected", "sampled-frames-reviewed"})
+            if e["semantic_review"] == "sampled-frames-reviewed":
+                self.assertEqual(len(e["observations"]), len(e["keyframes"]))
+                for obs, frame in zip(e["observations"], e["keyframes"]):
+                    self.assertEqual(obs["frame_sha256"], frame["sha256"])
+                    self.assertEqual(obs["timestamp_seconds"], frame["timestamp_seconds"])
+                self.assertIsNone(e["motion_contract"]["easing"])
             if e["clip"]:
                 self.assertLessEqual(e["clip"]["duration_seconds"], 8.1)
     def test_search(self):
