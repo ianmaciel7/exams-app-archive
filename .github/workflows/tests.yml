@@ -71,6 +71,12 @@ jobs:
         run: python tests/smoke_agent_browser.py
       - name: Exercise assessment transition demo in Chromium
         run: python tests/smoke_state_transitions.py
+      - name: Render and test canonical token states in Chromium
+        run: python tests/smoke_token_colors.py "$RUNNER_TEMP/token-evidence"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: canonical-token-browser-evidence
+          path: ${{ runner.temp }}/token-evidence/
 
   component-preview-smoke:
     runs-on: ubuntu-latest
