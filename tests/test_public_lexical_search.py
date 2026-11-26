@@ -23,3 +23,15 @@ def test_multiple_concepts_and_aliases():
             item("b","Save files")]
     assert ranked("guardar criterios",rows)[0][0]["id"] == "a"
     assert not adequate_hit("keyboard shortcuts",{"title":"keyboard hardware","snippet":""})
+
+
+def test_bilingual_progress_state_terms_without_product_aliases():
+    rows = [
+        item("a", "Reading progress", description="State labels for completed and pending chapters"),
+        item("b", "Reading hardware", description="Device specifications"),
+        item("c", "Book state", description="Physical condition")
+    ]
+    result = ranked("estados do progresso de estudos", rows)
+    assert result and result[0][0]["id"] == "a"
+    assert adequate_hit("estados de progresso", {"title": "Progress", "snippet": "State labels"})
+    assert not ranked("serial de refrigerador doméstico", rows)

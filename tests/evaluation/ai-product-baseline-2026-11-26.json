@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "run_id": 45835682380,
+  "job_id": 139963785106,
+  "commit": "865f5fb3b8e50aed59cfbe3aa3aea469a9e7dbbd",
+  "artifact_id": 15125046781,
+  "artifact_sha256": "5bbd64518eabf4329010ac61152220adabf9517e412264977834cac956102943",
+  "scope": "same-author target retrieval; before ranking tuning",
+  "query_count": 22,
+  "positive": 20,
+  "negative": 2,
+  "expected_targets": 25,
+  "mean_target_recall_at_20": 0.95,
+  "mean_labeled_hit_fraction_at_20": 0.475,
+  "mrr_for_labeled_targets": 0.875,
+  "p95_ms": 3767.8121650000094,
+  "negative_abstention": 1,
+  "per_product": {
+    "space": {
+      "recall": 1,
+      "mrr": 0.75
+    },
+    "claude": {
+      "recall": 1,
+      "mrr": 0.875
+    },
+    "grok": {
+      "recall": 1,
+      "mrr": 1
+    },
+    "gemini": {
+      "recall": 0.75,
+      "mrr": 0.75
+    },
+    "notebook": {
+      "recall": 1,
+      "mrr": 1
+    }
+  },
+  "missed_targets": [
+    {
+      "id": "gemini-01",
+      "missing_targets": [
+        "research:general:gemini-skill-progress-dashboard"
+      ]
+    }
+  ],
+  "independent_annotation": false,
+  "quality_certified": false,
+  "provenance": "GitHub Actions job stdout; raw capture and score retained in workflow artifact"
+}

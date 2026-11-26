@@ -95,17 +95,26 @@
     "memory_persistence": "not independently verifiable"
   },
   "domain_research_2026_11_26": {
-    "plugin_version": "1.10.15",
+    "plugin_version": "1.10.19",
     "checked_on": "2026-11-26",
-    "archive_commit": "25dde30be286c70399644515fb6388ba02fad218",
-    "canonical_records": 26,
+    "archive_commit": "18083d9ded7a43163cc494fca0c23a3068f9b47f",
+    "canonical_records": 33,
     "canonical_path": "docs/references/ui-ux-research-sources/domain-research-2026-11-26.json",
     "plugin_reference": "references/exam-domain-evidence-2026-11-26.md",
     "plugin_skill": "skills/exam-domain-evidence/SKILL.md",
     "publication_verified": true,
     "reference_readback_verified": true,
-    "skill_readback_verified": true,
+    "skill_readback_verified": false,
     "old_shared_skill_retained": true,
-    "scope": "Canonical pointer and compact source-backed synthesis; not byte-identical replication of all records or full source register"
+    "scope": "Canonical pointer and compact synthesis updated; 76 files listed after publication, both manifests and updated reference read back. Not a full byte-identical catalog replication or runtime validation."
+  },
+  "archive_package_readback_2026_11_26": {
+    "version": "0.8.4",
+    "archive_commit": "bc45b0346ca61f6046a97f35d770856012c1f0f3",
+    "verified_files": 25,
+    "byte_identical_files": 25,
+    "missing_files": 0,
+    "extra_files": 0,
+    "scope": "Git blob SHA-1 compared against private plugin text readback; no local agent runtime validation."
   }
 }

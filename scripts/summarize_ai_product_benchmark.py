@@ -40,7 +40,8 @@ def summarize(capture, scored, labels):
     return {
         "scope": "public five-product target retrieval; same-author annotations, incomplete relevance judgments",
         "independent_annotation": False,
-        "ranking_tuned_on_this_set": False,
+        "ranking_tuned_on_this_set": True,
+        "evaluation_class": "development_regression",
         "query_count": len(rows),
         "mean_target_recall_at_20": measured["mean_recall"],
         "mean_labeled_hit_fraction_at_20": measured["mean_precision"],
