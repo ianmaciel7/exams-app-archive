@@ -1,0 +1,3 @@
+# Canonical projection integrity gate
+
+Local catalog hashes prove byte integrity, but a caller could alter a projected record and recompute its self-reported digest. The verifier now independently regenerates the expected row from the explicit catalog set and compares the complete payload, including URLs, status, metadata, ID and projection. Full audit and MCP audit require a complete snapshot; subset verification remains supported explicitly. Mutation tests cover recomputed hashes, altered URLs, removed records and duplicate identities. This checks the local trusted catalogs and projection implementation, not the truth of upstream statements or malicious modifications to the trusted repository itself. No private content or benchmark labels are read.

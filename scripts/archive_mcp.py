@@ -130,7 +130,7 @@ def research_audit():
     import research_index
     records = research_index.load_records()
     result = research_index.audit(records)
-    result["record_provenance"] = research_index.verify_record_provenance(records)
+    result["record_provenance"] = research_index.verify_record_provenance(records, require_complete=True)
     return result
 
 
