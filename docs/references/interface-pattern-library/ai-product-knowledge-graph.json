@@ -86,7 +86,14 @@
     "gemini-notebook-audio": "gemini-notebook-audio",
     "gemini-notebook-infographic": "gemini-notebook-infographic",
     "gemini-direct-file-editor": "gemini-direct-file-editor",
-    "grok-bot-team-policy": "grok-bot-team-policy"
+    "grok-bot-team-policy": "grok-bot-team-policy",
+    "grok-bot-design-workflow": "grok-bot-design-workflow",
+    "gemini-study-video": "gemini-study-video",
+    "gemini-notebook-shell-history": "gemini-notebook-shell-history",
+    "gemini-notebook-mindmap-history": "gemini-notebook-mindmap-history",
+    "gemini-notebook-discover": "gemini-notebook-discover",
+    "gemini-notebook-active-learning": "gemini-notebook-active-learning",
+    "gemini-notebook-textbooks": "gemini-notebook-textbooks"
   },
   "nodes": [
     {
@@ -3071,6 +3078,319 @@
       "platform": "Platform support not exhaustively tested here",
       "permissions": "Saved progress, review/retake; CSV may be restricted for Play Books source content",
       "evidence_status": "official documentation read 2026-11-26; runtime not tested"
+    },
+    {
+      "id": "source:grok-bot-design-workflow",
+      "type": "source",
+      "label": "Designing Grok Bot with Grok Bot",
+      "url": "https://x.ai/bot/guides/designing-grok-bot-with-grok-bot",
+      "central_source_id": "grok-bot-design-workflow",
+      "evidence_status": "official publisher text retrieved; runtime untested"
+    },
+    {
+      "id": "source:gemini-study-video",
+      "type": "source",
+      "label": "How to make Gemini study notebooks",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/how-to-make-gemini-study-notebooks/",
+      "central_source_id": "gemini-study-video",
+      "evidence_status": "official publisher text retrieved; runtime untested"
+    },
+    {
+      "id": "source:gemini-notebook-shell-history",
+      "type": "source",
+      "label": "NotebookLM redesign, three panels",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-new-features-december-2024/",
+      "central_source_id": "gemini-notebook-shell-history",
+      "evidence_status": "official publisher text retrieved; runtime untested"
+    },
+    {
+      "id": "source:gemini-notebook-mindmap-history",
+      "type": "source",
+      "label": "NotebookLM student features and mind maps",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-studying-help/",
+      "central_source_id": "gemini-notebook-mindmap-history",
+      "evidence_status": "official publisher text retrieved; runtime untested"
+    },
+    {
+      "id": "source:gemini-notebook-discover",
+      "type": "source",
+      "label": "Discover Sources",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-discover-sources/",
+      "central_source_id": "gemini-notebook-discover",
+      "evidence_status": "official publisher text retrieved; runtime untested"
+    },
+    {
+      "id": "source:gemini-notebook-active-learning",
+      "type": "source",
+      "label": "NotebookLM active learning and reports",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-student-features/",
+      "central_source_id": "gemini-notebook-active-learning",
+      "evidence_status": "official publisher text retrieved; runtime untested"
+    },
+    {
+      "id": "source:gemini-notebook-textbooks",
+      "type": "source",
+      "label": "Gemini Notebook textbook catalog",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/new-access-textbooks/",
+      "central_source_id": "gemini-notebook-textbooks",
+      "evidence_status": "official publisher text retrieved; runtime untested"
+    },
+    {
+      "id": "feature:grok-bot-sidebar-by-roster-size",
+      "type": "feature-observation",
+      "label": "Roster-dependent sidebar",
+      "central_pattern_id": "grok-bot-sidebar-by-roster-size",
+      "description": "A changelog entry documents a hidden/toggle sidebar for one Bot, a narrow rail for two to four, and full sidebar for five or more. These are roster-count rules, not viewport breakpoints.",
+      "acceptance": "Test counts 1, 2, 4, 5; resizing, manual override and keyboard access.",
+      "evidence_status": "official dated documentation; runtime untested",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:grok-bot-library-focus-preview",
+      "type": "feature-observation",
+      "label": "Library preview and pinned sync",
+      "central_pattern_id": "grok-bot-library-focus-preview",
+      "description": "Library row hover or keyboard focus reveals sender, date and Page visibility; pinned pages, links and files sync across devices per v0.75.2.",
+      "acceptance": "Test hover/focus parity, touch, pin sync and revoked access.",
+      "evidence_status": "official dated documentation; runtime untested",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:grok-bot-composer-reorder-keyboard",
+      "type": "feature-observation",
+      "label": "Keyboard attachment reorder",
+      "central_pattern_id": "grok-bot-composer-reorder-keyboard",
+      "description": "The v0.75.2 changelog documents both drag reordering and Alt with arrow keys for composer attachments.",
+      "acceptance": "Verify announced order, focus, drag parity and cancel.",
+      "evidence_status": "official dated documentation; runtime untested",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:grok-bot-computer-access-levels",
+      "type": "feature-observation",
+      "label": "Three-level agent computer access",
+      "central_pattern_id": "grok-bot-computer-access-levels",
+      "description": "The design article documents active title-bar status, pinned preview and full-screen takeover/handback. The article compares floating, side-by-side, modal and full-screen alternatives.",
+      "acceptance": "Test preview, manual takeover, return of control, connection failure and visible ownership.",
+      "evidence_status": "official dated documentation; runtime untested",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:grok-bot-connector-recovery",
+      "type": "feature-observation",
+      "label": "Reconnect card and suspended routine",
+      "central_pattern_id": "grok-bot-connector-recovery",
+      "description": "The changelog describes reconnect cards and a routine skipping scheduled runs until connector sign-in is restored. It also distinguishes unavailable history from a routine that never ran.",
+      "acceptance": "Verify sign-out, reconnect, skipped runs, history unavailable and safe resumption; no fake success.",
+      "evidence_status": "official dated documentation; runtime untested",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:grok-bot-chat-card-semantics",
+      "type": "feature-observation",
+      "label": "Typed chat cards and numeric tables",
+      "central_pattern_id": "grok-bot-chat-card-semantics",
+      "description": "The v0.75.2 changelog documents approval, question, file, link and table cards; approval summaries and sensitive-change flags; source citation chips; file type/name/size and decimal-aligned number columns.",
+      "acceptance": "Verify semantic labels, focus, safe action review, numeric alignment and narrow viewport.",
+      "evidence_status": "official dated documentation; runtime untested",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-diagnostic-learning-loop",
+      "type": "feature-observation",
+      "label": "Diagnostic-to-practice learning loop",
+      "central_pattern_id": "gemini-diagnostic-learning-loop",
+      "description": "At June 2026 launch, Study Notebooks used uploaded material and a diagnostic quiz to identify gaps, then tailored short lessons with follow-up quizzes.",
+      "acceptance": "Test diagnostic skip/retry, source grounding, lesson navigation and progress changes; do not claim learning efficacy.",
+      "evidence_status": "official dated documentation; runtime untested",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-skill-progress-dashboard",
+      "type": "feature-observation",
+      "label": "Skill-based progress dashboard",
+      "central_pattern_id": "gemini-skill-progress-dashboard",
+      "description": "The announcement describes objectives grouped by topic, Strengths / Focus areas / Not started status labels, automatic updates from quizzes, priority lesson recommendations and filters.",
+      "acceptance": "Check status change, incomplete quiz, filter reset and reason for priority; no inferred mastery scoring formula.",
+      "evidence_status": "official dated documentation; runtime untested",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-notebook-expandable-source-notes",
+      "type": "feature-observation",
+      "label": "Expandable three-region shell",
+      "central_pattern_id": "gemini-notebook-expandable-source-notes",
+      "description": "The December 2024 redesign describes expanding the source viewer alongside notes and using chat while audio plays; this is historical documented behavior, not a 2026 pixel audit.",
+      "acceptance": "Verify current panel widths, collapse, focus, audio continuity and mobile reflow.",
+      "evidence_status": "official dated documentation; runtime untested",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-notebook-mindmap-node-explore",
+      "type": "feature-observation",
+      "label": "Mind map node exploration",
+      "central_pattern_id": "gemini-notebook-mindmap-node-explore",
+      "description": "The 2025 announcement documents zooming into sections and selecting concepts to obtain summaries.",
+      "acceptance": "Test zoom, pan, keyboard node navigation, summary grounding and return focus.",
+      "evidence_status": "official dated documentation; runtime untested",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-notebook-discover-source-review",
+      "type": "feature-observation",
+      "label": "Source discovery and import review",
+      "central_pattern_id": "gemini-notebook-discover-source-review",
+      "description": "The April 2025 launch describes a query, a ranked set of up to ten annotated source recommendations, then explicit import. This is a dated historical contract, not a current quota claim.",
+      "acceptance": "Verify selection, relevance notes, import errors, duplicate and empty results.",
+      "evidence_status": "official dated documentation; runtime untested",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-notebook-source-grounded-answer-explain",
+      "type": "feature-observation",
+      "label": "Explain with source citations",
+      "central_pattern_id": "gemini-notebook-source-grounded-answer-explain",
+      "description": "The September 2025 announcement connects quiz/flashcard explanations to citations in original learning material.",
+      "acceptance": "Verify wrong-answer explanation, source anchor, unavailable source and clear distinction from generated reasoning.",
+      "evidence_status": "official dated documentation; runtime untested",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-notebook-textbook-source-catalog",
+      "type": "feature-observation",
+      "label": "Textbook catalog as source type",
+      "central_pattern_id": "gemini-notebook-textbook-source-catalog",
+      "description": "The October 2026 announcement documents Add sources → Textbooks for available U.S./India provider titles and inline citations. Do not infer Brazilian catalog availability.",
+      "acceptance": "Verify catalog eligibility, import, citation, reading rights and unsupported geography.",
+      "evidence_status": "official dated documentation; runtime untested",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "evidence:grok-bot:design-team-roster-gif",
+      "type": "evidence",
+      "label": "Design-agent roster GIF",
+      "url": "https://media.x.ai/cdn-cgi/image/fit%3Dscale-down%2Conerror%3Dredirect%2Cwidth%3D720%2Cheight%3D405%2Cf%3Dauto/v1/website/grok-bot-guides-designing-grok-bot-with-grok-bot-meet-the-team-b9959c98.gif",
+      "status": "one rendered image inspected; animation frames/timing not inspected",
+      "storage": "link-only",
+      "rights": "publisher media; redistribution license not verified",
+      "description": "Four named role-specific agents in a two-by-two white panel, distinct red/blue/black avatars and green markers; demonstration image, not confirmed sidebar layout.",
+      "modality": "gif",
+      "reviewed_on": "2026-11-26"
+    },
+    {
+      "id": "evidence:grok-bot:motion-god-frames",
+      "type": "evidence-lead",
+      "label": "Production-character motion storyboard",
+      "url": "https://media.x.ai/cdn-cgi/image/fit%3Dscale-down%2Conerror%3Dredirect%2Cwidth%3D720%2Cheight%3D183%2Cf%3Dauto/v1/website/grok-bot-guides-designing-grok-bot-with-grok-bot-motion-god-frames-f42d0711.png",
+      "status": "publisher link and caption verified; image fetch failed",
+      "storage": "link-only",
+      "rights": "publisher media; redistribution license not verified",
+      "description": "Publisher describes character entering, noticing window and bouncing into position. Not measured.",
+      "modality": "image",
+      "reviewed_on": "2026-11-26"
+    },
+    {
+      "id": "evidence:grok-bot:starter-bot-figma",
+      "type": "evidence-lead",
+      "label": "Starter bot cards in Figma",
+      "url": "https://media.x.ai/cdn-cgi/image/fit%3Dscale-down%2Conerror%3Dredirect%2Cwidth%3D720%2Cheight%3D355%2Cf%3Dauto/v1/website/grok-bot-guides-designing-grok-bot-with-grok-bot-figma-starter-bots-f4b010c7.png",
+      "status": "publisher link and caption verified; image fetch failed",
+      "storage": "link-only",
+      "rights": "publisher media; redistribution license not verified",
+      "description": "Production design workflow, not a capture of shipped marketplace.",
+      "modality": "image",
+      "reviewed_on": "2026-11-26"
+    },
+    {
+      "id": "evidence:grok-bot:figma-tools",
+      "type": "evidence-lead",
+      "label": "Onboarding tool assets in Figma",
+      "url": "https://media.x.ai/cdn-cgi/image/fit%3Dscale-down%2Conerror%3Dredirect%2Cwidth%3D720%2Cheight%3D390%2Cf%3Dauto/v1/website/grok-bot-guides-designing-grok-bot-with-grok-bot-figma-tools-2cfc9447.png",
+      "status": "publisher link and caption verified; image fetch failed",
+      "storage": "link-only",
+      "rights": "publisher media; redistribution license not verified",
+      "description": "Publisher describes populating onboarding with logos; not shipped UI evidence.",
+      "modality": "image",
+      "reviewed_on": "2026-11-26"
+    },
+    {
+      "id": "evidence:gemini-notebook:historical-three-panel-animation",
+      "type": "evidence-lead",
+      "label": "NotebookLM three-panel redesign animation",
+      "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/3_panel_ui_keyword_final_7_sources.gif",
+      "status": "publisher link and alt text verified; GIF decoding unsupported",
+      "storage": "link-only",
+      "rights": "publisher media; redistribution license not verified",
+      "description": "Historical December 2024 Sources/Chat/Studio animation; do not infer current layout or timing.",
+      "modality": "gif",
+      "reviewed_on": "2026-11-26"
+    },
+    {
+      "id": "evidence:gemini-notebook:mobile-study-source-picker",
+      "type": "evidence-lead",
+      "label": "Mobile source picker for flashcards and quizzes",
+      "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/CreateFlashcardsQuizes_NotebookL.width-1200.format-webp.webp",
+      "status": "publisher link and alt text verified; binary fetch and download failed",
+      "storage": "link-only",
+      "rights": "publisher media; redistribution license not verified",
+      "description": "November 2025 mobile source selection reference; no pixel review.",
+      "modality": "image",
+      "reviewed_on": "2026-11-26"
+    },
+    {
+      "id": "evidence:gemini:study-notebook-video-guide",
+      "type": "evidence-lead",
+      "label": "Study notebook walkthrough",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/how-to-make-gemini-study-notebooks/",
+      "status": "official page retrieved; video playback and timestamps not verified",
+      "storage": "link-only",
+      "rights": "publisher media; redistribution license not verified",
+      "description": "Article embeds walkthrough of goal setting, practice and progress dashboard.",
+      "modality": "embedded-video-page",
+      "reviewed_on": "2026-11-26"
+    },
+    {
+      "id": "evidence:grok-bot:ambient-prototype-demos",
+      "type": "evidence-lead",
+      "label": "Ambient agent prototype videos",
+      "url": "https://x.ai/bot/guides/designing-grok-bot-with-grok-bot",
+      "status": "official captions retrieved; videos not played",
+      "storage": "link-only",
+      "rights": "publisher media; redistribution license not verified",
+      "description": "Notch, corner hover and cursor companion experiments explicitly not shipped exactly as explored. Separate from product behavior.",
+      "modality": "embedded-video-page",
+      "reviewed_on": "2026-11-26"
+    },
+    {
+      "id": "flow:gemini-diagnostic-to-practice",
+      "type": "documented-flow",
+      "label": "Diagnostic quiz to skill dashboard",
+      "product": "Gemini",
+      "description": "Official text sequence; not a runtime observation.",
+      "steps": [
+        "Add learning materials",
+        "Take diagnostic quiz",
+        "Receive targeted short lessons",
+        "Complete follow-up quizzes",
+        "Review updated topic status and recommended lesson"
+      ],
+      "limitations": "exact scoring thresholds; failed quiz recovery; mobile layout; visual transitions",
+      "evidence_status": "documented flow; runtime not tested"
+    },
+    {
+      "id": "flow:grok-bot-computer-handoff",
+      "type": "documented-flow",
+      "label": "Agent computer preview and takeover",
+      "product": "Grok Bot",
+      "description": "Official text sequence; not a runtime observation.",
+      "steps": [
+        "Observe computer activity indicator",
+        "Open pinned preview",
+        "Expand full-screen for takeover when help is needed",
+        "Return control to the agent"
+      ],
+      "limitations": "exact takeover confirmation; connection recovery; focus management; transition timing",
+      "evidence_status": "documented flow; runtime not tested"
     }
   ],
   "edges": [
@@ -6421,6 +6741,462 @@
       "to": "source:gemini-notebook-quiz",
       "relation": "supported_by",
       "status": "official documentation"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "source:grok-bot-design-workflow",
+      "relation": "documented_by",
+      "status": "official announcement"
+    },
+    {
+      "from": "product:gemini",
+      "to": "source:gemini-study-video",
+      "relation": "documented_by",
+      "status": "official announcement"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "source:gemini-notebook-shell-history",
+      "relation": "documented_by",
+      "status": "official announcement"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "source:gemini-notebook-mindmap-history",
+      "relation": "documented_by",
+      "status": "official announcement"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "source:gemini-notebook-discover",
+      "relation": "documented_by",
+      "status": "official announcement"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "source:gemini-notebook-active-learning",
+      "relation": "documented_by",
+      "status": "official announcement"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "source:gemini-notebook-textbooks",
+      "relation": "documented_by",
+      "status": "official announcement"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "feature:grok-bot-sidebar-by-roster-size",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:grok-bot-sidebar-by-roster-size",
+      "to": "source:grok-bot-changelog",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:grok-bot-sidebar-by-roster-size",
+      "to": "view:grok-bot:chat",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "feature:grok-bot-library-focus-preview",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:grok-bot-library-focus-preview",
+      "to": "source:grok-bot-changelog",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:grok-bot-library-focus-preview",
+      "to": "view:grok-bot:library",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "feature:grok-bot-composer-reorder-keyboard",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:grok-bot-composer-reorder-keyboard",
+      "to": "source:grok-bot-changelog",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:grok-bot-composer-reorder-keyboard",
+      "to": "view:grok-bot:chat",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "feature:grok-bot-computer-access-levels",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:grok-bot-computer-access-levels",
+      "to": "source:grok",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:grok-bot-computer-access-levels",
+      "to": "view:grok-bot:computer",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "feature:grok-bot-connector-recovery",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:grok-bot-connector-recovery",
+      "to": "source:grok-bot-changelog",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:grok-bot-connector-recovery",
+      "to": "view:grok-bot:routines",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "feature:grok-bot-chat-card-semantics",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:grok-bot-chat-card-semantics",
+      "to": "source:grok-bot-changelog",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:grok-bot-chat-card-semantics",
+      "to": "view:grok-bot:chat",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "feature:gemini-diagnostic-learning-loop",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:gemini-diagnostic-learning-loop",
+      "to": "source:gemini-study",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:gemini-diagnostic-learning-loop",
+      "to": "view:gemini:study-notebooks",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "feature:gemini-skill-progress-dashboard",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:gemini-skill-progress-dashboard",
+      "to": "source:gemini-study",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:gemini-skill-progress-dashboard",
+      "to": "view:gemini:study-notebooks",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "feature:gemini-notebook-expandable-source-notes",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:gemini-notebook-expandable-source-notes",
+      "to": "source:gemini-notebook-shell-history",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:gemini-notebook-expandable-source-notes",
+      "to": "view:gemini-notebook:sources",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "feature:gemini-notebook-mindmap-node-explore",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:gemini-notebook-mindmap-node-explore",
+      "to": "source:gemini-notebook-mindmap-history",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:gemini-notebook-mindmap-node-explore",
+      "to": "output:gemini-notebook:mind-map",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "feature:gemini-notebook-discover-source-review",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:gemini-notebook-discover-source-review",
+      "to": "source:gemini-notebook-discover",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:gemini-notebook-discover-source-review",
+      "to": "view:gemini-notebook:sources",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "feature:gemini-notebook-source-grounded-answer-explain",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:gemini-notebook-source-grounded-answer-explain",
+      "to": "source:gemini-notebook-active-learning",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:gemini-notebook-source-grounded-answer-explain",
+      "to": "view:gemini-notebook:full-screen-study-view",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "feature:gemini-notebook-textbook-source-catalog",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:gemini-notebook-textbook-source-catalog",
+      "to": "source:gemini-notebook-textbooks",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:gemini-notebook-textbook-source-catalog",
+      "to": "view:gemini-notebook:sources",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "evidence:grok-bot:design-team-roster-gif",
+      "relation": "has_visual_lead",
+      "status": "one rendered image inspected; animation frames/timing not inspected"
+    },
+    {
+      "from": "evidence:grok-bot:design-team-roster-gif",
+      "to": "source:grok-bot-design-workflow",
+      "relation": "published_by",
+      "status": "publisher page"
+    },
+    {
+      "from": "view:grok-bot:chat",
+      "to": "evidence:grok-bot:design-team-roster-gif",
+      "relation": "illustrated_by",
+      "status": "promotional still only; not runtime proof"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "evidence:grok-bot:motion-god-frames",
+      "relation": "has_visual_lead",
+      "status": "publisher link and caption verified; image fetch failed"
+    },
+    {
+      "from": "evidence:grok-bot:motion-god-frames",
+      "to": "source:grok-bot-design-workflow",
+      "relation": "published_by",
+      "status": "publisher page"
+    },
+    {
+      "from": "view:grok-bot:computer",
+      "to": "evidence:grok-bot:motion-god-frames",
+      "relation": "illustrated_by",
+      "status": "related visual lead; not inspected"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "evidence:grok-bot:starter-bot-figma",
+      "relation": "has_visual_lead",
+      "status": "publisher link and caption verified; image fetch failed"
+    },
+    {
+      "from": "evidence:grok-bot:starter-bot-figma",
+      "to": "source:grok-bot-design-workflow",
+      "relation": "published_by",
+      "status": "publisher page"
+    },
+    {
+      "from": "view:grok-bot:marketplace",
+      "to": "evidence:grok-bot:starter-bot-figma",
+      "relation": "illustrated_by",
+      "status": "related visual lead; not inspected"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "evidence:grok-bot:figma-tools",
+      "relation": "has_visual_lead",
+      "status": "publisher link and caption verified; image fetch failed"
+    },
+    {
+      "from": "evidence:grok-bot:figma-tools",
+      "to": "source:grok-bot-design-workflow",
+      "relation": "published_by",
+      "status": "publisher page"
+    },
+    {
+      "from": "view:grok-bot:marketplace",
+      "to": "evidence:grok-bot:figma-tools",
+      "relation": "illustrated_by",
+      "status": "related visual lead; not inspected"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "evidence:gemini-notebook:historical-three-panel-animation",
+      "relation": "has_visual_lead",
+      "status": "publisher link and alt text verified; GIF decoding unsupported"
+    },
+    {
+      "from": "evidence:gemini-notebook:historical-three-panel-animation",
+      "to": "source:gemini-notebook-shell-history",
+      "relation": "published_by",
+      "status": "publisher page"
+    },
+    {
+      "from": "view:gemini-notebook:sources",
+      "to": "evidence:gemini-notebook:historical-three-panel-animation",
+      "relation": "illustrated_by",
+      "status": "related visual lead; not inspected"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "evidence:gemini-notebook:mobile-study-source-picker",
+      "relation": "has_visual_lead",
+      "status": "publisher link and alt text verified; binary fetch and download failed"
+    },
+    {
+      "from": "evidence:gemini-notebook:mobile-study-source-picker",
+      "to": "source:gemini-notebook-mobile-quiz",
+      "relation": "published_by",
+      "status": "publisher page"
+    },
+    {
+      "from": "view:gemini-notebook:studio",
+      "to": "evidence:gemini-notebook:mobile-study-source-picker",
+      "relation": "illustrated_by",
+      "status": "related visual lead; not inspected"
+    },
+    {
+      "from": "product:gemini",
+      "to": "evidence:gemini:study-notebook-video-guide",
+      "relation": "has_visual_lead",
+      "status": "official page retrieved; video playback and timestamps not verified"
+    },
+    {
+      "from": "evidence:gemini:study-notebook-video-guide",
+      "to": "source:gemini-study-video",
+      "relation": "published_by",
+      "status": "publisher page"
+    },
+    {
+      "from": "view:gemini:study-notebooks",
+      "to": "evidence:gemini:study-notebook-video-guide",
+      "relation": "illustrated_by",
+      "status": "related visual lead; not inspected"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "evidence:grok-bot:ambient-prototype-demos",
+      "relation": "has_visual_lead",
+      "status": "official captions retrieved; videos not played"
+    },
+    {
+      "from": "evidence:grok-bot:ambient-prototype-demos",
+      "to": "source:grok-bot-design-workflow",
+      "relation": "published_by",
+      "status": "publisher page"
+    },
+    {
+      "from": "view:grok-bot:chat",
+      "to": "evidence:grok-bot:ambient-prototype-demos",
+      "relation": "illustrated_by",
+      "status": "related visual lead; not inspected"
+    },
+    {
+      "from": "product:gemini",
+      "to": "flow:gemini-diagnostic-to-practice",
+      "relation": "has_documented_flow",
+      "status": "official text"
+    },
+    {
+      "from": "flow:gemini-diagnostic-to-practice",
+      "to": "source:gemini-study",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "flow:gemini-diagnostic-to-practice",
+      "to": "view:gemini:study-notebooks",
+      "relation": "related_surface",
+      "status": "documented"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "flow:grok-bot-computer-handoff",
+      "relation": "has_documented_flow",
+      "status": "official text"
+    },
+    {
+      "from": "flow:grok-bot-computer-handoff",
+      "to": "source:grok",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "flow:grok-bot-computer-handoff",
+      "to": "view:grok-bot:computer",
+      "relation": "related_surface",
+      "status": "documented"
     }
   ],
   "backlog": [
@@ -6551,6 +7327,7 @@
     "docs/references/ui-ux-research-sources/ai-product-gap-delta-2026-11-26.json",
     "docs/references/ui-ux-research-sources/ai-product-documented-flows-2026-11-26.json",
     "docs/references/ui-ux-research-sources/ai-product-availability-and-state-boundaries-2026-11-26.json",
-    "docs/references/ui-ux-research-sources/ai-product-editor-contracts-2026-11-26.json"
+    "docs/references/ui-ux-research-sources/ai-product-editor-contracts-2026-11-26.json",
+    "docs/references/ui-ux-research-sources/ai-product-visual-and-learning-evidence-2026-11-26.json"
   ]
 }

@@ -1490,6 +1490,175 @@
       ],
       "classification": "official documentation or announcement; runtime untested",
       "product": "Grok Bot"
+    },
+    {
+      "id": "grok-bot-sidebar-by-roster-size",
+      "family": "ai-product-observation",
+      "name": "Roster-dependent sidebar",
+      "kind": "Product-specific documented behavior",
+      "definition": "A changelog entry documents a hidden/toggle sidebar for one Bot, a narrow rail for two to four, and full sidebar for five or more. These are roster-count rules, not viewport breakpoints.",
+      "guardrail": "Test counts 1, 2, 4, 5; resizing, manual override and keyboard access.",
+      "source_ids": [
+        "grok-bot-changelog"
+      ],
+      "classification": "official dated documentation; runtime untested",
+      "product": "Grok Bot"
+    },
+    {
+      "id": "grok-bot-library-focus-preview",
+      "family": "ai-product-observation",
+      "name": "Library preview and pinned sync",
+      "kind": "Product-specific documented behavior",
+      "definition": "Library row hover or keyboard focus reveals sender, date and Page visibility; pinned pages, links and files sync across devices per v0.75.2.",
+      "guardrail": "Test hover/focus parity, touch, pin sync and revoked access.",
+      "source_ids": [
+        "grok-bot-changelog"
+      ],
+      "classification": "official dated documentation; runtime untested",
+      "product": "Grok Bot"
+    },
+    {
+      "id": "grok-bot-composer-reorder-keyboard",
+      "family": "ai-product-observation",
+      "name": "Keyboard attachment reorder",
+      "kind": "Product-specific documented behavior",
+      "definition": "The v0.75.2 changelog documents both drag reordering and Alt with arrow keys for composer attachments.",
+      "guardrail": "Verify announced order, focus, drag parity and cancel.",
+      "source_ids": [
+        "grok-bot-changelog"
+      ],
+      "classification": "official dated documentation; runtime untested",
+      "product": "Grok Bot"
+    },
+    {
+      "id": "grok-bot-computer-access-levels",
+      "family": "ai-product-observation",
+      "name": "Three-level agent computer access",
+      "kind": "Product-specific documented behavior",
+      "definition": "The design article documents active title-bar status, pinned preview and full-screen takeover/handback. The article compares floating, side-by-side, modal and full-screen alternatives.",
+      "guardrail": "Test preview, manual takeover, return of control, connection failure and visible ownership.",
+      "source_ids": [
+        "grok"
+      ],
+      "classification": "official dated documentation; runtime untested",
+      "product": "Grok Bot"
+    },
+    {
+      "id": "grok-bot-connector-recovery",
+      "family": "ai-product-observation",
+      "name": "Reconnect card and suspended routine",
+      "kind": "Product-specific documented behavior",
+      "definition": "The changelog describes reconnect cards and a routine skipping scheduled runs until connector sign-in is restored. It also distinguishes unavailable history from a routine that never ran.",
+      "guardrail": "Verify sign-out, reconnect, skipped runs, history unavailable and safe resumption; no fake success.",
+      "source_ids": [
+        "grok-bot-changelog"
+      ],
+      "classification": "official dated documentation; runtime untested",
+      "product": "Grok Bot"
+    },
+    {
+      "id": "grok-bot-chat-card-semantics",
+      "family": "ai-product-observation",
+      "name": "Typed chat cards and numeric tables",
+      "kind": "Product-specific documented behavior",
+      "definition": "The v0.75.2 changelog documents approval, question, file, link and table cards; approval summaries and sensitive-change flags; source citation chips; file type/name/size and decimal-aligned number columns.",
+      "guardrail": "Verify semantic labels, focus, safe action review, numeric alignment and narrow viewport.",
+      "source_ids": [
+        "grok-bot-changelog"
+      ],
+      "classification": "official dated documentation; runtime untested",
+      "product": "Grok Bot"
+    },
+    {
+      "id": "gemini-diagnostic-learning-loop",
+      "family": "ai-product-observation",
+      "name": "Diagnostic-to-practice learning loop",
+      "kind": "Product-specific documented behavior",
+      "definition": "At June 2026 launch, Study Notebooks used uploaded material and a diagnostic quiz to identify gaps, then tailored short lessons with follow-up quizzes.",
+      "guardrail": "Test diagnostic skip/retry, source grounding, lesson navigation and progress changes; do not claim learning efficacy.",
+      "source_ids": [
+        "gemini-study"
+      ],
+      "classification": "official dated documentation; runtime untested",
+      "product": "Gemini"
+    },
+    {
+      "id": "gemini-skill-progress-dashboard",
+      "family": "ai-product-observation",
+      "name": "Skill-based progress dashboard",
+      "kind": "Product-specific documented behavior",
+      "definition": "The announcement describes objectives grouped by topic, Strengths / Focus areas / Not started status labels, automatic updates from quizzes, priority lesson recommendations and filters.",
+      "guardrail": "Check status change, incomplete quiz, filter reset and reason for priority; no inferred mastery scoring formula.",
+      "source_ids": [
+        "gemini-study"
+      ],
+      "classification": "official dated documentation; runtime untested",
+      "product": "Gemini"
+    },
+    {
+      "id": "gemini-notebook-expandable-source-notes",
+      "family": "ai-product-observation",
+      "name": "Expandable three-region shell",
+      "kind": "Product-specific documented behavior",
+      "definition": "The December 2024 redesign describes expanding the source viewer alongside notes and using chat while audio plays; this is historical documented behavior, not a 2026 pixel audit.",
+      "guardrail": "Verify current panel widths, collapse, focus, audio continuity and mobile reflow.",
+      "source_ids": [
+        "gemini-notebook-shell-history"
+      ],
+      "classification": "official dated documentation; runtime untested",
+      "product": "Gemini Notebook (formerly NotebookLM)"
+    },
+    {
+      "id": "gemini-notebook-mindmap-node-explore",
+      "family": "ai-product-observation",
+      "name": "Mind map node exploration",
+      "kind": "Product-specific documented behavior",
+      "definition": "The 2025 announcement documents zooming into sections and selecting concepts to obtain summaries.",
+      "guardrail": "Test zoom, pan, keyboard node navigation, summary grounding and return focus.",
+      "source_ids": [
+        "gemini-notebook-mindmap-history"
+      ],
+      "classification": "official dated documentation; runtime untested",
+      "product": "Gemini Notebook (formerly NotebookLM)"
+    },
+    {
+      "id": "gemini-notebook-discover-source-review",
+      "family": "ai-product-observation",
+      "name": "Source discovery and import review",
+      "kind": "Product-specific documented behavior",
+      "definition": "The April 2025 launch describes a query, a ranked set of up to ten annotated source recommendations, then explicit import. This is a dated historical contract, not a current quota claim.",
+      "guardrail": "Verify selection, relevance notes, import errors, duplicate and empty results.",
+      "source_ids": [
+        "gemini-notebook-discover"
+      ],
+      "classification": "official dated documentation; runtime untested",
+      "product": "Gemini Notebook (formerly NotebookLM)"
+    },
+    {
+      "id": "gemini-notebook-source-grounded-answer-explain",
+      "family": "ai-product-observation",
+      "name": "Explain with source citations",
+      "kind": "Product-specific documented behavior",
+      "definition": "The September 2025 announcement connects quiz/flashcard explanations to citations in original learning material.",
+      "guardrail": "Verify wrong-answer explanation, source anchor, unavailable source and clear distinction from generated reasoning.",
+      "source_ids": [
+        "gemini-notebook-active-learning"
+      ],
+      "classification": "official dated documentation; runtime untested",
+      "product": "Gemini Notebook (formerly NotebookLM)"
+    },
+    {
+      "id": "gemini-notebook-textbook-source-catalog",
+      "family": "ai-product-observation",
+      "name": "Textbook catalog as source type",
+      "kind": "Product-specific documented behavior",
+      "definition": "The October 2026 announcement documents Add sources → Textbooks for available U.S./India provider titles and inline citations. Do not infer Brazilian catalog availability.",
+      "guardrail": "Verify catalog eligibility, import, citation, reading rights and unsupported geography.",
+      "source_ids": [
+        "gemini-notebook-textbooks"
+      ],
+      "classification": "official dated documentation; runtime untested",
+      "product": "Gemini Notebook (formerly NotebookLM)"
     }
   ]
 }

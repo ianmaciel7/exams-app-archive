@@ -1,0 +1,400 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-26",
+  "scope": "public publisher documentation and linked media; no authenticated interaction",
+  "sources": [
+    {
+      "id": "grok-bot-design-workflow",
+      "title": "Designing Grok Bot with Grok Bot",
+      "url": "https://x.ai/bot/guides/designing-grok-bot-with-grok-bot",
+      "product": "grok-bot",
+      "published_on": "2026-08-24",
+      "kind": "official-product-announcement",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official publisher text retrieved; runtime untested",
+      "storage": "link-only",
+      "notes": "Historical announcements remain dated; no inference of present availability.",
+      "canonical_source_id": "grok-bot-design-workflow"
+    },
+    {
+      "id": "gemini-study-video",
+      "title": "How to make Gemini study notebooks",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/how-to-make-gemini-study-notebooks/",
+      "product": "gemini",
+      "published_on": "2026-07-10",
+      "kind": "official-product-announcement",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official publisher text retrieved; runtime untested",
+      "storage": "link-only",
+      "notes": "Historical announcements remain dated; no inference of present availability.",
+      "canonical_source_id": "gemini-study-video"
+    },
+    {
+      "id": "gemini-notebook-shell-history",
+      "title": "NotebookLM redesign, three panels",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-new-features-december-2024/",
+      "product": "gemini-notebook",
+      "published_on": "2024-12-13",
+      "kind": "official-product-announcement",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official publisher text retrieved; runtime untested",
+      "storage": "link-only",
+      "notes": "Historical announcements remain dated; no inference of present availability.",
+      "canonical_source_id": "gemini-notebook-shell-history"
+    },
+    {
+      "id": "gemini-notebook-mindmap-history",
+      "title": "NotebookLM student features and mind maps",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-studying-help/",
+      "product": "gemini-notebook",
+      "published_on": null,
+      "kind": "official-product-announcement",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official publisher text retrieved; runtime untested",
+      "storage": "link-only",
+      "notes": "Historical announcements remain dated; no inference of present availability.",
+      "canonical_source_id": "gemini-notebook-mindmap-history"
+    },
+    {
+      "id": "gemini-notebook-discover",
+      "title": "Discover Sources",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-discover-sources/",
+      "product": "gemini-notebook",
+      "published_on": "2025-04-02",
+      "kind": "official-product-announcement",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official publisher text retrieved; runtime untested",
+      "storage": "link-only",
+      "notes": "Historical announcements remain dated; no inference of present availability.",
+      "canonical_source_id": "gemini-notebook-discover"
+    },
+    {
+      "id": "gemini-notebook-active-learning",
+      "title": "NotebookLM active learning and reports",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-student-features/",
+      "product": "gemini-notebook",
+      "published_on": "2025-09-08",
+      "kind": "official-product-announcement",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official publisher text retrieved; runtime untested",
+      "storage": "link-only",
+      "notes": "Historical announcements remain dated; no inference of present availability.",
+      "canonical_source_id": "gemini-notebook-active-learning"
+    },
+    {
+      "id": "gemini-notebook-textbooks",
+      "title": "Gemini Notebook textbook catalog",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/new-access-textbooks/",
+      "product": "gemini-notebook",
+      "published_on": "2026-10-29",
+      "kind": "official-product-announcement",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official publisher text retrieved; runtime untested",
+      "storage": "link-only",
+      "notes": "Historical announcements remain dated; no inference of present availability.",
+      "canonical_source_id": "gemini-notebook-textbooks"
+    }
+  ],
+  "observations": [
+    {
+      "id": "grok-bot-sidebar-by-roster-size",
+      "product": "grok-bot",
+      "title": "Roster-dependent sidebar",
+      "description": "A changelog entry documents a hidden/toggle sidebar for one Bot, a narrow rail for two to four, and full sidebar for five or more. These are roster-count rules, not viewport breakpoints.",
+      "source_id": "grok-bot-changelog",
+      "surface": "view:grok-bot:chat",
+      "acceptance": "Test counts 1, 2, 4, 5; resizing, manual override and keyboard access.",
+      "classification": "official dated documentation; runtime untested"
+    },
+    {
+      "id": "grok-bot-library-focus-preview",
+      "product": "grok-bot",
+      "title": "Library preview and pinned sync",
+      "description": "Library row hover or keyboard focus reveals sender, date and Page visibility; pinned pages, links and files sync across devices per v0.75.2.",
+      "source_id": "grok-bot-changelog",
+      "surface": "view:grok-bot:library",
+      "acceptance": "Test hover/focus parity, touch, pin sync and revoked access.",
+      "classification": "official dated documentation; runtime untested"
+    },
+    {
+      "id": "grok-bot-composer-reorder-keyboard",
+      "product": "grok-bot",
+      "title": "Keyboard attachment reorder",
+      "description": "The v0.75.2 changelog documents both drag reordering and Alt with arrow keys for composer attachments.",
+      "source_id": "grok-bot-changelog",
+      "surface": "view:grok-bot:chat",
+      "acceptance": "Verify announced order, focus, drag parity and cancel.",
+      "classification": "official dated documentation; runtime untested"
+    },
+    {
+      "id": "grok-bot-computer-access-levels",
+      "product": "grok-bot",
+      "title": "Three-level agent computer access",
+      "description": "The design article documents active title-bar status, pinned preview and full-screen takeover/handback. The article compares floating, side-by-side, modal and full-screen alternatives.",
+      "source_id": "grok-bot-design",
+      "surface": "view:grok-bot:computer",
+      "acceptance": "Test preview, manual takeover, return of control, connection failure and visible ownership.",
+      "classification": "official dated documentation; runtime untested"
+    },
+    {
+      "id": "grok-bot-connector-recovery",
+      "product": "grok-bot",
+      "title": "Reconnect card and suspended routine",
+      "description": "The changelog describes reconnect cards and a routine skipping scheduled runs until connector sign-in is restored. It also distinguishes unavailable history from a routine that never ran.",
+      "source_id": "grok-bot-changelog",
+      "surface": "view:grok-bot:routines",
+      "acceptance": "Verify sign-out, reconnect, skipped runs, history unavailable and safe resumption; no fake success.",
+      "classification": "official dated documentation; runtime untested"
+    },
+    {
+      "id": "grok-bot-chat-card-semantics",
+      "product": "grok-bot",
+      "title": "Typed chat cards and numeric tables",
+      "description": "The v0.75.2 changelog documents approval, question, file, link and table cards; approval summaries and sensitive-change flags; source citation chips; file type/name/size and decimal-aligned number columns.",
+      "source_id": "grok-bot-changelog",
+      "surface": "view:grok-bot:chat",
+      "acceptance": "Verify semantic labels, focus, safe action review, numeric alignment and narrow viewport.",
+      "classification": "official dated documentation; runtime untested"
+    },
+    {
+      "id": "gemini-diagnostic-learning-loop",
+      "product": "gemini",
+      "title": "Diagnostic-to-practice learning loop",
+      "description": "At June 2026 launch, Study Notebooks used uploaded material and a diagnostic quiz to identify gaps, then tailored short lessons with follow-up quizzes.",
+      "source_id": "gemini-study",
+      "surface": "view:gemini:study-notebooks",
+      "acceptance": "Test diagnostic skip/retry, source grounding, lesson navigation and progress changes; do not claim learning efficacy.",
+      "classification": "official dated documentation; runtime untested"
+    },
+    {
+      "id": "gemini-skill-progress-dashboard",
+      "product": "gemini",
+      "title": "Skill-based progress dashboard",
+      "description": "The announcement describes objectives grouped by topic, Strengths / Focus areas / Not started status labels, automatic updates from quizzes, priority lesson recommendations and filters.",
+      "source_id": "gemini-study",
+      "surface": "view:gemini:study-notebooks",
+      "acceptance": "Check status change, incomplete quiz, filter reset and reason for priority; no inferred mastery scoring formula.",
+      "classification": "official dated documentation; runtime untested"
+    },
+    {
+      "id": "gemini-notebook-expandable-source-notes",
+      "product": "gemini-notebook",
+      "title": "Expandable three-region shell",
+      "description": "The December 2024 redesign describes expanding the source viewer alongside notes and using chat while audio plays; this is historical documented behavior, not a 2026 pixel audit.",
+      "source_id": "gemini-notebook-shell-history",
+      "surface": "view:gemini-notebook:sources",
+      "acceptance": "Verify current panel widths, collapse, focus, audio continuity and mobile reflow.",
+      "classification": "official dated documentation; runtime untested"
+    },
+    {
+      "id": "gemini-notebook-mindmap-node-explore",
+      "product": "gemini-notebook",
+      "title": "Mind map node exploration",
+      "description": "The 2025 announcement documents zooming into sections and selecting concepts to obtain summaries.",
+      "source_id": "gemini-notebook-mindmap-history",
+      "surface": "output:gemini-notebook:mind-map",
+      "acceptance": "Test zoom, pan, keyboard node navigation, summary grounding and return focus.",
+      "classification": "official dated documentation; runtime untested"
+    },
+    {
+      "id": "gemini-notebook-discover-source-review",
+      "product": "gemini-notebook",
+      "title": "Source discovery and import review",
+      "description": "The April 2025 launch describes a query, a ranked set of up to ten annotated source recommendations, then explicit import. This is a dated historical contract, not a current quota claim.",
+      "source_id": "gemini-notebook-discover",
+      "surface": "view:gemini-notebook:sources",
+      "acceptance": "Verify selection, relevance notes, import errors, duplicate and empty results.",
+      "classification": "official dated documentation; runtime untested"
+    },
+    {
+      "id": "gemini-notebook-source-grounded-answer-explain",
+      "product": "gemini-notebook",
+      "title": "Explain with source citations",
+      "description": "The September 2025 announcement connects quiz/flashcard explanations to citations in original learning material.",
+      "source_id": "gemini-notebook-active-learning",
+      "surface": "view:gemini-notebook:full-screen-study-view",
+      "acceptance": "Verify wrong-answer explanation, source anchor, unavailable source and clear distinction from generated reasoning.",
+      "classification": "official dated documentation; runtime untested"
+    },
+    {
+      "id": "gemini-notebook-textbook-source-catalog",
+      "product": "gemini-notebook",
+      "title": "Textbook catalog as source type",
+      "description": "The October 2026 announcement documents Add sources → Textbooks for available U.S./India provider titles and inline citations. Do not infer Brazilian catalog availability.",
+      "source_id": "gemini-notebook-textbooks",
+      "surface": "view:gemini-notebook:sources",
+      "acceptance": "Verify catalog eligibility, import, citation, reading rights and unsupported geography.",
+      "classification": "official dated documentation; runtime untested"
+    }
+  ],
+  "media": [
+    {
+      "id": "evidence:grok-bot:design-team-roster-gif",
+      "product": "grok-bot",
+      "label": "Design-agent roster GIF",
+      "url": "https://media.x.ai/cdn-cgi/image/fit%3Dscale-down%2Conerror%3Dredirect%2Cwidth%3D720%2Cheight%3D405%2Cf%3Dauto/v1/website/grok-bot-guides-designing-grok-bot-with-grok-bot-meet-the-team-b9959c98.gif",
+      "source_id": "grok-bot-design-workflow",
+      "surface": "view:grok-bot:chat",
+      "modality": "gif",
+      "status": "one rendered image inspected; animation frames/timing not inspected",
+      "description": "Four named role-specific agents in a two-by-two white panel, distinct red/blue/black avatars and green markers; demonstration image, not confirmed sidebar layout.",
+      "storage": "link-only",
+      "rights": "publisher media; redistribution license not verified",
+      "reviewed_on": "2026-11-26",
+      "runtime_tested": false
+    },
+    {
+      "id": "evidence:grok-bot:motion-god-frames",
+      "product": "grok-bot",
+      "label": "Production-character motion storyboard",
+      "url": "https://media.x.ai/cdn-cgi/image/fit%3Dscale-down%2Conerror%3Dredirect%2Cwidth%3D720%2Cheight%3D183%2Cf%3Dauto/v1/website/grok-bot-guides-designing-grok-bot-with-grok-bot-motion-god-frames-f42d0711.png",
+      "source_id": "grok-bot-design-workflow",
+      "surface": "view:grok-bot:computer",
+      "modality": "image",
+      "status": "publisher link and caption verified; image fetch failed",
+      "description": "Publisher describes character entering, noticing window and bouncing into position. Not measured.",
+      "storage": "link-only",
+      "rights": "publisher media; redistribution license not verified",
+      "reviewed_on": "2026-11-26",
+      "runtime_tested": false
+    },
+    {
+      "id": "evidence:grok-bot:starter-bot-figma",
+      "product": "grok-bot",
+      "label": "Starter bot cards in Figma",
+      "url": "https://media.x.ai/cdn-cgi/image/fit%3Dscale-down%2Conerror%3Dredirect%2Cwidth%3D720%2Cheight%3D355%2Cf%3Dauto/v1/website/grok-bot-guides-designing-grok-bot-with-grok-bot-figma-starter-bots-f4b010c7.png",
+      "source_id": "grok-bot-design-workflow",
+      "surface": "view:grok-bot:marketplace",
+      "modality": "image",
+      "status": "publisher link and caption verified; image fetch failed",
+      "description": "Production design workflow, not a capture of shipped marketplace.",
+      "storage": "link-only",
+      "rights": "publisher media; redistribution license not verified",
+      "reviewed_on": "2026-11-26",
+      "runtime_tested": false
+    },
+    {
+      "id": "evidence:grok-bot:figma-tools",
+      "product": "grok-bot",
+      "label": "Onboarding tool assets in Figma",
+      "url": "https://media.x.ai/cdn-cgi/image/fit%3Dscale-down%2Conerror%3Dredirect%2Cwidth%3D720%2Cheight%3D390%2Cf%3Dauto/v1/website/grok-bot-guides-designing-grok-bot-with-grok-bot-figma-tools-2cfc9447.png",
+      "source_id": "grok-bot-design-workflow",
+      "surface": "view:grok-bot:marketplace",
+      "modality": "image",
+      "status": "publisher link and caption verified; image fetch failed",
+      "description": "Publisher describes populating onboarding with logos; not shipped UI evidence.",
+      "storage": "link-only",
+      "rights": "publisher media; redistribution license not verified",
+      "reviewed_on": "2026-11-26",
+      "runtime_tested": false
+    },
+    {
+      "id": "evidence:gemini-notebook:historical-three-panel-animation",
+      "product": "gemini-notebook",
+      "label": "NotebookLM three-panel redesign animation",
+      "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/3_panel_ui_keyword_final_7_sources.gif",
+      "source_id": "gemini-notebook-shell-history",
+      "surface": "view:gemini-notebook:sources",
+      "modality": "gif",
+      "status": "publisher link and alt text verified; GIF decoding unsupported",
+      "description": "Historical December 2024 Sources/Chat/Studio animation; do not infer current layout or timing.",
+      "storage": "link-only",
+      "rights": "publisher media; redistribution license not verified",
+      "reviewed_on": "2026-11-26",
+      "runtime_tested": false
+    },
+    {
+      "id": "evidence:gemini-notebook:mobile-study-source-picker",
+      "product": "gemini-notebook",
+      "label": "Mobile source picker for flashcards and quizzes",
+      "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/CreateFlashcardsQuizes_NotebookL.width-1200.format-webp.webp",
+      "source_id": "gemini-notebook-mobile-quiz",
+      "surface": "view:gemini-notebook:studio",
+      "modality": "image",
+      "status": "publisher link and alt text verified; binary fetch and download failed",
+      "description": "November 2025 mobile source selection reference; no pixel review.",
+      "storage": "link-only",
+      "rights": "publisher media; redistribution license not verified",
+      "reviewed_on": "2026-11-26",
+      "runtime_tested": false
+    },
+    {
+      "id": "evidence:gemini:study-notebook-video-guide",
+      "product": "gemini",
+      "label": "Study notebook walkthrough",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/how-to-make-gemini-study-notebooks/",
+      "source_id": "gemini-study-video",
+      "surface": "view:gemini:study-notebooks",
+      "modality": "embedded-video-page",
+      "status": "official page retrieved; video playback and timestamps not verified",
+      "description": "Article embeds walkthrough of goal setting, practice and progress dashboard.",
+      "storage": "link-only",
+      "rights": "publisher media; redistribution license not verified",
+      "reviewed_on": "2026-11-26",
+      "runtime_tested": false
+    },
+    {
+      "id": "evidence:grok-bot:ambient-prototype-demos",
+      "product": "grok-bot",
+      "label": "Ambient agent prototype videos",
+      "url": "https://x.ai/bot/guides/designing-grok-bot-with-grok-bot",
+      "source_id": "grok-bot-design-workflow",
+      "surface": "view:grok-bot:chat",
+      "modality": "embedded-video-page",
+      "status": "official captions retrieved; videos not played",
+      "description": "Notch, corner hover and cursor companion experiments explicitly not shipped exactly as explored. Separate from product behavior.",
+      "storage": "link-only",
+      "rights": "publisher media; redistribution license not verified",
+      "reviewed_on": "2026-11-26",
+      "runtime_tested": false
+    }
+  ],
+  "flows": [
+    {
+      "id": "gemini-diagnostic-to-practice",
+      "product": "gemini",
+      "source_id": "gemini-study",
+      "surface": "view:gemini:study-notebooks",
+      "title": "Diagnostic quiz to skill dashboard",
+      "steps": [
+        "Add learning materials",
+        "Take diagnostic quiz",
+        "Receive targeted short lessons",
+        "Complete follow-up quizzes",
+        "Review updated topic status and recommended lesson"
+      ],
+      "unknown": [
+        "exact scoring thresholds",
+        "failed quiz recovery",
+        "mobile layout",
+        "visual transitions"
+      ]
+    },
+    {
+      "id": "grok-bot-computer-handoff",
+      "product": "grok-bot",
+      "source_id": "grok-bot-design",
+      "surface": "view:grok-bot:computer",
+      "title": "Agent computer preview and takeover",
+      "steps": [
+        "Observe computer activity indicator",
+        "Open pinned preview",
+        "Expand full-screen for takeover when help is needed",
+        "Return control to the agent"
+      ],
+      "unknown": [
+        "exact takeover confirmation",
+        "connection recovery",
+        "focus management",
+        "transition timing"
+      ]
+    }
+  ]
+}
