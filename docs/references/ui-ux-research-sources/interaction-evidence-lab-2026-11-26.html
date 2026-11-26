@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Original interaction evidence lab</title>
+<style>
+*{box-sizing:border-box}body{font:16px/1.55 system-ui,sans-serif;max-width:780px;margin:0 auto;padding:20px;color:#172033;background:#f8fafc}
+h1{font-size:1.6rem}h2{font-size:1.2rem}button,input,select{font:inherit;color:inherit;border:1px solid #62748a;border-radius:6px;background:white;padding:6px 10px}button{cursor:pointer}button:disabled{opacity:.65;cursor:not-allowed}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #275fae;outline-offset:3px}
+[role=tablist],.actions{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}[role=tab][aria-selected=true]{font-weight:bold;border-bottom:3px solid #275fae}[role=tabpanel]{padding:16px;background:white;border-radius:8px;border:1px solid #d0d8e2}
+[hidden]{display:none!important}label{display:block;margin-top:8px}input[type=search]{width:min(100%,320px)}.status{min-height:1.6em;color:#334155}dialog{max-width:min(90vw,440px);border:1px solid #62748a;border-radius:8px;padding:20px}dialog::backdrop{background:#11182780}mark{background:#fbe69e;color:#172033}
+table{border-collapse:collapse;width:100%;margin:12px 0}th,td{text-align:left;border-bottom:1px solid #cbd5e1;padding:7px}meter{width:100%;height:18px}ul{padding-left:24px}pre{white-space:pre-wrap;overflow-wrap:anywhere}
+@media(max-width:440px){body{padding:10px}[role=tabpanel]{padding:10px}th,td{padding:4px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media(forced-colors:active){button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid Highlight}}
+</style>
+<main><h1>Interaction evidence lab</h1><p>Original fictional examples. No real exam, annotation, analytics or historical product data.</p>
+<div role="tablist" aria-label="Reference scenarios">
+<button role="tab" id="search-tab" aria-controls="search-panel" aria-selected="true" tabindex="0">Search</button>
+<button role="tab" id="reader-tab" aria-controls="reader-panel" aria-selected="false" tabindex="-1">Reader</button>
+<button role="tab" id="dashboard-tab" aria-controls="dashboard-panel" aria-selected="false" tabindex="-1">Dashboard</button>
+</div>
+<section role="tabpanel" id="search-panel" aria-labelledby="search-tab">
+<h2>Concurrent search and modal focus</h2>
+<form id="search-form"><label for="query">Search study topics</label><input type="search" id="query" required value="math"><label><input type="checkbox" id="fail-next"> Simulate next request failing</label><div class="actions"><button type="submit">Search</button><button type="button" id="cancel-search" disabled>Cancel request</button><button type="button" id="retry-search" hidden>Retry</button></div></form>
+<p id="search-status" class="status" role="status">Idle. No request yet.</p><div id="results-region" aria-busy="false"><ul id="results"></ul></div>
+<button id="open-detail" disabled>Open first result</button>
+<dialog id="detail" aria-labelledby="detail-title"><h2 id="detail-title">Study topic details</h2><p id="detail-body"></p><button id="close-detail" autofocus>Close</button></dialog>
+</section>
+<section role="tabpanel" id="reader-panel" aria-labelledby="reader-tab" hidden>
+<h2>Conservative quote re-anchoring</h2>
+<p>Stored annotation: <strong>retention matters</strong>, with context from the original document.</p>
+<label for="revision">Document revision</label><select id="revision"><option value="original">Original</option><option value="shifted">Inserted text before selection</option><option value="ambiguous">Duplicate context</option><option value="missing">Quote removed</option><option value="context">Context changed</option></select>
+<p id="anchor-status" class="status" role="status"></p><p id="document-text"></p><button id="export-anchor">Show annotation JSON</button><pre id="anchor-json" hidden></pre>
+</section>
+<section role="tabpanel" id="dashboard-panel" aria-labelledby="dashboard-tab" hidden>
+<h2>Fictional practice results</h2><p>Accuracy is correct / attempted, not learning or mastery. Missing denominator is not zero accuracy.</p>
+<label for="subject">Filter by subject</label><select id="subject"><option value="all">All subjects</option><option>Math</option><option>History</option><option>Science</option><option>Language</option></select>
+<button id="clear-filter">Clear filter</button><p id="filter-status" role="status"></p>
+<table><caption>Exact counts and accuracy</caption><thead><tr><th scope="col">Subject</th><th scope="col">Correct</th><th scope="col">Attempted</th><th scope="col">Accuracy</th></tr></thead><tbody id="data-rows"></tbody></table>
+<div id="bars" aria-label="Accuracy bars"></div>
+</section>
+</main>
+<script>
+"use strict";
+const $=id=>document.getElementById(id), tabs=[...document.querySelectorAll('[role=tab]')];
+function rove(tab){tabs.forEach(t=>t.tabIndex=t===tab?0:-1);tab.focus()}
+function activate(tab){tabs.forEach(t=>{const selected=t===tab;t.setAttribute('aria-selected',String(selected));$(t.getAttribute('aria-controls')).hidden=!selected});rove(tab)}
+tabs.forEach((tab,index)=>{tab.addEventListener('click',()=>activate(tab));tab.addEventListener('keydown',e=>{let next;if(e.key==='ArrowRight')next=(index+1)%tabs.length;else if(e.key==='ArrowLeft')next=(index+tabs.length-1)%tabs.length;else if(e.key==='Home')next=0;else if(e.key==='End')next=tabs.length-1;else return;e.preventDefault();rove(tabs[next])})});
+const topics=[{name:'Math fractions',query:'math'},{name:'Math geometry',query:'math'},{name:'History timelines',query:'history'},{name:'Science review',query:'science'}];
+let generation=0,current=null,lastQuery='',visible=[];
+function state(kind,msg){$('search-status').dataset.state=kind;$('search-status').textContent=msg;$('results-region').setAttribute('aria-busy',String(kind==='pending'));$('cancel-search').disabled=kind!=='pending';$('retry-search').hidden=kind!=='error'}
+function showResults(rows){visible=rows;$('results').replaceChildren(...rows.map(row=>{const li=document.createElement('li');li.textContent=row.name;return li}));$('open-detail').disabled=!rows.length}
+function simulatedSearch(query,signal,fail){return new Promise((resolve,reject)=>{const timer=setTimeout(()=>{signal.removeEventListener('abort',abort);if(fail)reject(Error('Simulated network failure'));else resolve(topics.filter(x=>x.query.includes(query)))},query==='math'?750:140);function abort(){clearTimeout(timer);reject(new DOMException('Aborted','AbortError'))}if(signal.aborted)abort();else signal.addEventListener('abort',abort,{once:true})})}
+async function search(query){const id=++generation;current?.abort();const controller=new AbortController();current=controller;lastQuery=query;
+ const fail=$('fail-next').checked;$('fail-next').checked=false;state('pending',visible.length?'Updating; previous results retained.':'Searching...');
+ try{const rows=await simulatedSearch(query,controller.signal,fail);if(id!==generation)return;showResults(rows);state(rows.length?'success':'empty',rows.length?rows.length+' results for '+query:'No results for '+query)}
+ catch(error){if(id!==generation)return;state('error','Request failed. Previous results retained; retry available.')}
+ finally{if(id===generation)current=null}
+}
+$('search-form').addEventListener('submit',e=>{e.preventDefault();const q=$('query').value.trim().toLowerCase();if(q)search(q)});
+$('cancel-search').addEventListener('click',()=>{generation++;current?.abort();current=null;state('cancelled','Request cancelled. Previous results retained.');$('query').focus()});
+$('retry-search').addEventListener('click',()=>{search(lastQuery);$('query').focus()});
+$('open-detail').addEventListener('click',()=>{if(visible.length){$('detail-body').textContent=visible[0].name;$('detail').showModal()}});
+$('close-detail').addEventListener('click',()=>$('detail').close());
+$('detail').addEventListener('close',()=>{if(!$('open-detail').disabled)$('open-detail').focus();else $('query').focus()});
+
+const original='Study plan: retention matters after a delay. Practice plan: retention matters before a test.';
+const quote={type:'TextQuoteSelector',exact:'retention matters',prefix:'Study plan: ',suffix:' after a delay.'};
+const variants={original,shifted:'Introduction. '+original,ambiguous:original+' '+original,missing:'Study plan: recall improves after a delay.',context:'A new plan: retention matters after a delay.'};
+function anchor(text,selector){const all=[];let start=-1;while((start=text.indexOf(selector.exact,start+1))!==-1)all.push(start);const candidates=all.filter(p=>text.slice(0,p).endsWith(selector.prefix)&&text.slice(p+selector.exact.length).startsWith(selector.suffix));if(candidates.length===1)return {state:'matched',start:candidates[0],end:candidates[0]+selector.exact.length};if(candidates.length>1||all.length>1)return {state:'ambiguous'};return {state:all.length?'review-required':'missing'}}
+function renderAnchor(){const revision=$('revision').value,text=variants[revision],result=anchor(text,quote);const display=$('document-text');display.replaceChildren();
+ if(result.state==='matched'){display.append(document.createTextNode(text.slice(0,result.start)));const mark=document.createElement('mark');mark.textContent=text.slice(result.start,result.end);display.append(mark,document.createTextNode(text.slice(result.end)))}
+ else display.textContent=text;
+ $('anchor-status').dataset.state=result.state;$('anchor-status').textContent=result.state==='matched'?'Verified exact quote and context in demo revision.':result.state==='ambiguous'?'Multiple candidates; manual review required.':result.state==='missing'?'Quote missing; annotation retained unresolved.':'Context changed; manual review required.';
+ $('anchor-json').hidden=true}
+$('revision').addEventListener('change',renderAnchor);
+$('export-anchor').addEventListener('click',()=>{const annotation={type:'Annotation',body:{type:'TextualBody',value:'Original fictional study note'},target:{source:'https://example.invalid/original-study-document',selector:quote}};$('anchor-json').textContent=JSON.stringify(annotation,null,2);$('anchor-json').hidden=false});
+renderAnchor();
+const data=[{subject:'Math',correct:8,attempted:10},{subject:'History',correct:3,attempted:5},{subject:'Science',correct:0,attempted:0}];
+function renderData(){const rows=data.filter(r=>$('subject').value==='all'||r.subject===$('subject').value);
+ const table=$('data-rows'),bars=$('bars');table.replaceChildren();bars.replaceChildren();
+ for(const r of rows){const rate=r.attempted?r.correct/r.attempted:null;const tr=document.createElement('tr');for(const [i,v] of [r.subject,r.correct,r.attempted,rate===null?'N/A':Math.round(rate*100)+'%'].entries()){const cell=document.createElement(i===0?'th':'td');if(i===0)cell.scope='row';cell.textContent=v;tr.append(cell)}table.append(tr);
+ const group=document.createElement('p');group.textContent=r.subject+': '+(rate===null?'No attempts':Math.round(rate*100)+'%');if(rate!==null){const meter=document.createElement('meter');meter.min=0;meter.max=1;meter.value=rate;meter.setAttribute('aria-label',r.subject+' accuracy');group.append(meter)}bars.append(group)}
+ const n=rows.reduce((sum,r)=>sum+r.attempted,0),c=rows.reduce((sum,r)=>sum+r.correct,0);$('filter-status').textContent=rows.length?rows.length+' subjects; '+c+' correct of '+n+' attempts; '+(n?Math.round(c/n*100)+'% accuracy':'accuracy not available'):'No matching subjects';}
+$('subject').addEventListener('change',renderData);$('clear-filter').addEventListener('click',()=>{$('subject').value='all';renderData();$('subject').focus()});renderData();
+</script></html>

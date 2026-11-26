@@ -159,7 +159,11 @@
       "classification": "Source-backed synthesis; proposed acceptance test, not executed product validation",
       "recorded_on": "2026-11-26",
       "evidence_status": "documented",
-      "media_status": "not-inspected"
+      "media_status": "not-inspected",
+      "demo_path": "docs/references/ui-ux-research-sources/interaction-evidence-lab-2026-11-26.html",
+      "test_path": "tests/smoke_interaction_evidence_lab.py",
+      "runtime_validation": "pending-ci",
+      "demo_scope": "Original ASCII text quote or fictional discrete selection; not full product conformance."
     },
     {
       "id": "accessible-component-contract",
@@ -585,7 +589,89 @@
       "classification": "technical-documentation",
       "recorded_on": "2026-11-26",
       "evidence_status": "documented",
-      "media_status": "not-inspected"
+      "media_status": "not-inspected",
+      "demo_path": "docs/references/ui-ux-research-sources/interaction-evidence-lab-2026-11-26.html",
+      "test_path": "tests/smoke_interaction_evidence_lab.py",
+      "runtime_validation": "pending-ci",
+      "demo_scope": "Original ASCII text quote or fictional discrete selection; not full product conformance."
+    },
+    {
+      "id": "abortable-concurrent-search",
+      "issue": 105,
+      "name": "Concurrent search and stale response suppression",
+      "aliases": [
+        "busca concorrente",
+        "race condition",
+        "abort controller",
+        "cancel request",
+        "stale response"
+      ],
+      "family": "domain-research",
+      "definition": "An AbortController communicates cancellation to abortable operations. Pair cancellation with request identity to prevent obsolete responses updating current UI.",
+      "guardrail": "Do not treat animation completion or cancellation alone as authority over state. Preserve previous results when useful; distinguish empty, failed and cancelled.",
+      "tests": "Issue a slow request then a fast one; cancel pending request; fail and retry; assert current results and focus.",
+      "source_ids": [
+        "domain-abortable-concurrent-search"
+      ],
+      "classification": "technical-documentation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected",
+      "demo_path": "docs/references/ui-ux-research-sources/interaction-evidence-lab-2026-11-26.html",
+      "test_path": "tests/smoke_interaction_evidence_lab.py",
+      "runtime_validation": "pending-ci"
+    },
+    {
+      "id": "manual-tab-activation",
+      "issue": 100,
+      "name": "Manual tab activation and roving keyboard focus",
+      "aliases": [
+        "abas",
+        "tabs",
+        "manual activation",
+        "roving tabindex",
+        "keyboard"
+      ],
+      "family": "domain-research",
+      "definition": "For manual activation, arrow navigation can move focus while the visible panel stays selected; activation changes the displayed panel.",
+      "guardrail": "Do not confuse focus and selected state. Automatic activation is appropriate when panels can display without noticeable delay.",
+      "tests": "Arrow to another tab; verify existing panel still active; Enter activates and changes aria-selected.",
+      "source_ids": [
+        "domain-manual-tab-activation"
+      ],
+      "classification": "implementation-guidance",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected",
+      "demo_path": "docs/references/ui-ux-research-sources/interaction-evidence-lab-2026-11-26.html",
+      "test_path": "tests/smoke_interaction_evidence_lab.py",
+      "runtime_validation": "pending-ci"
+    },
+    {
+      "id": "modal-focus-restoration",
+      "issue": 105,
+      "name": "Modal dialog focus containment and restoration",
+      "aliases": [
+        "dialog",
+        "modal",
+        "focus management",
+        "focus restoration",
+        "Escape"
+      ],
+      "family": "domain-research",
+      "definition": "Modal content takes focus, constrains tab navigation and closes on Escape. On closure, restore focus to the invoking control when it remains appropriate.",
+      "guardrail": "Do not infer modal behavior from dimmed screenshot; consider invoker removal, workflow-specific focus and assistive technology.",
+      "tests": "Open native modal via button; assert focus inside, Escape closes, and invoker receives focus.",
+      "source_ids": [
+        "domain-modal-focus-restoration"
+      ],
+      "classification": "implementation-guidance",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected",
+      "demo_path": "docs/references/ui-ux-research-sources/interaction-evidence-lab-2026-11-26.html",
+      "test_path": "tests/smoke_interaction_evidence_lab.py",
+      "runtime_validation": "pending-ci"
     }
   ]
 }

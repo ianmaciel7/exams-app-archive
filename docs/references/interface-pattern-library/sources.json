@@ -5020,6 +5020,36 @@
       "storage": "link-only",
       "notes": "Public source reviewed; original media and product interactions not inspected.",
       "source_version": "undated"
+    },
+    {
+      "id": "domain-abortable-concurrent-search",
+      "title": "AbortController — MDN",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/AbortController",
+      "kind": "technical-documentation",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Official documentation consulted; no claim of independent product interaction inspection."
+    },
+    {
+      "id": "domain-manual-tab-activation",
+      "title": "WAI-ARIA APG — Tabs Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/tabs/",
+      "kind": "implementation-guidance",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Official documentation consulted; no claim of independent product interaction inspection."
+    },
+    {
+      "id": "domain-modal-focus-restoration",
+      "title": "WAI-ARIA APG — Dialog (Modal) Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/",
+      "kind": "implementation-guidance",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Official documentation consulted; no claim of independent product interaction inspection."
     }
   ],
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",
