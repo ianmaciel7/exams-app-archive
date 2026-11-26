@@ -1,0 +1,448 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-26",
+  "product": "ChatGPT Space",
+  "scope": "official public evidence; link-only",
+  "views": [
+    {
+      "name": "All",
+      "role": "collection"
+    },
+    {
+      "name": "Your items",
+      "role": "ownership filter"
+    },
+    {
+      "name": "Shared with you",
+      "role": "access filter; indirect shared-space items may be excluded"
+    },
+    {
+      "name": "Pages",
+      "role": "type view; open parent for children"
+    },
+    {
+      "name": "Images",
+      "role": "type view"
+    },
+    {
+      "name": "Your creations",
+      "role": "origin filter"
+    },
+    {
+      "name": "Uploads",
+      "role": "origin filter"
+    },
+    {
+      "name": "Suggested",
+      "role": "discovery"
+    },
+    {
+      "name": "Recents",
+      "role": "recent activity"
+    },
+    {
+      "name": "Sites",
+      "role": "sidebar entry"
+    },
+    {
+      "name": "Google Drive",
+      "role": "external source entry"
+    },
+    {
+      "name": "Space",
+      "role": "scoped collection"
+    },
+    {
+      "name": "Parent page",
+      "role": "hierarchy"
+    },
+    {
+      "name": "Search",
+      "role": "results with optional type filters"
+    }
+  ],
+  "patterns": [
+    {
+      "id": "chatgpt-space-space-vs-project",
+      "title": "Separate organizational contexts",
+      "description": "Group related objects without conflating a shared content space and a conversation project.",
+      "acceptance_tests": "Test membership, access and movement independently.",
+      "source_id": "openai-space-help",
+      "classification": "product evidence / derived acceptance tests",
+      "date": "2026-11-26"
+    },
+    {
+      "id": "chatgpt-space-object-views",
+      "title": "Object collections and facets",
+      "description": "Separate ownership, access, object type, origin and activity from hierarchy.",
+      "acceptance_tests": "Test shared-space indirect access, empty results, filters and permissions.",
+      "source_id": "openai-space-help",
+      "classification": "product evidence / derived acceptance tests",
+      "date": "2026-11-26"
+    },
+    {
+      "id": "chatgpt-space-block-editor",
+      "title": "Composable page / block editor",
+      "description": "Use searchable slash menu for content, references and interactive tools; create nested page or link existing page.",
+      "acceptance_tests": "Test keyboard, touch, focus, insert/reorder, deletion and reference identity.",
+      "source_id": "openai-space-pages",
+      "classification": "product evidence / derived acceptance tests",
+      "date": "2026-11-26"
+    },
+    {
+      "id": "chatgpt-space-width-controls",
+      "title": "Per-block table width and fit",
+      "description": "Normal, Flexible, Full width and readability/equal columns. Do not infer exact sizes.",
+      "acceptance_tests": "Test narrow viewport, overflow, fit and screen reader headers.",
+      "source_id": "openai-space-pages",
+      "classification": "product evidence / derived acceptance tests",
+      "date": "2026-11-26"
+    },
+    {
+      "id": "chatgpt-space-contextual-ai",
+      "title": "Contextual AI and scoped edits",
+      "description": "Side chat for broad work; selected text, inline mentions and comments for scoped work. Review proposals before acceptance.",
+      "acceptance_tests": "Test scope, undo/review, permission, cancellation, errors, keyboard.",
+      "source_id": "openai-space-agents",
+      "classification": "product evidence / derived acceptance tests",
+      "date": "2026-11-26"
+    },
+    {
+      "id": "chatgpt-space-recurring-work",
+      "title": "Verified recurring updates",
+      "description": "Distinguish a generated tracker from actual scheduled execution; verify saved task and run. Keep Updated unavailable at launch per guide.",
+      "acceptance_tests": "Test task enablement, next run, freshness, source and failure.",
+      "source_id": "openai-space-agents",
+      "classification": "product evidence / derived acceptance tests",
+      "date": "2026-11-26"
+    },
+    {
+      "id": "chatgpt-space-adaptive-ui",
+      "title": "Intelligent UI / generated interface",
+      "description": "Choose text, cards, forms, charts or interactive output based on need; state persistence varies by experience and chat.",
+      "acceptance_tests": "Test fallback text, state reload, control semantics, contrast and reduced motion.",
+      "source_id": "openai-intelligent-ui",
+      "classification": "product evidence / derived acceptance tests",
+      "date": "2026-11-26"
+    },
+    {
+      "id": "chatgpt-space-visualization-lifecycle",
+      "title": "Interactive visualization vs persistent app",
+      "description": "Visualization is generally snapshot; sites are a distinct option. Show data context, labels, accessibility and simpler fallback on failure.",
+      "acceptance_tests": "Test keyboard, data table, units, blank/loading/error and export.",
+      "source_id": "openai-visualizations",
+      "classification": "product evidence / derived acceptance tests",
+      "date": "2026-11-26"
+    },
+    {
+      "id": "chatgpt-space-search",
+      "title": "Unified content search",
+      "description": "Search existing objects by type, with permission boundaries; Ctrl/Cmd+K. Not web search.",
+      "acceptance_tests": "Test keyboard, archived vs deleted/locked, access and filter reset.",
+      "source_id": "openai-global-search",
+      "classification": "product evidence / derived acceptance tests",
+      "date": "2026-11-26"
+    },
+    {
+      "id": "chatgpt-space-mobile-navigation",
+      "title": "Customizable mobile navigation",
+      "description": "Home and Explore separate frequent work from discovery; pin/unpin/replace shortcuts.",
+      "acceptance_tests": "Test touch, focus, available destinations, full tab bar and responsive behavior.",
+      "source_id": "openai-mobile",
+      "classification": "product evidence / derived acceptance tests",
+      "date": "2026-11-26"
+    },
+    {
+      "id": "chatgpt-space-collaboration",
+      "title": "Contextual collaboration",
+      "description": "Shared page editing, comments anchored to content, review attribution and sharing controls when offered.",
+      "acceptance_tests": "Test permissions and simultaneous edits; do not infer implementation.",
+      "source_id": "openai-space-collaboration",
+      "classification": "product evidence / derived acceptance tests",
+      "date": "2026-11-26"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "todos",
+      "title": "Task list",
+      "url": "https://images.ctfassets.net/8su2tbn87fck/3DG9uFmP0vdJubLdCrPcs8/485f9dab24ece5c968b9cbf000d27a2b/chatgpt-space-todos-desktop-light.png?fm=webp&q=80&w=1340",
+      "notes": "Prioritized checklist, sections and explanatory text.",
+      "source": "https://chatgpt.com/features/space/",
+      "status": "opened and visually inspected 2026-11-26",
+      "storage": "link-only",
+      "rights": "OpenAI marketing media; redistribution license not verified"
+    },
+    {
+      "id": "sankey",
+      "title": "Data visualization",
+      "url": "https://images.ctfassets.net/8su2tbn87fck/6G6cC1s3Do82N8yZfMofXk/6652364afaf5d1dbfebf127243576879/chatgpt-space-data-desktop-light.png?fm=webp&q=80&w=1340",
+      "notes": "Sankey flows, categories, quantitative tooltip; sample data.",
+      "source": "https://chatgpt.com/features/space/",
+      "status": "opened and visually inspected 2026-11-26",
+      "storage": "link-only",
+      "rights": "OpenAI marketing media; redistribution license not verified"
+    },
+    {
+      "id": "pitch",
+      "title": "Presentation",
+      "url": "https://images.ctfassets.net/8su2tbn87fck/44xcuWcnbu4VdjgnJBciwX/e61163d8eb98a27aa4ef845a51636f4e/chatgpt-space-brand-pitch-desktop-light.png?fm=webp&q=80&w=1340",
+      "notes": "Split text and image slide.",
+      "source": "https://chatgpt.com/features/space/",
+      "status": "opened and visually inspected 2026-11-26",
+      "storage": "link-only",
+      "rights": "OpenAI marketing media; redistribution license not verified"
+    },
+    {
+      "id": "portal",
+      "title": "Client portal",
+      "url": "https://images.ctfassets.net/8su2tbn87fck/0VCz9UfZ9PLozjGMdK1Xp/13b658fc92c55bbfa418dc82246b593e/chatgpt-space-sites-desktop-light.png?fm=webp&q=80&w=1340",
+      "notes": "Navigation rail, document cards, task statuses and activity.",
+      "source": "https://chatgpt.com/features/space/",
+      "status": "opened and visually inspected 2026-11-26",
+      "storage": "link-only",
+      "rights": "OpenAI marketing media; redistribution license not verified"
+    },
+    {
+      "id": "tracker",
+      "title": "Project tracker",
+      "url": "https://images.ctfassets.net/8su2tbn87fck/1XD9GxCSgSCal5pWFsR1P4/e27811173504cb6587e21c1e1bd8f50d/chatgpt-space-sprint-desktop-light.png?fm=webp&q=80&w=1340",
+      "notes": "Burndown actual versus plan, progress bars, status legend, blockers.",
+      "source": "https://chatgpt.com/features/space/",
+      "status": "opened and visually inspected 2026-11-26",
+      "storage": "link-only",
+      "rights": "OpenAI marketing media; redistribution license not verified"
+    },
+    {
+      "id": "prototype",
+      "title": "Interactive prototype",
+      "url": "https://images.ctfassets.net/8su2tbn87fck/rV0a4g28Lvgu6fnTDdmlp/3c11073bb05593530b026539ebe98f5b/chatgpt-space-prototype-desktop-light.png?fm=webp&q=80&w=1340",
+      "notes": "Embedded onboarding wireframe concept; not evidence of shipped motion.",
+      "source": "https://chatgpt.com/features/space/",
+      "status": "opened and visually inspected 2026-11-26",
+      "storage": "link-only",
+      "rights": "OpenAI marketing media; redistribution license not verified"
+    }
+  ],
+  "sources": [
+    {
+      "id": "openai-space-product",
+      "title": "ChatGPT Space product examples",
+      "url": "https://chatgpt.com/features/space/",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "verified",
+      "notes": "Six official examples, not a guarantee of native templates or live synchronization.",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-space-help",
+      "title": "Getting started with Space",
+      "url": "https://help.openai.com/en/articles/20001549-getting-started-with-space-in-chatgpt",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "verified",
+      "notes": "Views, nesting, rollout and distinction from Projects.",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-space-pages",
+      "title": "Work with pages",
+      "url": "https://learn.chatgpt.com/docs/space/pages",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "verified",
+      "notes": "Block editor, menus, references, table widths.",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-space-agents",
+      "title": "Work with agents",
+      "url": "https://learn.chatgpt.com/docs/space/agents",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "verified",
+      "notes": "Selection, inline and comment AI, recurring work verification.",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-space-collaboration",
+      "title": "Collaborate in Space",
+      "url": "https://learn.chatgpt.com/docs/space/collaboration",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "verified",
+      "notes": "Official collaboration guide.",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-visualizations",
+      "title": "Visualizations",
+      "url": "https://learn.chatgpt.com/docs/visualizations",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "verified",
+      "notes": "Generated experiences, accessibility, errors, snapshot limitations.",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-intelligent-ui",
+      "title": "Intelligent UI",
+      "url": "https://help.openai.com/en/articles/20001598-intelligent-ui-in-chatgpt",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "verified",
+      "notes": "Adaptive chat presentation and scoped state.",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-global-search",
+      "title": "Global search",
+      "url": "https://help.openai.com/en/articles/10056348-finding-your-chats-projects-and-files-in-chatgpt",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "verified",
+      "notes": "Search filters, shortcuts and access.",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-mobile",
+      "title": "New mobile experience",
+      "url": "https://help.openai.com/en/articles/20001723-using-the-new-experience-in-the-chatgpt-mobile-app",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "verified",
+      "notes": "Home, Explore and customizable tabs.",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-space-overview",
+      "title": "Space overview",
+      "url": "https://learn.chatgpt.com/docs/space",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "prior research; recheck",
+      "notes": "Overview",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-space-start",
+      "title": "Space getting started",
+      "url": "https://learn.chatgpt.com/docs/space/getting-started",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "prior research; recheck",
+      "notes": "Getting started",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-space-sharing",
+      "title": "Space sharing and controls",
+      "url": "https://help.openai.com/en/articles/20001544-chatgpt-space-sharing-data-and-controls",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "prior research; recheck",
+      "notes": "Access and data",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-space-admin",
+      "title": "Manage ChatGPT Space",
+      "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-space",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "prior research; recheck",
+      "notes": "Administration",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-mobile-classic",
+      "title": "Classic mobile",
+      "url": "https://help.openai.com/en/articles/8142208-using-the-chatgpt-mobile-app-classic-experience",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "prior research; recheck",
+      "notes": "Historical reference",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-library",
+      "title": "Library",
+      "url": "https://help.openai.com/en/articles/20001052-using-library-to-manage-files-in-chatgpt",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "prior research; recheck",
+      "notes": "Historical reference",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-slides",
+      "title": "ChatGPT Slides",
+      "url": "https://help.openai.com/en/articles/20001605-creating-and-collaborating-on-slides-in-chatgpt",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "prior research; recheck",
+      "notes": "Specialized editor",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-devday",
+      "title": "DevDay 2026 recap",
+      "url": "https://openai.com/index/devday-2026-recap/",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "prior research; recheck",
+      "notes": "Announcement",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-release-notes",
+      "title": "ChatGPT release notes",
+      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "prior research; recheck",
+      "notes": "Rollout chronology",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-learn-changelog",
+      "title": "Learn changelog",
+      "url": "https://learn.chatgpt.com/docs/changelog",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "prior research; recheck",
+      "notes": "Documentation history",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-sites",
+      "title": "ChatGPT Sites",
+      "url": "https://learn.chatgpt.com/docs/sites",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "prior research; recheck",
+      "notes": "Persistent sites",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-video",
+      "title": "Official video candidate",
+      "url": "https://www.youtube.com/watch?v=3_fayTbZrW8",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "prior research; recheck publisher and content",
+      "notes": "Video lead; do not infer motion from stills",
+      "storage": "link-only"
+    }
+  ],
+  "unverified": [
+    "authenticated UI",
+    "motion timings",
+    "design tokens",
+    "breakpoints",
+    "complete native template list",
+    "exact state persistence"
+  ],
+  "application_status": "hypotheses, not decisions"
+}

@@ -136,3 +136,9 @@ Registrar URLs originais e redirects, datas de consulta, fonte e status (verific
 - [Source directory and evidence protocol](./visual-evidence-discovery-2026-11-25.md) / [structured records](./visual-evidence-discovery-2026-11-25.json). 25 links, 19 new URLs in the canonical register, others reused. Access limits and rights require revalidation.
 
 - Product-specific addition: 10 direct Claude/ChatGPT Projects references in the visual evidence directory; 10 new canonical URLs, with the official English OpenAI article retained alongside the localized variant.
+
+## ChatGPT Space — views and composable pages (2026-11-26)
+
+- [Research and visual examples](chatgpt-space-views-and-composable-pages-2026-11-26.md)
+- [Machine-readable catalog](chatgpt-space-views-and-composable-pages-2026-11-26.json)
+- 14 view/filter/navigation concepts, 11 patterns, 6 inspected official image links, 21 documentation/video references (9 documentation URLs rechecked; remaining leads marked for revalidation). No third-party image bytes redistributed.

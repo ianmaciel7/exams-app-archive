@@ -361,6 +361,216 @@
       "status": "verified",
       "notes": "Discovery of platform and motion sources; follow original links.",
       "storage": "link-only"
+    },
+    {
+      "id": "openai-space-product",
+      "title": "ChatGPT Space product examples",
+      "url": "https://chatgpt.com/features/space/",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "verified",
+      "notes": "Six official examples, not a guarantee of native templates or live synchronization.",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-space-help",
+      "title": "Getting started with Space",
+      "url": "https://help.openai.com/en/articles/20001549-getting-started-with-space-in-chatgpt",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "verified",
+      "notes": "Views, nesting, rollout and distinction from Projects.",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-space-pages",
+      "title": "Work with pages",
+      "url": "https://learn.chatgpt.com/docs/space/pages",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "verified",
+      "notes": "Block editor, menus, references, table widths.",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-space-agents",
+      "title": "Work with agents",
+      "url": "https://learn.chatgpt.com/docs/space/agents",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "verified",
+      "notes": "Selection, inline and comment AI, recurring work verification.",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-space-collaboration",
+      "title": "Collaborate in Space",
+      "url": "https://learn.chatgpt.com/docs/space/collaboration",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "verified",
+      "notes": "Official collaboration guide.",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-visualizations",
+      "title": "Visualizations",
+      "url": "https://learn.chatgpt.com/docs/visualizations",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "verified",
+      "notes": "Generated experiences, accessibility, errors, snapshot limitations.",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-intelligent-ui",
+      "title": "Intelligent UI",
+      "url": "https://help.openai.com/en/articles/20001598-intelligent-ui-in-chatgpt",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "verified",
+      "notes": "Adaptive chat presentation and scoped state.",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-global-search",
+      "title": "Global search",
+      "url": "https://help.openai.com/en/articles/10056348-finding-your-chats-projects-and-files-in-chatgpt",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "verified",
+      "notes": "Search filters, shortcuts and access.",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-mobile",
+      "title": "New mobile experience",
+      "url": "https://help.openai.com/en/articles/20001723-using-the-new-experience-in-the-chatgpt-mobile-app",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "verified",
+      "notes": "Home, Explore and customizable tabs.",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-space-overview",
+      "title": "Space overview",
+      "url": "https://learn.chatgpt.com/docs/space",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "prior research; recheck",
+      "notes": "Overview",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-space-start",
+      "title": "Space getting started",
+      "url": "https://learn.chatgpt.com/docs/space/getting-started",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "prior research; recheck",
+      "notes": "Getting started",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-space-sharing",
+      "title": "Space sharing and controls",
+      "url": "https://help.openai.com/en/articles/20001544-chatgpt-space-sharing-data-and-controls",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "prior research; recheck",
+      "notes": "Access and data",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-space-admin",
+      "title": "Manage ChatGPT Space",
+      "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-space",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "prior research; recheck",
+      "notes": "Administration",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-mobile-classic",
+      "title": "Classic mobile",
+      "url": "https://help.openai.com/en/articles/8142208-using-the-chatgpt-mobile-app-classic-experience",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "prior research; recheck",
+      "notes": "Historical reference",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-library",
+      "title": "Library",
+      "url": "https://help.openai.com/en/articles/20001052-using-library-to-manage-files-in-chatgpt",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "prior research; recheck",
+      "notes": "Historical reference",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-slides",
+      "title": "ChatGPT Slides",
+      "url": "https://help.openai.com/en/articles/20001605-creating-and-collaborating-on-slides-in-chatgpt",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "prior research; recheck",
+      "notes": "Specialized editor",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-devday",
+      "title": "DevDay 2026 recap",
+      "url": "https://openai.com/index/devday-2026-recap/",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "prior research; recheck",
+      "notes": "Announcement",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-release-notes",
+      "title": "ChatGPT release notes",
+      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "prior research; recheck",
+      "notes": "Rollout chronology",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-learn-changelog",
+      "title": "Learn changelog",
+      "url": "https://learn.chatgpt.com/docs/changelog",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "prior research; recheck",
+      "notes": "Documentation history",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-sites",
+      "title": "ChatGPT Sites",
+      "url": "https://learn.chatgpt.com/docs/sites",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "prior research; recheck",
+      "notes": "Persistent sites",
+      "storage": "link-only"
+    },
+    {
+      "id": "openai-video",
+      "title": "Official video candidate",
+      "url": "https://www.youtube.com/watch?v=3_fayTbZrW8",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "prior research; recheck publisher and content",
+      "notes": "Video lead; do not infer motion from stills",
+      "storage": "link-only"
     }
   ]
 }
