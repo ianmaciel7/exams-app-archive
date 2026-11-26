@@ -550,6 +550,7 @@ def render_markdown_report(report: dict[str, Any]) -> str:
     gaps = report["gap_learning_summary"]
 
     lines = [
+        "**Synthetic/label-aware regression only (#94). Production evaluation: NOT RUN.**",
         "# Relatorio de Monitoramento de Qualidade, Frescor e Gaps (#83)",
         "",
         f"- **Data:** {report['generated_at']}",
@@ -567,8 +568,8 @@ def render_markdown_report(report: dict[str, Any]) -> str:
         f"| `recall@20` | {om['recall_at_20']:.2%} | {report['thresholds']['recall_at_20_min']:.0%} | {'PASS' if om['recall_at_20'] >= report['thresholds']['recall_at_20_min'] else 'FAIL'} |",
         f"| `precision@10` | {om['precision_at_10']:.2%} | {report['thresholds']['precision_at_10_min']:.0%} | {'PASS' if om['precision_at_10'] >= report['thresholds']['precision_at_10_min'] else 'FAIL'} |",
         f"| `claim_support_rate` | {om['claim_support_rate']:.2%} | {report['thresholds']['claim_support_min']:.0%} | {'PASS' if om['claim_support_rate'] >= report['thresholds']['claim_support_min'] else 'FAIL'} |",
-        f"| `citation_accuracy` | {om['citation_accuracy']:.2%} | 90% | PASS |",
-        f"| `abstention_accuracy` | {om['abstention_accuracy']:.2%} | 95% | PASS |",
+        f"| `citation_accuracy` | {om['citation_accuracy']:.2%} | 90% | {'PASS' if om['citation_accuracy'] >= 0.90 else 'FAIL'} |",
+        f"| `abstention_accuracy` | {om['abstention_accuracy']:.2%} | 95% | {'PASS' if om['abstention_accuracy'] >= 0.95 else 'FAIL'} |",
         f"| `p95_latency_ms` | {om['p95_latency_ms']:.3f} ms | - | OK |",
         "",
         "## Frescor, Linhagem e Aprendizado de Gaps",

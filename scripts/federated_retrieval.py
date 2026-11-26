@@ -1075,7 +1075,7 @@ def _search_authenticated_images(
                 source_id="image_catalog",
                 scope="authenticated_archive",
                 title=f"{Path(path).name} ({img.get('status', 'present')})",
-                snippet=f"Path: {path} | Screen: {screen} | Format: {img.get('format', '')} | Dimensions: {img.get('dimensions')}",
+                snippet=f"Indexed path: {path} | Filename-derived screen label: {screen} | Format: {img.get('format', '')} | Dimensions: {img.get('dimensions')} | Visual content not inspected by retrieval.",
                 raw_score=float(overlap) / max(1.0, float(len(q_terms))),
                 blob_sha=img.get("blob_sha") or "",
                 record_sha256=img.get("sha256") or sha256_obj(img),
@@ -1085,7 +1085,7 @@ def _search_authenticated_images(
                 path=path,
                 domain="midia",
                 provenance_status="verified" if img.get("blob_sha") else "unverified",
-                metadata={"deleted": bool(img.get("deleted")), "bytes": img.get("bytes"), "dimensions": img.get("dimensions")},
+                metadata={"deleted": bool(img.get("deleted")), "bytes": img.get("bytes"), "dimensions": img.get("dimensions"), "visual_inspection": "not_performed_by_retrieval", "screen_label_origin": "filename", "verified_states": [], "retrieval": {"method": "authorized_local_git_blob" if img.get("blob_sha") else "unavailable", "bytes_verified_in_this_call": False, "branch_freshness": "not_checked"}},
             )
         )
 
