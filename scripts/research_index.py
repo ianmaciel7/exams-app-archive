@@ -124,7 +124,9 @@ def product_graph_records(base=BASE):
         raise ValueError("Dangling product graph edge")
     kinds = {"view-or-entry-point": "view", "output": "output",
              "evidence": "visual", "evidence-lead": "visual",
-             "documented-flow": "flow"}
+             "documented-flow": "flow",
+             "documented-interaction-contract": "contract",
+             "documented-availability": "availability"}
     owners = {}
     links = {}
     for e in edges:
@@ -360,7 +362,7 @@ def audit(records):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("query", nargs="?", default="")
-    p.add_argument("--kind", choices=["pattern","source","visual","view","output","flow"])
+    p.add_argument("--kind", choices=["pattern","source","visual","view","output","flow","contract","availability"])
     p.add_argument("--limit", type=int, default=20)
     p.add_argument("--db", default=":memory:")
     p.add_argument("--coverage", action="store_true")

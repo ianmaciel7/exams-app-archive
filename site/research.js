@@ -23,6 +23,12 @@ function render() {
       for (const step of r.steps) steps.append(element("li", step));
       card.append(steps);
     }
+    if (Array.isArray(r.transitions) && r.transitions.length) {
+      const transitions = document.createElement("ol");
+      for (const [from, trigger, to] of r.transitions) transitions.append(element("li", `${from} — ${trigger} → ${to}`));
+      card.append(transitions);
+    }
+    if (Array.isArray(r.unknown) && r.unknown.length) card.append(element("p", "Not verified: " + r.unknown.join(", ")));
     if (r.media_url) {
       try {
         const url = new URL(r.media_url);

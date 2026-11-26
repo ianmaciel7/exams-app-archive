@@ -62,3 +62,7 @@ Every benchmark must resolve source IDs centrally, preserve stable observation I
 
 - [16 observations and three documented sequences](../ui-ux-research-sources/ai-product-editor-contracts-2026-11-26.md)
 - Graph: 348 nodes, 528 edges. Official text-derived contracts are explicitly distinct from runtime observations. No visual or motion measurement claim.
+
+## Searchable contracts and availability
+
+15 dated availability rows and three documented transition contracts are now projected into public FTS and the research website. Graph: 363 nodes, 558 edges. Candidates remain excluded. CI must validate retrieval; the projection is not a runtime observation.

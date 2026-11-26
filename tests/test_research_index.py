@@ -111,3 +111,20 @@ class ResearchIndexTests(unittest.TestCase):
             self.assertTrue(any(r["id"] == todo["id"] for r in mod.search(db, "task list", "visual", product="ChatGPT Space", limit=100)))
             self.assertTrue(mod.search(db, "flashcard review", "flow", product="Gemini Notebook (formerly NotebookLM)", limit=100))
             self.assertTrue(mod.search(db, "canvas debugging", "flow", product="Gemini", limit=100))
+
+    def test_product_contract_and_availability_retrieval(self):
+        rows = mod.load_records()
+        by_id = {r["id"]: r for r in rows}
+        row = by_id["ai-product-graph:contract:notebook-deck-staged-revision"]
+        self.assertEqual(row["kind"], "contract")
+        self.assertIn("not observed runtime", row["confidence"])
+        self.assertTrue(row["sources"])
+        self.assertTrue(row["record"]["transitions"])
+        self.assertIn("motion timing", row["record"]["unknown"])
+        availability = [r for r in rows if r["kind"] == "availability"]
+        self.assertGreaterEqual(len(availability), 15)
+        self.assertTrue(all(r["sources"] and r["product"] for r in availability))
+        with sqlite3.connect(":memory:") as db:
+            mod.build(db, rows)
+            self.assertTrue(any(r["id"] == row["id"] for r in mod.search(db, "pending deletion", "contract", product="Gemini Notebook (formerly NotebookLM)", limit=100)))
+            self.assertTrue(mod.search(db, "motion template", "availability", product="Claude", limit=100))

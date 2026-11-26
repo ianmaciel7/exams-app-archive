@@ -2906,6 +2906,171 @@
         "motion"
       ],
       "evidence_status": "sequence derived from official text; not observed runtime"
+    },
+    {
+      "id": "availability:chatgpt-space-space",
+      "type": "documented-availability",
+      "label": "Space pages",
+      "product": "ChatGPT Space",
+      "description": "Plans or eligibility: Plus eligible rollout; Pro, Business, Enterprise; 18+. Platform: Web/Desktop create/edit; iOS/Android edit, read/share/navigate. Boundaries: Organization sharing policy; residency exceptions Canada/UAE for managed workspaces.",
+      "plan": "Plus eligible rollout; Pro, Business, Enterprise; 18+",
+      "platform": "Web/Desktop create/edit; iOS/Android edit, read/share/navigate",
+      "permissions": "Organization sharing policy; residency exceptions Canada/UAE for managed workspaces",
+      "evidence_status": "official documentation read 2026-11-26; runtime not tested"
+    },
+    {
+      "id": "availability:chatgpt-space-space-formats",
+      "type": "documented-availability",
+      "label": "Slides and Sheets",
+      "product": "ChatGPT Space",
+      "description": "Plans or eligibility: Slides rolling out to eligible Space users; Sheets coming soon. Platform: Exact editor platform availability not established here. Boundaries: Do not claim Sheets shipped.",
+      "plan": "Slides rolling out to eligible Space users; Sheets coming soon",
+      "platform": "Exact editor platform availability not established here",
+      "permissions": "Do not claim Sheets shipped",
+      "evidence_status": "official documentation read 2026-11-26; runtime not tested"
+    },
+    {
+      "id": "availability:chatgpt-space-page-permissions",
+      "type": "documented-availability",
+      "label": "Page sharing",
+      "product": "ChatGPT Space",
+      "description": "Plans or eligibility: Eligible Space users; admin policy. Platform: Platform-specific sharing options not exhaustively tested. Boundaries: View/edit; owner/creator can delete; embedded uploads follow page permissions; linked files keep own access.",
+      "plan": "Eligible Space users; admin policy",
+      "platform": "Platform-specific sharing options not exhaustively tested",
+      "permissions": "View/edit; owner/creator can delete; embedded uploads follow page permissions; linked files keep own access",
+      "evidence_status": "official documentation read 2026-11-26; runtime not tested"
+    },
+    {
+      "id": "availability:claude-artifact-creation",
+      "type": "documented-availability",
+      "label": "Artifacts / Docs / Slides / Design",
+      "product": "Claude",
+      "description": "Plans or eligibility: Free, Pro, Max, Ultra, Team, Enterprise; file creation capability required. Platform: Web/Desktop create/edit/share; mobile design/deck/doc creation and editing; web/Desktop for sharing settings. Boundaries: Enterprise settings may override availability.",
+      "plan": "Free, Pro, Max, Ultra, Team, Enterprise; file creation capability required",
+      "platform": "Web/Desktop create/edit/share; mobile design/deck/doc creation and editing; web/Desktop for sharing settings",
+      "permissions": "Enterprise settings may override availability",
+      "evidence_status": "official documentation read 2026-11-26; runtime not tested"
+    },
+    {
+      "id": "availability:claude-data-template",
+      "type": "documented-availability",
+      "label": "Data template",
+      "product": "Claude",
+      "description": "Plans or eligibility: Pro, Max, Ultra, Team, Enterprise. Platform: Template available web/Desktop; exact mobile editing unverified. Boundaries: Enterprise default on Nov 20 unless owner already set preference.",
+      "plan": "Pro, Max, Ultra, Team, Enterprise",
+      "platform": "Template available web/Desktop; exact mobile editing unverified",
+      "permissions": "Enterprise default on Nov 20 unless owner already set preference",
+      "evidence_status": "official documentation read 2026-11-26; runtime not tested"
+    },
+    {
+      "id": "availability:claude-sheets-whiteboards",
+      "type": "documented-availability",
+      "label": "Sheets and Whiteboards templates (beta)",
+      "product": "Claude",
+      "description": "Plans or eligibility: Pro, Max, Ultra, Team, Enterprise. Platform: Web/Desktop; exact mobile behavior unverified. Boundaries: On by default for Team, off for Enterprise until enabled.",
+      "plan": "Pro, Max, Ultra, Team, Enterprise",
+      "platform": "Web/Desktop; exact mobile behavior unverified",
+      "permissions": "On by default for Team, off for Enterprise until enabled",
+      "evidence_status": "official documentation read 2026-11-26; runtime not tested"
+    },
+    {
+      "id": "availability:claude-motion-template",
+      "type": "documented-availability",
+      "label": "Motion template (beta)",
+      "product": "Claude",
+      "description": "Plans or eligibility: Team and Enterprise. Platform: Web/Desktop; exact mobile behavior unverified. Boundaries: Team default on; Enterprise default off.",
+      "plan": "Team and Enterprise",
+      "platform": "Web/Desktop; exact mobile behavior unverified",
+      "permissions": "Team default on; Enterprise default off",
+      "evidence_status": "official documentation read 2026-11-26; runtime not tested"
+    },
+    {
+      "id": "availability:claude-artifact-storage",
+      "type": "documented-availability",
+      "label": "Artifact data storage",
+      "product": "Claude",
+      "description": "Plans or eligibility: Pro, Max, Ultra, Team, Enterprise. Platform: Web/Desktop. Boundaries: Personal and shared storage; confirmation for shared storage; legacy publishing constraints differ.",
+      "plan": "Pro, Max, Ultra, Team, Enterprise",
+      "platform": "Web/Desktop",
+      "permissions": "Personal and shared storage; confirmation for shared storage; legacy publishing constraints differ",
+      "evidence_status": "official documentation read 2026-11-26; runtime not tested"
+    },
+    {
+      "id": "availability:claude-artifact-sharing",
+      "type": "documented-availability",
+      "label": "Artifact sharing",
+      "product": "Claude",
+      "description": "Plans or eligibility: Public links and email invites on paid plans; email invite beta; organization-wide Team/Enterprise; groups Enterprise. Platform: Web/Desktop sharing settings; unavailable in mobile app. Boundaries: Org external-sharing policy; view/comment/edit; legacy sharing separate.",
+      "plan": "Public links and email invites on paid plans; email invite beta; organization-wide Team/Enterprise; groups Enterprise",
+      "platform": "Web/Desktop sharing settings; unavailable in mobile app",
+      "permissions": "Org external-sharing policy; view/comment/edit; legacy sharing separate",
+      "evidence_status": "official documentation read 2026-11-26; runtime not tested"
+    },
+    {
+      "id": "availability:grok-bot-pages",
+      "type": "documented-availability",
+      "label": "Pages",
+      "product": "Grok Bot",
+      "description": "Plans or eligibility: Gradual rollout; not available on Enterprise teams per guide. Platform: Desktop >=0.60.0; phone >=1.14.0. Boundaries: Private default; audience options vary; only Bot edits; reader controls transient.",
+      "plan": "Gradual rollout; not available on Enterprise teams per guide",
+      "platform": "Desktop >=0.60.0; phone >=1.14.0",
+      "permissions": "Private default; audience options vary; only Bot edits; reader controls transient",
+      "evidence_status": "official documentation read 2026-11-26; runtime not tested"
+    },
+    {
+      "id": "availability:gemini-canvas",
+      "type": "documented-availability",
+      "label": "Canvas documents and apps",
+      "product": "Gemini",
+      "description": "Plans or eligibility: Signed in; add Gemini features and document transformations 18+. Platform: Computer guide; shared content opens on gemini.google.com, not mobile app. Boundaries: Autosave editing; private/shared generated app storage separate.",
+      "plan": "Signed in; add Gemini features and document transformations 18+",
+      "platform": "Computer guide; shared content opens on gemini.google.com, not mobile app",
+      "permissions": "Autosave editing; private/shared generated app storage separate",
+      "evidence_status": "official documentation read 2026-11-26; runtime not tested"
+    },
+    {
+      "id": "availability:gemini-canvas-data",
+      "type": "documented-availability",
+      "label": "Canvas persistent app data",
+      "product": "Gemini",
+      "description": "Plans or eligibility: App requires persistence; exact plan matrix not confirmed. Platform: Shared public links; private app user data and multi-user public database modes. Boundaries: Anyone with public link to multi-user app can view/edit associated shared data.",
+      "plan": "App requires persistence; exact plan matrix not confirmed",
+      "platform": "Shared public links; private app user data and multi-user public database modes",
+      "permissions": "Anyone with public link to multi-user app can view/edit associated shared data",
+      "evidence_status": "official documentation read 2026-11-26; runtime not tested"
+    },
+    {
+      "id": "availability:gemini-notebook-sites",
+      "type": "documented-availability",
+      "label": "Interactive Sites",
+      "product": "Gemini Notebook (formerly NotebookLM)",
+      "description": "Plans or eligibility: 18+; global web rollout including Workspace; usage limits. Platform: Web; mobile coming soon at Nov 16 announcement. Boundaries: Notebook edit access needed to generate/delete; each user's inputs isolated; consumer owner/editor required for public site sharing.",
+      "plan": "18+; global web rollout including Workspace; usage limits",
+      "platform": "Web; mobile coming soon at Nov 16 announcement",
+      "permissions": "Notebook edit access needed to generate/delete; each user's inputs isolated; consumer owner/editor required for public site sharing",
+      "evidence_status": "official documentation read 2026-11-26; runtime not tested"
+    },
+    {
+      "id": "availability:gemini-notebook-sites-rollout",
+      "type": "documented-availability",
+      "label": "Interactive Sites rollout",
+      "product": "Gemini Notebook (formerly NotebookLM)",
+      "description": "Plans or eligibility: 18+ including Google Workspace subscribers. Platform: Web at launch; mobile later. Boundaries: Announcement is historical; confirm current access before assuming support.",
+      "plan": "18+ including Google Workspace subscribers",
+      "platform": "Web at launch; mobile later",
+      "permissions": "Announcement is historical; confirm current access before assuming support",
+      "evidence_status": "official documentation read 2026-11-26; runtime not tested"
+    },
+    {
+      "id": "availability:gemini-notebook-study-aids",
+      "type": "documented-availability",
+      "label": "Flashcards and Quizzes",
+      "product": "Gemini Notebook (formerly NotebookLM)",
+      "description": "Plans or eligibility: Notebook edit access required for creation/deletion; plan-specific quotas not verified here. Platform: Platform support not exhaustively tested here. Boundaries: Saved progress, review/retake; CSV may be restricted for Play Books source content.",
+      "plan": "Notebook edit access required for creation/deletion; plan-specific quotas not verified here",
+      "platform": "Platform support not exhaustively tested here",
+      "permissions": "Saved progress, review/retake; CSV may be restricted for Play Books source content",
+      "evidence_status": "official documentation read 2026-11-26; runtime not tested"
     }
   ],
   "edges": [
@@ -6076,6 +6241,186 @@
       "to": "source:gemini-notebook-video",
       "relation": "supported_by",
       "status": "official help"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "availability:chatgpt-space-space",
+      "relation": "has_documented_availability",
+      "status": "dated documentation; not live tested"
+    },
+    {
+      "from": "availability:chatgpt-space-space",
+      "to": "source:openai-space-help",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "availability:chatgpt-space-space-formats",
+      "relation": "has_documented_availability",
+      "status": "dated documentation; not live tested"
+    },
+    {
+      "from": "availability:chatgpt-space-space-formats",
+      "to": "source:openai-space-help",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "availability:chatgpt-space-page-permissions",
+      "relation": "has_documented_availability",
+      "status": "dated documentation; not live tested"
+    },
+    {
+      "from": "availability:chatgpt-space-page-permissions",
+      "to": "source:openai-space-sharing",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "product:claude",
+      "to": "availability:claude-artifact-creation",
+      "relation": "has_documented_availability",
+      "status": "dated documentation; not live tested"
+    },
+    {
+      "from": "availability:claude-artifact-creation",
+      "to": "source:claude-artifacts",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "product:claude",
+      "to": "availability:claude-data-template",
+      "relation": "has_documented_availability",
+      "status": "dated documentation; not live tested"
+    },
+    {
+      "from": "availability:claude-data-template",
+      "to": "source:claude-artifacts",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "product:claude",
+      "to": "availability:claude-sheets-whiteboards",
+      "relation": "has_documented_availability",
+      "status": "dated documentation; not live tested"
+    },
+    {
+      "from": "availability:claude-sheets-whiteboards",
+      "to": "source:claude-artifacts",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "product:claude",
+      "to": "availability:claude-motion-template",
+      "relation": "has_documented_availability",
+      "status": "dated documentation; not live tested"
+    },
+    {
+      "from": "availability:claude-motion-template",
+      "to": "source:claude-artifacts",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "product:claude",
+      "to": "availability:claude-artifact-storage",
+      "relation": "has_documented_availability",
+      "status": "dated documentation; not live tested"
+    },
+    {
+      "from": "availability:claude-artifact-storage",
+      "to": "source:claude-artifacts",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "product:claude",
+      "to": "availability:claude-artifact-sharing",
+      "relation": "has_documented_availability",
+      "status": "dated documentation; not live tested"
+    },
+    {
+      "from": "availability:claude-artifact-sharing",
+      "to": "source:claude-share",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "availability:grok-bot-pages",
+      "relation": "has_documented_availability",
+      "status": "dated documentation; not live tested"
+    },
+    {
+      "from": "availability:grok-bot-pages",
+      "to": "source:grok-bot-files",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "product:gemini",
+      "to": "availability:gemini-canvas",
+      "relation": "has_documented_availability",
+      "status": "dated documentation; not live tested"
+    },
+    {
+      "from": "availability:gemini-canvas",
+      "to": "source:gemini-canvas",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "product:gemini",
+      "to": "availability:gemini-canvas-data",
+      "relation": "has_documented_availability",
+      "status": "dated documentation; not live tested"
+    },
+    {
+      "from": "availability:gemini-canvas-data",
+      "to": "source:gemini-canvas-security",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "availability:gemini-notebook-sites",
+      "relation": "has_documented_availability",
+      "status": "dated documentation; not live tested"
+    },
+    {
+      "from": "availability:gemini-notebook-sites",
+      "to": "source:gemini-notebook-sites",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "availability:gemini-notebook-sites-rollout",
+      "relation": "has_documented_availability",
+      "status": "dated documentation; not live tested"
+    },
+    {
+      "from": "availability:gemini-notebook-sites-rollout",
+      "to": "source:gemini-notebook-sites-launch",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "availability:gemini-notebook-study-aids",
+      "relation": "has_documented_availability",
+      "status": "dated documentation; not live tested"
+    },
+    {
+      "from": "availability:gemini-notebook-study-aids",
+      "to": "source:gemini-notebook-quiz",
+      "relation": "supported_by",
+      "status": "official documentation"
     }
   ],
   "backlog": [
