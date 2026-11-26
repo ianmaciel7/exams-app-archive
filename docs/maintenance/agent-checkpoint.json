@@ -3,19 +3,24 @@
   "items": {
     "ci-main": {
       "state": "in_progress",
-      "base_sha": "b075c444cae92d216f5232e8f793540013a315f8",
+      "base_sha": "5e59b6d3140cb2e9d17f1842f942bd6e4f23ff6a",
       "lease": {
-        "id": "maintenance-ci-20261126-1902",
-        "expires_at": "2026-11-26T19:45:00Z"
+        "id": "maintenance-ci-20261126-2105",
+        "expires_at": "2026-11-26T21:45:00Z"
       },
       "actions": [
         "Read open issues, PRs, main commits and CI"
       ],
       "evidence": [
         45876808378,
-        45880350749
+        45880350749,
+        45883549883
       ],
-      "next_step": "Inspect previous failed CI and current run; fix only confirmed regression."
+      "next_step": "Inspect previous failed CI and current run; fix only confirmed regression.",
+      "previous_lease": {
+        "id": "maintenance-ci-20261126-1902",
+        "expires_at": "2026-11-26T19:45:00Z"
+      }
     }
   },
   "decisions": [
