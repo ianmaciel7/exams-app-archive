@@ -268,8 +268,10 @@ def product_graph_records(base=BASE):
                     "label": nodes[e["to"]]["label"], "status": e["status"]}
                    for e in direct]
         record = dict(n, product=product, relations=related)
-        if kind in {"view", "output"}:
-            # Pair each source statement with its exact URL via a compact index.
+        if kind != "visual":
+            # Every projected graph claim (not only views and outputs) retains
+            # its direct supporting statements. Visual publisher attribution
+            # is a distinct relation and is not converted to claim support.
             unique_urls = list(dict.fromkeys(urls))
             record["source_evidence"] = [
                 [unique_urls.index(nodes[e["to"]]["url"]), e["status"]]

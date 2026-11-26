@@ -34,3 +34,16 @@ def test_distinct_graph_claims_and_source_pointer_sharing_url():
     rows, count = _deduplicate_blobs_preserving_occurrences([a, b, c])
     assert count == 0
     assert [r["id"] for r in rows] == ["a", "b", "c"]
+
+
+def test_all_graph_claim_kinds_keep_identity_with_shared_source():
+    kinds = ("view", "output", "flow", "contract", "availability", "creation")
+    claims = [hit(kind, "https://example.org/reference", .5) for kind in kinds]
+    for kind, row in zip(kinds, claims):
+        row["metadata"]["record_id"] = "ai-product-graph:" + kind + ":example"
+    bibliography = hit("bibliography", "https://example.org/reference", .6)
+    duplicate = hit("bibliography-alias", "https://EXAMPLE.org/reference", .7)
+    rows, count = _deduplicate_blobs_preserving_occurrences(claims + [bibliography, duplicate])
+    assert count == 1
+    assert [row["id"] for row in rows] == [*kinds, "bibliography-alias"]
+    assert {o["hit_id"] for o in rows[-1]["occurrences"]} == {"bibliography", "bibliography-alias"}

@@ -116,7 +116,7 @@ class ResearchIndexTests(unittest.TestCase):
         # Source coverage is distinct from verified runtime behavior.
         rows = mod.load_records()
         product_rows = [r for r in rows if r["catalog"] == "ai-product-graph"
-                        and r["kind"] in {"view", "output"}]
+                        and r["kind"] in {"view", "output", "flow", "contract", "availability", "creation-option"}]
         self.assertGreaterEqual(sum(r["kind"] == "view" for r in product_rows), 41)
         self.assertGreaterEqual(sum(r["kind"] == "output" for r in product_rows), 48)
         for row in product_rows:

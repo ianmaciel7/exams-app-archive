@@ -457,10 +457,11 @@ def _deduplicate_blobs_preserving_occurrences(hits: list[dict[str, Any]]) -> tup
         # Source entries are pointers, not independent evidence just because
         # the same URL occurs in multiple catalogs. Preserve exact URL identity
         # (including fragment/query), do not merge distinct patterns or media.
-        # Graph view/output observations are claims, not bibliography pointers.
-        # Two claims may cite the same URL without being interchangeable.
+        # All projected graph records are observations, contracts, or media,
+        # not bibliography pointers. Keep their identities even when they
+        # cite the same URL. True source rows retain URL deduplication.
         record_id = hit.get("metadata", {}).get("record_id") or ""
-        graph_claim = record_id.startswith(("ai-product-graph:view:", "ai-product-graph:output:"))
+        graph_claim = record_id.startswith("ai-product-graph:")
         if hit["scope"] == "public" and hit["evidence_type"] == "source" and len(urls) == 1 and not graph_claim:
             u = urlsplit(urls[0])
             canonical = urlunsplit((u.scheme.lower(), u.netloc.lower(), u.path or "/", u.query, u.fragment))
