@@ -124,3 +124,18 @@ Added 7 direct source edges and 2 central sources. All 41 recorded views/entry-p
 ## Recovery and learning flow evidence — 2026-11-26
 
 Three additional official sources, one documented recovery contract, three documented flows and one uninspected image lead. [Grok computer and apps](https://docs.x.ai/grok-bot/computer-and-apps) documents account-level shared computer, per-Bot screens (not separate security boundaries), preview and takeover, reconnect, update/recover/reset retention and least-destructive escalation. [September Gemini Notebook launch](https://blog.google/innovation-and-ai/products/gemini-notebook/new-study-tools-september-2026/) describes post-study feedback, editing questions and additional quiz formats; launch eligibility not current verification. [June Gemini education announcement](https://blog.google/products-and-platforms/products/education/iste-students-2026/) describes adaptive lessons and topic-level exam feedback, with a Brazil ENEM announcement not verified as released. The Gemini Notebook hero media could not be fetched; caption-only lead, no visual inspection. 492 nodes, 998 edges, 615 sources. Existing runtime test plan remains not-run; no ranker changes, new independent reviewer, or UI accessibility claims.
+
+## Focus, access and study-session contracts — 2026-11-26
+
+Four additional official text-derived contracts (not runtime observations): progressive artifact panel escape and focus return, comment-mode focus, direct versus inherited access revocation, and flashcard session resumption/review scope. Existing sources reused: [Claude keyboard guide](https://support.claude.com/en/articles/17457950-use-artifacts-with-a-keyboard-or-screen-reader), [Space collaboration](https://learn.chatgpt.com/docs/space/collaboration), [Notebook study aids](https://support.google.com/gemininotebook/answer/16958963?hl=en). Unknowns include exact focus after deletion, permission conflicts and latency, empty missed-card subset and motion. Claude legacy and standalone artifacts have different panel navigation; no universal keyboard guarantee. The [Space pages guide](https://learn.chatgpt.com/docs/space/pages) explicitly illustrates Sites and Google Drive sidebar labels; this refines the earlier scope caveat without asserting internal filters or current account availability. No new source IDs. 496 nodes, 1008 edges, zero dangling or duplicate edge keys. Runtime and independent review remain pending.
+
+### Derived implementation checks (proposed, not product facts)
+
+| Contract | Exam App acceptance checks |
+|---|---|
+| Panel focus return | Opening a question inspector moves focus to a logical control. Escape closes its innermost popup before the inspector; focus returns to its opener or a stable fallback. Test keyboard and assistive technology. |
+| Comment mode | Distinguish target selection, draft, submitted and error states; preserve draft when possible, restore focus on cancel and enforce role authorization server-side. |
+| Inherited access | Explain effective permission and source of grant; remove direct and inherited grants separately; verify actual access with synthetic role fixtures; linked sources require independent checks. |
+| Study progress | Store learner-session state separately from deck content; resume by stable IDs, support missed-only review, define empty-subset behavior, and test reload and deck changes. |
+
+These are design/test candidates, not an implementation change or a measured reproduction of the benchmark products.

@@ -748,13 +748,13 @@
       "id": "view:chatgpt-space:sites",
       "type": "view-or-entry-point",
       "label": "Sites",
-      "classification": "Adjacent ChatGPT sidebar destination; exact placement within Space unverified"
+      "classification": "Illustrated Space sidebar destination; actual account placement and filtering unverified"
     },
     {
       "id": "view:chatgpt-space:google-drive",
       "type": "view-or-entry-point",
       "label": "Google Drive",
-      "classification": "External source entry documented in Library; exact placement within Space unverified"
+      "classification": "Illustrated Space sidebar external-source entry; actual account placement and filtering unverified"
     },
     {
       "id": "view:chatgpt-space:space",
@@ -4497,6 +4497,220 @@
       ],
       "limitations": "No measured adaptation thresholds, learning efficacy, exact controls, availability or motion verified.",
       "evidence_status": "documented launch flow; runtime not tested"
+    },
+    {
+      "id": "contract:claude-artifact-panel-focus-return",
+      "type": "documented-interaction-contract",
+      "label": "Artifact panel focus entry and progressive escape",
+      "product": "Claude",
+      "description": "Opening an artifact from the conversation transfers focus to the panel. Escape unwinds the active nested interaction before closing the panel and restoring focus to its trigger or composer.",
+      "states": [
+        "conversation trigger",
+        "artifact panel",
+        "panel header",
+        "artifact content",
+        "nested editor or popup",
+        "panel closed"
+      ],
+      "transitions": [
+        [
+          "conversation trigger",
+          "Enter",
+          "artifact panel"
+        ],
+        [
+          "artifact panel",
+          "Tab",
+          "panel header"
+        ],
+        [
+          "panel header",
+          "Tab through controls",
+          "artifact content"
+        ],
+        [
+          "nested editor or popup",
+          "Escape",
+          "artifact content"
+        ],
+        [
+          "artifact content",
+          "repeat Escape as needed",
+          "artifact panel"
+        ],
+        [
+          "artifact panel",
+          "Escape while panel itself has focus",
+          "panel closed"
+        ]
+      ],
+      "unknown": [
+        "exact focus restoration with removed trigger",
+        "legacy artifact escape behavior beyond documented limitation",
+        "actual screen reader announcements across browsers",
+        "motion timing"
+      ],
+      "evidence_status": "sequence derived from official text; not observed runtime"
+    },
+    {
+      "id": "contract:claude-comment-mode-focus",
+      "type": "documented-interaction-contract",
+      "label": "Comment mode, anchored target and focus restoration",
+      "product": "Claude",
+      "description": "Slide/design comment mode switches between target navigation and comment input. Closing an existing comment restores focus to its marker; leaving mode restores the initiating control. View-only users cannot add comments.",
+      "states": [
+        "comment control",
+        "comment mode",
+        "target selected",
+        "comment input",
+        "posted reply field",
+        "comment marker"
+      ],
+      "transitions": [
+        [
+          "comment control",
+          "Enter or Space",
+          "comment mode"
+        ],
+        [
+          "comment mode",
+          "Tab to target and Enter",
+          "comment input"
+        ],
+        [
+          "comment input",
+          "submit",
+          "posted reply field"
+        ],
+        [
+          "posted reply field",
+          "Escape",
+          "comment mode"
+        ],
+        [
+          "comment mode",
+          "Escape",
+          "comment control"
+        ],
+        [
+          "comment marker",
+          "Enter or Space",
+          "posted reply field"
+        ],
+        [
+          "posted reply field",
+          "Escape when opened from marker",
+          "comment marker"
+        ]
+      ],
+      "unknown": [
+        "error and retry behavior",
+        "live-region announcement",
+        "focus after deleting a marker",
+        "permission change during editing"
+      ],
+      "evidence_status": "sequence derived from official text; not observed runtime"
+    },
+    {
+      "id": "contract:space-inherited-access-revocation",
+      "type": "documented-interaction-contract",
+      "label": "Direct and inherited access revocation",
+      "product": "ChatGPT Space",
+      "description": "A direct invitation and access inherited through a space or parent page are distinct. Removing only a direct grant may leave access through the hierarchy. A referenced source has its own permissions.",
+      "states": [
+        "direct grant",
+        "inherited grant",
+        "both grants",
+        "direct removed; inherited remains",
+        "no remaining grant"
+      ],
+      "transitions": [
+        [
+          "both grants",
+          "remove direct invitation",
+          "direct removed; inherited remains"
+        ],
+        [
+          "direct removed; inherited remains",
+          "review and remove applicable parent or space grant, if authorized and no other grant exists",
+          "no remaining grant"
+        ],
+        [
+          "direct grant",
+          "remove direct invitation, if no other grant exists",
+          "no remaining grant"
+        ]
+      ],
+      "unknown": [
+        "role precedence for conflicting grants",
+        "propagation timing",
+        "offline session behavior",
+        "permission revocation UI state"
+      ],
+      "evidence_status": "sequence derived from official text; not observed runtime"
+    },
+    {
+      "id": "contract:notebook-flashcard-progress-and-review",
+      "type": "documented-interaction-contract",
+      "label": "Flashcard progress, resumption and review scope",
+      "product": "Gemini Notebook (formerly NotebookLM)",
+      "description": "Study progress is remembered across reopening. Review scope may be the same cards, all cards or the missed subset. Generation and deletion of study aids require edit access; do not infer permission for every learner control.",
+      "states": [
+        "generated deck",
+        "studying",
+        "card marked known",
+        "card marked missed",
+        "session exited",
+        "session resumed",
+        "results",
+        "review scope selected"
+      ],
+      "transitions": [
+        [
+          "generated deck",
+          "open",
+          "studying"
+        ],
+        [
+          "studying",
+          "mark known",
+          "card marked known"
+        ],
+        [
+          "studying",
+          "mark missed",
+          "card marked missed"
+        ],
+        [
+          "studying",
+          "leave",
+          "session exited"
+        ],
+        [
+          "session exited",
+          "reopen",
+          "session resumed"
+        ],
+        [
+          "studying",
+          "complete session",
+          "results"
+        ],
+        [
+          "results",
+          "choose same/all/missed cards",
+          "review scope selected"
+        ]
+      ],
+      "unknown": [
+        "identity across deck edits",
+        "conflict between devices",
+        "empty missed subset",
+        "exact card flip motion",
+        "keyboard shortcuts",
+        "access roles for learner state"
+      ],
+      "evidence_status": "sequence derived from official text; not observed runtime"
     }
   ],
   "edges": [
@@ -10487,6 +10701,66 @@
       "to": "source:gemini-education-iste-2026",
       "relation": "supported_by",
       "status": "June 2026 launch describes adaptive lessons updated by progress quizzes and new source material; desktop launch and school-account rollout timing historical."
+    },
+    {
+      "from": "product:claude",
+      "to": "contract:claude-artifact-panel-focus-return",
+      "relation": "has_documented_contract",
+      "status": "official text-derived sequence; runtime untested"
+    },
+    {
+      "from": "contract:claude-artifact-panel-focus-return",
+      "to": "source:claude-artifact-keyboard",
+      "relation": "supported_by",
+      "status": "Official guide reviewed 2026-11-26; runtime untested"
+    },
+    {
+      "from": "product:claude",
+      "to": "contract:claude-comment-mode-focus",
+      "relation": "has_documented_contract",
+      "status": "official text-derived sequence; runtime untested"
+    },
+    {
+      "from": "contract:claude-comment-mode-focus",
+      "to": "source:claude-artifact-keyboard",
+      "relation": "supported_by",
+      "status": "Official guide reviewed 2026-11-26; runtime untested"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "contract:space-inherited-access-revocation",
+      "relation": "has_documented_contract",
+      "status": "official text-derived sequence; runtime untested"
+    },
+    {
+      "from": "contract:space-inherited-access-revocation",
+      "to": "source:openai-space-collaboration",
+      "relation": "supported_by",
+      "status": "Official guide reviewed 2026-11-26; runtime untested"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "contract:notebook-flashcard-progress-and-review",
+      "relation": "has_documented_contract",
+      "status": "official text-derived sequence; runtime untested"
+    },
+    {
+      "from": "contract:notebook-flashcard-progress-and-review",
+      "to": "source:gemini-notebook-quiz",
+      "relation": "supported_by",
+      "status": "Official guide reviewed 2026-11-26; runtime untested"
+    },
+    {
+      "from": "view:chatgpt-space:sites",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "Official illustrated guide checked 2026-11-26: Official Work with pages guide shows Sites among sidebar labels in its example; not proof of internal filtering or universal availability."
+    },
+    {
+      "from": "view:chatgpt-space:google-drive",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "Official illustrated guide checked 2026-11-26: Official Work with pages guide shows Google Drive among sidebar labels in its example; not proof of internal filtering or universal availability."
     }
   ],
   "backlog": [
