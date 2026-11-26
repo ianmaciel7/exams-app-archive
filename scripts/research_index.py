@@ -53,6 +53,10 @@ SUPPLEMENTAL_CATALOGS = (
     ("design-activities", "ux-design-activities-2026-11-25.json", "activities", "produto"),
 )
 
+def record_digest(item):
+    return digest(json.dumps(item, ensure_ascii=False, sort_keys=True).encode("utf-8"))
+
+
 def supplemental_records(base=BASE):
     """Project existing public records without changing their source JSON or hashes.
 
@@ -67,7 +71,7 @@ def supplemental_records(base=BASE):
         source_map = {x["id"]: x["url"] for x in doc["sources"]}
         if len(source_map) != len(doc["sources"]):
             raise ValueError(f"Duplicate source ID in {filename}")
-        def project(item, kind, product=None):
+        def project(item, kind, pointer, product=None):
             local_id = item["id"]
             title = item.get("title") or item.get("name") or local_id.replace("-", " ")
             ids = list(item.get("source_ids", []))
@@ -92,7 +96,8 @@ def supplemental_records(base=BASE):
                     "record_id":local_id,
                     "catalog_path":"docs/references/ui-ux-research-sources/" + filename,
                     "catalog_sha256":digest(raw),
-                    "record_sha256":digest(json.dumps(item,ensure_ascii=False,sort_keys=True).encode("utf-8")),
+                    "record_sha256":record_digest(item), "record_pointer":pointer,
+                    "projection_sha256":record_digest(projected),
                     "sources":list(dict.fromkeys(urls)),
                     "date":item.get("checked_on") or item.get("recorded_on") or item.get("date") or catalog_date,
                     "product":product or item.get("product"),
@@ -100,15 +105,15 @@ def supplemental_records(base=BASE):
                     "license":item.get("license"),
                     "availability":"link-only" if kind=="source" else "cataloged-synthesis",
                     "record":projected}
-        for source in doc["sources"]:
-            yield project(source,"source")
+        for index, source in enumerate(doc["sources"]):
+            yield project(source,"source",f"/sources/{index}")
         if key=="products":
-            for product in doc[key]:
-                for item in product["patterns"]:
-                    yield project(item,"pattern",product=product["product"])
+            for product_index, product in enumerate(doc[key]):
+                for index, item in enumerate(product["patterns"]):
+                    yield project(item,"pattern",f"/{key}/{product_index}/patterns/{index}",product=product["product"])
         else:
-            for item in doc[key]:
-                yield project(item,"pattern")
+            for index, item in enumerate(doc[key]):
+                yield project(item,"pattern",f"/{key}/{index}")
 
 
 def product_graph_records(base=BASE):
@@ -137,7 +142,8 @@ def product_graph_records(base=BASE):
     for e in edges:
         if e["relation"] == "illustrated_by" and e["from"] in owners:
             owners[e["to"]] = owners[e["from"]]
-    for ident, n in nodes.items():
+    for index, n in enumerate(doc["nodes"]):
+        ident = n["id"]
         if n["type"] not in kinds:
             continue
         direct = links.get(ident, [])
@@ -157,7 +163,8 @@ def product_graph_records(base=BASE):
                "kind": kind, "catalog": "ai-product-graph", "record_id": ident,
                "catalog_path": "docs/references/interface-pattern-library/ai-product-knowledge-graph.json",
                "catalog_sha256": digest(raw),
-               "record_sha256": digest(json.dumps(n, ensure_ascii=False, sort_keys=True).encode("utf-8")),
+               "record_sha256": record_digest(n), "record_pointer": f"/nodes/{index}",
+               "projection_sha256": record_digest(record),
                "sources": list(dict.fromkeys(urls)), "date": doc["reviewed_on"],
                "product": product, "confidence": n.get("evidence_status") or n.get("status") or n.get("classification"),
                "license": n.get("rights"),
@@ -175,7 +182,7 @@ def load_records():
         doc = json.loads(data)
         if namespace == "workspace":
             maps[namespace] = doc["sources"]
-        for item in doc[key]:
+        for index, item in enumerate(doc[key]):
             title = item.get("title") or item.get("name")
             if not title:
                 raise ValueError(f"Missing title in {rel}")
@@ -198,7 +205,8 @@ def load_records():
                 "catalog_path": str(path.relative_to(ROOT)).replace("\\", "/"),
                 "catalog_sha256": digest(data), "sources": list(dict.fromkeys(urls)),
                 "date": item.get("checked_on") or item.get("recorded_on") or doc.get("as_of") or doc.get("research_date") or doc.get("archived_on") or doc.get("updated_on") or doc.get("recorded_on"),
-                "record_sha256": digest(json.dumps(item, ensure_ascii=False, sort_keys=True).encode("utf-8")),
+                "record_sha256": record_digest(item), "record_pointer": f"/{key}/{index}",
+                "projection_sha256": record_digest(item),
                 "product": item.get("product"),
                 "confidence": item.get("evidence") or item.get("classification"),
                 "license": item.get("license"),
@@ -212,6 +220,52 @@ def load_records():
         seen.add(row["id"])
         records.append(row)
     return records
+
+def verify_record_provenance(records, *, root=ROOT):
+    """Recheck exact public catalog bytes, original JSON location and projection.
+
+    No arbitrary filesystem paths: the approved catalog registry is authoritative.
+    This is local content integrity, not verification of upstream claims.
+    """
+    root = Path(root).resolve()
+    allowed = {"docs/references/" + rel for _, rel, _, _ in CATALOGS}
+    allowed.update("docs/references/ui-ux-research-sources/" + name
+                   for _, name, _, _ in SUPPLEMENTAL_CATALOGS)
+    allowed.add("docs/references/interface-pattern-library/ai-product-knowledge-graph.json")
+    cache = {}
+    errors = []
+    checked = 0
+    for row in records:
+        ident = row.get("id", "")
+        path = row.get("catalog_path")
+        try:
+            if path not in allowed:
+                raise ValueError("unapproved catalog")
+            if path not in cache:
+                file = (root / path).resolve(strict=True)
+                if not file.is_relative_to(root) or file != root / path:
+                    raise ValueError("unsafe catalog path")
+                raw = file.read_bytes()
+                cache[path] = (digest(raw), json.loads(raw))
+            checksum, doc = cache[path]
+            if row.get("catalog_sha256") != checksum:
+                raise ValueError("catalog checksum mismatch")
+            pointer = row.get("record_pointer", "")
+            if not re.fullmatch(r"/[a-zA-Z_]+/[0-9]+(?:/[a-zA-Z_]+/[0-9]+)?", pointer):
+                raise ValueError("invalid record pointer")
+            original = doc
+            for part in pointer[1:].split("/"):
+                original = original[int(part)] if isinstance(original, list) else original[part]
+            if not isinstance(original, dict) or record_digest(original) != row.get("record_sha256"):
+                raise ValueError("original record checksum mismatch")
+            if record_digest(row["record"]) != row.get("projection_sha256"):
+                raise ValueError("projection checksum mismatch")
+            checked += 1
+        except (OSError, ValueError, TypeError, KeyError, IndexError) as exc:
+            errors.append({"record": ident, "reason": str(exc)})
+    return {"checked": checked, "total": len(records), "errors": errors,
+            "integrity_passed": not errors, "scope": "local public catalog content only"}
+
 
 def build(db, records):
     """Reconcile the explicit catalog snapshot, preserving unchanged FTS rows.

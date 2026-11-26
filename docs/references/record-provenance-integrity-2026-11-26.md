@@ -1,0 +1,3 @@
+# Public catalog record provenance
+
+Every indexed occurrence carries a JSON pointer to its original catalog item, the catalog byte SHA-256, the original record SHA-256 (sorted-key UTF-8 JSON), and a separate projected-record SHA-256. Derived product, domain and graph relation fields do not masquerade as original source content. The public coverage audit resolves pointers against the explicit catalog allowlist and rejects missing, mismatched or tampered records and projections. The public export includes the pointers. No new upstream source or runtime verification is implied. Mutation tests cover both checksums, invalid pointers, paths and modified projections.

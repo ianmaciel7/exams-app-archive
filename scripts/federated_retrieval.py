@@ -656,7 +656,7 @@ def _search_public_research_and_concepts(
                 license_name=row.get("license") or "",
                 domain=rec.get("domain") or "referencias-externas",
                 provenance_status="verified" if row.get("availability") in {"documented", "archived-blob-verified"} else "unverified",
-                metadata={"catalog": row.get("catalog"), "record_id": row.get("id"), "source_urls": row.get("sources", []), "product": row.get("product"), "availability": row.get("availability")},
+                metadata={"catalog": row.get("catalog"), "record_id": row.get("id"), "source_urls": row.get("sources", []), "product": row.get("product"), "availability": row.get("availability"), "catalog_sha256": row.get("catalog_sha256"), "record_pointer": row.get("record_pointer"), "projection_sha256": row.get("projection_sha256")},
             )
         )
         pub_hits += 1
