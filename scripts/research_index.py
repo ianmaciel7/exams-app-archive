@@ -268,6 +268,14 @@ def product_graph_records(base=BASE):
                     "label": nodes[e["to"]]["label"], "status": e["status"]}
                    for e in direct]
         record = dict(n, product=product, relations=related)
+        if kind in {"view", "output"}:
+            # Pair each source statement with its exact URL via a compact index.
+            unique_urls = list(dict.fromkeys(urls))
+            record["source_evidence"] = [
+                [unique_urls.index(nodes[e["to"]]["url"]), e["status"]]
+                for e in direct if e["relation"] == "supported_by"
+                and nodes[e["to"]]["type"] == "source"
+            ]
         yield {"id": "ai-product-graph:" + ident, "title": n["label"],
                "kind": kind, "catalog": "ai-product-graph", "record_id": ident,
                "catalog_path": "docs/references/interface-pattern-library/ai-product-knowledge-graph.json",

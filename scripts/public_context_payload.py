@@ -82,6 +82,17 @@ def project_context(audit, *, budget_tokens=2000, max_bytes=None):
         for key in ("product", "availability", "source_urls"):
             if metadata.get(key):
                 entry[key] = metadata[key]
+        if metadata.get("source_evidence"):
+            # Each pair references the existing source_urls array, avoiding URL
+            # repetition. Never keep a claim while stripping its qualifications.
+            urls = entry.get("source_urls", [])
+            statements = metadata["source_evidence"]
+            if any(type(pair[0]) is not int or not 0 <= pair[0] < len(urls)
+                   or not isinstance(pair[1], str) or not pair[1]
+                   for pair in statements if isinstance(pair, (list, tuple)) and len(pair) == 2) or any(
+                       not isinstance(pair, (list, tuple)) or len(pair) != 2 for pair in statements):
+                raise ValueError("Invalid source evidence reference")
+            entry["source_evidence"] = statements
         pointer = {key: provenance[key] for key in
                    ("repo", "ref", "commit_sha", "path", "blob_sha", "record_sha256")
                    if provenance.get(key)}

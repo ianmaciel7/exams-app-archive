@@ -122,6 +122,10 @@ class ResearchIndexTests(unittest.TestCase):
         for row in product_rows:
             with self.subTest(record=row["id"]):
                 self.assertTrue(row["sources"])
+                self.assertTrue(row["record"]["source_evidence"])
+                for index, status in row["record"]["source_evidence"]:
+                    self.assertTrue(0 <= index < len(row["sources"]))
+                    self.assertTrue(status)
                 self.assertTrue(any(e["relation"] == "supported_by"
                                     and e["node"].startswith("source:")
                                     and e["status"]

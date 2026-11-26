@@ -73,3 +73,18 @@ def test_projection_limits_include_all_serialized_fields():
         assert estimate_context_tokens(p) <= budget
         assert len(p["results"]) + p["projection_omitted"] == 20
         assert all(h["snippet"] == raw["results"][int(h["id"])]["snippet"] for h in p["results"])
+
+
+def test_projection_preserves_source_qualifications_or_omits_whole_claim():
+    h = hit("scope", "Example only")
+    h["metadata"]["source_evidence"] = [[0, "Official example; runtime untested."]]
+    raw = audit(h)
+    projected = project_context(raw, budget_tokens=2000)
+    assert projected["results"][0]["source_evidence"] == h["metadata"]["source_evidence"]
+    assert projected["results"][0]["source_urls"] == h["metadata"]["source_urls"]
+    assert estimate_context_tokens(projected) <= 2000
+    smaller = project_context(raw, budget_tokens=128)
+    assert not smaller["results"] and smaller["projection_omitted"] == 1
+    h["metadata"]["source_evidence"] = [[1, "invalid index"]]
+    with pytest.raises(ValueError):
+        project_context(raw)

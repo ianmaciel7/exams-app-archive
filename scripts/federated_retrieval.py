@@ -457,7 +457,11 @@ def _deduplicate_blobs_preserving_occurrences(hits: list[dict[str, Any]]) -> tup
         # Source entries are pointers, not independent evidence just because
         # the same URL occurs in multiple catalogs. Preserve exact URL identity
         # (including fragment/query), do not merge distinct patterns or media.
-        if hit["scope"] == "public" and hit["evidence_type"] == "source" and len(urls) == 1:
+        # Graph view/output observations are claims, not bibliography pointers.
+        # Two claims may cite the same URL without being interchangeable.
+        record_id = hit.get("metadata", {}).get("record_id") or ""
+        graph_claim = record_id.startswith(("ai-product-graph:view:", "ai-product-graph:output:"))
+        if hit["scope"] == "public" and hit["evidence_type"] == "source" and len(urls) == 1 and not graph_claim:
             u = urlsplit(urls[0])
             canonical = urlunsplit((u.scheme.lower(), u.netloc.lower(), u.path or "/", u.query, u.fragment))
             key = "public::source-url::" + canonical
@@ -640,6 +644,13 @@ def _search_public_research_and_concepts(
             if isinstance(val, str) and val:
                 body_parts.append(f"{k}: {val}")
         snippet = "; ".join(body_parts) or row.get("title", "")
+        # Do not change the searchable snippet or score; source statements are
+        # provenance metadata and count against the normal result budget.
+        source_evidence = rec.get("source_evidence", [])
+        evidence_meta = ({"source_evidence": [
+            [index, domain_ontology.sanitize_untrusted_text(status, max_length=600)[0]]
+            for index, status in source_evidence
+        ]} if source_evidence else {})
         hits.append(
             _normalize_hit(
                 hit_id=f"research:{row['id']}",
@@ -659,7 +670,7 @@ def _search_public_research_and_concepts(
                 license_name=row.get("license") or "",
                 domain=rec.get("domain") or "referencias-externas",
                 provenance_status="verified" if row.get("availability") in {"documented", "archived-blob-verified"} else "unverified",
-                metadata={"catalog": row.get("catalog"), "record_id": row.get("id"), "source_urls": row.get("sources", []), "product": row.get("product"), "availability": row.get("availability"), "catalog_sha256": row.get("catalog_sha256"), "record_pointer": row.get("record_pointer"), "projection_sha256": row.get("projection_sha256")},
+                metadata={"catalog": row.get("catalog"), "record_id": row.get("id"), "source_urls": row.get("sources", []), "product": row.get("product"), "availability": row.get("availability"), "catalog_sha256": row.get("catalog_sha256"), "record_pointer": row.get("record_pointer"), "projection_sha256": row.get("projection_sha256"), **evidence_meta},
             )
         )
         pub_hits += 1

@@ -23,3 +23,14 @@ def test_distinct_patterns_or_sections_not_collapsed():
     d=hit("d","https://example.org/a#x",.5,"pattern")
     rows,count=_deduplicate_blobs_preserving_occurrences([a,b,c,d])
     assert count==0 and len(rows)==4
+
+
+def test_distinct_graph_claims_and_source_pointer_sharing_url():
+    a = hit("a", "https://example.org/a", .5)
+    b = hit("b", "https://example.org/a", .8)
+    c = hit("c", "https://example.org/a", .6)
+    a["metadata"]["record_id"] = "ai-product-graph:view:example:one"
+    b["metadata"]["record_id"] = "ai-product-graph:output:example:two"
+    rows, count = _deduplicate_blobs_preserving_occurrences([a, b, c])
+    assert count == 0
+    assert [r["id"] for r in rows] == ["a", "b", "c"]
