@@ -161,3 +161,14 @@ body.research-page{background:#f8fafc;color:#0f172a;margin:0}
 }
 
 
+
+/* Preserve a usable global search at narrow viewports; the desktop flex shorthand
+   must not override the mobile row sizing. */
+@media(max-width:640px){
+  .ws-top{flex-wrap:wrap;gap:6px;padding:8px 12px}
+  .ws-top .search-field{order:3;flex:1 0 100%;max-width:none;min-width:0}
+  .ws-top .search-field input{flex:1;min-width:0;width:auto}
+  .ws-top .ws-tabs{order:4;flex:1 0 100%;min-width:0;margin:0;overflow-x:auto}
+  .ws-top kbd{display:none}
+  .ws-layout{display:flex;flex-direction:column}
+}
