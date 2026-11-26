@@ -602,7 +602,7 @@ def _search_public_research_and_concepts(
         kind = row.get("kind", "source")
         ev_type = "media" if kind == "visual" else ("pattern" if kind == "pattern" else "source")
         body_parts = []
-        for k in ("definition", "purpose", "anatomy", "behavior", "guardrail", "description", "summary", "classification"):
+        for k in ("definition", "purpose", "anatomy", "behavior", "guardrail", "description", "summary", "principle", "acceptance", "acceptance_tests", "limits", "deliverable", "classification"):
             val = rec.get(k)
             if isinstance(val, str) and val:
                 body_parts.append(f"{k}: {val}")
@@ -624,7 +624,7 @@ def _search_public_research_and_concepts(
                 path=rec.get("source_path") or rec.get("path") or row.get("catalog_path", ""),
                 version=snapshot_rev[:16],
                 license_name=row.get("license") or "",
-                domain="referencias-externas",
+                domain=rec.get("domain") or "referencias-externas",
                 provenance_status="verified" if row.get("availability") in {"documented", "archived-blob-verified"} else "unverified",
                 metadata={"catalog": row.get("catalog"), "record_id": row.get("id"), "source_urls": row.get("sources", []), "product": row.get("product"), "availability": row.get("availability")},
             )

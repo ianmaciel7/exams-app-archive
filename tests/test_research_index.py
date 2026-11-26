@@ -76,3 +76,20 @@ class ResearchIndexTests(unittest.TestCase):
                    {"id":"pattern:y","kind":"pattern","sources":["https://example.org/x"]}]
         self.assertEqual(mod.coverage_gaps(fixture)["source_urls_without_non_source_reference"], [])
         self.assertEqual(mod.coverage_gaps(fixture[:1])["source_urls_without_non_source_reference"], ["https://example.org/x"])
+
+    def test_supplemental_public_catalogs(self):
+        rows = mod.load_records()
+        by_id = {r["id"]:r for r in rows}
+        for namespace,filename,key,domain in mod.SUPPLEMENTAL_CATALOGS:
+            members = [r for r in rows if r["catalog"]==namespace]
+            self.assertTrue(members,namespace)
+            self.assertTrue(all(r["availability"]=="cataloged-synthesis" for r in members))
+            self.assertTrue(all(r["record"]["domain"]==domain for r in members))
+            self.assertTrue(any(r["catalog"]==namespace+"-sources" for r in rows))
+        self.assertEqual(by_id["async-ux:non-blocking-interaction"]["title"],"Non-blocking Interaction")
+        self.assertTrue(by_id["ai-product-views:claude-artifact-lifecycle"]["sources"])
+        self.assertEqual(by_id["ai-product-views:claude-artifact-lifecycle"]["product"],"Claude")
+        with sqlite3.connect(":memory:") as db:
+            mod.build(db,rows)
+            self.assertTrue(any(r["catalog"]=="space-views" for r in mod.search(db,"organizational contexts",limit=100)))
+            self.assertTrue(any(r["catalog"]=="ai-product-views" for r in mod.search(db,"artifact lifecycle",product="Claude",limit=100)))

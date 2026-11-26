@@ -44,6 +44,7 @@ def audit(records, taxonomy):
             for url in r.get("sources", []):
                 source_by_url[canonical_url(url)].append(r)
     memberships = defaultdict(set)
+    source_memberships = defaultdict(set)
     concepts = []
     dangling = []
     for c in taxonomy["concepts"]:
@@ -53,13 +54,16 @@ def audit(records, taxonomy):
         dangling.extend({"concept":c["id"],"record":i} for i in missing)
         for i in members & ids:
             if domain in REQUIRED_23_DOMAINS:
-                memberships[i].add(domain)
+                if by_id[i]["kind"] == "source":
+                    source_memberships[domain].add(i)
+                else:
+                    memberships[i].add(domain)
         concepts.append({"concept":c["id"],"domain":domain,"explicit_members":len(members & ids),
                          "missing_members":missing,
                          "unlinked":not bool(members & ids)})
     domain_matrix = {d: {"patterns":0,"visual_records":0,"source_urls":set(),
                           "declared_tests":0,"declared_states":0,"explicit_code_links":0,
-                          "inspected_visual_records":0,"record_ids":[]} for d in REQUIRED_23_DOMAINS}
+                          "inspected_visual_records":0,"record_ids":[],"explicit_source_record_ids":[]} for d in REQUIRED_23_DOMAINS}
     referenced = set()
     unresolved = []
     record_rows = []
@@ -80,7 +84,7 @@ def audit(records, taxonomy):
         reviewed = r["kind"] == "visual" and segment.get("semantic_review") == "sampled-frames-reviewed"
         row = {"record":r["id"],"kind":r["kind"],"domains":sorted(domains),
                "source_urls":urls,"source_count":len(urls),
-               "declared_tests":bool(item.get("tests") or item.get("acceptance_tests")),
+               "declared_tests":bool(item.get("tests") or item.get("acceptance_tests") or item.get("acceptance")),
                "declared_states":bool(item.get("states") or (reviewed and segment.get("states"))),
                "explicit_code_links":bool(item.get("source_repo") and item.get("source_commit") and item.get("source_path")),
                "visual_inspection":"declared_sampled_review" if reviewed else ("not_established" if r["kind"]=="visual" else "not_applicable"),
@@ -95,10 +99,13 @@ def audit(records, taxonomy):
                 m[k]+=row[k]
             m["inspected_visual_records"] += reviewed
             m["record_ids"].append(r["id"])
-    for m in domain_matrix.values():
+    for d,m in domain_matrix.items():
+        m["explicit_source_record_ids"] = sorted(source_memberships[d])
+        for ident in m["explicit_source_record_ids"]:
+            m["source_urls"].update(canonical_url(u) for u in by_id[ident].get("sources", []))
         m["source_urls"] = len(m["source_urls"])
         m["record_ids"].sort()
-        m["coverage_status"] = "linked_records_only" if m["record_ids"] else "no_explicit_catalog_links"
+        m["coverage_status"] = "linked_records_only" if m["record_ids"] else ("source_links_only" if m["explicit_source_record_ids"] else "no_explicit_catalog_links")
     sources = [{"url":u,"source_ids":[r["id"] for r in rs],
                 "status_values":sorted({r["record"].get("status") or "unknown" for r in rs}),
                 "metadata_missing":sorted({k for r in rs for k in ("license","author","checked_on","status") if not r["record"].get(k)}),
@@ -107,7 +114,8 @@ def audit(records, taxonomy):
     gaps = [{"type":"dangling_concept_member",**x} for x in dangling]
     gaps += [{"type":"unregistered_reference_url",**x} for x in unresolved]
     gaps += [{"type":"unlinked_source","url":u} for u in sorted(set(source_by_url)-referenced)]
-    gaps += [{"type":"domain_without_explicit_links","domain":d} for d,m in domain_matrix.items() if not m["record_ids"]]
+    gaps += [{"type":"domain_without_explicit_links","domain":d} for d,m in domain_matrix.items() if not m["record_ids"] and not m["explicit_source_record_ids"]]
+    gaps += [{"type":"domain_with_source_links_only","domain":d} for d,m in domain_matrix.items() if not m["record_ids"] and m["explicit_source_record_ids"]]
     return {"schema":1,"status":"PUBLIC_CATALOG_AUDITED_ONLY",
             "domains":domain_matrix,"concepts":concepts,"sources":sources,"records":record_rows,
             "gaps":gaps,"gap_counts":dict(Counter(x["type"] for x in gaps)),
