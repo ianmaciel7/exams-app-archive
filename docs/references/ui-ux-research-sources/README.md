@@ -134,3 +134,5 @@ Registrar URLs originais e redirects, datas de consulta, fonte e status (verific
 ## Visual evidence discovery (2026-11-25)
 
 - [Source directory and evidence protocol](./visual-evidence-discovery-2026-11-25.md) / [structured records](./visual-evidence-discovery-2026-11-25.json). 25 links, 19 new URLs in the canonical register, others reused. Access limits and rights require revalidation.
+
+- Product-specific addition: 10 direct Claude/ChatGPT Projects references in the visual evidence directory; 10 new canonical URLs, with the official English OpenAI article retained alongside the localized variant.

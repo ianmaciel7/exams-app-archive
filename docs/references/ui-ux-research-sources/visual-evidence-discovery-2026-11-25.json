@@ -227,6 +227,106 @@
       "notes": "Extração estruturada de documentos; validar qualidade de resultados.",
       "access_status": "reference from previous research; revalidate limits and access before use",
       "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "visual-product-screensdesign-claude-by-anthropic",
+      "title": "ScreensDesign — Claude by Anthropic",
+      "url": "https://screensdesign.com/apps/claude-by-anthropic/",
+      "product": "Claude",
+      "category": "gallery",
+      "notes": "Project listing, creation, knowledge/files, custom instructions, conversation history and empty states. Some captures may require a paid plan.",
+      "access_status": "reference from previous research; individual screenshots and media rights not verified",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "visual-product-wikidocs-claude-projects",
+      "title": "Wikidocs — Claude Projects",
+      "url": "https://wikidocs.net/340428",
+      "product": "Claude",
+      "category": "third-party-guide",
+      "notes": "Web project creation, instructions and knowledge; source language and version may differ.",
+      "access_status": "reference from previous research; individual screenshots and media rights not verified",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "visual-product-framebin-chatgpt",
+      "title": "Framebin — ChatGPT",
+      "url": "https://framebin.co/apps/chatgpt",
+      "product": "ChatGPT",
+      "category": "gallery",
+      "notes": "Project empty state and app screenshots; verify individual availability.",
+      "access_status": "reference from previous research; individual screenshots and media rights not verified",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "visual-product-pixlpin-chatgpt",
+      "title": "Pixlpin — ChatGPT",
+      "url": "https://pixlpin.com/apps/chatgpt?type=browse-and-discover",
+      "product": "ChatGPT",
+      "category": "gallery",
+      "notes": "Sidebar, project discovery/listing and creation flows; verify per-screen access.",
+      "access_status": "reference from previous research; individual screenshots and media rights not verified",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "visual-product-pixlpin-claude-web",
+      "title": "Pixlpin — Claude Web",
+      "url": "https://pixlpin.com/apps/claude-web?type=browse-and-discover",
+      "product": "Claude",
+      "category": "gallery",
+      "notes": "Web workspace, projects, files, artifacts and split-pane examples; verify exact state in captures.",
+      "access_status": "reference from previous research; individual screenshots and media rights not verified",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "visual-product-ai-toolbox-claude-projects-guide",
+      "title": "AI Toolbox — Claude Projects guide",
+      "url": "https://www.ai-toolbox.co/claude-management-and-productivity/how-to-use-claude-projects-guide-2026",
+      "product": "Claude",
+      "category": "third-party-guide",
+      "notes": "Project setup and management; validate guide publication and access.",
+      "access_status": "reference from previous research; individual screenshots and media rights not verified",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "visual-product-hello-llm-claude-projects-and-tools",
+      "title": "Hello LLM — Claude Projects and Tools",
+      "url": "https://amecoder.github.io/hello-llm/en/guide/10-claude/07-projects-tools.html",
+      "product": "Claude",
+      "category": "third-party-guide",
+      "notes": "Projects, connectors and skills; distinguish documented from observed behaviors.",
+      "access_status": "reference from previous research; individual screenshots and media rights not verified",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "visual-product-openai-help-projetos-no-chatgpt-pt-br",
+      "title": "OpenAI Help — Projetos no ChatGPT (pt-BR)",
+      "url": "https://help.openai.com/pt-br/articles/10169521-projects-in-chatgpt",
+      "product": "ChatGPT",
+      "category": "official-documentation",
+      "notes": "Official project help in Brazilian Portuguese; localized companion to existing English article, not independent corroboration.",
+      "access_status": "reference from previous research; individual screenshots and media rights not verified",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "visual-product-pixlpin-claude-mobile",
+      "title": "Pixlpin — Claude mobile",
+      "url": "https://pixlpin.com/apps/claude-drs5?type=browse-and-discover",
+      "product": "Claude",
+      "category": "gallery",
+      "notes": "Mobile screens and flows; verify project-specific coverage.",
+      "access_status": "reference from previous research; individual screenshots and media rights not verified",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "visual-product-youtube-claude-code-projects",
+      "title": "YouTube — Claude Code Projects",
+      "url": "https://www.youtube.com/watch?v=omihvjf0A2k",
+      "product": "Claude Code",
+      "category": "video",
+      "notes": "Project/workspace demonstration candidate; verify publisher, date, timestamps and relevant behavior before claiming official status.",
+      "access_status": "reference from previous research; individual screenshots and media rights not verified",
+      "retention": "link-only unless rights verified"
     }
   ]
 }
