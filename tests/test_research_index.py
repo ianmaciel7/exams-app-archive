@@ -69,11 +69,37 @@ class ResearchIndexTests(unittest.TestCase):
     def test_domain_research_and_coverage_gaps(self):
         records = mod.load_records()
         domain = [r for r in records if r["catalog"] == "domain-research"]
-        self.assertEqual({r["record"]["issue"] for r in domain}, set(range(95,102)) | {104,105})
+        # Legacy issue-backed research and explicit domain-backed research
+        # are distinct entry routes. Keep the original issue coverage gate.
+        self.assertEqual({r["record"]["issue"] for r in domain if "issue" in r["record"]},
+                         set(range(95,102)) | {104,105})
+        explicit = [r for r in domain if "issue" not in r["record"]]
+        self.assertTrue(all(r["record"].get("domain") in {"arquitetura-tecnica", "historico"}
+                            for r in explicit))
+        expected = {
+            "adr-supersession": ("arquitetura-tecnica", "ADR supersession"),
+            "idempotent-background-job": ("arquitetura-tecnica", "idempotent background jobs"),
+            "local-first-ownership": ("arquitetura-tecnica", "local first data ownership"),
+            "git-bundle-restoration": ("historico", "git bundle restoration"),
+            "git-pinned-object-evidence": ("historico", "pinned Git object identity"),
+            "prov-derived-artifact-lineage": ("historico", "W3C PROV lineage"),
+        }
+        by_id = {r["record_id"]: r for r in explicit}
+        for ident, (area, query) in expected.items():
+            with self.subTest(record=ident):
+                row = by_id[ident]
+                self.assertEqual(row["record"]["domain"], area)
+                self.assertTrue(row["record"]["guardrail"])
+                self.assertTrue(row["record"]["tests"])
+                self.assertTrue(row["sources"])
         self.assertTrue(all(r["sources"] for r in domain))
         with sqlite3.connect(":memory:") as db:
             mod.build(db, records)
             self.assertTrue(any(r["catalog"] == "domain-research" for r in mod.search(db, "TextQuoteSelector")))
+            for ident, (_, query) in expected.items():
+                with self.subTest(query=query):
+                    self.assertTrue(any(r["id"] == by_id[ident]["id"]
+                                        for r in mod.search(db, query, "pattern", limit=100)))
         fixture = [{"id":"source:x","kind":"source","sources":["https://example.org/x"],"record":{}},
                    {"id":"pattern:y","kind":"pattern","sources":["https://example.org/x"]}]
         self.assertEqual(mod.coverage_gaps(fixture)["source_urls_without_non_source_reference"], [])
