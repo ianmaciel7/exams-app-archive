@@ -53,6 +53,47 @@ SUPPLEMENTAL_CATALOGS = (
     ("design-activities", "ux-design-activities-2026-11-25.json", "activities", "produto"),
 )
 
+# Discovery leads are source metadata, not patterns, checked screenshots or
+# retrieved source bodies. Keep catalog occurrences even when URLs overlap.
+DISCOVERY_CATALOGS = (
+    ("discovery-1", "discovery-2026-11-25.json", "sources"),
+    ("discovery-2", "discovery-2026-11-25-batch-2.json", "sources"),
+    ("discovery-3", "discovery-2026-11-25-batch-3.json", "sources"),
+    ("visual-discovery", "visual-evidence-discovery-2026-11-25.json", "sources"),
+    ("design-md-discovery", "getdesign-public-corpus-2026-11-25.json", "documents"),
+)
+
+def discovery_records(base=BASE):
+    for namespace, filename, key in DISCOVERY_CATALOGS:
+        path = base / "ui-ux-research-sources" / filename
+        raw = path.read_bytes()
+        doc = json.loads(raw)
+        for index, item in enumerate(doc[key]):
+            local_id = item.get("id") or item["source_id"]
+            url = item["url"]
+            parsed = urlsplit(url)
+            if parsed.scheme != "https" or not parsed.hostname or parsed.username is not None:
+                raise ValueError("Invalid discovery source URL")
+            projected = dict(item)
+            status = item.get("status") or item.get("access_status") or item.get("access")
+            projected["status"] = status or "not-established"
+            if key == "documents":
+                projected["summary"] = item.get("pattern", "")
+                projected["description"] = "Independent DESIGN.md analysis; source body not retained in this record."
+            yield {"id":namespace+":"+local_id, "record_id":local_id,
+                   "catalog":namespace, "kind":"source",
+                   "title":item.get("title") or local_id+" DESIGN.md",
+                   "catalog_path":"docs/references/ui-ux-research-sources/"+filename,
+                   "catalog_sha256":digest(raw),
+                   "record_pointer":f"/{key}/{index}",
+                   "record_sha256":record_digest(item),
+                   "projection_sha256":record_digest(projected),
+                   "sources":[url],"date":item.get("recorded_on") or doc.get("recorded_on") or doc.get("date"),
+                   "product":item.get("product"),"confidence":status,
+                   "license":item.get("license"),"availability":"link-only",
+                   "record":projected}
+
+
 def record_digest(item):
     return digest(json.dumps(item, ensure_ascii=False, sort_keys=True).encode("utf-8"))
 
@@ -214,7 +255,7 @@ def load_records():
                     ("archived-blob-declared" if namespace == "grok-assets" else
                      "link-only" if namespace.endswith("sources") or namespace == "grok-links" else "documented"),
                 "record": item})
-    for row in (*supplemental_records(), *product_graph_records()):
+    for row in (*supplemental_records(), *product_graph_records(), *discovery_records()):
         if row["id"] in seen:
             raise ValueError(f"Duplicate id: {row['id']}")
         seen.add(row["id"])
@@ -231,6 +272,8 @@ def verify_record_provenance(records, *, root=ROOT):
     allowed = {"docs/references/" + rel for _, rel, _, _ in CATALOGS}
     allowed.update("docs/references/ui-ux-research-sources/" + name
                    for _, name, _, _ in SUPPLEMENTAL_CATALOGS)
+    allowed.update("docs/references/ui-ux-research-sources/" + name
+                   for _, name, _ in DISCOVERY_CATALOGS)
     allowed.add("docs/references/interface-pattern-library/ai-product-knowledge-graph.json")
     cache = {}
     errors = []
