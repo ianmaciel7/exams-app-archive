@@ -37,6 +37,7 @@ import re
 import sqlite3
 import sys
 from typing import Any
+from urllib.parse import urlsplit, urlunsplit
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 ROOT_DIR = SCRIPT_DIR.parent
@@ -437,7 +438,15 @@ def _deduplicate_blobs_preserving_occurrences(hits: list[dict[str, Any]]) -> tup
 
     for hit in hits:
         bsha = hit["provenance"].get("blob_sha") or hit["provenance"].get("record_sha256")
-        if bsha:
+        urls = hit.get("metadata", {}).get("source_urls", [])
+        # Source entries are pointers, not independent evidence just because
+        # the same URL occurs in multiple catalogs. Preserve exact URL identity
+        # (including fragment/query), do not merge distinct patterns or media.
+        if hit["scope"] == "public" and hit["evidence_type"] == "source" and len(urls) == 1:
+            u = urlsplit(urls[0])
+            canonical = urlunsplit((u.scheme.lower(), u.netloc.lower(), u.path or "/", u.query, u.fragment))
+            key = "public::source-url::" + canonical
+        elif bsha:
             key = f"{hit['scope']}::{hit['evidence_type']}::{bsha}"
         else:
             key = f"{hit['scope']}::id::{hit['id']}"
@@ -450,12 +459,13 @@ def _deduplicate_blobs_preserving_occurrences(hits: list[dict[str, Any]]) -> tup
         else:
             dedup_count += 1
             existing = by_key[key]
-            existing["occurrences"].extend(hit.get("occurrences", []))
-            # Keep the higher raw_score representative
+            occurrences = existing["occurrences"] + list(hit.get("occurrences", []))
+            # The representative's title, snippet, metadata and provenance must
+            # come from the same occurrence. Keep other pointers intact.
             if hit["raw_score"] > existing["raw_score"]:
-                existing["raw_score"] = hit["raw_score"]
-                existing["title"] = hit["title"]
-                existing["snippet"] = hit["snippet"]
+                by_key[key] = {**hit, "occurrences": occurrences}
+            else:
+                existing["occurrences"] = occurrences
 
     return [by_key[k] for k in order], dedup_count
 
