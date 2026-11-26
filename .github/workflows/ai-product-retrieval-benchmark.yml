@@ -28,12 +28,14 @@ jobs:
           mv tests/evaluation/*-labels.json "$RUNNER_TEMP/ai-product-gold/"
           test ! -e tests/evaluation/ai-product-labels.json
           test ! -e tests/evaluation/public-labels.json
-          python scripts/production_retrieval_eval.py run tests/evaluation/ai-product-queries.json "$RUNNER_TEMP/ai-product-eval/capture.json"
+          python scripts/production_retrieval_eval.py run tests/evaluation/ai-product-queries.json "$RUNNER_TEMP/ai-product-eval/capture.json" --budget-tokens 2000
+          python scripts/production_retrieval_eval.py run tests/evaluation/ai-product-queries.json "$RUNNER_TEMP/ai-product-eval/capture-expanded.json" --budget-tokens 8000
       - name: Score without changing the ranker
         run: |
           python scripts/production_retrieval_eval.py score "$RUNNER_TEMP/ai-product-eval/capture.json" "$RUNNER_TEMP/ai-product-gold/ai-product-labels.json" "$RUNNER_TEMP/ai-product-eval/score.json"
           python scripts/production_retrieval_eval.py diagnostic "$RUNNER_TEMP/ai-product-eval/capture.json" > "$RUNNER_TEMP/ai-product-eval/diagnostic.json"
           python scripts/summarize_ai_product_benchmark.py "$RUNNER_TEMP/ai-product-eval/capture.json" "$RUNNER_TEMP/ai-product-eval/score.json" "$RUNNER_TEMP/ai-product-gold/ai-product-labels.json" "$RUNNER_TEMP/ai-product-eval/summary.json"
+          python scripts/compare_ai_product_budget.py "$RUNNER_TEMP/ai-product-eval/capture.json" "$RUNNER_TEMP/ai-product-eval/capture-expanded.json" "$RUNNER_TEMP/ai-product-gold/ai-product-labels.json" "$RUNNER_TEMP/ai-product-eval/budget-comparison.json"
       - uses: actions/upload-artifact@v4
         if: always()
         with:

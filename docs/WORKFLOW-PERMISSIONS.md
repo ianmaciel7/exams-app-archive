@@ -7,7 +7,7 @@ This document catalogs every GitHub Actions workflow in `.github/workflows/`, it
 | Workflow | Classification | Triggers | Permissions | Write Justification |
 |---|---|---|---|---|
 | `interaction-evidence.yml` | Public reference demo CI | `pull_request`, `push` (`main` paths), `workflow_dispatch` | `contents: read` | None; uploads original fictional browser demo screenshots only. |
-| `ai-product-retrieval-benchmark.yml` | Public development retrieval evaluation | `push` (`main` paths), `workflow_dispatch` | `contents: read` | None; isolates public development labels before capture; uploads public ranking and scoring artifacts only. |
+| `ai-product-retrieval-benchmark.yml` | Public retrieval benchmark | `push` (`main`: research, scripts, evaluation fixtures, self), `workflow_dispatch` | `contents: read` | None; label-isolated public captures and comparison artifacts only. |
 | `tests.yml` | Active CI | `pull_request`, `push` (`main` paths), `workflow_dispatch` | `contents: read` | None (read-only) |
 | `archive-plugin-test.yml` | Active CI | `pull_request`, `push` (`main` paths) | `contents: read` | None (read-only; uses `GH_TOKEN` to read private release index) |
 | `plugin-validation.yml` | Active CI | `pull_request`, `push` (`main` paths), `workflow_dispatch` | `contents: read` | None (read-only; uploads workflow artifact only) |
