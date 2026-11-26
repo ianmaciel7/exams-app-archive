@@ -9747,6 +9747,120 @@
       "to": "source:grok-bot-routines",
       "relation": "supported_by",
       "status": "Official documentation checked 2026-11-26: Routine schedules or event triggers execute a workflow; test results appear in chat."
+    },
+    {
+      "from": "view:gemini-notebook:sources",
+      "to": "source:gemini-notebook-create",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Source panel supports selecting and adding sources, and organizing sources using labels."
+    },
+    {
+      "from": "view:gemini-notebook:chat",
+      "to": "source:gemini-notebook-chat",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Chat panel supports questions, instructions, source selection and citation navigation."
+    },
+    {
+      "from": "view:gemini-notebook:studio",
+      "to": "source:gemini-notebook-create",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Studio is the documented generation and viewing panel for notebook outputs."
+    },
+    {
+      "from": "view:gemini-notebook:artifact-viewer",
+      "to": "source:gemini-notebook-create",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Flashcards, quizzes and videos have viewer-specific prompt access; not a claim of a universal editor."
+    },
+    {
+      "from": "view:gemini-notebook:full-screen-study-view",
+      "to": "source:gemini-notebook-quiz",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Flashcard and quiz viewers have a full-screen control."
+    },
+    {
+      "from": "view:gemini-notebook:interactive-site",
+      "to": "source:gemini-notebook-sites",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Generated site opens from Studio or in a separate browser tab."
+    },
+    {
+      "from": "output:gemini-notebook:audio-overview",
+      "to": "source:gemini-notebook-audio",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Studio generates audio in the background; edit access is required for generation or deletion."
+    },
+    {
+      "from": "output:gemini-notebook:video-overview",
+      "to": "source:gemini-notebook-video",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Studio offers video customization and immediate or deferred generation."
+    },
+    {
+      "from": "output:gemini-notebook:mind-map",
+      "to": "source:gemini-notebook-mindmap",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Mind map is generated from sources and can be revisited from Studio; mobile limitation is documented."
+    },
+    {
+      "from": "output:gemini-notebook:reports",
+      "to": "source:gemini-notebook-reports",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Interactive reports can embed Studio artifacts; document reports are structured text; interactive reports are web-only."
+    },
+    {
+      "from": "output:gemini-notebook:data-tables",
+      "to": "source:gemini-notebook-create",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Data table generation accepts row/column instructions; Sheets export separates content and citations."
+    },
+    {
+      "from": "output:gemini-notebook:data-tables",
+      "to": "source:gemini-notebook-datatables-announcement",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Historical 2025 launch announcement gives study, comparison and action-item examples; not current plan evidence."
+    },
+    {
+      "from": "output:gemini-notebook:flashcards",
+      "to": "source:gemini-notebook-quiz",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Difficulty and count customization, explanations, missed-card review, session resumption and CSV export are documented."
+    },
+    {
+      "from": "output:gemini-notebook:quizzes",
+      "to": "source:gemini-notebook-quiz",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Difficulty, hints, explanations, result review or retake, and progress resumption are documented."
+    },
+    {
+      "from": "output:gemini-notebook:slide-decks",
+      "to": "source:gemini-notebook-deck-editor",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Studio generates and presents slide decks, with outline review and PDF sharing."
+    },
+    {
+      "from": "output:gemini-notebook:infographics",
+      "to": "source:gemini-notebook-infographic",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Customization includes language, detail, orientation and style."
+    },
+    {
+      "from": "output:gemini-notebook:notes",
+      "to": "source:gemini-notebook-notes",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Studio notes can be converted into sources; note editing has mobile limitations."
+    },
+    {
+      "from": "output:gemini-notebook:interactive-sites",
+      "to": "source:gemini-notebook-sites",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Generated sites can persist individual inputs; shared users see only their own inputs. Sharing requires notebook access."
+    },
+    {
+      "from": "view:gemini-notebook:studio",
+      "to": "source:gemini-notebook-quiz",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Quiz and flashcard generation has a customization entry and runs in the background."
     }
   ],
   "backlog": [
