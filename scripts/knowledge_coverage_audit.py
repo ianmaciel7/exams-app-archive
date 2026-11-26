@@ -131,7 +131,7 @@ def main():
     args=p.parse_args()
     records=research_index.load_records()
     result=audit(records, concept_packs.load_taxonomy())
-    result["record_provenance"]=research_index.verify_record_provenance(records)
+    result["record_provenance"]=research_index.verify_record_provenance(records, require_complete=True)
     result["motion_source_integrity"]=research_index.verify_motion_source_copies()
     result["integrity_passed"] = (result["integrity_passed"] and result["record_provenance"]["integrity_passed"]
                                   and result["motion_source_integrity"]["integrity_passed"])

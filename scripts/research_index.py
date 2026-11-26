@@ -280,13 +280,15 @@ def product_graph_records(base=BASE):
                "availability": "link-only" if kind == "visual" else "cataloged-synthesis",
                "record": record}
 
-def load_records():
+def load_records(*, base=BASE):
+    base = Path(base)
+    root = base.parent.parent
     records, seen = [], set()
-    general_sources = json.loads((BASE / "interface-pattern-library/sources.json").read_text(encoding="utf-8"))["sources"]
+    general_sources = json.loads((base / "interface-pattern-library/sources.json").read_text(encoding="utf-8"))["sources"]
     source_map = {x["id"]: x["url"] for x in general_sources}
     maps = {"general": source_map, "design-foundations": source_map, "domain-research": source_map}
     for namespace, rel, key, kind in CATALOGS:
-        path = BASE / rel
+        path = base / rel
         data = path.read_bytes()
         doc = json.loads(data)
         if namespace == "workspace":
@@ -311,7 +313,7 @@ def load_records():
                 raise ValueError(f"Non-HTTPS source: {ident}")
             records.append({"id": ident, "title": title, "kind": kind,
                 "catalog": namespace, "record_id": local_id,
-                "catalog_path": str(path.relative_to(ROOT)).replace("\\", "/"),
+                "catalog_path": str(path.relative_to(root)).replace("\\", "/"),
                 "catalog_sha256": digest(data), "sources": list(dict.fromkeys(urls)),
                 "date": item.get("checked_on") or item.get("recorded_on") or doc.get("as_of") or doc.get("research_date") or doc.get("archived_on") or doc.get("updated_on") or doc.get("recorded_on"),
                 "record_sha256": record_digest(item), "record_pointer": f"/{key}/{index}",
@@ -323,14 +325,14 @@ def load_records():
                     ("archived-blob-declared" if namespace == "grok-assets" else
                      "link-only" if namespace.endswith("sources") or namespace == "grok-links" else "documented"),
                 "record": item})
-    for row in (*supplemental_records(), *product_graph_records(), *discovery_records(), *motion_reference_records()):
+    for row in (*supplemental_records(base), *product_graph_records(base), *discovery_records(base), *motion_reference_records(base)):
         if row["id"] in seen:
             raise ValueError(f"Duplicate id: {row['id']}")
         seen.add(row["id"])
         records.append(row)
     return records
 
-def verify_record_provenance(records, *, root=ROOT):
+def verify_record_provenance(records, *, root=ROOT, require_complete=False):
     """Recheck exact public catalog bytes, original JSON location and projection.
 
     No arbitrary filesystem paths: the approved catalog registry is authoritative.
@@ -347,10 +349,25 @@ def verify_record_provenance(records, *, root=ROOT):
     cache = {}
     errors = []
     checked = 0
+    seen = set()
+    # Rebuild expected projection from the source catalogs, never trust a
+    # caller-supplied projection digest as the expected value.
+    try:
+        for path in allowed:
+            candidate = root / path
+            if candidate.resolve(strict=True) != candidate:
+                raise ValueError("unsafe catalog path")
+        expected = {r["id"]: r for r in load_records(base=root / "docs/references")}
+    except (OSError, ValueError, TypeError, KeyError, IndexError) as exc:
+        return {"checked": 0, "total": len(records), "errors": [{"reason": str(exc)}],
+                "integrity_passed": False, "scope": "local public catalog content only"}
     for row in records:
         ident = row.get("id", "")
         path = row.get("catalog_path")
         try:
+            if ident in seen:
+                raise ValueError("duplicate record identity")
+            seen.add(ident)
             if path not in allowed:
                 raise ValueError("unapproved catalog")
             if path not in cache:
@@ -372,11 +389,17 @@ def verify_record_provenance(records, *, root=ROOT):
                 raise ValueError("original record checksum mismatch")
             if record_digest(row["record"]) != row.get("projection_sha256"):
                 raise ValueError("projection checksum mismatch")
+            if ident not in expected or row != expected[ident]:
+                raise ValueError("record differs from regenerated canonical projection")
             checked += 1
         except (OSError, ValueError, TypeError, KeyError, IndexError) as exc:
             errors.append({"record": ident, "reason": str(exc)})
+    if require_complete:
+        errors.extend({"record": ident, "reason": "missing canonical record"}
+                      for ident in sorted(set(expected) - seen))
     return {"checked": checked, "total": len(records), "errors": errors,
-            "integrity_passed": not errors, "scope": "local public catalog content only"}
+            "integrity_passed": not errors, "scope": "local public catalog content only",
+            "expected_records": len(expected), "complete_snapshot_required": require_complete}
 
 
 def build(db, records):
