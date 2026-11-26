@@ -2,7 +2,7 @@
   "schema_version": 1,
   "created_on": "2026-11-26",
   "scope": "authorized disposable test fixtures only; planned cases, no runtime findings",
-  "graph_snapshot": "141189dbe88bf7d8ecd9ba36c0e2f3dccb67bba9",
+  "graph_snapshot": "2cea0f25e211b99602df9cb83647b95569c75973",
   "execution_policy": {
     "allowed_statuses": [
       "not-run",
@@ -535,6 +535,208 @@
         "GAP-10",
         "GAP-12",
         "GAP-13"
+      ],
+      "status": "not-run",
+      "result": null,
+      "evidence": []
+    },
+    {
+      "id": "S04",
+      "product": "chatgpt-space",
+      "surface": "view:chatgpt-space:pages",
+      "reference": "contract:space-inherited-access-revocation",
+      "title": "Effective access and revocation",
+      "steps": [
+        "Use only explicitly authorized disposable roles and test pages",
+        "Inspect direct and inherited grants separately; if authorized, remove the direct grant on the fictional fixture",
+        "Verify actual access with the test reader and inspect the inherited grant; restore fixture permissions when authorized"
+      ],
+      "checks": [
+        "Distinguish effective access from a single invitation; verify linked objects independently",
+        "Record actual access changes, role wording and propagation timing when measurable; do not expose real account identities"
+      ],
+      "states": [
+        "direct-grant",
+        "inherited-grant",
+        "both-grants",
+        "direct-removed",
+        "revoked",
+        "permission-denied"
+      ],
+      "gaps": [
+        "GAP-04",
+        "GAP-08",
+        "GAP-13"
+      ],
+      "status": "not-run",
+      "result": null,
+      "evidence": []
+    },
+    {
+      "id": "C04",
+      "product": "claude",
+      "surface": "view:claude:side-by-side-chat-and-artifact",
+      "reference": "contract:claude-artifact-panel-focus-return",
+      "title": "Progressive Escape and focus return",
+      "steps": [
+        "Open a fictional artifact using keyboard only",
+        "Navigate from header into an available nested control; press Escape once and observe which interaction closes",
+        "Continue Escape when applicable; record focus destination after panel closure"
+      ],
+      "checks": [
+        "Observe the focused element before and after each step; compare documented legacy and current editor behavior only if accessible",
+        "Check that no unexpected destructive action occurs; measure focus and motion separately"
+      ],
+      "states": [
+        "trigger-focus",
+        "panel-open",
+        "nested-control-open",
+        "nested-control-closed",
+        "panel-closed",
+        "focus-restored"
+      ],
+      "gaps": [
+        "GAP-02",
+        "GAP-03",
+        "GAP-11",
+        "GAP-13"
+      ],
+      "status": "not-run",
+      "result": null,
+      "evidence": []
+    },
+    {
+      "id": "C05",
+      "product": "claude",
+      "surface": "view:claude:design-canvas",
+      "reference": "contract:claude-comment-mode-focus",
+      "title": "Anchored comment mode and role boundaries",
+      "steps": [
+        "Enter comment mode on a disposable design or slide using keyboard",
+        "Select a fictional target; type a draft and cancel; reopen an existing test comment if available",
+        "Submit only within an explicitly authorized test fixture; inspect read-only action availability without sending external invitations"
+      ],
+      "checks": [
+        "Record focus return to control or marker and draft behavior; inspect announced state using actual assistive technology if available",
+        "Distinguish comment mode, input, submitted reply and role restrictions; never infer failure behavior"
+      ],
+      "states": [
+        "comment-mode",
+        "target-selected",
+        "draft",
+        "cancelled",
+        "submitted",
+        "readonly",
+        "focus-restored"
+      ],
+      "gaps": [
+        "GAP-02",
+        "GAP-03",
+        "GAP-08",
+        "GAP-13"
+      ],
+      "status": "not-run",
+      "result": null,
+      "evidence": []
+    },
+    {
+      "id": "G04",
+      "product": "grok-bot",
+      "surface": "view:grok-bot:computer",
+      "reference": "contract:grok-bot-computer-recovery-escalation",
+      "title": "Non-destructive recovery and escalation affordances",
+      "steps": [
+        "Inspect recovery documentation alongside an authorized disposable session; record any naturally occurring disconnect",
+        "If permitted and safe, retry or reconnect the disposable session without changing production connections",
+        "Inspect offered recovery choices without executing recover/reset; mark destructive branches not-run"
+      ],
+      "checks": [
+        "Record observed retry outcome and any warnings about running work and data retention",
+        "Separate documented recover/reset behavior from executed retry; do not induce a fault or reset an account-wide computer"
+      ],
+      "states": [
+        "connected",
+        "disconnected-if-observed",
+        "reconnecting",
+        "retry",
+        "recovered-if-observed",
+        "escalation-offered"
+      ],
+      "gaps": [
+        "GAP-03",
+        "GAP-04",
+        "GAP-08",
+        "GAP-11",
+        "GAP-15"
+      ],
+      "status": "not-run",
+      "result": null,
+      "evidence": []
+    },
+    {
+      "id": "M04",
+      "product": "gemini",
+      "surface": "view:gemini:study-notebooks",
+      "reference": "flow:gemini-study-adaptive-materials",
+      "title": "Learning plan adaptation after material update",
+      "steps": [
+        "Use fictional learning material in an authorized notebook and record the initial topic plan",
+        "Complete an available progress quiz and add a second fictional source",
+        "Inspect the resulting plan and topic statuses; compare observed changes without assuming an adaptation algorithm"
+      ],
+      "checks": [
+        "Distinguish newly generated lesson content from learner progress and source changes",
+        "Record no-change and unavailable cases without treating them as defects; do not claim educational efficacy"
+      ],
+      "states": [
+        "initial-plan",
+        "quiz-complete",
+        "source-added",
+        "plan-updated-if-observed",
+        "unchanged"
+      ],
+      "gaps": [
+        "GAP-03",
+        "GAP-04",
+        "GAP-08",
+        "GAP-09",
+        "GAP-14"
+      ],
+      "status": "not-run",
+      "result": null,
+      "evidence": []
+    },
+    {
+      "id": "N04",
+      "product": "gemini-notebook",
+      "surface": "view:gemini-notebook:full-screen-study-view",
+      "reference": "contract:notebook-flashcard-progress-and-review",
+      "title": "Flashcard resumption and missed-only review",
+      "steps": [
+        "Generate or open an authorized disposable flashcard set using fictional sources",
+        "Mark cards known and missed, exit partway and reopen",
+        "Complete the session; inspect same/all/missed review options if offered and record behavior with no missed cards only when safely reproducible"
+      ],
+      "checks": [
+        "Record persisted learner position and visible review scope; separate learner state from artifact editing rights",
+        "Verify exact labels, empty-subset behavior and keyboard controls if present; do not infer scheduling or mastery thresholds"
+      ],
+      "states": [
+        "studying",
+        "known",
+        "missed",
+        "exited",
+        "resumed",
+        "results",
+        "missed-only",
+        "empty-subset-if-observed"
+      ],
+      "gaps": [
+        "GAP-03",
+        "GAP-04",
+        "GAP-08",
+        "GAP-13",
+        "GAP-15"
       ],
       "status": "not-run",
       "result": null,

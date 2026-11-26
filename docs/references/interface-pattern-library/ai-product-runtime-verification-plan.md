@@ -1,6 +1,6 @@
 # Five-product runtime verification plan — 2026-11-26
 
-This is a **planned test protocol**, not executed tests or evidence. It translates product-specific gaps in issue #114 into 15 bounded checks, three per product. All begin `not-run`. The protocol references the graph at `141189dbe88bf7d8ecd9ba36c0e2f3dccb67bba9`; do not infer current availability from the historical documentation. [Machine-readable cases](ai-product-runtime-verification-plan.json).
+This is a **planned test protocol**, not executed tests or evidence. It translates product-specific gaps in issue #114 into 21 bounded checks across five products. All begin `not-run`. The protocol references the graph at `2cea0f25e211b99602df9cb83647b95569c75973`; do not infer current availability from the historical documentation. [Machine-readable cases](ai-product-runtime-verification-plan.json).
 
 ## Execution rules
 
@@ -206,6 +206,86 @@ Checks:
 - Capture source and row references without private data
 
 States to inspect: empty, loading, normal, focus, responsive, export. Capture failures or unavailable controls only when observed.
+
+## Supplemental contract checks — 2026-11-26
+
+### S04 — Effective access and revocation
+Product: chatgpt-space · Surface: `view:chatgpt-space:pages` · Reference: `contract:space-inherited-access-revocation` · GAP-04, GAP-08, GAP-13 · Status: **not-run**
+
+1. Use only explicitly authorized disposable roles and test pages
+2. Inspect direct and inherited grants separately; if authorized, remove the direct grant on the fictional fixture
+3. Verify actual access with the test reader and inspect the inherited grant; restore fixture permissions when authorized
+
+Checks:
+- Distinguish effective access from a single invitation; verify linked objects independently
+- Record actual access changes, role wording and propagation timing when measurable; do not expose real account identities
+
+States to inspect: direct-grant, inherited-grant, both-grants, direct-removed, revoked, permission-denied. Record only observed behavior.
+
+### C04 — Progressive Escape and focus return
+Product: claude · Surface: `view:claude:side-by-side-chat-and-artifact` · Reference: `contract:claude-artifact-panel-focus-return` · GAP-02, GAP-03, GAP-11, GAP-13 · Status: **not-run**
+
+1. Open a fictional artifact using keyboard only
+2. Navigate from header into an available nested control; press Escape once and observe which interaction closes
+3. Continue Escape when applicable; record focus destination after panel closure
+
+Checks:
+- Observe the focused element before and after each step; compare documented legacy and current editor behavior only if accessible
+- Check that no unexpected destructive action occurs; measure focus and motion separately
+
+States to inspect: trigger-focus, panel-open, nested-control-open, nested-control-closed, panel-closed, focus-restored. Record only observed behavior.
+
+### C05 — Anchored comment mode and role boundaries
+Product: claude · Surface: `view:claude:design-canvas` · Reference: `contract:claude-comment-mode-focus` · GAP-02, GAP-03, GAP-08, GAP-13 · Status: **not-run**
+
+1. Enter comment mode on a disposable design or slide using keyboard
+2. Select a fictional target; type a draft and cancel; reopen an existing test comment if available
+3. Submit only within an explicitly authorized test fixture; inspect read-only action availability without sending external invitations
+
+Checks:
+- Record focus return to control or marker and draft behavior; inspect announced state using actual assistive technology if available
+- Distinguish comment mode, input, submitted reply and role restrictions; never infer failure behavior
+
+States to inspect: comment-mode, target-selected, draft, cancelled, submitted, readonly, focus-restored. Record only observed behavior.
+
+### G04 — Non-destructive recovery and escalation affordances
+Product: grok-bot · Surface: `view:grok-bot:computer` · Reference: `contract:grok-bot-computer-recovery-escalation` · GAP-03, GAP-04, GAP-08, GAP-11, GAP-15 · Status: **not-run**
+
+1. Inspect recovery documentation alongside an authorized disposable session; record any naturally occurring disconnect
+2. If permitted and safe, retry or reconnect the disposable session without changing production connections
+3. Inspect offered recovery choices without executing recover/reset; mark destructive branches not-run
+
+Checks:
+- Record observed retry outcome and any warnings about running work and data retention
+- Separate documented recover/reset behavior from executed retry; do not induce a fault or reset an account-wide computer
+
+States to inspect: connected, disconnected-if-observed, reconnecting, retry, recovered-if-observed, escalation-offered. Record only observed behavior.
+
+### M04 — Learning plan adaptation after material update
+Product: gemini · Surface: `view:gemini:study-notebooks` · Reference: `flow:gemini-study-adaptive-materials` · GAP-03, GAP-04, GAP-08, GAP-09, GAP-14 · Status: **not-run**
+
+1. Use fictional learning material in an authorized notebook and record the initial topic plan
+2. Complete an available progress quiz and add a second fictional source
+3. Inspect the resulting plan and topic statuses; compare observed changes without assuming an adaptation algorithm
+
+Checks:
+- Distinguish newly generated lesson content from learner progress and source changes
+- Record no-change and unavailable cases without treating them as defects; do not claim educational efficacy
+
+States to inspect: initial-plan, quiz-complete, source-added, plan-updated-if-observed, unchanged. Record only observed behavior.
+
+### N04 — Flashcard resumption and missed-only review
+Product: gemini-notebook · Surface: `view:gemini-notebook:full-screen-study-view` · Reference: `contract:notebook-flashcard-progress-and-review` · GAP-03, GAP-04, GAP-08, GAP-13, GAP-15 · Status: **not-run**
+
+1. Generate or open an authorized disposable flashcard set using fictional sources
+2. Mark cards known and missed, exit partway and reopen
+3. Complete the session; inspect same/all/missed review options if offered and record behavior with no missed cards only when safely reproducible
+
+Checks:
+- Record persisted learner position and visible review scope; separate learner state from artifact editing rights
+- Verify exact labels, empty-subset behavior and keyboard controls if present; do not infer scheduling or mastery thresholds
+
+States to inspect: studying, known, missed, exited, resumed, results, missed-only, empty-subset-if-observed. Record only observed behavior.
 
 ## Independent retrieval annotation protocol
 
