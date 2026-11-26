@@ -4772,6 +4772,96 @@
       "recorded_on": "2026-11-25",
       "status": "prior research reference; verify source, individual screenshot availability, version and rights before use",
       "storage": "link-only"
+    },
+    {
+      "id": "domain-question-filter-state",
+      "title": "QConcursos help — question filters",
+      "url": "https://suporte.qconcursos.com/pt-BR/articles/12118570-como-usar-os-filtros-de-questoes",
+      "kind": "product-documentation",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Public documentation or abstract reviewed; full product behavior and media not independently inspected."
+    },
+    {
+      "id": "domain-question-notebook",
+      "title": "QConcursos help — question notebook",
+      "url": "https://suporte.qconcursos.com/pt-BR/articles/11655308-como-criar-um-caderno-de-questoes",
+      "kind": "product-documentation",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Public documentation or abstract reviewed; full product behavior and media not independently inspected."
+    },
+    {
+      "id": "domain-retrieval-distributed-practice",
+      "title": "Dunlosky et al. (2013) — learning techniques review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26173288/",
+      "kind": "research-review",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Public documentation or abstract reviewed; full product behavior and media not independently inspected."
+    },
+    {
+      "id": "domain-assessment-interoperability",
+      "title": "1EdTech — QTI",
+      "url": "https://www.1edtech.org/standards/qti",
+      "kind": "technical-standard",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Public documentation or abstract reviewed; full product behavior and media not independently inspected."
+    },
+    {
+      "id": "domain-typed-knowledge-objects",
+      "title": "Capacities documentation",
+      "url": "https://docs.capacities.io/",
+      "kind": "product-documentation",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Public documentation or abstract reviewed; full product behavior and media not independently inspected."
+    },
+    {
+      "id": "domain-typed-node-fields",
+      "title": "Tana documentation — Supertags",
+      "url": "https://outliner.tana.inc/learn/features/supertags",
+      "kind": "product-documentation",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Public documentation or abstract reviewed; full product behavior and media not independently inspected."
+    },
+    {
+      "id": "domain-annotation-anchor-resilience",
+      "title": "W3C — Web Annotation Data Model",
+      "url": "https://www.w3.org/TR/annotation-model/",
+      "kind": "w3c-recommendation",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Public documentation or abstract reviewed; full product behavior and media not independently inspected."
+    },
+    {
+      "id": "domain-accessible-component-contract",
+      "title": "Adobe — React Aria",
+      "url": "https://react-aria.adobe.com/",
+      "kind": "library-documentation",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Public documentation or abstract reviewed; full product behavior and media not independently inspected."
+    },
+    {
+      "id": "domain-data-palette-semantics",
+      "title": "IBM Carbon — Data visualization color palettes",
+      "url": "https://www.carbondesignsystem.com/building-blocks/data-visualization/color-palettes",
+      "kind": "design-system-guidance",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Public documentation or abstract reviewed; full product behavior and media not independently inspected."
     }
   ],
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",

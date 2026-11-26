@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-11-26",
+  "scope": "Initial verified public source extracts for issues #95–#101, not complete research",
+  "patterns": [
+    {
+      "id": "question-filter-state",
+      "name": "Question filtering and saved filters",
+      "aliases": [
+        "filtros de questões",
+        "QConcursos",
+        "banca",
+        "cargo",
+        "saved filters"
+      ],
+      "family": "domain-research",
+      "issue": 95,
+      "definition": "Combine exam attributes, keyword and exclusions; make the applied criteria visible and removable.",
+      "guardrail": "Do not confuse employer, examining board, position, exam year and discipline. Do not assume unseen filter states.",
+      "tests": "Given a saved filter, restore the same criteria; verify zero results and clearing a single criterion.",
+      "source_ids": [
+        "domain-question-filter-state"
+      ],
+      "classification": "Source-backed synthesis; proposed acceptance test, not executed product validation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "question-notebook",
+      "name": "Question notebook and saved sets",
+      "aliases": [
+        "caderno de questões",
+        "revisão",
+        "question collection"
+      ],
+      "family": "domain-research",
+      "issue": 95,
+      "definition": "Distinguish a selected question set from a live filter and a scored attempt.",
+      "guardrail": "The documentation describes creating notebooks; it is not proof of how all mobile or offline states work.",
+      "tests": "Check set membership, duplicates, empty set, and changes to source questions.",
+      "source_ids": [
+        "domain-question-notebook"
+      ],
+      "classification": "Source-backed synthesis; proposed acceptance test, not executed product validation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "retrieval-distributed-practice",
+      "name": "Retrieval and distributed practice",
+      "aliases": [
+        "prática de recuperação",
+        "repetição espaçada",
+        "practice testing",
+        "distributed practice"
+      ],
+      "family": "domain-research",
+      "issue": 96,
+      "definition": "Plan opportunities to recall information and distribute study across time, rather than only reread material.",
+      "guardrail": "Evidence for learning techniques is not validation of a particular app or scheduling algorithm; retention and transfer differ.",
+      "tests": "Compare delayed recall using equivalent items and record exposure, study time and attrition.",
+      "source_ids": [
+        "domain-retrieval-distributed-practice"
+      ],
+      "classification": "Source-backed synthesis; proposed acceptance test, not executed product validation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "assessment-interoperability",
+      "name": "Assessment item and test interoperability",
+      "aliases": [
+        "QTI",
+        "questão",
+        "gabarito",
+        "tentativa",
+        "assessment"
+      ],
+      "family": "domain-research",
+      "issue": 97,
+      "definition": "Separate assessment item, test, response and result; use QTI for portable structured assessments where required.",
+      "guardrail": "Interoperability does not imply validity or calibrated difficulty. Do not apply IRT without calibration data.",
+      "tests": "Round-trip an original fictional item and check response identifiers, scoring and result versioning.",
+      "source_ids": [
+        "domain-assessment-interoperability"
+      ],
+      "classification": "Source-backed synthesis; proposed acceptance test, not executed product validation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "typed-knowledge-objects",
+      "name": "Typed knowledge objects and relations",
+      "aliases": [
+        "PKM",
+        "objetos",
+        "Capacities",
+        "knowledge graph",
+        "backlinks"
+      ],
+      "family": "domain-research",
+      "issue": 98,
+      "definition": "Model reusable connected objects rather than forcing every record into a file hierarchy.",
+      "guardrail": "Documentation establishes the object-oriented concept, not all interaction states or historical app decisions.",
+      "tests": "Check stable identity, reference integrity, missing target and reversible type changes.",
+      "source_ids": [
+        "domain-typed-knowledge-objects"
+      ],
+      "classification": "Source-backed synthesis; proposed acceptance test, not executed product validation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "typed-node-fields",
+      "name": "Typed nodes and fields",
+      "aliases": [
+        "Tana",
+        "supertag",
+        "propriedades",
+        "fields",
+        "nodes"
+      ],
+      "family": "domain-research",
+      "issue": 98,
+      "definition": "Use explicit type and field definitions for structured nodes; views can present the same data in different contexts.",
+      "guardrail": "Do not assume inheritance, sync or deletion semantics without feature-specific evidence.",
+      "tests": "Check required/optional fields, type changes and stale references in original examples.",
+      "source_ids": [
+        "domain-typed-node-fields"
+      ],
+      "classification": "Source-backed synthesis; proposed acceptance test, not executed product validation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "annotation-anchor-resilience",
+      "name": "Annotation anchor resilience",
+      "aliases": [
+        "PDF",
+        "anotação",
+        "highlight",
+        "TextQuoteSelector",
+        "TextPositionSelector"
+      ],
+      "family": "domain-research",
+      "issue": 99,
+      "definition": "Separate annotation body, target and selector. Text quotes with context can help reanchor; positions are vulnerable to content edits.",
+      "guardrail": "Never silently reattach an ambiguous selection; avoid copying restricted text into exported annotations.",
+      "tests": "Test version change, repeated quotes, no match, changed offsets and explicit unresolved state.",
+      "source_ids": [
+        "domain-annotation-anchor-resilience"
+      ],
+      "classification": "Source-backed synthesis; proposed acceptance test, not executed product validation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "accessible-component-contract",
+      "name": "Accessible component behavior contract",
+      "aliases": [
+        "componentes",
+        "design system",
+        "React Aria",
+        "keyboard",
+        "focus"
+      ],
+      "family": "domain-research",
+      "issue": 100,
+      "definition": "Define semantics, input behavior, keyboard, focus and states separately from visual tokens.",
+      "guardrail": "Library accessibility claims do not establish product-level conformance; verify actual composition.",
+      "tests": "Exercise keyboard, pointer and touch; test disabled, busy and invalid states and accessible names.",
+      "source_ids": [
+        "domain-accessible-component-contract"
+      ],
+      "classification": "Source-backed synthesis; proposed acceptance test, not executed product validation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "aria-widget-pattern",
+      "name": "ARIA widget interaction patterns",
+      "aliases": [
+        "ARIA APG",
+        "roles",
+        "teclado",
+        "widget",
+        "acessibilidade"
+      ],
+      "family": "domain-research",
+      "issue": 100,
+      "definition": "Select the matching widget semantics and keyboard interaction contract; prefer native elements where appropriate.",
+      "guardrail": "APG is implementation guidance, not a substitute for WCAG conformance testing.",
+      "tests": "Validate accessible role/name/state, focus sequence and restoration, and screen-reader operation.",
+      "source_ids": [
+        "foundation-aria-apg"
+      ],
+      "classification": "Source-backed synthesis; proposed acceptance test, not executed product validation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "data-palette-semantics",
+      "name": "Data visualization palette semantics",
+      "aliases": [
+        "DataViz",
+        "gráfico",
+        "categorical",
+        "sequential",
+        "diverging",
+        "dashboard"
+      ],
+      "family": "domain-research",
+      "issue": 101,
+      "definition": "Choose categorical colors for unordered categories, sequential for magnitude, and diverging for a meaningful center.",
+      "guardrail": "Color must not be the only cue; distinguish missing values from zero and category from status.",
+      "tests": "Check legend/labels, contrast, textual alternative and meaningful ordering with original sample data.",
+      "source_ids": [
+        "domain-data-palette-semantics"
+      ],
+      "classification": "Source-backed synthesis; proposed acceptance test, not executed product validation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected"
+    }
+  ]
+}
