@@ -112,6 +112,34 @@ class ResearchIndexTests(unittest.TestCase):
             self.assertTrue(mod.search(db, "flashcard review", "flow", product="Gemini Notebook (formerly NotebookLM)", limit=100))
             self.assertTrue(mod.search(db, "canvas debugging", "flow", product="Gemini", limit=100))
 
+    def test_product_view_output_direct_provenance(self):
+        # Source coverage is distinct from verified runtime behavior.
+        rows = mod.load_records()
+        product_rows = [r for r in rows if r["catalog"] == "ai-product-graph"
+                        and r["kind"] in {"view", "output"}]
+        self.assertGreaterEqual(sum(r["kind"] == "view" for r in product_rows), 41)
+        self.assertGreaterEqual(sum(r["kind"] == "output" for r in product_rows), 48)
+        for row in product_rows:
+            with self.subTest(record=row["id"]):
+                self.assertTrue(row["sources"])
+                self.assertTrue(any(e["relation"] == "supported_by"
+                                    and e["node"].startswith("source:")
+                                    and e["status"]
+                                    for e in row["record"]["relations"]))
+        by_id = {r["record_id"]: r for r in product_rows}
+        for ident in ("view:chatgpt-space:sites", "view:chatgpt-space:google-drive"):
+            with self.subTest(scope=ident):
+                self.assertIn("unverified", by_id[ident]["confidence"].lower())
+                self.assertTrue(any("Space" in e["status"]
+                                    for e in by_id[ident]["record"]["relations"]
+                                    if e["relation"] == "supported_by"))
+        with sqlite3.connect(":memory:") as db:
+            mod.build(db, rows)
+            for query, ident in (("Sites", "view:chatgpt-space:sites"),
+                                 ("Google Drive", "view:chatgpt-space:google-drive")):
+                matches = mod.search(db, query, "view", product="ChatGPT Space", limit=100)
+                self.assertTrue(any(r["id"] == by_id[ident]["id"] for r in matches))
+
     def test_product_contract_and_availability_retrieval(self):
         rows = mod.load_records()
         by_id = {r["id"]: r for r in rows}
