@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "measured_on": "2026-11-26",
+  "run_id": 45840281190,
+  "artifact_id": 15127632547,
+  "artifact_sha256": "ed992141c7bc0250873576d8e7aaa2289ff2ae38cbcd704bd3aa3bf1b1daa0b7",
+  "snapshot": "24ade40e91497324ed53a866f4a60a7a2052b54a4da84c4f78de75de1bcd95c9",
+  "method": "Downloaded artifact hash verified. Decoded occurrence inheritance according to v1 field mask; compared all decoded hits by query and ID with full expanded capture. Serialized canonical JSON UTF-8 sizes of decoded and compact hits only; not model tokens. Added envelope_tokens + results_tokens from recorded budget ledger, without final response overhead.",
+  "compact": {
+    "hits": 55,
+    "matched_full": 55,
+    "exact_matches": 55,
+    "bytes": 102656,
+    "decoded_bytes": 119038
+  },
+  "relevance_first": {
+    "hits": 58,
+    "matched_full": 57,
+    "exact_matches": 57,
+    "bytes": 106862,
+    "decoded_bytes": 123122,
+    "unmatched": [
+      {
+        "query": "grok-01",
+        "hit": "research:general-sources:grok",
+        "reason": "not present in expanded capture; no independent full equivalent to compare"
+      }
+    ]
+  },
+  "combined": {
+    "hits": 113,
+    "exact_matches": 112,
+    "unmatched": 1,
+    "compact_bytes": 209518,
+    "decoded_bytes": 242160,
+    "byte_reduction_fraction": 0.1347951767426495
+  },
+  "budget": {
+    "configured": 2000,
+    "queries": 22,
+    "max_reported_reserved_estimate": 1999,
+    "uncapped_envelope_plus_results_estimate": {
+      "min": 961,
+      "median": 2276,
+      "max": 2458,
+      "queries_over_2000": 20
+    },
+    "gemini_01": {
+      "envelope_tokens": 959,
+      "results_tokens": 1307,
+      "reserved_metadata_tokens": 500,
+      "reported_total": 1807,
+      "uncapped_sum": 2266
+    }
+  },
+  "limitations": [
+    "Comparison does not cover all client integrations or independently validate the unmatched record.",
+    "Engine's configured budget is an allocation estimate with capped metadata reserve, not a strict end-to-end response token limit. Uncapped sums still exclude final ledger/result-list overhead and are not tokenizer counts.",
+    "No independent evaluation, no ranker changes, no production adoption."
+  ]
+}
