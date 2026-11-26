@@ -42,3 +42,9 @@ The public candidate ranker already uses bilingual query groups; the previous se
 ## Measured reranking outcome
 
 [Run 45838090219](https://github.com/ianmaciel7/exams-app-archive/actions/runs/45838090219) completed: default 95% mean target recall, expanded 100%; MRR 0.875/0.8875; negative abstention 2/2 for both. Labeled-hit fraction 47.5%/11.98% (not exhaustive precision). [Full measurements](../../../tests/evaluation/ai-product-reranking-measured-2026-11-26.json). All four general CI jobs passed in run 45838089930. Default budget preserved; compact payload/relevance evaluation remains follow-up. This is development regression, not independent certification.
+
+## Compact context experiment (opt-in)
+
+The repeated occurrence fields in public retrieval hits can consume budget without adding information. The experiment introduces `compact_occurrences=True` for public retrieval only. It preserves source URLs, snippets, IDs, scores, provenance, distinct occurrences, and all differing values. Equal occurrence fields are inherited from primary provenance via a versioned presence mask; `expand_public_hit` restores the full original record, including missing-versus-empty semantics. Default response, authenticated retrieval, ranking and 2,000-token budget remain unchanged.
+
+The workflow captures both full and compact representations with identical 2,000-token budgets before reading labels, plus the existing expanded-budget comparison. Synthetic tests check exact round-trip, smaller estimated payload, preserved identities and scope isolation. The token estimator is character-count based, with reserved envelope accounting; it is not a guarantee of actual LLM tokens or full response length. Do not adopt compact encoding in existing clients before compatibility and benchmark verification. Results pending.

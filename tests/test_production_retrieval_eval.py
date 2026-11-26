@@ -41,3 +41,12 @@ def test_runner_captures_budget_without_exposing_labels():
     assert score(rows, {"q": ["b"]})["mean_recall"] == 0
     with pytest.raises(ValueError):
         run([{"id": "q", "query": "example"}], retrieve, budget_tokens=0)
+
+
+def test_compact_runner_flag_is_opt_in():
+    seen = []
+    def retrieve(query, **options):
+        seen.append(options)
+        return {"status": "ok", "results": []}
+    run([{"id": "q", "query": "example"}], retrieve, budget_tokens=2000, compact_occurrences=True)
+    assert seen == [{"scope": "public", "limit": 20, "budget_tokens": 2000, "compact_occurrences": True}]

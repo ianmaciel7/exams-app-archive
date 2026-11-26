@@ -1250,6 +1250,53 @@ def _interleave_by_evidence_type(
     return ordered
 
 
+# Compact wire format is opt-in and reversible, not a lossy snippet summary.
+_OCCURRENCE_SHARED_FIELDS = ("repo", "ref", "commit_sha", "path", "blob_sha", "record_sha256", "version")
+
+
+def compact_public_hit(hit):
+    """Omit repeated occurrence values, retaining explicit differences and IDs."""
+    if hit.get("scope") != "public":
+        raise ValueError("Compact format is restricted to public hits")
+    compact = dict(hit)
+    shared = hit.get("provenance", {})
+    compact["occurrences"] = [
+        {key: value for key, value in occ.items()
+         if key not in _OCCURRENCE_SHARED_FIELDS or key not in shared or shared[key] != value}
+        for occ in hit.get("occurrences", [])
+    ]
+    # The presence mask preserves the difference between missing and empty fields.
+    masks = [sum(1 << i for i, key in enumerate(_OCCURRENCE_SHARED_FIELDS) if key in occ and key not in short)
+             for occ, short in zip(hit.get("occurrences", []), compact["occurrences"])]
+    compact["occurrence_inheritance_v1"] = masks
+    return compact
+
+
+def expand_public_hit(hit):
+    """Restore the full original occurrence objects for provenance consumers."""
+    if "occurrence_inheritance_v1" not in hit:
+        return hit
+    full = dict(hit)
+    masks = full.pop("occurrence_inheritance_v1")
+    shared = full.get("provenance", {})
+    occurrences = full.get("occurrences", [])
+    if len(masks) != len(occurrences):
+        raise ValueError("Invalid occurrence inheritance mask length")
+    restored = []
+    for mask, occurrence in zip(masks, occurrences):
+        if not isinstance(mask, int) or mask < 0 or mask >= 1 << len(_OCCURRENCE_SHARED_FIELDS):
+            raise ValueError("Invalid occurrence inheritance mask")
+        row = dict(occurrence)
+        for i, key in enumerate(_OCCURRENCE_SHARED_FIELDS):
+            if mask & (1 << i):
+                if key in row or key not in shared:
+                    raise ValueError("Invalid inherited occurrence field")
+                row[key] = shared[key]
+        restored.append(row)
+    full["occurrences"] = restored
+    return full
+
+
 def _enforce_budget(
     candidates: list[dict[str, Any]],
     *,
@@ -1311,6 +1358,7 @@ def federated_search(
     max_bytes: int | None = None,
     auth_context: AuthenticatedArchiveContext | None = None,
     public_records: list[dict[str, Any]] | None = None,
+    compact_occurrences: bool = False,
     public_taxonomy: dict[str, Any] | None = None,
     public_code_paths: list[Path] | None = None,
     ontology: domain_ontology.DomainOntology | None = None,
@@ -1325,6 +1373,8 @@ def federated_search(
       - Deduplicates identical blobs while preserving all occurrences and pinned SHA-1/SHA-256.
       - Returns auditable lists of consulted, omitted, and unavailable sources plus gap diagnostics.
     """
+    if compact_occurrences and scope != "public":
+        raise ValueError("Compact occurrence format is public-only")
     if scope not in VALID_SCOPES:
         raise ValueError(f"Unsupported scope {scope!r}; expected 'public' or 'authenticated_archive'")
     if not isinstance(budget_tokens, int) or budget_tokens < 128 or budget_tokens > 128000:
@@ -1631,6 +1681,9 @@ def federated_search(
         "sources_unavailable": audits_unavailable,
     }
 
+    if compact_occurrences:
+        envelope_meta["occurrence_encoding"] = "inherit-provenance-v1"
+        diversified = [compact_public_hit(hit) for hit in diversified]
     kept, omitted_budget, budget_accounting = _enforce_budget(
         diversified,
         envelope_base=envelope_meta,

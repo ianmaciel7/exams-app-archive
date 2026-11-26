@@ -342,6 +342,29 @@ class FederatedRetrievalTests(unittest.TestCase):
         self.assertEqual(payload["scope"], "public")
         self.assertLessEqual(payload["budget"]["total_tokens"], 1800)
 
+    def test_compact_public_occurrences_roundtrip_and_budget(self) -> None:
+        hit = fr._normalize_hit(hit_id="r", evidence_type="pattern", source_channel="public_research",
+                                source_id="catalog", scope="public", title="Title", snippet="Evidence",
+                                raw_score=1, path="docs/references/catalog.json", record_sha256="a"*64,
+                                version="b"*16, metadata={"source_urls": ["https://example.org"]})
+        hit["occurrences"].append({**hit["occurrences"][0], "hit_id": "r2", "path": "other", "repo": ""})
+        hit["occurrences"].append({"hit_id": "minimal"})
+        compact = fr.compact_public_hit(hit)
+        self.assertEqual(fr.expand_public_hit(compact), hit)
+        self.assertLess(fr.estimate_tokens(compact), fr.estimate_tokens(hit))
+        self.assertEqual([o["hit_id"] for o in compact["occurrences"]], ["r", "r2", "minimal"])
+        self.assertEqual(compact["metadata"], hit["metadata"])
+        with self.assertRaises(ValueError):
+            fr.compact_public_hit({**hit, "scope": "authenticated_archive"})
+        with self.assertRaises(ValueError):
+            fr.expand_public_hit({**compact, "occurrence_inheritance_v1": [999]})
+        res = fr.federated_search("barra lateral", scope="public", budget_tokens=2000,
+                                  compact_occurrences=True, public_records=self.records,
+                                  public_taxonomy=self.taxonomy, ontology=self.ontology)
+        self.assertEqual(res["occurrence_encoding"], "inherit-provenance-v1")
+        self.assertLessEqual(res["budget"]["total_tokens"], 2000)
+        self.assertTrue(all(fr.expand_public_hit(r)["scope"] == "public" for r in res["results"]))
+
     def test_zero_emoji_compliance(self) -> None:
         for p in (SCRIPTS_DIR / "federated_retrieval.py", Path(__file__).resolve()):
             text = p.read_text(encoding="utf-8")
