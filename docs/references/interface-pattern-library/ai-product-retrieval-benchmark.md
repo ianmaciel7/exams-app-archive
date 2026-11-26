@@ -54,3 +54,17 @@ The workflow captures both full and compact representations with identical 2,000
 [Run 45839109901](https://github.com/ianmaciel7/exams-app-archive/actions/runs/45839109901) retained 95% named-target recall at 2,000 tokens for both full and compact representations; MRR 0.875, 2/2 negative abstention. The labeled-hit fraction was 47.5% versus 44.17%. The compact format did not recover the remaining target. [Measurements](../../../tests/evaluation/ai-product-compact-measured-2026-11-26.json).
 
 Inspection of the expanded capture shows the Gemini target had the third-highest fused score among returned hits (0.04840551) but appeared fifth after evidence-type interleaving. The three highest-scored returned hits would require 1,510 estimated tokens in full representation, against a 1,500 result-token allowance. This is evidence of an ordering/budget interaction, not a reason to hardcode Gemini. The new opt-in experiment preserves the top three fused-ranked results before interleaving remaining evidence types, combined with compact encoding at the same 2,000 budget. Existing selection, authenticated scope, labels and gates unchanged by default. Prefix length is an experimental design choice informed by this development suite, not independently optimized. Do not promote without regression and independent evaluation; report any losses in diversity or target recovery. No production adoption or success claimed.
+
+## Development tuning conclusion
+
+[Run 45840281190](https://github.com/ianmaciel7/exams-app-archive/actions/runs/45840281190) succeeded; [measurements and artifact pin](../../../tests/evaluation/ai-product-relevance-first-measured-2026-11-26.json). Same 2,000 estimated token budget, same 22 queries (20 positive, 2 negative, 25 named target IDs):
+
+| Configuration | Mean target recall | Labeled-hit fraction | MRR | Negative abstention |
+|---|---:|---:|---:|---:|
+| Full, default selection | 95% | 47.50% | 0.875 | 2/2 |
+| Compact, default selection | 95% | 44.17% | 0.875 | 2/2 |
+| Compact, relevance-first | 100% | 43.33% | 0.8917 | 2/2 |
+
+The last configuration recovered every named target, with 100% target recall for each product and no misses. Four CI jobs passed in [45840281188](https://github.com/ianmaciel7/exams-app-archive/actions/runs/45840281188). Lower labeled-hit fraction is a trade-off; relevance annotations are incomplete, so neither precision gains nor precision losses are established. Latency was similar in this run, not a controlled performance experiment. Engine token estimates exclude some envelope overhead; do not claim exact model token use.
+
+**Decision:** stop tuning on this development set. Preserve defaults and opt-in flags. Before changing defaults, require independent reviewer judgments, a separately frozen query set, per-query relevance/diversity and provenance checks, plus client compatibility. The [review intake](ai-product-independent-review-intake.md) is an unexecuted protocol, not independent evidence. Live product inspection remains separately blocked by session access.

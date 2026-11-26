@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "run_id": 45840281190,
+  "job_id": 139979808194,
+  "commit": "c13058e22b2be4439b8d3d19938b68c7a175fbc4",
+  "artifact_id": 15127632547,
+  "artifact_sha256": "ed992141c7bc0250873576d8e7aaa2289ff2ae38cbcd704bd3aa3bf1b1daa0b7",
+  "query_count": 22,
+  "positive_queries": 20,
+  "negative_queries": 2,
+  "named_targets": 25,
+  "default": {
+    "budget": 2000,
+    "recall": 0.95,
+    "labeled_hit_fraction": 0.475,
+    "mrr": 0.875,
+    "p95_ms": 6171.349098000008,
+    "negative_abstention": 1
+  },
+  "compact": {
+    "budget": 2000,
+    "recall": 0.95,
+    "labeled_hit_fraction": 0.44166666666666665,
+    "mrr": 0.875,
+    "p95_ms": 6149.421450000034,
+    "negative_abstention": 1
+  },
+  "compact_relevance_first": {
+    "budget": 2000,
+    "recall": 1,
+    "labeled_hit_fraction": 0.4333333333333333,
+    "mrr": 0.8916666666666667,
+    "p95_ms": 6158.358824999994,
+    "negative_abstention": 1,
+    "missed_targets": [],
+    "per_product": {
+      "space": 1,
+      "claude": 1,
+      "grok": 1,
+      "gemini": 1,
+      "notebook": 1
+    }
+  },
+  "ci": {
+    "run_id": 45840281188,
+    "conclusion": "all four jobs successful"
+  },
+  "independent_annotation": false,
+  "quality_certified": false,
+  "decision": "Freeze development tuning. Keep opt-in formats and existing default. Independent annotation and compatibility validation required for adoption."
+}
