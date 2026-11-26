@@ -30,3 +30,7 @@ Deduplicate by existing stable IDs, aliases and normalized sources. Share genera
 4. New reusable findings have one canonical record and links; repeated ingestion is idempotent.
 5. Public/private separation, release guards and readback are maintained.
 6. No automatic synchronization or native plugin-to-plugin calls are claimed without a separately verified integration.
+
+## Design foundations and state transitions
+
+Both plugins consult [decision guide](../ui-ux-research-sources/design-foundations-and-state-transitions-2026-11-25.md) and [cross-index](../ui-ux-research-sources/design-foundations-and-state-transitions-2026-11-25.json) for color selection, focus, layout, motion and state/transition decisions. Separate semantic state, event, guard, effect and visual animation; require source evidence, accessibility, interruption/reversal and real tests. #103–#105 remain research/validation backlog. No claim of automatic sync or historical implementation.

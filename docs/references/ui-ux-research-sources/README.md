@@ -126,3 +126,7 @@ Registrar URLs originais e redirects, datas de consulta, fonte e status (verific
 - [Registro estruturado](./ux-design-activities-2026-11-25.json)
 - [Comparação visual original](./ux-design-activities-2026-11-25.svg)
 - 10 atividades de método/entregável; 36 fontes revisadas, 35 URLs novas no registro canônico e 1 reutilizadas. Exemplos hipotéticos, mídias externas link-only. Não altera padrões de interface nem produto.
+
+## Design foundations, states and transitions (2026-11-25)
+
+- [Decision guide](./design-foundations-and-state-transitions-2026-11-25.md) and [structured cross-index](./design-foundations-and-state-transitions-2026-11-25.json): 11 decision frameworks covering color, motion, focus, layout, interaction/async states and logical/visual transitions; not 11 novel patterns. Candidate sources and untested claims labeled. Further research #103–#105.

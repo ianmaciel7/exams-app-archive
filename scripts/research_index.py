@@ -15,6 +15,7 @@ BASE = ROOT / "docs/references"
 CATALOGS = (
     ("general", "interface-pattern-library/patterns.json", "patterns", "pattern"),
     ("workspace", "ui-ux-patterns-2026-11-25/patterns.json", "patterns", "pattern"),
+    ("design-foundations", "ui-ux-research-sources/design-foundations-and-state-transitions-2026-11-25.json", "patterns", "pattern"),
     ("general-sources", "interface-pattern-library/sources.json", "sources", "source"),
     ("research-sources", "ui-ux-research-sources/sources.json", "sources", "source"),
     ("visual", "visual-evidence-library/manifest.json", "records", "visual"),
@@ -41,7 +42,8 @@ def normalized(text):
 def load_records():
     records, seen = [], set()
     general_sources = json.loads((BASE / "interface-pattern-library/sources.json").read_text(encoding="utf-8"))["sources"]
-    maps = {"general": {x["id"]: x["url"] for x in general_sources}}
+    source_map = {x["id"]: x["url"] for x in general_sources}
+    maps = {"general": source_map, "design-foundations": source_map}
     for namespace, rel, key, kind in CATALOGS:
         path = BASE / rel
         data = path.read_bytes()

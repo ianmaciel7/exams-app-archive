@@ -1,0 +1,283 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-11-25",
+  "scope": "General shareable design decision synthesis; cross-index existing patterns rather than claim novel patterns. Candidate state-transition sources require full verification.",
+  "patterns": [
+    {
+      "id": "color-role-system",
+      "name": "Color selection and semantic roles",
+      "aliases": [
+        "cores",
+        "paleta",
+        "OKLCH",
+        "design tokens",
+        "color hierarchy"
+      ],
+      "definition": "Choose by task, brand, context, neutral surfaces, accent, semantic states, tonal scale and contrast. Primitive → semantic → component/state tokens.",
+      "guardrail": "Neutral-first for dense workspaces; expressive direction only if useful. 60/30/10 is optional, not a standard. Color psychology varies by context; never use color alone.",
+      "tests": "Test all real foreground/background pairs, light/dark/forced colors, focus, alpha composition and gamut; inspect #103 contrast failures.",
+      "kind": "Decision framework / cross-index",
+      "classification": "Research synthesis; not exhaustive or independently tested",
+      "source_ids": [
+        "behavior-wcag22",
+        "foundation-css-color4",
+        "foundation-css-color5",
+        "foundation-dtcg-color-2025",
+        "foundation-radix-color-scale",
+        "foundation-shadcn-theming",
+        "foundation-apple-color",
+        "foundation-material-color",
+        "foundation-pantone-2026"
+      ],
+      "recorded_on": "2026-11-25"
+    },
+    {
+      "id": "chart-color-selection",
+      "name": "Data visualization color selection",
+      "aliases": [
+        "cores gráficos",
+        "categorical sequential diverging",
+        "daltonismo"
+      ],
+      "definition": "Categorical for unordered groups, sequential for magnitude, diverging around a meaningful midpoint.",
+      "guardrail": "Do not conflate status and identity, imply magnitude in categories, or rely solely on hue.",
+      "tests": "Test legend, labels, adjacent marks, missing data, color vision simulation and accessible data alternative.",
+      "kind": "Decision framework / cross-index",
+      "classification": "Research synthesis; not exhaustive or independently tested",
+      "source_ids": [
+        "foundation-colorbrewer",
+        "behavior-wcag22"
+      ],
+      "recorded_on": "2026-11-25"
+    },
+    {
+      "id": "motion-intent-selection",
+      "name": "Motion and animation decision framework",
+      "aliases": [
+        "motion",
+        "animação",
+        "microinteração",
+        "easing",
+        "spring",
+        "tween"
+      ],
+      "definition": "Start with purpose: feedback, spatial continuity, reveal, progress, direct manipulation or emphasis. Choose fade/scale/slide/layout/shared element only when useful. Tween for predictable time; spring for spatial/direct manipulation with velocity.",
+      "guardrail": "Frequent actions should be quiet and fast; no decorative delay or motion-dependent feedback. Productive vs expressive is guidance; 0/50/100/150/250/400/600ms illustrative only, not universal.",
+      "tests": "Test entry/exit asymmetry, interruption, reversal, rapid input, reduced motion, transform/opacity where appropriate and frame cost.",
+      "kind": "Decision framework / cross-index",
+      "classification": "Research synthesis; not exhaustive or independently tested",
+      "source_ids": [
+        "foundation-atlassian-motion",
+        "foundation-carbon-motion",
+        "foundation-motion-docs",
+        "emil-great-animation",
+        "behavior-wcag22"
+      ],
+      "recorded_on": "2026-11-25"
+    },
+    {
+      "id": "visual-focus-hierarchy",
+      "name": "Attention and visual hierarchy",
+      "aliases": [
+        "foco visual",
+        "atenção",
+        "saliência",
+        "scale",
+        "gestalt",
+        "contrast"
+      ],
+      "definition": "Use scale, contrast, typography, alignment, proximity, common region, whitespace, position and limited accents to establish order.",
+      "guardrail": "Avoid competing highlights and obligatory F/Z layout; distinguish observed reading behavior from design rule. Preserve meaningful content.",
+      "tests": "Compare alternatives with realistic tasks, comprehension, visual search and keyboard order.",
+      "kind": "Decision framework / cross-index",
+      "classification": "Research synthesis; not exhaustive or independently tested",
+      "source_ids": [
+        "foundation-nng-visual",
+        "foundation-govuk-service-manual"
+      ],
+      "recorded_on": "2026-11-25"
+    },
+    {
+      "id": "keyboard-focus-contract",
+      "name": "Keyboard focus and selection management",
+      "aliases": [
+        "focus-visible",
+        "focus-within",
+        "foco",
+        "seleção",
+        "active",
+        "modal"
+      ],
+      "definition": "Keyboard focus is not hover, selection or active route. Visible focus, meaningful order, return focus on dismissal; move focus logically when element removed. Avoid stealing focus on async updates.",
+      "guardrail": "WCAG 2.2 2.4.3 A, 2.4.7 and 2.4.11 AA, 2.4.13 AAA; 1.4.11 when applicable; follow widget APG. Focus trapping only appropriate modal context.",
+      "tests": "Test keyboard, screen reader, focus visibility/adjacency, sticky header obstruction, modal open/close and preservation across refresh.",
+      "kind": "Decision framework / cross-index",
+      "classification": "Research synthesis; not exhaustive or independently tested",
+      "source_ids": [
+        "behavior-wcag22",
+        "foundation-aria-apg"
+      ],
+      "recorded_on": "2026-11-25"
+    },
+    {
+      "id": "layout-architecture-selection",
+      "name": "Screen architecture and composition",
+      "aliases": [
+        "estrutura tela",
+        "layout",
+        "app shell",
+        "list-detail",
+        "supporting pane",
+        "dashboard",
+        "canvas"
+      ],
+      "definition": "Map tasks, objects, flows and information hierarchy before visual design. Choose single-column for focused reading/form, list-detail for browsing, supporting pane for related context, tabbed workspace/split for multiple objects, dashboard for analytics, canvas for spatial tasks.",
+      "guardrail": "Do not force 3 panes, cards or borders everywhere. Use modular spacing, meaningful groups, readable type, consistent iconography, progressive disclosure and task-driven density.",
+      "tests": "Test multiple layouts via sketch/wireframe; verify mobile/tablet/desktop, container reflow, zoom, input modalities, preservation of state, scroll and focus.",
+      "kind": "Decision framework / cross-index",
+      "classification": "Research synthesis; not exhaustive or independently tested",
+      "source_ids": [
+        "foundation-android-canonical-layouts",
+        "foundation-carbon-grid",
+        "foundation-nng-visual",
+        "foundation-govuk-service-manual",
+        "behavior-wcag22"
+      ],
+      "recorded_on": "2026-11-25"
+    },
+    {
+      "id": "interaction-state-model",
+      "name": "Interaction and component state modeling",
+      "aliases": [
+        "mudança de estado",
+        "state",
+        "hover",
+        "pressed",
+        "disabled",
+        "selected",
+        "expanded"
+      ],
+      "definition": "Define default, hover, focus-visible, pressed, selected, checked/indeterminate, expanded, open, dragging, readonly, invalid and disabled where relevant. Separate variant, event and semantic state; document simultaneous states and precedence.",
+      "guardrail": "Do not infer behavior from screenshots; don't force irrelevant states. Focus and selection remain separate; touch/no-hover alternatives.",
+      "tests": "Matrix of real component states, keyboard/touch/assistive tech, accessibility semantics, styling precedence, before/after evidence.",
+      "kind": "Decision framework / cross-index",
+      "classification": "Research synthesis; not exhaustive or independently tested",
+      "source_ids": [
+        "foundation-aria-apg",
+        "behavior-wcag22"
+      ],
+      "recorded_on": "2026-11-25"
+    },
+    {
+      "id": "async-state-model",
+      "name": "Data and asynchronous state modeling",
+      "aliases": [
+        "loading",
+        "empty",
+        "pending",
+        "optimistic",
+        "retry",
+        "streaming",
+        "rollback",
+        "offline"
+      ],
+      "definition": "Distinguish initial loading, refresh, empty, partial, stale, pending, optimistic, success, error, timeout, retry, offline, conflict, permission denied, cancel, undo and unsaved. Track operation state separately from data and visual animation.",
+      "guardrail": "Never report success or progress without confirmation; preserve data/context on refresh; avoid race and duplicate submission.",
+      "tests": "Test out-of-order response, double click, cancel, retry, timeout, rollback, permission, offline, stale data, status messages and focus.",
+      "kind": "Decision framework / cross-index",
+      "classification": "Research synthesis; not exhaustive or independently tested",
+      "source_ids": [
+        "foundation-aria-apg",
+        "behavior-wcag22",
+        "foundation-scxml",
+        "foundation-xstate"
+      ],
+      "recorded_on": "2026-11-25"
+    },
+    {
+      "id": "logical-state-transition",
+      "name": "Logical state transition contract",
+      "aliases": [
+        "state machine",
+        "statechart",
+        "evento",
+        "guarda",
+        "transição lógica"
+      ],
+      "definition": "Specify from, event, guard, to, effects, invariants, timers, concurrency and cancellation. State machine/statechart useful for complex workflows; no required library for simple state.",
+      "guardrail": "Separate logical change from visual duration; valid states and unreachable transitions must be defined. Model example: selected → submitting → correct/incorrect/error; retry and cancel explicit.",
+      "tests": "Test allowed/disallowed transitions, guards, rapid repeated actions, abort, racing requests, rollback, idempotence and invariant checks; don't pass expected state into runtime.",
+      "kind": "Decision framework / cross-index",
+      "classification": "Research synthesis; not exhaustive or independently tested",
+      "source_ids": [
+        "foundation-scxml",
+        "foundation-xstate",
+        "foundation-aria-apg"
+      ],
+      "recorded_on": "2026-11-25"
+    },
+    {
+      "id": "visual-transition-selection",
+      "name": "Visual transition and motion choreography",
+      "aliases": [
+        "transição visual",
+        "fade",
+        "slide",
+        "morph",
+        "FLIP",
+        "view transition",
+        "enter exit",
+        "stagger"
+      ],
+      "definition": "Choose visual transition by source/destination, spatial relationship, intent and input. Document enter/exit, crossfade, push, reveal, scale, expand/collapse, reorder, shared element, gesture/spring and route transitions.",
+      "guardrail": "CSS transitions, CSS animation, WAAPI and View Transition API are techniques, not semantic state. Verify support and fallback. Don't defer focus, result or interaction until animation completion.",
+      "tests": "Capture before/during/after, durations and easing only if measured or source verified; test cancel/reverse, rapid input, reduced motion and keyboard.",
+      "kind": "Decision framework / cross-index",
+      "classification": "Research synthesis; not exhaustive or independently tested",
+      "source_ids": [
+        "foundation-css-transitions2",
+        "foundation-css-animations1",
+        "foundation-css-view-transitions",
+        "foundation-mdn-view-transitions",
+        "foundation-mdn-waapi",
+        "foundation-motion-docs",
+        "foundation-atlassian-motion",
+        "foundation-carbon-motion",
+        "behavior-wcag22"
+      ],
+      "recorded_on": "2026-11-25"
+    },
+    {
+      "id": "design-foundations-workflow",
+      "name": "Iterative design and validation workflow",
+      "aliases": [
+        "fundamentos",
+        "processo",
+        "sketch",
+        "wireframe",
+        "protótipo",
+        "usability"
+      ],
+      "definition": "User needs → tasks → IA → flows → sketches/wireframes → visual direction → states/motion → tokens → prototype → testing → iteration. Typography, iconography, shape, elevation, copy, density and perceived performance are cross-cutting.",
+      "guardrail": "Iterative, not mandatory linear process; design systems and aesthetics do not prove usability.",
+      "tests": "Evidence packet with alternatives, rationale, contraindications, accessibility, source/version, tests and unresolved gaps; #94 prevents synthetic benchmarks claiming real quality.",
+      "kind": "Decision framework / cross-index",
+      "classification": "Research synthesis; not exhaustive or independently tested",
+      "source_ids": [
+        "foundation-govuk-service-manual",
+        "foundation-nng-visual",
+        "behavior-wcag22"
+      ],
+      "recorded_on": "2026-11-25"
+    }
+  ],
+  "issues": [
+    94,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105
+  ]
+}

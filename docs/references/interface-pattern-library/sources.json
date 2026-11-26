@@ -4232,6 +4232,246 @@
       "checked_on": "2026-11-25",
       "storage": "link-only",
       "evidence": "Resultado visual indexado e página de origem identificada; licença de reprodução não verificada."
+    },
+    {
+      "id": "foundation-aria-apg",
+      "title": "ARIA Authoring Practices Guide",
+      "url": "https://www.w3.org/WAI/ARIA/apg/",
+      "kind": "primary-guidance",
+      "notes": "Keyboard and focus contracts for widgets; guidance, not itself WCAG.",
+      "recorded_on": "2026-11-25",
+      "status": "prior research synthesis; revalidate original before version-specific claims",
+      "storage": "link-only"
+    },
+    {
+      "id": "foundation-css-color4",
+      "title": "CSS Color Module Level 4",
+      "url": "https://www.w3.org/TR/css-color-4/",
+      "kind": "technical-specification",
+      "notes": "OKLCH, gamut and color spaces; verify specification status and browser support.",
+      "recorded_on": "2026-11-25",
+      "status": "prior research synthesis; revalidate original before version-specific claims",
+      "storage": "link-only"
+    },
+    {
+      "id": "foundation-css-color5",
+      "title": "CSS Color Module Level 5",
+      "url": "https://www.w3.org/TR/css-color-5/",
+      "kind": "technical-specification",
+      "notes": "Modern color operations; verify browser support.",
+      "recorded_on": "2026-11-25",
+      "status": "prior research synthesis; revalidate original before version-specific claims",
+      "storage": "link-only"
+    },
+    {
+      "id": "foundation-dtcg-color-2025",
+      "title": "DTCG Color 2025.10",
+      "url": "https://www.designtokens.org/TR/2025.10/color/",
+      "kind": "community-group-report",
+      "notes": "Color token exchange, not W3C Recommendation.",
+      "recorded_on": "2026-11-25",
+      "status": "prior research synthesis; revalidate original before version-specific claims",
+      "storage": "link-only"
+    },
+    {
+      "id": "foundation-radix-color-scale",
+      "title": "Radix Colors scale",
+      "url": "https://www.radix-ui.com/colors/docs/palette-composition/understanding-the-scale",
+      "kind": "primary-design-system",
+      "notes": "12 roles for surfaces, states, borders, solid backgrounds and text.",
+      "recorded_on": "2026-11-25",
+      "status": "prior research synthesis; revalidate original before version-specific claims",
+      "storage": "link-only"
+    },
+    {
+      "id": "foundation-shadcn-theming",
+      "title": "shadcn/ui Theming",
+      "url": "https://ui.shadcn.com/docs/theming",
+      "kind": "primary-library",
+      "notes": "Semantic foreground/background tokens and OKLCH.",
+      "recorded_on": "2026-11-25",
+      "status": "prior research synthesis; revalidate original before version-specific claims",
+      "storage": "link-only"
+    },
+    {
+      "id": "foundation-apple-color",
+      "title": "Apple HIG Color",
+      "url": "https://developer.apple.com/design/human-interface-guidelines/color",
+      "kind": "primary-platform",
+      "notes": "Semantic and adaptive colors.",
+      "recorded_on": "2026-11-25",
+      "status": "prior research synthesis; revalidate original before version-specific claims",
+      "storage": "link-only"
+    },
+    {
+      "id": "foundation-material-color",
+      "title": "Android Material color",
+      "url": "https://developer.android.com/design/ui/mobile/guides/styles/color",
+      "kind": "primary-platform",
+      "notes": "Tonal roles and adaptive palettes.",
+      "recorded_on": "2026-11-25",
+      "status": "prior research synthesis; revalidate original before version-specific claims",
+      "storage": "link-only"
+    },
+    {
+      "id": "foundation-colorbrewer",
+      "title": "ColorBrewer schemes",
+      "url": "https://colorbrewer2.org/learnmore/schemes.html",
+      "kind": "primary-tool",
+      "notes": "Categorical, sequential and diverging palettes.",
+      "recorded_on": "2026-11-25",
+      "status": "prior research synthesis; revalidate original before version-specific claims",
+      "storage": "link-only"
+    },
+    {
+      "id": "foundation-atlassian-motion",
+      "title": "Atlassian Motion",
+      "url": "https://atlassian.design/foundations/motion",
+      "kind": "primary-design-system",
+      "notes": "Timing, easing, entry/exit and continuity.",
+      "recorded_on": "2026-11-25",
+      "status": "prior research synthesis; revalidate original before version-specific claims",
+      "storage": "link-only"
+    },
+    {
+      "id": "foundation-carbon-motion",
+      "title": "Carbon Motion",
+      "url": "https://www.carbondesignsystem.com/building-blocks/foundations/motion/overview",
+      "kind": "primary-design-system",
+      "notes": "Productive vs expressive motion and duration tokens.",
+      "recorded_on": "2026-11-25",
+      "status": "prior research synthesis; revalidate original before version-specific claims",
+      "storage": "link-only"
+    },
+    {
+      "id": "foundation-carbon-grid",
+      "title": "Carbon 2x Grid",
+      "url": "https://www.carbondesignsystem.com/building-blocks/foundations/2x-grid/overview",
+      "kind": "primary-design-system",
+      "notes": "Modular grid and spacing.",
+      "recorded_on": "2026-11-25",
+      "status": "prior research synthesis; revalidate original before version-specific claims",
+      "storage": "link-only"
+    },
+    {
+      "id": "foundation-android-canonical-layouts",
+      "title": "Android canonical layouts",
+      "url": "https://developer.android.com/design/ui/mobile/guides/layout-and-content/canonical-layouts",
+      "kind": "primary-platform",
+      "notes": "List-detail, supporting pane and feed; adapt by context.",
+      "recorded_on": "2026-11-25",
+      "status": "prior research synthesis; revalidate original before version-specific claims",
+      "storage": "link-only"
+    },
+    {
+      "id": "foundation-motion-docs",
+      "title": "Motion documentation",
+      "url": "https://motion.dev/docs",
+      "kind": "primary-library",
+      "notes": "Tween, spring, layout and presence; verify implementation.",
+      "recorded_on": "2026-11-25",
+      "status": "prior research synthesis; revalidate original before version-specific claims",
+      "storage": "link-only"
+    },
+    {
+      "id": "foundation-govuk-service-manual",
+      "title": "GOV.UK Service Manual",
+      "url": "https://www.gov.uk/service-manual",
+      "kind": "primary-guidance",
+      "notes": "User needs, prototypes and iterative validation.",
+      "recorded_on": "2026-11-25",
+      "status": "prior research synthesis; revalidate original before version-specific claims",
+      "storage": "link-only"
+    },
+    {
+      "id": "foundation-scxml",
+      "title": "W3C SCXML",
+      "url": "https://www.w3.org/TR/scxml/",
+      "kind": "standard",
+      "notes": "State machine and statechart reference; candidate for deeper extraction.",
+      "recorded_on": "2026-11-25",
+      "status": "candidate; verify original before specific claims",
+      "storage": "link-only"
+    },
+    {
+      "id": "foundation-xstate",
+      "title": "Stately XState documentation",
+      "url": "https://stately.ai/docs",
+      "kind": "primary-library",
+      "notes": "Statechart implementation; candidate for deeper extraction.",
+      "recorded_on": "2026-11-25",
+      "status": "candidate; verify original before specific claims",
+      "storage": "link-only"
+    },
+    {
+      "id": "foundation-css-transitions2",
+      "title": "CSS Transitions Level 2",
+      "url": "https://www.w3.org/TR/css-transitions-2/",
+      "kind": "technical-specification",
+      "notes": "Transitions including discrete properties; candidate; verify status.",
+      "recorded_on": "2026-11-25",
+      "status": "candidate; verify original before specific claims",
+      "storage": "link-only"
+    },
+    {
+      "id": "foundation-css-animations1",
+      "title": "CSS Animations Level 1",
+      "url": "https://www.w3.org/TR/css-animations-1/",
+      "kind": "technical-specification",
+      "notes": "Keyframes and animation model; candidate; verify status.",
+      "recorded_on": "2026-11-25",
+      "status": "candidate; verify original before specific claims",
+      "storage": "link-only"
+    },
+    {
+      "id": "foundation-css-view-transitions",
+      "title": "CSS View Transitions Level 1",
+      "url": "https://www.w3.org/TR/css-view-transitions-1/",
+      "kind": "technical-specification",
+      "notes": "View transition model; candidate; verify support.",
+      "recorded_on": "2026-11-25",
+      "status": "candidate; verify original before specific claims",
+      "storage": "link-only"
+    },
+    {
+      "id": "foundation-mdn-view-transitions",
+      "title": "MDN View Transition API",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API",
+      "kind": "technical-guidance",
+      "notes": "Same/cross-document transitions; candidate; verify support.",
+      "recorded_on": "2026-11-25",
+      "status": "candidate; verify original before specific claims",
+      "storage": "link-only"
+    },
+    {
+      "id": "foundation-mdn-waapi",
+      "title": "MDN Web Animations API",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API",
+      "kind": "technical-guidance",
+      "notes": "Programmatic animation control; candidate for deeper extraction.",
+      "recorded_on": "2026-11-25",
+      "status": "candidate; verify original before specific claims",
+      "storage": "link-only"
+    },
+    {
+      "id": "foundation-nng-visual",
+      "title": "NN/g Principles of Visual Design",
+      "url": "https://www.nngroup.com/articles/principles-visual-design/",
+      "kind": "usability-guidance",
+      "notes": "Hierarchy, scale, contrast, balance and Gestalt.",
+      "recorded_on": "2026-11-25",
+      "status": "prior research synthesis; revalidate original before version-specific claims",
+      "storage": "link-only"
+    },
+    {
+      "id": "foundation-pantone-2026",
+      "title": "Pantone Color of the Year 2026",
+      "url": "https://www.pantone.com/color-of-the-year/2026",
+      "kind": "commercial-trend",
+      "notes": "Cloud Dancer; not a UI rule or usage evidence.",
+      "recorded_on": "2026-11-25",
+      "status": "prior research synthesis; revalidate original before version-specific claims",
+      "storage": "link-only"
     }
   ],
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",
