@@ -652,9 +652,28 @@ def _search_public_ast_code(
     paths: list[Path] | None = None,
 ) -> tuple[list[dict[str, Any]], SourceAuditEntry]:
     """Search public repository scripts/tests via AST chunker (no private bundles)."""
-    target_files = paths
-    if target_files is None:
-        target_files = sorted((ROOT_DIR / "scripts").glob("*.py"))[:15]
+    # Explicit public code corpus. Never accept arbitrary local files, private
+    # paths, evaluation runners, fixture labels, or symlinks escaping the root.
+    approved = (
+        "archive_context.py", "archive_index.py", "ast_chunker.py",
+        "component_catalog.py", "concept_packs.py", "domain_ontology.py",
+        "evidence_graph.py", "federated_retrieval.py", "graph_linker.py",
+        "image_catalog.py", "public_lexical_search.py", "research_index.py",
+        "search_expansion.py", "source_registry.py", "visual_reference_index.py",
+    )
+    approved_paths = {ROOT_DIR / "scripts" / name for name in approved}
+    if paths is None:
+        target_files = sorted(approved_paths)
+    else:
+        # Check lexical path and resolved path before opening any file.
+        target_files = []
+        for path in paths:
+            candidate = Path(path)
+            if not candidate.is_absolute():
+                candidate = ROOT_DIR / candidate
+            if candidate in approved_paths and candidate.resolve() == candidate:
+                target_files.append(candidate)
+    target_files = [p for p in target_files if p.resolve() == p]
 
     exp = search_expansion.expand_query(query, max_tokens=6)
     terms = set(_tokenize_bm25(query))

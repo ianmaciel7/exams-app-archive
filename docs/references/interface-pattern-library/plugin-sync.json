@@ -93,5 +93,19 @@
     "source_sets_equal": true,
     "library_upload_confirmed": true,
     "memory_persistence": "not independently verifiable"
+  },
+  "domain_research_2026_11_26": {
+    "plugin_version": "1.10.15",
+    "checked_on": "2026-11-26",
+    "archive_commit": "25dde30be286c70399644515fb6388ba02fad218",
+    "canonical_records": 26,
+    "canonical_path": "docs/references/ui-ux-research-sources/domain-research-2026-11-26.json",
+    "plugin_reference": "references/exam-domain-evidence-2026-11-26.md",
+    "plugin_skill": "skills/exam-domain-evidence/SKILL.md",
+    "publication_verified": true,
+    "reference_readback_verified": true,
+    "skill_readback_verified": true,
+    "old_shared_skill_retained": true,
+    "scope": "Canonical pointer and compact source-backed synthesis; not byte-identical replication of all records or full source register"
   }
 }
