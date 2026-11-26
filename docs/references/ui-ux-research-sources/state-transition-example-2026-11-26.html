@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Assessment transition example</title>
+<style>
+body{font:1rem/1.5 system-ui;max-width:42rem;margin:2rem auto;padding:0 1rem;color:#18212d;background:#fff}fieldset{border:1px solid #8b96a3;padding:1rem}label{display:block;margin:.5rem 0}button{font:inherit;padding:.5rem .8rem;margin:.5rem .5rem .5rem 0}button:focus-visible,input:focus-visible{outline:3px solid #315eb8;outline-offset:3px}#status{min-height:3rem;padding:.5rem 0}#status.changed{animation:appear 150ms ease-out}@keyframes appear{from{opacity:.45}to{opacity:1}}@media(prefers-reduced-motion:reduce){#status.changed{animation:none}}@media(forced-colors:active){button:focus-visible,input:focus-visible{outline-color:Highlight}}
+</style>
+<h1>Question submission: state before motion</h1>
+<p>Original fictional example. The simulated failure is explicit, not a real network request.</p>
+<form id="quiz"><fieldset id="choices"><legend>Which number is even?</legend><label><input type="radio" name="answer" value="2"> 2</label><label><input type="radio" name="answer" value="3"> 3</label></fieldset>
+<button id="send" type="submit" disabled>Confirm answer</button><button id="cancel" type="button" disabled>Cancel</button><button id="reset" type="button">Reset</button>
+<label><input type="checkbox" id="fail"> Simulate failure on next submission</label></form>
+<div role="status" aria-live="polite" id="status">Choose an answer.</div>
+<script>
+const $=id=>document.getElementById(id);
+let state="idle",selected=null, generation=0,timer;
+function show(message){
+ const pending=state==="pending",final=state==="correct"||state==="incorrect";
+ $("choices").disabled=pending||final;
+ $("send").disabled=!(state==="selected"||state==="error");
+ $("send").textContent=state==="error"?"Retry":"Confirm answer";
+ $("cancel").disabled=!pending;
+ $("status").textContent=message;
+ $("status").classList.remove("changed");void $("status").offsetWidth;$("status").classList.add("changed");
+}
+$("quiz").addEventListener("change",e=>{if(e.target.name==="answer"&&!["pending","correct","incorrect"].includes(state)){selected=e.target.value;state="selected";show("Answer selected; not yet submitted.");}});
+$("quiz").addEventListener("submit",e=>{
+ e.preventDefault();if(!["selected","error"].includes(state)||selected===null)return;
+ state="pending";const current=++generation, answer=selected, fail=$("fail").checked;$("fail").checked=false;show("Submitting answer...");
+ $("cancel").focus();
+ timer=setTimeout(()=>{if(current!==generation)return;state=fail?"error":answer==="2"?"correct":"incorrect";show(fail?"Submission failed. Retry is available.":state==="correct"?"Correct: 2 is even.":"Incorrect: 3 is odd.");if(document.activeElement===$("cancel")||document.activeElement===document.body)(fail?$("send"):$("reset")).focus();},500);
+});
+$("cancel").addEventListener("click",()=>{if(state!=="pending")return;++generation;clearTimeout(timer);state="selected";show("Submission cancelled. Selection retained.");$("send").focus();});
+$("reset").addEventListener("click",()=>{++generation;clearTimeout(timer);state="idle";selected=null;$("quiz").reset();show("Choose an answer.");$("choices").querySelector("input").focus();});
+</script></html>
