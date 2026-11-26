@@ -831,6 +831,101 @@
       "recorded_on": "2026-11-26",
       "evidence_status": "abstract-reviewed",
       "media_status": "not-inspected"
+    },
+    {
+      "id": "qconcursos-question-workspace",
+      "name": "Question workspace and response feedback",
+      "aliases": [
+        "QConcursos",
+        "questões objetivas",
+        "acertei",
+        "errei",
+        "gabarito comentado",
+        "cronômetro",
+        "modo foco"
+      ],
+      "family": "domain-research",
+      "issue": 95,
+      "definition": "Documented filter dimensions distinguish discipline/topic, examining board, position, year and organization; personal response history filters are separate. The help page describes answer submission, explanations and auxiliary study tools.",
+      "guardrail": "Do not infer tab content, retry policy, exact timer behavior or mobile layout from documentation alone.",
+      "tests": "Test independent filter dimensions, selected versus submitted answers, accessible correctness feedback and history filters.",
+      "source_ids": [
+        "domain-qconcursos-question-workspace"
+      ],
+      "classification": "product-documentation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documentation-reviewed",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "qconcursos-custom-mock-exam",
+      "name": "Custom timed mock exam configuration",
+      "aliases": [
+        "QConcursos",
+        "simulado personalizado",
+        "tempo cronometrado",
+        "provas anteriores",
+        "meus simulados"
+      ],
+      "family": "domain-research",
+      "issue": 95,
+      "definition": "The documented creation flow selects disciplines, then configures item count and duration; completed results can be found in the simulation history. Previous-exam and performance-based simulations are described separately for Elite.",
+      "guardrail": "Creation criteria are not the immutable attempt. Pause, timeout, resume, final confirmation and free-plan availability remain unverified.",
+      "tests": "Create a fictional timed attempt with fixed item membership; reload, expire and submit once; distinguish source exam from generated practice form.",
+      "source_ids": [
+        "domain-qconcursos-custom-mock-exam"
+      ],
+      "classification": "product-documentation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documentation-reviewed",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "tec-observed-item-difficulty",
+      "name": "Observed item difficulty classification",
+      "aliases": [
+        "TEC Concursos",
+        "dificuldade",
+        "taxa de acerto",
+        "professor",
+        "amostra"
+      ],
+      "family": "domain-research",
+      "issue": 95,
+      "definition": "The documented product starts with a medium classification, permits teacher assessment, then uses observed correctness once at least 50 distinct students have answered. Five bands partition observed correctness at 20, 40, 60 and 80 percent.",
+      "guardrail": "These are product-specific descriptive thresholds, not calibrated IRT parameters or a universal sufficient sample. Repeated attempts and time window details are unverified.",
+      "tests": "Test threshold boundaries and sample minimum; record classification source, cohort, sample size and update time; do not silently overwrite historical analytics.",
+      "source_ids": [
+        "domain-tec-observed-item-difficulty"
+      ],
+      "classification": "product-documentation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documentation-reviewed",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "crucial-exams-study-vs-test",
+      "name": "Study mode versus configurable timed test",
+      "aliases": [
+        "Crucial Exams",
+        "study mode",
+        "practice test",
+        "simulado",
+        "exam objectives",
+        "domain"
+      ],
+      "family": "domain-research",
+      "issue": 95,
+      "definition": "The provider describes individual questions with explanations in Study Mode and configurable timed tests by objective/domain and item count. Its page also claims mobile progress synchronization.",
+      "guardrail": "Provider documentation is not an authenticated interaction test, independent exam-equivalence evidence or permission to copy questions. Plan limits and sync conflict handling need verification.",
+      "tests": "Test mode-specific feedback policy, a fixed attempt, timer configuration, results and interrupted-session recovery with original fictional items.",
+      "source_ids": [
+        "domain-crucial-exams-study-vs-test"
+      ],
+      "classification": "product-documentation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documentation-reviewed",
+      "media_status": "not-inspected"
     }
   ]
 }

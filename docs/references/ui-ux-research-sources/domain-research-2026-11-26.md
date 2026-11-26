@@ -389,3 +389,43 @@ Limits: Transfer on new questions is distinct from remembering the original resp
 Proposed test: Use unseen equivalent or transfer items after a predefined delay and record prior exposure, attrition and time.
 
 Source: [Butler (2010) — Repeated testing and transfer](https://pubmed.ncbi.nlm.nih.gov/20804289/) — public abstract reviewed 2026-11-26; link only.
+
+## Question workspace and response feedback (#95)
+
+Documented filter dimensions distinguish discipline/topic, examining board, position, year and organization; personal response history filters are separate. The help page describes answer submission, explanations and auxiliary study tools.
+
+Limits: Do not infer tab content, retry policy, exact timer behavior or mobile layout from documentation alone.
+
+Proposed acceptance: Test independent filter dimensions, selected versus submitted answers, accessible correctness feedback and history filters.
+
+Source: [QConcursos — Como resolver questões na Central de Preparação](https://suporte.qconcursos.com/pt-BR/articles/11649035-como-resolver-questoes-na-central-de-preparacao) — official public text reviewed 2026-11-26; no authenticated interaction or media inspection.
+
+## Custom timed mock exam configuration (#95)
+
+The documented creation flow selects disciplines, then configures item count and duration; completed results can be found in the simulation history. Previous-exam and performance-based simulations are described separately for Elite.
+
+Limits: Creation criteria are not the immutable attempt. Pause, timeout, resume, final confirmation and free-plan availability remain unverified.
+
+Proposed acceptance: Create a fictional timed attempt with fixed item membership; reload, expire and submit once; distinguish source exam from generated practice form.
+
+Source: [QConcursos — Como criar um simulado personalizado](https://suporte.qconcursos.com/pt-BR/articles/11655126-como-criar-um-simulado-personalizado) — official public text reviewed 2026-11-26; no authenticated interaction or media inspection.
+
+## Observed item difficulty classification (#95)
+
+The documented product starts with a medium classification, permits teacher assessment, then uses observed correctness once at least 50 distinct students have answered. Five bands partition observed correctness at 20, 40, 60 and 80 percent.
+
+Limits: These are product-specific descriptive thresholds, not calibrated IRT parameters or a universal sufficient sample. Repeated attempts and time window details are unverified.
+
+Proposed acceptance: Test threshold boundaries and sample minimum; record classification source, cohort, sample size and update time; do not silently overwrite historical analytics.
+
+Source: [TEC Concursos — Como é calculada a dificuldade das questões?](https://tecconcursos.zendesk.com/hc/pt-br/articles/48202883563547-Como-%C3%A9-calculada-a-dificuldade-das-quest%C3%B5es) — official public text reviewed 2026-11-26; no authenticated interaction or media inspection.
+
+## Study mode versus configurable timed test (#95)
+
+The provider describes individual questions with explanations in Study Mode and configurable timed tests by objective/domain and item count. Its page also claims mobile progress synchronization.
+
+Limits: Provider documentation is not an authenticated interaction test, independent exam-equivalence evidence or permission to copy questions. Plan limits and sync conflict handling need verification.
+
+Proposed acceptance: Test mode-specific feedback policy, a fixed attempt, timer configuration, results and interrupted-session recovery with original fictional items.
+
+Source: [Crucial Exams — GCP Professional Cloud Security Engineer practice tests](https://crucialexams.com/exams/gcp/professional-cloud-security-engineer/gcp-professional-cloud-security-engineer-latest/practice-tests-practice-questions) — official public text reviewed 2026-11-26; no authenticated interaction or media inspection.
