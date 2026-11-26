@@ -57,3 +57,8 @@ Every benchmark must resolve source IDs centrally, preserve stable observation I
 ## Availability and state boundaries
 
 [15-row matrix and 10 additional product observations](../ui-ux-research-sources/ai-product-availability-and-state-boundaries-2026-11-26.md). Graph now 319 nodes and 461 edges. Claude Design promotional thumbnail visually inspected; no motion inference.
+
+## Editor contracts and transitions — 2026-11-26
+
+- [16 observations and three documented sequences](../ui-ux-research-sources/ai-product-editor-contracts-2026-11-26.md)
+- Graph: 348 nodes, 528 edges. Official text-derived contracts are explicitly distinct from runtime observations. No visual or motion measurement claim.

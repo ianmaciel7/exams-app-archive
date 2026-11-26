@@ -1,0 +1,444 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-26",
+  "scope": "official text only; no runtime test",
+  "sources": [
+    {
+      "id": "claude-artifact-keyboard",
+      "title": "Artifacts keyboard and screen reader",
+      "url": "https://support.claude.com/en/articles/17457950-use-artifacts-with-a-keyboard-or-screen-reader",
+      "product": "claude",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official page or search excerpt retrieved; runtime not tested",
+      "storage": "link-only",
+      "notes": "Editor and interaction contract research.",
+      "canonical_source_id": "claude-artifact-keyboard"
+    },
+    {
+      "id": "claude-motion",
+      "title": "Claude Motion editor",
+      "url": "https://support.claude.com/en/articles/17454997-get-started-with-claude-motion",
+      "product": "claude",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official page or search excerpt retrieved; runtime not tested",
+      "storage": "link-only",
+      "notes": "Editor and interaction contract research.",
+      "canonical_source_id": "claude-motion"
+    },
+    {
+      "id": "claude-design-systems",
+      "title": "Claude Design systems",
+      "url": "https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design",
+      "product": "claude",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official page or search excerpt retrieved; runtime not tested",
+      "storage": "link-only",
+      "notes": "Editor and interaction contract research.",
+      "canonical_source_id": "claude-design-systems"
+    },
+    {
+      "id": "gemini-notebook-deck-editor",
+      "title": "Gemini Notebook slide decks and revisions",
+      "url": "https://support.google.com/gemininotebook/answer/16757456?hl=en",
+      "product": "gemini-notebook",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official page or search excerpt retrieved; runtime not tested",
+      "storage": "link-only",
+      "notes": "Editor and interaction contract research.",
+      "canonical_source_id": "gemini-notebook-deck-editor"
+    },
+    {
+      "id": "gemini-notebook-reports",
+      "title": "Gemini Notebook reports",
+      "url": "https://support.google.com/gemininotebook/answer/18323649?hl=en",
+      "product": "gemini-notebook",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official page or search excerpt retrieved; runtime not tested",
+      "storage": "link-only",
+      "notes": "Editor and interaction contract research.",
+      "canonical_source_id": "gemini-notebook-reports"
+    },
+    {
+      "id": "gemini-notebook-video",
+      "title": "Gemini Notebook video overview",
+      "url": "https://support.google.com/gemininotebook/answer/16454555?hl=en",
+      "product": "gemini-notebook",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official page or search excerpt retrieved; runtime not tested",
+      "storage": "link-only",
+      "notes": "Editor and interaction contract research.",
+      "canonical_source_id": "gemini-notebook-video"
+    },
+    {
+      "id": "gemini-notebook-audio",
+      "title": "Gemini Notebook audio overview",
+      "url": "https://support.google.com/gemininotebook/answer/16212820",
+      "product": "gemini-notebook",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official page or search excerpt retrieved; runtime not tested",
+      "storage": "link-only",
+      "notes": "Editor and interaction contract research.",
+      "canonical_source_id": "gemini-notebook-audio"
+    },
+    {
+      "id": "gemini-notebook-infographic",
+      "title": "Gemini Notebook infographics",
+      "url": "https://support.google.com/gemininotebook/answer/16758265?hl=en",
+      "product": "gemini-notebook",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official page or search excerpt retrieved; runtime not tested",
+      "storage": "link-only",
+      "notes": "Editor and interaction contract research.",
+      "canonical_source_id": "gemini-notebook-infographic"
+    },
+    {
+      "id": "gemini-direct-file-editor",
+      "title": "Gemini direct file editing announcement",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/edit-files-directly/",
+      "product": "gemini",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official page or search excerpt retrieved; runtime not tested",
+      "storage": "link-only",
+      "notes": "Editor and interaction contract research.",
+      "canonical_source_id": "gemini-direct-file-editor"
+    },
+    {
+      "id": "grok-bot-team-policy",
+      "title": "Grok Bot team and enterprise controls",
+      "url": "https://docs.x.ai/grok-bot/teams-and-enterprises",
+      "product": "grok-bot",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official page or search excerpt retrieved; runtime not tested",
+      "storage": "link-only",
+      "notes": "Editor and interaction contract research.",
+      "canonical_source_id": "grok-bot-team-policy"
+    }
+  ],
+  "observations": [
+    {
+      "id": "claude-editor-region-navigation",
+      "product": "claude",
+      "title": "Editor region navigation",
+      "description": "F6 and Shift+F6 move among top bar, canvas/slide and properties area; Tab and Escape handle the conversation/artifact boundary.",
+      "source_id": "claude-artifact-keyboard",
+      "surface": "view:claude:design-canvas",
+      "acceptance": "Test forward/backward navigation, focus restoration and nested edit mode.",
+      "classification": "official documentation or announcement; runtime untested"
+    },
+    {
+      "id": "claude-hierarchical-canvas-focus",
+      "product": "claude",
+      "title": "Hierarchical canvas focus",
+      "description": "Enter/Return moves into selected artboards or nested groups; Tab navigates peers; Shift+Return moves up one level. Escape exits artboard then clears selection.",
+      "source_id": "claude-design",
+      "surface": "view:claude:design-canvas",
+      "acceptance": "Test parent/child navigation, keyboard text editing and visible selection.",
+      "classification": "official documentation or announcement; runtime untested"
+    },
+    {
+      "id": "claude-selection-toolbar-condition",
+      "product": "claude",
+      "title": "Selection toolbar conditional visibility",
+      "description": "A floating selection toolbar is available when properties panel is closed; F6 can reach it and arrows navigate its controls. Escape returns to the canvas preserving selection.",
+      "source_id": "claude-design",
+      "surface": "view:claude:design-canvas",
+      "acceptance": "Test selection, inspector open/closed, arrow navigation and restored focus.",
+      "classification": "official documentation or announcement; runtime untested"
+    },
+    {
+      "id": "claude-design-edit-channel",
+      "product": "claude",
+      "title": "Scope-specific editing channel",
+      "description": "Comments target component changes; chat is used for broader structure; direct manipulation adjusts geometry and alignment.",
+      "source_id": "claude-design",
+      "surface": "view:claude:design-canvas",
+      "acceptance": "Compare selected element, comment and broader request; do not infer exact pixel behavior.",
+      "classification": "official documentation or announcement; runtime untested"
+    },
+    {
+      "id": "claude-design-keyboard-limit",
+      "product": "claude",
+      "title": "Documented keyboard limitations",
+      "description": "Placing new design text, shapes, notes or artboards requires pointer input per guide. Noninteractive generated web artifacts may be skipped by Tab and may not scroll with arrows.",
+      "source_id": "claude-artifact-keyboard",
+      "surface": "view:claude:design-canvas",
+      "acceptance": "Verify keyboard-only creation and scroll fallback; do not label entire editor accessible.",
+      "classification": "official documentation or announcement; runtime untested"
+    },
+    {
+      "id": "claude-motion-code-output",
+      "product": "claude",
+      "title": "Code-based motion artifact",
+      "description": "Motion animates existing content as code rather than generating realistic footage. Edit timing or content through chat or editor; export MP4.",
+      "source_id": "claude-motion",
+      "surface": "output:claude:motion-beta",
+      "acceptance": "Verify local change scope, playback, export and timing; no runtime measurement.",
+      "classification": "official documentation or announcement; runtime untested"
+    },
+    {
+      "id": "claude-design-system-sync",
+      "product": "claude",
+      "title": "Design-system artifact and handoff",
+      "description": "Design systems are reusable artifacts sourced from design references or code; documented /design-sync workflow can connect real components to design and implementation.",
+      "source_id": "claude-design-systems",
+      "surface": "output:claude:design",
+      "acceptance": "Verify source ownership, import, handoff and fidelity without assuming perfect parity.",
+      "classification": "official documentation or announcement; runtime untested"
+    },
+    {
+      "id": "gemini-direct-file-edit",
+      "product": "gemini",
+      "title": "Direct document editing in chat",
+      "description": "Expand generated files to edit or select content for AI changes; PDF editing supported on web/mobile, other listed file formats web-only per announcement.",
+      "source_id": "gemini-direct-file-editor",
+      "surface": "view:gemini:canvas",
+      "acceptance": "Verify actual route and file type support; direct file editor is not necessarily Canvas.",
+      "classification": "official documentation or announcement; runtime untested"
+    },
+    {
+      "id": "gemini-notebook-deck-pending-delete",
+      "product": "gemini-notebook",
+      "title": "Staged slide deletion and restore",
+      "description": "In revision mode, slides marked for removal are dimmed with a trash icon and can be restored before generating the revised deck.",
+      "source_id": "gemini-notebook-deck-editor",
+      "surface": "output:gemini-notebook:slide-decks",
+      "acceptance": "Test mark, restore, apply and cancel; capture actual states.",
+      "classification": "official documentation or announcement; runtime untested"
+    },
+    {
+      "id": "gemini-notebook-deck-revision-new-object",
+      "product": "gemini-notebook",
+      "title": "Deck revision creates new output",
+      "description": "Revisions generate a new slide deck and consume revision quota; thumbnails can be dragged to reorder in the revision preview.",
+      "source_id": "gemini-notebook-deck-editor",
+      "surface": "output:gemini-notebook:slide-decks",
+      "acceptance": "Check original unchanged, new identity, ordering, quota and recovery.",
+      "classification": "official documentation or announcement; runtime untested"
+    },
+    {
+      "id": "gemini-notebook-deck-outline-review",
+      "product": "gemini-notebook",
+      "title": "Outline approval boundary",
+      "description": "Optional outline review allows feedback before final slide rendering; Proceed ends refinement of that outline. Generation is nonblocking.",
+      "source_id": "gemini-notebook-deck-editor",
+      "surface": "output:gemini-notebook:slide-decks",
+      "acceptance": "Verify review, proceed, feedback limits, failure and ready notification.",
+      "classification": "official documentation or announcement; runtime untested"
+    },
+    {
+      "id": "gemini-notebook-video-producer-review",
+      "product": "gemini-notebook",
+      "title": "Producer-note approval and scheduling",
+      "description": "Video generation can use optional producer-note review before rendering. Generate later schedules without producer notes; after Proceed that plan cannot be further refined.",
+      "source_id": "gemini-notebook-video",
+      "surface": "output:gemini-notebook:video-overview",
+      "acceptance": "Test review vs schedule, render progress, error and cancellation if available.",
+      "classification": "official documentation or announcement; runtime untested"
+    },
+    {
+      "id": "gemini-notebook-report-type-choice",
+      "product": "gemini-notebook",
+      "title": "Interactive versus document report",
+      "description": "Studio Reports offers interactive Learning Overview and document report generation as distinct options.",
+      "source_id": "gemini-notebook-reports",
+      "surface": "output:gemini-notebook:reports",
+      "acceptance": "Test template discovery, generation and persistent output behavior.",
+      "classification": "official documentation or announcement; runtime untested"
+    },
+    {
+      "id": "gemini-notebook-audio-formats-playback",
+      "product": "gemini-notebook",
+      "title": "Audio formats and background playback",
+      "description": "Audio offers Deep Dive, Brief, Critique and Debate, plus language, length and focus options. Playback speed and background listening are documented.",
+      "source_id": "gemini-notebook-audio",
+      "surface": "output:gemini-notebook:audio-overview",
+      "acceptance": "Test speed, background playback, loading saved audio and source grounding.",
+      "classification": "official documentation or announcement; runtime untested"
+    },
+    {
+      "id": "gemini-notebook-infographic-export",
+      "product": "gemini-notebook",
+      "title": "Infographic object actions",
+      "description": "Generated infographics can be renamed, downloaded as PNG, shared or deleted from the artifact menu.",
+      "source_id": "gemini-notebook-infographic",
+      "surface": "output:gemini-notebook:infographics",
+      "acceptance": "Test menu visibility, download rights, sharing and deletion.",
+      "classification": "official documentation or announcement; runtime untested"
+    },
+    {
+      "id": "grok-bot-team-page-sharing-policy",
+      "product": "grok-bot",
+      "title": "Administrator page-sharing policy",
+      "description": "Team admins can configure team-wide, specific-teammate or disabled page sharing as feature rollout reaches their team.",
+      "source_id": "grok-bot-team-policy",
+      "surface": "view:grok-bot:pages",
+      "acceptance": "Test disabled audience messaging and admin scope; not a live permission test.",
+      "classification": "official documentation or announcement; runtime untested"
+    }
+  ],
+  "sequences": [
+    {
+      "id": "notebook-deck-staged-revision",
+      "product": "gemini-notebook",
+      "source_id": "gemini-notebook-deck-editor",
+      "surface": "output:gemini-notebook:slide-decks",
+      "states": [
+        "existing deck",
+        "revision mode",
+        "pending deletion (dimmed + trash icon)",
+        "restored in draft",
+        "generate revised deck",
+        "new deck"
+      ],
+      "transitions": [
+        [
+          "existing deck",
+          "Revise",
+          "revision mode"
+        ],
+        [
+          "revision mode",
+          "Delete slide",
+          "pending deletion (dimmed + trash icon)"
+        ],
+        [
+          "pending deletion (dimmed + trash icon)",
+          "Restore slide",
+          "restored in draft"
+        ],
+        [
+          "revision mode",
+          "Generate revised deck",
+          "generate revised deck"
+        ],
+        [
+          "generate revised deck",
+          "generation completes",
+          "new deck"
+        ]
+      ],
+      "unknown": [
+        "failure",
+        "cancel",
+        "keyboard reorder",
+        "motion timing",
+        "exact appearance"
+      ]
+    },
+    {
+      "id": "claude-design-nested-selection",
+      "product": "claude",
+      "source_id": "claude-design",
+      "surface": "view:claude:design-canvas",
+      "states": [
+        "artboard title focused",
+        "artboard selected",
+        "layer navigation",
+        "text editing",
+        "selection retained",
+        "selection cleared"
+      ],
+      "transitions": [
+        [
+          "artboard title focused",
+          "Space",
+          "artboard selected"
+        ],
+        [
+          "artboard title focused",
+          "Return",
+          "layer navigation"
+        ],
+        [
+          "layer navigation",
+          "Return on text layer",
+          "text editing"
+        ],
+        [
+          "layer navigation",
+          "Escape",
+          "selection retained"
+        ],
+        [
+          "selection retained",
+          "Escape",
+          "selection cleared"
+        ]
+      ],
+      "unknown": [
+        "exact focus ring",
+        "animation",
+        "pointer parity",
+        "screen reader behavior in each browser"
+      ]
+    },
+    {
+      "id": "notebook-video-review",
+      "product": "gemini-notebook",
+      "source_id": "gemini-notebook-video",
+      "surface": "output:gemini-notebook:video-overview",
+      "states": [
+        "customization",
+        "producer notes generating",
+        "review ready",
+        "review and feedback",
+        "rendering",
+        "video ready"
+      ],
+      "transitions": [
+        [
+          "customization",
+          "Enable review and generate now",
+          "producer notes generating"
+        ],
+        [
+          "producer notes generating",
+          "notes ready",
+          "review ready"
+        ],
+        [
+          "review ready",
+          "Review",
+          "review and feedback"
+        ],
+        [
+          "review and feedback",
+          "Proceed",
+          "rendering"
+        ],
+        [
+          "rendering",
+          "generation completes",
+          "video ready"
+        ]
+      ],
+      "unknown": [
+        "exact progress UI",
+        "error",
+        "cancel",
+        "retry",
+        "motion"
+      ]
+    }
+  ]
+}

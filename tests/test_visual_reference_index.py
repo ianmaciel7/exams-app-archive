@@ -11,6 +11,21 @@ class VisualReferenceTests(unittest.TestCase):
         rows = mod.load()
         self.assertGreaterEqual(len(rows), 36)
         self.assertEqual(mod.verify(rows), [])
+    def test_legacy_visual_copies_reconcile(self):
+        result = mod.reconcile_legacy_assets(mod.load())
+        self.assertEqual(result["errors"], [])
+        self.assertEqual(result["legacy_records"], 14)
+        self.assertEqual(result["byte_verified"], 14)
+        self.assertEqual(result["source_matched"], 14)
+        self.assertEqual(result["canonical_copy_verified"], 14)
+        self.assertEqual(result["semantic_inspection"], "not_assessed")
+
+    def test_legacy_reconciliation_detects_missing_canonical_record(self):
+        rows = [r for r in mod.load() if r["id"] != "excalidraw-collaboration"]
+        result = mod.reconcile_legacy_assets(rows)
+        self.assertFalse(result["integrity_passed"])
+        self.assertTrue(any("canonical source mismatch" in e for e in result["errors"]))
+
     def test_segments(self):
         rows = mod.load()
         timed = [r for r in rows if r.get("segment_evidence")]
