@@ -142,3 +142,8 @@ Registrar URLs originais e redirects, datas de consulta, fonte e status (verific
 - [Research and visual examples](chatgpt-space-views-and-composable-pages-2026-11-26.md)
 - [Machine-readable catalog](chatgpt-space-views-and-composable-pages-2026-11-26.json)
 - 14 view/filter/navigation concepts, 11 patterns, 6 inspected official image links, 21 documentation/video references (9 documentation URLs rechecked; remaining leads marked for revalidation). No third-party image bytes redistributed.
+
+## Claude, Grok Bot, Gemini and Gemini Notebook (2026-11-26)
+
+- [Benchmark](ai-product-views-and-artifacts-2026-11-26.md) · [JSON catalog](ai-product-views-and-artifacts-2026-11-26.json)
+- 42 official documentation references, 23 product patterns, 12 publisher-page visual leads, 4 direct image URLs (not pixel-verified). New sources: 42. Companion to ChatGPT Space.

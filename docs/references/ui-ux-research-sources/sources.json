@@ -571,6 +571,426 @@
       "status": "prior research; recheck publisher and content",
       "notes": "Video lead; do not infer motion from stills",
       "storage": "link-only"
+    },
+    {
+      "id": "claude-artifacts",
+      "title": "Artifacts guide",
+      "url": "https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Claude; product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "claude-design",
+      "title": "Design help",
+      "url": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Claude; product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "claude-design-launch",
+      "title": "Design launch and visual demos",
+      "url": "https://www.anthropic.com/news/claude-design-anthropic-labs",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Claude; product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "claude-projects",
+      "title": "Projects guide",
+      "url": "https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Claude; product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "claude-projects-launch",
+      "title": "Projects visual examples",
+      "url": "https://www.anthropic.com/news/projects",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Claude; product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "claude-install",
+      "title": "Install artifact as app",
+      "url": "https://support.claude.com/en/articles/18516354-install-an-artifact-as-an-app?frmapp=yes",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Claude; product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "claude-connectors",
+      "title": "Interactive connectors",
+      "url": "https://support.claude.com/en/articles/13454812-use-interactive-connectors-in-claude",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Claude; product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "claude-releases",
+      "title": "Release notes",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes?tab=tab-crm",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Claude; product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "grok-bot-design",
+      "title": "Designing Grok Bot",
+      "url": "https://x.ai/news/designing-grok-bot",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Grok Bot; product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "grok-bot-overview",
+      "title": "Grok Bot overview",
+      "url": "https://docs.x.ai/grok-bot/overview",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Grok Bot; product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "grok-bot-files",
+      "title": "Files and results / Pages",
+      "url": "https://docs.x.ai/grok-bot/files-and-results",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Grok Bot; product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "grok-bot-start",
+      "title": "Get started",
+      "url": "https://docs.x.ai/grok-bot/get-started",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Grok Bot; product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "grok-bot-bots",
+      "title": "Create and manage Bots",
+      "url": "https://docs.x.ai/grok-bot/bots",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Grok Bot; product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "grok-bot-mobile",
+      "title": "Mobile guide",
+      "url": "https://docs.x.ai/grok-bot/mobile",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Grok Bot; product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "grok-bot-one",
+      "title": "Grok Bot 1.0 announcement",
+      "url": "https://x.ai/news/grok-bot-1-0?trk=article-ssr-frontend-pulse_little-text-block",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Grok Bot; product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "grok-bot-changelog",
+      "title": "Changelog",
+      "url": "https://x.ai/changelog/bot",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Grok Bot; product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "grok-bot-marketplace",
+      "title": "Design marketplace",
+      "url": "https://x.ai/bot/marketplace/design",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Grok Bot; product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "grok-bot-use-cases",
+      "title": "Use cases",
+      "url": "https://docs.x.ai/grok-bot/use-cases",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Grok Bot; product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "gemini-canvas",
+      "title": "Canvas help",
+      "url": "https://support.google.com/gemini/answer/16047321?hl=en-12",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Gemini; product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "gemini-canvas-examples",
+      "title": "Canvas examples 2026-11-23",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-canvas-tasks/",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Gemini; product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "gemini-dynamic",
+      "title": "Visual layout and Dynamic View announcement",
+      "url": "https://blog.google/products-and-platforms/products/gemini/gemini-3-gemini-app/",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Gemini; product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "gemini-simulations",
+      "title": "3D models and interactive charts",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/3d-models-charts/",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Gemini; product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "gemini-immersive",
+      "title": "Immersive explorations",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/immersive-explorations-student-hub/?trk=article-ssr-frontend-pulse_little-text-block",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Gemini; product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "gemini-study",
+      "title": "Study notebooks",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-study-notebooks/",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Gemini; product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "gemini-sketch",
+      "title": "Sketch to app",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/turn-drawings-into-apps-gemini/",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Gemini; product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "gemini-gems",
+      "title": "Gems mini-apps help (search excerpt; direct fetch redirected)",
+      "url": "https://support.google.com/gemini/answer/16802014?hl=en",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "search excerpt; direct fetch failed",
+      "notes": "Gemini; product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "gemini-images",
+      "title": "Interactive images",
+      "url": "https://blog.google/products-and-platforms/products/education/gemini-interactive-images/",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Gemini; product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "gemini-notebook-rename",
+      "title": "Rename announcement 2026-07-16",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Gemini Notebook (formerly NotebookLM); product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "gemini-notebook-help",
+      "title": "Help center",
+      "url": "https://support.google.com/gemininotebook/",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Gemini Notebook (formerly NotebookLM); product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "gemini-notebook-create",
+      "title": "Create notebook and Studio outputs",
+      "url": "https://support.google.com/gemininotebook/answer/16206563?hl=en-CA",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Gemini Notebook (formerly NotebookLM); product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "gemini-notebook-quiz",
+      "title": "Flashcards and quizzes",
+      "url": "https://support.google.com/gemininotebook/answer/16958963?hl=en",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Gemini Notebook (formerly NotebookLM); product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "gemini-notebook-mindmap",
+      "title": "Mind maps",
+      "url": "https://support.google.com/gemininotebook/answer/16212283",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Gemini Notebook (formerly NotebookLM); product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "gemini-notebook-sources",
+      "title": "Add or discover sources",
+      "url": "https://support.google.com/gemininotebook/answer/16215270?co=GENIE.Platform%3DDESKTOP&hl=en",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Gemini Notebook (formerly NotebookLM); product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "gemini-notebook-notes",
+      "title": "Notes",
+      "url": "https://support.google.com/gemininotebook/answer/16262519?hl=en",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Gemini Notebook (formerly NotebookLM); product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "gemini-notebook-chat",
+      "title": "Chat",
+      "url": "https://support.google.com/gemininotebook/answer/16179559",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Gemini Notebook (formerly NotebookLM); product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "gemini-notebook-sites",
+      "title": "Interactive sites help",
+      "url": "https://support.google.com/gemininotebook/answer/18945748",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Gemini Notebook (formerly NotebookLM); product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "gemini-notebook-sites-launch",
+      "title": "Interactive sites launch 2026-11-16",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/interactive-sites/?trk=public_post_comment-text",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Gemini Notebook (formerly NotebookLM); product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "gemini-notebook-study",
+      "title": "Learning Overview and expanded quiz types",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/three-tips-study-gemini-notebook/?trk=article-ssr-frontend-pulse_little-text-block",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Gemini Notebook (formerly NotebookLM); product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "gemini-notebook-review",
+      "title": "Slide and video review flow",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/co-create-slides-videos/?trk=article-ssr-frontend-pulse_little-text-block",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Gemini Notebook (formerly NotebookLM); product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "gemini-notebook-studio",
+      "title": "Studio upgrade (historical)",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-video-overviews-studio-upgrades/",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Gemini Notebook (formerly NotebookLM); product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "gemini-notebook-mobile-quiz",
+      "title": "Mobile quiz visual examples (historical)",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-app-quizzes-flashcards/",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Gemini Notebook (formerly NotebookLM); product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
+    },
+    {
+      "id": "gemini-notebook-mobile",
+      "title": "Mobile limitations",
+      "url": "https://support.google.com/gemininotebook/answer/16296687?co=GENIE.Platform%3DAndroid&hl=en",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Gemini Notebook (formerly NotebookLM); product documentation or announcement, not independent efficacy evidence.",
+      "storage": "link-only"
     }
   ]
 }

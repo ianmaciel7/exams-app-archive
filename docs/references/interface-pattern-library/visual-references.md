@@ -29,3 +29,24 @@ These links lead to source-hosted diagrams, demos, video or component galleries.
 - [Interactive prototype](https://images.ctfassets.net/8su2tbn87fck/rV0a4g28Lvgu6fnTDdmlp/3c11073bb05593530b026539ebe98f5b/chatgpt-space-prototype-desktop-light.png?fm=webp&q=80&w=1340) — Embedded onboarding wireframe concept; not evidence of shipped motion.
 
 Source and limitations: [research catalog](../ui-ux-research-sources/chatgpt-space-views-and-composable-pages-2026-11-26.md). Link-only; rights not verified for redistribution.
+
+## Claude, Grok Bot, Gemini and Gemini Notebook — official visual leads (2026-11-26)
+
+- Claude: [Design prototypes and refinement](https://www.anthropic.com/news/claude-design-anthropic-labs) — publisher page, visual lead.
+- Claude: [Project context and artifacts](https://www.anthropic.com/news/projects) — publisher page, visual lead.
+- Grok Bot: [Avatar motion and execution states](https://x.ai/news/designing-grok-bot) — publisher page, visual lead.
+- Grok Bot: [Team and agent UI](https://x.ai/news/grok-bot-1-0?trk=article-ssr-frontend-pulse_little-text-block) — publisher page, visual lead.
+- Grok Bot: [Page examples and library behavior](https://docs.x.ai/grok-bot/files-and-results) — publisher page, visual lead.
+- Gemini: [3D game, quiz, dashboard and document examples](https://blog.google/innovation-and-ai/products/gemini-app/gemini-canvas-tasks/) — publisher page, visual lead.
+- Gemini: [Interactive simulations and models](https://blog.google/innovation-and-ai/products/gemini-app/3d-models-charts/) — publisher page, visual lead.
+- Gemini: [Visual Layout and Dynamic View demos](https://blog.google/products-and-platforms/products/gemini/gemini-3-gemini-app/) — publisher page, visual lead.
+- Gemini Notebook (formerly NotebookLM): [Studio output gallery and video overview](https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-video-overviews-studio-upgrades/) — publisher page, visual lead.
+- Gemini Notebook (formerly NotebookLM): [Mobile flashcard and quiz examples](https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-app-quizzes-flashcards/) — publisher page, visual lead.
+- Gemini Notebook (formerly NotebookLM): [Slide/video review walkthroughs](https://blog.google/innovation-and-ai/products/gemini-notebook/co-create-slides-videos/?trk=article-ssr-frontend-pulse_little-text-block) — publisher page, visual lead.
+- Gemini Notebook (formerly NotebookLM): [Interactive site examples](https://blog.google/innovation-and-ai/products/gemini-notebook/interactive-sites/?trk=public_post_comment-text) — publisher page, visual lead.
+- [Gemini Canvas: 3D visualizer](https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_Canvas_3D_planet_generato.width-1200.format-webp.webp) — direct image URL; pixels not verified.
+- [Gemini Canvas: Physics quiz](https://storage.googleapis.com/gweb-uniblog-publish-prod/images/03_for_students_1_personalize_le.width-1200.format-webp.webp) — direct image URL; pixels not verified.
+- [Gemini Canvas: Role and permission dashboard](https://storage.googleapis.com/gweb-uniblog-publish-prod/images/07_for_work_2_optimize_operation.width-1200.format-webp.webp) — direct image URL; pixels not verified.
+- [Gemini Canvas: Speaker notes](https://storage.googleapis.com/gweb-uniblog-publish-prod/images/06_for_work_1_accelerate_impact_.width-1200.format-webp.webp) — direct image URL; pixels not verified.
+
+[Benchmark and caveats](../ui-ux-research-sources/ai-product-views-and-artifacts-2026-11-26.md). Link-only.
