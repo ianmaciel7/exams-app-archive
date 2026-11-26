@@ -164,3 +164,7 @@ Registrar URLs originais e redirects, datas de consulta, fonte e status (verific
 ## Editor contracts and state sequences
 
 [Research](ai-product-editor-contracts-2026-11-26.md) · [JSON](ai-product-editor-contracts-2026-11-26.json)
+
+## Visual and learning evidence
+
+[Research](ai-product-visual-and-learning-evidence-2026-11-26.md) · [JSON](ai-product-visual-and-learning-evidence-2026-11-26.json)

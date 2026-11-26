@@ -33,3 +33,5 @@ Each occurrence exposes compact, source-authored catalog statements and original
 ## Product graph retrieval
 
 The public research index explicitly projects the AI product graph's view, output, visual and flow nodes. Use `python scripts/research_index.py 'flashcard review' --kind flow` or `python scripts/research_index.py 'task list' --kind visual --product 'ChatGPT Space'`. Unverified state/component candidates are not searchable as observed evidence. Direct media remains external link-only. The public research website exposes the same metadata after deployment. Historical/private indexing is unaffected.
+
+Product-specific documented sequences and dated feature availability can also be retrieved with `--kind contract` and `--kind availability`. Examples: `python scripts/research_index.py 'pending deletion' --kind contract`; `python scripts/research_index.py 'motion template' --kind availability --product Claude`. Contracts preserve their unverified dimensions; availability is a historical documentation snapshot, not account entitlement.
