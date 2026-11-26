@@ -768,6 +768,69 @@
       "recorded_on": "2026-11-26",
       "evidence_status": "documented",
       "media_status": "not-inspected"
+    },
+    {
+      "id": "interleaving-material-similarity",
+      "name": "Interleaving and material similarity",
+      "aliases": [
+        "prática intercalada",
+        "interleaving",
+        "blocked practice"
+      ],
+      "family": "domain-research",
+      "issue": 96,
+      "definition": "Interleaving alternates related categories; the meta-analysis examines how material similarity and task type moderate its effects.",
+      "guardrail": "Do not randomly mix all subjects or prescribe interleaving universally. Practice fluency is not delayed discrimination.",
+      "tests": "Compare blocked and interleaved sequences with equal exposure and delayed discrimination tasks.",
+      "source_ids": [
+        "domain-interleaving-material-similarity"
+      ],
+      "classification": "meta-analysis",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "abstract-reviewed",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "explanatory-feedback-content",
+      "name": "Explanatory feedback content",
+      "aliases": [
+        "feedback explicativo",
+        "explicação do erro",
+        "corrective feedback"
+      ],
+      "family": "domain-research",
+      "issue": 96,
+      "definition": "The meta-analysis reports that the learning impact of feedback depends substantially on the information conveyed.",
+      "guardrail": "Correctness badges and praise are not substitutes for task-specific explanations. Do not infer efficacy of a particular screen.",
+      "tests": "After submission, expose an accessible explanation and later assess equivalent items without showing the answer.",
+      "source_ids": [
+        "domain-explanatory-feedback-content"
+      ],
+      "classification": "meta-analysis",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "abstract-reviewed",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "retrieval-transfer-outcomes",
+      "name": "Retrieval practice and transfer outcomes",
+      "aliases": [
+        "transferência",
+        "transfer learning",
+        "questões inéditas"
+      ],
+      "family": "domain-research",
+      "issue": 96,
+      "definition": "Experiments compared repeated testing and studying and found benefits on later retention and transfer tasks.",
+      "guardrail": "Transfer on new questions is distinct from remembering the original response; do not generalize to all domains or real exam outcomes.",
+      "tests": "Use unseen equivalent or transfer items after a predefined delay and record prior exposure, attrition and time.",
+      "source_ids": [
+        "domain-retrieval-transfer-outcomes"
+      ],
+      "classification": "experimental-research",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "abstract-reviewed",
+      "media_status": "not-inspected"
     }
   ]
 }

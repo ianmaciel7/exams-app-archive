@@ -359,3 +359,33 @@ Limits: Publication availability alone is not chapter-level extraction or compli
 Acceptance: For any high-stakes score interpretation, record the intended use and population, then obtain applicable evidence from the actual standard and validated assessment methodology.
 
 Source: [AERA/APA/NCME — Open Access Files](https://www.testingstandards.net/open-access-files.html) — official HTML page inspected 2026-11-26; official-publication-index.
+
+## Interleaving and material similarity (#96)
+
+Interleaving alternates related categories; the meta-analysis examines how material similarity and task type moderate its effects.
+
+Limits: Do not randomly mix all subjects or prescribe interleaving universally. Practice fluency is not delayed discrimination.
+
+Proposed test: Compare blocked and interleaved sequences with equal exposure and delayed discrimination tasks.
+
+Source: [Brunmair and Richter (2019) — Similarity matters](https://pubmed.ncbi.nlm.nih.gov/31556629/) — public abstract reviewed 2026-11-26; link only.
+
+## Explanatory feedback content (#96)
+
+The meta-analysis reports that the learning impact of feedback depends substantially on the information conveyed.
+
+Limits: Correctness badges and praise are not substitutes for task-specific explanations. Do not infer efficacy of a particular screen.
+
+Proposed test: After submission, expose an accessible explanation and later assess equivalent items without showing the answer.
+
+Source: [Wisniewski, Zierer and Hattie (2020) — The Power of Feedback Revisited](https://pubmed.ncbi.nlm.nih.gov/32038429/) — public abstract reviewed 2026-11-26; link only.
+
+## Retrieval practice and transfer outcomes (#96)
+
+Experiments compared repeated testing and studying and found benefits on later retention and transfer tasks.
+
+Limits: Transfer on new questions is distinct from remembering the original response; do not generalize to all domains or real exam outcomes.
+
+Proposed test: Use unseen equivalent or transfer items after a predefined delay and record prior exposure, attrition and time.
+
+Source: [Butler (2010) — Repeated testing and transfer](https://pubmed.ncbi.nlm.nih.gov/20804289/) — public abstract reviewed 2026-11-26; link only.
