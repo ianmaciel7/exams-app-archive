@@ -1,0 +1,544 @@
+{
+  "schema_version": 1,
+  "created_on": "2026-11-26",
+  "scope": "authorized disposable test fixtures only; planned cases, no runtime findings",
+  "graph_snapshot": "141189dbe88bf7d8ecd9ba36c0e2f3dccb67bba9",
+  "execution_policy": {
+    "allowed_statuses": [
+      "not-run",
+      "pass",
+      "fail",
+      "blocked",
+      "not-applicable"
+    ],
+    "default": "not-run",
+    "privacy": "Use fictional source content and redact identities, URLs with tokens, account IDs and private data. Do not publish or share outside test accounts; use link-only media unless redistribution is permitted.",
+    "authorization": "Do not change account plans, connect production services, incur charges, change permissions of real objects or execute unrelated agent actions. Mark blocked if authorization, feature, plan, device or tool access is missing."
+  },
+  "evidence_contract": {
+    "required_for_observed_result": [
+      "test_id",
+      "observed_at",
+      "product",
+      "platform",
+      "browser_or_app_version_if_visible",
+      "account_plan_if_visible",
+      "viewport_css_px_if_measured",
+      "role",
+      "action",
+      "observed_state_before",
+      "observed_state_after",
+      "result",
+      "source_or_permitted_capture",
+      "rights",
+      "redaction_status"
+    ],
+    "optional_measurements": [
+      "transition_duration_ms",
+      "easing_from_computed_style",
+      "focus_target",
+      "computed_style",
+      "contrast_ratio",
+      "keyboard_sequence",
+      "screen_reader_announcement",
+      "device_pixel_ratio"
+    ],
+    "unknown": "null or explicit not measured; never infer runtime measurements from marketing stills"
+  },
+  "cases": [
+    {
+      "id": "S01",
+      "product": "chatgpt-space",
+      "surface": "view:chatgpt-space:pages",
+      "reference": "flow:chatgpt-space-page-nesting-link",
+      "title": "Child object vs reference",
+      "steps": [
+        "Create a disposable page; create a child and link to another disposable page",
+        "Rename and reopen the linked page and child",
+        "Move the child within the test space if authorized"
+      ],
+      "checks": [
+        "Identify whether object identity and navigation persist; distinguish reference from reparenting",
+        "Record inherited access separately from direct invitation"
+      ],
+      "states": [
+        "normal",
+        "empty",
+        "reopen",
+        "permission"
+      ],
+      "gaps": [
+        "GAP-01",
+        "GAP-04",
+        "GAP-08"
+      ],
+      "status": "not-run",
+      "result": null,
+      "evidence": []
+    },
+    {
+      "id": "S02",
+      "product": "chatgpt-space",
+      "surface": "view:chatgpt-space:pages",
+      "reference": "flow:chatgpt-space-page-visualize",
+      "title": "Task, checklist and generated controls",
+      "steps": [
+        "Open the creation menu on a blank test page",
+        "Add a checklist and, if enabled, a generated visualization using fictional data",
+        "Change an input, reload and inspect persisted state; do not execute a real agent task"
+      ],
+      "checks": [
+        "Record menu labels, available controls and the observed state owner",
+        "Separate scheduled tasks from checklist items and generated controls"
+      ],
+      "states": [
+        "empty",
+        "loading",
+        "success",
+        "reload",
+        "error"
+      ],
+      "gaps": [
+        "GAP-02",
+        "GAP-03",
+        "GAP-09",
+        "GAP-15"
+      ],
+      "status": "not-run",
+      "result": null,
+      "evidence": []
+    },
+    {
+      "id": "S03",
+      "product": "chatgpt-space",
+      "surface": "view:chatgpt-space:space",
+      "reference": null,
+      "title": "Workspace shell and accessibility",
+      "steps": [
+        "Measure desktop panel widths at three viewports; collapse and restore a panel where supported",
+        "Use keyboard-only navigation to a page and editor; check reduced motion",
+        "Open a permitted read-only fixture and compare visible actions"
+      ],
+      "checks": [
+        "Record focus order, overflow, reflow, actual styles and reader role",
+        "Record only measured transition duration/easing; mark unavailable properties unknown"
+      ],
+      "states": [
+        "focus",
+        "collapsed",
+        "readonly",
+        "responsive"
+      ],
+      "gaps": [
+        "GAP-05",
+        "GAP-10",
+        "GAP-11",
+        "GAP-12",
+        "GAP-13",
+        "GAP-14"
+      ],
+      "status": "not-run",
+      "result": null,
+      "evidence": []
+    },
+    {
+      "id": "C01",
+      "product": "claude",
+      "surface": "view:claude:design-canvas",
+      "reference": "contract:claude-design-nested-selection",
+      "title": "Canvas selection and editor regions",
+      "steps": [
+        "Create a fictional design with nested groups",
+        "Navigate between canvas, properties and chat using documented keyboard controls",
+        "Select, enter and leave nested groups; compare inspector open and closed"
+      ],
+      "checks": [
+        "Record focus target, retained selection and keyboard/pointer parity",
+        "Capture actual toolbar and inspector labels and any keyboard limitations"
+      ],
+      "states": [
+        "normal",
+        "selected",
+        "focus",
+        "editing",
+        "disabled"
+      ],
+      "gaps": [
+        "GAP-02",
+        "GAP-03",
+        "GAP-10",
+        "GAP-11",
+        "GAP-13"
+      ],
+      "status": "not-run",
+      "result": null,
+      "evidence": []
+    },
+    {
+      "id": "C02",
+      "product": "claude",
+      "surface": "view:claude:artifacts-tab",
+      "reference": "flow:claude-sheet-create-edit",
+      "title": "Artifact editing and persistence",
+      "steps": [
+        "Inventory available editor templates using the account's displayed plan and platform",
+        "Create a disposable spreadsheet or document with fictional content",
+        "Edit, reopen, inspect version history and export where enabled"
+      ],
+      "checks": [
+        "Verify identity and persisted edits; distinguish exported copy from original",
+        "Record visible version and export options; note unavailable templates"
+      ],
+      "states": [
+        "empty",
+        "loading",
+        "saved",
+        "readonly",
+        "error"
+      ],
+      "gaps": [
+        "GAP-01",
+        "GAP-02",
+        "GAP-04",
+        "GAP-08",
+        "GAP-14",
+        "GAP-15"
+      ],
+      "status": "not-run",
+      "result": null,
+      "evidence": []
+    },
+    {
+      "id": "C03",
+      "product": "claude",
+      "surface": "output:claude:data",
+      "reference": null,
+      "title": "Dashboard lineage and shared data",
+      "steps": [
+        "Use synthetic data in an authorized test dashboard, without connecting production accounts",
+        "Inspect chart query/refresh metadata, keyboard interactions and history if available",
+        "Compare approved test reader and editor access only with explicit account authorization"
+      ],
+      "checks": [
+        "Record query access, freshness, snapshot/restore behavior and role boundary",
+        "No claim of live connector behavior when only synthetic input is available"
+      ],
+      "states": [
+        "normal",
+        "empty",
+        "stale",
+        "readonly",
+        "permission"
+      ],
+      "gaps": [
+        "GAP-08",
+        "GAP-09",
+        "GAP-13",
+        "GAP-15"
+      ],
+      "status": "not-run",
+      "result": null,
+      "evidence": []
+    },
+    {
+      "id": "G01",
+      "product": "grok-bot",
+      "surface": "view:grok-bot:library",
+      "reference": "flow:grok-bot-library-discovery",
+      "title": "Library facets and pins",
+      "steps": [
+        "Use an existing disposable test Bot or create one only if authorized",
+        "Produce a fictional page; inspect available facets and pin controls",
+        "Reopen and check cross-device pin state where a second session is authorized"
+      ],
+      "checks": [
+        "Record actual menu/facet labels, keyboard focus and pin persistence",
+        "Do not treat unavailable cross-device access as a failure"
+      ],
+      "states": [
+        "empty",
+        "loading",
+        "hover",
+        "focus",
+        "pinned"
+      ],
+      "gaps": [
+        "GAP-01",
+        "GAP-02",
+        "GAP-03",
+        "GAP-08",
+        "GAP-13"
+      ],
+      "status": "not-run",
+      "result": null,
+      "evidence": []
+    },
+    {
+      "id": "G02",
+      "product": "grok-bot",
+      "surface": "view:grok-bot:pages",
+      "reference": "flow:grok-bot-page-lifecycle",
+      "title": "Page reader state and recovery",
+      "steps": [
+        "Generate a disposable page with a filter",
+        "Change a reader control, reload and compare page identity",
+        "Ask for a harmless edit in chat; observe update of the existing card"
+      ],
+      "checks": [
+        "Separate transient reader controls from persistent agent edits",
+        "Record loading, update indication and retry only if safely reproducible"
+      ],
+      "states": [
+        "normal",
+        "loading",
+        "updated",
+        "reload",
+        "error"
+      ],
+      "gaps": [
+        "GAP-03",
+        "GAP-04",
+        "GAP-08",
+        "GAP-09",
+        "GAP-15"
+      ],
+      "status": "not-run",
+      "result": null,
+      "evidence": []
+    },
+    {
+      "id": "G03",
+      "product": "grok-bot",
+      "surface": "view:grok-bot:computer",
+      "reference": "flow:grok-bot-computer-handoff",
+      "title": "Agent handoff and shell",
+      "steps": [
+        "Observe a harmless test task in an isolated agent environment if available",
+        "Open preview and take control only with explicit authorization; return control",
+        "Record status, focus and collapse behavior; do not access private files"
+      ],
+      "checks": [
+        "Distinguish indicator, preview and control ownership",
+        "Capture actual transition only from a permitted recording; no inferred easing"
+      ],
+      "states": [
+        "idle",
+        "working",
+        "preview",
+        "takeover",
+        "returned"
+      ],
+      "gaps": [
+        "GAP-03",
+        "GAP-05",
+        "GAP-10",
+        "GAP-11",
+        "GAP-14"
+      ],
+      "status": "not-run",
+      "result": null,
+      "evidence": []
+    },
+    {
+      "id": "M01",
+      "product": "gemini",
+      "surface": "view:gemini:study-notebooks",
+      "reference": "flow:gemini-diagnostic-to-practice",
+      "title": "Diagnostic learning states",
+      "steps": [
+        "Create test learning materials with fictional topic data",
+        "Take a diagnostic and a follow-up quiz if enabled",
+        "Record dashboard labels and filter controls before and after"
+      ],
+      "checks": [
+        "Verify only visible state changes; do not infer mastery thresholds",
+        "Capture initial, progress and completion states with citations where available"
+      ],
+      "states": [
+        "empty",
+        "loading",
+        "not-started",
+        "focus-area",
+        "strength"
+      ],
+      "gaps": [
+        "GAP-01",
+        "GAP-03",
+        "GAP-04",
+        "GAP-05",
+        "GAP-09",
+        "GAP-14"
+      ],
+      "status": "not-run",
+      "result": null,
+      "evidence": []
+    },
+    {
+      "id": "M02",
+      "product": "gemini",
+      "surface": "view:gemini:canvas",
+      "reference": "flow:gemini-canvas-debug",
+      "title": "Generated editor and recovery",
+      "steps": [
+        "Create a harmless local-state counter or quiz in Canvas",
+        "Inspect preview/code and edit selected content; reopen",
+        "Observe a recoverable preview error in a disposable draft if safe"
+      ],
+      "checks": [
+        "Document edit scope, state persistence, error and retry UI",
+        "No production connector or externally published app required"
+      ],
+      "states": [
+        "normal",
+        "editing",
+        "loading",
+        "error",
+        "reopened"
+      ],
+      "gaps": [
+        "GAP-02",
+        "GAP-03",
+        "GAP-08",
+        "GAP-15"
+      ],
+      "status": "not-run",
+      "result": null,
+      "evidence": []
+    },
+    {
+      "id": "M03",
+      "product": "gemini",
+      "surface": "view:gemini:canvas",
+      "reference": "flow:gemini-canvas-sharing",
+      "title": "Sharing boundary and responsive view",
+      "steps": [
+        "Use a synthetic app in a permitted private test environment",
+        "Inspect sharing options without publishing unless authorized",
+        "Compare view widths and keyboard controls; test a copy using a permitted second account if available"
+      ],
+      "checks": [
+        "Distinguish private and shared storage and editable copy identity",
+        "Record actual permission wording and viewport, not inferred account eligibility"
+      ],
+      "states": [
+        "normal",
+        "readonly",
+        "permission",
+        "responsive",
+        "focus"
+      ],
+      "gaps": [
+        "GAP-05",
+        "GAP-08",
+        "GAP-10",
+        "GAP-12",
+        "GAP-13",
+        "GAP-14"
+      ],
+      "status": "not-run",
+      "result": null,
+      "evidence": []
+    },
+    {
+      "id": "N01",
+      "product": "gemini-notebook",
+      "surface": "view:gemini-notebook:full-screen-study-view",
+      "reference": "flow:gemini-notebook-quiz-review",
+      "title": "Source-grounded review loop",
+      "steps": [
+        "Use a fictional source document and generate a quiz or cards",
+        "Answer correctly and incorrectly, inspect explanation and source link",
+        "Exit, reopen and retry missed items when offered"
+      ],
+      "checks": [
+        "Record actual review states, source navigation and progress restoration",
+        "Separate learner state from source and generated artifact"
+      ],
+      "states": [
+        "loading",
+        "correct",
+        "incorrect",
+        "explanation",
+        "resume"
+      ],
+      "gaps": [
+        "GAP-03",
+        "GAP-04",
+        "GAP-05",
+        "GAP-08",
+        "GAP-13"
+      ],
+      "status": "not-run",
+      "result": null,
+      "evidence": []
+    },
+    {
+      "id": "N02",
+      "product": "gemini-notebook",
+      "surface": "view:gemini-notebook:studio",
+      "reference": "contract:notebook-deck-staged-revision",
+      "title": "Staged artifact revision",
+      "steps": [
+        "Generate a small disposable deck where plan allows",
+        "Mark a slide for deletion, restore it, and inspect preview before applying",
+        "Apply revision only if authorized; compare original and revised artifact"
+      ],
+      "checks": [
+        "Capture pending deletion and restoration with focus state",
+        "Record original/new identity, quota warning and failure controls where visible"
+      ],
+      "states": [
+        "normal",
+        "pending-delete",
+        "restored",
+        "generating",
+        "ready"
+      ],
+      "gaps": [
+        "GAP-02",
+        "GAP-03",
+        "GAP-04",
+        "GAP-08",
+        "GAP-11",
+        "GAP-15"
+      ],
+      "status": "not-run",
+      "result": null,
+      "evidence": []
+    },
+    {
+      "id": "N03",
+      "product": "gemini-notebook",
+      "surface": "view:gemini-notebook:sources",
+      "reference": null,
+      "title": "Three-pane shell and source tables",
+      "steps": [
+        "Open a disposable notebook with fictional sources; inspect panel collapse and resizing",
+        "Generate a source-grounded data table where available; inspect citation navigation",
+        "Inspect export menu; export to test destination only if explicitly authorized"
+      ],
+      "checks": [
+        "Record dimensions, focus, responsive behavior and export as a separate object",
+        "Capture source and row references without private data"
+      ],
+      "states": [
+        "empty",
+        "loading",
+        "normal",
+        "focus",
+        "responsive",
+        "export"
+      ],
+      "gaps": [
+        "GAP-05",
+        "GAP-09",
+        "GAP-10",
+        "GAP-12",
+        "GAP-13"
+      ],
+      "status": "not-run",
+      "result": null,
+      "evidence": []
+    }
+  ]
+}

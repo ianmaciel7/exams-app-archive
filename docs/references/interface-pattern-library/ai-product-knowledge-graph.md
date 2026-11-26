@@ -86,3 +86,7 @@ Every benchmark must resolve source IDs centrally, preserve stable observation I
 ## Retrieval quality audit
 
 [Five-product target-retrieval benchmark](ai-product-retrieval-benchmark.md): 22 frozen queries, no ranking changes in the initial baseline, independent relevance annotation still required. Report target recovery and missed IDs; do not treat passing unit tests as complete quality coverage.
+
+## Runtime verification plan
+
+[15 planned authorized test cases and independent-review protocol](ai-product-runtime-verification-plan.md) · [JSON](ai-product-runtime-verification-plan.json). All cases are not-run; no new evidence or completed coverage claimed.
