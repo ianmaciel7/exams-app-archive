@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "exams-archive-native",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "description": "Exams Archive: pesquisa histórica, UI/UX, grafo, componentes interativos, capturas e CLI/MCP local para agentes.",
   "author": {
     "name": "Ian Maciel de Carvalho",
@@ -36,7 +36,8 @@
     "MCP",
     "knowledge graph",
     "sync-ux-knowledge",
-    "knowledge synchronization"
+    "knowledge synchronization",
+    "shared-ux-knowledge"
   ],
   "repository": "https://github.com/ianmaciel7/exams-app-archive",
   "extensions": {
@@ -59,7 +60,8 @@
           "Preview React revisado, interação e captura Playwright",
           "Catálogo SQLite de screenshots e proveniência; CLI/MCP local",
           "Site, grafo e llms.txt para descoberta de contexto",
-          "Sincronização de conhecimento UI/UX: plugin especialista, arquivo GitHub, Biblioteca e memória quando disponível"
+          "Sincronização de conhecimento UI/UX: plugin especialista, arquivo GitHub, Biblioteca e memória quando disponível",
+          "Consulta cruzada de conhecimento com Especialista em UI/UX via base canônica"
         ],
         "category": "Developer Tools",
         "defaultPrompt": [

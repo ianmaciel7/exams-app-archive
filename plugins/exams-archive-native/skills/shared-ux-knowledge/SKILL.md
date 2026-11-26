@@ -1,0 +1,18 @@
+---
+name: shared-ux-knowledge
+description: Use when researching, comparing, designing, auditing or recovering UI/UX patterns, components, workspace, sidebars, navigation, motion, graph, data visualization, AI-native UI, sketches, wireframes or design systems where general guidance and historical evidence can complement each other. Connect Exams Archive and Especialista em UI/UX through their shared canonical knowledge, even when only one plugin is mentioned.
+---
+
+# Shared UX knowledge — collaboration contract v1.0
+
+Canonical contract: https://github.com/ianmaciel7/exams-app-archive/blob/main/docs/references/shared-ux-knowledge/README.md
+
+- Exams Archive owns historical evidence, code, commits, screenshots, prototypes, ADRs, implementation and reproducibility. Especialista em UI/UX owns general research, principles, standards, patterns, methods, accessibility and acceptance tests. Both contribute to overlapping topics. Neither replaces the other.
+- At the beginning of a relevant cross-domain task, consult the current canonical contract and relevant knowledge, then complementary sources via available connected GitHub, local archive CLI/MCP or installed skills. Do not require the user to mention both plugins. Generic UX work need not load unrelated project history. Current Exam App claims require current branch verification; historical evidence is not current truth.
+- Shared entry points: https://github.com/ianmaciel7/exams-app-archive/tree/main/docs/references/interface-pattern-library and https://github.com/ianmaciel7/exams-app-archive/tree/main/docs/references/ui-ux-research-sources ; also search archive graph, glossary, ADRs, screenshot catalog and component sources by concept and aliases.
+- Combine results into one evidence packet: existing stable concept/pattern ID or alias, definition, context, behavior/states/triggers, historical source path and SHA when known, external source URL and date/version, evidence type and confidence, accessibility, rationale, tradeoffs, acceptance tests, and links to related patterns, components, screenshots, ADRs and gaps. Clearly distinguish observed, documented, tested, normative and proposed claims. Never infer motion from still images.
+- Example: Capacities sidebar peek: combine archived hover/pin implementation and source evidence with progressive disclosure, focus, touch alternatives, reduced motion and test criteria. Do not infer a historical fact from a general pattern.
+- Reuse canonical records instead of duplicating catalogs. Deduplicate by stable IDs, aliases and normalized source URLs; preserve provenance. Add dated annotations rather than editing historical evidence. Only general shareable knowledge and licensed references may go to public GitHub. Do not publish private identifiers, queries, credentials, restricted media or personal information.
+- Consult the newest relevant records; label stale caches and unavailable sources. No recursive delegation or fictitious inter-plugin RPC. If counterpart or tools are unavailable, continue with evidence actually accessible and report gaps. Never pretend a skill installation enables a new connector.
+- On explicit synchronization, follow Exams Archive sync-ux-knowledge and sync-bridge; on reusable learning, follow Especialista em UI/UX aprendizado-incremental. Respect authorized writes, release guards, conflict handling and readback. This collaboration rule is not a background process and does not authorize unrelated mutations.
+- Verify that either plugin alone can retrieve complementary evidence, general topics stay general, disagreements retain provenance, repeated ingestion is idempotent, and no automatic sync is claimed without a separately verified integration.

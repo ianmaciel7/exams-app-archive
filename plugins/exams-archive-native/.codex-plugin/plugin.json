@@ -1,41 +1,42 @@
 {
   "interface": {
     "capabilities": [
-      "GitHub e pesquisa histórica FTS5",
+      "GitHub e pesquisa hist\u00f3rica FTS5",
       "Fontes de UI auditadas com SHA e branch",
-      "Catálogo de 213 imagens históricas recuperadas",
+      "Cat\u00e1logo de 213 imagens hist\u00f3ricas recuperadas",
       "Componentes React e stories Notes App old-4/old-5",
       "Matriz 48 capturas do shell antigo",
       "Fidelidade de design, medidas e tokens OKLCH",
-      "Prévia autocontida no ChatGPT, sem iframe/fetch externo",
-      "Auditoria de backup e restauração por SHA",
-      "Catálogo motion: 13 comportamentos com duração, delay, estado e fonte SHA",
-      "Sincronização bidirecional controlada entre plugin ChatGPT e espelho GitHub",
-      "Compatibilidade com Claude Code e Antigravity em diretório unificado",
-      "Script FTS5 histórico preservado dentro do pacote",
-      "Explorador de árvores Git, código e componentes",
-      "Preview React revisado, interação e captura Playwright",
-      "Catálogo SQLite de screenshots e proveniência; CLI/MCP local",
+      "Pr\u00e9via autocontida no ChatGPT, sem iframe/fetch externo",
+      "Auditoria de backup e restaura\u00e7\u00e3o por SHA",
+      "Cat\u00e1logo motion: 13 comportamentos com dura\u00e7\u00e3o, delay, estado e fonte SHA",
+      "Sincroniza\u00e7\u00e3o bidirecional controlada entre plugin ChatGPT e espelho GitHub",
+      "Compatibilidade com Claude Code e Antigravity em diret\u00f3rio unificado",
+      "Script FTS5 hist\u00f3rico preservado dentro do pacote",
+      "Explorador de \u00e1rvores Git, c\u00f3digo e componentes",
+      "Preview React revisado, intera\u00e7\u00e3o e captura Playwright",
+      "Cat\u00e1logo SQLite de screenshots e proveni\u00eancia; CLI/MCP local",
       "Site, grafo e llms.txt para descoberta de contexto",
-      "Sincronização de conhecimento UI/UX: plugin especialista, arquivo GitHub, Biblioteca e memória quando disponível"
+      "Sincroniza\u00e7\u00e3o de conhecimento UI/UX: plugin especialista, arquivo GitHub, Biblioteca e mem\u00f3ria quando dispon\u00edvel",
+      "Consulta cruzada de conhecimento com Especialista em UI/UX via base can\u00f4nica"
     ],
     "category": "Developer Tools",
     "defaultPrompt": [
       "Recupere a sidebar do Notes old-5, o contrato visual old-4 e as imagens Capacities antes de criar um preview interativo autocontido aqui no ChatGPT.",
-      "Compare as 48 capturas lowchrome e as 26 capturas sidebar para verificar tema, painéis, estados e densidade visual, mantendo fontes e SHAs.",
-      "Encontre no catálogo as imagens recuperadas de Capacities, QConcursos, Readwise e ExamTopics que servem como referência de UI.",
-      "Faça uma auditoria do arquivo Git, seus bundles e pendências de recuperação sem excluir fontes.",
-      "Recupere do Exams Archive tempos e triggers de animações, peek, hover e drag da sidebar, validando código e SHA.",
-      "Localize componentes históricos e seus SHAs, consulte o catálogo de previews e recupere screenshots reais via CLI ou MCP quando disponível. Sincronize o plugin com o GitHub sem sobrescrever conflitos."
+      "Compare as 48 capturas lowchrome e as 26 capturas sidebar para verificar tema, pain\u00e9is, estados e densidade visual, mantendo fontes e SHAs.",
+      "Encontre no cat\u00e1logo as imagens recuperadas de Capacities, QConcursos, Readwise e ExamTopics que servem como refer\u00eancia de UI.",
+      "Fa\u00e7a uma auditoria do arquivo Git, seus bundles e pend\u00eancias de recupera\u00e7\u00e3o sem excluir fontes.",
+      "Recupere do Exams Archive tempos e triggers de anima\u00e7\u00f5es, peek, hover e drag da sidebar, validando c\u00f3digo e SHA.",
+      "Localize componentes hist\u00f3ricos e seus SHAs, consulte o cat\u00e1logo de previews e recupere screenshots reais via CLI ou MCP quando dispon\u00edvel. Sincronize o plugin com o GitHub sem sobrescrever conflitos."
     ],
     "developerName": "Ian Maciel de Carvalho",
     "displayName": "Exams Archive",
-    "longDescription": "Plugin privado de skills com fonte canônica no GitHub para ChatGPT, Codex, Claude Code e Antigravity. Pesquisa Git/FTS5, grafo, código, UI/motion e evidência visual por SHA. Usa CLI e MCP local opcional para renderizar componentes revisados, capturar PNG e consultar SQLite. Pages é estático; ChatGPT não recebe automaticamente o servidor MCP local. Sincronização de releases é explícita.",
-    "shortDescription": "Histórico, componentes, grafo e evidência visual"
+    "longDescription": "Plugin privado de skills com fonte can\u00f4nica no GitHub para ChatGPT, Codex, Claude Code e Antigravity. Pesquisa Git/FTS5, grafo, c\u00f3digo, UI/motion e evid\u00eancia visual por SHA. Usa CLI e MCP local opcional para renderizar componentes revisados, capturar PNG e consultar SQLite. Pages \u00e9 est\u00e1tico; ChatGPT n\u00e3o recebe automaticamente o servidor MCP local. Sincroniza\u00e7\u00e3o de releases \u00e9 expl\u00edcita.",
+    "shortDescription": "Hist\u00f3rico, componentes, grafo e evid\u00eancia visual"
   },
   "name": "exams-archive-native",
-  "version": "0.8.1",
-  "description": "Exams Archive: pesquisa histórica, UI/UX, grafo, componentes interativos, capturas e CLI/MCP local para agentes.",
+  "version": "0.8.2",
+  "description": "Exams Archive: pesquisa hist\u00f3rica, UI/UX, grafo, componentes interativos, capturas e CLI/MCP local para agentes.",
   "author": {
     "name": "Ian Maciel de Carvalho",
     "email": "ianmaciel76@gmail.com"
@@ -69,7 +70,8 @@
     "MCP",
     "knowledge graph",
     "sync-ux-knowledge",
-    "knowledge synchronization"
+    "knowledge synchronization",
+    "shared-ux-knowledge"
   ],
   "repository": "https://github.com/ianmaciel7/exams-app-archive",
   "skills": "./skills"
