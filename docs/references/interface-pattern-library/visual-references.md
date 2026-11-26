@@ -75,3 +75,12 @@ Source and limitations: [research catalog](../ui-ux-research-sources/chatgpt-spa
 - [Project instructions hover hint](https://assets.claude.com/cc93fb25eee286dd473f00325a800275a9725a1b.png?fit=max&fm=webp&q=75&w=3840) — official historical promotional still visually inspected; no runtime test. [Publisher](https://www.anthropic.com/news/projects).
 - [Side-by-side artifact code editor](https://assets.claude.com/95ecd50cd239a837a8c381db2fa55438f196d897.png?fit=max&fm=webp&q=75&w=3840) — official historical promotional still visually inspected; no runtime test. [Publisher](https://www.anthropic.com/news/projects).
 - [Project shared activity and sources](https://assets.claude.com/959ca5d0dff9fc11136bf188399c3e03e68579d9.png?fit=max&fm=webp&q=75&w=3840) — official historical promotional still visually inspected; no runtime test. [Publisher](https://www.anthropic.com/news/projects).
+
+## Google Research generative UI (adjacent reference)
+
+- [Inspected research collage](https://storage.googleapis.com/gweb-research2023-media/images/GenUI-0b-Hero.width-1250.png) — historical, not native product capture.
+- [Fractal explorer](https://generativeui.github.io/static/demos/full_carousel.html?result=fractal-explorer) — demo lead, runtime untested.
+- [Probability of rolling an eight](https://generativeui.github.io/static/demos/carousel.html?result=rolling-an-8) — demo lead, runtime untested.
+- [Basketball mathematics](https://generativeui.github.io/static/demos/carousel.html?result=basketball-math) — demo lead, runtime untested.
+- [Memory game](https://generativeui.github.io/static/demos/full_carousel.html?result=memory-game) — demo lead, runtime untested.
+- [Learn fast typing](https://generativeui.github.io/static/demos/full_carousel.html?result=learn-fast-typing) — demo lead, runtime untested.

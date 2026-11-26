@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "run_id": 45838090219,
+  "job_id": 139972181279,
+  "commit": "9434440a0473dbe71d9007ff7aba032979b90f1f",
+  "artifact_id": 15126892255,
+  "artifact_sha256": "97e3ae5abdbefaabb1fb949fc59daa1250d34d8ad4e942a5b7a856e2caa06b30",
+  "default": {
+    "budget": 2000,
+    "recall": 0.95,
+    "labeled_hit_fraction": 0.475,
+    "mrr": 0.875,
+    "negative_abstention": 1,
+    "p95_ms": 4605.464573000007
+  },
+  "expanded": {
+    "budget": 8000,
+    "recall": 1,
+    "labeled_hit_fraction": 0.11975607725607726,
+    "mrr": 0.8875,
+    "negative_abstention": 1,
+    "p95_ms": 4685.367689999993
+  },
+  "ci": {
+    "run_id": 45838089930,
+    "conclusion": "all four jobs successful"
+  },
+  "independent_annotation": false,
+  "quality_certified": false,
+  "interpretation": "Reranking recovered the remaining target at expanded budget, but default recall remains unchanged. Do not increase default budget; evaluate compact payloads and relevance ordering without weakening existing gates."
+}

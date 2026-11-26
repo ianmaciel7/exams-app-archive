@@ -96,7 +96,9 @@
     "gemini-notebook-textbooks": "gemini-notebook-textbooks",
     "gemini-notebook-datatables-announcement": "gemini-notebook-datatables-announcement",
     "google-sheets-canvas-help": "google-sheets-canvas-help",
-    "google-sheets-canvas-semester": "google-sheets-canvas-semester"
+    "google-sheets-canvas-semester": "google-sheets-canvas-semester",
+    "google-research-generative-ui-implementation": "google-research-generative-ui-implementation",
+    "google-research-generative-ui-demo-gallery": "google-research-generative-ui-demo-gallery"
   },
   "nodes": [
     {
@@ -4231,6 +4233,100 @@
       "storage": "link-only",
       "rights": "publisher media; redistribution license not verified",
       "modality": "image"
+    },
+    {
+      "id": "source:google-research-generative-ui-implementation",
+      "type": "source",
+      "label": "Generative UI: A rich, custom, visual interactive user experience for any prompt",
+      "url": "https://research.google/blog/generative-ui-a-rich-custom-visual-interactive-user-experience-for-any-prompt/",
+      "central_source_id": "google-research-generative-ui-implementation",
+      "evidence_status": "official research text retrieved; live demo interactions untested"
+    },
+    {
+      "id": "source:google-research-generative-ui-demo-gallery",
+      "type": "source",
+      "label": "Generative UI: LLMs are Effective UI Generators — project page",
+      "url": "https://generativeui.github.io/",
+      "central_source_id": "google-research-generative-ui-demo-gallery",
+      "evidence_status": "official research text retrieved; live demo interactions untested"
+    },
+    {
+      "id": "evidence:gemini:google-research-genui-examples-2025",
+      "type": "evidence",
+      "label": "Google Research generative UI examples collage",
+      "url": "https://storage.googleapis.com/gweb-research2023-media/images/GenUI-0b-Hero.width-1250.png",
+      "description": "Publisher collage of three generated interfaces: fashion cards grouped into style tabs; a fractal lesson with left icon rail and a start action; a child-oriented math menu with four colored category cards and score indicator. These are examples of research output, not native product controls or live interaction tests.",
+      "status": "official historical research image visually inspected 2026-11-26; still only",
+      "storage": "link-only",
+      "rights": "publisher media; individual redistribution rights not verified",
+      "modality": "image",
+      "published_on": "2025-11-18",
+      "reviewed_on": "2026-11-26"
+    },
+    {
+      "id": "evidence:gemini:research-demo-fractals",
+      "type": "evidence-lead",
+      "label": "Fractal explorer",
+      "url": "https://generativeui.github.io/static/demos/full_carousel.html?result=fractal-explorer",
+      "surface": "output:gemini:web-pages",
+      "description": "Research demonstration linked by the primary project page; viewer URL retrieved but no executable contents or interaction observed.",
+      "status": "official research demo link; viewer shell retrieved, runtime untested",
+      "storage": "link-only",
+      "rights": "individual demo redistribution rights not verified",
+      "modality": "interactive-demo-page",
+      "reviewed_on": "2026-11-26"
+    },
+    {
+      "id": "evidence:gemini:research-demo-probability",
+      "type": "evidence-lead",
+      "label": "Probability of rolling an eight",
+      "url": "https://generativeui.github.io/static/demos/carousel.html?result=rolling-an-8",
+      "surface": "output:gemini:web-pages",
+      "description": "Research demonstration linked by the primary project page; viewer URL retrieved but no executable contents or interaction observed.",
+      "status": "official research demo link; viewer shell retrieved, runtime untested",
+      "storage": "link-only",
+      "rights": "individual demo redistribution rights not verified",
+      "modality": "interactive-demo-page",
+      "reviewed_on": "2026-11-26"
+    },
+    {
+      "id": "evidence:gemini:research-demo-basketball-math",
+      "type": "evidence-lead",
+      "label": "Basketball mathematics",
+      "url": "https://generativeui.github.io/static/demos/carousel.html?result=basketball-math",
+      "surface": "output:gemini:games",
+      "description": "Research demonstration linked by the primary project page; viewer URL retrieved but no executable contents or interaction observed.",
+      "status": "official research demo link; viewer shell retrieved, runtime untested",
+      "storage": "link-only",
+      "rights": "individual demo redistribution rights not verified",
+      "modality": "interactive-demo-page",
+      "reviewed_on": "2026-11-26"
+    },
+    {
+      "id": "evidence:gemini:research-demo-memory-game",
+      "type": "evidence-lead",
+      "label": "Memory game",
+      "url": "https://generativeui.github.io/static/demos/full_carousel.html?result=memory-game",
+      "surface": "output:gemini:games",
+      "description": "Research demonstration linked by the primary project page; viewer URL retrieved but no executable contents or interaction observed.",
+      "status": "official research demo link; viewer shell retrieved, runtime untested",
+      "storage": "link-only",
+      "rights": "individual demo redistribution rights not verified",
+      "modality": "interactive-demo-page",
+      "reviewed_on": "2026-11-26"
+    },
+    {
+      "id": "evidence:gemini:research-demo-typing",
+      "type": "evidence-lead",
+      "label": "Learn fast typing",
+      "url": "https://generativeui.github.io/static/demos/full_carousel.html?result=learn-fast-typing",
+      "surface": "output:gemini:games",
+      "description": "Research demonstration linked by the primary project page; viewer URL retrieved but no executable contents or interaction observed.",
+      "status": "official research demo link; viewer shell retrieved, runtime untested",
+      "storage": "link-only",
+      "rights": "individual demo redistribution rights not verified",
+      "modality": "interactive-demo-page",
+      "reviewed_on": "2026-11-26"
     }
   ],
   "edges": [
@@ -9441,6 +9537,132 @@
       "to": "evidence:claude:project-shared-activity",
       "relation": "has_inspected_example",
       "status": "partial coverage of publisher page"
+    },
+    {
+      "from": "product:gemini",
+      "to": "source:google-research-generative-ui-implementation",
+      "relation": "documented_by",
+      "status": "adjacent research, not current product coverage"
+    },
+    {
+      "from": "product:gemini",
+      "to": "source:google-research-generative-ui-demo-gallery",
+      "relation": "documented_by",
+      "status": "adjacent research, not current product coverage"
+    },
+    {
+      "from": "product:gemini",
+      "to": "evidence:gemini:google-research-genui-examples-2025",
+      "relation": "has_visual_lead",
+      "status": "inspected historical research illustration"
+    },
+    {
+      "from": "evidence:gemini:google-research-genui-examples-2025",
+      "to": "source:google-research-generative-ui-implementation",
+      "relation": "published_by",
+      "status": "Google Research"
+    },
+    {
+      "from": "view:gemini:dynamic-view",
+      "to": "evidence:gemini:google-research-genui-examples-2025",
+      "relation": "illustrated_by",
+      "status": "related research examples, not runtime capture"
+    },
+    {
+      "from": "evidence:gemini:visual-layout-and-dynamic-view-demos",
+      "to": "evidence:gemini:google-research-genui-examples-2025",
+      "relation": "has_related_research_example",
+      "status": "not equivalent to inspection of original product demo"
+    },
+    {
+      "from": "product:gemini",
+      "to": "evidence:gemini:research-demo-fractals",
+      "relation": "has_visual_lead",
+      "status": "adjacent research demo lead"
+    },
+    {
+      "from": "evidence:gemini:research-demo-fractals",
+      "to": "source:google-research-generative-ui-demo-gallery",
+      "relation": "published_by",
+      "status": "official project gallery"
+    },
+    {
+      "from": "output:gemini:web-pages",
+      "to": "evidence:gemini:research-demo-fractals",
+      "relation": "illustrated_by",
+      "status": "conceptually related research example, not product capture"
+    },
+    {
+      "from": "product:gemini",
+      "to": "evidence:gemini:research-demo-probability",
+      "relation": "has_visual_lead",
+      "status": "adjacent research demo lead"
+    },
+    {
+      "from": "evidence:gemini:research-demo-probability",
+      "to": "source:google-research-generative-ui-demo-gallery",
+      "relation": "published_by",
+      "status": "official project gallery"
+    },
+    {
+      "from": "output:gemini:web-pages",
+      "to": "evidence:gemini:research-demo-probability",
+      "relation": "illustrated_by",
+      "status": "conceptually related research example, not product capture"
+    },
+    {
+      "from": "product:gemini",
+      "to": "evidence:gemini:research-demo-basketball-math",
+      "relation": "has_visual_lead",
+      "status": "adjacent research demo lead"
+    },
+    {
+      "from": "evidence:gemini:research-demo-basketball-math",
+      "to": "source:google-research-generative-ui-demo-gallery",
+      "relation": "published_by",
+      "status": "official project gallery"
+    },
+    {
+      "from": "output:gemini:games",
+      "to": "evidence:gemini:research-demo-basketball-math",
+      "relation": "illustrated_by",
+      "status": "conceptually related research example, not product capture"
+    },
+    {
+      "from": "product:gemini",
+      "to": "evidence:gemini:research-demo-memory-game",
+      "relation": "has_visual_lead",
+      "status": "adjacent research demo lead"
+    },
+    {
+      "from": "evidence:gemini:research-demo-memory-game",
+      "to": "source:google-research-generative-ui-demo-gallery",
+      "relation": "published_by",
+      "status": "official project gallery"
+    },
+    {
+      "from": "output:gemini:games",
+      "to": "evidence:gemini:research-demo-memory-game",
+      "relation": "illustrated_by",
+      "status": "conceptually related research example, not product capture"
+    },
+    {
+      "from": "product:gemini",
+      "to": "evidence:gemini:research-demo-typing",
+      "relation": "has_visual_lead",
+      "status": "adjacent research demo lead"
+    },
+    {
+      "from": "evidence:gemini:research-demo-typing",
+      "to": "source:google-research-generative-ui-demo-gallery",
+      "relation": "published_by",
+      "status": "official project gallery"
+    },
+    {
+      "from": "output:gemini:games",
+      "to": "evidence:gemini:research-demo-typing",
+      "relation": "illustrated_by",
+      "status": "conceptually related research example, not product capture"
     }
   ],
   "backlog": [
@@ -9590,6 +9812,7 @@
     "docs/references/ui-ux-research-sources/ai-product-visual-and-learning-evidence-2026-11-26.json",
     "docs/references/ui-ux-research-sources/ai-product-creation-inventory-2026-11-26.json",
     "docs/references/ui-ux-research-sources/ai-product-dataviz-and-evidence-coverage-2026-11-26.json",
-    "docs/references/ui-ux-research-sources/ai-product-visual-verification-2026-11-26.json"
+    "docs/references/ui-ux-research-sources/ai-product-visual-verification-2026-11-26.json",
+    "docs/references/ui-ux-research-sources/google-research-generative-ui-evidence-2026-11-26.json"
   ]
 }

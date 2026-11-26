@@ -180,3 +180,7 @@ Registrar URLs originais e redirects, datas de consulta, fonte e status (verific
 ## Visual verification follow-up
 
 [Report](ai-product-visual-verification-2026-11-26.md) · [JSON](ai-product-visual-verification-2026-11-26.json)
+
+## Generative UI research examples
+
+[Google Research reference](google-research-generative-ui-evidence-2026-11-26.md) · [JSON](google-research-generative-ui-evidence-2026-11-26.json)

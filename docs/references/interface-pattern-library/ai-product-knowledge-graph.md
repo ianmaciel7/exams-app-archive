@@ -90,3 +90,7 @@ Every benchmark must resolve source IDs centrally, preserve stable observation I
 ## Runtime verification plan
 
 [15 planned authorized test cases and independent-review protocol](ai-product-runtime-verification-plan.md) · [JSON](ai-product-runtime-verification-plan.json). All cases are not-run; no new evidence or completed coverage claimed.
+
+## Adjacent generative UI research examples
+
+[Research evidence and selected demo links](../ui-ux-research-sources/google-research-generative-ui-evidence-2026-11-26.md). One inspected original collage, five demo leads; not new native feature claims. Graph: 480 nodes, 889 edges.

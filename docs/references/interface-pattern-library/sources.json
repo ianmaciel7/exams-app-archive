@@ -6125,6 +6125,29 @@
       "checked_on": "2026-11-26",
       "status": "official publisher text reviewed; no authenticated runtime test",
       "storage": "link-only"
+    },
+    {
+      "id": "google-research-generative-ui-implementation",
+      "title": "Generative UI: A rich, custom, visual interactive user experience for any prompt",
+      "url": "https://research.google/blog/generative-ui-a-rich-custom-visual-interactive-user-experience-for-any-prompt/",
+      "published_on": "2025-11-18",
+      "product": "Gemini / adjacent Google Research",
+      "kind": "primary research project or announcement",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official research text retrieved; live demo interactions untested",
+      "storage": "link-only"
+    },
+    {
+      "id": "google-research-generative-ui-demo-gallery",
+      "title": "Generative UI: LLMs are Effective UI Generators — project page",
+      "url": "https://generativeui.github.io/",
+      "product": "Gemini / adjacent Google Research",
+      "kind": "primary research project or announcement",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official research text retrieved; live demo interactions untested",
+      "storage": "link-only"
     }
   ],
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",

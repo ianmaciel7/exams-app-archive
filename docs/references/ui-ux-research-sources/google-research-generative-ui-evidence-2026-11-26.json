@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-26",
+  "scope": "adjacent primary research examples, not native Gemini inventory",
+  "sources": [
+    {
+      "id": "google-research-generative-ui-implementation",
+      "title": "Generative UI: A rich, custom, visual interactive user experience for any prompt",
+      "url": "https://research.google/blog/generative-ui-a-rich-custom-visual-interactive-user-experience-for-any-prompt/",
+      "published_on": "2025-11-18",
+      "product": "Gemini / adjacent Google Research",
+      "kind": "primary research project or announcement",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official research text retrieved; live demo interactions untested",
+      "storage": "link-only"
+    },
+    {
+      "id": "google-research-generative-ui-demo-gallery",
+      "title": "Generative UI: LLMs are Effective UI Generators — project page",
+      "url": "https://generativeui.github.io/",
+      "product": "Gemini / adjacent Google Research",
+      "kind": "primary research project or announcement",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official research text retrieved; live demo interactions untested",
+      "storage": "link-only"
+    }
+  ],
+  "visual_evidence": [
+    {
+      "id": "evidence:gemini:google-research-genui-examples-2025",
+      "type": "evidence",
+      "label": "Google Research generative UI examples collage",
+      "url": "https://storage.googleapis.com/gweb-research2023-media/images/GenUI-0b-Hero.width-1250.png",
+      "description": "Publisher collage of three generated interfaces: fashion cards grouped into style tabs; a fractal lesson with left icon rail and a start action; a child-oriented math menu with four colored category cards and score indicator. These are examples of research output, not native product controls or live interaction tests.",
+      "status": "official historical research image visually inspected 2026-11-26; still only",
+      "storage": "link-only",
+      "rights": "publisher media; individual redistribution rights not verified",
+      "modality": "image",
+      "published_on": "2025-11-18",
+      "reviewed_on": "2026-11-26"
+    }
+  ],
+  "demo_leads": [
+    {
+      "id": "evidence:gemini:research-demo-fractals",
+      "type": "evidence-lead",
+      "label": "Fractal explorer",
+      "url": "https://generativeui.github.io/static/demos/full_carousel.html?result=fractal-explorer",
+      "surface": "output:gemini:web-pages",
+      "description": "Research demonstration linked by the primary project page; viewer URL retrieved but no executable contents or interaction observed.",
+      "status": "official research demo link; viewer shell retrieved, runtime untested",
+      "storage": "link-only",
+      "rights": "individual demo redistribution rights not verified",
+      "modality": "interactive-demo-page",
+      "reviewed_on": "2026-11-26"
+    },
+    {
+      "id": "evidence:gemini:research-demo-probability",
+      "type": "evidence-lead",
+      "label": "Probability of rolling an eight",
+      "url": "https://generativeui.github.io/static/demos/carousel.html?result=rolling-an-8",
+      "surface": "output:gemini:web-pages",
+      "description": "Research demonstration linked by the primary project page; viewer URL retrieved but no executable contents or interaction observed.",
+      "status": "official research demo link; viewer shell retrieved, runtime untested",
+      "storage": "link-only",
+      "rights": "individual demo redistribution rights not verified",
+      "modality": "interactive-demo-page",
+      "reviewed_on": "2026-11-26"
+    },
+    {
+      "id": "evidence:gemini:research-demo-basketball-math",
+      "type": "evidence-lead",
+      "label": "Basketball mathematics",
+      "url": "https://generativeui.github.io/static/demos/carousel.html?result=basketball-math",
+      "surface": "output:gemini:games",
+      "description": "Research demonstration linked by the primary project page; viewer URL retrieved but no executable contents or interaction observed.",
+      "status": "official research demo link; viewer shell retrieved, runtime untested",
+      "storage": "link-only",
+      "rights": "individual demo redistribution rights not verified",
+      "modality": "interactive-demo-page",
+      "reviewed_on": "2026-11-26"
+    },
+    {
+      "id": "evidence:gemini:research-demo-memory-game",
+      "type": "evidence-lead",
+      "label": "Memory game",
+      "url": "https://generativeui.github.io/static/demos/full_carousel.html?result=memory-game",
+      "surface": "output:gemini:games",
+      "description": "Research demonstration linked by the primary project page; viewer URL retrieved but no executable contents or interaction observed.",
+      "status": "official research demo link; viewer shell retrieved, runtime untested",
+      "storage": "link-only",
+      "rights": "individual demo redistribution rights not verified",
+      "modality": "interactive-demo-page",
+      "reviewed_on": "2026-11-26"
+    },
+    {
+      "id": "evidence:gemini:research-demo-typing",
+      "type": "evidence-lead",
+      "label": "Learn fast typing",
+      "url": "https://generativeui.github.io/static/demos/full_carousel.html?result=learn-fast-typing",
+      "surface": "output:gemini:games",
+      "description": "Research demonstration linked by the primary project page; viewer URL retrieved but no executable contents or interaction observed.",
+      "status": "official research demo link; viewer shell retrieved, runtime untested",
+      "storage": "link-only",
+      "rights": "individual demo redistribution rights not verified",
+      "modality": "interactive-demo-page",
+      "reviewed_on": "2026-11-26"
+    }
+  ],
+  "observations": [
+    "Project page describes server tools, model instructions and post-processing for generated web pages; do not infer implementation of every product surface.",
+    "The research project reports human preferences on 100 sampled prompts when generation speed is ignored; this is not an accessibility, educational efficacy or performance guarantee."
+  ],
+  "limitations": [
+    "One collage inspected; demo viewer shells returned no readable interactive content. No actual demo interactions, timing or product behavior tested.",
+    "No redistribution of original bytes; website-level CC BY-SA statement does not establish individual asset rights."
+  ]
+}
