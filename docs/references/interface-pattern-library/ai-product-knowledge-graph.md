@@ -102,3 +102,17 @@ Artifact 15127632547 contained 58 returned hits, all with a record or blob hash,
 ## Direct provenance coverage — Gemini Notebook, 2026-11-26
 
 Added 19 feature-specific source edges using existing canonical Google Help and launch source nodes. Direct coverage: 11/41 views and 19/48 outputs across the five products. Six Notebook views and eleven Notebook outputs have direct documentation; notebook collection remains unlinked pending an explicit collection-view source. 480 nodes and 922 edges; all endpoints resolve. Study progress and individual site inputs are documented as persistent; shared-site users cannot see others' inputs. Exports to Docs/Sheets are detached from the original notebook and its sharing permissions. Interactive reports are distinct from document reports; the latter are not a universal interactive editor. Full-screen flashcard/quiz controls do not establish every artifact viewer's layout. Official text checked, no authenticated runtime, screenshots, ranking changes or independent benchmark claims.
+
+## Direct provenance coverage — ChatGPT Space, Claude and Gemini, 2026-11-26
+
+Added 55 source edges, 2 centrally registered official help sources; 482 nodes and 977 edges, all endpoints resolve. Overall direct coverage 35/41 views and 48/48 outputs. Coverage counts any direct feature-specific source, including explicitly classified historical announcements and generated examples; it does not certify UI or template availability.
+
+| Product | Views | Outputs | Remaining unlinked IDs |
+|---|---:|---:|---|
+| chatgpt-space | 12/14 | 8/8 | `view:chatgpt-space:sites`, `view:chatgpt-space:google-drive` |
+| claude | 5/6 | 8/8 | `view:claude:installed-apps` |
+| gemini | 7/7 | 13/13 | None |
+| grok-bot | 5/7 | 8/8 | `view:grok-bot:computer`, `view:grok-bot:marketplace` |
+| gemini-notebook | 6/7 | 11/11 | `view:gemini-notebook:notebook-collection` |
+
+OpenAI Help documents ownership filters, nested pages and search; Space marketing illustrations establish generated examples, not native templates. Claude Artifacts Help distinguishes seven native templates from arbitrary tools and dashboards, and interactive connector views from artifact views. Gemini Canvas Help documents code/preview and creation outputs; the November 23 blog gives generated use cases; older launches do not certify current rollout. React-specific internals, exact installed-app navigation, Space Sites/Google Drive view labels and remaining unlinked items require explicit evidence. No screenshots, runtime testing or ranking changes in this pass.

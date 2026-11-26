@@ -6232,6 +6232,28 @@
       "storage": "link-only",
       "notes": "Official public HTML text reviewed 2026-11-26; authenticated runtime, media and plan conditions not independently verified.",
       "license": "not established; link-only"
+    },
+    {
+      "id": "gemini-guided-learning-help",
+      "title": "Use learning tools in Gemini Apps",
+      "url": "https://support.google.com/gemini/answer/16448384?co=GENIE.Platform%3DDesktop&hl=en-76",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Public help text; no authenticated UI testing.",
+      "storage": "link-only",
+      "checked_on": "2026-11-26"
+    },
+    {
+      "id": "gemini-custom-gems-help",
+      "title": "Use Gems in Gemini Apps",
+      "url": "https://support.google.com/gemini/answer/15146780?co=GENIE.Platform%3DDesktop&hl=en",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Public help text; no authenticated UI testing.",
+      "storage": "link-only",
+      "checked_on": "2026-11-26"
     }
   ],
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",

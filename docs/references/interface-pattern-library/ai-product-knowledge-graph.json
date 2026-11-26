@@ -98,7 +98,9 @@
     "google-sheets-canvas-help": "google-sheets-canvas-help",
     "google-sheets-canvas-semester": "google-sheets-canvas-semester",
     "google-research-generative-ui-implementation": "google-research-generative-ui-implementation",
-    "google-research-generative-ui-demo-gallery": "google-research-generative-ui-demo-gallery"
+    "google-research-generative-ui-demo-gallery": "google-research-generative-ui-demo-gallery",
+    "gemini-guided-learning-help": "gemini-guided-learning-help",
+    "gemini-custom-gems-help": "gemini-custom-gems-help"
   },
   "nodes": [
     {
@@ -4327,6 +4329,22 @@
       "rights": "individual demo redistribution rights not verified",
       "modality": "interactive-demo-page",
       "reviewed_on": "2026-11-26"
+    },
+    {
+      "id": "source:gemini-guided-learning-help",
+      "type": "source",
+      "label": "Use learning tools in Gemini Apps",
+      "url": "https://support.google.com/gemini/answer/16448384?co=GENIE.Platform%3DDesktop&hl=en-76",
+      "central_source_id": "gemini-guided-learning-help",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:gemini-custom-gems-help",
+      "type": "source",
+      "label": "Use Gems in Gemini Apps",
+      "url": "https://support.google.com/gemini/answer/15146780?co=GENIE.Platform%3DDesktop&hl=en",
+      "central_source_id": "gemini-custom-gems-help",
+      "evidence_status": "official source retrieved in research"
     }
   ],
   "edges": [
@@ -9861,6 +9879,336 @@
       "to": "source:gemini-notebook-quiz",
       "relation": "supported_by",
       "status": "Official documentation checked 2026-11-26: Quiz and flashcard generation has a customization entry and runs in the background."
+    },
+    {
+      "from": "view:chatgpt-space:all",
+      "to": "source:openai-space-help",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: All groups saved work with ownership filters."
+    },
+    {
+      "from": "view:chatgpt-space:your-items",
+      "to": "source:openai-space-help",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Personal pages, files and folders."
+    },
+    {
+      "from": "view:chatgpt-space:shared-with-you",
+      "to": "source:openai-space-help",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Direct and team shares; inherited access via spaces may not appear here."
+    },
+    {
+      "from": "view:chatgpt-space:pages",
+      "to": "source:openai-space-help",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Owned or shared pages, with ownership filters."
+    },
+    {
+      "from": "view:chatgpt-space:images",
+      "to": "source:openai-space-help",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Images separated into creations and uploads."
+    },
+    {
+      "from": "view:chatgpt-space:your-creations",
+      "to": "source:openai-space-help",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Creation filter within Images."
+    },
+    {
+      "from": "view:chatgpt-space:uploads",
+      "to": "source:openai-space-help",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Upload filter within Images."
+    },
+    {
+      "from": "view:chatgpt-space:suggested",
+      "to": "source:openai-space-help",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Recently accessed content discovery."
+    },
+    {
+      "from": "view:chatgpt-space:recents",
+      "to": "source:openai-space-help",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Recently used content discovery."
+    },
+    {
+      "from": "view:chatgpt-space:space",
+      "to": "source:openai-space-help",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Named groups of related pages and work."
+    },
+    {
+      "from": "view:chatgpt-space:parent-page",
+      "to": "source:openai-space-help",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Nested subpages accessed through parent; moving requires edit access."
+    },
+    {
+      "from": "view:chatgpt-space:search",
+      "to": "source:openai-space-help",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Space search and global search on mobile."
+    },
+    {
+      "from": "output:chatgpt-space:pages",
+      "to": "source:openai-space-help",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Editable collaborative document, may include interactive content."
+    },
+    {
+      "from": "output:chatgpt-space:task-list",
+      "to": "source:openai-space-product",
+      "relation": "supported_by",
+      "status": "Official product example checked 2026-11-26: Illustrated generated checklist example; not proof of a native template."
+    },
+    {
+      "from": "output:chatgpt-space:data-visualization",
+      "to": "source:openai-space-product",
+      "relation": "supported_by",
+      "status": "Official product example checked 2026-11-26: Illustrated generated visualization example."
+    },
+    {
+      "from": "output:chatgpt-space:presentation",
+      "to": "source:openai-space-product",
+      "relation": "supported_by",
+      "status": "Official product example checked 2026-11-26: Pitch-deck example; separate Slides capability."
+    },
+    {
+      "from": "output:chatgpt-space:client-portal",
+      "to": "source:openai-space-product",
+      "relation": "supported_by",
+      "status": "Official product example checked 2026-11-26: Site example bringing project deliverables together."
+    },
+    {
+      "from": "output:chatgpt-space:project-tracker",
+      "to": "source:openai-space-product",
+      "relation": "supported_by",
+      "status": "Official product example checked 2026-11-26: Illustrated tracker with connected data updates."
+    },
+    {
+      "from": "output:chatgpt-space:interactive-prototype",
+      "to": "source:openai-space-product",
+      "relation": "supported_by",
+      "status": "Official product example checked 2026-11-26: Embedded generated prototype, game, quiz or app example."
+    },
+    {
+      "from": "output:chatgpt-space:sites",
+      "to": "source:openai-space-product",
+      "relation": "supported_by",
+      "status": "Official product example checked 2026-11-26: Website or web app creation advertised; not proof of a specific navigation view."
+    },
+    {
+      "from": "output:chatgpt-space:presentation",
+      "to": "source:openai-space-start",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Slides in Space: mobile creation/viewing, web/desktop direct element editing."
+    },
+    {
+      "from": "view:claude:artifacts-tab",
+      "to": "source:claude-artifacts",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Template entry and saved artifacts; available on web and mobile with platform differences."
+    },
+    {
+      "from": "view:claude:side-by-side-chat-and-artifact",
+      "to": "source:claude-artifacts",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Artifact opens alongside conversation for iteration."
+    },
+    {
+      "from": "view:claude:projects",
+      "to": "source:component-claude-projects",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Sidebar entry and project knowledge panel; free plan up to five projects."
+    },
+    {
+      "from": "view:claude:design-canvas",
+      "to": "source:claude-design",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Design template supports direct on-canvas editing and design-system application. Standalone Design scheduled to close December 14, 2026."
+    },
+    {
+      "from": "view:claude:inline-connected-app",
+      "to": "source:claude-connectors",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Connector-provided UI can appear inline, in side panel or fullscreen; actions depend on connector, and navigation pins are per browser."
+    },
+    {
+      "from": "output:claude:docs",
+      "to": "source:claude-artifacts",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Native living document template."
+    },
+    {
+      "from": "output:claude:slides",
+      "to": "source:claude-artifacts",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Native presentation template with direct edits and PPT/PDF export."
+    },
+    {
+      "from": "output:claude:design",
+      "to": "source:claude-artifacts",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Native visual design template."
+    },
+    {
+      "from": "output:claude:data",
+      "to": "source:claude-artifacts",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Native data template; chart query and refresh provenance."
+    },
+    {
+      "from": "output:claude:motion-beta",
+      "to": "source:claude-artifacts",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Native beta animated artifact, Team/Enterprise, MP4 export."
+    },
+    {
+      "from": "output:claude:sheets-beta",
+      "to": "source:claude-artifacts",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Native beta spreadsheet template with formulas across tabs."
+    },
+    {
+      "from": "output:claude:whiteboards-beta",
+      "to": "source:claude-artifacts",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Native beta collaborative whiteboard template."
+    },
+    {
+      "from": "output:claude:interactive-tools-and-dashboards",
+      "to": "source:claude-artifacts",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Generated artifact examples, not a separate universal template."
+    },
+    {
+      "from": "view:gemini:canvas",
+      "to": "source:gemini-canvas",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Workspace with code and preview, console and autosave."
+    },
+    {
+      "from": "view:gemini:visual-layout",
+      "to": "source:gemini-dynamic",
+      "relation": "supported_by",
+      "status": "Official launch announcement checked 2026-11-26: Historical 2025 experimental magazine-like generated modules, not current universal availability."
+    },
+    {
+      "from": "view:gemini:dynamic-view",
+      "to": "source:gemini-dynamic",
+      "relation": "supported_by",
+      "status": "Official launch announcement checked 2026-11-26: Historical 2025 experiment generating custom UI from prompts, not a fixed template."
+    },
+    {
+      "from": "view:gemini:study-notebooks",
+      "to": "source:gemini-study",
+      "relation": "supported_by",
+      "status": "Official launch announcement checked 2026-11-26: June 2026 launch documents diagnostics, lessons and a skills dashboard; current platform rollout not inferred."
+    },
+    {
+      "from": "view:gemini:immersive-explorations",
+      "to": "source:gemini-immersive",
+      "relation": "supported_by",
+      "status": "Official launch announcement checked 2026-11-26: October 2026 announcement describes layered interactive scenes in student hub; later in-chat access was announced, not verified."
+    },
+    {
+      "from": "view:gemini:guided-learning",
+      "to": "source:gemini-guided-learning-help",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Documented tutoring mode and educational tools."
+    },
+    {
+      "from": "view:gemini:gems",
+      "to": "source:gemini-custom-gems-help",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Settings entry, custom instructions, knowledge and preview; distinct from Google Labs mini-apps."
+    },
+    {
+      "from": "output:gemini:documents",
+      "to": "source:gemini-canvas",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Canvas supports document editing, version navigation and export."
+    },
+    {
+      "from": "output:gemini:html-react-app-previews",
+      "to": "source:gemini-canvas",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Canvas code and live app preview documented; React-specific implementation not verified by this source."
+    },
+    {
+      "from": "output:gemini:quizzes",
+      "to": "source:gemini-canvas",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Canvas Create menu includes quiz from a document."
+    },
+    {
+      "from": "output:gemini:slides",
+      "to": "source:gemini-canvas",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Canvas creates slide decks and exports to Google Slides/PDF."
+    },
+    {
+      "from": "output:gemini:infographics",
+      "to": "source:gemini-canvas",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Canvas Create menu includes infographic."
+    },
+    {
+      "from": "output:gemini:web-pages",
+      "to": "source:gemini-canvas",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Canvas Create menu includes web page."
+    },
+    {
+      "from": "output:gemini:audio-overview",
+      "to": "source:gemini-canvas",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Canvas Create menu includes Audio Overview."
+    },
+    {
+      "from": "output:gemini:3d-visualizations",
+      "to": "source:gemini-canvas-examples",
+      "relation": "supported_by",
+      "status": "Official product example checked 2026-11-26; not native template: Generated 3D visualizer example."
+    },
+    {
+      "from": "output:gemini:games",
+      "to": "source:gemini-canvas-examples",
+      "relation": "supported_by",
+      "status": "Official product example checked 2026-11-26; not native template: Generated browser game example."
+    },
+    {
+      "from": "output:gemini:quizzes",
+      "to": "source:gemini-canvas-examples",
+      "relation": "supported_by",
+      "status": "Official product example checked 2026-11-26; not native template: Generated interactive quiz example."
+    },
+    {
+      "from": "output:gemini:flashcards",
+      "to": "source:gemini-canvas-examples",
+      "relation": "supported_by",
+      "status": "Official product example checked 2026-11-26; not native template: Generated study-tool example."
+    },
+    {
+      "from": "output:gemini:task-lists",
+      "to": "source:gemini-canvas-examples",
+      "relation": "supported_by",
+      "status": "Official product example checked 2026-11-26; not native template: Generated productivity example."
+    },
+    {
+      "from": "output:gemini:sales-trackers",
+      "to": "source:gemini-canvas-examples",
+      "relation": "supported_by",
+      "status": "Official product example checked 2026-11-26; not native template: Generated spreadsheet-based productivity example."
+    },
+    {
+      "from": "output:gemini:pricing-calculators",
+      "to": "source:gemini-canvas-examples",
+      "relation": "supported_by",
+      "status": "Official product example checked 2026-11-26; not native template: Generated productivity example."
     }
   ],
   "backlog": [
