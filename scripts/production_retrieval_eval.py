@@ -30,10 +30,7 @@ def run(queries, retrieve, *, budget_tokens=None, compact_occurrences=False, rel
         result = retrieve(q["query"], **options)
         if context_budget_tokens is not None:
             from public_context_payload import project_context
-            from federated_retrieval import expand_public_hit
-            full_audit = {**result, "results": [expand_public_hit(h) for h in result["results"]]}
-            full_audit.pop("occurrence_encoding", None)
-            projected = project_context(full_audit, budget_tokens=context_budget_tokens)
+            projected = project_context(result, budget_tokens=context_budget_tokens)
         out.append({"id": q["id"], "query": q["query"], "status": result["status"],
                     "hits": result["results"], "snapshot": result.get("snapshot"),
                     "unavailable": result.get("sources_unavailable", []),
@@ -44,7 +41,7 @@ def run(queries, retrieve, *, budget_tokens=None, compact_occurrences=False, rel
                     "latency_ms": (time.perf_counter()-start)*1000})
         if context_budget_tokens is not None:
             out[-1]["context_payload"] = projected
-            out[-1]["audit_response"] = full_audit
+            out[-1]["audit_response"] = result
     if len({r["id"] for r in out}) != len(out):
         raise ValueError("Duplicate query IDs")
     return out

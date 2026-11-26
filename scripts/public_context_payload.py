@@ -108,16 +108,12 @@ def main(argv=None):
     parser.add_argument("--relevance-first", action="store_true")
     args = parser.parse_args(argv)
     from federated_retrieval import federated_search
-    # Retrieve full audit occurrences. The optional compact flag only affects
-    # allocation in retrieval; restore occurrence data before saving the audit.
+    # Preserve the exact retrieval response, including its accounting and any
+    # reversible occurrence encoding. Do not rewrite the audited representation.
     audit = federated_search(args.query, scope="public",
                              budget_tokens=args.retrieval_budget_tokens,
                              compact_occurrences=args.compact_occurrences,
                              relevance_first=args.relevance_first)
-    if args.compact_occurrences:
-        from federated_retrieval import expand_public_hit
-        audit = {**audit, "results": [expand_public_hit(h) for h in audit["results"]]}
-        audit.pop("occurrence_encoding", None)
     context = project_context(audit, budget_tokens=args.budget_tokens,
                               max_bytes=args.max_context_bytes)
     # Digest refers to exactly these UTF-8 bytes, without a trailing newline.
