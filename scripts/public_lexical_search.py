@@ -1,5 +1,5 @@
 """Label-blind natural-language ranking over approved public record fields."""
-from collections import Counter
+from functools import lru_cache
 import math
 import re
 import search_expansion as sx
@@ -31,12 +31,14 @@ EXTRA = (
     ("carga", "workload"),
 )
 
+@lru_cache(maxsize=2048)
 def tokens(value):
     # Retain compound identifiers as well as split camelCase words.
     raw = set(re.findall(r"[a-z0-9]+", sx.strip_accents(str(value)).lower()))
     raw.update(re.findall(r"[a-z0-9]+", sx.normalize_text(str(value))))
     return {sx.stem_simple(w) for w in raw if len(w) >= 2 and w not in QUESTION_WORDS}
 
+@lru_cache(maxsize=128)
 def query_groups(query):
     words = [w for w in re.findall(r"[a-z0-9]+", sx.normalize_text(query))
              if w not in QUESTION_WORDS and len(w) >= 2]

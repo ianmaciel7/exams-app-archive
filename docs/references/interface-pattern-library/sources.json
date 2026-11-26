@@ -4932,6 +4932,94 @@
       "status": "verified",
       "storage": "link-only",
       "notes": "Public source documentation reviewed 2026-11-26; no product interaction or media verification implied."
+    },
+    {
+      "id": "domain-error-notebook-review",
+      "title": "TEC Concursos — error notebook tutorial",
+      "url": "https://tecconcursos.zendesk.com/hc/pt-br/articles/48591881334939--Tutorial-Como-fazer-um-caderno-de-erros-no-Tec-Concursos",
+      "kind": "product-documentation",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Public source reviewed; original media and product interactions not inspected.",
+      "source_version": "2026-04-01"
+    },
+    {
+      "id": "domain-retrieval-testing-effect",
+      "title": "Roediger and Karpicke — Test-Enhanced Learning",
+      "url": "https://doi.org/10.1111/j.1467-9280.2006.01693.x",
+      "kind": "experimental-research",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Public source reviewed; original media and product interactions not inspected.",
+      "source_version": "2006"
+    },
+    {
+      "id": "domain-spacing-retention-interval",
+      "title": "Cepeda et al. — Distributed practice in verbal recall tasks",
+      "url": "https://doi.org/10.1037/0033-2909.132.3.354",
+      "kind": "meta-analysis",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Public source reviewed; original media and product interactions not inspected.",
+      "source_version": "2006"
+    },
+    {
+      "id": "domain-question-bank-quiz-separation",
+      "title": "Moodle 5.3 — Quiz activity",
+      "url": "https://docs.moodle.org/503/en/Quiz_activity",
+      "kind": "product-documentation",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Public source reviewed; original media and product interactions not inspected.",
+      "source_version": "5.3"
+    },
+    {
+      "id": "domain-graph-link-filtering",
+      "title": "Obsidian Help — Graph view",
+      "url": "https://obsidian.md/help/plugins/graph",
+      "kind": "product-documentation",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Public source reviewed; original media and product interactions not inspected.",
+      "source_version": "undated"
+    },
+    {
+      "id": "domain-annotation-storage-export",
+      "title": "Zotero Documentation — annotation storage",
+      "url": "https://www.zotero.org/support/kb/annotations_in_database",
+      "kind": "product-documentation",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Public source reviewed; original media and product interactions not inspected.",
+      "source_version": "Zotero 6+"
+    },
+    {
+      "id": "domain-token-format-interoperability",
+      "title": "Design Tokens Format Module 2025.10",
+      "url": "https://www.designtokens.org/TR/2025.10/format/",
+      "kind": "community-group-report",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Public source reviewed; original media and product interactions not inspected.",
+      "source_version": "2025.10"
+    },
+    {
+      "id": "domain-selection-point-interval",
+      "title": "Vega-Lite — Selection Parameters",
+      "url": "https://vega.github.io/vega-lite/docs/selection.html",
+      "kind": "technical-documentation",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Public source reviewed; original media and product interactions not inspected.",
+      "source_version": "undated"
     }
   ],
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",

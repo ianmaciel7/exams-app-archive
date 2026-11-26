@@ -203,3 +203,85 @@ Limits: Feature-detect, preserve an immediate fallback and avoid assuming suppor
 Acceptance: Test unsupported API, interrupted transitions, reduced motion and route changes without animation.
 
 Source: [MDN — View Transition API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API). Link-only; product behavior and media not inspected.
+
+## Deeper public-source review
+
+### Error notebook from performance records (#95)
+
+The documented flow creates a separate notebook from incorrect answers in an existing notebook or statistics filtered by time, subject, board, folder and difficulty.
+
+Limits: Treat historical attempt events separately from current review status; do not infer mastery from a corrected retry.
+
+Acceptance: Create a fictional error set for a time range and verify exclusions, duplicate handling and source-attempt preservation.
+
+Source: [TEC Concursos — error notebook tutorial](https://tecconcursos.zendesk.com/hc/pt-br/articles/48591881334939--Tutorial-Como-fazer-um-caderno-de-erros-no-Tec-Concursos); edition/date: 2026-04-01; evidence: product-documentation. Reviewed 2026-11-26. Original media and product interactions not inspected.
+
+### Retrieval practice and delayed retention (#96)
+
+The 2006 study compared memory testing and restudy with educationally relevant materials; later retention benefited from testing.
+
+Limits: Do not equate immediate fluency or short-term quiz accuracy with durable learning; generalization beyond the study tasks needs evidence.
+
+Acceptance: Compare delayed recall after equal-duration study and retrieval using equivalent original material.
+
+Source: [Roediger and Karpicke — Test-Enhanced Learning](https://doi.org/10.1111/j.1467-9280.2006.01693.x); edition/date: 2006; evidence: experimental-research. Reviewed 2026-11-26. Original media and product interactions not inspected.
+
+### Spacing and retention interval (#96)
+
+The review examined spacing, lag and interstudy intervals in verbal recall and found the optimal interval depends on the intended retention interval.
+
+Limits: No universal fixed spacing schedule follows; the findings do not validate individual FSRS estimates.
+
+Acceptance: Predefine a retention horizon, compare schedules and report time, recall and uncertainty.
+
+Source: [Cepeda et al. — Distributed practice in verbal recall tasks](https://doi.org/10.1037/0033-2909.132.3.354); edition/date: 2006; evidence: meta-analysis. Reviewed 2026-11-26. Original media and product interactions not inspected.
+
+### Question bank and reusable quizzes (#97)
+
+Items live in a separate question bank and may be reused in quizzes. Quiz configuration controls behavior; defaults include repeat attempts and post-completion feedback.
+
+Limits: Defaults are not mandatory policy; preserve the question version used in each attempt.
+
+Acceptance: Edit a fictional bank item after an attempt; confirm the historical response and grading remain reproducible.
+
+Source: [Moodle 5.3 — Quiz activity](https://docs.moodle.org/503/en/Quiz_activity); edition/date: 5.3; evidence: product-documentation. Reviewed 2026-11-26. Original media and product interactions not inspected.
+
+### Graph link semantics and filters (#98)
+
+Nodes represent notes and edges internal links; documented graph filters include search, tags, attachments, existing files and orphans. Groups use color.
+
+Limits: Node size based on incoming links is not semantic importance. Keep explicit relation types distinct from layout.
+
+Acceptance: Verify toggles affect visibility without deleting underlying nodes and edges; provide keyboard alternative.
+
+Source: [Obsidian Help — Graph view](https://obsidian.md/help/plugins/graph); edition/date: undated; evidence: product-documentation. Reviewed 2026-11-26. Original media and product interactions not inspected.
+
+### Annotation database and PDF export (#99)
+
+Zotero stores annotation records in its database and supports exporting PDFs with embedded annotations, allowing individual annotation synchronization.
+
+Limits: Maintain export provenance and distinguish source document bytes from derived annotations. Do not assume identical conflict semantics in other readers.
+
+Acceptance: Round-trip an original annotated sample and compare annotation identity, target and text; test concurrent edits separately.
+
+Source: [Zotero Documentation — annotation storage](https://www.zotero.org/support/kb/annotations_in_database); edition/date: Zotero 6+; evidence: product-documentation. Reviewed 2026-11-26. Original media and product interactions not inspected.
+
+### Design token format interoperability (#100)
+
+The final community group report defines an exchange format for design tokens across tools, including typed values and references.
+
+Limits: This is not a W3C Recommendation or proof of accessibility; resolve references and verify actual rendered colors.
+
+Acceptance: Round-trip an original token group, detect cycles and undefined references, and compare resolved typed values.
+
+Source: [Design Tokens Format Module 2025.10](https://www.designtokens.org/TR/2025.10/format/); edition/date: 2025.10; evidence: community-group-report. Reviewed 2026-11-26. Original media and product interactions not inspected.
+
+### Point and interval selections in charts (#101)
+
+Selection parameters translate direct user interaction into data queries. Point selections target discrete values; interval selections target ranges.
+
+Limits: Selection state must be visible and clearable. Pointer-only brushing needs a keyboard-accessible alternative.
+
+Acceptance: Use fictional exam results, test selection and clearing, compare filtered row counts and accessible table.
+
+Source: [Vega-Lite — Selection Parameters](https://vega.github.io/vega-lite/docs/selection.html); edition/date: undated; evidence: technical-documentation. Reviewed 2026-11-26. Original media and product interactions not inspected.
