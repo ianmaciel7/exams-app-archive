@@ -1776,6 +1776,136 @@
       ],
       "classification": "official documentation; acceptance not executed",
       "product": "Gemini Notebook (formerly NotebookLM)"
+    },
+    {
+      "id": "chatgpt-space-visualization-control-and-recovery",
+      "family": "ai-product-observation",
+      "name": "Generated visualization recovery and replacement",
+      "kind": "Product-specific documented behavior",
+      "definition": "The Visualize guide distinguishes controls such as adjustable inputs, pause/restart and step navigation from the generated result itself. Follow-up can replace the visualization; blank output recovery includes one reload, retry or simplifying the dataset. A durable hosted application is a Site.",
+      "guardrail": "Verify control semantics, keyboard, state reset, failure fallback and replacement identity; no claim of uniform controls.",
+      "source_ids": [
+        "openai-visualizations"
+      ],
+      "classification": "official help documentation; acceptance checks not executed",
+      "product": "ChatGPT Space"
+    },
+    {
+      "id": "claude-chart-query-lineage",
+      "family": "ai-product-observation",
+      "name": "Chart query lineage and data freshness",
+      "kind": "Product-specific documented behavior",
+      "definition": "A chart can expose its underlying query and last refresh time; title, caption and chart are directly editable. This is an inspectable metric provenance pattern rather than an assurance that a query is correct.",
+      "guardrail": "Verify query access, data definition, units, last refresh, editor controls and unauthorized access.",
+      "source_ids": [
+        "claude-data"
+      ],
+      "classification": "official help documentation; acceptance checks not executed",
+      "product": "Claude"
+    },
+    {
+      "id": "claude-certified-query-lifecycle",
+      "family": "ai-product-observation",
+      "name": "Certified metric queries",
+      "kind": "Product-specific documented behavior",
+      "definition": "The beta query workflow has a certification toggle, additional context, Test and Publish; certification appears after a check. Non-certifying edits lose the badge; removing certification removes the badge from dependent dashboards.",
+      "guardrail": "Test pending verification, failed query, publish authorization, uncertified edit and dependent badge revocation.",
+      "source_ids": [
+        "claude-data"
+      ],
+      "classification": "official help documentation; acceptance checks not executed",
+      "product": "Claude"
+    },
+    {
+      "id": "claude-dashboard-readonly-history",
+      "family": "ai-product-observation",
+      "name": "Read-only version preview and shared restore",
+      "kind": "Product-specific documented behavior",
+      "definition": "Dashboard version history includes direct edits; preview is read-only, restore creates its own history entry and changes the shared dashboard for readers.",
+      "guardrail": "Test preview vs restore, edit authorization, concurrent viewers, invalid versions and recovery.",
+      "source_ids": [
+        "claude-data"
+      ],
+      "classification": "official help documentation; acceptance checks not executed",
+      "product": "Claude"
+    },
+    {
+      "id": "claude-dashboard-live-sharing-query-scope",
+      "family": "ai-product-observation",
+      "name": "Scoped live data sharing",
+      "kind": "Product-specific documented behavior",
+      "definition": "By default viewers use their own connector access. Live sharing lets organization readers see results under the sharer's access, limited to dashboard queries; changing queries requires editor approval. This is separate from scheduled refresh, which the guide does not promise.",
+      "guardrail": "Verify query scope, approval, revocation, stale saved results and scheduled-vs-on-open distinction.",
+      "source_ids": [
+        "claude-data"
+      ],
+      "classification": "official help documentation; acceptance checks not executed",
+      "product": "Claude"
+    },
+    {
+      "id": "gemini-notebook-mindmap-branch-controls",
+      "family": "ai-product-observation",
+      "name": "Mind map branch disclosure and contextual chat",
+      "kind": "Product-specific documented behavior",
+      "definition": "Current Mind Maps help documents zoom, scroll, expand/collapse branches and node selection to ask a scoped chat question, along with full-view and download controls. The mobile app is not supported in this guide.",
+      "guardrail": "Test keyboard node traversal, collapse state, zoom limits, chat focus, download restriction and mobile availability.",
+      "source_ids": [
+        "gemini-notebook-mindmap"
+      ],
+      "classification": "official help documentation; acceptance checks not executed",
+      "product": "Gemini Notebook (formerly NotebookLM)"
+    },
+    {
+      "id": "gemini-notebook-data-table-configuration",
+      "family": "ai-product-observation",
+      "name": "Schema-directed data table generation",
+      "kind": "Product-specific documented behavior",
+      "definition": "Customization allows specifying language and desired rows/columns through a prompt. The generated table is source-grounded and can be exported; the examples are not fixed schema templates.",
+      "guardrail": "Verify source selection, custom columns, citations, empty/missing data, long cells, export and accessibility.",
+      "source_ids": [
+        "gemini-notebook-create"
+      ],
+      "classification": "official help documentation; acceptance checks not executed",
+      "product": "Gemini Notebook (formerly NotebookLM)"
+    },
+    {
+      "id": "gemini-notebook-chat-view-not-access-control",
+      "family": "ai-product-observation",
+      "name": "Focused chat view versus security boundary",
+      "kind": "Product-specific documented behavior",
+      "definition": "Chat View hides source/artifact surfaces for a focused experience, but does not revoke underlying notebook access. Public artifact links have different sign-in behavior from whole notebook links.",
+      "guardrail": "Test hidden vs denied resources, direct links, role changes and sharing warning.",
+      "source_ids": [
+        "gemini-notebook-create"
+      ],
+      "classification": "official help documentation; acceptance checks not executed",
+      "product": "Gemini Notebook (formerly NotebookLM)"
+    },
+    {
+      "id": "gemini-notebook-agentic-chat-source-boundary",
+      "family": "ai-product-observation",
+      "name": "Source Q&A versus experimental agentic chat",
+      "kind": "Product-specific documented behavior",
+      "definition": "The chat guide describes source-grounded answers and citation navigation, but separately lists experimental agentic capabilities with or without sources (research, code and file/chart outputs). Do not equate these modes or promise all answers are source-only.",
+      "guardrail": "Test explicit source mode, external sources, tool action review and unsupported export; distinguish generated claims and citations.",
+      "source_ids": [
+        "gemini-notebook-chat"
+      ],
+      "classification": "official help documentation; acceptance checks not executed",
+      "product": "Gemini Notebook (formerly NotebookLM)"
+    },
+    {
+      "id": "gemini-notebook-first-source-suggested-output",
+      "family": "ai-product-observation",
+      "name": "Initial automatic artifact generation",
+      "kind": "Product-specific documented behavior",
+      "definition": "The notebook creation guide says some first-source sessions can generate an initial report, study aid or media artifact automatically once, outside normal generation limits.",
+      "guardrail": "Check user visibility, cancel/disable if available, unwanted output cleanup and quota; do not infer universal trigger.",
+      "source_ids": [
+        "gemini-notebook-create"
+      ],
+      "classification": "official help documentation; acceptance checks not executed",
+      "product": "Gemini Notebook (formerly NotebookLM)"
     }
   ]
 }

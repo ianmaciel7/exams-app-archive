@@ -93,7 +93,10 @@
     "gemini-notebook-mindmap-history": "gemini-notebook-mindmap-history",
     "gemini-notebook-discover": "gemini-notebook-discover",
     "gemini-notebook-active-learning": "gemini-notebook-active-learning",
-    "gemini-notebook-textbooks": "gemini-notebook-textbooks"
+    "gemini-notebook-textbooks": "gemini-notebook-textbooks",
+    "gemini-notebook-datatables-announcement": "gemini-notebook-datatables-announcement",
+    "google-sheets-canvas-help": "google-sheets-canvas-help",
+    "google-sheets-canvas-semester": "google-sheets-canvas-semester"
   },
   "nodes": [
     {
@@ -3991,6 +3994,154 @@
       "status": "visually inspected official marketing image 2026-11-26; not runtime evidence",
       "storage": "link-only",
       "rights": "publisher media; redistribution license not verified"
+    },
+    {
+      "id": "source:gemini-notebook-datatables-announcement",
+      "type": "source",
+      "label": "NotebookLM Data Tables announcement",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-data-tables/",
+      "central_source_id": "gemini-notebook-datatables-announcement",
+      "evidence_status": "official publisher text reviewed; no authenticated runtime test"
+    },
+    {
+      "id": "source:google-sheets-canvas-help",
+      "type": "source",
+      "label": "Create a Sheets canvas",
+      "url": "https://support.google.com/docs/answer/17035851?hl=en-GI",
+      "central_source_id": "google-sheets-canvas-help",
+      "evidence_status": "official publisher text reviewed; no authenticated runtime test"
+    },
+    {
+      "id": "source:google-sheets-canvas-semester",
+      "type": "source",
+      "label": "Workspace Gemini semester planner with Sheets canvas",
+      "url": "https://blog.google/products-and-platforms/products/workspace/gemini-google-workspace-back-to-school/",
+      "central_source_id": "google-sheets-canvas-semester",
+      "evidence_status": "official publisher text reviewed; no authenticated runtime test"
+    },
+    {
+      "id": "feature:chatgpt-space-visualization-control-and-recovery",
+      "type": "feature-observation",
+      "label": "Generated visualization recovery and replacement",
+      "central_pattern_id": "chatgpt-space-visualization-control-and-recovery",
+      "description": "The Visualize guide distinguishes controls such as adjustable inputs, pause/restart and step navigation from the generated result itself. Follow-up can replace the visualization; blank output recovery includes one reload, retry or simplifying the dataset. A durable hosted application is a Site.",
+      "acceptance": "Verify control semantics, keyboard, state reset, failure fallback and replacement identity; no claim of uniform controls.",
+      "evidence_status": "official help documentation; acceptance checks not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:claude-chart-query-lineage",
+      "type": "feature-observation",
+      "label": "Chart query lineage and data freshness",
+      "central_pattern_id": "claude-chart-query-lineage",
+      "description": "A chart can expose its underlying query and last refresh time; title, caption and chart are directly editable. This is an inspectable metric provenance pattern rather than an assurance that a query is correct.",
+      "acceptance": "Verify query access, data definition, units, last refresh, editor controls and unauthorized access.",
+      "evidence_status": "official help documentation; acceptance checks not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:claude-certified-query-lifecycle",
+      "type": "feature-observation",
+      "label": "Certified metric queries",
+      "central_pattern_id": "claude-certified-query-lifecycle",
+      "description": "The beta query workflow has a certification toggle, additional context, Test and Publish; certification appears after a check. Non-certifying edits lose the badge; removing certification removes the badge from dependent dashboards.",
+      "acceptance": "Test pending verification, failed query, publish authorization, uncertified edit and dependent badge revocation.",
+      "evidence_status": "official help documentation; acceptance checks not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:claude-dashboard-readonly-history",
+      "type": "feature-observation",
+      "label": "Read-only version preview and shared restore",
+      "central_pattern_id": "claude-dashboard-readonly-history",
+      "description": "Dashboard version history includes direct edits; preview is read-only, restore creates its own history entry and changes the shared dashboard for readers.",
+      "acceptance": "Test preview vs restore, edit authorization, concurrent viewers, invalid versions and recovery.",
+      "evidence_status": "official help documentation; acceptance checks not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:claude-dashboard-live-sharing-query-scope",
+      "type": "feature-observation",
+      "label": "Scoped live data sharing",
+      "central_pattern_id": "claude-dashboard-live-sharing-query-scope",
+      "description": "By default viewers use their own connector access. Live sharing lets organization readers see results under the sharer's access, limited to dashboard queries; changing queries requires editor approval. This is separate from scheduled refresh, which the guide does not promise.",
+      "acceptance": "Verify query scope, approval, revocation, stale saved results and scheduled-vs-on-open distinction.",
+      "evidence_status": "official help documentation; acceptance checks not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-notebook-mindmap-branch-controls",
+      "type": "feature-observation",
+      "label": "Mind map branch disclosure and contextual chat",
+      "central_pattern_id": "gemini-notebook-mindmap-branch-controls",
+      "description": "Current Mind Maps help documents zoom, scroll, expand/collapse branches and node selection to ask a scoped chat question, along with full-view and download controls. The mobile app is not supported in this guide.",
+      "acceptance": "Test keyboard node traversal, collapse state, zoom limits, chat focus, download restriction and mobile availability.",
+      "evidence_status": "official help documentation; acceptance checks not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-notebook-data-table-configuration",
+      "type": "feature-observation",
+      "label": "Schema-directed data table generation",
+      "central_pattern_id": "gemini-notebook-data-table-configuration",
+      "description": "Customization allows specifying language and desired rows/columns through a prompt. The generated table is source-grounded and can be exported; the examples are not fixed schema templates.",
+      "acceptance": "Verify source selection, custom columns, citations, empty/missing data, long cells, export and accessibility.",
+      "evidence_status": "official help documentation; acceptance checks not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-notebook-chat-view-not-access-control",
+      "type": "feature-observation",
+      "label": "Focused chat view versus security boundary",
+      "central_pattern_id": "gemini-notebook-chat-view-not-access-control",
+      "description": "Chat View hides source/artifact surfaces for a focused experience, but does not revoke underlying notebook access. Public artifact links have different sign-in behavior from whole notebook links.",
+      "acceptance": "Test hidden vs denied resources, direct links, role changes and sharing warning.",
+      "evidence_status": "official help documentation; acceptance checks not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-notebook-agentic-chat-source-boundary",
+      "type": "feature-observation",
+      "label": "Source Q&A versus experimental agentic chat",
+      "central_pattern_id": "gemini-notebook-agentic-chat-source-boundary",
+      "description": "The chat guide describes source-grounded answers and citation navigation, but separately lists experimental agentic capabilities with or without sources (research, code and file/chart outputs). Do not equate these modes or promise all answers are source-only.",
+      "acceptance": "Test explicit source mode, external sources, tool action review and unsupported export; distinguish generated claims and citations.",
+      "evidence_status": "official help documentation; acceptance checks not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-notebook-first-source-suggested-output",
+      "type": "feature-observation",
+      "label": "Initial automatic artifact generation",
+      "central_pattern_id": "gemini-notebook-first-source-suggested-output",
+      "description": "The notebook creation guide says some first-source sessions can generate an initial report, study aid or media artifact automatically once, outside normal generation limits.",
+      "acceptance": "Check user visibility, cancel/disable if available, unwanted output cleanup and quota; do not infer universal trigger.",
+      "evidence_status": "official help documentation; acceptance checks not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "evidence:gemini-notebook:data-table-customize",
+      "label": "Customize Data Table dialog",
+      "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/2_Customization.png",
+      "description": "Historical promotional screenshot, 1000 x 593 image. Header and close icon, language selector, labeled prompt area with examples, primary Generate button in footer. No loading/focus state shown.",
+      "type": "evidence",
+      "status": "official historical promotional image visually inspected 2026-11-26; still only",
+      "storage": "link-only",
+      "rights": "publisher media; redistribution license unverified",
+      "modality": "image",
+      "published_on": "2025-12-18"
+    },
+    {
+      "id": "evidence:gemini-notebook:data-table-generated",
+      "label": "Generated Data Table with source column",
+      "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/3_Output_example_1.png",
+      "description": "Historical promotional screenshot, 1000 x 631 image. Table title, source-count subtitle, header action icons, multi-column content with wrapped cells and row source references. Icon actions and sorting behavior not verified from pixels.",
+      "type": "evidence",
+      "status": "official historical promotional image visually inspected 2026-11-26; still only",
+      "storage": "link-only",
+      "rights": "publisher media; redistribution license unverified",
+      "modality": "image",
+      "published_on": "2025-12-18"
     }
   ],
   "edges": [
@@ -8877,6 +9028,234 @@
       "to": "evidence:chatgpt-space:dot-anchored-comment",
       "relation": "illustrated_by",
       "status": "marketing still"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "feature:chatgpt-space-visualization-control-and-recovery",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:chatgpt-space-visualization-control-and-recovery",
+      "to": "source:openai-visualizations",
+      "relation": "supported_by",
+      "status": "official help"
+    },
+    {
+      "from": "feature:chatgpt-space-visualization-control-and-recovery",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:claude",
+      "to": "feature:claude-chart-query-lineage",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:claude-chart-query-lineage",
+      "to": "source:claude-data",
+      "relation": "supported_by",
+      "status": "official help"
+    },
+    {
+      "from": "feature:claude-chart-query-lineage",
+      "to": "output:claude:data",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:claude",
+      "to": "feature:claude-certified-query-lifecycle",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:claude-certified-query-lifecycle",
+      "to": "source:claude-data",
+      "relation": "supported_by",
+      "status": "official help"
+    },
+    {
+      "from": "feature:claude-certified-query-lifecycle",
+      "to": "output:claude:data",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:claude",
+      "to": "feature:claude-dashboard-readonly-history",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:claude-dashboard-readonly-history",
+      "to": "source:claude-data",
+      "relation": "supported_by",
+      "status": "official help"
+    },
+    {
+      "from": "feature:claude-dashboard-readonly-history",
+      "to": "output:claude:data",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:claude",
+      "to": "feature:claude-dashboard-live-sharing-query-scope",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:claude-dashboard-live-sharing-query-scope",
+      "to": "source:claude-data",
+      "relation": "supported_by",
+      "status": "official help"
+    },
+    {
+      "from": "feature:claude-dashboard-live-sharing-query-scope",
+      "to": "output:claude:data",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "feature:gemini-notebook-mindmap-branch-controls",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:gemini-notebook-mindmap-branch-controls",
+      "to": "source:gemini-notebook-mindmap",
+      "relation": "supported_by",
+      "status": "official help"
+    },
+    {
+      "from": "feature:gemini-notebook-mindmap-branch-controls",
+      "to": "output:gemini-notebook:mind-map",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "feature:gemini-notebook-data-table-configuration",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:gemini-notebook-data-table-configuration",
+      "to": "source:gemini-notebook-create",
+      "relation": "supported_by",
+      "status": "official help"
+    },
+    {
+      "from": "feature:gemini-notebook-data-table-configuration",
+      "to": "output:gemini-notebook:data-tables",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "feature:gemini-notebook-chat-view-not-access-control",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:gemini-notebook-chat-view-not-access-control",
+      "to": "source:gemini-notebook-create",
+      "relation": "supported_by",
+      "status": "official help"
+    },
+    {
+      "from": "feature:gemini-notebook-chat-view-not-access-control",
+      "to": "view:gemini-notebook:chat",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "feature:gemini-notebook-agentic-chat-source-boundary",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:gemini-notebook-agentic-chat-source-boundary",
+      "to": "source:gemini-notebook-chat",
+      "relation": "supported_by",
+      "status": "official help"
+    },
+    {
+      "from": "feature:gemini-notebook-agentic-chat-source-boundary",
+      "to": "view:gemini-notebook:chat",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "feature:gemini-notebook-first-source-suggested-output",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:gemini-notebook-first-source-suggested-output",
+      "to": "source:gemini-notebook-create",
+      "relation": "supported_by",
+      "status": "official help"
+    },
+    {
+      "from": "feature:gemini-notebook-first-source-suggested-output",
+      "to": "view:gemini-notebook:studio",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "evidence:gemini-notebook:data-table-customize",
+      "relation": "has_visual_lead",
+      "status": "visually inspected promotional still"
+    },
+    {
+      "from": "evidence:gemini-notebook:data-table-customize",
+      "to": "source:gemini-notebook-datatables-announcement",
+      "relation": "published_by",
+      "status": "official publisher"
+    },
+    {
+      "from": "output:gemini-notebook:data-tables",
+      "to": "evidence:gemini-notebook:data-table-customize",
+      "relation": "illustrated_by",
+      "status": "historical marketing still, not live test"
+    },
+    {
+      "from": "feature:gemini-notebook-data-table-configuration",
+      "to": "evidence:gemini-notebook:data-table-customize",
+      "relation": "illustrated_by",
+      "status": "historical marketing still"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "evidence:gemini-notebook:data-table-generated",
+      "relation": "has_visual_lead",
+      "status": "visually inspected promotional still"
+    },
+    {
+      "from": "evidence:gemini-notebook:data-table-generated",
+      "to": "source:gemini-notebook-datatables-announcement",
+      "relation": "published_by",
+      "status": "official publisher"
+    },
+    {
+      "from": "output:gemini-notebook:data-tables",
+      "to": "evidence:gemini-notebook:data-table-generated",
+      "relation": "illustrated_by",
+      "status": "historical marketing still, not live test"
+    },
+    {
+      "from": "feature:gemini-notebook-data-table-configuration",
+      "to": "evidence:gemini-notebook:data-table-generated",
+      "relation": "illustrated_by",
+      "status": "historical marketing still"
     }
   ],
   "backlog": [
@@ -8885,40 +9264,45 @@
       "priority": "P0",
       "title": "Feature inventory and availability",
       "acceptance": "Capability matrix; native feature vs generated example",
-      "status": "open",
-      "related_issue": 102
+      "status": "partial",
+      "related_issue": 102,
+      "evidence_note": "Documented findings not equivalent to authenticated live testing"
     },
     {
       "id": "GAP-02",
       "priority": "P0",
       "title": "Templates and editors",
       "acceptance": "Template cards, creation, per-editor controls and export",
-      "status": "open",
-      "related_issue": null
+      "status": "partial",
+      "related_issue": null,
+      "evidence_note": "Documented findings not equivalent to authenticated live testing"
     },
     {
       "id": "GAP-03",
       "priority": "P0",
       "title": "States and transitions",
       "acceptance": "Trigger, before/after, focus, interruption and recovery",
-      "status": "open",
-      "related_issue": 105
+      "status": "partial",
+      "related_issue": 105,
+      "evidence_note": "Documented findings not equivalent to authenticated live testing"
     },
     {
       "id": "GAP-04",
       "priority": "P0",
       "title": "End-to-end flows",
       "acceptance": "Create/edit/share/reopen/delete; question and flashcard review",
-      "status": "open",
-      "related_issue": null
+      "status": "partial",
+      "related_issue": null,
+      "evidence_note": "Documented findings not equivalent to authenticated live testing"
     },
     {
       "id": "GAP-05",
       "priority": "P0",
       "title": "Visual evidence",
       "acceptance": "Publisher URL, exact frame, date, viewport, rights, evidence-to-feature relation",
-      "status": "open",
-      "related_issue": null
+      "status": "partial",
+      "related_issue": null,
+      "evidence_note": "Documented findings not equivalent to authenticated live testing"
     },
     {
       "id": "GAP-06",
@@ -8926,7 +9310,8 @@
       "title": "Central catalog integration",
       "acceptance": "Register every benchmark source alias and observation",
       "status": "resolved",
-      "related_issue": null
+      "related_issue": null,
+      "evidence_note": "Central catalog integration validated"
     },
     {
       "id": "GAP-07",
@@ -8934,7 +9319,8 @@
       "title": "Relationship graph",
       "acceptance": "Stable typed nodes, edges and source references; expand evidence and live state relations",
       "status": "partial",
-      "related_issue": 106
+      "related_issue": 106,
+      "evidence_note": "Graph links validated; live state/evidence relation coverage incomplete"
     },
     {
       "id": "GAP-08",
@@ -8942,15 +9328,17 @@
       "title": "Persistence and permissions",
       "acceptance": "Save/reload/sharing/roles/deletion/version/conflict matrix",
       "status": "partial",
-      "related_issue": null
+      "related_issue": null,
+      "evidence_note": "Documented findings not equivalent to authenticated live testing"
     },
     {
       "id": "GAP-09",
       "priority": "P1",
       "title": "Data visualization and generated UI",
       "acceptance": "Chart controls, tooltips, drill-down, keyboard, data fallback",
-      "status": "open",
-      "related_issue": 101
+      "status": "partial",
+      "related_issue": 101,
+      "evidence_note": "Documented findings not equivalent to authenticated live testing"
     },
     {
       "id": "GAP-10",
@@ -8958,7 +9346,8 @@
       "title": "App shell and responsiveness",
       "acceptance": "Measure widths, resizing, collapse, overflow and reflow",
       "status": "open",
-      "related_issue": null
+      "related_issue": null,
+      "evidence_note": "Documented findings not equivalent to authenticated live testing"
     },
     {
       "id": "GAP-11",
@@ -8966,7 +9355,8 @@
       "title": "Motion and microinteractions",
       "acceptance": "Record state changes and reduced motion; measure timing",
       "status": "open",
-      "related_issue": 105
+      "related_issue": 105,
+      "evidence_note": "Documented findings not equivalent to authenticated live testing"
     },
     {
       "id": "GAP-12",
@@ -8974,31 +9364,35 @@
       "title": "Tokens and typography",
       "acceptance": "Measure actual styles and contrast; no inferred CSS",
       "status": "open",
-      "related_issue": 104
+      "related_issue": 104,
+      "evidence_note": "Documented findings not equivalent to authenticated live testing"
     },
     {
       "id": "GAP-13",
       "priority": "P1",
       "title": "Accessibility and keyboard",
       "acceptance": "Actual focus, keyboard and assistive technology tests",
-      "status": "open",
-      "related_issue": 100
+      "status": "partial",
+      "related_issue": 100,
+      "evidence_note": "Documented findings not equivalent to authenticated live testing"
     },
     {
       "id": "GAP-14",
       "priority": "P1",
       "title": "Plan and platform availability",
       "acceptance": "Record feature, plan, platform and release date",
-      "status": "open",
-      "related_issue": 102
+      "status": "partial",
+      "related_issue": 102,
+      "evidence_note": "Documented findings not equivalent to authenticated live testing"
     },
     {
       "id": "GAP-15",
       "priority": "P1",
       "title": "Errors and recovery",
       "acceptance": "Failed save, offline, permission, retry and cancellation",
-      "status": "open",
-      "related_issue": 105
+      "status": "partial",
+      "related_issue": 105,
+      "evidence_note": "Documented findings not equivalent to authenticated live testing"
     }
   ],
   "provenance": [
@@ -9009,6 +9403,7 @@
     "docs/references/ui-ux-research-sources/ai-product-availability-and-state-boundaries-2026-11-26.json",
     "docs/references/ui-ux-research-sources/ai-product-editor-contracts-2026-11-26.json",
     "docs/references/ui-ux-research-sources/ai-product-visual-and-learning-evidence-2026-11-26.json",
-    "docs/references/ui-ux-research-sources/ai-product-creation-inventory-2026-11-26.json"
+    "docs/references/ui-ux-research-sources/ai-product-creation-inventory-2026-11-26.json",
+    "docs/references/ui-ux-research-sources/ai-product-dataviz-and-evidence-coverage-2026-11-26.json"
   ]
 }

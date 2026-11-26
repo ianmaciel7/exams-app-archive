@@ -1323,6 +1323,38 @@
       "status": "official publisher text retrieved; runtime untested",
       "storage": "link-only",
       "notes": "Historical announcements remain dated; no inference of present availability."
+    },
+    {
+      "id": "gemini-notebook-datatables-announcement",
+      "title": "NotebookLM Data Tables announcement",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-data-tables/",
+      "published_on": "2025-12-18",
+      "kind": "official-product-documentation-or-announcement",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official publisher text reviewed; no authenticated runtime test",
+      "storage": "link-only"
+    },
+    {
+      "id": "google-sheets-canvas-help",
+      "title": "Create a Sheets canvas",
+      "url": "https://support.google.com/docs/answer/17035851?hl=en-GI",
+      "kind": "official-product-documentation-or-announcement",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official publisher text reviewed; no authenticated runtime test",
+      "storage": "link-only"
+    },
+    {
+      "id": "google-sheets-canvas-semester",
+      "title": "Workspace Gemini semester planner with Sheets canvas",
+      "url": "https://blog.google/products-and-platforms/products/workspace/gemini-google-workspace-back-to-school/",
+      "published_on": "2026-08-26",
+      "kind": "official-product-documentation-or-announcement",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official publisher text reviewed; no authenticated runtime test",
+      "storage": "link-only"
     }
   ]
 }

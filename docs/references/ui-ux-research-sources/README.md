@@ -172,3 +172,7 @@ Registrar URLs originais e redirects, datas de consulta, fonte e status (verific
 ## Creation inventory
 
 [Research](ai-product-creation-inventory-2026-11-26.md) · [JSON](ai-product-creation-inventory-2026-11-26.json)
+
+## Data visualization and evidence coverage
+
+[Matrix and coverage report](ai-product-dataviz-and-evidence-coverage-2026-11-26.md) · [JSON](ai-product-dataviz-and-evidence-coverage-2026-11-26.json)

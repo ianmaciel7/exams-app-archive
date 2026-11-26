@@ -74,3 +74,7 @@ Every benchmark must resolve source IDs centrally, preserve stable observation I
 ## Creation options and object semantics — 2026-11-26
 
 [Creation inventory](../ui-ux-research-sources/ai-product-creation-inventory-2026-11-26.md). 50 entries (not all native templates), 9 additional observations and one visually inspected official marketing image. Graph: 453 nodes, 814 edges. Search kind `creation-option`. Historical template leads and generated examples are explicitly classified. Live UI validation remains open.
+
+## Data visualization and evidence coverage
+
+[Comparative matrix, ten additional observations and per-product coverage](../ui-ux-research-sources/ai-product-dataviz-and-evidence-coverage-2026-11-26.md). Two original historical Notebook data-table stills inspected. Graph now 468 nodes, 852 relations. The adjacent Sheets canvas reference is explicitly outside the five-product benchmark. Unknown coverage remains unknown.

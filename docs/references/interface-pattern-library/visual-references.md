@@ -65,3 +65,6 @@ Source and limitations: [research catalog](../ui-ux-research-sources/chatgpt-spa
 - [Ambient agent prototype videos](https://x.ai/bot/guides/designing-grok-bot-with-grok-bot) — official captions retrieved; videos not played; [publisher](https://x.ai/bot/guides/designing-grok-bot-with-grok-bot).
 
 - [Agent anchored comment](https://images.ctfassets.net/8su2tbn87fck/3Qla4T4LN8VWbihEmvjiKc/82b87d1902931662c9b4b3a35922615f/chatgpt-space-dot.png?fm=webp&q=80&w=948) — visually inspected official marketing image 2026-11-26; not runtime evidence; [publisher](https://chatgpt.com/features/space/).
+
+- [Customize Data Table dialog](https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/2_Customization.png) — official historical promotional image visually inspected 2026-11-26; still only; [publisher](https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-data-tables/).
+- [Generated Data Table with source column](https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/3_Output_example_1.png) — official historical promotional image visually inspected 2026-11-26; still only; [publisher](https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-data-tables/).

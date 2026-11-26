@@ -1,0 +1,338 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-26",
+  "scope": "data interaction contracts, public historical stills and per-product record counts; not percentage of product coverage",
+  "observations": [
+    {
+      "id": "chatgpt-space-visualization-control-and-recovery",
+      "product": "chatgpt-space",
+      "title": "Generated visualization recovery and replacement",
+      "description": "The Visualize guide distinguishes controls such as adjustable inputs, pause/restart and step navigation from the generated result itself. Follow-up can replace the visualization; blank output recovery includes one reload, retry or simplifying the dataset. A durable hosted application is a Site.",
+      "source_id": "openai-visualizations",
+      "surface": "view:chatgpt-space:pages",
+      "acceptance": "Verify control semantics, keyboard, state reset, failure fallback and replacement identity; no claim of uniform controls.",
+      "classification": "official help documentation; acceptance checks not executed"
+    },
+    {
+      "id": "claude-chart-query-lineage",
+      "product": "claude",
+      "title": "Chart query lineage and data freshness",
+      "description": "A chart can expose its underlying query and last refresh time; title, caption and chart are directly editable. This is an inspectable metric provenance pattern rather than an assurance that a query is correct.",
+      "source_id": "claude-data",
+      "surface": "output:claude:data",
+      "acceptance": "Verify query access, data definition, units, last refresh, editor controls and unauthorized access.",
+      "classification": "official help documentation; acceptance checks not executed"
+    },
+    {
+      "id": "claude-certified-query-lifecycle",
+      "product": "claude",
+      "title": "Certified metric queries",
+      "description": "The beta query workflow has a certification toggle, additional context, Test and Publish; certification appears after a check. Non-certifying edits lose the badge; removing certification removes the badge from dependent dashboards.",
+      "source_id": "claude-data",
+      "surface": "output:claude:data",
+      "acceptance": "Test pending verification, failed query, publish authorization, uncertified edit and dependent badge revocation.",
+      "classification": "official help documentation; acceptance checks not executed"
+    },
+    {
+      "id": "claude-dashboard-readonly-history",
+      "product": "claude",
+      "title": "Read-only version preview and shared restore",
+      "description": "Dashboard version history includes direct edits; preview is read-only, restore creates its own history entry and changes the shared dashboard for readers.",
+      "source_id": "claude-data",
+      "surface": "output:claude:data",
+      "acceptance": "Test preview vs restore, edit authorization, concurrent viewers, invalid versions and recovery.",
+      "classification": "official help documentation; acceptance checks not executed"
+    },
+    {
+      "id": "claude-dashboard-live-sharing-query-scope",
+      "product": "claude",
+      "title": "Scoped live data sharing",
+      "description": "By default viewers use their own connector access. Live sharing lets organization readers see results under the sharer's access, limited to dashboard queries; changing queries requires editor approval. This is separate from scheduled refresh, which the guide does not promise.",
+      "source_id": "claude-data",
+      "surface": "output:claude:data",
+      "acceptance": "Verify query scope, approval, revocation, stale saved results and scheduled-vs-on-open distinction.",
+      "classification": "official help documentation; acceptance checks not executed"
+    },
+    {
+      "id": "gemini-notebook-mindmap-branch-controls",
+      "product": "gemini-notebook",
+      "title": "Mind map branch disclosure and contextual chat",
+      "description": "Current Mind Maps help documents zoom, scroll, expand/collapse branches and node selection to ask a scoped chat question, along with full-view and download controls. The mobile app is not supported in this guide.",
+      "source_id": "gemini-notebook-mindmap",
+      "surface": "output:gemini-notebook:mind-map",
+      "acceptance": "Test keyboard node traversal, collapse state, zoom limits, chat focus, download restriction and mobile availability.",
+      "classification": "official help documentation; acceptance checks not executed"
+    },
+    {
+      "id": "gemini-notebook-data-table-configuration",
+      "product": "gemini-notebook",
+      "title": "Schema-directed data table generation",
+      "description": "Customization allows specifying language and desired rows/columns through a prompt. The generated table is source-grounded and can be exported; the examples are not fixed schema templates.",
+      "source_id": "gemini-notebook-create",
+      "surface": "output:gemini-notebook:data-tables",
+      "acceptance": "Verify source selection, custom columns, citations, empty/missing data, long cells, export and accessibility.",
+      "classification": "official help documentation; acceptance checks not executed"
+    },
+    {
+      "id": "gemini-notebook-chat-view-not-access-control",
+      "product": "gemini-notebook",
+      "title": "Focused chat view versus security boundary",
+      "description": "Chat View hides source/artifact surfaces for a focused experience, but does not revoke underlying notebook access. Public artifact links have different sign-in behavior from whole notebook links.",
+      "source_id": "gemini-notebook-create",
+      "surface": "view:gemini-notebook:chat",
+      "acceptance": "Test hidden vs denied resources, direct links, role changes and sharing warning.",
+      "classification": "official help documentation; acceptance checks not executed"
+    },
+    {
+      "id": "gemini-notebook-agentic-chat-source-boundary",
+      "product": "gemini-notebook",
+      "title": "Source Q&A versus experimental agentic chat",
+      "description": "The chat guide describes source-grounded answers and citation navigation, but separately lists experimental agentic capabilities with or without sources (research, code and file/chart outputs). Do not equate these modes or promise all answers are source-only.",
+      "source_id": "gemini-notebook-chat",
+      "surface": "view:gemini-notebook:chat",
+      "acceptance": "Test explicit source mode, external sources, tool action review and unsupported export; distinguish generated claims and citations.",
+      "classification": "official help documentation; acceptance checks not executed"
+    },
+    {
+      "id": "gemini-notebook-first-source-suggested-output",
+      "product": "gemini-notebook",
+      "title": "Initial automatic artifact generation",
+      "description": "The notebook creation guide says some first-source sessions can generate an initial report, study aid or media artifact automatically once, outside normal generation limits.",
+      "source_id": "gemini-notebook-create",
+      "surface": "view:gemini-notebook:studio",
+      "acceptance": "Check user visibility, cancel/disable if available, unwanted output cleanup and quota; do not infer universal trigger.",
+      "classification": "official help documentation; acceptance checks not executed"
+    }
+  ],
+  "models": [
+    {
+      "surface": "ChatGPT Visualize",
+      "data_model": "Snapshot generally; Site separate",
+      "interaction_boundary": "Input control state varies; no live sync guarantee",
+      "source_id": "openai-visualizations",
+      "source_url": "https://learn.chatgpt.com/docs/visualizations",
+      "classification": "product documentation"
+    },
+    {
+      "surface": "Claude Data",
+      "data_model": "Per-chart query; refresh on open when due",
+      "interaction_boundary": "Direct content editing and reviewed query changes; live-share access separate",
+      "source_id": "claude-data",
+      "source_url": "https://support.claude.com/en/articles/17454700-get-started-with-claude-data",
+      "classification": "product documentation"
+    },
+    {
+      "surface": "Grok Bot Pages",
+      "data_model": "Stored page; Bot updates same object",
+      "interaction_boundary": "Reader filters and toggles do not persist",
+      "source_id": "grok-bot-files",
+      "source_url": "https://docs.x.ai/grok-bot/files-and-results",
+      "classification": "product documentation"
+    },
+    {
+      "surface": "Gemini Canvas app",
+      "data_model": "Generated app code and optional data storage",
+      "interaction_boundary": "App data can persist; public sharing can expose shared state",
+      "source_id": "gemini-canvas-security",
+      "source_url": "https://support.google.com/gemini/answer/16419134?hl=en-gi",
+      "classification": "product documentation"
+    },
+    {
+      "surface": "Gemini Notebook data table",
+      "data_model": "Generated source synthesis; export creates a separate snapshot",
+      "interaction_boundary": "Customization prompt shapes schema; exported sheet is not live linked",
+      "source_id": "gemini-notebook-create",
+      "source_url": "https://support.google.com/gemininotebook/answer/16206563?hl=en-CA",
+      "classification": "product documentation"
+    },
+    {
+      "surface": "Google Sheets canvas (adjacent product)",
+      "data_model": "Interactive views over one spreadsheet tab",
+      "interaction_boundary": "Kanban movement/date changes can update backing sheet; gallery, calendar and dashboard examples",
+      "source_id": "google-sheets-canvas-help",
+      "source_url": "https://support.google.com/docs/answer/17035851?hl=en-GI",
+      "classification": "adjacent Workspace product; not Gemini app Canvas"
+    }
+  ],
+  "adjacent_reference": {
+    "id": "adjacent-google-sheets-canvas",
+    "product": "Google Sheets (Workspace)",
+    "classification": "related product example, outside five-product count",
+    "description": "Sheets canvas supports generated kanban, gallery, calendar and dashboard views over one tab; data updates in a semester planner example can flow in both directions; access matches the spreadsheet. This is not the Gemini app Canvas.",
+    "sources": [
+      "https://support.google.com/docs/answer/17035851?hl=en-GI",
+      "https://blog.google/products-and-platforms/products/workspace/gemini-google-workspace-back-to-school/"
+    ],
+    "acceptance": "Test move/update, source writeback, conflicts, filters, shared access and single-tab constraint."
+  },
+  "visual_evidence": [
+    {
+      "id": "evidence:gemini-notebook:data-table-customize",
+      "label": "Customize Data Table dialog",
+      "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/2_Customization.png",
+      "description": "Historical promotional screenshot, 1000 x 593 image. Header and close icon, language selector, labeled prompt area with examples, primary Generate button in footer. No loading/focus state shown.",
+      "type": "evidence",
+      "status": "official historical promotional image visually inspected 2026-11-26; still only",
+      "storage": "link-only",
+      "rights": "publisher media; redistribution license unverified",
+      "modality": "image",
+      "published_on": "2025-12-18"
+    },
+    {
+      "id": "evidence:gemini-notebook:data-table-generated",
+      "label": "Generated Data Table with source column",
+      "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/3_Output_example_1.png",
+      "description": "Historical promotional screenshot, 1000 x 631 image. Table title, source-count subtitle, header action icons, multi-column content with wrapped cells and row source references. Icon actions and sorting behavior not verified from pixels.",
+      "type": "evidence",
+      "status": "official historical promotional image visually inspected 2026-11-26; still only",
+      "storage": "link-only",
+      "rights": "publisher media; redistribution license unverified",
+      "modality": "image",
+      "published_on": "2025-12-18"
+    }
+  ],
+  "coverage": [
+    {
+      "product": "ChatGPT Space",
+      "counts": {
+        "view-or-entry-point": 14,
+        "output": 8,
+        "source": 21,
+        "feature-observation": 17,
+        "documented-flow": 3,
+        "documented-availability": 3,
+        "documented-creation-option": 30,
+        "evidence": 1
+      },
+      "visual_records": 7,
+      "inspected_stills": 7,
+      "uninspected_visual_leads": 0,
+      "authenticated_runtime_tests": "not established",
+      "motion_measurements": "not established",
+      "visual_completeness": "unknown"
+    },
+    {
+      "product": "Claude",
+      "counts": {
+        "view-or-entry-point": 6,
+        "output": 8,
+        "source": 13,
+        "feature-observation": 24,
+        "evidence-lead": 2,
+        "documented-flow": 2,
+        "evidence": 1,
+        "documented-interaction-contract": 1,
+        "documented-availability": 6,
+        "documented-creation-option": 7
+      },
+      "visual_records": 3,
+      "inspected_stills": 1,
+      "uninspected_visual_leads": 2,
+      "authenticated_runtime_tests": "not established",
+      "motion_measurements": "not established",
+      "visual_completeness": "unknown"
+    },
+    {
+      "product": "Grok Bot",
+      "counts": {
+        "view-or-entry-point": 7,
+        "output": 8,
+        "source": 12,
+        "feature-observation": 18,
+        "evidence-lead": 7,
+        "documented-flow": 4,
+        "documented-availability": 1,
+        "evidence": 1,
+        "documented-creation-option": 2
+      },
+      "visual_records": 8,
+      "inspected_stills": 1,
+      "uninspected_visual_leads": 7,
+      "authenticated_runtime_tests": "not established",
+      "motion_measurements": "not established",
+      "visual_completeness": "unknown"
+    },
+    {
+      "product": "Gemini",
+      "counts": {
+        "view-or-entry-point": 7,
+        "output": 13,
+        "source": 11,
+        "feature-observation": 10,
+        "evidence-lead": 8,
+        "documented-flow": 3,
+        "documented-availability": 2,
+        "documented-creation-option": 6
+      },
+      "visual_records": 8,
+      "inspected_stills": 0,
+      "uninspected_visual_leads": 8,
+      "authenticated_runtime_tests": "not established",
+      "motion_measurements": "not established",
+      "visual_completeness": "unknown"
+    },
+    {
+      "product": "Gemini Notebook (formerly NotebookLM)",
+      "counts": {
+        "view-or-entry-point": 7,
+        "output": 11,
+        "source": 25,
+        "feature-observation": 32,
+        "evidence-lead": 6,
+        "documented-flow": 2,
+        "documented-interaction-contract": 2,
+        "documented-availability": 3,
+        "documented-creation-option": 5,
+        "evidence": 2
+      },
+      "visual_records": 8,
+      "inspected_stills": 2,
+      "uninspected_visual_leads": 6,
+      "authenticated_runtime_tests": "not established",
+      "motion_measurements": "not established",
+      "visual_completeness": "unknown"
+    }
+  ],
+  "remaining_blockers": [
+    "Live authenticated interfaces not exposed by available browser tabs; read-only browser context cannot open/control them.",
+    "No cross-account access or state mutation tests; no frame timing or current DOM/CSS measurement.",
+    "Independent annotated holdout for retrieval not yet available."
+  ],
+  "sources": [
+    {
+      "id": "gemini-notebook-datatables-announcement",
+      "title": "NotebookLM Data Tables announcement",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-data-tables/",
+      "published_on": "2025-12-18",
+      "kind": "official-product-documentation-or-announcement",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official publisher text reviewed; no authenticated runtime test",
+      "storage": "link-only",
+      "canonical_source_id": "gemini-notebook-datatables-announcement"
+    },
+    {
+      "id": "google-sheets-canvas-help",
+      "title": "Create a Sheets canvas",
+      "url": "https://support.google.com/docs/answer/17035851?hl=en-GI",
+      "kind": "official-product-documentation-or-announcement",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official publisher text reviewed; no authenticated runtime test",
+      "storage": "link-only",
+      "canonical_source_id": "google-sheets-canvas-help"
+    },
+    {
+      "id": "google-sheets-canvas-semester",
+      "title": "Workspace Gemini semester planner with Sheets canvas",
+      "url": "https://blog.google/products-and-platforms/products/workspace/gemini-google-workspace-back-to-school/",
+      "published_on": "2026-08-26",
+      "kind": "official-product-documentation-or-announcement",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official publisher text reviewed; no authenticated runtime test",
+      "storage": "link-only",
+      "canonical_source_id": "google-sheets-canvas-semester"
+    }
+  ]
+}
