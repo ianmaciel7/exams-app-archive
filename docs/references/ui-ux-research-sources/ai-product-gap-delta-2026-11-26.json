@@ -39,12 +39,14 @@
       "id": "claude-share-access",
       "product": "claude",
       "title": "Artifact sharing and storage lifecycle",
-      "description": "Docs support view/comment/edit permissions; unpublishing an artifact can permanently delete associated personal/shared storage.",
+      "description": "Artifact access can include view, comment or edit depending on role and type. Unpublishing a legacy artifact permanently deletes its stored data; do not generalize that rule to current artifacts.",
       "source_id": "claude-share",
       "acceptance": "Test permission matrix, warning and irreversible removal.",
       "target_type": "view",
       "target": "Artifacts tab",
-      "classification": "official search excerpt; acceptance criteria not executed"
+      "classification": "corrected using official help articles 2026-11-26; runtime not tested",
+      "additional_source_id": "claude-artifacts",
+      "correction_note": "Legacy unpublish rule must not be generalized."
     },
     {
       "id": "grok-bot-approval-card",

@@ -18,7 +18,7 @@ Claude Docs history overlays text when the artifact panel is too narrow; guide n
 [Official source](https://support.claude.com/en/articles/16923645-get-started-with-claude-docs). Acceptance: Test overlay/side-by-side widths, focus and version restore.
 
 ## Artifact sharing and storage lifecycle (claude)
-Docs support view/comment/edit permissions; unpublishing an artifact can permanently delete associated personal/shared storage.
+Artifact access can include view, comment or edit depending on role and type. Unpublishing a legacy artifact permanently deletes its stored data; do not generalize that rule to current artifacts.
 
 [Official source](https://support.claude.com/en/articles/9547008-share-artifacts). Acceptance: Test permission matrix, warning and irreversible removal.
 
@@ -48,3 +48,5 @@ Selecting a citation navigates to quoted source context; saving chat as note ret
 [Official source](https://support.google.com/gemininotebook/answer/16179559). Acceptance: Test exact anchor, unavailable source, keyboard and return.
 
 [Knowledge graph and backlog](../interface-pattern-library/ai-product-knowledge-graph.md)
+
+Correction source: [Claude artifacts guide](https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them). The legacy unpublish rule is not a current-artifact rule.

@@ -5822,6 +5822,28 @@
       "checked_on": "2026-11-26"
     },
     {
+      "id": "claude-whiteboards",
+      "title": "Get started with Claude Whiteboards",
+      "url": "https://support.claude.com/en/articles/18324319-get-started-with-claude-whiteboards",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official help article read; live UI not tested",
+      "storage": "link-only",
+      "notes": "Typed artifact editor flow."
+    },
+    {
+      "id": "claude-sheets",
+      "title": "Get started with Claude Sheets",
+      "url": "https://support.claude.com/en/articles/18324300-get-started-with-claude-sheets",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official help article read; live UI not tested",
+      "storage": "link-only",
+      "notes": "Typed artifact editor flow."
+    },
+    {
       "id": "domain-assessment-item-lifecycle",
       "title": "Inep — Conheça todas as etapas para concepção e aplicação das provas do Enem",
       "url": "https://www.gov.br/inep/pt-br/centrais-de-conteudo/noticias/enem/conheca-todas-as-etapas-para-concepcao-e-aplicacao-das-provas-do-enem",

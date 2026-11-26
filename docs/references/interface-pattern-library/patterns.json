@@ -603,7 +603,8 @@
       "source_ids": [
         "openai-space-help"
       ],
-      "classification": "product evidence / derived acceptance tests"
+      "classification": "product evidence / derived acceptance tests",
+      "product": "ChatGPT Space"
     },
     {
       "id": "chatgpt-space-object-views",
@@ -615,7 +616,8 @@
       "source_ids": [
         "openai-space-help"
       ],
-      "classification": "product evidence / derived acceptance tests"
+      "classification": "product evidence / derived acceptance tests",
+      "product": "ChatGPT Space"
     },
     {
       "id": "chatgpt-space-block-editor",
@@ -627,7 +629,8 @@
       "source_ids": [
         "openai-space-pages"
       ],
-      "classification": "product evidence / derived acceptance tests"
+      "classification": "product evidence / derived acceptance tests",
+      "product": "ChatGPT Space"
     },
     {
       "id": "chatgpt-space-width-controls",
@@ -639,7 +642,8 @@
       "source_ids": [
         "openai-space-pages"
       ],
-      "classification": "product evidence / derived acceptance tests"
+      "classification": "product evidence / derived acceptance tests",
+      "product": "ChatGPT Space"
     },
     {
       "id": "chatgpt-space-contextual-ai",
@@ -651,7 +655,8 @@
       "source_ids": [
         "openai-space-agents"
       ],
-      "classification": "product evidence / derived acceptance tests"
+      "classification": "product evidence / derived acceptance tests",
+      "product": "ChatGPT Space"
     },
     {
       "id": "chatgpt-space-recurring-work",
@@ -663,7 +668,8 @@
       "source_ids": [
         "openai-space-agents"
       ],
-      "classification": "product evidence / derived acceptance tests"
+      "classification": "product evidence / derived acceptance tests",
+      "product": "ChatGPT Space"
     },
     {
       "id": "chatgpt-space-adaptive-ui",
@@ -675,7 +681,8 @@
       "source_ids": [
         "openai-intelligent-ui"
       ],
-      "classification": "product evidence / derived acceptance tests"
+      "classification": "product evidence / derived acceptance tests",
+      "product": "ChatGPT Space"
     },
     {
       "id": "chatgpt-space-visualization-lifecycle",
@@ -687,7 +694,8 @@
       "source_ids": [
         "openai-visualizations"
       ],
-      "classification": "product evidence / derived acceptance tests"
+      "classification": "product evidence / derived acceptance tests",
+      "product": "ChatGPT Space"
     },
     {
       "id": "chatgpt-space-search",
@@ -699,7 +707,8 @@
       "source_ids": [
         "openai-global-search"
       ],
-      "classification": "product evidence / derived acceptance tests"
+      "classification": "product evidence / derived acceptance tests",
+      "product": "ChatGPT Space"
     },
     {
       "id": "chatgpt-space-mobile-navigation",
@@ -711,7 +720,8 @@
       "source_ids": [
         "openai-mobile"
       ],
-      "classification": "product evidence / derived acceptance tests"
+      "classification": "product evidence / derived acceptance tests",
+      "product": "ChatGPT Space"
     },
     {
       "id": "chatgpt-space-collaboration",
@@ -723,7 +733,8 @@
       "source_ids": [
         "openai-space-collaboration"
       ],
-      "classification": "product evidence / derived acceptance tests"
+      "classification": "product evidence / derived acceptance tests",
+      "product": "ChatGPT Space"
     },
     {
       "id": "claude-artifact-lifecycle",
@@ -735,7 +746,8 @@
       "source_ids": [
         "claude-artifacts"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Claude"
     },
     {
       "id": "claude-fine-grained-design",
@@ -747,7 +759,8 @@
       "source_ids": [
         "claude-design-launch"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Claude"
     },
     {
       "id": "claude-project-context",
@@ -759,7 +772,8 @@
       "source_ids": [
         "component-claude-projects"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Claude"
     },
     {
       "id": "claude-installable-artifact",
@@ -771,7 +785,8 @@
       "source_ids": [
         "claude-install"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Claude"
     },
     {
       "id": "claude-interactive-connectors",
@@ -783,7 +798,8 @@
       "source_ids": [
         "claude-connectors"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Claude"
     },
     {
       "id": "grok-bot-persistent-agent",
@@ -795,7 +811,8 @@
       "source_ids": [
         "grok-bot-bots"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Grok Bot"
     },
     {
       "id": "grok-bot-avatar-states",
@@ -807,7 +824,8 @@
       "source_ids": [
         "grok"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Grok Bot"
     },
     {
       "id": "grok-bot-execution-visibility",
@@ -819,7 +837,8 @@
       "source_ids": [
         "grok"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Grok Bot"
     },
     {
       "id": "grok-bot-pages",
@@ -831,7 +850,8 @@
       "source_ids": [
         "grok-bot-files"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Grok Bot"
     },
     {
       "id": "grok-bot-recurring",
@@ -843,7 +863,8 @@
       "source_ids": [
         "grok-bot-overview"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Grok Bot"
     },
     {
       "id": "gemini-canvas-edit",
@@ -855,7 +876,8 @@
       "source_ids": [
         "gemini-canvas"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Gemini"
     },
     {
       "id": "gemini-adaptive-generative-ui",
@@ -867,7 +889,8 @@
       "source_ids": [
         "gemini-dynamic"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Gemini"
     },
     {
       "id": "gemini-simulation",
@@ -879,7 +902,8 @@
       "source_ids": [
         "gemini-simulations"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Gemini"
     },
     {
       "id": "gemini-document-transform",
@@ -891,7 +915,8 @@
       "source_ids": [
         "gemini-canvas"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Gemini"
     },
     {
       "id": "gemini-study-space",
@@ -903,7 +928,8 @@
       "source_ids": [
         "gemini-study"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Gemini"
     },
     {
       "id": "gemini-notebook-three-region-shell",
@@ -915,7 +941,8 @@
       "source_ids": [
         "gemini-notebook-create"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Gemini Notebook (formerly NotebookLM)"
     },
     {
       "id": "gemini-notebook-source-grounding",
@@ -927,7 +954,8 @@
       "source_ids": [
         "gemini-notebook-sources"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Gemini Notebook (formerly NotebookLM)"
     },
     {
       "id": "gemini-notebook-study-loop",
@@ -939,7 +967,8 @@
       "source_ids": [
         "gemini-notebook-quiz"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Gemini Notebook (formerly NotebookLM)"
     },
     {
       "id": "gemini-notebook-question-formats",
@@ -951,7 +980,8 @@
       "source_ids": [
         "gemini-notebook-study"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Gemini Notebook (formerly NotebookLM)"
     },
     {
       "id": "gemini-notebook-async-output",
@@ -963,7 +993,8 @@
       "source_ids": [
         "gemini-notebook-create"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Gemini Notebook (formerly NotebookLM)"
     },
     {
       "id": "gemini-notebook-review-before-render",
@@ -975,7 +1006,8 @@
       "source_ids": [
         "gemini-notebook-review"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Gemini Notebook (formerly NotebookLM)"
     },
     {
       "id": "gemini-notebook-interactive-site-state",
@@ -987,7 +1019,8 @@
       "source_ids": [
         "gemini-notebook-sites"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Gemini Notebook (formerly NotebookLM)"
     },
     {
       "id": "gemini-notebook-mobile-constraints",
@@ -999,7 +1032,8 @@
       "source_ids": [
         "gemini-notebook-mobile"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Gemini Notebook (formerly NotebookLM)"
     },
     {
       "id": "chatgpt-space-page-trash",
@@ -1011,7 +1045,8 @@
       "source_ids": [
         "openai-space-help"
       ],
-      "classification": "official search excerpt; acceptance criteria not executed"
+      "classification": "official search excerpt; acceptance criteria not executed",
+      "product": "ChatGPT Space"
     },
     {
       "id": "claude-data-refresh",
@@ -1023,7 +1058,8 @@
       "source_ids": [
         "claude-data"
       ],
-      "classification": "official search excerpt; acceptance criteria not executed"
+      "classification": "official search excerpt; acceptance criteria not executed",
+      "product": "Claude"
     },
     {
       "id": "claude-docs-history",
@@ -1035,19 +1071,22 @@
       "source_ids": [
         "claude-docs"
       ],
-      "classification": "official search excerpt; acceptance criteria not executed"
+      "classification": "official search excerpt; acceptance criteria not executed",
+      "product": "Claude"
     },
     {
       "id": "claude-share-access",
       "family": "ai-product-observation",
       "name": "Artifact sharing and storage lifecycle",
       "kind": "Product-specific documented behavior",
-      "definition": "Docs support view/comment/edit permissions; unpublishing an artifact can permanently delete associated personal/shared storage.",
+      "definition": "Artifact access can include view, comment or edit depending on role and type. Unpublishing a legacy artifact permanently deletes its stored data; do not generalize that rule to current artifacts.",
       "guardrail": "Test permission matrix, warning and irreversible removal.",
       "source_ids": [
-        "claude-share"
+        "claude-share",
+        "claude-artifacts"
       ],
-      "classification": "official search excerpt; acceptance criteria not executed"
+      "classification": "corrected using official help articles 2026-11-26; runtime not tested",
+      "product": "Claude"
     },
     {
       "id": "grok-bot-approval-card",
@@ -1059,7 +1098,8 @@
       "source_ids": [
         "grok-bot-troubleshooting"
       ],
-      "classification": "official search excerpt; acceptance criteria not executed"
+      "classification": "official search excerpt; acceptance criteria not executed",
+      "product": "Grok Bot"
     },
     {
       "id": "grok-bot-event-routine",
@@ -1071,7 +1111,8 @@
       "source_ids": [
         "grok-bot-routines"
       ],
-      "classification": "official search excerpt; acceptance criteria not executed"
+      "classification": "official search excerpt; acceptance criteria not executed",
+      "product": "Grok Bot"
     },
     {
       "id": "gemini-persistent-canvas",
@@ -1083,7 +1124,8 @@
       "source_ids": [
         "gemini-canvas-security"
       ],
-      "classification": "official search excerpt; acceptance criteria not executed"
+      "classification": "official search excerpt; acceptance criteria not executed",
+      "product": "Gemini"
     },
     {
       "id": "gemini-notebook-note-source",
@@ -1095,7 +1137,8 @@
       "source_ids": [
         "gemini-notebook-notes"
       ],
-      "classification": "official search excerpt; acceptance criteria not executed"
+      "classification": "official search excerpt; acceptance criteria not executed",
+      "product": "Gemini Notebook (formerly NotebookLM)"
     },
     {
       "id": "gemini-notebook-citation-navigation",
@@ -1107,7 +1150,138 @@
       "source_ids": [
         "gemini-notebook-chat"
       ],
-      "classification": "official search excerpt; acceptance criteria not executed"
+      "classification": "official search excerpt; acceptance criteria not executed",
+      "product": "Gemini Notebook (formerly NotebookLM)"
+    },
+    {
+      "id": "chatgpt-space-embedded-vs-linked-files",
+      "family": "ai-product-observation",
+      "name": "Embedded file permission vs reference",
+      "kind": "Product-specific documented behavior",
+      "definition": "Uploaded files inherit page access; a link to a separately stored file does not itself grant access. Copied summaries on the page become visible to page readers.",
+      "guardrail": "Check view/edit roles, embedded files, external access and revoke behavior.",
+      "source_ids": [
+        "openai-space-sharing"
+      ],
+      "classification": "official documented behavior; acceptance checks not executed",
+      "product": "ChatGPT Space"
+    },
+    {
+      "id": "claude-personal-shared-storage",
+      "family": "ai-product-observation",
+      "name": "Personal vs shared artifact state",
+      "kind": "Product-specific documented behavior",
+      "definition": "Artifacts can store private per-user data or common shared data. First shared-storage use shows a confirmation. New artifacts can store before publishing; legacy artifacts require publication.",
+      "guardrail": "Test two accounts, save/reload and visibility; distinguish current and legacy artifacts.",
+      "source_ids": [
+        "claude-artifacts"
+      ],
+      "classification": "official documented behavior; acceptance checks not executed",
+      "product": "Claude"
+    },
+    {
+      "id": "claude-invitation-lifecycle",
+      "family": "ai-product-observation",
+      "name": "Invitation expiry and revocation",
+      "kind": "Product-specific documented behavior",
+      "definition": "Pending email invitations expire in 30 days; accepted invitations do not expire automatically. Removing a person revokes access immediately. Organization settings and plan affect invitations.",
+      "guardrail": "Test pending, expired, accepted, revoked and disabled external sharing.",
+      "source_ids": [
+        "claude-share"
+      ],
+      "classification": "official documented behavior; acceptance checks not executed",
+      "product": "Claude"
+    },
+    {
+      "id": "claude-sharing-role-boundaries",
+      "family": "ai-product-observation",
+      "name": "Artifact permission roles",
+      "kind": "Product-specific documented behavior",
+      "definition": "Viewer reads artifact/comments; commenter adds comments and downloads offered files; editor can change content. External commenters and editors have limitations; editors cannot delete artifact.",
+      "guardrail": "Test each role and artifact type, including disabled comments and connectors.",
+      "source_ids": [
+        "claude-share"
+      ],
+      "classification": "official documented behavior; acceptance checks not executed",
+      "product": "Claude"
+    },
+    {
+      "id": "grok-bot-library-facets",
+      "family": "ai-product-observation",
+      "name": "Library content facets and pinned items",
+      "kind": "Product-specific documented behavior",
+      "definition": "Desktop Library filters All, Pages, Media, Links, Files, Apps and Pinned. Team Bot separates private-to-user and bot files; pin treatment differs.",
+      "guardrail": "Test filter results, pin/unpin and private/team visibility.",
+      "source_ids": [
+        "grok-bot-files"
+      ],
+      "classification": "official documented behavior; acceptance checks not executed",
+      "product": "Grok Bot"
+    },
+    {
+      "id": "grok-bot-page-rename-stable-link",
+      "family": "ai-product-observation",
+      "name": "Stable page address and rename",
+      "kind": "Product-specific documented behavior",
+      "definition": "Rename commits with Enter or cancels with Escape; a public page address remains unchanged after renaming. Custom addresses are not supported per guide.",
+      "guardrail": "Test cancel, rename, stable link and access revoke.",
+      "source_ids": [
+        "grok-bot-files"
+      ],
+      "classification": "official documented behavior; acceptance checks not executed",
+      "product": "Grok Bot"
+    },
+    {
+      "id": "grok-bot-share-conflict-retry",
+      "family": "ai-product-observation",
+      "name": "Sharing conflict and retry",
+      "kind": "Product-specific documented behavior",
+      "definition": "Share menu explains unavailable audiences, failed access changes and concurrent access updates; failed saves offer Retry.",
+      "guardrail": "Exercise conflict, failed request, retry and inaccessible audience; no silent success.",
+      "source_ids": [
+        "grok-bot-files"
+      ],
+      "classification": "official documented behavior; acceptance checks not executed",
+      "product": "Grok Bot"
+    },
+    {
+      "id": "gemini-canvas-copy-versus-edit",
+      "family": "ai-product-observation",
+      "name": "Copy shared Canvas content",
+      "kind": "Product-specific documented behavior",
+      "definition": "A public shared Canvas result can be copied into a user's own editable Canvas; shared app data is a separate concept. Copy/edit shared content requires age 18+, and links open in web.",
+      "guardrail": "Test new object identity, original unchanged, shared data boundary and mobile limitation.",
+      "source_ids": [
+        "gemini-canvas"
+      ],
+      "classification": "official documented behavior; acceptance checks not executed",
+      "product": "Gemini"
+    },
+    {
+      "id": "gemini-notebook-site-isolated-inputs",
+      "family": "ai-product-observation",
+      "name": "Shared site with private inputs",
+      "kind": "Product-specific documented behavior",
+      "definition": "Every user of a shared site, including owner, sees only their own saved inputs. Site viewers require access to the full notebook; public sharing requires consumer owner/editor.",
+      "guardrail": "Test two users, saved selections, notebook permissions and no cross-user input leakage.",
+      "source_ids": [
+        "gemini-notebook-sites"
+      ],
+      "classification": "official documented behavior; acceptance checks not executed",
+      "product": "Gemini Notebook (formerly NotebookLM)"
+    },
+    {
+      "id": "gemini-notebook-site-revoke-delete",
+      "family": "ai-product-observation",
+      "name": "Site revocation and deletion",
+      "kind": "Product-specific documented behavior",
+      "definition": "Turning off site sharing or deleting the site invalidates previously generated share links; sites can also be downloaded from Studio.",
+      "guardrail": "Test old links, role checks, export and deletion confirmation.",
+      "source_ids": [
+        "gemini-notebook-sites"
+      ],
+      "classification": "official documented behavior; acceptance checks not executed",
+      "product": "Gemini Notebook (formerly NotebookLM)"
     }
   ]
 }
