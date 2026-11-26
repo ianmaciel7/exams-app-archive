@@ -35,6 +35,7 @@ import math
 from pathlib import Path
 import re
 import sqlite3
+import subprocess
 import sys
 from typing import Any
 from urllib.parse import urlsplit, urlunsplit
@@ -446,6 +447,11 @@ def _deduplicate_blobs_preserving_occurrences(hits: list[dict[str, Any]]) -> tup
             u = urlsplit(urls[0])
             canonical = urlunsplit((u.scheme.lower(), u.netloc.lower(), u.path or "/", u.query, u.fragment))
             key = "public::source-url::" + canonical
+        elif bsha and hit["source_channel"] in {"public_ast_code", "ast_code"}:
+            # File identity is not chunk identity. Keep different line spans.
+            meta = hit.get("metadata", {})
+            p = hit["provenance"]
+            key = f"{hit['scope']}::{hit['evidence_type']}::{bsha}::{p.get('record_sha256')}::{meta.get('start_line')}::{meta.get('end_line')}"
         elif bsha:
             key = f"{hit['scope']}::{hit['evidence_type']}::{bsha}"
         else:
@@ -656,6 +662,22 @@ def _search_public_research_and_concepts(
     return hits, audits
 
 
+def _public_git_pin(root, rel, raw):
+    """Pin local bytes to the actual checkout, without claiming a remote branch."""
+    blob = hashlib.sha1(f"blob {len(raw)}\x00".encode("ascii") + raw).hexdigest()
+    def git(*args):
+        return subprocess.run(["git", "-C", str(root), *args],
+                              capture_output=True, check=True, timeout=5).stdout.decode("ascii").strip()
+    try:
+        commit = git("rev-parse", "--verify", "HEAD^{commit}")
+        committed = git("rev-parse", "--verify", commit + ":" + rel)
+        if committed == blob:
+            return commit, blob, "verified"
+    except (OSError, subprocess.SubprocessError, UnicodeError):
+        pass
+    return "", blob, "local-unpinned"
+
+
 def _search_public_ast_code(
     query: str,
     *,
@@ -696,11 +718,12 @@ def _search_public_ast_code(
             continue
         rel = fpath.relative_to(ROOT_DIR).as_posix() if fpath.is_relative_to(ROOT_DIR) else fpath.name
         try:
-            text = fpath.read_text(encoding="utf-8")
+            raw = fpath.read_bytes()
+            text = raw.decode("utf-8")
         except (OSError, UnicodeDecodeError):
             continue
         lang = ast_chunker.normalize_language(fpath.suffix)
-        bsha = ast_chunker.compute_git_blob_sha(text)
+        commit_sha, bsha, provenance_status = _public_git_pin(ROOT_DIR, rel, raw)
         chunks = ast_chunker.chunk_code(text, language=lang, blob_sha=bsha)
         for ch in chunks:
             ch_tokens = set(_tokenize_bm25(f"{ch.name} {ch.parent_context} {ch.content}"))
@@ -721,12 +744,13 @@ def _search_public_ast_code(
                     blob_sha=ch.blob_sha,
                     record_sha256=sha256_text(ch.content),
                     repo="ianmaciel7/exams-app-archive",
-                    ref="refs/heads/main",
+                    ref=commit_sha,
+                    commit_sha=commit_sha,
                     path=rel,
                     version=ch.extractor_version,
                     license_name="MIT",
                     domain="qualidade" if ev_type == "test" else "engenharia",
-                    provenance_status="verified",
+                    provenance_status=provenance_status,
                     metadata={
                         "node_type": ch.node_type,
                         "symbol_id": ch.symbol_id,

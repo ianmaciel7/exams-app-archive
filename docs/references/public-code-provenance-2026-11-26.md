@@ -1,0 +1,3 @@
+# Public AST retrieval provenance
+
+Local file bytes are hashed using the Git blob header and exact bytes, including line endings. Only a matching blob at the actual local HEAD receives an immutable commit pin and verified status. Dirty, absent-Git or unmatched files remain explicitly local-unpinned. This does not prove upstream remote origin or certify historical code. Distinct AST snippets in a single blob retain distinct line spans and content identities; identical occurrences still deduplicate. Tests cover CRLF, dirty content, and two snippets in one blob. Public allowlist remains unchanged.
