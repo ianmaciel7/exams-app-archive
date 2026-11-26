@@ -1,0 +1,41 @@
+name: AI product retrieval benchmark
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/references/**"
+      - "scripts/**"
+      - "tests/evaluation/ai-product-*.json"
+      - ".github/workflows/ai-product-retrieval-benchmark.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  product-retrieval:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Isolate all gold labels and capture rankings
+        run: |
+          mkdir -p "$RUNNER_TEMP/ai-product-eval" "$RUNNER_TEMP/ai-product-gold"
+          mv tests/evaluation/*-labels.json "$RUNNER_TEMP/ai-product-gold/"
+          test ! -e tests/evaluation/ai-product-labels.json
+          test ! -e tests/evaluation/public-labels.json
+          python scripts/production_retrieval_eval.py run tests/evaluation/ai-product-queries.json "$RUNNER_TEMP/ai-product-eval/capture.json"
+      - name: Score without changing the ranker
+        run: |
+          python scripts/production_retrieval_eval.py score "$RUNNER_TEMP/ai-product-eval/capture.json" "$RUNNER_TEMP/ai-product-gold/ai-product-labels.json" "$RUNNER_TEMP/ai-product-eval/score.json"
+          python scripts/production_retrieval_eval.py diagnostic "$RUNNER_TEMP/ai-product-eval/capture.json" > "$RUNNER_TEMP/ai-product-eval/diagnostic.json"
+          python scripts/summarize_ai_product_benchmark.py "$RUNNER_TEMP/ai-product-eval/capture.json" "$RUNNER_TEMP/ai-product-eval/score.json" "$RUNNER_TEMP/ai-product-gold/ai-product-labels.json" "$RUNNER_TEMP/ai-product-eval/summary.json"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ai-product-retrieval-benchmark
+          path: ${{ runner.temp }}/ai-product-eval/

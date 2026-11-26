@@ -1,0 +1,90 @@
+[
+  {
+    "id": "space-01",
+    "query": "If I move a ChatGPT Space child page, does inherited access change?"
+  },
+  {
+    "id": "space-02",
+    "query": "Qual a diferença entre uma tarefa do Codex e um checklist no Space?"
+  },
+  {
+    "id": "space-03",
+    "query": "Find an official ChatGPT Space image showing a task list."
+  },
+  {
+    "id": "space-04",
+    "query": "How does ChatGPT Visualize recover from a blank generated visualization?"
+  },
+  {
+    "id": "claude-01",
+    "query": "Where can I inspect the query and freshness of a Claude Data chart?"
+  },
+  {
+    "id": "claude-02",
+    "query": "When does a Claude certified query lose its badge?"
+  },
+  {
+    "id": "claude-03",
+    "query": "Imagem histórica do Claude com editor de código ao lado do chat."
+  },
+  {
+    "id": "claude-04",
+    "query": "How do I navigate nested groups using the keyboard in Claude Design?"
+  },
+  {
+    "id": "grok-01",
+    "query": "Can a reader save changes to filters and switches on a Grok Bot Page?"
+  },
+  {
+    "id": "grok-02",
+    "query": "Quais são os filtros de conteúdo da biblioteca do Grok Bot?"
+  },
+  {
+    "id": "grok-03",
+    "query": "How do I take over the agent computer from a preview and hand control back?"
+  },
+  {
+    "id": "grok-04",
+    "query": "What happens if a Grok Bot routine loses its connector sign-in?"
+  },
+  {
+    "id": "gemini-01",
+    "query": "Quais os estados de progresso do dashboard de estudos do Gemini?"
+  },
+  {
+    "id": "gemini-02",
+    "query": "What learning flow connects a Gemini diagnostic quiz to practice?"
+  },
+  {
+    "id": "gemini-03",
+    "query": "How can Gemini Canvas apps persist shared user data?"
+  },
+  {
+    "id": "gemini-04",
+    "query": "Can I copy a shared Gemini Canvas result without changing the original?"
+  },
+  {
+    "id": "notebook-01",
+    "query": "How do I restore a slide marked for deletion before applying a Gemini Notebook revision?"
+  },
+  {
+    "id": "notebook-02",
+    "query": "Os usuários de um site compartilhado do Gemini Notebook veem as entradas uns dos outros?"
+  },
+  {
+    "id": "notebook-03",
+    "query": "Find the original NotebookLM image of the Customize Data Table dialog."
+  },
+  {
+    "id": "notebook-04",
+    "query": "Does exporting a NotebookLM data table synchronize edits back to the notebook?"
+  },
+  {
+    "id": "negative-01",
+    "query": "What is the exact factory calibration coefficient of a ZXQ-917 laboratory refractometer?"
+  },
+  {
+    "id": "negative-02",
+    "query": "Which fictional moon mineral powers the imaginary Zorvex chronometer?"
+  }
+]

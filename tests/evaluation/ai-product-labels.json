@@ -1,0 +1,69 @@
+{
+  "space-01": [
+    "research:general:chatgpt-space-inherited-access-reparent"
+  ],
+  "space-02": [
+    "research:general:chatgpt-space-task-vs-prompt-checklist"
+  ],
+  "space-03": [
+    "research:ai-product-graph:evidence:chatgpt-space:todos"
+  ],
+  "space-04": [
+    "research:general:chatgpt-space-visualization-control-and-recovery"
+  ],
+  "claude-01": [
+    "research:general:claude-chart-query-lineage"
+  ],
+  "claude-02": [
+    "research:general:claude-certified-query-lifecycle"
+  ],
+  "claude-03": [
+    "research:ai-product-graph:evidence:claude:project-artifact-code"
+  ],
+  "claude-04": [
+    "research:ai-product-graph:contract:claude-design-nested-selection",
+    "research:general:claude-hierarchical-canvas-focus"
+  ],
+  "grok-01": [
+    "research:ai-product-graph:flow:grok-bot-page-lifecycle"
+  ],
+  "grok-02": [
+    "research:general:grok-bot-library-facets"
+  ],
+  "grok-03": [
+    "research:ai-product-graph:flow:grok-bot-computer-handoff",
+    "research:general:grok-bot-computer-access-levels"
+  ],
+  "grok-04": [
+    "research:general:grok-bot-connector-recovery"
+  ],
+  "gemini-01": [
+    "research:general:gemini-skill-progress-dashboard"
+  ],
+  "gemini-02": [
+    "research:ai-product-graph:flow:gemini-diagnostic-to-practice",
+    "research:general:gemini-diagnostic-learning-loop"
+  ],
+  "gemini-03": [
+    "research:general:gemini-persistent-canvas",
+    "research:ai-product-graph:availability:gemini-canvas-data"
+  ],
+  "gemini-04": [
+    "research:general:gemini-canvas-copy-versus-edit"
+  ],
+  "notebook-01": [
+    "research:ai-product-graph:contract:notebook-deck-staged-revision",
+    "research:general:gemini-notebook-deck-pending-delete"
+  ],
+  "notebook-02": [
+    "research:general:gemini-notebook-site-isolated-inputs"
+  ],
+  "notebook-03": [
+    "research:ai-product-graph:evidence:gemini-notebook:data-table-customize"
+  ],
+  "notebook-04": [
+    "research:general:gemini-notebook-export-snapshot-boundary"
+  ],
+  "negative-01": [],
+  "negative-02": []
+}

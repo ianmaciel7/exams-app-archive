@@ -82,3 +82,7 @@ Every benchmark must resolve source IDs centrally, preserve stable observation I
 ## Visual verification follow-up
 
 [Four historical Claude Projects stills and eight failed media retrieval attempts](../ui-ux-research-sources/ai-product-visual-verification-2026-11-26.md). Graph: 472 nodes and 868 edges; 15 inspected stills and 23 leads, including a publisher page with four inspected children. No current UI or motion verification.
+
+## Retrieval quality audit
+
+[Five-product target-retrieval benchmark](ai-product-retrieval-benchmark.md): 22 frozen queries, no ranking changes in the initial baseline, independent relevance annotation still required. Report target recovery and missed IDs; do not treat passing unit tests as complete quality coverage.
