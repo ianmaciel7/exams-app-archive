@@ -37,6 +37,7 @@ import re
 import sqlite3
 import sys
 from typing import Any
+from urllib.parse import urlsplit, urlunsplit
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 ROOT_DIR = SCRIPT_DIR.parent
@@ -437,7 +438,15 @@ def _deduplicate_blobs_preserving_occurrences(hits: list[dict[str, Any]]) -> tup
 
     for hit in hits:
         bsha = hit["provenance"].get("blob_sha") or hit["provenance"].get("record_sha256")
-        if bsha:
+        urls = hit.get("metadata", {}).get("source_urls", [])
+        # Source entries are pointers, not independent evidence just because
+        # the same URL occurs in multiple catalogs. Preserve exact URL identity
+        # (including fragment/query), do not merge distinct patterns or media.
+        if hit["scope"] == "public" and hit["evidence_type"] == "source" and len(urls) == 1:
+            u = urlsplit(urls[0])
+            canonical = urlunsplit((u.scheme.lower(), u.netloc.lower(), u.path or "/", u.query, u.fragment))
+            key = "public::source-url::" + canonical
+        elif bsha:
             key = f"{hit['scope']}::{hit['evidence_type']}::{bsha}"
         else:
             key = f"{hit['scope']}::id::{hit['id']}"
@@ -450,12 +459,13 @@ def _deduplicate_blobs_preserving_occurrences(hits: list[dict[str, Any]]) -> tup
         else:
             dedup_count += 1
             existing = by_key[key]
-            existing["occurrences"].extend(hit.get("occurrences", []))
-            # Keep the higher raw_score representative
+            occurrences = existing["occurrences"] + list(hit.get("occurrences", []))
+            # The representative's title, snippet, metadata and provenance must
+            # come from the same occurrence. Keep other pointers intact.
             if hit["raw_score"] > existing["raw_score"]:
-                existing["raw_score"] = hit["raw_score"]
-                existing["title"] = hit["title"]
-                existing["snippet"] = hit["snippet"]
+                by_key[key] = {**hit, "occurrences": occurrences}
+            else:
+                existing["occurrences"] = occurrences
 
     return [by_key[k] for k in order], dedup_count
 
@@ -602,7 +612,7 @@ def _search_public_research_and_concepts(
         kind = row.get("kind", "source")
         ev_type = "media" if kind == "visual" else ("pattern" if kind == "pattern" else "source")
         body_parts = []
-        for k in ("definition", "purpose", "anatomy", "behavior", "guardrail", "description", "summary", "classification"):
+        for k in ("definition", "purpose", "anatomy", "behavior", "guardrail", "description", "summary", "principle", "acceptance", "acceptance_tests", "limits", "deliverable", "classification"):
             val = rec.get(k)
             if isinstance(val, str) and val:
                 body_parts.append(f"{k}: {val}")
@@ -624,7 +634,7 @@ def _search_public_research_and_concepts(
                 path=rec.get("source_path") or rec.get("path") or row.get("catalog_path", ""),
                 version=snapshot_rev[:16],
                 license_name=row.get("license") or "",
-                domain="referencias-externas",
+                domain=rec.get("domain") or "referencias-externas",
                 provenance_status="verified" if row.get("availability") in {"documented", "archived-blob-verified"} else "unverified",
                 metadata={"catalog": row.get("catalog"), "record_id": row.get("id"), "source_urls": row.get("sources", []), "product": row.get("product"), "availability": row.get("availability")},
             )

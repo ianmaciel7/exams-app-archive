@@ -29,3 +29,11 @@ def test_removed_member_fails_integrity():
 def test_url_normalization_does_not_merge_sections_or_query():
     assert canonical_url("https://EXAMPLE.org:443/a?x=1#b")=="https://example.org/a?x=1#b"
     assert canonical_url("https://example.org/a#x")!=canonical_url("https://example.org/a#y")
+
+def test_source_only_domain_is_not_missing_or_validated():
+    result=audit([row("s","source",["https://example.org/a"])],
+                 {"concepts":[{"id":"domain.historico","members":["s"]}]})
+    assert result["domains"]["historico"]["coverage_status"]=="source_links_only"
+    assert result["domains"]["historico"]["source_urls"]==1
+    assert result["domains"]["historico"]["patterns"]==0
+    assert result["gap_counts"]["domain_with_source_links_only"]==1

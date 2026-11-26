@@ -27,6 +27,13 @@ def run(queries, retrieve):
         raise ValueError("Duplicate query IDs")
     return out
 
+def summarize_public_capture(rows):
+    """Safe diagnostic for this public-only corpus; no private queries allowed."""
+    for row in rows:
+        if any(h.get("scope") != "public" for h in row["hits"]):
+            raise ValueError("Non-public hit in public capture")
+    return [{"id":row["id"],"status":row["status"],"hits":[{"id":h["id"],"channel":h.get("source_channel"),"type":h.get("evidence_type"),"raw_score":h.get("raw_score"),"fused_score":h.get("fused_score")} for h in row["hits"]]} for row in rows]
+
 def score(rows, labels):
     if set(labels) != {row["id"] for row in rows}:
         raise ValueError("Labels and captured queries must match exactly")
@@ -71,6 +78,8 @@ def main():
     runner = sub.add_parser("run")
     runner.add_argument("queries")
     runner.add_argument("output")
+    diagnostic = sub.add_parser("diagnostic")
+    diagnostic.add_argument("capture")
     scorer = sub.add_parser("score")
     scorer.add_argument("capture")
     scorer.add_argument("labels")
@@ -79,6 +88,8 @@ def main():
     if args.mode == "run":
         from federated_retrieval import federated_search
         write(args.output, run(read(args.queries), federated_search))
+    elif args.mode == "diagnostic":
+        print(json.dumps(summarize_public_capture(read(args.capture)),indent=2))
     else:
         capture = Path(args.capture)
         result = score(read(capture), read(args.labels))

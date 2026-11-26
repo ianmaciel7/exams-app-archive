@@ -116,8 +116,10 @@ jobs:
         run: |
           python scripts/production_retrieval_eval.py score "$RUNNER_TEMP/public-eval/capture.json" "$RUNNER_TEMP/public-labels.json" "$RUNNER_TEMP/public-eval/score.json"
           cat "$RUNNER_TEMP/public-eval/score.json"
+          python scripts/production_retrieval_eval.py diagnostic "$RUNNER_TEMP/public-eval/capture.json"
           python scripts/check_public_evaluation.py "$RUNNER_TEMP/public-eval/capture.json" "$RUNNER_TEMP/public-labels.json" "$RUNNER_TEMP/public-eval/score.json"
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: public-production-retrieval
           path: ${{ runner.temp }}/public-eval/

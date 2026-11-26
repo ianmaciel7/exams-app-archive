@@ -56,11 +56,15 @@ def query_groups(query):
 
 def fields(row):
     item = row.get("record", {})
+    aliases = item.get("aliases") or []
+    if isinstance(aliases, str):
+        aliases = [aliases]
     head = tokens(" ".join([str(row.get("title", "")), str(row.get("product") or ""),
-                           " ".join(str(a) for a in item.get("aliases", []))]))
+                           " ".join(str(a) for a in aliases)]))
     body = tokens(" ".join(str(item.get(k, "")) for k in (
         "definition","purpose","behavior","anatomy","guardrail","description","summary",
-        "notes","tests","keywords","title","name","product","classification")))
+        "notes","tests","keywords","title","name","product","classification",
+        "principle","acceptance","acceptance_tests","limits","patterns","deliverable","include","avoid","exit","question")))
     return head, body | head
 
 def ranked(query, records, *, product=None, limit=40):
