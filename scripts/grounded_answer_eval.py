@@ -734,6 +734,7 @@ def render_markdown_report(report: dict[str, Any]) -> str:
     probe = report["hallucination_detector_probe"]
 
     lines = [
+        "**Synthetic/label-aware regression only (#94). Production evaluation: NOT RUN.**",
         "# Avaliacao Tripartite de Fundamentacao e Resposta (#88)",
         "",
         f"- **Data:** {report['generated_at']}",

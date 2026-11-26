@@ -1,7 +1,7 @@
 # UI Design Tokens Specification
 
-Document Version: 1.0.0  
-Date: 2026-11-24  
+Document Version: 1.1.0  
+Date: 2026-11-26  
 Issue Reference: #24 (Consolidar docs, recuperacao de motion, busca e sincronizacao multiagente)  
 Zero Emoji Policy: Verified compliant. No Unicode emojis in range U+10000 to U+10FFFF.
 
@@ -39,7 +39,7 @@ All color tokens are formally declared in `src/app/globals.css` and mapped into 
 |---|---|---|---|
 | `--content-primary` | `oklch(0.22 0.012 80)` | `oklch(0.94 0.008 80)` | Primary headings, titles, active tab text, high-emphasis text |
 | `--content-secondary` | `oklch(0.42 0.012 80)` | `oklch(0.76 0.012 80)` | Body text, navigational labels, active control icons |
-| `--content-tertiary` | `oklch(0.58 0.012 80)` | `oklch(0.62 0.012 80)` | Metadata, timestamp captions, keyboard shortcuts, disabled hints |
+| `--content-tertiary` | `oklch(0.50 0.012 80)` | `oklch(0.70 0.012 80)` | Metadata, timestamp captions, keyboard shortcuts, disabled hints |
 | `--content-active` | `oklch(0.55 0.12 275)` | `oklch(0.75 0.11 275)` | Active tab accent, focused item indicator, primary highlight |
 
 ### 2.3 Structural Border and Focus Tokens
@@ -48,7 +48,7 @@ All color tokens are formally declared in `src/app/globals.css` and mapped into 
 |---|---|---|---|
 | `--border` | `oklch(0.922 0 0)` | `oklch(0.269 0 0)` | Structural pane dividers, card contours |
 | `--border-subtle` | `oklch(0.22 0.012 80 / 12%)` | `oklch(0.985 0.008 80 / 14%)` | Low-contrast row dividers, list separators, subtle tab boundaries |
-| `--ring` | `oklch(0.708 0 0)` | `oklch(0.439 0 0)` | Keyboard navigation `focus-visible` outline ring |
+| `--ring` | `oklch(0.58 0 0)` | `oklch(0.65 0 0)` | Keyboard navigation `focus-visible` outline ring |
 | `--input` | `oklch(0.922 0 0)` | `oklch(0.269 0 0)` | Form controls and search input borders |
 
 ### 2.4 Object-Type Identity Chip Palette
@@ -57,10 +57,10 @@ Identity chips for entities, topics, question categories, and file types use fix
 
 | Identity Tone | Badge Background | Badge Text / Icon Foreground | Intended Domain Concept |
 |---|---|---|---|
-| `blue-file` | `#e8f0ff` | `#3f6fce` | Standard note, question item, document page |
-| `amber-folder` | `#fff0d6` | `#b96b0e` | Collection, topic folder, question category |
-| `rose-citation` | `#ffe8ed` | `#d74b67` | Exam source, formal citation, reference link |
-| `emerald-verified`| `#e6f7ed` | `#1e824c` | Correct question answer, verified mastery state |
+| `blue-file` | `#e8f0ff` | `#315eb8` | Standard note, question item, document page |
+| `amber-folder` | `#fff0d6` | `#985508` | Collection, topic folder, question category |
+| `rose-citation` | `#ffe8ed` | `#b62e4e` | Exam source, formal citation, reference link |
+| `emerald-verified`| `#e6f7ed` | `#176c3e` | Correct question answer, verified mastery state |
 | `violet-graph` | `#f0ebfc` | `#6b3ba7` | Graph node, concept cluster, associative relation |
 | `slate-meta` | `#f1f3f5` | `#495057` | Auxiliary metadata, flashcard review rating |
 
@@ -200,3 +200,7 @@ The design system supports three density tiers tailored to viewport sizes:
    - Off-canvas drawer layout with backdrop blur (`translateX(-105%)` to `translateX(0)`).
    - Tap targets strictly meet accessibility requirements (`min-h-[44px]`).
    - Sticky navigation footer for exam question switching and timer control.
+
+## Contrast regression contract (#103)
+
+The revised values are a proposal for the archive specification, not a modification of any historical or active app. The original values remain available in Git history. Run `python scripts/check_token_contrast.py` to check unrounded WCAG 2.2 sRGB contrast on opaque canonical pairs. Normal text requires 4.5:1 and the focus ring requires 3:1 against adjacent surfaces when it is the necessary visual indicator. Actual component adjacency, compositing, gradients, forced colors, keyboard focus and browser rendering still need separate verification. Identity color is not the sole indicator of status. See [WCAG contrast minimum](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html) and [non-text contrast](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html).

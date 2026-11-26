@@ -16,6 +16,7 @@ CATALOGS = (
     ("general", "interface-pattern-library/patterns.json", "patterns", "pattern"),
     ("workspace", "ui-ux-patterns-2026-11-25/patterns.json", "patterns", "pattern"),
     ("design-foundations", "ui-ux-research-sources/design-foundations-and-state-transitions-2026-11-25.json", "patterns", "pattern"),
+    ("domain-research", "ui-ux-research-sources/domain-research-2026-11-26.json", "patterns", "pattern"),
     ("general-sources", "interface-pattern-library/sources.json", "sources", "source"),
     ("research-sources", "ui-ux-research-sources/sources.json", "sources", "source"),
     ("visual", "visual-evidence-library/manifest.json", "records", "visual"),
@@ -43,7 +44,7 @@ def load_records():
     records, seen = [], set()
     general_sources = json.loads((BASE / "interface-pattern-library/sources.json").read_text(encoding="utf-8"))["sources"]
     source_map = {x["id"]: x["url"] for x in general_sources}
-    maps = {"general": source_map, "design-foundations": source_map}
+    maps = {"general": source_map, "design-foundations": source_map, "domain-research": source_map}
     for namespace, rel, key, kind in CATALOGS:
         path = BASE / rel
         data = path.read_bytes()
@@ -180,6 +181,28 @@ def provenance_graph(records):
             "scope": "explicit public catalog citations; not historical decisions or verified live links"}
 
 
+def coverage_gaps(records):
+    """Report explicit public-catalog relations only, never inferred evidence coverage."""
+    referenced = {url for r in records if r["kind"] != "source" for url in r.get("sources", [])}
+    source_rows = [r for r in records if r["kind"] == "source"]
+    source_urls = {url for r in source_rows for url in r.get("sources", [])}
+    missing = sorted(source_urls - referenced)
+    domains = Counter(str(r.get("record", {}).get("issue")) for r in records
+                      if r.get("catalog") == "domain-research")
+    return {
+        "unique_source_urls": len(source_urls),
+        "source_urls_with_non_source_reference": len(source_urls & referenced),
+        "source_urls_without_non_source_reference": missing,
+        "missing_source_status_ids": sorted(r["id"] for r in source_rows
+                                            if not r.get("record", {}).get("status")),
+        "patterns_without_source_ids_or_urls": sorted(r["id"] for r in records
+                                                      if r["kind"] == "pattern" and not r.get("sources")),
+        "domain_research_by_issue": dict(sorted(domains.items())),
+        "visual_content_inspection": "not assessed by catalog audit",
+        "live_url_verification": "not performed",
+        "historical_private_coverage": "not assessed",
+    }
+
 def audit(records):
     visual = Counter()
     gaps = Counter()
@@ -198,7 +221,7 @@ def audit(records):
         build(db, records)
         queries = {q: len(search(db, q, limit=20)) for q in
                    ("side panel", "wall", "shared layout", "agent mascot", "generative UI", "vídeo", "kanban")}
-    return {**coverage(records), "unknown_metadata_counts": dict(gaps),
+    return {**coverage(records), "knowledge_coverage_gaps": coverage_gaps(records), "unknown_metadata_counts": dict(gaps),
             "visual_matrix": [{"product": p, "modality": k, "availability": a, "records": n}
                               for (p,k,a),n in sorted(visual.items())],
             "graph": {"nodes": len(graph["nodes"]), "edges": len(graph["edges"])},

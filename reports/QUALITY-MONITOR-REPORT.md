@@ -1,5 +1,7 @@
 # Relatorio de Monitoramento de Qualidade, Frescor e Gaps (#83)
 
+> **Methodology correction (#94):** These historical results were produced using synthetic fixtures and/or label-aware evaluation. They are not evidence of production retrieval quality or real agent grounding. Operational benchmark status: NOT RUN. Preserve these figures for historical traceability only.
+
 - **Data:** 2026-11-25T23:04:42.094952+00:00
 - **CI Quality Gate:** `PASS`
 - **Regressoes de Dominio:** 0 / 23

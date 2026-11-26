@@ -61,6 +61,8 @@ jobs:
         run: python -m playwright install --with-deps chromium
       - name: Run MCP and browser integration smoke
         run: python tests/smoke_agent_browser.py
+      - name: Exercise assessment transition demo in Chromium
+        run: python tests/smoke_state_transitions.py
 
   component-preview-smoke:
     runs-on: ubuntu-latest
@@ -80,3 +82,25 @@ jobs:
           python -m playwright install --with-deps chromium
       - name: Test real React interaction and screenshot database
         run: python tests/smoke_component_preview.py "$RUNNER_TEMP/preview-deps"
+
+  public-production-retrieval:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Capture production search before scoring
+        run: |
+          mkdir -p "$RUNNER_TEMP/public-eval"
+          python scripts/production_retrieval_eval.py run tests/evaluation/public-queries.json "$RUNNER_TEMP/public-eval/capture.json"
+      - name: Score the captured rankings separately
+        run: |
+          python scripts/production_retrieval_eval.py score "$RUNNER_TEMP/public-eval/capture.json" tests/evaluation/public-labels.json "$RUNNER_TEMP/public-eval/score.json"
+          cat "$RUNNER_TEMP/public-eval/score.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: public-production-retrieval
+          path: ${{ runner.temp }}/public-eval/

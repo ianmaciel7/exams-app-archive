@@ -1,5 +1,7 @@
 # Gold Set Benchmark Multidominio (#78)
 
+> **Methodology correction (#94):** These historical results were produced using synthetic fixtures and/or label-aware evaluation. They are not evidence of production retrieval quality or real agent grounding. Operational benchmark status: NOT RUN. Preserve these figures for historical traceability only.
+
 - **Data:** 2026-11-25T23:04:37.051002+00:00
 - **Dataset SHA-256:** `d3a3da9f86e2fbd9aa8ec459daf12f6cfacfe2ec697bbd0005a1a2950b3cf92d`
 - **Total de Consultas:** 460 (23 dominios x 20 consultas)

@@ -1,5 +1,7 @@
 # Avaliacao Tripartite de Fundamentacao e Resposta (#88)
 
+> **Methodology correction (#94):** These historical results were produced using synthetic fixtures and/or label-aware evaluation. They are not evidence of production retrieval quality or real agent grounding. Operational benchmark status: NOT RUN. Preserve these figures for historical traceability only.
+
 - **Data:** 2026-11-25T23:04:40.754643+00:00
 - **Total de Casos:** 465 (460 gold set + 5 adversariais)
 - **Gate de Fundamentacao:** `PASS` (Claim Support >= 90%)

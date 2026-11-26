@@ -26,10 +26,11 @@ from typing import Any
 
 CANONICAL_SOURCE = "ianmaciel7/exams-app-archive@main:plugins/exams-archive-native/"
 EXPECTED_PLUGIN_ID = "plugins_6b04aaa9fd848191a24525011f76e2bb"
-EXPECTED_VERSION = "0.8.1"
-VALID_VERSIONS = {"0.6.0", "0.7.0", "0.8.0", "0.8.1"}
-EXPECTED_RELEASE_ID = "pluginrel_6b06df1a59188191af956d00ec226ee5"
+EXPECTED_VERSION = "0.8.4"
+VALID_VERSIONS = {"0.6.0", "0.7.0", "0.8.0", "0.8.1", "0.8.4"}
+EXPECTED_RELEASE_ID = "pluginrel_6b07899345f0819187fe06ccf3ab264c"
 VALID_RELEASE_IDS = {
+    EXPECTED_RELEASE_ID,
     "pluginrel_6b06df1a59188191af956d00ec226ee5",
     "pluginrel_6b05cabf4a84819182a5509e963ada1f",
     "pluginrel_6b04c63bd96c8191bda2c535f2b62e1b",
@@ -45,6 +46,10 @@ CANONICAL_FILES: tuple[str, ...] = (
     ".codex-plugin/plugin.json",
     "plugin.json",
     "README.md",
+    "references/visual-evidence-discovery-2026-11-25.md",
+    "skills/design-foundations-decisions/SKILL.md",
+    "skills/shared-ux-knowledge/SKILL.md",
+    "skills/visual-evidence-discovery/SKILL.md",
     "scripts/archive_query.py",
     "skills/archive-research/references/github-connected.md",
     "skills/archive-research/references/private-fts5.md",
@@ -114,6 +119,8 @@ def verify_sync_state(sync_state_path: Path) -> dict[str, Any]:
     if status not in VALID_SYNC_STATUSES:
         raise ValueError(f"status mismatch: {status} not in {VALID_SYNC_STATUSES}")
 
+    if status == "verified-synced" and (desired_ver != last_pub_ver or data.get("verified_files") != len(CANONICAL_FILES)):
+        raise ValueError("Verified sync must match published version and canonical file count")
     return {
         "valid": True,
         "plugin_id": EXPECTED_PLUGIN_ID,
@@ -468,10 +475,11 @@ def validate_all(
         canonical_map = load_file_map_from_dir(canonical_dir)
         # Check canonical directory contains all 19 files
         missing_in_canonical = [p for p in CANONICAL_FILES if p not in canonical_map]
-        if missing_in_canonical:
+        extra_in_canonical = sorted(set(canonical_map) - set(CANONICAL_FILES))
+        if missing_in_canonical or extra_in_canonical:
             report["stages"]["canonical_files"] = {
                 "passed": False,
-                "error": f"Missing canonical files: {missing_in_canonical}",
+                "error": f"Missing canonical files: {missing_in_canonical}; unexpected: {extra_in_canonical}",
             }
             report["all_valid"] = False
         else:

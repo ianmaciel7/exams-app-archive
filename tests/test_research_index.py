@@ -63,3 +63,16 @@ class ResearchIndexTests(unittest.TestCase):
         a = mod.audit(records)
         self.assertEqual(sum(r["records"] for r in a["visual_matrix"]), sum(r["kind"] == "visual" for r in records))
         self.assertEqual(a["graph"]["edges"], len(graph["edges"]))
+
+    def test_domain_research_and_coverage_gaps(self):
+        records = mod.load_records()
+        domain = [r for r in records if r["catalog"] == "domain-research"]
+        self.assertEqual({r["record"]["issue"] for r in domain}, set(range(95,102)) | {104,105})
+        self.assertTrue(all(r["sources"] for r in domain))
+        with sqlite3.connect(":memory:") as db:
+            mod.build(db, records)
+            self.assertTrue(any(r["catalog"] == "domain-research" for r in mod.search(db, "TextQuoteSelector")))
+        fixture = [{"id":"source:x","kind":"source","sources":["https://example.org/x"],"record":{}},
+                   {"id":"pattern:y","kind":"pattern","sources":["https://example.org/x"]}]
+        self.assertEqual(mod.coverage_gaps(fixture)["source_urls_without_non_source_reference"], [])
+        self.assertEqual(mod.coverage_gaps(fixture[:1])["source_urls_without_non_source_reference"], ["https://example.org/x"])

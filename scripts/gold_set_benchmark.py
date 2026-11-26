@@ -1383,6 +1383,7 @@ def evaluate_gold_set(
 def render_markdown_report(report: dict[str, Any]) -> str:
     ov = report["overall"]
     lines = [
+        "**Synthetic/label-aware regression only (#94). Production evaluation: NOT RUN.**",
         "# Gold Set Benchmark Multidominio (#78)",
         "",
         f"- **Data:** {report['generated_at']}",
