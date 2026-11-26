@@ -285,3 +285,35 @@ Limits: Selection state must be visible and clearable. Pointer-only brushing nee
 Acceptance: Use fictional exam results, test selection and clearing, compare filtered row counts and accessible table.
 
 Source: [Vega-Lite — Selection Parameters](https://vega.github.io/vega-lite/docs/selection.html); edition/date: undated; evidence: technical-documentation. Reviewed 2026-11-26. Original media and product interactions not inspected.
+
+## Original interaction evidence lab
+
+### Concurrent search and stale response suppression (#105)
+
+An AbortController communicates cancellation to abortable operations. Pair cancellation with request identity to prevent obsolete responses updating current UI.
+
+Limits: Do not treat animation completion or cancellation alone as authority over state. Preserve previous results when useful; distinguish empty, failed and cancelled.
+
+Acceptance: Issue a slow request then a fast one; cancel pending request; fail and retry; assert current results and focus.
+
+Source: [AbortController — MDN](https://developer.mozilla.org/en-US/docs/Web/API/AbortController). Documentation consulted 2026-11-26. Original [lab](interaction-evidence-lab-2026-11-26.html); browser CI pending at authoring.
+
+### Manual tab activation and roving keyboard focus (#100)
+
+For manual activation, arrow navigation can move focus while the visible panel stays selected; activation changes the displayed panel.
+
+Limits: Do not confuse focus and selected state. Automatic activation is appropriate when panels can display without noticeable delay.
+
+Acceptance: Arrow to another tab; verify existing panel still active; Enter activates and changes aria-selected.
+
+Source: [WAI-ARIA APG — Tabs Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/). Documentation consulted 2026-11-26. Original [lab](interaction-evidence-lab-2026-11-26.html); browser CI pending at authoring.
+
+### Modal dialog focus containment and restoration (#105)
+
+Modal content takes focus, constrains tab navigation and closes on Escape. On closure, restore focus to the invoking control when it remains appropriate.
+
+Limits: Do not infer modal behavior from dimmed screenshot; consider invoker removal, workflow-specific focus and assistive technology.
+
+Acceptance: Open native modal via button; assert focus inside, Escape closes, and invoker receives focus.
+
+Source: [WAI-ARIA APG — Dialog (Modal) Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/). Documentation consulted 2026-11-26. Original [lab](interaction-evidence-lab-2026-11-26.html); browser CI pending at authoring.

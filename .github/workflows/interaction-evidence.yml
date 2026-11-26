@@ -1,0 +1,32 @@
+name: Original interaction evidence
+on:
+  pull_request:
+    paths:
+      - "docs/references/ui-ux-research-sources/interaction-evidence-lab-2026-11-26.*"
+      - "tests/smoke_interaction_evidence_lab.py"
+      - ".github/workflows/interaction-evidence.yml"
+  push:
+    branches: [main]
+    paths:
+      - "docs/references/ui-ux-research-sources/interaction-evidence-lab-2026-11-26.*"
+      - "tests/smoke_interaction_evidence_lab.py"
+      - ".github/workflows/interaction-evidence.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install 'playwright>=1.49,<2'
+      - run: python -m playwright install --with-deps chromium
+      - run: python tests/smoke_interaction_evidence_lab.py "$RUNNER_TEMP/interaction-evidence"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: original-interaction-evidence
+          path: ${{ runner.temp }}/interaction-evidence/
