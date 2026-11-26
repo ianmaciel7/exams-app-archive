@@ -6184,6 +6184,54 @@
       "storage": "link-only",
       "notes": "Public PubMed abstract reviewed; full text and product efficacy not established.",
       "license": "not established; link-only"
+    },
+    {
+      "id": "domain-qconcursos-question-workspace",
+      "title": "QConcursos — Como resolver questões na Central de Preparação",
+      "url": "https://suporte.qconcursos.com/pt-BR/articles/11649035-como-resolver-questoes-na-central-de-preparacao",
+      "kind": "product-documentation",
+      "source_version": "2026-10-15",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Official public HTML text reviewed 2026-11-26; authenticated runtime, media and plan conditions not independently verified.",
+      "license": "not established; link-only"
+    },
+    {
+      "id": "domain-qconcursos-custom-mock-exam",
+      "title": "QConcursos — Como criar um simulado personalizado",
+      "url": "https://suporte.qconcursos.com/pt-BR/articles/11655126-como-criar-um-simulado-personalizado",
+      "kind": "product-documentation",
+      "source_version": "2026-10-15",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Official public HTML text reviewed 2026-11-26; authenticated runtime, media and plan conditions not independently verified.",
+      "license": "not established; link-only"
+    },
+    {
+      "id": "domain-tec-observed-item-difficulty",
+      "title": "TEC Concursos — Como é calculada a dificuldade das questões?",
+      "url": "https://tecconcursos.zendesk.com/hc/pt-br/articles/48202883563547-Como-%C3%A9-calculada-a-dificuldade-das-quest%C3%B5es",
+      "kind": "product-documentation",
+      "source_version": "2026-03-24",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Official public HTML text reviewed 2026-11-26; authenticated runtime, media and plan conditions not independently verified.",
+      "license": "not established; link-only"
+    },
+    {
+      "id": "domain-crucial-exams-study-vs-test",
+      "title": "Crucial Exams — GCP Professional Cloud Security Engineer practice tests",
+      "url": "https://crucialexams.com/exams/gcp/professional-cloud-security-engineer/gcp-professional-cloud-security-engineer-latest/practice-tests-practice-questions",
+      "kind": "product-documentation",
+      "source_version": "undated",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Official public HTML text reviewed 2026-11-26; authenticated runtime, media and plan conditions not independently verified.",
+      "license": "not established; link-only"
     }
   ],
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",
