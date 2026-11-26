@@ -23,3 +23,7 @@ Eight correct of ten attempts is 80% observed accuracy. Item facility over five 
 - QTI describes exchange structure; Caliper describes learning-activity events. Neither proves learning gains or validates a scoring model.
 - Accessibility and fairness require assessment-specific review, not simply a standards logo.
 - The public Inep process documentation, Moodle 5.3 report, 1EdTech version comparison and the joint Testing Standards publication index are linked in the canonical domain catalog. No full-book review or psychometric calibration performed.
+
+## Executable original example
+
+[`scripts/assessment_reference_model.py`](../../../scripts/assessment_reference_model.py) and [regression tests](../../../tests/test_assessment_reference_model.py) model immutable bank item/form versions, idempotent exact submission retries, conflict rejection, append-only regrading and descriptive dichotomous item statistics. The corrected item-total correlation excludes the item from the total. First/all attempt scopes and population labels are explicit; empty denominators and zero variance return null, not zero. The caller supplies chronological rows and a single comparable form. No database concurrency, authorization, secure scoring, IRT fitting, QTI round-trip, Caliper event conformance, adaptive testing or actual student data are implemented. This is a fictional reference contract, not a validated assessment system or historical-corpus benchmark. CI status determines whether tests passed.
