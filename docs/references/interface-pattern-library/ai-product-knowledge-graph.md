@@ -78,3 +78,7 @@ Every benchmark must resolve source IDs centrally, preserve stable observation I
 ## Data visualization and evidence coverage
 
 [Comparative matrix, ten additional observations and per-product coverage](../ui-ux-research-sources/ai-product-dataviz-and-evidence-coverage-2026-11-26.md). Two original historical Notebook data-table stills inspected. Graph now 468 nodes, 852 relations. The adjacent Sheets canvas reference is explicitly outside the five-product benchmark. Unknown coverage remains unknown.
+
+## Visual verification follow-up
+
+[Four historical Claude Projects stills and eight failed media retrieval attempts](../ui-ux-research-sources/ai-product-visual-verification-2026-11-26.md). Graph: 472 nodes and 868 edges; 15 inspected stills and 23 leads, including a publisher page with four inspected children. No current UI or motion verification.

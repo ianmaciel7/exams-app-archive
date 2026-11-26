@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-26",
+  "scope": "historical official stills, not authenticated UI",
+  "source": {
+    "id": "source:claude-projects-launch",
+    "url": "https://www.anthropic.com/news/projects",
+    "published_on": "2024-06-25"
+  },
+  "media": [
+    {
+      "id": "evidence:claude:project-knowledge-upload",
+      "type": "evidence",
+      "label": "Project knowledge drag-and-drop",
+      "url": "https://assets.claude.com/b7230b4cb617c18619ef32614b21667801d83a83.png?fit=max&fm=webp&q=75&w=3840",
+      "description": "Highlighted drop target inside Project knowledge, Add action, three PDF file labels and multi-file drag count. Static composite; no upload result or timing proven.",
+      "surface": "view:claude:projects",
+      "published_on": "2024-06-25",
+      "reviewed_on": "2026-11-26",
+      "status": "official historical promotional still visually inspected; no runtime test",
+      "storage": "link-only",
+      "rights": "publisher media; redistribution license not verified",
+      "modality": "image"
+    },
+    {
+      "id": "evidence:claude:project-custom-instructions",
+      "type": "evidence",
+      "label": "Project instructions hover hint",
+      "url": "https://assets.claude.com/cc93fb25eee286dd473f00325a800275a9725a1b.png?fit=max&fm=webp&q=75&w=3840",
+      "description": "Set custom instructions control, tooltip, document icons, file labels and relative date. Static marketing still; no keyboard/focus behavior established.",
+      "surface": "view:claude:projects",
+      "published_on": "2024-06-25",
+      "reviewed_on": "2026-11-26",
+      "status": "official historical promotional still visually inspected; no runtime test",
+      "storage": "link-only",
+      "rights": "publisher media; redistribution license not verified",
+      "modality": "image"
+    },
+    {
+      "id": "evidence:claude:project-artifact-code",
+      "type": "evidence",
+      "label": "Side-by-side artifact code editor",
+      "url": "https://assets.claude.com/95ecd50cd239a837a8c381db2fa55438f196d897.png?fit=max&fm=webp&q=75&w=3840",
+      "description": "Conversation with artifact launch card, separate code pane, Preview/Code switch, close control, last-edited text and footer actions. Historical layout, not current editor specification.",
+      "surface": "view:claude:side-by-side-chat-and-artifact",
+      "published_on": "2024-06-25",
+      "reviewed_on": "2026-11-26",
+      "status": "official historical promotional still visually inspected; no runtime test",
+      "storage": "link-only",
+      "rights": "publisher media; redistribution license not verified",
+      "modality": "image"
+    },
+    {
+      "id": "evidence:claude:project-shared-activity",
+      "type": "evidence",
+      "label": "Project shared activity and sources",
+      "url": "https://assets.claude.com/959ca5d0dff9fc11136bf188399c3e03e68579d9.png?fit=max&fm=webp&q=75&w=3840",
+      "description": "Project title, description, label, collaborator avatars, composer, shared conversation card and separate knowledge list. Static cropped view; permissions not tested.",
+      "surface": "view:claude:projects",
+      "published_on": "2024-06-25",
+      "reviewed_on": "2026-11-26",
+      "status": "official historical promotional still visually inspected; no runtime test",
+      "storage": "link-only",
+      "rights": "publisher media; redistribution license not verified",
+      "modality": "image"
+    }
+  ],
+  "attempts": [
+    {
+      "id": "evidence:gemini:physics-quiz",
+      "result": "Official page and caption retrieved; direct binary failed with unsupported application/octet-stream.",
+      "reviewed_on": "2026-11-26",
+      "status": "uninspected"
+    },
+    {
+      "id": "evidence:gemini:role-and-permission-dashboard",
+      "result": "Official page and caption retrieved; direct binary failed with unsupported application/octet-stream.",
+      "reviewed_on": "2026-11-26",
+      "status": "uninspected"
+    },
+    {
+      "id": "evidence:gemini-notebook:mobile-study-source-picker",
+      "result": "Official page and caption retrieved; direct binary failed with unsupported application/octet-stream.",
+      "reviewed_on": "2026-11-26",
+      "status": "uninspected"
+    },
+    {
+      "id": "evidence:gemini-notebook:studio-output-gallery-and-video-overview",
+      "result": "Official July 2025 article and cover caption retrieved; cover binary failed with unsupported application/octet-stream.",
+      "reviewed_on": "2026-11-26",
+      "status": "uninspected"
+    },
+    {
+      "id": "evidence:gemini:interactive-simulations-and-models",
+      "result": "Official April 2026 article and example captions retrieved; double-pendulum WebP binary failed.",
+      "reviewed_on": "2026-11-26",
+      "status": "uninspected"
+    },
+    {
+      "id": "evidence:grok-bot:motion-god-frames",
+      "result": "Alternative original media path inaccessible; no pixels or timing verified.",
+      "reviewed_on": "2026-11-26",
+      "status": "uninspected"
+    },
+    {
+      "id": "evidence:grok-bot:starter-bot-figma",
+      "result": "Alternative original media path inaccessible; no pixels verified.",
+      "reviewed_on": "2026-11-26",
+      "status": "uninspected"
+    },
+    {
+      "id": "evidence:grok-bot:figma-tools",
+      "result": "Alternative original media path inaccessible; no pixels verified.",
+      "reviewed_on": "2026-11-26",
+      "status": "uninspected"
+    }
+  ],
+  "counts": {
+    "inspected": 15,
+    "leads": 23,
+    "expandedPublisherPages": 1
+  },
+  "limitations": [
+    "No motion timelines or runtime behavior measured.",
+    "Publisher page leads are not individual images; child stills do not prove exhaustive page coverage.",
+    "No media bytes redistributed."
+  ]
+}

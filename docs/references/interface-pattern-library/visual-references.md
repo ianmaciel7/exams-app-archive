@@ -68,3 +68,10 @@ Source and limitations: [research catalog](../ui-ux-research-sources/chatgpt-spa
 
 - [Customize Data Table dialog](https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/2_Customization.png) — official historical promotional image visually inspected 2026-11-26; still only; [publisher](https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-data-tables/).
 - [Generated Data Table with source column](https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/3_Output_example_1.png) — official historical promotional image visually inspected 2026-11-26; still only; [publisher](https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-data-tables/).
+
+## Claude Projects historical visual evidence
+
+- [Project knowledge drag-and-drop](https://assets.claude.com/b7230b4cb617c18619ef32614b21667801d83a83.png?fit=max&fm=webp&q=75&w=3840) — official historical promotional still visually inspected; no runtime test. [Publisher](https://www.anthropic.com/news/projects).
+- [Project instructions hover hint](https://assets.claude.com/cc93fb25eee286dd473f00325a800275a9725a1b.png?fit=max&fm=webp&q=75&w=3840) — official historical promotional still visually inspected; no runtime test. [Publisher](https://www.anthropic.com/news/projects).
+- [Side-by-side artifact code editor](https://assets.claude.com/95ecd50cd239a837a8c381db2fa55438f196d897.png?fit=max&fm=webp&q=75&w=3840) — official historical promotional still visually inspected; no runtime test. [Publisher](https://www.anthropic.com/news/projects).
+- [Project shared activity and sources](https://assets.claude.com/959ca5d0dff9fc11136bf188399c3e03e68579d9.png?fit=max&fm=webp&q=75&w=3840) — official historical promotional still visually inspected; no runtime test. [Publisher](https://www.anthropic.com/news/projects).

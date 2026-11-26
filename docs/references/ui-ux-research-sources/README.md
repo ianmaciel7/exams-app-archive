@@ -176,3 +176,7 @@ Registrar URLs originais e redirects, datas de consulta, fonte e status (verific
 ## Data visualization and evidence coverage
 
 [Matrix and coverage report](ai-product-dataviz-and-evidence-coverage-2026-11-26.md) · [JSON](ai-product-dataviz-and-evidence-coverage-2026-11-26.json)
+
+## Visual verification follow-up
+
+[Report](ai-product-visual-verification-2026-11-26.md) · [JSON](ai-product-visual-verification-2026-11-26.json)
