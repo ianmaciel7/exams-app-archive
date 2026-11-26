@@ -6276,6 +6276,39 @@
       "status": "official source retrieved in research",
       "storage": "link-only",
       "notes": "Feature-specific public help; authenticated layout untested."
+    },
+    {
+      "id": "grok-bot-computer-apps",
+      "title": "Use the computer and apps",
+      "url": "https://docs.x.ai/grok-bot/computer-and-apps",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Grok Bot; official documentation updated November 23, 2026 per publisher retrieval.",
+      "storage": "link-only"
+    },
+    {
+      "id": "gemini-notebook-sept-2026",
+      "title": "Sharpen your study routine with new Gemini Notebook tools",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/new-study-tools-september-2026/",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Google launch September 15, 2026; launch rollout, not present-day eligibility.",
+      "storage": "link-only"
+    },
+    {
+      "id": "gemini-education-iste-2026",
+      "title": "Supporting students with connected AI tools",
+      "url": "https://blog.google/products-and-platforms/products/education/iste-students-2026/",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "notes": "Google launch June 25, 2026; school-account rollout and neighboring Classroom surface distinguished.",
+      "storage": "link-only"
     }
   ],
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",

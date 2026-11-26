@@ -102,7 +102,10 @@
     "gemini-guided-learning-help": "gemini-guided-learning-help",
     "gemini-custom-gems-help": "gemini-custom-gems-help",
     "openai-sites-help": "openai-sites-help",
-    "gemini-notebook-public": "gemini-notebook-public"
+    "gemini-notebook-public": "gemini-notebook-public",
+    "grok-bot-computer-apps": "grok-bot-computer-apps",
+    "gemini-notebook-sept-2026": "gemini-notebook-sept-2026",
+    "gemini-education-iste-2026": "gemini-education-iste-2026"
   },
   "nodes": [
     {
@@ -4363,6 +4366,137 @@
       "url": "https://support.google.com/gemininotebook/answer/16322204?co=GENIE.Platform%3DDesktop&hl=en",
       "central_source_id": "gemini-notebook-public",
       "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:grok-bot-computer-apps",
+      "type": "source",
+      "label": "Use the computer and apps",
+      "url": "https://docs.x.ai/grok-bot/computer-and-apps",
+      "central_source_id": "grok-bot-computer-apps",
+      "evidence_status": "official publisher text retrieved; runtime untested"
+    },
+    {
+      "id": "source:gemini-notebook-sept-2026",
+      "type": "source",
+      "label": "Sharpen your study routine with new Gemini Notebook tools",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/new-study-tools-september-2026/",
+      "central_source_id": "gemini-notebook-sept-2026",
+      "evidence_status": "official publisher text retrieved; runtime untested"
+    },
+    {
+      "id": "source:gemini-education-iste-2026",
+      "type": "source",
+      "label": "Supporting students with connected AI tools",
+      "url": "https://blog.google/products-and-platforms/products/education/iste-students-2026/",
+      "central_source_id": "gemini-education-iste-2026",
+      "evidence_status": "official publisher text retrieved; runtime untested"
+    },
+    {
+      "id": "contract:grok-bot-computer-recovery-escalation",
+      "type": "documented-interaction-contract",
+      "label": "Computer recovery escalation and data retention",
+      "product": "Grok Bot",
+      "description": "Documented least-destructive recovery: reconnect or retry, restart client, update if offered, recover only if still blocked, reset last. Conversations stored separately survive reset. Recover and reset interrupt running work and may lose installed packages or unsaved recent changes.",
+      "states": [
+        "unreachable",
+        "reconnecting",
+        "retry",
+        "update offered",
+        "recover offered",
+        "reset"
+      ],
+      "transitions": [
+        [
+          "unreachable",
+          "wait or retry",
+          "reconnecting"
+        ],
+        [
+          "reconnecting",
+          "if persistent, quit and reopen app",
+          "retry"
+        ],
+        [
+          "retry",
+          "if available, update",
+          "update offered"
+        ],
+        [
+          "retry",
+          "if persistent or update stuck",
+          "recover offered"
+        ],
+        [
+          "recover offered",
+          "only after preceding steps",
+          "reset"
+        ]
+      ],
+      "unknown": [
+        "actual dialog labels across versions",
+        "progress timing",
+        "focus and keyboard",
+        "error reproduction"
+      ],
+      "evidence_status": "sequence derived from official text; not observed runtime"
+    },
+    {
+      "id": "flow:grok-bot-connection-recovery",
+      "type": "documented-flow",
+      "label": "App connection and sign-in recovery",
+      "product": "Grok Bot",
+      "description": "Documented connect entry or contextual card opens provider authentication; reconnect or reopen card if incomplete. Complete within approximately ten minutes or start again. Account-scoped app permissions apply.",
+      "steps": [
+        "Open Connect apps or a Connect card",
+        "Choose app and authenticate with provider",
+        "If incomplete select Reconnect or Reopen",
+        "Complete sign-in or restart from card"
+      ],
+      "limitations": "No actual OAuth session, sensitive step, expiry, focus or retry behavior tested.",
+      "evidence_status": "documented flow; runtime not tested"
+    },
+    {
+      "id": "flow:gemini-notebook-post-study-feedback",
+      "type": "documented-flow",
+      "label": "Study follow-up and question revision",
+      "product": "Gemini Notebook (formerly NotebookLM)",
+      "description": "September launch described asking notebook chat for feedback after completed quizzes or flashcards and editing or adding questions; multiple select, short answer and fill-in formats were announced for rollout.",
+      "steps": [
+        "Complete quiz or flashcards",
+        "Ask notebook chat for feedback on performance",
+        "Choose areas to revisit",
+        "Edit or add questions if offered"
+      ],
+      "limitations": "Launch description; exact scoring, answer feedback, version identity, access by plan and actual UI not tested.",
+      "evidence_status": "documented launch flow; runtime not tested"
+    },
+    {
+      "id": "evidence:gemini-notebook:september-study-hero",
+      "type": "evidence-lead",
+      "label": "September 2026 study-tool promotional collage",
+      "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_Notebook_BTS.width-200.format-webp.webp",
+      "status": "Publisher caption retrieved; media fetch failed (unsupported content type); local download also failed; image not visually inspected",
+      "storage": "link-only",
+      "rights": "publisher media; redistribution license not verified",
+      "description": "Publisher caption describes Gemini Notebook study windows; no screen structure or interaction inferred.",
+      "modality": "publisher-image",
+      "reviewed_on": "2026-11-26"
+    },
+    {
+      "id": "flow:gemini-study-adaptive-materials",
+      "type": "documented-flow",
+      "label": "Adaptive study plan after quizzes and source updates",
+      "product": "Gemini",
+      "description": "June launch describes personalized lessons updated from quiz performance and additional study materials; standardized practice tests provide topic-level performance breakdown. ENEM practice announced for Brazil; actual release not verified.",
+      "steps": [
+        "Set study objective or upload materials",
+        "Take diagnostic",
+        "Follow targeted interactive lessons",
+        "Take progress checks or upload new materials",
+        "Review updated lessons or topic breakdown"
+      ],
+      "limitations": "No measured adaptation thresholds, learning efficacy, exact controls, availability or motion verified.",
+      "evidence_status": "documented launch flow; runtime not tested"
     }
   ],
   "edges": [
@@ -10269,6 +10403,90 @@
       "to": "source:gemini-notebook-public",
       "relation": "supported_by",
       "status": "Official documentation checked 2026-11-26: notebook homepage supports removal of recently opened shared items, public search and featured notebook discovery; consumer and workspace availability differ."
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "contract:grok-bot-computer-recovery-escalation",
+      "relation": "has_documented_contract",
+      "status": "official text or publisher caption; runtime untested"
+    },
+    {
+      "from": "contract:grok-bot-computer-recovery-escalation",
+      "to": "source:grok-bot-computer-apps",
+      "relation": "supported_by",
+      "status": "official publisher text checked 2026-11-26"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "flow:grok-bot-connection-recovery",
+      "relation": "has_documented_flow",
+      "status": "official text or publisher caption; runtime untested"
+    },
+    {
+      "from": "flow:grok-bot-connection-recovery",
+      "to": "source:grok-bot-computer-apps",
+      "relation": "supported_by",
+      "status": "official publisher text checked 2026-11-26"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "flow:gemini-notebook-post-study-feedback",
+      "relation": "has_documented_flow",
+      "status": "official text or publisher caption; runtime untested"
+    },
+    {
+      "from": "flow:gemini-notebook-post-study-feedback",
+      "to": "source:gemini-notebook-sept-2026",
+      "relation": "supported_by",
+      "status": "official publisher text checked 2026-11-26"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "evidence:gemini-notebook:september-study-hero",
+      "relation": "has_visual_lead",
+      "status": "official text or publisher caption; runtime untested"
+    },
+    {
+      "from": "evidence:gemini-notebook:september-study-hero",
+      "to": "source:gemini-notebook-sept-2026",
+      "relation": "supported_by",
+      "status": "official publisher text checked 2026-11-26"
+    },
+    {
+      "from": "product:gemini",
+      "to": "flow:gemini-study-adaptive-materials",
+      "relation": "has_documented_flow",
+      "status": "official text or publisher caption; runtime untested"
+    },
+    {
+      "from": "flow:gemini-study-adaptive-materials",
+      "to": "source:gemini-education-iste-2026",
+      "relation": "supported_by",
+      "status": "official publisher text checked 2026-11-26"
+    },
+    {
+      "from": "view:grok-bot:computer",
+      "to": "source:grok-bot-computer-apps",
+      "relation": "supported_by",
+      "status": "Official help checked 2026-11-26: right-panel computer preview opens observation; leaving preview or app does not stop cloud work. User takeover is requested for sensitive steps; separate screens are not separate security boundaries."
+    },
+    {
+      "from": "output:gemini-notebook:quizzes",
+      "to": "source:gemini-notebook-sept-2026",
+      "relation": "supported_by",
+      "status": "September 2026 launch announces additional question formats, feedback and editing; rollout is historical, current eligibility untested."
+    },
+    {
+      "from": "output:gemini-notebook:flashcards",
+      "to": "source:gemini-notebook-sept-2026",
+      "relation": "supported_by",
+      "status": "September 2026 launch describes performance follow-up in notebook chat and editing questions; exact UI untested."
+    },
+    {
+      "from": "view:gemini:study-notebooks",
+      "to": "source:gemini-education-iste-2026",
+      "relation": "supported_by",
+      "status": "June 2026 launch describes adaptive lessons updated by progress quizzes and new source material; desktop launch and school-account rollout timing historical."
     }
   ],
   "backlog": [
