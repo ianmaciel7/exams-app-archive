@@ -35,7 +35,7 @@
     "shortDescription": "Hist\u00f3rico, componentes, grafo e evid\u00eancia visual"
   },
   "name": "exams-archive-native",
-  "version": "0.8.3",
+  "version": "0.8.4",
   "description": "Exams Archive: pesquisa hist\u00f3rica, UI/UX, grafo, componentes interativos, capturas e CLI/MCP local para agentes.",
   "author": {
     "name": "Ian Maciel de Carvalho",
