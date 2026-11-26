@@ -2,9 +2,8 @@
 """Automated plugin synchronization verification and multi-client smoke test runner.
 
 Validates synchronization status between GitHub canonical package
-(main:plugins/exams-archive-native/ v0.6.0) and ChatGPT Personal Plugin Creator release
-(pluginrel_6b04c63bd96c8191bda2c535f2b62e1b).
-Verifies byte-for-byte or semantic JSON equivalence across all 19 canonical package files
+(main:plugins/exams-archive-native/) and the recorded ChatGPT Personal Plugin Creator release.
+Verifies byte-for-byte or semantic JSON equivalence across the canonical package files
 as recorded in .sync-state.json.
 Runs automated smoke test suite for CLI routing (archive_query.py commands:
 search, images, stats, ast, graph, context, secrets-check).
@@ -26,11 +25,12 @@ from typing import Any
 
 CANONICAL_SOURCE = "ianmaciel7/exams-app-archive@main:plugins/exams-archive-native/"
 EXPECTED_PLUGIN_ID = "plugins_6b04aaa9fd848191a24525011f76e2bb"
-EXPECTED_VERSION = "0.8.4"
-VALID_VERSIONS = {"0.6.0", "0.7.0", "0.8.0", "0.8.1", "0.8.4"}
-EXPECTED_RELEASE_ID = "pluginrel_6b07899345f0819187fe06ccf3ab264c"
+EXPECTED_VERSION = "0.8.5"
+VALID_VERSIONS = {"0.6.0", "0.7.0", "0.8.0", "0.8.1", "0.8.4", "0.8.5"}
+EXPECTED_RELEASE_ID = "pluginrel_6b0862be45b88191bbd1bd63b5939287"
 VALID_RELEASE_IDS = {
     EXPECTED_RELEASE_ID,
+    "pluginrel_6b07899345f0819187fe06ccf3ab264c",
     "pluginrel_6b06df1a59188191af956d00ec226ee5",
     "pluginrel_6b05cabf4a84819182a5509e963ada1f",
     "pluginrel_6b04c63bd96c8191bda2c535f2b62e1b",
@@ -56,6 +56,7 @@ CANONICAL_FILES: tuple[str, ...] = (
     "skills/archive-research/SKILL.md",
     "skills/archive-search/SKILL.md",
     "skills/component-explorer/SKILL.md",
+    "skills/real-project-sketch-capture/SKILL.md",
     "skills/sync-bridge/SKILL.md",
     "skills/sync-ux-knowledge/SKILL.md",
     "skills/ui-fidelity/references/chat-preview-contract.md",

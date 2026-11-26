@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Unit tests for plugin sync verification and multi-client smoke test runner.
 
-Tests verification of 19 canonical package files, detection of diverged or missing files,
+Tests verification of the canonical package files, detection of diverged or missing files,
 and archive_query.py CLI routing validation.
 
 Zero Emoji Policy strictly enforced.
@@ -89,7 +89,7 @@ class TestValidatePluginSync(unittest.TestCase):
             self.assertIn("desired_version", str(ctx.exception))
 
     def test_verify_manifest_versions_all_platforms(self):
-        """Verify that all platform manifests report v0.6.0 and correct name."""
+        """Verify that all platform manifests report the expected version and name."""
         res = verify_manifest_versions(CANONICAL_DIR)
         self.assertTrue(res["valid"])
         manifests = res["manifests"]
