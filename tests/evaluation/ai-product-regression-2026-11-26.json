@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "run_id": 45836462489,
+  "job_id": 139966514599,
+  "commit": "18083d9ded7a43163cc494fca0c23a3068f9b47f",
+  "artifact_id": 15126875510,
+  "artifact_sha256": "177797107df969a13bab89cde06ed3a567121f67871cbbe207f4c6f38f6f2331",
+  "query_count": 22,
+  "mean_target_recall_at_20": 0.95,
+  "mean_labeled_hit_fraction_at_20": 0.475,
+  "mrr_for_labeled_targets": 0.875,
+  "p95_ms": 5216.25198400001,
+  "negative_abstention": 1,
+  "missed_targets": [
+    {
+      "id": "gemini-01",
+      "missing_targets": [
+        "research:general:gemini-skill-progress-dashboard"
+      ]
+    }
+  ],
+  "capture_inspected": true,
+  "diagnosis": "Three retained results, target missing; candidate omission details were not captured. Bilingual vocabulary alone did not improve this suite.",
+  "quality_certified": false
+}

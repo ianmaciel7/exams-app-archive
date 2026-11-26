@@ -22,3 +22,22 @@ def test_negative_and_missing_denominators():
     assert report["mean_recall"] is None
     assert report["mean_precision"] is None
     assert report["cases"][0]["abstained"]
+
+
+def test_runner_captures_budget_without_exposing_labels():
+    seen = []
+    def retrieve(query, **options):
+        seen.append(options)
+        return {"status": "ok", "results": [{"id": "a"}],
+                "budget": {"budget_tokens": 8000},
+                "omitted_for_budget": [{"id": "b", "reason": "budget_tokens_exceeded"}],
+                "available_by_type": {"pattern": 2},
+                "gaps": ["budget_truncated:1"]}
+    rows = run([{"id": "q", "query": "example"}], retrieve, budget_tokens=8000)
+    assert seen == [{"scope": "public", "limit": 20, "budget_tokens": 8000}]
+    assert rows[0]["budget"]["budget_tokens"] == 8000
+    assert rows[0]["omitted_for_budget"][0]["id"] == "b"
+    assert rows[0]["available_by_type"] == {"pattern": 2}
+    assert score(rows, {"q": ["b"]})["mean_recall"] == 0
+    with pytest.raises(ValueError):
+        run([{"id": "q", "query": "example"}], retrieve, budget_tokens=0)

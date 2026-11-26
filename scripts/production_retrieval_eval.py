@@ -12,16 +12,25 @@ def read(path):
 def write(path, data):
     Path(path).write_text(json.dumps(data, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
 
-def run(queries, retrieve):
+def run(queries, retrieve, *, budget_tokens=None):
+    if budget_tokens is not None and (not isinstance(budget_tokens, int) or not 128 <= budget_tokens <= 128000):
+        raise ValueError("budget_tokens must be between 128 and 128000")
     out = []
     for q in queries:
         if set(q) != {"id", "query"} or not isinstance(q["query"], str):
             raise ValueError("Runner accepts only id and query, never labels or expected metadata")
         start = time.perf_counter()
-        result = retrieve(q["query"], scope="public", limit=20)
+        options = {"scope": "public", "limit": 20}
+        if budget_tokens is not None:
+            options["budget_tokens"] = budget_tokens
+        result = retrieve(q["query"], **options)
         out.append({"id": q["id"], "query": q["query"], "status": result["status"],
                     "hits": result["results"], "snapshot": result.get("snapshot"),
                     "unavailable": result.get("sources_unavailable", []),
+                    "budget": result.get("budget", {}),
+                    "omitted_for_budget": result.get("omitted_for_budget", []),
+                    "available_by_type": result.get("available_by_type", {}),
+                    "gaps": result.get("gaps", []),
                     "latency_ms": (time.perf_counter()-start)*1000})
     if len({r["id"] for r in out}) != len(out):
         raise ValueError("Duplicate query IDs")
@@ -78,6 +87,7 @@ def main():
     runner = sub.add_parser("run")
     runner.add_argument("queries")
     runner.add_argument("output")
+    runner.add_argument("--budget-tokens", type=int, default=None)
     diagnostic = sub.add_parser("diagnostic")
     diagnostic.add_argument("capture")
     scorer = sub.add_parser("score")
@@ -87,7 +97,7 @@ def main():
     args = parser.parse_args()
     if args.mode == "run":
         from federated_retrieval import federated_search
-        write(args.output, run(read(args.queries), federated_search))
+        write(args.output, run(read(args.queries), federated_search, budget_tokens=args.budget_tokens))
     elif args.mode == "diagnostic":
         print(json.dumps(summarize_public_capture(read(args.capture)),indent=2))
     else:

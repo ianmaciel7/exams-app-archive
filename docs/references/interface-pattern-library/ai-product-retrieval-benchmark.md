@@ -26,3 +26,9 @@ The first run on commit `865f5fb3b8e50aed59cfbe3aa3aea469a9e7dbbd` completed suc
 | Negative abstention | 2/2 |
 
 The only missed expected record was the Gemini skill-progress dashboard (gemini-01). A plausible cause is missing bilingual vocabulary for state, progress and studies in public lexical ranking. Added domain-neutral term equivalences and a synthetic cross-domain test; no query IDs, gold labels or product-specific rules in the ranker. The original query and target files remain unchanged. Improvement is unconfirmed until the next real run. Because the benchmark informed this change, all subsequent scores are development-regression metrics, not independent validation. An independently annotated set and real UI tests remain required.
+
+## Regression run and budget experiment
+
+[Run 45836462489](https://github.com/ianmaciel7/exams-app-archive/actions/runs/45836462489) retained the same 95% target recall, 0.875 MRR and 2/2 negative abstention; p95 was 5.216 s. The captured Gemini query returned three related records but not the target. The bilingual change did not improve the measured retrieval. No causal latency regression is established from two CI runs. [Measured run](../../../tests/evaluation/ai-product-regression-2026-11-26.json).
+
+The workflow now repeats identical queries at 2,000 and 8,000 token budgets against the same snapshot, with all label files removed before either capture. Captures retain actual budget omissions, gaps and candidate counts. Comparison reports missing, recovered and lost target IDs, estimated token use and negative abstention. The ranker is unchanged in this experiment. Do not enlarge production budgets by default or claim improvement until measured. Independent annotation and live UI verification remain open.
