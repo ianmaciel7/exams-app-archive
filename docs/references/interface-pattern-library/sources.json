@@ -6053,6 +6053,46 @@
       "status": "official publisher text retrieved; runtime untested",
       "storage": "link-only",
       "notes": "Historical announcements remain dated; no inference of present availability."
+    },
+    {
+      "id": "domain-assessment-item-lifecycle",
+      "title": "Inep — Conheça todas as etapas para concepção e aplicação das provas do Enem",
+      "url": "https://www.gov.br/inep/pt-br/centrais-de-conteudo/noticias/enem/conheca-todas-as-etapas-para-concepcao-e-aplicacao-das-provas-do-enem",
+      "kind": "official-process-documentation",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Official HTML page inspected; no complete PDF/book review or product execution asserted."
+    },
+    {
+      "id": "domain-facility-discrimination-cohort",
+      "title": "Moodle 5.3 — Quiz statistics report",
+      "url": "https://docs.moodle.org/503/en/Quiz_statistics_report",
+      "kind": "versioned-product-documentation",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Official HTML page inspected; no complete PDF/book review or product execution asserted."
+    },
+    {
+      "id": "domain-qti-version-accessibility",
+      "title": "1EdTech — High-Level Comparison Between the Latest QTI Versions",
+      "url": "https://www.1edtech.org/standards/qti/versions",
+      "kind": "official-standard-version-comparison",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Official HTML page inspected; no complete PDF/book review or product execution asserted."
+    },
+    {
+      "id": "domain-assessment-testing-standards",
+      "title": "AERA/APA/NCME — Open Access Files",
+      "url": "https://www.testingstandards.net/open-access-files.html",
+      "kind": "official-publication-index",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Official HTML page inspected; no complete PDF/book review or product execution asserted."
     }
   ],
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",

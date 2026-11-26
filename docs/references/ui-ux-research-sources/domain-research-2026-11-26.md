@@ -317,3 +317,45 @@ Limits: Do not infer modal behavior from dimmed screenshot; consider invoker rem
 Acceptance: Open native modal via button; assert focus inside, Escape closes, and invoker receives focus.
 
 Source: [WAI-ARIA APG — Dialog (Modal) Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/). Documentation consulted 2026-11-26. Original [lab](interaction-evidence-lab-2026-11-26.html); browser CI pending at authoring.
+
+## Assessment evidence: item lifecycle, measurement and exchange
+
+### Item-bank lifecycle and immutable assessment version
+
+The Inep describes authoring, specialist review, possible pilots, and assembly against a skills matrix. A bank item and the published assessment containing it are distinct records.
+
+Limits: A public practice app is not the official item bank. Preserve item version, assessment edition, response and correction policy; do not import restricted items.
+
+Acceptance: Edit a fictional item's current version after a completed attempt; historical item, response and grade must remain reproducible.
+
+Source: [Inep — Conheça todas as etapas para concepção e aplicação das provas do Enem](https://www.gov.br/inep/pt-br/centrais-de-conteudo/noticias/enem/conheca-todas-as-etapas-para-concepcao-e-aplicacao-das-provas-do-enem) — official HTML page inspected 2026-11-26; official-process-documentation.
+
+### Item facility and discrimination statistics
+
+Moodle reports average item marks, attempt counts, discrimination and response frequencies. Low discrimination flags investigation, not proof of a broken question. First attempts and all attempts have different assumptions.
+
+Limits: Do not confuse item facility in a sampled cohort with a calibrated IRT difficulty parameter. Regrading must be traceable and cannot silently rewrite historical results.
+
+Acceptance: Use a fictional response matrix, label the population and denominator, test zero variance as N/A, compare first attempts with repeated attempts.
+
+Source: [Moodle 5.3 — Quiz statistics report](https://docs.moodle.org/503/en/Quiz_statistics_report) — official HTML page inspected 2026-11-26; versioned-product-documentation.
+
+### QTI 2.2 and 3.0 interoperability boundaries
+
+QTI 3.0 was released in May 2022 and integrates accommodation features, improved web rendering and accessibility support, plus native support for adaptive testing and portable custom interactions.
+
+Limits: Exchange-format support is not proof of scoring equivalence, accessibility conformance or calibrated adaptive testing. Check exact version and profile.
+
+Acceptance: Round-trip an authored test item preserving identifier, response type and accommodation metadata; flag unsupported interactions instead of dropping them silently.
+
+Source: [1EdTech — High-Level Comparison Between the Latest QTI Versions](https://www.1edtech.org/standards/qti/versions) — official HTML page inspected 2026-11-26; official-standard-version-comparison.
+
+### Educational and psychological testing standards reference
+
+The joint publication provides open-access English 2014 and earlier editions and Spanish access. Use it as a primary reference for assessment validity and measurement methodology.
+
+Limits: Publication availability alone is not chapter-level extraction or compliance. No claim of having read the full book. Separate score interpretation and use from practice-app interface requirements.
+
+Acceptance: For any high-stakes score interpretation, record the intended use and population, then obtain applicable evidence from the actual standard and validated assessment methodology.
+
+Source: [AERA/APA/NCME — Open Access Files](https://www.testingstandards.net/open-access-files.html) — official HTML page inspected 2026-11-26; official-publication-index.
