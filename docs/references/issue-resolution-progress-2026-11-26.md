@@ -17,3 +17,7 @@ Do not close issues based on this table or on synthetic unit tests. A separate p
 ## Follow-up validation
 
 Plugin Creator readback: Exams Archive v0.8.4, all 25 canonical text files identical to the branch snapshot 8a19538cb48f9ffca71375dfe3cbba607b511f5b. Multiagent plugin validation and archive plugin tests passed at 0d9c1d7b6e238101f461ce0b5739125b7d4fb050. Browser workspace smoke and component preview passed at that commit; the newly added assessment smoke exposed a reset defect (named form control shadowed reset method), fixed in the follow-up. Await CI before claiming the assessment smoke passed. The public evaluation is a development sample, not independent or comprehensive.
+
+## Production ranking baseline and follow-up
+
+The public 11-query development run at 942ef46bb51f56ce06312439cb9463cf05fae7f7 measured recall@20 0.60 (6/10), mean precision@20 0.1818 against incomplete labels, MRR 0.4833, one false positive for the negative case, p50 1.065s/p95 1.836s. This is not independent holdout evidence. Follow-up replaces per-fragment FTS fallback with field-weighted query-concept matching over real records, filters incidental metadata and avoids default code routing on unclassified queries. Re-run the same development sample transparently and use new independent queries for generalization. No claim of improvement until measured.

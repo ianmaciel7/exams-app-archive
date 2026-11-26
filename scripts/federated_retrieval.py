@@ -52,6 +52,7 @@ import image_catalog  # noqa: E402
 import knowledge_indexer  # noqa: E402
 import research_index  # noqa: E402
 import search_expansion  # noqa: E402
+import public_lexical_search  # noqa: E402
 import source_registry  # noqa: E402
 
 SCHEMA_VERSION = 1
@@ -277,7 +278,7 @@ def _select_channels_for_intent(intent_info: dict[str, Any], scope: str) -> list
     if scope == "public":
         # Strict public channels only: never include private/historical SQLite/bundles
         channels = ["ontology", "concept_packs", "public_research", "public_visual"]
-        if "code" in matched or primary in {"code", "test", "requirement", "mixed"}:
+        if intent_info.get("scores") and ("code" in matched or primary in {"code", "test", "requirement"}):
             channels.append("public_ast_code")
         return channels
 
@@ -588,27 +589,12 @@ def _search_public_research_and_concepts(
         )
     )
 
-    # 2. FTS5 search over public research_index with PT<->EN expansion
-    exp = search_expansion.expand_query(query, max_tokens=6)
-    fts_terms = exp.get("tokens", [])[:6]
-    res_rows: list[dict[str, Any]] = []
-    with sqlite3.connect(":memory:") as db:
-        research_index.build(db, records)
-        # Try original query and expanded core terms
-        candidate_queries = [query]
-        for term in exp.get("expanded_terms", [])[:6]:
-            if term not in candidate_queries and len(term.split()) <= 2:
-                candidate_queries.append(term)
-        seen_ids: set[str] = set()
-        for q_str in candidate_queries:
-            try:
-                found = research_index.search(db, q_str, limit=15, product=product)
-            except ValueError:
-                found = []
-            for row in found:
-                if row["id"] not in seen_ids:
-                    seen_ids.add(row["id"])
-                    res_rows.append(row)
+    # 2. Field-weighted natural-language ranking; no fixture labels, URL metadata,
+    # or per-query expansion fragments treated as independent queries.
+    ranked = public_lexical_search.ranked(query, records, product=product, limit=40)
+    res_rows = [row for row, _ in ranked]
+    lexical_scores = {row["id"]: score for row, score in ranked}
+    highest = max(lexical_scores.values(), default=1.0)
 
     pub_hits = 0
     for idx, row in enumerate(res_rows):
@@ -630,7 +616,7 @@ def _search_public_research_and_concepts(
                 scope="public",
                 title=row.get("title", row["id"]),
                 snippet=snippet,
-                raw_score=max(0.1, 1.0 - (idx * 0.03)),
+                raw_score=lexical_scores[row["id"]] / highest,
                 blob_sha=rec.get("blob_sha", "") if kind == "visual" else "",
                 record_sha256=row.get("record_sha256", ""),
                 repo=rec.get("source_repo", ""),
@@ -651,7 +637,7 @@ def _search_public_research_and_concepts(
             channel="public_research",
             scope="public",
             status="consulted",
-            reason="Public approved research catalog FTS5 search.",
+            reason="Public approved research catalog field-weighted lexical search.",
             hits=pub_hits,
             pinned_version=snapshot_rev[:16],
             sha256=snapshot_rev,
@@ -1473,6 +1459,11 @@ def federated_search(
 
     # Exact blob deduplication retaining all occurrences
     deduped_hits, dedup_count = _deduplicate_blobs_preserving_occurrences(raw_hits)
+
+    if scope == "public":
+        deduped_hits = [hit for hit in deduped_hits
+                        if hit["source_channel"] == "public_research"
+                        or public_lexical_search.adequate_hit(clean_query, hit)]
 
     # Compute BM25 over deduped items with PT<->EN expanded query terms
     exp = search_expansion.expand_query(clean_query, max_tokens=8)
