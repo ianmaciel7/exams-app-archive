@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "run_id": 45837182187,
+  "job_id": 139969028694,
+  "commit": "bc09a3ebb40ade40713aef1e04207c381b868b9d",
+  "artifact_id": 15125787864,
+  "artifact_sha256": "980f8f19124782c3014f1827fee3f338e42e635d88245d861af585c89dd6c477",
+  "default": {
+    "budget": 2000,
+    "recall": 0.95,
+    "labeled_hit_fraction": 0.475,
+    "mrr": 0.875,
+    "negative_abstention": 1,
+    "p95_ms": 5984.916594000001
+  },
+  "expanded": {
+    "budget": 8000,
+    "recall": 0.95,
+    "labeled_hit_fraction": 0.11619075369075368,
+    "mrr": 0.875,
+    "negative_abstention": 1,
+    "p95_ms": 5964.247389999997
+  },
+  "missing": {
+    "id": "gemini-01",
+    "target": "research:general:gemini-skill-progress-dashboard",
+    "default_hits": 3,
+    "expanded_hits": 13,
+    "default_reported_tokens": 1977,
+    "expanded_reported_tokens": 7812,
+    "target_omitted_both": true,
+    "default_target_tokens": 498
+  },
+  "interpretation": "Target is a candidate but omitted after ranking and budget enforcement at both budgets. No need to expand default budget. Public reranking uses inconsistent vocabulary and path metadata; change is a hypothesis to test, not proven improvement.",
+  "independent_annotation": false
+}

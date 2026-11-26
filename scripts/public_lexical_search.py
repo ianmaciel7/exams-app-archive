@@ -1,4 +1,5 @@
 """Label-blind natural-language ranking over approved public record fields."""
+from collections import Counter
 from functools import lru_cache
 import math
 import re
@@ -111,3 +112,30 @@ def adequate_hit(query, hit):
         return True
     body = tokens(str(hit.get("title", ""))+" "+str(hit.get("snippet", "")))
     return sum(bool(alt & body) for _,alt in groups) >= 2
+
+
+def grouped_bm25(query, documents, *, k1=1.5, b=.75):
+    """Public reranking with the same bilingual concepts as candidate selection.
+
+    Count one concept per query group, not every synonym as independent evidence.
+    The caller supplies only searchable text, never file paths or evaluation labels.
+    """
+    groups = list(dict.fromkeys(frozenset(alternatives) for _, alternatives in query_groups(query) if alternatives))
+    if not documents or not groups:
+        return [0.0] * len(documents)
+    counters = [Counter(sx.stem_simple(w) for w in re.findall(r"[a-z0-9]+", sx.normalize_text(doc))
+                        if len(w) >= 2 and w not in QUESTION_WORDS) for doc in documents]
+    lengths = [sum(c.values()) for c in counters]
+    n = len(counters)
+    avg = max(sum(lengths) / n, 1.0)
+    frequencies = [[max((c.get(term, 0) for term in group), default=0)
+                    for group in groups] for c in counters]
+    dfs = [sum(row[i] > 0 for row in frequencies) for i in range(len(groups))]
+    scores = []
+    for length, row in zip(lengths, frequencies):
+        length_norm = k1 * (1 - b + b * length / avg)
+        total = sum(math.log(1 + (n - df + .5) / (df + .5)) *
+                    (tf * (k1 + 1) / (tf + length_norm))
+                    for tf, df in zip(row, dfs) if tf)
+        scores.append(round(total, 6))
+    return scores

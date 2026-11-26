@@ -1548,11 +1548,19 @@ def federated_search(
                         if hit["source_channel"] == "public_research"
                         or public_lexical_search.adequate_hit(clean_query, hit)]
 
-    # Compute BM25 over deduped items with PT<->EN expanded query terms
-    exp = search_expansion.expand_query(clean_query, max_tokens=8)
-    bm25_terms = list(dict.fromkeys([*_tokenize_bm25(clean_query), *[_t for e in exp.get("expanded_terms", []) for _t in _tokenize_bm25(e)]]))
-    doc_texts = [f"{h['title']} {h['snippet']} {h['provenance'].get('path', '')} {h.get('domain', '')}" for h in deduped_hits]
-    bm25_scores = compute_bm25_scores(bm25_terms, doc_texts)
+    # Public candidate selection and reranking must use the same bilingual
+    # concepts. Exclude provenance paths/domain labels from relevance text.
+    if scope == "public":
+        doc_texts = [" ".join((h["title"], h["snippet"],
+                              str(h.get("metadata", {}).get("product") or "")))
+                     for h in deduped_hits]
+        bm25_scores = public_lexical_search.grouped_bm25(clean_query, doc_texts)
+    else:
+        # Compute BM25 over deduped items with PT<->EN expanded query terms
+        exp = search_expansion.expand_query(clean_query, max_tokens=8)
+        bm25_terms = list(dict.fromkeys([*_tokenize_bm25(clean_query), *[_t for e in exp.get("expanded_terms", []) for _t in _tokenize_bm25(e)]]))
+        doc_texts = [f"{h['title']} {h['snippet']} {h['provenance'].get('path', '')} {h.get('domain', '')}" for h in deduped_hits]
+        bm25_scores = compute_bm25_scores(bm25_terms, doc_texts)
 
     for idx, h in enumerate(deduped_hits):
         h["bm25_score"] = bm25_scores[idx]
