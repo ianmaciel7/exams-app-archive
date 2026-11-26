@@ -48,8 +48,12 @@ async def check_mcp():
                 assert not components.isError and "error-boundary" in str(components.content), components
                 research = await session.call_tool("research_search", {"query": "sortable", "product": "dnd-kit"})
                 assert not research.isError and "dnd-kit" in str(research.content), research
+                contract = await session.call_tool("research_search", {"query": "pending deletion", "kind": "contract", "product": "Gemini Notebook (formerly NotebookLM)"})
+                assert not contract.isError and "notebook-deck-staged-revision" in str(contract.content), contract
+                discovery = await session.call_tool("research_search", {"query": "welie", "kind": "source"})
+                assert not discovery.isError and "discovery-1:welie" in str(discovery.content), discovery
                 audit = await session.call_tool("research_audit", {})
-                assert not audit.isError and "visual_matrix" in str(audit.content), audit
+                assert not audit.isError and "visual_matrix" in str(audit.content) and "record_provenance" in str(audit.content), audit
                 resolved = await session.call_tool("resolve_concept", {"query": "painel lateral"})
                 assert not resolved.isError, resolved
                 result = getattr(resolved, "structuredContent", None)

@@ -113,7 +113,7 @@ def component_screenshot_image(screenshot_id: str) -> Image:
 
 
 @mcp.tool()
-def research_search(query: str, kind: Literal["pattern", "source", "visual"] | None = None,
+def research_search(query: str, kind: Literal["pattern", "source", "visual", "view", "output", "flow", "contract", "availability"] | None = None,
                     product: str | None = None, availability: str | None = None,
                     limit: int = 20):
     """Search approved public research catalogs; independent from private history."""
@@ -128,7 +128,10 @@ def research_search(query: str, kind: Literal["pattern", "source", "visual"] | N
 def research_audit():
     """Return public catalog coverage, declared visual availability and explicit gaps."""
     import research_index
-    return research_index.audit(research_index.load_records())
+    records = research_index.load_records()
+    result = research_index.audit(records)
+    result["record_provenance"] = research_index.verify_record_provenance(records)
+    return result
 
 
 @mcp.tool()

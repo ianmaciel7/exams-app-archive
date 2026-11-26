@@ -1,0 +1,3 @@
+# Public retrieval contract parity
+
+The MCP research search accepts the same eight record kinds as the CLI. Its audit also exposes original/projection integrity. Concept packs, context snippets and federated concept hits preserve original JSON pointers and both checksums. Context snapshots hash the complete projected record and taxonomy so a changed derived statement cannot reuse the previous snapshot. This intentionally invalidates old snapshot pins; resolve the concept again rather than silently changing revisions. MCP smoke covers the existing contract record and a discovery lead. No private index is used.
