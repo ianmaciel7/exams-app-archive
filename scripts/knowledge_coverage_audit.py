@@ -33,6 +33,21 @@ def canonical_url(value):
         host += ":" + str(p.port)
     return urlunsplit(("https", host, p.path or "/", p.query, p.fragment))
 
+def classify_unlinked_source(source_ids):
+    """Routing by explicit catalog origin, not evidence quality or missing-link inference."""
+    prefixes = {ident.split(":", 1)[0] for ident in source_ids}
+    if "design-md-discovery" in prefixes:
+        return "design_md_inventory"
+    if prefixes & {"discovery-1", "discovery-2", "discovery-3", "visual-discovery"}:
+        return "discovery_inventory"
+    if "motion-reference" in prefixes:
+        return "motion_reference"
+    if any(p.endswith("-sources") and p not in {"general-sources", "research-sources"}
+           for p in prefixes):
+        return "specialized_catalog"
+    return "general_registry"
+
+
 def audit(records, taxonomy):
     ids = {r["id"] for r in records}
     if len(ids) != len(records):
@@ -111,6 +126,12 @@ def audit(records, taxonomy):
                 "metadata_missing":sorted({k for r in rs for k in ("license","author","checked_on","status") if not r["record"].get(k)}),
                 "linked_records":sum(u in row["source_urls"] for row in record_rows),
                 "live_access":"not_checked"} for u,rs in sorted(source_by_url.items())]
+    unlinked_sources = [
+        {"url": source["url"], "source_ids": source["source_ids"],
+         "status_values": source["status_values"],
+         "category": classify_unlinked_source(source["source_ids"])}
+        for source in sources if source["linked_records"] == 0
+    ]
     gaps = [{"type":"dangling_concept_member",**x} for x in dangling]
     gaps += [{"type":"unregistered_reference_url",**x} for x in unresolved]
     gaps += [{"type":"unlinked_source","url":u} for u in sorted(set(source_by_url)-referenced)]
@@ -119,11 +140,17 @@ def audit(records, taxonomy):
     return {"schema":1,"status":"PUBLIC_CATALOG_AUDITED_ONLY",
             "domains":domain_matrix,"concepts":concepts,"sources":sources,"records":record_rows,
             "gaps":gaps,"gap_counts":dict(Counter(x["type"] for x in gaps)),
+            "unlinked_source_triage": {
+                "method":"Explicit catalog-origin routing; mutually exclusive in priority order; no link or evidence inferred.",
+                "counts":dict(Counter(x["category"] for x in unlinked_sources)),
+                "sources":unlinked_sources,
+            },
             "integrity_passed":not dangling,
             "scope_limits":["No private history, source reachability, independent relevance or runtime verification.",
                             "Source metadata, states and tests are declarations, not verified behavior.",
                             "Explicit domain links can overlap; do not sum as unique evidence.",
-                            "Unregistered reference URLs may be legitimate upstream links; triage, not automatic corruption."]}
+                            "Unregistered reference URLs may be legitimate upstream links; triage, not automatic corruption.",
+                            "Unlinked sources may be intentional inventories; category alone is not evidence of a missing relationship."]}
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)

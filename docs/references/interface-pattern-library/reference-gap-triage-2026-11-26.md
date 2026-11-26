@@ -64,3 +64,22 @@ Coverage artifact 15139413915 from CI 45865839269 (SHA-256 `fb9288c2e60732b8d47a
 - [Grok Bot iOS App UI/UX animation](https://60fps.design/apps/grok-bot): public gallery description retrieved; PRO media access restricted; animation not inspected. Gallery describes splash mascot expression animation. Do not treat as official spec, bypass access restrictions or infer measured motion.
 
 Central registry: 672 entries; expected zero unregistered URL occurrences, subject to new audit. Unlinked source inventory (374) and source-only domains (2) unchanged by intent. Prior benchmark artifact 15140122607 SHA-256 verified: default/compact recall 92.5%, relevance-first 97.5%, expanded 100%, 2/2 negative abstention, projected maximum 785 character-estimated tokens. Notebook-01 contract still missed; no tuning against the fixed suite. No visual playback, authenticated tests, independent relevance certification or redistribution rights claimed.
+
+## Batch 4 — confirmed closure and unlinked-source routing
+
+CI [45866814353](https://github.com/ianmaciel7/exams-app-archive/actions/runs/45866814353) at `02a849be42259ba999a4d5792fa9bf2d17aaefd4` passed all four jobs. Coverage artifact 15139379950 SHA-256 `b6545f7af25ed177bb3828a5b719a4af884de491e1f7be452b5b3180649ec9ca` checked against downloaded bytes. 2059/2059 records, no provenance errors, zero unregistered-reference occurrences. Remaining gaps: 374 unlinked exact URLs and two source-only domains. The 69 original unregistered occurrences are closed in this snapshot.
+
+Classify the 374 unlinked URLs by explicit source-ID catalog prefixes, mutually exclusively in the order below:
+
+| Category | URLs | Action |
+|---|---:|---|
+| DESIGN.md discovery | 84 | Preserve corpus inventory; only cite a specific document if a reviewed claim requires it. |
+| Other discovery/visual discovery | 133 | Revalidate exact pages and evidence before deriving patterns. |
+| Motion references | 32 | Inspect original media or text, preserve playback/access limits. |
+| Specialized catalogs | 83 | Review existing pattern-to-source claims before adding direct relationships. |
+| General registry | 42 | Review relevance and provenance individually; prioritize actionable primary sources. |
+| Total | 374 | No inferred relationships. |
+
+The audit now emits this routing alongside the unchanged raw gap count. Catalog origin is not an assessment of evidence quality, relevance, rights, or whether a link is actually required. Both DESIGN.md and discovery entries remain legitimate standalone searchable source records; no fabricated links or exclusions from the raw metric. The source-only domains are `arquitetura-tecnica` and `historico`.
+
+Benchmark [45866346210](https://github.com/ianmaciel7/exams-app-archive/actions/runs/45866346210), artifact 15140548698 SHA-256 `e53ec29dca18f461efdf385108e05815a99f3fc53eed179bb9c969a13e9530b1` verified: fixed development-suite recall default/compact 92.5%, relevance-first 97.5%, expanded 100%, 2/2 negative abstention, projection max 785 character-estimated tokens. Notebook-01 still 0.5 recall; do not tune against known labels. Pages run 45866346199 failed at deployment, not catalog integrity. Runtime and independent validation remain pending.

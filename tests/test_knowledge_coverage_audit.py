@@ -37,3 +37,29 @@ def test_source_only_domain_is_not_missing_or_validated():
     assert result["domains"]["historico"]["source_urls"]==1
     assert result["domains"]["historico"]["patterns"]==0
     assert result["gap_counts"]["domain_with_source_links_only"]==1
+
+
+def test_unlinked_source_triage_is_exhaustive_without_fabricating_links():
+    a, b, c, d, e, linked = ["https://example.org/" + x for x in "abcdef"]
+    rows = [
+        row("design-md-discovery:a", "source", [a]),
+        row("discovery-1:a", "source", [a]),
+        row("general-sources:a", "source", [a]),
+        row("discovery-2:b", "source", [b]),
+        row("component-behavior-sources:b", "source", [b]),
+        row("motion-reference:c", "source", [c]),
+        row("component-behavior-sources:d", "source", [d]),
+        row("general-sources:e", "source", [e]),
+        row("general-sources:f", "source", [linked]),
+        row("pattern:f", "pattern", [linked]),
+    ]
+    result = audit(rows, {"concepts": []})
+    triage = result["unlinked_source_triage"]
+    assert triage["counts"] == {
+        "design_md_inventory": 1, "discovery_inventory": 1,
+        "motion_reference": 1, "specialized_catalog": 1, "general_registry": 1,
+    }
+    assert result["gap_counts"]["unlinked_source"] == 5
+    assert {x["url"] for x in triage["sources"]} == {a, b, c, d, e}
+    assert len(triage["sources"][0]["source_ids"]) == 3
+    assert result["integrity_passed"]
