@@ -4881,7 +4881,7 @@
       "checked_on": "2026-11-26",
       "status": "verified",
       "storage": "link-only",
-      "notes": "Public source documentation reviewed 2026-11-26; no product interaction or media verification implied."
+      "notes": "Official manual confirmed 2026-11-26; legacy /deck-options.html redirects to current /manual/deck-options. Desired retention is a scheduling objective; no runtime or calibration verification."
     },
     {
       "id": "domain-learning-activity-events",
@@ -6148,6 +6148,42 @@
       "checked_on": "2026-11-26",
       "status": "official research text retrieved; live demo interactions untested",
       "storage": "link-only"
+    },
+    {
+      "id": "domain-interleaving-material-similarity",
+      "title": "Brunmair and Richter (2019) — Similarity matters",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31556629/",
+      "kind": "meta-analysis",
+      "source_version": "2019",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Public PubMed abstract reviewed; full text and product efficacy not established.",
+      "license": "not established; link-only"
+    },
+    {
+      "id": "domain-explanatory-feedback-content",
+      "title": "Wisniewski, Zierer and Hattie (2020) — The Power of Feedback Revisited",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32038429/",
+      "kind": "meta-analysis",
+      "source_version": "2020",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Public PubMed abstract reviewed; full text and product efficacy not established.",
+      "license": "not established; link-only"
+    },
+    {
+      "id": "domain-retrieval-transfer-outcomes",
+      "title": "Butler (2010) — Repeated testing and transfer",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20804289/",
+      "kind": "experimental-research",
+      "source_version": "2010",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Public PubMed abstract reviewed; full text and product efficacy not established.",
+      "license": "not established; link-only"
     }
   ],
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",
