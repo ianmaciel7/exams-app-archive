@@ -29,7 +29,7 @@ def contrast(a, b):
     lo, hi = sorted((luminance(a), luminance(b)))
     return (hi + .05) / (lo + .05)
 
-def evaluate(markdown):
+def parse_rows(markdown):
     rows = {}
     for line in markdown.splitlines():
         if not line.startswith("| `"):
@@ -37,6 +37,10 @@ def evaluate(markdown):
         columns = [c.strip().strip("`") for c in line.split("|")[1:-1]]
         if len(columns) >= 3:
             rows[columns[0]] = columns[1:3]
+    return rows
+
+def evaluate(markdown):
+    rows = parse_rows(markdown)
     canvas = next(key for key in rows if "--surface-canvas" in key)
     pairs = []
     for i, theme in enumerate(("light","dark")):
