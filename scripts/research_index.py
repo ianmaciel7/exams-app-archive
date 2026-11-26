@@ -94,6 +94,74 @@ def discovery_records(base=BASE):
                    "record":projected}
 
 
+MOTION_CATALOG = "ui-ux-patterns-2026-11-25/visual-motion-evidence.json"
+MOTION_GROUPS = ("capacities_visuals", "capacities_references", "motion_demos", "motion_source")
+
+
+def motion_reference_records(base=BASE):
+    """Expose existing evidence pointers, without claiming inspected runtime."""
+    path = base / MOTION_CATALOG
+    raw = path.read_bytes()
+    doc = json.loads(raw)
+    for key in MOTION_GROUPS:
+        for index, item in enumerate(doc[key]):
+            local_id = item.get("id") or item["path"]
+            product = "Capacities" if key.startswith("capacities") else "Motion"
+            url = item["url"]
+            urls = list(dict.fromkeys([url] + ([item["source"]] if item.get("source") else [])))
+            if any(urlsplit(u).scheme != "https" or not urlsplit(u).hostname or urlsplit(u).username is not None for u in urls):
+                raise ValueError("Invalid motion reference URL")
+            projected = dict(item, product=product, reference_type=key)
+            projected["domain"] = "motion" if product == "Motion" else "workspace"
+            if key == "motion_source":
+                projected["source_repo"] = "motiondivision/motion"
+                projected["source_commit"] = item["commit"]
+                projected["source_path"] = item["upstream_path"]
+                projected["local_copy_path"] = "docs/references/ui-ux-patterns-2026-11-25/" + item["path"]
+            if key == "capacities_visuals":
+                projected["visual_inspection"] = "prior-catalog-reports-seen" if item["status"] == "seen" else "fetch-failed"
+            if key == "motion_demos":
+                projected["playback"] = "not-recorded"
+            yield {"id":"motion-reference:"+key+":"+local_id, "record_id":local_id,
+                   "catalog":"motion-reference", "kind":"source",
+                   "title":product+" "+Path(local_id).stem.replace("-", " "),
+                   "catalog_path":"docs/references/"+MOTION_CATALOG,
+                   "catalog_sha256":digest(raw), "record_pointer":f"/{key}/{index}",
+                   "record_sha256":record_digest(item), "projection_sha256":record_digest(projected),
+                   "sources":urls, "date":doc["date"], "product":product,
+                   "confidence":item["status"], "license":item.get("license"),
+                   "availability":"source-copy-declared" if key=="motion_source" else "link-only",
+                   "record":projected}
+
+
+def verify_motion_source_copies(*, base=BASE):
+    """Verify only declared licensed local copies; do not execute examples."""
+    base = Path(base).resolve()
+    parent = base / "ui-ux-patterns-2026-11-25"
+    doc = json.loads((base / MOTION_CATALOG).read_bytes())
+    errors = []
+    checked = 0
+    for item in doc["motion_source"]:
+        try:
+            rel = Path(item["path"])
+            if len(rel.parts) != 2 or rel.parts[0] != "motion-source" or rel.suffix not in {".tsx", ".md"}:
+                raise ValueError("unapproved motion copy path")
+            path = parent / rel
+            if path.resolve(strict=True) != path:
+                raise ValueError("unsafe motion copy path")
+            raw = path.read_bytes()
+            blob = hashlib.sha1(f"blob {len(raw)}\x00".encode("ascii") + raw).hexdigest()
+            if blob != item["blob_sha"]:
+                raise ValueError("blob mismatch")
+            if item["license"] != "MIT" or not re.fullmatch(r"[0-9a-f]{40}", item["commit"]):
+                raise ValueError("missing declared license or commit pin")
+            checked += 1
+        except (OSError, ValueError, KeyError) as exc:
+            errors.append({"path":item.get("path"),"reason":str(exc)})
+    return {"checked":checked,"total":len(doc["motion_source"]),"errors":errors,
+            "integrity_passed":not errors,"scope":"local source bytes only; runtime not verified"}
+
+
 def record_digest(item):
     return digest(json.dumps(item, ensure_ascii=False, sort_keys=True).encode("utf-8"))
 
@@ -255,7 +323,7 @@ def load_records():
                     ("archived-blob-declared" if namespace == "grok-assets" else
                      "link-only" if namespace.endswith("sources") or namespace == "grok-links" else "documented"),
                 "record": item})
-    for row in (*supplemental_records(), *product_graph_records(), *discovery_records()):
+    for row in (*supplemental_records(), *product_graph_records(), *discovery_records(), *motion_reference_records()):
         if row["id"] in seen:
             raise ValueError(f"Duplicate id: {row['id']}")
         seen.add(row["id"])
@@ -274,6 +342,7 @@ def verify_record_provenance(records, *, root=ROOT):
                    for _, name, _, _ in SUPPLEMENTAL_CATALOGS)
     allowed.update("docs/references/ui-ux-research-sources/" + name
                    for _, name, _ in DISCOVERY_CATALOGS)
+    allowed.add("docs/references/" + MOTION_CATALOG)
     allowed.add("docs/references/interface-pattern-library/ai-product-knowledge-graph.json")
     cache = {}
     errors = []

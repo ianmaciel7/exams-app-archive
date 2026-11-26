@@ -132,7 +132,9 @@ def main():
     records=research_index.load_records()
     result=audit(records, concept_packs.load_taxonomy())
     result["record_provenance"]=research_index.verify_record_provenance(records)
-    result["integrity_passed"] = result["integrity_passed"] and result["record_provenance"]["integrity_passed"]
+    result["motion_source_integrity"]=research_index.verify_motion_source_copies()
+    result["integrity_passed"] = (result["integrity_passed"] and result["record_provenance"]["integrity_passed"]
+                                  and result["motion_source_integrity"]["integrity_passed"])
     serialized=json.dumps(result,ensure_ascii=False,indent=2)+"\n"
     if args.output:
         args.output.write_text(serialized,encoding="utf-8")
