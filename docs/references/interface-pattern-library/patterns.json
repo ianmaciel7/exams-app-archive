@@ -603,7 +603,8 @@
       "source_ids": [
         "openai-space-help"
       ],
-      "classification": "product evidence / derived acceptance tests"
+      "classification": "product evidence / derived acceptance tests",
+      "product": "ChatGPT Space"
     },
     {
       "id": "chatgpt-space-object-views",
@@ -615,7 +616,8 @@
       "source_ids": [
         "openai-space-help"
       ],
-      "classification": "product evidence / derived acceptance tests"
+      "classification": "product evidence / derived acceptance tests",
+      "product": "ChatGPT Space"
     },
     {
       "id": "chatgpt-space-block-editor",
@@ -627,7 +629,8 @@
       "source_ids": [
         "openai-space-pages"
       ],
-      "classification": "product evidence / derived acceptance tests"
+      "classification": "product evidence / derived acceptance tests",
+      "product": "ChatGPT Space"
     },
     {
       "id": "chatgpt-space-width-controls",
@@ -639,7 +642,8 @@
       "source_ids": [
         "openai-space-pages"
       ],
-      "classification": "product evidence / derived acceptance tests"
+      "classification": "product evidence / derived acceptance tests",
+      "product": "ChatGPT Space"
     },
     {
       "id": "chatgpt-space-contextual-ai",
@@ -651,7 +655,8 @@
       "source_ids": [
         "openai-space-agents"
       ],
-      "classification": "product evidence / derived acceptance tests"
+      "classification": "product evidence / derived acceptance tests",
+      "product": "ChatGPT Space"
     },
     {
       "id": "chatgpt-space-recurring-work",
@@ -663,7 +668,8 @@
       "source_ids": [
         "openai-space-agents"
       ],
-      "classification": "product evidence / derived acceptance tests"
+      "classification": "product evidence / derived acceptance tests",
+      "product": "ChatGPT Space"
     },
     {
       "id": "chatgpt-space-adaptive-ui",
@@ -675,7 +681,8 @@
       "source_ids": [
         "openai-intelligent-ui"
       ],
-      "classification": "product evidence / derived acceptance tests"
+      "classification": "product evidence / derived acceptance tests",
+      "product": "ChatGPT Space"
     },
     {
       "id": "chatgpt-space-visualization-lifecycle",
@@ -687,7 +694,8 @@
       "source_ids": [
         "openai-visualizations"
       ],
-      "classification": "product evidence / derived acceptance tests"
+      "classification": "product evidence / derived acceptance tests",
+      "product": "ChatGPT Space"
     },
     {
       "id": "chatgpt-space-search",
@@ -699,7 +707,8 @@
       "source_ids": [
         "openai-global-search"
       ],
-      "classification": "product evidence / derived acceptance tests"
+      "classification": "product evidence / derived acceptance tests",
+      "product": "ChatGPT Space"
     },
     {
       "id": "chatgpt-space-mobile-navigation",
@@ -711,7 +720,8 @@
       "source_ids": [
         "openai-mobile"
       ],
-      "classification": "product evidence / derived acceptance tests"
+      "classification": "product evidence / derived acceptance tests",
+      "product": "ChatGPT Space"
     },
     {
       "id": "chatgpt-space-collaboration",
@@ -723,7 +733,8 @@
       "source_ids": [
         "openai-space-collaboration"
       ],
-      "classification": "product evidence / derived acceptance tests"
+      "classification": "product evidence / derived acceptance tests",
+      "product": "ChatGPT Space"
     },
     {
       "id": "claude-artifact-lifecycle",
@@ -735,7 +746,8 @@
       "source_ids": [
         "claude-artifacts"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Claude"
     },
     {
       "id": "claude-fine-grained-design",
@@ -747,7 +759,8 @@
       "source_ids": [
         "claude-design-launch"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Claude"
     },
     {
       "id": "claude-project-context",
@@ -759,7 +772,8 @@
       "source_ids": [
         "component-claude-projects"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Claude"
     },
     {
       "id": "claude-installable-artifact",
@@ -771,7 +785,8 @@
       "source_ids": [
         "claude-install"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Claude"
     },
     {
       "id": "claude-interactive-connectors",
@@ -783,7 +798,8 @@
       "source_ids": [
         "claude-connectors"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Claude"
     },
     {
       "id": "grok-bot-persistent-agent",
@@ -795,7 +811,8 @@
       "source_ids": [
         "grok-bot-bots"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Grok Bot"
     },
     {
       "id": "grok-bot-avatar-states",
@@ -807,7 +824,8 @@
       "source_ids": [
         "grok"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Grok Bot"
     },
     {
       "id": "grok-bot-execution-visibility",
@@ -819,7 +837,8 @@
       "source_ids": [
         "grok"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Grok Bot"
     },
     {
       "id": "grok-bot-pages",
@@ -831,7 +850,8 @@
       "source_ids": [
         "grok-bot-files"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Grok Bot"
     },
     {
       "id": "grok-bot-recurring",
@@ -843,7 +863,8 @@
       "source_ids": [
         "grok-bot-overview"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Grok Bot"
     },
     {
       "id": "gemini-canvas-edit",
@@ -855,7 +876,8 @@
       "source_ids": [
         "gemini-canvas"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Gemini"
     },
     {
       "id": "gemini-adaptive-generative-ui",
@@ -867,7 +889,8 @@
       "source_ids": [
         "gemini-dynamic"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Gemini"
     },
     {
       "id": "gemini-simulation",
@@ -879,7 +902,8 @@
       "source_ids": [
         "gemini-simulations"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Gemini"
     },
     {
       "id": "gemini-document-transform",
@@ -891,7 +915,8 @@
       "source_ids": [
         "gemini-canvas"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Gemini"
     },
     {
       "id": "gemini-study-space",
@@ -903,7 +928,8 @@
       "source_ids": [
         "gemini-study"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Gemini"
     },
     {
       "id": "gemini-notebook-three-region-shell",
@@ -915,7 +941,8 @@
       "source_ids": [
         "gemini-notebook-create"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Gemini Notebook (formerly NotebookLM)"
     },
     {
       "id": "gemini-notebook-source-grounding",
@@ -927,7 +954,8 @@
       "source_ids": [
         "gemini-notebook-sources"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Gemini Notebook (formerly NotebookLM)"
     },
     {
       "id": "gemini-notebook-study-loop",
@@ -939,7 +967,8 @@
       "source_ids": [
         "gemini-notebook-quiz"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Gemini Notebook (formerly NotebookLM)"
     },
     {
       "id": "gemini-notebook-question-formats",
@@ -951,7 +980,8 @@
       "source_ids": [
         "gemini-notebook-study"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Gemini Notebook (formerly NotebookLM)"
     },
     {
       "id": "gemini-notebook-async-output",
@@ -963,7 +993,8 @@
       "source_ids": [
         "gemini-notebook-create"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Gemini Notebook (formerly NotebookLM)"
     },
     {
       "id": "gemini-notebook-review-before-render",
@@ -975,7 +1006,8 @@
       "source_ids": [
         "gemini-notebook-review"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Gemini Notebook (formerly NotebookLM)"
     },
     {
       "id": "gemini-notebook-interactive-site-state",
@@ -987,7 +1019,8 @@
       "source_ids": [
         "gemini-notebook-sites"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Gemini Notebook (formerly NotebookLM)"
     },
     {
       "id": "gemini-notebook-mobile-constraints",
@@ -999,7 +1032,8 @@
       "source_ids": [
         "gemini-notebook-mobile"
       ],
-      "classification": "documented product behavior / derived acceptance criteria"
+      "classification": "documented product behavior / derived acceptance criteria",
+      "product": "Gemini Notebook (formerly NotebookLM)"
     },
     {
       "id": "chatgpt-space-page-trash",
@@ -1011,7 +1045,8 @@
       "source_ids": [
         "openai-space-help"
       ],
-      "classification": "official search excerpt; acceptance criteria not executed"
+      "classification": "official search excerpt; acceptance criteria not executed",
+      "product": "ChatGPT Space"
     },
     {
       "id": "claude-data-refresh",
@@ -1023,7 +1058,8 @@
       "source_ids": [
         "claude-data"
       ],
-      "classification": "official search excerpt; acceptance criteria not executed"
+      "classification": "official search excerpt; acceptance criteria not executed",
+      "product": "Claude"
     },
     {
       "id": "claude-docs-history",
@@ -1035,7 +1071,8 @@
       "source_ids": [
         "claude-docs"
       ],
-      "classification": "official search excerpt; acceptance criteria not executed"
+      "classification": "official search excerpt; acceptance criteria not executed",
+      "product": "Claude"
     },
     {
       "id": "claude-share-access",
@@ -1047,7 +1084,8 @@
       "source_ids": [
         "claude-share"
       ],
-      "classification": "official search excerpt; acceptance criteria not executed"
+      "classification": "official search excerpt; acceptance criteria not executed",
+      "product": "Claude"
     },
     {
       "id": "grok-bot-approval-card",
@@ -1059,7 +1097,8 @@
       "source_ids": [
         "grok-bot-troubleshooting"
       ],
-      "classification": "official search excerpt; acceptance criteria not executed"
+      "classification": "official search excerpt; acceptance criteria not executed",
+      "product": "Grok Bot"
     },
     {
       "id": "grok-bot-event-routine",
@@ -1071,7 +1110,8 @@
       "source_ids": [
         "grok-bot-routines"
       ],
-      "classification": "official search excerpt; acceptance criteria not executed"
+      "classification": "official search excerpt; acceptance criteria not executed",
+      "product": "Grok Bot"
     },
     {
       "id": "gemini-persistent-canvas",
@@ -1083,7 +1123,8 @@
       "source_ids": [
         "gemini-canvas-security"
       ],
-      "classification": "official search excerpt; acceptance criteria not executed"
+      "classification": "official search excerpt; acceptance criteria not executed",
+      "product": "Gemini"
     },
     {
       "id": "gemini-notebook-note-source",
@@ -1095,7 +1136,8 @@
       "source_ids": [
         "gemini-notebook-notes"
       ],
-      "classification": "official search excerpt; acceptance criteria not executed"
+      "classification": "official search excerpt; acceptance criteria not executed",
+      "product": "Gemini Notebook (formerly NotebookLM)"
     },
     {
       "id": "gemini-notebook-citation-navigation",
@@ -1107,7 +1149,8 @@
       "source_ids": [
         "gemini-notebook-chat"
       ],
-      "classification": "official search excerpt; acceptance criteria not executed"
+      "classification": "official search excerpt; acceptance criteria not executed",
+      "product": "Gemini Notebook (formerly NotebookLM)"
     }
   ]
 }

@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-26",
+  "scope": "official text; no runtime tests",
+  "flows": [
+    {
+      "id": "chatgpt-space-page-inline-generation",
+      "product": "chatgpt-space",
+      "title": "Inline content and revision",
+      "source_id": "openai-space-pages",
+      "view": "Pages",
+      "steps": [
+        "Open a page and invoke slash menu",
+        "Choose Generate and describe content",
+        "Review draft in place",
+        "Accept, request revision, or undo"
+      ],
+      "description": "Selection-based toolbar, block handle, inline generator and review",
+      "classification": "documented flow; not observed runtime",
+      "limitations": "Documented text; exact error/focus/animation not observed"
+    },
+    {
+      "id": "chatgpt-space-page-visualize",
+      "product": "chatgpt-space",
+      "title": "Interactive visualization inside a page",
+      "source_id": "openai-space-pages",
+      "view": "Pages",
+      "steps": [
+        "Invoke Visualize with a request",
+        "Choose a starting point such as app, widget, screen or diagram",
+        "Review generated result and test controls",
+        "Request changes using adjacent chat"
+      ],
+      "description": "Generated visualization is a different output from a native page block; persistence must be checked separately",
+      "classification": "documented flow; not observed runtime",
+      "limitations": "Official guide; not a native template inventory"
+    },
+    {
+      "id": "chatgpt-space-page-nesting-link",
+      "product": "chatgpt-space",
+      "title": "Child page versus reference",
+      "source_id": "openai-space-pages",
+      "view": "Pages",
+      "steps": [
+        "Open parent page",
+        "Choose Page to create a child, or Link to page to reference an existing page",
+        "Name new child or select target",
+        "Navigate the related content"
+      ],
+      "description": "Child containment differs from reference; drag handle can move an entire heading section",
+      "classification": "documented flow; not observed runtime",
+      "limitations": "Official guide; exact navigation history and deletion restoration untested"
+    },
+    {
+      "id": "claude-whiteboard-create-transform",
+      "product": "claude",
+      "title": "Collaborative whiteboard workflow",
+      "source_id": "claude-whiteboards",
+      "view": "Design canvas",
+      "steps": [
+        "Request a board or choose the Whiteboards tile",
+        "Arrange shapes, arrows and sections with collaborators",
+        "Optionally follow a teammate",
+        "Transform to a document/deck or export PNG"
+      ],
+      "description": "Whiteboard beta; external invite policy; connected-app context not used on board per guide",
+      "classification": "documented flow; not observed runtime",
+      "limitations": "Official help; association with generic canvas is contextual, not same editor"
+    },
+    {
+      "id": "claude-sheet-create-edit",
+      "product": "claude",
+      "title": "Collaborative spreadsheet workflow",
+      "source_id": "claude-sheets",
+      "view": "Artifacts tab",
+      "steps": [
+        "Start blank or describe a sheet",
+        "Edit cells with Claude and collaborators",
+        "Inspect outlined changed cells and formulas",
+        "Use version history or export XLSX"
+      ],
+      "description": "Tabs, formulas, conditional formatting, dropdowns, checkboxes and charts; no connected-app live data at launch",
+      "classification": "documented flow; not observed runtime",
+      "limitations": "Official help; visual selection and history behavior not tested"
+    },
+    {
+      "id": "grok-bot-page-lifecycle",
+      "product": "grok-bot",
+      "title": "Page creation, reading and update",
+      "source_id": "grok-bot-files",
+      "view": "Pages",
+      "steps": [
+        "Ask Bot to create page",
+        "Open title card in chat",
+        "Use adjacent page-specific chat to request revision",
+        "Earlier card indicates updated version; reopen latest"
+      ],
+      "description": "Desktop page dominates window; mobile closes back to chat. Reader filters/switches alter view only and do not save",
+      "classification": "documented flow; not observed runtime",
+      "limitations": "Official help; no reader-write persistence"
+    },
+    {
+      "id": "grok-bot-library-discovery",
+      "product": "grok-bot",
+      "title": "Library discovery and pinning",
+      "source_id": "grok-bot-files",
+      "view": "Library",
+      "steps": [
+        "Open Bot profile/details and Library",
+        "Browse date groups (five items at first) or use search",
+        "Show more or open item",
+        "Use overflow to pin/unpin; page owner can share"
+      ],
+      "description": "Library excludes user uploads and Cloud Agent returned files per guide; desktop shortcut Cmd/Ctrl+K",
+      "classification": "documented flow; not observed runtime",
+      "limitations": "Official help; actual visual grouping and pin order untested"
+    },
+    {
+      "id": "grok-bot-page-sharing",
+      "product": "grok-bot",
+      "title": "Page sharing and access failure",
+      "source_id": "grok-bot-files",
+      "view": "Pages",
+      "steps": [
+        "Open page sharing settings",
+        "Choose permitted audience",
+        "Copy link or narrow access",
+        "If access update fails, retry"
+      ],
+      "description": "Private by default; public link allows reading and controls, but only Bot edits content; unavailable options explain why",
+      "classification": "documented flow; not observed runtime",
+      "limitations": "Official help; no live access matrix tested"
+    },
+    {
+      "id": "gemini-canvas-debug",
+      "product": "gemini",
+      "title": "Canvas application editing and debugging",
+      "source_id": "gemini-canvas",
+      "view": "Canvas",
+      "steps": [
+        "Open app in Canvas",
+        "Switch to Code to edit or request a change",
+        "Inspect preview console and recent changes",
+        "Use Select & ask for scoped revision"
+      ],
+      "description": "Edits auto-save; version controls documented for docs; preview errors and logs available",
+      "classification": "documented flow; not observed runtime",
+      "limitations": "Official help; not inspected live"
+    },
+    {
+      "id": "gemini-canvas-sharing",
+      "product": "gemini",
+      "title": "Canvas sharing and app information review",
+      "source_id": "gemini-canvas",
+      "view": "Canvas",
+      "steps": [
+        "Open Share & export",
+        "Choose Share",
+        "Review app information about shared data, AI features and session persistence",
+        "Copy public link if appropriate"
+      ],
+      "description": "Anyone with public link may view/edit associated shared data; distinguish app data from document content",
+      "classification": "documented flow; not observed runtime",
+      "limitations": "Official help; live security behavior not tested"
+    },
+    {
+      "id": "gemini-notebook-flashcard-review",
+      "product": "gemini-notebook",
+      "title": "Flashcard generation and review loop",
+      "source_id": "gemini-notebook-quiz",
+      "view": "Full-screen study view",
+      "steps": [
+        "Select sources and Studio Flashcards or customization pencil",
+        "Choose difficulty/prompt; generation runs in background",
+        "Study with Explain, previous/next, known/missed controls",
+        "Review results; retry same, all, or missed cards"
+      ],
+      "description": "Progress resumes; shuffle, delete card, restart, fullscreen and CSV where allowed. Edit access required to generate/delete study aid",
+      "classification": "documented flow; not observed runtime",
+      "limitations": "Official help; correct/incorrect visual design and actual state persistence untested"
+    },
+    {
+      "id": "gemini-notebook-quiz-review",
+      "product": "gemini-notebook",
+      "title": "Quiz generation and review loop",
+      "source_id": "gemini-notebook-quiz",
+      "view": "Full-screen study view",
+      "steps": [
+        "Choose Quiz in Studio, customize if needed",
+        "Wait while continuing other work",
+        "Answer and use Hint/Explain or navigate questions",
+        "Review or retake at end"
+      ],
+      "description": "Fullscreen and previous/next; no claim of exact submit-button behavior or answer timing",
+      "classification": "documented flow; not observed runtime",
+      "limitations": "Official help; feedback and score states need screenshots"
+    }
+  ],
+  "sources": [
+    {
+      "id": "claude-whiteboards",
+      "title": "Get started with Claude Whiteboards",
+      "url": "https://support.claude.com/en/articles/18324319-get-started-with-claude-whiteboards",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official help article read; live UI not tested",
+      "storage": "link-only",
+      "notes": "Typed artifact editor flow."
+    },
+    {
+      "id": "claude-sheets",
+      "title": "Get started with Claude Sheets",
+      "url": "https://support.claude.com/en/articles/18324300-get-started-with-claude-sheets",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official help article read; live UI not tested",
+      "storage": "link-only",
+      "notes": "Typed artifact editor flow."
+    }
+  ]
+}

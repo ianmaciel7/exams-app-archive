@@ -74,7 +74,9 @@
     "grok-bot-troubleshooting": "grok-bot-troubleshooting",
     "grok-bot-routines": "grok-bot-routines",
     "gemini-canvas-security": "gemini-canvas-security",
-    "gemini-notebook-faq": "gemini-notebook-faq"
+    "gemini-notebook-faq": "gemini-notebook-faq",
+    "claude-whiteboards": "claude-whiteboards",
+    "claude-sheets": "claude-sheets"
   },
   "nodes": [
     {
@@ -2194,6 +2196,202 @@
       "type": "state-candidate",
       "label": "read-only",
       "status": "unverified candidate"
+    },
+    {
+      "id": "source:claude-whiteboards",
+      "type": "source",
+      "label": "Get started with Claude Whiteboards",
+      "url": "https://support.claude.com/en/articles/18324319-get-started-with-claude-whiteboards",
+      "central_source_id": "claude-whiteboards",
+      "evidence_status": "official help article read; live UI not tested"
+    },
+    {
+      "id": "source:claude-sheets",
+      "type": "source",
+      "label": "Get started with Claude Sheets",
+      "url": "https://support.claude.com/en/articles/18324300-get-started-with-claude-sheets",
+      "central_source_id": "claude-sheets",
+      "evidence_status": "official help article read; live UI not tested"
+    },
+    {
+      "id": "flow:chatgpt-space-page-inline-generation",
+      "type": "documented-flow",
+      "label": "Inline content and revision",
+      "product": "ChatGPT Space",
+      "description": "Selection-based toolbar, block handle, inline generator and review",
+      "steps": [
+        "Open a page and invoke slash menu",
+        "Choose Generate and describe content",
+        "Review draft in place",
+        "Accept, request revision, or undo"
+      ],
+      "limitations": "Documented text; exact error/focus/animation not observed",
+      "evidence_status": "documented flow; not observed runtime"
+    },
+    {
+      "id": "flow:chatgpt-space-page-visualize",
+      "type": "documented-flow",
+      "label": "Interactive visualization inside a page",
+      "product": "ChatGPT Space",
+      "description": "Generated visualization is a different output from a native page block; persistence must be checked separately",
+      "steps": [
+        "Invoke Visualize with a request",
+        "Choose a starting point such as app, widget, screen or diagram",
+        "Review generated result and test controls",
+        "Request changes using adjacent chat"
+      ],
+      "limitations": "Official guide; not a native template inventory",
+      "evidence_status": "documented flow; not observed runtime"
+    },
+    {
+      "id": "flow:chatgpt-space-page-nesting-link",
+      "type": "documented-flow",
+      "label": "Child page versus reference",
+      "product": "ChatGPT Space",
+      "description": "Child containment differs from reference; drag handle can move an entire heading section",
+      "steps": [
+        "Open parent page",
+        "Choose Page to create a child, or Link to page to reference an existing page",
+        "Name new child or select target",
+        "Navigate the related content"
+      ],
+      "limitations": "Official guide; exact navigation history and deletion restoration untested",
+      "evidence_status": "documented flow; not observed runtime"
+    },
+    {
+      "id": "flow:claude-whiteboard-create-transform",
+      "type": "documented-flow",
+      "label": "Collaborative whiteboard workflow",
+      "product": "Claude",
+      "description": "Whiteboard beta; external invite policy; connected-app context not used on board per guide",
+      "steps": [
+        "Request a board or choose the Whiteboards tile",
+        "Arrange shapes, arrows and sections with collaborators",
+        "Optionally follow a teammate",
+        "Transform to a document/deck or export PNG"
+      ],
+      "limitations": "Official help; association with generic canvas is contextual, not same editor",
+      "evidence_status": "documented flow; not observed runtime"
+    },
+    {
+      "id": "flow:claude-sheet-create-edit",
+      "type": "documented-flow",
+      "label": "Collaborative spreadsheet workflow",
+      "product": "Claude",
+      "description": "Tabs, formulas, conditional formatting, dropdowns, checkboxes and charts; no connected-app live data at launch",
+      "steps": [
+        "Start blank or describe a sheet",
+        "Edit cells with Claude and collaborators",
+        "Inspect outlined changed cells and formulas",
+        "Use version history or export XLSX"
+      ],
+      "limitations": "Official help; visual selection and history behavior not tested",
+      "evidence_status": "documented flow; not observed runtime"
+    },
+    {
+      "id": "flow:grok-bot-page-lifecycle",
+      "type": "documented-flow",
+      "label": "Page creation, reading and update",
+      "product": "Grok Bot",
+      "description": "Desktop page dominates window; mobile closes back to chat. Reader filters/switches alter view only and do not save",
+      "steps": [
+        "Ask Bot to create page",
+        "Open title card in chat",
+        "Use adjacent page-specific chat to request revision",
+        "Earlier card indicates updated version; reopen latest"
+      ],
+      "limitations": "Official help; no reader-write persistence",
+      "evidence_status": "documented flow; not observed runtime"
+    },
+    {
+      "id": "flow:grok-bot-library-discovery",
+      "type": "documented-flow",
+      "label": "Library discovery and pinning",
+      "product": "Grok Bot",
+      "description": "Library excludes user uploads and Cloud Agent returned files per guide; desktop shortcut Cmd/Ctrl+K",
+      "steps": [
+        "Open Bot profile/details and Library",
+        "Browse date groups (five items at first) or use search",
+        "Show more or open item",
+        "Use overflow to pin/unpin; page owner can share"
+      ],
+      "limitations": "Official help; actual visual grouping and pin order untested",
+      "evidence_status": "documented flow; not observed runtime"
+    },
+    {
+      "id": "flow:grok-bot-page-sharing",
+      "type": "documented-flow",
+      "label": "Page sharing and access failure",
+      "product": "Grok Bot",
+      "description": "Private by default; public link allows reading and controls, but only Bot edits content; unavailable options explain why",
+      "steps": [
+        "Open page sharing settings",
+        "Choose permitted audience",
+        "Copy link or narrow access",
+        "If access update fails, retry"
+      ],
+      "limitations": "Official help; no live access matrix tested",
+      "evidence_status": "documented flow; not observed runtime"
+    },
+    {
+      "id": "flow:gemini-canvas-debug",
+      "type": "documented-flow",
+      "label": "Canvas application editing and debugging",
+      "product": "Gemini",
+      "description": "Edits auto-save; version controls documented for docs; preview errors and logs available",
+      "steps": [
+        "Open app in Canvas",
+        "Switch to Code to edit or request a change",
+        "Inspect preview console and recent changes",
+        "Use Select & ask for scoped revision"
+      ],
+      "limitations": "Official help; not inspected live",
+      "evidence_status": "documented flow; not observed runtime"
+    },
+    {
+      "id": "flow:gemini-canvas-sharing",
+      "type": "documented-flow",
+      "label": "Canvas sharing and app information review",
+      "product": "Gemini",
+      "description": "Anyone with public link may view/edit associated shared data; distinguish app data from document content",
+      "steps": [
+        "Open Share & export",
+        "Choose Share",
+        "Review app information about shared data, AI features and session persistence",
+        "Copy public link if appropriate"
+      ],
+      "limitations": "Official help; live security behavior not tested",
+      "evidence_status": "documented flow; not observed runtime"
+    },
+    {
+      "id": "flow:gemini-notebook-flashcard-review",
+      "type": "documented-flow",
+      "label": "Flashcard generation and review loop",
+      "product": "Gemini Notebook (formerly NotebookLM)",
+      "description": "Progress resumes; shuffle, delete card, restart, fullscreen and CSV where allowed. Edit access required to generate/delete study aid",
+      "steps": [
+        "Select sources and Studio Flashcards or customization pencil",
+        "Choose difficulty/prompt; generation runs in background",
+        "Study with Explain, previous/next, known/missed controls",
+        "Review results; retry same, all, or missed cards"
+      ],
+      "limitations": "Official help; correct/incorrect visual design and actual state persistence untested",
+      "evidence_status": "documented flow; not observed runtime"
+    },
+    {
+      "id": "flow:gemini-notebook-quiz-review",
+      "type": "documented-flow",
+      "label": "Quiz generation and review loop",
+      "product": "Gemini Notebook (formerly NotebookLM)",
+      "description": "Fullscreen and previous/next; no claim of exact submit-button behavior or answer timing",
+      "steps": [
+        "Choose Quiz in Studio, customize if needed",
+        "Wait while continuing other work",
+        "Answer and use Hint/Explain or navigate questions",
+        "Review or retake at end"
+      ],
+      "limitations": "Official help; feedback and score states need screenshots",
+      "evidence_status": "documented flow; not observed runtime"
     }
   ],
   "edges": [
@@ -4524,6 +4722,234 @@
       "to": "state:interactive-app:read-only",
       "relation": "investigate_state",
       "status": "proposed scope"
+    },
+    {
+      "from": "product:claude",
+      "to": "source:claude-whiteboards",
+      "relation": "documented_by",
+      "status": "official help"
+    },
+    {
+      "from": "product:claude",
+      "to": "source:claude-sheets",
+      "relation": "documented_by",
+      "status": "official help"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "flow:chatgpt-space-page-inline-generation",
+      "relation": "has_documented_flow",
+      "status": "official documentation; not runtime test"
+    },
+    {
+      "from": "flow:chatgpt-space-page-inline-generation",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "flow:chatgpt-space-page-inline-generation",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "documented or contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "flow:chatgpt-space-page-visualize",
+      "relation": "has_documented_flow",
+      "status": "official documentation; not runtime test"
+    },
+    {
+      "from": "flow:chatgpt-space-page-visualize",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "flow:chatgpt-space-page-visualize",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "documented or contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "flow:chatgpt-space-page-nesting-link",
+      "relation": "has_documented_flow",
+      "status": "official documentation; not runtime test"
+    },
+    {
+      "from": "flow:chatgpt-space-page-nesting-link",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "flow:chatgpt-space-page-nesting-link",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "documented or contextual association"
+    },
+    {
+      "from": "product:claude",
+      "to": "flow:claude-whiteboard-create-transform",
+      "relation": "has_documented_flow",
+      "status": "official documentation; not runtime test"
+    },
+    {
+      "from": "flow:claude-whiteboard-create-transform",
+      "to": "source:claude-whiteboards",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "flow:claude-whiteboard-create-transform",
+      "to": "output:claude:whiteboards-beta",
+      "relation": "related_surface",
+      "status": "typed artifact output"
+    },
+    {
+      "from": "product:claude",
+      "to": "flow:claude-sheet-create-edit",
+      "relation": "has_documented_flow",
+      "status": "official documentation; not runtime test"
+    },
+    {
+      "from": "flow:claude-sheet-create-edit",
+      "to": "source:claude-sheets",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "flow:claude-sheet-create-edit",
+      "to": "view:claude:artifacts-tab",
+      "relation": "related_surface",
+      "status": "documented or contextual association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "flow:grok-bot-page-lifecycle",
+      "relation": "has_documented_flow",
+      "status": "official documentation; not runtime test"
+    },
+    {
+      "from": "flow:grok-bot-page-lifecycle",
+      "to": "source:grok-bot-files",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "flow:grok-bot-page-lifecycle",
+      "to": "view:grok-bot:pages",
+      "relation": "related_surface",
+      "status": "documented or contextual association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "flow:grok-bot-library-discovery",
+      "relation": "has_documented_flow",
+      "status": "official documentation; not runtime test"
+    },
+    {
+      "from": "flow:grok-bot-library-discovery",
+      "to": "source:grok-bot-files",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "flow:grok-bot-library-discovery",
+      "to": "view:grok-bot:library",
+      "relation": "related_surface",
+      "status": "documented or contextual association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "flow:grok-bot-page-sharing",
+      "relation": "has_documented_flow",
+      "status": "official documentation; not runtime test"
+    },
+    {
+      "from": "flow:grok-bot-page-sharing",
+      "to": "source:grok-bot-files",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "flow:grok-bot-page-sharing",
+      "to": "view:grok-bot:pages",
+      "relation": "related_surface",
+      "status": "documented or contextual association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "flow:gemini-canvas-debug",
+      "relation": "has_documented_flow",
+      "status": "official documentation; not runtime test"
+    },
+    {
+      "from": "flow:gemini-canvas-debug",
+      "to": "source:gemini-canvas",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "flow:gemini-canvas-debug",
+      "to": "view:gemini:canvas",
+      "relation": "related_surface",
+      "status": "documented or contextual association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "flow:gemini-canvas-sharing",
+      "relation": "has_documented_flow",
+      "status": "official documentation; not runtime test"
+    },
+    {
+      "from": "flow:gemini-canvas-sharing",
+      "to": "source:gemini-canvas",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "flow:gemini-canvas-sharing",
+      "to": "view:gemini:canvas",
+      "relation": "related_surface",
+      "status": "documented or contextual association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "flow:gemini-notebook-flashcard-review",
+      "relation": "has_documented_flow",
+      "status": "official documentation; not runtime test"
+    },
+    {
+      "from": "flow:gemini-notebook-flashcard-review",
+      "to": "source:gemini-notebook-quiz",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "flow:gemini-notebook-flashcard-review",
+      "to": "view:gemini-notebook:full-screen-study-view",
+      "relation": "related_surface",
+      "status": "documented or contextual association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "flow:gemini-notebook-quiz-review",
+      "relation": "has_documented_flow",
+      "status": "official documentation; not runtime test"
+    },
+    {
+      "from": "flow:gemini-notebook-quiz-review",
+      "to": "source:gemini-notebook-quiz",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "flow:gemini-notebook-quiz-review",
+      "to": "view:gemini-notebook:full-screen-study-view",
+      "relation": "related_surface",
+      "status": "documented or contextual association"
     }
   ],
   "backlog": [
@@ -4651,6 +5077,7 @@
   "provenance": [
     "docs/references/ui-ux-research-sources/chatgpt-space-views-and-composable-pages-2026-11-26.json",
     "docs/references/ui-ux-research-sources/ai-product-views-and-artifacts-2026-11-26.json",
-    "docs/references/ui-ux-research-sources/ai-product-gap-delta-2026-11-26.json"
+    "docs/references/ui-ux-research-sources/ai-product-gap-delta-2026-11-26.json",
+    "docs/references/ui-ux-research-sources/ai-product-documented-flows-2026-11-26.json"
   ]
 }

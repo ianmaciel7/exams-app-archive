@@ -11,7 +11,9 @@ def projection(records):
     return {"version": 1, "scope": "public research metadata only",
             "records": [{**{k: r.get(k) for k in fields},
                          "keywords": r["record"].get("keywords", []),
-                         "description": r["record"].get("definition") or r["record"].get("purpose") or ""}
+                         "media_url": r["record"].get("url") if r["kind"] == "visual" else None,
+                         "steps": r["record"].get("steps", []),
+                         "description": r["record"].get("definition") or r["record"].get("purpose") or r["record"].get("description") or ""}
                         for r in records],
             "audit": audit(records)}
 

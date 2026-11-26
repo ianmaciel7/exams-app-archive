@@ -47,3 +47,9 @@ Product → feature observation → official source; product → output → comp
 ## Ingestion contract
 
 Every benchmark must resolve source IDs centrally, preserve stable observation IDs and link product, feature, view, output and evidence as supported. Record date, platform, plan, rights, evidence type and exact source. Unknown is not absent. Capture before/after, trigger, input, focus, motion, error and recovery for actual interactions. Validate IDs/edges/sources and evidence status before merging. No FTS rebuild, no plugin release claimed.
+
+## Documented flows and public retrieval — 2026-11-26
+
+- [Twelve documented flows](../ui-ux-research-sources/ai-product-documented-flows-2026-11-26.md), with source-specific persistence boundaries and explicit untested behavior.
+- Graph now has 308 nodes and 426 edges; prior counts above are historical snapshots.
+- Public research FTS projects recorded views, outputs, visual references and documented flows. Candidate component/state nodes are excluded from search evidence. Existing pattern records are retained; graph feature observations remain centrally indexed without a third duplicate projection. CI and deployment are separate validation gates.

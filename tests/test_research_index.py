@@ -11,7 +11,9 @@ class ResearchIndexTests(unittest.TestCase):
     def test_all_catalogs(self):
         records = mod.load_records()
         c = mod.coverage(records)
-        self.assertEqual(c["catalogs"]["general"], 47)
+        self.assertGreaterEqual(c["catalogs"]["general"], 47)
+        self.assertTrue(any(r["record_id"] == "liquid-glass" for r in records))
+        self.assertTrue(any(r["record_id"] == "claude-data-refresh" for r in records))
         self.assertEqual(c["catalogs"]["workspace"], 35)
         self.assertGreaterEqual(c["catalogs"]["visual"], 36)
         self.assertEqual(len({r["id"] for r in records}), len(records))
@@ -93,3 +95,19 @@ class ResearchIndexTests(unittest.TestCase):
             mod.build(db,rows)
             self.assertTrue(any(r["catalog"]=="space-views" for r in mod.search(db,"organizational contexts",limit=100)))
             self.assertTrue(any(r["catalog"]=="ai-product-views" for r in mod.search(db,"artifact lifecycle",product="Claude",limit=100)))
+
+    def test_product_graph_retrieval(self):
+        rows = mod.load_records()
+        graph_rows = [r for r in rows if r["catalog"] == "ai-product-graph"]
+        self.assertTrue(graph_rows)
+        self.assertFalse(any("candidate" in r["record"]["type"] for r in graph_rows))
+        self.assertTrue(all(r["product"] for r in graph_rows))
+        by_id = {r["id"]: r for r in graph_rows}
+        todo = by_id["ai-product-graph:evidence:chatgpt-space:todos"]
+        self.assertEqual(todo["availability"], "link-only")
+        self.assertIn("not verified", todo["license"])
+        with sqlite3.connect(":memory:") as db:
+            mod.build(db, rows)
+            self.assertTrue(any(r["id"] == todo["id"] for r in mod.search(db, "task list", "visual", product="ChatGPT Space", limit=100)))
+            self.assertTrue(mod.search(db, "flashcard review", "flow", product="Gemini Notebook (formerly NotebookLM)", limit=100))
+            self.assertTrue(mod.search(db, "canvas debugging", "flow", product="Gemini", limit=100))

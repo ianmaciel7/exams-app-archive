@@ -18,6 +18,19 @@ function render() {
     const card = document.createElement("article");
     card.append(element("h2", r.title), element("p", [r.kind, r.product, r.availability, r.date, r.license].filter(Boolean).join(" · ")));
     if (r.description) card.append(element("p", r.description));
+    if (Array.isArray(r.steps) && r.steps.length) {
+      const steps = document.createElement("ol");
+      for (const step of r.steps) steps.append(element("li", step));
+      card.append(steps);
+    }
+    if (r.media_url) {
+      try {
+        const url = new URL(r.media_url);
+        if (url.protocol === "https:" && !url.username && !url.password) {
+          const media = element("a", "Original media (external)"); media.href = url.href; media.rel = "noopener noreferrer"; card.append(media);
+        }
+      } catch { /* unavailable media URL */ }
+    }
     card.append(element("p", r.id + " · " + r.catalog_path));
     for (const source of r.sources || []) {
       let url;
@@ -36,8 +49,9 @@ async function load() {
   const response = await fetch("./research.json");
   if (!response.ok) throw new Error("Catálogo indisponível");
   records = (await response.json()).records;
-  for (const key of ["product", "availability"]) {
+  for (const key of ["kind", "product", "availability"]) {
     for (const value of [...new Set(records.map(r => r[key]).filter(Boolean))].sort()) {
+      if ([...byId(key).options].some(o => o.value === value)) continue;
       const option = element("option", value); option.value = value; byId(key).append(option);
     }
   }

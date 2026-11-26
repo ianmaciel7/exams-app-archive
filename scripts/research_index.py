@@ -110,6 +110,57 @@ def supplemental_records(base=BASE):
             for item in doc[key]:
                 yield project(item,"pattern")
 
+
+def product_graph_records(base=BASE):
+    """Project the reviewed product graph without treating candidates as evidence."""
+    path = base / "interface-pattern-library/ai-product-knowledge-graph.json"
+    raw = path.read_bytes()
+    doc = json.loads(raw)
+    nodes = {n["id"]: n for n in doc["nodes"]}
+    if len(nodes) != len(doc["nodes"]):
+        raise ValueError("Duplicate product graph node")
+    edges = doc["edges"]
+    if any(e["from"] not in nodes or e["to"] not in nodes for e in edges):
+        raise ValueError("Dangling product graph edge")
+    kinds = {"view-or-entry-point": "view", "output": "output",
+             "evidence": "visual", "evidence-lead": "visual",
+             "documented-flow": "flow"}
+    owners = {}
+    links = {}
+    for e in edges:
+        links.setdefault(e["from"], []).append(e)
+        if nodes[e["from"]]["type"] == "product":
+            owners[e["to"]] = nodes[e["from"]]["label"]
+    for e in edges:
+        if e["relation"] == "illustrated_by" and e["from"] in owners:
+            owners[e["to"]] = owners[e["from"]]
+    for ident, n in nodes.items():
+        if n["type"] not in kinds:
+            continue
+        direct = links.get(ident, [])
+        # Only explicit source edges; do not inherit product-level authority.
+        urls = [nodes[e["to"]]["url"] for e in direct
+                if nodes[e["to"]]["type"] == "source"]
+        if any(urlsplit(u).scheme != "https" or not urlsplit(u).hostname
+               or urlsplit(u).username is not None for u in urls):
+            raise ValueError("Invalid public graph source")
+        kind = kinds[n["type"]]
+        product = owners.get(ident) or n.get("product")
+        related = [{"relation": e["relation"], "node": e["to"],
+                    "label": nodes[e["to"]]["label"], "status": e["status"]}
+                   for e in direct]
+        record = dict(n, product=product, relations=related)
+        yield {"id": "ai-product-graph:" + ident, "title": n["label"],
+               "kind": kind, "catalog": "ai-product-graph", "record_id": ident,
+               "catalog_path": "docs/references/interface-pattern-library/ai-product-knowledge-graph.json",
+               "catalog_sha256": digest(raw),
+               "record_sha256": digest(json.dumps(n, ensure_ascii=False, sort_keys=True).encode("utf-8")),
+               "sources": list(dict.fromkeys(urls)), "date": doc["reviewed_on"],
+               "product": product, "confidence": n.get("evidence_status") or n.get("status") or n.get("classification"),
+               "license": n.get("rights"),
+               "availability": "link-only" if kind == "visual" else "cataloged-synthesis",
+               "record": record}
+
 def load_records():
     records, seen = [], set()
     general_sources = json.loads((BASE / "interface-pattern-library/sources.json").read_text(encoding="utf-8"))["sources"]
@@ -152,7 +203,7 @@ def load_records():
                     ("archived-blob-declared" if namespace == "grok-assets" else
                      "link-only" if namespace.endswith("sources") or namespace == "grok-links" else "documented"),
                 "record": item})
-    for row in supplemental_records():
+    for row in (*supplemental_records(), *product_graph_records()):
         if row["id"] in seen:
             raise ValueError(f"Duplicate id: {row['id']}")
         seen.add(row["id"])
@@ -309,7 +360,7 @@ def audit(records):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("query", nargs="?", default="")
-    p.add_argument("--kind", choices=["pattern","source","visual"])
+    p.add_argument("--kind", choices=["pattern","source","visual","view","output","flow"])
     p.add_argument("--limit", type=int, default=20)
     p.add_argument("--db", default=":memory:")
     p.add_argument("--coverage", action="store_true")
