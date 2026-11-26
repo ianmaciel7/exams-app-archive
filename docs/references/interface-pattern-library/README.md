@@ -79,3 +79,8 @@ No claims of a market-share ranking or universal effectiveness. Primary document
 - [Knowledge graph](ai-product-knowledge-graph.md) · [JSON](ai-product-knowledge-graph.json)
 - [Gap delta](../ui-ux-research-sources/ai-product-gap-delta-2026-11-26.md)
 - 34 prior + 9 new product observations, 72 mapped source aliases. Current catalog: 90 patterns and 573 sources; historical entries retained. No live UI validation or plugin release claimed.
+
+## Editor contracts and transitions — 2026-11-26
+
+- [16 observations and three documented sequences](../ui-ux-research-sources/ai-product-editor-contracts-2026-11-26.md)
+- Graph: 348 nodes, 528 edges. Official text-derived contracts are explicitly distinct from runtime observations. No visual or motion measurement claim.

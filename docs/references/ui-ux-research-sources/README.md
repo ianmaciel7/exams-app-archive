@@ -160,3 +160,7 @@ Registrar URLs originais e redirects, datas de consulta, fonte e status (verific
 ## Product availability and state boundaries
 
 - [Comparison and evidence](ai-product-availability-and-state-boundaries-2026-11-26.md) · [Structured matrix](ai-product-availability-and-state-boundaries-2026-11-26.json)
+
+## Editor contracts and state sequences
+
+[Research](ai-product-editor-contracts-2026-11-26.md) · [JSON](ai-product-editor-contracts-2026-11-26.json)

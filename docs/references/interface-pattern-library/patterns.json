@@ -1282,6 +1282,214 @@
       ],
       "classification": "official documented behavior; acceptance checks not executed",
       "product": "Gemini Notebook (formerly NotebookLM)"
+    },
+    {
+      "id": "claude-editor-region-navigation",
+      "family": "ai-product-observation",
+      "name": "Editor region navigation",
+      "kind": "Product-specific documented behavior",
+      "definition": "F6 and Shift+F6 move among top bar, canvas/slide and properties area; Tab and Escape handle the conversation/artifact boundary.",
+      "guardrail": "Test forward/backward navigation, focus restoration and nested edit mode.",
+      "source_ids": [
+        "claude-artifact-keyboard"
+      ],
+      "classification": "official documentation or announcement; runtime untested",
+      "product": "Claude"
+    },
+    {
+      "id": "claude-hierarchical-canvas-focus",
+      "family": "ai-product-observation",
+      "name": "Hierarchical canvas focus",
+      "kind": "Product-specific documented behavior",
+      "definition": "Enter/Return moves into selected artboards or nested groups; Tab navigates peers; Shift+Return moves up one level. Escape exits artboard then clears selection.",
+      "guardrail": "Test parent/child navigation, keyboard text editing and visible selection.",
+      "source_ids": [
+        "claude-design"
+      ],
+      "classification": "official documentation or announcement; runtime untested",
+      "product": "Claude"
+    },
+    {
+      "id": "claude-selection-toolbar-condition",
+      "family": "ai-product-observation",
+      "name": "Selection toolbar conditional visibility",
+      "kind": "Product-specific documented behavior",
+      "definition": "A floating selection toolbar is available when properties panel is closed; F6 can reach it and arrows navigate its controls. Escape returns to the canvas preserving selection.",
+      "guardrail": "Test selection, inspector open/closed, arrow navigation and restored focus.",
+      "source_ids": [
+        "claude-design"
+      ],
+      "classification": "official documentation or announcement; runtime untested",
+      "product": "Claude"
+    },
+    {
+      "id": "claude-design-edit-channel",
+      "family": "ai-product-observation",
+      "name": "Scope-specific editing channel",
+      "kind": "Product-specific documented behavior",
+      "definition": "Comments target component changes; chat is used for broader structure; direct manipulation adjusts geometry and alignment.",
+      "guardrail": "Compare selected element, comment and broader request; do not infer exact pixel behavior.",
+      "source_ids": [
+        "claude-design"
+      ],
+      "classification": "official documentation or announcement; runtime untested",
+      "product": "Claude"
+    },
+    {
+      "id": "claude-design-keyboard-limit",
+      "family": "ai-product-observation",
+      "name": "Documented keyboard limitations",
+      "kind": "Product-specific documented behavior",
+      "definition": "Placing new design text, shapes, notes or artboards requires pointer input per guide. Noninteractive generated web artifacts may be skipped by Tab and may not scroll with arrows.",
+      "guardrail": "Verify keyboard-only creation and scroll fallback; do not label entire editor accessible.",
+      "source_ids": [
+        "claude-artifact-keyboard"
+      ],
+      "classification": "official documentation or announcement; runtime untested",
+      "product": "Claude"
+    },
+    {
+      "id": "claude-motion-code-output",
+      "family": "ai-product-observation",
+      "name": "Code-based motion artifact",
+      "kind": "Product-specific documented behavior",
+      "definition": "Motion animates existing content as code rather than generating realistic footage. Edit timing or content through chat or editor; export MP4.",
+      "guardrail": "Verify local change scope, playback, export and timing; no runtime measurement.",
+      "source_ids": [
+        "claude-motion"
+      ],
+      "classification": "official documentation or announcement; runtime untested",
+      "product": "Claude"
+    },
+    {
+      "id": "claude-design-system-sync",
+      "family": "ai-product-observation",
+      "name": "Design-system artifact and handoff",
+      "kind": "Product-specific documented behavior",
+      "definition": "Design systems are reusable artifacts sourced from design references or code; documented /design-sync workflow can connect real components to design and implementation.",
+      "guardrail": "Verify source ownership, import, handoff and fidelity without assuming perfect parity.",
+      "source_ids": [
+        "claude-design-systems"
+      ],
+      "classification": "official documentation or announcement; runtime untested",
+      "product": "Claude"
+    },
+    {
+      "id": "gemini-direct-file-edit",
+      "family": "ai-product-observation",
+      "name": "Direct document editing in chat",
+      "kind": "Product-specific documented behavior",
+      "definition": "Expand generated files to edit or select content for AI changes; PDF editing supported on web/mobile, other listed file formats web-only per announcement.",
+      "guardrail": "Verify actual route and file type support; direct file editor is not necessarily Canvas.",
+      "source_ids": [
+        "gemini-direct-file-editor"
+      ],
+      "classification": "official documentation or announcement; runtime untested",
+      "product": "Gemini"
+    },
+    {
+      "id": "gemini-notebook-deck-pending-delete",
+      "family": "ai-product-observation",
+      "name": "Staged slide deletion and restore",
+      "kind": "Product-specific documented behavior",
+      "definition": "In revision mode, slides marked for removal are dimmed with a trash icon and can be restored before generating the revised deck.",
+      "guardrail": "Test mark, restore, apply and cancel; capture actual states.",
+      "source_ids": [
+        "gemini-notebook-deck-editor"
+      ],
+      "classification": "official documentation or announcement; runtime untested",
+      "product": "Gemini Notebook (formerly NotebookLM)"
+    },
+    {
+      "id": "gemini-notebook-deck-revision-new-object",
+      "family": "ai-product-observation",
+      "name": "Deck revision creates new output",
+      "kind": "Product-specific documented behavior",
+      "definition": "Revisions generate a new slide deck and consume revision quota; thumbnails can be dragged to reorder in the revision preview.",
+      "guardrail": "Check original unchanged, new identity, ordering, quota and recovery.",
+      "source_ids": [
+        "gemini-notebook-deck-editor"
+      ],
+      "classification": "official documentation or announcement; runtime untested",
+      "product": "Gemini Notebook (formerly NotebookLM)"
+    },
+    {
+      "id": "gemini-notebook-deck-outline-review",
+      "family": "ai-product-observation",
+      "name": "Outline approval boundary",
+      "kind": "Product-specific documented behavior",
+      "definition": "Optional outline review allows feedback before final slide rendering; Proceed ends refinement of that outline. Generation is nonblocking.",
+      "guardrail": "Verify review, proceed, feedback limits, failure and ready notification.",
+      "source_ids": [
+        "gemini-notebook-deck-editor"
+      ],
+      "classification": "official documentation or announcement; runtime untested",
+      "product": "Gemini Notebook (formerly NotebookLM)"
+    },
+    {
+      "id": "gemini-notebook-video-producer-review",
+      "family": "ai-product-observation",
+      "name": "Producer-note approval and scheduling",
+      "kind": "Product-specific documented behavior",
+      "definition": "Video generation can use optional producer-note review before rendering. Generate later schedules without producer notes; after Proceed that plan cannot be further refined.",
+      "guardrail": "Test review vs schedule, render progress, error and cancellation if available.",
+      "source_ids": [
+        "gemini-notebook-video"
+      ],
+      "classification": "official documentation or announcement; runtime untested",
+      "product": "Gemini Notebook (formerly NotebookLM)"
+    },
+    {
+      "id": "gemini-notebook-report-type-choice",
+      "family": "ai-product-observation",
+      "name": "Interactive versus document report",
+      "kind": "Product-specific documented behavior",
+      "definition": "Studio Reports offers interactive Learning Overview and document report generation as distinct options.",
+      "guardrail": "Test template discovery, generation and persistent output behavior.",
+      "source_ids": [
+        "gemini-notebook-reports"
+      ],
+      "classification": "official documentation or announcement; runtime untested",
+      "product": "Gemini Notebook (formerly NotebookLM)"
+    },
+    {
+      "id": "gemini-notebook-audio-formats-playback",
+      "family": "ai-product-observation",
+      "name": "Audio formats and background playback",
+      "kind": "Product-specific documented behavior",
+      "definition": "Audio offers Deep Dive, Brief, Critique and Debate, plus language, length and focus options. Playback speed and background listening are documented.",
+      "guardrail": "Test speed, background playback, loading saved audio and source grounding.",
+      "source_ids": [
+        "gemini-notebook-audio"
+      ],
+      "classification": "official documentation or announcement; runtime untested",
+      "product": "Gemini Notebook (formerly NotebookLM)"
+    },
+    {
+      "id": "gemini-notebook-infographic-export",
+      "family": "ai-product-observation",
+      "name": "Infographic object actions",
+      "kind": "Product-specific documented behavior",
+      "definition": "Generated infographics can be renamed, downloaded as PNG, shared or deleted from the artifact menu.",
+      "guardrail": "Test menu visibility, download rights, sharing and deletion.",
+      "source_ids": [
+        "gemini-notebook-infographic"
+      ],
+      "classification": "official documentation or announcement; runtime untested",
+      "product": "Gemini Notebook (formerly NotebookLM)"
+    },
+    {
+      "id": "grok-bot-team-page-sharing-policy",
+      "family": "ai-product-observation",
+      "name": "Administrator page-sharing policy",
+      "kind": "Product-specific documented behavior",
+      "definition": "Team admins can configure team-wide, specific-teammate or disabled page sharing as feature rollout reaches their team.",
+      "guardrail": "Test disabled audience messaging and admin scope; not a live permission test.",
+      "source_ids": [
+        "grok-bot-team-policy"
+      ],
+      "classification": "official documentation or announcement; runtime untested",
+      "product": "Grok Bot"
     }
   ]
 }
