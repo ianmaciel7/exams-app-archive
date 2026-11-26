@@ -3391,6 +3391,606 @@
       ],
       "limitations": "exact takeover confirmation; connection recovery; focus management; transition timing",
       "evidence_status": "documented flow; runtime not tested"
+    },
+    {
+      "id": "creation:chatgpt-space:slash-menu:generate",
+      "type": "documented-creation-option",
+      "label": "Generate",
+      "product": "ChatGPT Space",
+      "description": "Generate draft text",
+      "category": "ai-command",
+      "group": "slash-menu",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:chatgpt-space:slash-menu:visualize",
+      "type": "documented-creation-option",
+      "label": "Visualize",
+      "product": "ChatGPT Space",
+      "description": "Generate interactive content",
+      "category": "ai-command",
+      "group": "slash-menu",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:chatgpt-space:slash-menu:page",
+      "type": "documented-creation-option",
+      "label": "Page",
+      "product": "ChatGPT Space",
+      "description": "Create a child page",
+      "category": "child-object",
+      "group": "slash-menu",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:chatgpt-space:slash-menu:image",
+      "type": "documented-creation-option",
+      "label": "Image",
+      "product": "ChatGPT Space",
+      "description": "Generate or attach an image",
+      "category": "media-block",
+      "group": "slash-menu",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:chatgpt-space:slash-menu:file",
+      "type": "documented-creation-option",
+      "label": "File",
+      "product": "ChatGPT Space",
+      "description": "Attach a downloadable file",
+      "category": "media-block",
+      "group": "slash-menu",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:chatgpt-space:slash-menu:agent-instructions",
+      "type": "documented-creation-option",
+      "label": "Agent Instructions",
+      "product": "ChatGPT Space",
+      "description": "Provide agent guidance",
+      "category": "agent-instruction",
+      "group": "slash-menu",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:chatgpt-space:slash-menu:heading-1",
+      "type": "documented-creation-option",
+      "label": "Heading 1",
+      "product": "ChatGPT Space",
+      "description": "Heading level one",
+      "category": "format-block",
+      "group": "slash-menu",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:chatgpt-space:slash-menu:heading-2",
+      "type": "documented-creation-option",
+      "label": "Heading 2",
+      "product": "ChatGPT Space",
+      "description": "Heading level two",
+      "category": "format-block",
+      "group": "slash-menu",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:chatgpt-space:slash-menu:heading-3",
+      "type": "documented-creation-option",
+      "label": "Heading 3",
+      "product": "ChatGPT Space",
+      "description": "Heading level three",
+      "category": "format-block",
+      "group": "slash-menu",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:chatgpt-space:slash-menu:bulleted-list",
+      "type": "documented-creation-option",
+      "label": "Bulleted list",
+      "product": "ChatGPT Space",
+      "description": "Unordered list",
+      "category": "format-block",
+      "group": "slash-menu",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:chatgpt-space:slash-menu:numbered-list",
+      "type": "documented-creation-option",
+      "label": "Numbered list",
+      "product": "ChatGPT Space",
+      "description": "Ordered list",
+      "category": "format-block",
+      "group": "slash-menu",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:chatgpt-space:slash-menu:task",
+      "type": "documented-creation-option",
+      "label": "Task",
+      "product": "ChatGPT Space",
+      "description": "Action for Codex; not synonymous with checklist",
+      "category": "action-block",
+      "group": "slash-menu",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:chatgpt-space:slash-menu:checklist",
+      "type": "documented-creation-option",
+      "label": "Checklist",
+      "product": "ChatGPT Space",
+      "description": "Checkable list",
+      "category": "format-block",
+      "group": "slash-menu",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:chatgpt-space:slash-menu:quote",
+      "type": "documented-creation-option",
+      "label": "Quote",
+      "product": "ChatGPT Space",
+      "description": "Quoted passage",
+      "category": "format-block",
+      "group": "slash-menu",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:chatgpt-space:slash-menu:code",
+      "type": "documented-creation-option",
+      "label": "Code",
+      "product": "ChatGPT Space",
+      "description": "Code content",
+      "category": "format-block",
+      "group": "slash-menu",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:chatgpt-space:slash-menu:table",
+      "type": "documented-creation-option",
+      "label": "Table",
+      "product": "ChatGPT Space",
+      "description": "Tabular content",
+      "category": "format-block",
+      "group": "slash-menu",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:chatgpt-space:slash-menu:divider",
+      "type": "documented-creation-option",
+      "label": "Divider",
+      "product": "ChatGPT Space",
+      "description": "Separate sections",
+      "category": "format-block",
+      "group": "slash-menu",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:chatgpt-space:slash-menu:link-to-page",
+      "type": "documented-creation-option",
+      "label": "Link to page",
+      "product": "ChatGPT Space",
+      "description": "Reference existing page without reparenting",
+      "category": "reference-block",
+      "group": "slash-menu",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:chatgpt-space:slash-menu:prompt",
+      "type": "documented-creation-option",
+      "label": "Prompt",
+      "product": "ChatGPT Space",
+      "description": "Request reader can run in chat",
+      "category": "reusable-prompt",
+      "group": "slash-menu",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:chatgpt-space:slash-menu:highlight",
+      "type": "documented-creation-option",
+      "label": "Highlight",
+      "product": "ChatGPT Space",
+      "description": "Emphasized note",
+      "category": "format-block",
+      "group": "slash-menu",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:chatgpt-space:slash-menu:files",
+      "type": "documented-creation-option",
+      "label": "Files",
+      "product": "ChatGPT Space",
+      "description": "Mention existing file",
+      "category": "reference-block",
+      "group": "slash-menu",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:chatgpt-space:slash-menu:pages",
+      "type": "documented-creation-option",
+      "label": "Pages",
+      "product": "ChatGPT Space",
+      "description": "Mention existing page",
+      "category": "reference-block",
+      "group": "slash-menu",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:chatgpt-space:slash-menu:chats",
+      "type": "documented-creation-option",
+      "label": "Chats",
+      "product": "ChatGPT Space",
+      "description": "Mention existing chat",
+      "category": "reference-block",
+      "group": "slash-menu",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:chatgpt-space:page-templates:welcome-to-space",
+      "type": "documented-creation-option",
+      "label": "Welcome to Space",
+      "product": "ChatGPT Space",
+      "description": "Introductory page; earlier indexed official marketing image alt text; current feature page no longer exposes this gallery in retrieved HTML",
+      "category": "page-template-lead",
+      "group": "page-templates",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:chatgpt-space:page-templates:daily-to-do-list",
+      "type": "documented-creation-option",
+      "label": "Daily to-do list",
+      "product": "ChatGPT Space",
+      "description": "Task-oriented page; earlier indexed official marketing image alt text; current feature page no longer exposes this gallery in retrieved HTML",
+      "category": "page-template-lead",
+      "group": "page-templates",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:chatgpt-space:page-templates:project-dashboard",
+      "type": "documented-creation-option",
+      "label": "Project dashboard",
+      "product": "ChatGPT Space",
+      "description": "Project status page; earlier indexed official marketing image alt text; current feature page no longer exposes this gallery in retrieved HTML",
+      "category": "page-template-lead",
+      "group": "page-templates",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:claude:editor-templates:docs",
+      "type": "documented-creation-option",
+      "label": "Docs",
+      "product": "Claude",
+      "description": "Rich text documents",
+      "category": "typed-editor-template",
+      "group": "editor-templates",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:claude:editor-templates:slides",
+      "type": "documented-creation-option",
+      "label": "Slides",
+      "product": "Claude",
+      "description": "Editable presentations",
+      "category": "typed-editor-template",
+      "group": "editor-templates",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:claude:editor-templates:design",
+      "type": "documented-creation-option",
+      "label": "Design",
+      "product": "Claude",
+      "description": "Visual designs and prototypes",
+      "category": "typed-editor-template",
+      "group": "editor-templates",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:claude:editor-templates:data",
+      "type": "documented-creation-option",
+      "label": "Data",
+      "product": "Claude",
+      "description": "Connected data dashboards and narratives",
+      "category": "typed-editor-template",
+      "group": "editor-templates",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:claude:editor-templates:sheets",
+      "type": "documented-creation-option",
+      "label": "Sheets",
+      "product": "Claude",
+      "description": "Collaborative spreadsheets; beta",
+      "category": "typed-editor-template",
+      "group": "editor-templates",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:claude:editor-templates:whiteboards",
+      "type": "documented-creation-option",
+      "label": "Whiteboards",
+      "product": "Claude",
+      "description": "Collaborative boards; beta",
+      "category": "typed-editor-template",
+      "group": "editor-templates",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:claude:editor-templates:motion",
+      "type": "documented-creation-option",
+      "label": "Motion",
+      "product": "Claude",
+      "description": "Code-based animations; beta",
+      "category": "typed-editor-template",
+      "group": "editor-templates",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:grok-bot:bot-templates:share-as-template",
+      "type": "documented-creation-option",
+      "label": "Share as Template",
+      "product": "Grok Bot",
+      "description": "Publish reusable agent configuration",
+      "category": "agent-template-action",
+      "group": "bot-templates",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:grok-bot:bot-templates:import-bot",
+      "type": "documented-creation-option",
+      "label": "Import Bot",
+      "product": "Grok Bot",
+      "description": "Create own agent copy from a shared template",
+      "category": "agent-template-action",
+      "group": "bot-templates",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:chatgpt-space:visualize:app",
+      "type": "documented-creation-option",
+      "label": "App",
+      "product": "ChatGPT Space",
+      "description": "Generated application; distinct from page templates",
+      "category": "visualization-starting-point",
+      "group": "visualize",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:chatgpt-space:visualize:screen-design",
+      "type": "documented-creation-option",
+      "label": "Screen design",
+      "product": "ChatGPT Space",
+      "description": "Interactive screen example; distinct from page templates",
+      "category": "visualization-starting-point",
+      "group": "visualize",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:chatgpt-space:visualize:widget",
+      "type": "documented-creation-option",
+      "label": "Widget",
+      "product": "ChatGPT Space",
+      "description": "Generated small tool; distinct from page templates",
+      "category": "visualization-starting-point",
+      "group": "visualize",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:chatgpt-space:visualize:diagram",
+      "type": "documented-creation-option",
+      "label": "Diagram",
+      "product": "ChatGPT Space",
+      "description": "Generated visual explanation; distinct from page templates",
+      "category": "visualization-starting-point",
+      "group": "visualize",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:gemini-notebook:report-templates:faq",
+      "type": "documented-creation-option",
+      "label": "FAQ",
+      "product": "Gemini Notebook (formerly NotebookLM)",
+      "description": "Frequently asked questions report",
+      "category": "report-template",
+      "group": "report-templates",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:gemini-notebook:report-templates:study-guide",
+      "type": "documented-creation-option",
+      "label": "Study guide",
+      "product": "Gemini Notebook (formerly NotebookLM)",
+      "description": "Study material report",
+      "category": "report-template",
+      "group": "report-templates",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:gemini-notebook:report-templates:briefing-document",
+      "type": "documented-creation-option",
+      "label": "Briefing document",
+      "product": "Gemini Notebook (formerly NotebookLM)",
+      "description": "Briefing report",
+      "category": "report-template",
+      "group": "report-templates",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:gemini-notebook:report-templates:custom-report",
+      "type": "documented-creation-option",
+      "label": "Custom report",
+      "product": "Gemini Notebook (formerly NotebookLM)",
+      "description": "User-specified report",
+      "category": "report-template",
+      "group": "report-templates",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:gemini-notebook:report-templates:ai-suggested-report",
+      "type": "documented-creation-option",
+      "label": "AI suggested report",
+      "product": "Gemini Notebook (formerly NotebookLM)",
+      "description": "Suggested report type",
+      "category": "report-template",
+      "group": "report-templates",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:gemini:generated-examples:game",
+      "type": "documented-creation-option",
+      "label": "Game",
+      "product": "Gemini",
+      "description": "Interactive learning or entertainment app; not a verified gallery template",
+      "category": "generated-example",
+      "group": "generated-examples",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:gemini:generated-examples:quiz",
+      "type": "documented-creation-option",
+      "label": "Quiz",
+      "product": "Gemini",
+      "description": "Generated question tool; not a verified gallery template",
+      "category": "generated-example",
+      "group": "generated-examples",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:gemini:generated-examples:task-list",
+      "type": "documented-creation-option",
+      "label": "Task list",
+      "product": "Gemini",
+      "description": "Generated checklist app; not a verified gallery template",
+      "category": "generated-example",
+      "group": "generated-examples",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:gemini:generated-examples:pricing-calculator",
+      "type": "documented-creation-option",
+      "label": "Pricing calculator",
+      "product": "Gemini",
+      "description": "Generated calculator; not a verified gallery template",
+      "category": "generated-example",
+      "group": "generated-examples",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:gemini:generated-examples:dashboard",
+      "type": "documented-creation-option",
+      "label": "Dashboard",
+      "product": "Gemini",
+      "description": "Generated data view; not a verified gallery template",
+      "category": "generated-example",
+      "group": "generated-examples",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "creation:gemini:generated-examples:flashcards",
+      "type": "documented-creation-option",
+      "label": "Flashcards",
+      "product": "Gemini",
+      "description": "Generated study tool; not a verified gallery template",
+      "category": "generated-example",
+      "group": "generated-examples",
+      "evidence_status": "documented label or example; no authenticated UI test"
+    },
+    {
+      "id": "feature:chatgpt-space-task-vs-prompt-checklist",
+      "type": "feature-observation",
+      "label": "Action, reusable prompt and checklist",
+      "central_pattern_id": "chatgpt-space-task-vs-prompt-checklist",
+      "description": "Task is an action for Codex; Prompt stores a request that a reader can open in chat; Checklist represents checkable items. Do not equate a generated tracker with a scheduled task.",
+      "acceptance": "Verify execution confirmation, stored state and manual completion separately.",
+      "evidence_status": "official documentation; acceptance not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:chatgpt-space-inherited-access-reparent",
+      "type": "feature-observation",
+      "label": "Inherited access and reparenting",
+      "central_pattern_id": "chatgpt-space-inherited-access-reparent",
+      "description": "A subpage inherits access from its parent or space. Removing a direct invitation does not remove inherited access. Moving a page requires edit access to both and can alter readers.",
+      "acceptance": "Verify direct/inherited access, preview before move and revocation.",
+      "evidence_status": "official documentation; acceptance not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:chatgpt-space-locked-chat-file-visibility",
+      "type": "feature-observation",
+      "label": "Locked chat file visibility",
+      "central_pattern_id": "chatgpt-space-locked-chat-file-visibility",
+      "description": "Files saved from locked chats are hidden from Space and available only in their originating chat until unlocked; separately linked files retain original access.",
+      "acceptance": "Check source access without surfacing protected content in search.",
+      "evidence_status": "official documentation; acceptance not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:claude-template-editor-vs-generic-artifact",
+      "type": "feature-observation",
+      "label": "Typed template versus generic artifact",
+      "central_pattern_id": "claude-template-editor-vs-generic-artifact",
+      "description": "Seven named templates correspond to purpose-specific editors. Generic interactive tools can also be created from chat, but are not a separately named eighth template in the guide.",
+      "acceptance": "Test creation path, editor identity, availability and export per type.",
+      "evidence_status": "official documentation; acceptance not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:claude-batch-scoped-file-edit",
+      "type": "feature-observation",
+      "label": "Batched edit requests across Markdown files",
+      "central_pattern_id": "claude-batch-scoped-file-edit",
+      "description": "When Claude drafts multiple Markdown files, edit requests can be queued across files; the file list indicates waiting requests, then one message applies the batch.",
+      "acceptance": "Test per-file pending requests, submit, errors, partial application and undo.",
+      "evidence_status": "official documentation; acceptance not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:grok-bot-agent-template-copy-identity",
+      "type": "feature-observation",
+      "label": "Agent template creates separate copy",
+      "central_pattern_id": "grok-bot-agent-template-copy-identity",
+      "description": "A template shares reusable configuration rather than conversations, computer state or logins. Publishing and updating template, importing a new copy and sharing one live Bot are distinct.",
+      "acceptance": "Test copied identity, permission, update and unpublish semantics.",
+      "evidence_status": "official documentation; acceptance not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-notebook-source-label-auto-group",
+      "type": "feature-observation",
+      "label": "Source labels and grouping",
+      "central_pattern_id": "gemini-notebook-source-label-auto-group",
+      "description": "With five or more sources, automatic labeling may organize them by topic; users may rename, add, remove labels and move sources.",
+      "acceptance": "Test threshold, manual relabel, selection and unchanged source identity.",
+      "evidence_status": "official documentation; acceptance not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-notebook-generation-prompt-provenance",
+      "type": "feature-observation",
+      "label": "View saved generation prompt",
+      "central_pattern_id": "gemini-notebook-generation-prompt-provenance",
+      "description": "Artifact menu exposes customization prompts for supported types, with viewer shortcut for some study outputs.",
+      "acceptance": "Verify original prompt, permissions, reuse and distinction from current output.",
+      "evidence_status": "official documentation; acceptance not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-notebook-export-snapshot-boundary",
+      "type": "feature-observation",
+      "label": "Export snapshot and citation sheets",
+      "central_pattern_id": "gemini-notebook-export-snapshot-boundary",
+      "description": "Data table exports use separate data and citation tabs in Sheets; report tables may use individual tabs. Exported changes do not sync back and notebook permissions are not carried over.",
+      "acceptance": "Test export, source attribution, new identity, independent permissions and edits.",
+      "evidence_status": "official documentation; acceptance not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "evidence:chatgpt-space:dot-anchored-comment",
+      "type": "evidence",
+      "label": "Agent comment anchored to selected text",
+      "url": "https://images.ctfassets.net/8su2tbn87fck/3Qla4T4LN8VWbihEmvjiKc/82b87d1902931662c9b4b3a35922615f/chatgpt-space-dot.png?fm=webp&q=80&w=948",
+      "description": "Promotional composite showing highlighted text with agent name tag, comment card, reply input, resolve/checkmark and reaction/overflow icons. Does not establish live cursor, animation or permissions.",
+      "status": "visually inspected official marketing image 2026-11-26; not runtime evidence",
+      "storage": "link-only",
+      "rights": "publisher media; redistribution license not verified"
     }
   ],
   "edges": [
@@ -7197,6 +7797,1086 @@
       "to": "view:grok-bot:computer",
       "relation": "related_surface",
       "status": "documented"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "creation:chatgpt-space:slash-menu:generate",
+      "relation": "has_creation_option",
+      "status": "ai-command"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:generate",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:generate",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "creation:chatgpt-space:slash-menu:visualize",
+      "relation": "has_creation_option",
+      "status": "ai-command"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:visualize",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:visualize",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "creation:chatgpt-space:slash-menu:page",
+      "relation": "has_creation_option",
+      "status": "child-object"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:page",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:page",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "creation:chatgpt-space:slash-menu:image",
+      "relation": "has_creation_option",
+      "status": "media-block"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:image",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:image",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "creation:chatgpt-space:slash-menu:file",
+      "relation": "has_creation_option",
+      "status": "media-block"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:file",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:file",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "creation:chatgpt-space:slash-menu:agent-instructions",
+      "relation": "has_creation_option",
+      "status": "agent-instruction"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:agent-instructions",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:agent-instructions",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "creation:chatgpt-space:slash-menu:heading-1",
+      "relation": "has_creation_option",
+      "status": "format-block"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:heading-1",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:heading-1",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "creation:chatgpt-space:slash-menu:heading-2",
+      "relation": "has_creation_option",
+      "status": "format-block"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:heading-2",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:heading-2",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "creation:chatgpt-space:slash-menu:heading-3",
+      "relation": "has_creation_option",
+      "status": "format-block"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:heading-3",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:heading-3",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "creation:chatgpt-space:slash-menu:bulleted-list",
+      "relation": "has_creation_option",
+      "status": "format-block"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:bulleted-list",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:bulleted-list",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "creation:chatgpt-space:slash-menu:numbered-list",
+      "relation": "has_creation_option",
+      "status": "format-block"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:numbered-list",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:numbered-list",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "creation:chatgpt-space:slash-menu:task",
+      "relation": "has_creation_option",
+      "status": "action-block"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:task",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:task",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "creation:chatgpt-space:slash-menu:checklist",
+      "relation": "has_creation_option",
+      "status": "format-block"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:checklist",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:checklist",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "creation:chatgpt-space:slash-menu:quote",
+      "relation": "has_creation_option",
+      "status": "format-block"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:quote",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:quote",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "creation:chatgpt-space:slash-menu:code",
+      "relation": "has_creation_option",
+      "status": "format-block"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:code",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:code",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "creation:chatgpt-space:slash-menu:table",
+      "relation": "has_creation_option",
+      "status": "format-block"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:table",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:table",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "creation:chatgpt-space:slash-menu:divider",
+      "relation": "has_creation_option",
+      "status": "format-block"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:divider",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:divider",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "creation:chatgpt-space:slash-menu:link-to-page",
+      "relation": "has_creation_option",
+      "status": "reference-block"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:link-to-page",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:link-to-page",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "creation:chatgpt-space:slash-menu:prompt",
+      "relation": "has_creation_option",
+      "status": "reusable-prompt"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:prompt",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:prompt",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "creation:chatgpt-space:slash-menu:highlight",
+      "relation": "has_creation_option",
+      "status": "format-block"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:highlight",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:highlight",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "creation:chatgpt-space:slash-menu:files",
+      "relation": "has_creation_option",
+      "status": "reference-block"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:files",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:files",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "creation:chatgpt-space:slash-menu:pages",
+      "relation": "has_creation_option",
+      "status": "reference-block"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:pages",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:pages",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "creation:chatgpt-space:slash-menu:chats",
+      "relation": "has_creation_option",
+      "status": "reference-block"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:chats",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:chatgpt-space:slash-menu:chats",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "creation:chatgpt-space:page-templates:welcome-to-space",
+      "relation": "has_creation_option",
+      "status": "page-template-lead"
+    },
+    {
+      "from": "creation:chatgpt-space:page-templates:welcome-to-space",
+      "to": "source:openai-space-product",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:chatgpt-space:page-templates:welcome-to-space",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "creation:chatgpt-space:page-templates:daily-to-do-list",
+      "relation": "has_creation_option",
+      "status": "page-template-lead"
+    },
+    {
+      "from": "creation:chatgpt-space:page-templates:daily-to-do-list",
+      "to": "source:openai-space-product",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:chatgpt-space:page-templates:daily-to-do-list",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "creation:chatgpt-space:page-templates:project-dashboard",
+      "relation": "has_creation_option",
+      "status": "page-template-lead"
+    },
+    {
+      "from": "creation:chatgpt-space:page-templates:project-dashboard",
+      "to": "source:openai-space-product",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:chatgpt-space:page-templates:project-dashboard",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:claude",
+      "to": "creation:claude:editor-templates:docs",
+      "relation": "has_creation_option",
+      "status": "typed-editor-template"
+    },
+    {
+      "from": "creation:claude:editor-templates:docs",
+      "to": "source:claude-artifacts",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:claude:editor-templates:docs",
+      "to": "view:claude:artifacts-tab",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:claude",
+      "to": "creation:claude:editor-templates:slides",
+      "relation": "has_creation_option",
+      "status": "typed-editor-template"
+    },
+    {
+      "from": "creation:claude:editor-templates:slides",
+      "to": "source:claude-artifacts",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:claude:editor-templates:slides",
+      "to": "view:claude:artifacts-tab",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:claude",
+      "to": "creation:claude:editor-templates:design",
+      "relation": "has_creation_option",
+      "status": "typed-editor-template"
+    },
+    {
+      "from": "creation:claude:editor-templates:design",
+      "to": "source:claude-artifacts",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:claude:editor-templates:design",
+      "to": "view:claude:artifacts-tab",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:claude",
+      "to": "creation:claude:editor-templates:data",
+      "relation": "has_creation_option",
+      "status": "typed-editor-template"
+    },
+    {
+      "from": "creation:claude:editor-templates:data",
+      "to": "source:claude-artifacts",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:claude:editor-templates:data",
+      "to": "view:claude:artifacts-tab",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:claude",
+      "to": "creation:claude:editor-templates:sheets",
+      "relation": "has_creation_option",
+      "status": "typed-editor-template"
+    },
+    {
+      "from": "creation:claude:editor-templates:sheets",
+      "to": "source:claude-artifacts",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:claude:editor-templates:sheets",
+      "to": "view:claude:artifacts-tab",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:claude",
+      "to": "creation:claude:editor-templates:whiteboards",
+      "relation": "has_creation_option",
+      "status": "typed-editor-template"
+    },
+    {
+      "from": "creation:claude:editor-templates:whiteboards",
+      "to": "source:claude-artifacts",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:claude:editor-templates:whiteboards",
+      "to": "view:claude:artifacts-tab",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:claude",
+      "to": "creation:claude:editor-templates:motion",
+      "relation": "has_creation_option",
+      "status": "typed-editor-template"
+    },
+    {
+      "from": "creation:claude:editor-templates:motion",
+      "to": "source:claude-artifacts",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:claude:editor-templates:motion",
+      "to": "view:claude:artifacts-tab",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "creation:grok-bot:bot-templates:share-as-template",
+      "relation": "has_creation_option",
+      "status": "agent-template-action"
+    },
+    {
+      "from": "creation:grok-bot:bot-templates:share-as-template",
+      "to": "source:grok-bot-bots",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:grok-bot:bot-templates:share-as-template",
+      "to": "view:grok-bot:marketplace",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "creation:grok-bot:bot-templates:import-bot",
+      "relation": "has_creation_option",
+      "status": "agent-template-action"
+    },
+    {
+      "from": "creation:grok-bot:bot-templates:import-bot",
+      "to": "source:grok-bot-bots",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:grok-bot:bot-templates:import-bot",
+      "to": "view:grok-bot:marketplace",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "creation:chatgpt-space:visualize:app",
+      "relation": "has_creation_option",
+      "status": "visualization-starting-point"
+    },
+    {
+      "from": "creation:chatgpt-space:visualize:app",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:chatgpt-space:visualize:app",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "creation:chatgpt-space:visualize:screen-design",
+      "relation": "has_creation_option",
+      "status": "visualization-starting-point"
+    },
+    {
+      "from": "creation:chatgpt-space:visualize:screen-design",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:chatgpt-space:visualize:screen-design",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "creation:chatgpt-space:visualize:widget",
+      "relation": "has_creation_option",
+      "status": "visualization-starting-point"
+    },
+    {
+      "from": "creation:chatgpt-space:visualize:widget",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:chatgpt-space:visualize:widget",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "creation:chatgpt-space:visualize:diagram",
+      "relation": "has_creation_option",
+      "status": "visualization-starting-point"
+    },
+    {
+      "from": "creation:chatgpt-space:visualize:diagram",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:chatgpt-space:visualize:diagram",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "creation:gemini-notebook:report-templates:faq",
+      "relation": "has_creation_option",
+      "status": "report-template"
+    },
+    {
+      "from": "creation:gemini-notebook:report-templates:faq",
+      "to": "source:gemini-notebook-create",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:gemini-notebook:report-templates:faq",
+      "to": "view:gemini-notebook:studio",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "creation:gemini-notebook:report-templates:study-guide",
+      "relation": "has_creation_option",
+      "status": "report-template"
+    },
+    {
+      "from": "creation:gemini-notebook:report-templates:study-guide",
+      "to": "source:gemini-notebook-create",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:gemini-notebook:report-templates:study-guide",
+      "to": "view:gemini-notebook:studio",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "creation:gemini-notebook:report-templates:briefing-document",
+      "relation": "has_creation_option",
+      "status": "report-template"
+    },
+    {
+      "from": "creation:gemini-notebook:report-templates:briefing-document",
+      "to": "source:gemini-notebook-create",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:gemini-notebook:report-templates:briefing-document",
+      "to": "view:gemini-notebook:studio",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "creation:gemini-notebook:report-templates:custom-report",
+      "relation": "has_creation_option",
+      "status": "report-template"
+    },
+    {
+      "from": "creation:gemini-notebook:report-templates:custom-report",
+      "to": "source:gemini-notebook-create",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:gemini-notebook:report-templates:custom-report",
+      "to": "view:gemini-notebook:studio",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "creation:gemini-notebook:report-templates:ai-suggested-report",
+      "relation": "has_creation_option",
+      "status": "report-template"
+    },
+    {
+      "from": "creation:gemini-notebook:report-templates:ai-suggested-report",
+      "to": "source:gemini-notebook-create",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:gemini-notebook:report-templates:ai-suggested-report",
+      "to": "view:gemini-notebook:studio",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "creation:gemini:generated-examples:game",
+      "relation": "has_creation_option",
+      "status": "generated-example"
+    },
+    {
+      "from": "creation:gemini:generated-examples:game",
+      "to": "source:gemini-canvas-examples",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:gemini:generated-examples:game",
+      "to": "view:gemini:canvas",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "creation:gemini:generated-examples:quiz",
+      "relation": "has_creation_option",
+      "status": "generated-example"
+    },
+    {
+      "from": "creation:gemini:generated-examples:quiz",
+      "to": "source:gemini-canvas-examples",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:gemini:generated-examples:quiz",
+      "to": "view:gemini:canvas",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "creation:gemini:generated-examples:task-list",
+      "relation": "has_creation_option",
+      "status": "generated-example"
+    },
+    {
+      "from": "creation:gemini:generated-examples:task-list",
+      "to": "source:gemini-canvas-examples",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:gemini:generated-examples:task-list",
+      "to": "view:gemini:canvas",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "creation:gemini:generated-examples:pricing-calculator",
+      "relation": "has_creation_option",
+      "status": "generated-example"
+    },
+    {
+      "from": "creation:gemini:generated-examples:pricing-calculator",
+      "to": "source:gemini-canvas-examples",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:gemini:generated-examples:pricing-calculator",
+      "to": "view:gemini:canvas",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "creation:gemini:generated-examples:dashboard",
+      "relation": "has_creation_option",
+      "status": "generated-example"
+    },
+    {
+      "from": "creation:gemini:generated-examples:dashboard",
+      "to": "source:gemini-canvas-examples",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:gemini:generated-examples:dashboard",
+      "to": "view:gemini:canvas",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "creation:gemini:generated-examples:flashcards",
+      "relation": "has_creation_option",
+      "status": "generated-example"
+    },
+    {
+      "from": "creation:gemini:generated-examples:flashcards",
+      "to": "source:gemini-canvas-examples",
+      "relation": "supported_by",
+      "status": "official text or indexed marketing lead"
+    },
+    {
+      "from": "creation:gemini:generated-examples:flashcards",
+      "to": "view:gemini:canvas",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "feature:chatgpt-space-task-vs-prompt-checklist",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:chatgpt-space-task-vs-prompt-checklist",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:chatgpt-space-task-vs-prompt-checklist",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "feature:chatgpt-space-inherited-access-reparent",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:chatgpt-space-inherited-access-reparent",
+      "to": "source:openai-space-help",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:chatgpt-space-inherited-access-reparent",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "feature:chatgpt-space-locked-chat-file-visibility",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:chatgpt-space-locked-chat-file-visibility",
+      "to": "source:openai-space-help",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:chatgpt-space-locked-chat-file-visibility",
+      "to": "view:chatgpt-space:all",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:claude",
+      "to": "feature:claude-template-editor-vs-generic-artifact",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:claude-template-editor-vs-generic-artifact",
+      "to": "source:claude-artifacts",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:claude-template-editor-vs-generic-artifact",
+      "to": "view:claude:artifacts-tab",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:claude",
+      "to": "feature:claude-batch-scoped-file-edit",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:claude-batch-scoped-file-edit",
+      "to": "source:claude-artifacts",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:claude-batch-scoped-file-edit",
+      "to": "view:claude:artifacts-tab",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "feature:grok-bot-agent-template-copy-identity",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:grok-bot-agent-template-copy-identity",
+      "to": "source:grok-bot-bots",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:grok-bot-agent-template-copy-identity",
+      "to": "view:grok-bot:marketplace",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "feature:gemini-notebook-source-label-auto-group",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:gemini-notebook-source-label-auto-group",
+      "to": "source:gemini-notebook-create",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:gemini-notebook-source-label-auto-group",
+      "to": "view:gemini-notebook:sources",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "feature:gemini-notebook-generation-prompt-provenance",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:gemini-notebook-generation-prompt-provenance",
+      "to": "source:gemini-notebook-create",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:gemini-notebook-generation-prompt-provenance",
+      "to": "view:gemini-notebook:studio",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "feature:gemini-notebook-export-snapshot-boundary",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:gemini-notebook-export-snapshot-boundary",
+      "to": "source:gemini-notebook-create",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:gemini-notebook-export-snapshot-boundary",
+      "to": "output:gemini-notebook:data-tables",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "evidence:chatgpt-space:dot-anchored-comment",
+      "relation": "has_visual_lead",
+      "status": "inspected promotional image"
+    },
+    {
+      "from": "evidence:chatgpt-space:dot-anchored-comment",
+      "to": "source:openai-space-product",
+      "relation": "published_by",
+      "status": "publisher page"
+    },
+    {
+      "from": "view:chatgpt-space:pages",
+      "to": "evidence:chatgpt-space:dot-anchored-comment",
+      "relation": "illustrated_by",
+      "status": "marketing still"
     }
   ],
   "backlog": [
@@ -7328,6 +9008,7 @@
     "docs/references/ui-ux-research-sources/ai-product-documented-flows-2026-11-26.json",
     "docs/references/ui-ux-research-sources/ai-product-availability-and-state-boundaries-2026-11-26.json",
     "docs/references/ui-ux-research-sources/ai-product-editor-contracts-2026-11-26.json",
-    "docs/references/ui-ux-research-sources/ai-product-visual-and-learning-evidence-2026-11-26.json"
+    "docs/references/ui-ux-research-sources/ai-product-visual-and-learning-evidence-2026-11-26.json",
+    "docs/references/ui-ux-research-sources/ai-product-creation-inventory-2026-11-26.json"
   ]
 }

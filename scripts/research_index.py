@@ -126,7 +126,8 @@ def product_graph_records(base=BASE):
              "evidence": "visual", "evidence-lead": "visual",
              "documented-flow": "flow",
              "documented-interaction-contract": "contract",
-             "documented-availability": "availability"}
+             "documented-availability": "availability",
+             "documented-creation-option": "creation-option"}
     owners = {}
     links = {}
     for e in edges:
@@ -362,7 +363,7 @@ def audit(records):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("query", nargs="?", default="")
-    p.add_argument("--kind", choices=["pattern","source","visual","view","output","flow","contract","availability"])
+    p.add_argument("--kind", choices=["pattern","source","visual","view","output","flow","contract","availability","creation-option"])
     p.add_argument("--limit", type=int, default=20)
     p.add_argument("--db", default=":memory:")
     p.add_argument("--coverage", action="store_true")

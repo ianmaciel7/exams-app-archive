@@ -128,3 +128,14 @@ class ResearchIndexTests(unittest.TestCase):
             mod.build(db, rows)
             self.assertTrue(any(r["id"] == row["id"] for r in mod.search(db, "pending deletion", "contract", product="Gemini Notebook (formerly NotebookLM)", limit=100)))
             self.assertTrue(mod.search(db, "motion template", "availability", product="Claude", limit=100))
+
+    def test_creation_option_inventory(self):
+        rows = mod.load_records()
+        options = [r for r in rows if r["kind"] == "creation-option"]
+        self.assertTrue(options)
+        self.assertTrue(all(r["sources"] and r["product"] for r in options))
+        self.assertEqual(len([r for r in options if r["product"] == "Claude" and r["record"]["category"] == "typed-editor-template"]), 7)
+        with sqlite3.connect(":memory:") as db:
+            mod.build(db, rows)
+            self.assertTrue(mod.search(db, "checklist", "creation-option", product="ChatGPT Space", limit=100))
+            self.assertTrue(mod.search(db, "study guide", "creation-option", product="Gemini Notebook (formerly NotebookLM)", limit=100))

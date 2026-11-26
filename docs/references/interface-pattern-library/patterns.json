@@ -1659,6 +1659,123 @@
       ],
       "classification": "official dated documentation; runtime untested",
       "product": "Gemini Notebook (formerly NotebookLM)"
+    },
+    {
+      "id": "chatgpt-space-task-vs-prompt-checklist",
+      "family": "ai-product-observation",
+      "name": "Action, reusable prompt and checklist",
+      "kind": "Product-specific documented behavior",
+      "definition": "Task is an action for Codex; Prompt stores a request that a reader can open in chat; Checklist represents checkable items. Do not equate a generated tracker with a scheduled task.",
+      "guardrail": "Verify execution confirmation, stored state and manual completion separately.",
+      "source_ids": [
+        "openai-space-pages"
+      ],
+      "classification": "official documentation; acceptance not executed",
+      "product": "ChatGPT Space"
+    },
+    {
+      "id": "chatgpt-space-inherited-access-reparent",
+      "family": "ai-product-observation",
+      "name": "Inherited access and reparenting",
+      "kind": "Product-specific documented behavior",
+      "definition": "A subpage inherits access from its parent or space. Removing a direct invitation does not remove inherited access. Moving a page requires edit access to both and can alter readers.",
+      "guardrail": "Verify direct/inherited access, preview before move and revocation.",
+      "source_ids": [
+        "openai-space-help"
+      ],
+      "classification": "official documentation; acceptance not executed",
+      "product": "ChatGPT Space"
+    },
+    {
+      "id": "chatgpt-space-locked-chat-file-visibility",
+      "family": "ai-product-observation",
+      "name": "Locked chat file visibility",
+      "kind": "Product-specific documented behavior",
+      "definition": "Files saved from locked chats are hidden from Space and available only in their originating chat until unlocked; separately linked files retain original access.",
+      "guardrail": "Check source access without surfacing protected content in search.",
+      "source_ids": [
+        "openai-space-help"
+      ],
+      "classification": "official documentation; acceptance not executed",
+      "product": "ChatGPT Space"
+    },
+    {
+      "id": "claude-template-editor-vs-generic-artifact",
+      "family": "ai-product-observation",
+      "name": "Typed template versus generic artifact",
+      "kind": "Product-specific documented behavior",
+      "definition": "Seven named templates correspond to purpose-specific editors. Generic interactive tools can also be created from chat, but are not a separately named eighth template in the guide.",
+      "guardrail": "Test creation path, editor identity, availability and export per type.",
+      "source_ids": [
+        "claude-artifacts"
+      ],
+      "classification": "official documentation; acceptance not executed",
+      "product": "Claude"
+    },
+    {
+      "id": "claude-batch-scoped-file-edit",
+      "family": "ai-product-observation",
+      "name": "Batched edit requests across Markdown files",
+      "kind": "Product-specific documented behavior",
+      "definition": "When Claude drafts multiple Markdown files, edit requests can be queued across files; the file list indicates waiting requests, then one message applies the batch.",
+      "guardrail": "Test per-file pending requests, submit, errors, partial application and undo.",
+      "source_ids": [
+        "claude-artifacts"
+      ],
+      "classification": "official documentation; acceptance not executed",
+      "product": "Claude"
+    },
+    {
+      "id": "grok-bot-agent-template-copy-identity",
+      "family": "ai-product-observation",
+      "name": "Agent template creates separate copy",
+      "kind": "Product-specific documented behavior",
+      "definition": "A template shares reusable configuration rather than conversations, computer state or logins. Publishing and updating template, importing a new copy and sharing one live Bot are distinct.",
+      "guardrail": "Test copied identity, permission, update and unpublish semantics.",
+      "source_ids": [
+        "grok-bot-bots"
+      ],
+      "classification": "official documentation; acceptance not executed",
+      "product": "Grok Bot"
+    },
+    {
+      "id": "gemini-notebook-source-label-auto-group",
+      "family": "ai-product-observation",
+      "name": "Source labels and grouping",
+      "kind": "Product-specific documented behavior",
+      "definition": "With five or more sources, automatic labeling may organize them by topic; users may rename, add, remove labels and move sources.",
+      "guardrail": "Test threshold, manual relabel, selection and unchanged source identity.",
+      "source_ids": [
+        "gemini-notebook-create"
+      ],
+      "classification": "official documentation; acceptance not executed",
+      "product": "Gemini Notebook (formerly NotebookLM)"
+    },
+    {
+      "id": "gemini-notebook-generation-prompt-provenance",
+      "family": "ai-product-observation",
+      "name": "View saved generation prompt",
+      "kind": "Product-specific documented behavior",
+      "definition": "Artifact menu exposes customization prompts for supported types, with viewer shortcut for some study outputs.",
+      "guardrail": "Verify original prompt, permissions, reuse and distinction from current output.",
+      "source_ids": [
+        "gemini-notebook-create"
+      ],
+      "classification": "official documentation; acceptance not executed",
+      "product": "Gemini Notebook (formerly NotebookLM)"
+    },
+    {
+      "id": "gemini-notebook-export-snapshot-boundary",
+      "family": "ai-product-observation",
+      "name": "Export snapshot and citation sheets",
+      "kind": "Product-specific documented behavior",
+      "definition": "Data table exports use separate data and citation tabs in Sheets; report tables may use individual tabs. Exported changes do not sync back and notebook permissions are not carried over.",
+      "guardrail": "Test export, source attribution, new identity, independent permissions and edits.",
+      "source_ids": [
+        "gemini-notebook-create"
+      ],
+      "classification": "official documentation; acceptance not executed",
+      "product": "Gemini Notebook (formerly NotebookLM)"
     }
   ]
 }

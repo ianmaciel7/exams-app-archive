@@ -168,3 +168,7 @@ Registrar URLs originais e redirects, datas de consulta, fonte e status (verific
 ## Visual and learning evidence
 
 [Research](ai-product-visual-and-learning-evidence-2026-11-26.md) · [JSON](ai-product-visual-and-learning-evidence-2026-11-26.json)
+
+## Creation inventory
+
+[Research](ai-product-creation-inventory-2026-11-26.md) · [JSON](ai-product-creation-inventory-2026-11-26.json)

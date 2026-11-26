@@ -70,3 +70,7 @@ Every benchmark must resolve source IDs centrally, preserve stable observation I
 ## Visual and learning evidence — 2026-11-26
 
 [13 observations, eight media links and two flows](../ui-ux-research-sources/ai-product-visual-and-learning-evidence-2026-11-26.md). One rendered GIF frame inspected; remaining links are uninspected leads. Graph: 393 nodes, 634 edges. No video timing or runtime claims.
+
+## Creation options and object semantics — 2026-11-26
+
+[Creation inventory](../ui-ux-research-sources/ai-product-creation-inventory-2026-11-26.md). 50 entries (not all native templates), 9 additional observations and one visually inspected official marketing image. Graph: 453 nodes, 814 edges. Search kind `creation-option`. Historical template leads and generated examples are explicitly classified. Live UI validation remains open.
