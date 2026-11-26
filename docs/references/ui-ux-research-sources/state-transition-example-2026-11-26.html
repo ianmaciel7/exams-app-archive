@@ -29,5 +29,5 @@ $("quiz").addEventListener("submit",e=>{
  timer=setTimeout(()=>{if(current!==generation)return;state=fail?"error":answer==="2"?"correct":"incorrect";show(fail?"Submission failed. Retry is available.":state==="correct"?"Correct: 2 is even.":"Incorrect: 3 is odd.");if(document.activeElement===$("cancel")||document.activeElement===document.body)(fail?$("send"):$("reset")).focus();},500);
 });
 $("cancel").addEventListener("click",()=>{if(state!=="pending")return;++generation;clearTimeout(timer);state="selected";show("Submission cancelled. Selection retained.");$("send").focus();});
-$("reset").addEventListener("click",()=>{++generation;clearTimeout(timer);state="idle";selected=null;$("quiz").reset();show("Choose an answer.");$("choices").querySelector("input").focus();});
+$("reset").addEventListener("click",()=>{++generation;clearTimeout(timer);state="idle";selected=null;HTMLFormElement.prototype.reset.call($("quiz"));show("Choose an answer.");$("choices").querySelector("input").focus();});
 </script></html>
