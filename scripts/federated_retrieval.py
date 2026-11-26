@@ -601,7 +601,10 @@ def _search_public_research_and_concepts(
                             license_name=occ.get("license") or "",
                             domain="referencias-externas",
                             provenance_status="verified" if occ.get("availability") in {"documented", "archived-blob-verified"} else "unverified",
-                            metadata={"concept_id": cid, "classification": occ.get("classification"), "product": occ.get("product")},
+                            metadata={"concept_id": cid, "classification": occ.get("classification"), "product": occ.get("product"),
+                                      "catalog_path": occ.get("catalog_path"), "catalog_sha256": occ.get("catalog_sha256"),
+                                      "record_pointer": occ.get("record_pointer"), "projection_sha256": occ.get("projection_sha256"),
+                                      "source_urls": occ.get("sources", [])},
                         )
                     )
                     pack_hits += 1

@@ -128,7 +128,8 @@ def build_pack(query, records, taxonomy, limit=20):
                 "date": r.get("date"), "availability": r.get("availability"),
                 "source_confidence": r.get("confidence"), "license": r.get("license"),
                 "catalog_path": r.get("catalog_path"), "catalog_sha256": r.get("catalog_sha256"),
-                "record_sha256": r.get("record_sha256"), "sources": r.get("sources", []),
+                "record_sha256": r.get("record_sha256"), "record_pointer": r.get("record_pointer"),
+                "projection_sha256": r.get("projection_sha256"), "sources": r.get("sources", []),
                 "source_pointer": pointer, "catalog_statements": statements,
                 **membership})
         # Round-robin evidence kinds so one modality cannot consume the budget.

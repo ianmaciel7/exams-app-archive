@@ -25,7 +25,7 @@ def encode(value):
 
 def snapshot(records, taxonomy):
     material = {"schema": SCHEMA, "taxonomy": taxonomy,
-                "records": sorted((r["id"], r["catalog_sha256"], r["record_sha256"]) for r in records)}
+                "records": sorted((r["id"], research_index.record_digest(r)) for r in records)}
     return hashlib.sha256(encode(material).encode("utf-8")).hexdigest()
 
 
@@ -65,6 +65,8 @@ def make_snippet(row, concept_id, membership):
             "provenance": {"catalog_path": row["catalog_path"],
                            "catalog_sha256": row["catalog_sha256"],
                            "record_sha256": row["record_sha256"],
+                           "record_pointer": row.get("record_pointer"),
+                           "projection_sha256": row.get("projection_sha256"),
                            "urls": row.get("sources", []), "product": row.get("product"),
                            "date": row.get("date"), "confidence": row.get("confidence"),
                            "license": row.get("license"), "availability": row.get("availability"),
