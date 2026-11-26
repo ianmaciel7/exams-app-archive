@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-11-25",
+  "scope": "Public source discovery and authorized evidence collection; not a verified entitlement or asset archive",
+  "sources": [
+    {
+      "source_id": "visual-collector-pixlpin",
+      "title": "Pixlpin",
+      "url": "https://pixlpin.com/",
+      "category": "gallery",
+      "notes": "Capturas de apps reais e fluxos; priorizar pesquisa gratuita; conferir limites atuais de downloads.",
+      "access_status": "reference from previous research; revalidate limits and access before use",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "screenrove",
+      "title": "Screenrove",
+      "url": "https://screenrove.com/",
+      "category": "gallery",
+      "notes": "SaaS e interfaces reais; investigar MCP/API e condições de uso antes de integrar.",
+      "access_status": "reference from previous research; revalidate limits and access before use",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "visual-collector-the-ui-index",
+      "title": "The UI Index",
+      "url": "https://theuiindex.com/",
+      "category": "gallery",
+      "notes": "Capturas web por elementos, estados e contexto.",
+      "access_status": "reference from previous research; revalidate limits and access before use",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "visual-collector-interface-index",
+      "title": "Interface Index",
+      "url": "https://interface-index.com/",
+      "category": "gallery",
+      "notes": "Interfaces desktop, SaaS e B2B.",
+      "access_status": "reference from previous research; revalidate limits and access before use",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "visual-collector-uxsnaps",
+      "title": "UXSnaps",
+      "url": "https://www.uxsnaps.com/",
+      "category": "gallery",
+      "notes": "Capturas e análises; distinguir observação de interpretação.",
+      "access_status": "reference from previous research; revalidate limits and access before use",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "mobbin",
+      "title": "Mobbin",
+      "url": "https://mobbin.com/",
+      "category": "freemium-gallery",
+      "notes": "Telas, fluxos e histórico visual; acesso gratuito limitado.",
+      "access_status": "reference from previous research; revalidate limits and access before use",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "refero",
+      "title": "Refero",
+      "url": "https://refero.design/",
+      "category": "freemium-gallery",
+      "notes": "Interfaces web e apps; conferir acesso.",
+      "access_status": "reference from previous research; revalidate limits and access before use",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "visual-collector-refcat",
+      "title": "Refcat",
+      "url": "https://refcat.app/",
+      "category": "freemium-gallery",
+      "notes": "Telas e fluxos; conferir acesso.",
+      "access_status": "reference from previous research; revalidate limits and access before use",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "nicelydone",
+      "title": "Nicelydone",
+      "url": "https://nicelydone.club/",
+      "category": "freemium-gallery",
+      "notes": "Interfaces internas SaaS.",
+      "access_status": "reference from previous research; revalidate limits and access before use",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "saasframe",
+      "title": "SaaSFrame",
+      "url": "https://www.saasframe.io/",
+      "category": "freemium-gallery",
+      "notes": "Produtos SaaS e fluxos.",
+      "access_status": "reference from previous research; revalidate limits and access before use",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "framebin",
+      "title": "Framebin",
+      "url": "https://framebin.co/",
+      "category": "freemium-gallery",
+      "notes": "Capturas de aplicações.",
+      "access_status": "reference from previous research; revalidate limits and access before use",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "visual-collector-youtube",
+      "title": "YouTube",
+      "url": "https://www.youtube.com/",
+      "category": "discovery",
+      "notes": "Demonstrações oficiais, mudanças de estado e motion; registrar timestamps e direitos.",
+      "access_status": "reference from previous research; revalidate limits and access before use",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "visual-collector-app-store",
+      "title": "App Store",
+      "url": "https://apps.apple.com/",
+      "category": "discovery",
+      "notes": "Capturas promocionais oficiais; não confundir com estado real observado.",
+      "access_status": "reference from previous research; revalidate limits and access before use",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "visual-collector-google-play",
+      "title": "Google Play",
+      "url": "https://play.google.com/store/apps",
+      "category": "discovery",
+      "notes": "Capturas oficiais e vídeos de lançamento.",
+      "access_status": "reference from previous research; revalidate limits and access before use",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "visual-collector-product-hunt",
+      "title": "Product Hunt",
+      "url": "https://www.producthunt.com/",
+      "category": "discovery",
+      "notes": "Lançamentos e demonstrações.",
+      "access_status": "reference from previous research; revalidate limits and access before use",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "visual-collector-g2",
+      "title": "G2",
+      "url": "https://www.g2.com/",
+      "category": "discovery",
+      "notes": "Capturas e demonstrações de produtos; verificar autoria.",
+      "access_status": "reference from previous research; revalidate limits and access before use",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "visual-collector-capterra",
+      "title": "Capterra",
+      "url": "https://www.capterra.com/",
+      "category": "discovery",
+      "notes": "Diretório e evidências de produto; verificar autoria.",
+      "access_status": "reference from previous research; revalidate limits and access before use",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "visual-collector-wayback-machine",
+      "title": "Wayback Machine",
+      "url": "https://web.archive.org/",
+      "category": "discovery",
+      "notes": "Versões históricas de páginas públicas; não garante assets, login ou comportamento.",
+      "access_status": "reference from previous research; revalidate limits and access before use",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "visual-collector-github",
+      "title": "GitHub",
+      "url": "https://github.com/",
+      "category": "discovery",
+      "notes": "Capturas, GIFs, vídeos e código público com provenance e licença.",
+      "access_status": "reference from previous research; revalidate limits and access before use",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "visual-collector-playwright",
+      "title": "Playwright",
+      "url": "https://playwright.dev/",
+      "category": "tool",
+      "notes": "Capturar e testar estados e transições em interfaces com acesso autorizado.",
+      "access_status": "reference from previous research; revalidate limits and access before use",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "visual-collector-sharex",
+      "title": "ShareX",
+      "url": "https://getsharex.com/",
+      "category": "tool",
+      "notes": "Capturas e gravações no Windows.",
+      "access_status": "reference from previous research; revalidate limits and access before use",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "visual-collector-ffmpeg",
+      "title": "FFmpeg",
+      "url": "https://ffmpeg.org/",
+      "category": "tool",
+      "notes": "Extrair frames de vídeo autorizado, mantendo timestamps.",
+      "access_status": "reference from previous research; revalidate limits and access before use",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "visual-collector-eagle",
+      "title": "Eagle",
+      "url": "https://eagle.cool/",
+      "category": "tool",
+      "notes": "Organização de referências visuais; não presumir gratuidade.",
+      "access_status": "reference from previous research; revalidate limits and access before use",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "visual-collector-sqlite-fts5",
+      "title": "SQLite FTS5",
+      "url": "https://www.sqlite.org/fts5.html",
+      "category": "tool",
+      "notes": "Indexação local de metadados e descrições.",
+      "access_status": "reference from previous research; revalidate limits and access before use",
+      "retention": "link-only unless rights verified"
+    },
+    {
+      "source_id": "visual-collector-docling",
+      "title": "Docling",
+      "url": "https://docling-project.github.io/docling/",
+      "category": "tool",
+      "notes": "Extração estruturada de documentos; validar qualidade de resultados.",
+      "access_status": "reference from previous research; revalidate limits and access before use",
+      "retention": "link-only unless rights verified"
+    }
+  ]
+}

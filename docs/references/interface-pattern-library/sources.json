@@ -4472,6 +4472,196 @@
       "recorded_on": "2026-11-25",
       "status": "prior research synthesis; revalidate original before version-specific claims",
       "storage": "link-only"
+    },
+    {
+      "id": "visual-collector-pixlpin",
+      "title": "Pixlpin",
+      "url": "https://pixlpin.com/",
+      "kind": "visual-evidence-gallery",
+      "notes": "Capturas de apps reais e fluxos; priorizar pesquisa gratuita; conferir limites atuais de downloads.",
+      "recorded_on": "2026-11-25",
+      "status": "previous discussion; access, pricing, capabilities and rights require revalidation",
+      "storage": "link-only"
+    },
+    {
+      "id": "visual-collector-the-ui-index",
+      "title": "The UI Index",
+      "url": "https://theuiindex.com/",
+      "kind": "visual-evidence-gallery",
+      "notes": "Capturas web por elementos, estados e contexto.",
+      "recorded_on": "2026-11-25",
+      "status": "previous discussion; access, pricing, capabilities and rights require revalidation",
+      "storage": "link-only"
+    },
+    {
+      "id": "visual-collector-interface-index",
+      "title": "Interface Index",
+      "url": "https://interface-index.com/",
+      "kind": "visual-evidence-gallery",
+      "notes": "Interfaces desktop, SaaS e B2B.",
+      "recorded_on": "2026-11-25",
+      "status": "previous discussion; access, pricing, capabilities and rights require revalidation",
+      "storage": "link-only"
+    },
+    {
+      "id": "visual-collector-uxsnaps",
+      "title": "UXSnaps",
+      "url": "https://www.uxsnaps.com/",
+      "kind": "visual-evidence-gallery",
+      "notes": "Capturas e análises; distinguir observação de interpretação.",
+      "recorded_on": "2026-11-25",
+      "status": "previous discussion; access, pricing, capabilities and rights require revalidation",
+      "storage": "link-only"
+    },
+    {
+      "id": "visual-collector-refcat",
+      "title": "Refcat",
+      "url": "https://refcat.app/",
+      "kind": "visual-evidence-freemium-gallery",
+      "notes": "Telas e fluxos; conferir acesso.",
+      "recorded_on": "2026-11-25",
+      "status": "previous discussion; access, pricing, capabilities and rights require revalidation",
+      "storage": "link-only"
+    },
+    {
+      "id": "visual-collector-youtube",
+      "title": "YouTube",
+      "url": "https://www.youtube.com/",
+      "kind": "visual-evidence-discovery",
+      "notes": "Demonstrações oficiais, mudanças de estado e motion; registrar timestamps e direitos.",
+      "recorded_on": "2026-11-25",
+      "status": "previous discussion; access, pricing, capabilities and rights require revalidation",
+      "storage": "link-only"
+    },
+    {
+      "id": "visual-collector-app-store",
+      "title": "App Store",
+      "url": "https://apps.apple.com/",
+      "kind": "visual-evidence-discovery",
+      "notes": "Capturas promocionais oficiais; não confundir com estado real observado.",
+      "recorded_on": "2026-11-25",
+      "status": "previous discussion; access, pricing, capabilities and rights require revalidation",
+      "storage": "link-only"
+    },
+    {
+      "id": "visual-collector-google-play",
+      "title": "Google Play",
+      "url": "https://play.google.com/store/apps",
+      "kind": "visual-evidence-discovery",
+      "notes": "Capturas oficiais e vídeos de lançamento.",
+      "recorded_on": "2026-11-25",
+      "status": "previous discussion; access, pricing, capabilities and rights require revalidation",
+      "storage": "link-only"
+    },
+    {
+      "id": "visual-collector-product-hunt",
+      "title": "Product Hunt",
+      "url": "https://www.producthunt.com/",
+      "kind": "visual-evidence-discovery",
+      "notes": "Lançamentos e demonstrações.",
+      "recorded_on": "2026-11-25",
+      "status": "previous discussion; access, pricing, capabilities and rights require revalidation",
+      "storage": "link-only"
+    },
+    {
+      "id": "visual-collector-g2",
+      "title": "G2",
+      "url": "https://www.g2.com/",
+      "kind": "visual-evidence-discovery",
+      "notes": "Capturas e demonstrações de produtos; verificar autoria.",
+      "recorded_on": "2026-11-25",
+      "status": "previous discussion; access, pricing, capabilities and rights require revalidation",
+      "storage": "link-only"
+    },
+    {
+      "id": "visual-collector-capterra",
+      "title": "Capterra",
+      "url": "https://www.capterra.com/",
+      "kind": "visual-evidence-discovery",
+      "notes": "Diretório e evidências de produto; verificar autoria.",
+      "recorded_on": "2026-11-25",
+      "status": "previous discussion; access, pricing, capabilities and rights require revalidation",
+      "storage": "link-only"
+    },
+    {
+      "id": "visual-collector-wayback-machine",
+      "title": "Wayback Machine",
+      "url": "https://web.archive.org/",
+      "kind": "visual-evidence-discovery",
+      "notes": "Versões históricas de páginas públicas; não garante assets, login ou comportamento.",
+      "recorded_on": "2026-11-25",
+      "status": "previous discussion; access, pricing, capabilities and rights require revalidation",
+      "storage": "link-only"
+    },
+    {
+      "id": "visual-collector-github",
+      "title": "GitHub",
+      "url": "https://github.com/",
+      "kind": "visual-evidence-discovery",
+      "notes": "Capturas, GIFs, vídeos e código público com provenance e licença.",
+      "recorded_on": "2026-11-25",
+      "status": "previous discussion; access, pricing, capabilities and rights require revalidation",
+      "storage": "link-only"
+    },
+    {
+      "id": "visual-collector-playwright",
+      "title": "Playwright",
+      "url": "https://playwright.dev/",
+      "kind": "visual-evidence-tool",
+      "notes": "Capturar e testar estados e transições em interfaces com acesso autorizado.",
+      "recorded_on": "2026-11-25",
+      "status": "previous discussion; access, pricing, capabilities and rights require revalidation",
+      "storage": "link-only"
+    },
+    {
+      "id": "visual-collector-sharex",
+      "title": "ShareX",
+      "url": "https://getsharex.com/",
+      "kind": "visual-evidence-tool",
+      "notes": "Capturas e gravações no Windows.",
+      "recorded_on": "2026-11-25",
+      "status": "previous discussion; access, pricing, capabilities and rights require revalidation",
+      "storage": "link-only"
+    },
+    {
+      "id": "visual-collector-ffmpeg",
+      "title": "FFmpeg",
+      "url": "https://ffmpeg.org/",
+      "kind": "visual-evidence-tool",
+      "notes": "Extrair frames de vídeo autorizado, mantendo timestamps.",
+      "recorded_on": "2026-11-25",
+      "status": "previous discussion; access, pricing, capabilities and rights require revalidation",
+      "storage": "link-only"
+    },
+    {
+      "id": "visual-collector-eagle",
+      "title": "Eagle",
+      "url": "https://eagle.cool/",
+      "kind": "visual-evidence-tool",
+      "notes": "Organização de referências visuais; não presumir gratuidade.",
+      "recorded_on": "2026-11-25",
+      "status": "previous discussion; access, pricing, capabilities and rights require revalidation",
+      "storage": "link-only"
+    },
+    {
+      "id": "visual-collector-sqlite-fts5",
+      "title": "SQLite FTS5",
+      "url": "https://www.sqlite.org/fts5.html",
+      "kind": "visual-evidence-tool",
+      "notes": "Indexação local de metadados e descrições.",
+      "recorded_on": "2026-11-25",
+      "status": "previous discussion; access, pricing, capabilities and rights require revalidation",
+      "storage": "link-only"
+    },
+    {
+      "id": "visual-collector-docling",
+      "title": "Docling",
+      "url": "https://docling-project.github.io/docling/",
+      "kind": "visual-evidence-tool",
+      "notes": "Extração estruturada de documentos; validar qualidade de resultados.",
+      "recorded_on": "2026-11-25",
+      "status": "previous discussion; access, pricing, capabilities and rights require revalidation",
+      "storage": "link-only"
     }
   ],
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",
