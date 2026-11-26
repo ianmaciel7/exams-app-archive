@@ -662,6 +662,13 @@ def run_audit(
         )
 
     visual_units, visual_stats = _audit_visual_manifests(root_dir)
+    # Manifest records are distinct from binary-file units. Reconcile counts without
+    # implying unique media objects or semantic review of their contents.
+    local_units_total = knowledge_units_total
+    unit_modality_counts["media_visual"] += len(visual_units)
+    knowledge_units_total += len(visual_units)
+    if sum(unit_modality_counts.values()) != knowledge_units_total:
+        raise ValueError("Knowledge unit modality accounting mismatch")
     if visual_stats["uninspected_media"] > 0:
         backlog_gaps.append(
             {
@@ -688,7 +695,10 @@ def run_audit(
             "total_sources": len(source_summaries),
             "files_included": len(file_inventory),
             "files_excluded": sum(s["files_excluded"] for s in source_summaries),
-            "knowledge_units_total": knowledge_units_total + len(visual_units),
+            "knowledge_units_total": knowledge_units_total,
+            "local_file_units": local_units_total,
+            "visual_manifest_units": len(visual_units),
+            "unit_count_semantics": "file units plus manifest records; not unique semantic concepts",
             "by_lifecycle_state": dict(sorted(lifecycle_counts.items())),
             "by_modality_files": dict(sorted(modality_counts.items())),
             "by_modality_units": dict(sorted(unit_modality_counts.items())),
@@ -721,7 +731,8 @@ def render_markdown_report(audit: dict[str, Any]) -> str:
         "",
         f"- Registered sources: **{s['total_sources']}**",
         f"- Local eligible files audited: **{s['files_included']}** (excluded by policy: **{s['files_excluded']}**)",
-        f"- Extracted knowledge units (AST + Docs + Metadata + Visual records): **{s['knowledge_units_total']}**",
+        f"- Accounted units (local file units + visual manifest records): **{s['knowledge_units_total']}**",
+        f"- Local file units: **{s.get('local_file_units', 'not separated')}**; visual manifest records: **{s.get('visual_manifest_units', 'not separated')}**. Counts are not unique concepts or visually inspected images.",
         f"- Distinct MIME types observed: **{s['mime_types_count']}**",
         "",
         "### Lifecycle State Distribution",

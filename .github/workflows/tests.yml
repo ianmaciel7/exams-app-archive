@@ -6,6 +6,7 @@ on:
       - "scripts/**"
       - "config/**"
       - "docs/references/**"
+      - "docs/UI-DESIGN-TOKENS.md"
       - "docs/references/visual-evidence-library/**"
       - "plugins/**"
       - "site/**"
@@ -17,6 +18,7 @@ on:
       - "scripts/**"
       - "config/**"
       - "docs/references/**"
+      - "docs/UI-DESIGN-TOKENS.md"
       - "docs/references/visual-evidence-library/**"
       - "plugins/**"
       - "site/**"
@@ -42,6 +44,12 @@ jobs:
         run: python -m pip install --disable-pip-version-check pytest
       - name: Run full test suite (pytest)
         run: python -m pytest tests -v
+      - name: Audit explicit public knowledge coverage
+        run: python scripts/knowledge_coverage_audit.py --output "$RUNNER_TEMP/knowledge-coverage.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: public-knowledge-coverage
+          path: ${{ runner.temp }}/knowledge-coverage.json
       - name: Compile Python scripts
         run: python -m py_compile scripts/*.py plugins/*/scripts/*.py
       - name: Check site/app.js syntax

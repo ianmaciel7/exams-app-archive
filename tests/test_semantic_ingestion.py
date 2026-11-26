@@ -30,6 +30,10 @@ class SemanticIngestionAuditTests(unittest.TestCase):
         self.assertGreater(summary["files_excluded"], 0)
         self.assertGreater(summary["knowledge_units_total"], 1000)
 
+        self.assertEqual(sum(summary["by_modality_units"].values()), summary["knowledge_units_total"])
+        self.assertEqual(summary["local_file_units"] + summary["visual_manifest_units"], summary["knowledge_units_total"])
+        self.assertEqual(summary["visual_manifest_units"], self.audit["visual_media_audit"]["total_visual_records"])
+
         # All 4 modalities must have files & extracted knowledge units
         for mod in sia.MODALITIES:
             self.assertGreater(summary["by_modality_files"].get(mod, 0), 0, f"Missing files for {mod}")

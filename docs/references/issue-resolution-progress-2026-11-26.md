@@ -27,3 +27,7 @@ The ranking revision 35981dc3c504f01a40a18e0df367f77bfc958f4f measured recall 0.
 ## Merged validation and follow-up integrity checks
 
 PR #107 merged at ac94abe2941650c7b24f898dc3b487d1bff895e0 after all three workflows passed (302 pytest tests, six subtests). PR #108 merged at 25dde30be286c70399644515fb6388ba02fad218 after all four CI jobs passed. Development benchmark after caching: recall .80, precision .4833, MRR .75, one negative abstained, p50 1.585s, p95 2.889s. Specialist UI/UX v1.10.15 publication and reference/skill readback verified; canonical pointer and summary, not byte-identical catalog mirror. Follow-up: explicit allowlist for public code search, temporarily remove public evaluation labels before capture, recompute scorer results and check measured development floors with mutation tests. Independent holdout and authorized historical evaluation remain required.
+
+## Coverage reconciliation
+
+PR #109 merged at b246460c092c7078ebd6254eaba2a26eac55d045 after all four jobs passed (305 tests and six subtests). Semantic ingestion had counted manifest records in its grand total but not in modality subtotals; this follow-up separates local file units from manifest records and reconciles the sum. The public coverage audit maps explicit concept membership and curated issue scopes to all 23 domains, exposes dangling references, missing source metadata and unregistered URLs, and generates a CI artifact. It does not claim a domain is complete from a single record, or infer visual inspection from filenames.
