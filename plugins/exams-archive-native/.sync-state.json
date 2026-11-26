@@ -2,13 +2,13 @@
   "schema": 2,
   "source_of_truth": "ianmaciel7/exams-app-archive@main:plugins/exams-archive-native/",
   "plugin_id": "plugins_6b04aaa9fd848191a24525011f76e2bb",
-  "desired_version": "0.8.5",
-  "last_published_release_id": "pluginrel_6b0862be45b88191bbd1bd63b5939287",
-  "last_published_version": "0.8.5",
+  "desired_version": "0.8.7",
+  "last_published_release_id": "pluginrel_6b0869c028588191ad34c74a263fa9cc",
+  "last_published_version": "0.8.7",
   "status": "verified-synced",
-  "note": "All 26 canonical text files matched the current private Plugin Creator release by readback on 2026-11-26; runtime on local agent clients not verified.",
+  "note": "All 26 canonical text files matched private Plugin Creator release by readback on 2026-11-26; local agent runtime not verified.",
   "verified_files": 26,
   "byte_identical_files": 26,
   "json_semantic_equivalent_files": [],
-  "verified_commit": "40428f178bfd78e5a5ac39cc8f087ab5e1751820"
+  "verified_commit": "2f1b90cabe6b4e7b89671e8dd969410b0d93fe40"
 }

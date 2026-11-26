@@ -439,7 +439,7 @@ def run_ci_quality_gate(
     sync_state_path = plugin_dir / ".sync-state.json"
     try:
         sync_res = validate_plugin_sync.verify_sync_state(sync_state_path)
-        manifest_res = validate_plugin_sync.verify_manifest_versions(plugin_dir)
+        manifest_res = validate_plugin_sync.verify_manifest_versions(plugin_dir, expected_version=sync_res["version"])
         plugin_drift = not (sync_res.get("valid") and manifest_res.get("valid"))
         plugin_status = {
             "valid": not plugin_drift,

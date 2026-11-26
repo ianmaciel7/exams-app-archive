@@ -98,6 +98,11 @@ class TestValidatePluginSync(unittest.TestCase):
             self.assertEqual(manifests[platform]["version"], EXPECTED_VERSION)
             self.assertEqual(manifests[platform]["name"], "exams-archive-native")
 
+    def test_manifest_version_must_match_sync_state(self):
+        with self.assertRaisesRegex(ValueError, "disagrees with sync state"):
+            verify_manifest_versions(CANONICAL_DIR, expected_version="0.8.5")
+        self.assertTrue(verify_manifest_versions(CANONICAL_DIR, expected_version=EXPECTED_VERSION)["valid"])
+
     def test_compare_file_contents_equivalence(self):
         """Test byte-identical, JSON semantic, and diverged comparisons."""
         # 1. Byte identical

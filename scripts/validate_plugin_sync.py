@@ -25,11 +25,12 @@ from typing import Any
 
 CANONICAL_SOURCE = "ianmaciel7/exams-app-archive@main:plugins/exams-archive-native/"
 EXPECTED_PLUGIN_ID = "plugins_6b04aaa9fd848191a24525011f76e2bb"
-EXPECTED_VERSION = "0.8.5"
-VALID_VERSIONS = {"0.6.0", "0.7.0", "0.8.0", "0.8.1", "0.8.4", "0.8.5"}
-EXPECTED_RELEASE_ID = "pluginrel_6b0862be45b88191bbd1bd63b5939287"
+EXPECTED_VERSION = "0.8.7"
+VALID_VERSIONS = {"0.6.0", "0.7.0", "0.8.0", "0.8.1", "0.8.4", "0.8.5", "0.8.6", "0.8.7"}
+EXPECTED_RELEASE_ID = "pluginrel_6b0869c028588191ad34c74a263fa9cc"
 VALID_RELEASE_IDS = {
     EXPECTED_RELEASE_ID,
+    "pluginrel_6b0862be45b88191bbd1bd63b5939287",
     "pluginrel_6b07899345f0819187fe06ccf3ab264c",
     "pluginrel_6b06df1a59188191af956d00ec226ee5",
     "pluginrel_6b05cabf4a84819182a5509e963ada1f",
@@ -131,7 +132,7 @@ def verify_sync_state(sync_state_path: Path) -> dict[str, Any]:
     }
 
 
-def verify_manifest_versions(canonical_dir: Path) -> dict[str, Any]:
+def verify_manifest_versions(canonical_dir: Path, *, expected_version: str | None = None) -> dict[str, Any]:
     """Verify version and package name across all platform manifests."""
     manifest_paths = {
         "root": canonical_dir / "plugin.json",
@@ -155,6 +156,8 @@ def verify_manifest_versions(canonical_dir: Path) -> dict[str, Any]:
 
     if len({m["version"] for m in results.values()}) != 1:
         raise ValueError("Manifest versions disagree")
+    if expected_version is not None and results["root"]["version"] != expected_version:
+        raise ValueError("Manifest version disagrees with sync state desired_version")
     return {"valid": True, "manifests": results}
 
 
@@ -465,7 +468,10 @@ def validate_all(
 
     # 2. Manifest versions validation
     try:
-        manifest_report = verify_manifest_versions(canonical_dir)
+        expected_version = None
+        if not skip_sync_state and report["stages"]["sync_state"]["passed"]:
+            expected_version = report["stages"]["sync_state"]["details"]["version"]
+        manifest_report = verify_manifest_versions(canonical_dir, expected_version=expected_version)
         report["stages"]["manifest_versions"] = {"passed": True, "details": manifest_report}
     except Exception as exc:
         report["stages"]["manifest_versions"] = {"passed": False, "error": str(exc)}
@@ -474,7 +480,7 @@ def validate_all(
     # 3. Canonical files completeness & tree comparison
     try:
         canonical_map = load_file_map_from_dir(canonical_dir)
-        # Check canonical directory contains all 19 files
+        # Check canonical directory against the explicit package inventory
         missing_in_canonical = [p for p in CANONICAL_FILES if p not in canonical_map]
         extra_in_canonical = sorted(set(canonical_map) - set(CANONICAL_FILES))
         if missing_in_canonical or extra_in_canonical:
