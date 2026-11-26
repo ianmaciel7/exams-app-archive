@@ -926,6 +926,141 @@
       "recorded_on": "2026-11-26",
       "evidence_status": "documentation-reviewed",
       "media_status": "not-inspected"
+    },
+    {
+      "id": "adr-supersession",
+      "name": "Append-only architecture decision history",
+      "aliases": [
+        "ADR",
+        "architecture decision",
+        "supersession",
+        "decisão arquitetural"
+      ],
+      "family": "domain-research",
+      "domain": "arquitetura-tecnica",
+      "definition": "Record the problem, alternatives, choice and consequences in a stable decision record; a later accepted change supersedes the earlier decision through an explicit link.",
+      "guardrail": "Do not rewrite accepted decision history or confuse a proposed alternative with the accepted architecture. Retroactive records require known evidence.",
+      "tests": "Create two fictional decisions, accept the first, supersede it with the second, and verify that both remain readable and the active decision is distinguishable.",
+      "source_ids": [
+        "domain-adr-append-only"
+      ],
+      "classification": "Primary-source-backed synthesis; proposed acceptance test, not executed product validation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "idempotent-background-job",
+      "name": "Idempotent asynchronous work",
+      "aliases": [
+        "background jobs",
+        "retry",
+        "idempotency",
+        "tarefas em segundo plano"
+      ],
+      "family": "domain-research",
+      "domain": "arquitetura-tecnica",
+      "definition": "Separate long-running work from the interactive request; protect effects against repeated delivery and partial processing, and persist enough state for recovery.",
+      "guardrail": "Do not infer exactly-once execution from the queue or promise successful completion from an accepted request. The source is general architecture guidance, not an implementation of the Exam App.",
+      "tests": "Use a disposable job fixture, deliver the same logical item twice and simulate an interruption; check for duplicate effects and distinguish running, completed and failed outcomes.",
+      "source_ids": [
+        "azure-bg-jobs"
+      ],
+      "classification": "Primary-source-backed synthesis; proposed acceptance test, not executed product validation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "local-first-ownership",
+      "name": "Local-first data ownership and synchronization",
+      "aliases": [
+        "local first",
+        "offline",
+        "sync",
+        "conflito",
+        "data ownership"
+      ],
+      "family": "domain-research",
+      "domain": "arquitetura-tecnica",
+      "definition": "Design for user-controlled data, offline use and collaboration across devices; evaluate synchronization and conflicts as explicit architecture tradeoffs.",
+      "guardrail": "The essay describes principles and research; it does not imply that a particular CRDT, Firebase setup or offline mode is already implemented or mandatory.",
+      "tests": "With fictional data, test offline edit and reconnect, concurrent conflicting edits, export and recovery; record the chosen consistency policy and unresolved conflicts.",
+      "source_ids": [
+        "ink-localfirst"
+      ],
+      "classification": "Primary-source-backed synthesis; proposed acceptance test, not executed product validation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "git-bundle-restoration",
+      "name": "Git bundle prerequisites and restoration",
+      "aliases": [
+        "git bundle",
+        "backup",
+        "restore",
+        "arquivo histórico"
+      ],
+      "family": "domain-research",
+      "domain": "historico",
+      "definition": "Distinguish self-contained bundles from incremental bundles that require existing objects; verify prerequisites and restore in an isolated repository before claiming recoverability.",
+      "guardrail": "A bundle does not automatically include untracked files, external services or all non-Git assets. Do not delete originals based on an inventory or checksum alone.",
+      "tests": "Create a disposable repository and a self-contained and incremental bundle, verify the prerequisites, attempt restoration in an empty and prerequisite-containing repo, and compare expected refs.",
+      "source_ids": [
+        "domain-git-bundle-prerequisites"
+      ],
+      "classification": "Primary-source-backed synthesis; proposed acceptance test, not executed product validation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "git-pinned-object-evidence",
+      "name": "Pinned Git object identity",
+      "aliases": [
+        "git blob",
+        "commit",
+        "git cat-file",
+        "object SHA",
+        "proveniência"
+      ],
+      "family": "domain-research",
+      "domain": "historico",
+      "definition": "Keep repository, immutable revision, path, object identity and byte size together; use Git object inspection to distinguish content identity from occurrence in a particular tree.",
+      "guardrail": "A matching blob does not prove that a UI was rendered, an animation inspected, or redistribution permitted. Keep multiple path or revision occurrences separate from the byte identity.",
+      "tests": "In a fictional Git tree, store identical bytes in different paths, change one path later, and verify pinned object identity and sizes; reject missing or mismatched objects.",
+      "source_ids": [
+        "domain-git-object-identity"
+      ],
+      "classification": "Primary-source-backed synthesis; proposed acceptance test, not executed product validation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "prov-derived-artifact-lineage",
+      "name": "Evidence lineage and revision provenance",
+      "aliases": [
+        "W3C PROV",
+        "derivation",
+        "provenance",
+        "revision",
+        "linhagem"
+      ],
+      "family": "domain-research",
+      "domain": "historico",
+      "definition": "Distinguish an artifact entity from the activity that used or produced it and the responsible agent; express source derivation and revision separately.",
+      "guardrail": "A derivation edge is a claim with its own evidence, not proof of validity or full PROV conformance. Do not publish private artifact identifiers or infer missing activities.",
+      "tests": "Create fictional source, extraction and derived artifact records with explicit links; test traversal, missing references and version changes while keeping original and derived identities distinct.",
+      "source_ids": [
+        "domain-w3c-prov-model"
+      ],
+      "classification": "Primary-source-backed synthesis; proposed acceptance test, not executed product validation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected"
     }
   ]
 }

@@ -665,7 +665,11 @@
       ],
       "members": [
         "general-sources:azure-bg-jobs",
-        "general-sources:ink-localfirst"
+        "general-sources:ink-localfirst",
+        "domain-research:adr-supersession",
+        "general-sources:domain-adr-append-only",
+        "domain-research:idempotent-background-job",
+        "domain-research:local-first-ownership"
       ]
     },
     {
@@ -718,7 +722,13 @@
       ],
       "members": [
         "general-sources:welie",
-        "general-sources:flickr-context"
+        "general-sources:flickr-context",
+        "domain-research:git-bundle-restoration",
+        "general-sources:domain-git-bundle-prerequisites",
+        "domain-research:git-pinned-object-evidence",
+        "general-sources:domain-git-object-identity",
+        "domain-research:prov-derived-artifact-lineage",
+        "general-sources:domain-w3c-prov-model"
       ]
     },
     {

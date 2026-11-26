@@ -1644,10 +1644,11 @@
       "url": "https://www.inkandswitch.com/essay/local-first/",
       "kind": "research-essay",
       "recorded_on": "2026-11-25",
-      "status": "search-index evidence; revalidate full source before specific claims",
+      "status": "primary source text revalidated; application-specific implementation not verified",
       "storage": "link-only",
       "notes": "Proposta de controle dos dados pelo usuário, acesso local e colaboração.",
-      "application": "Testar offline, conflito, exportação, persistência e sincronização; não reduzir local-first a cache."
+      "application": "Testar offline, conflito, exportação, persistência e sincronização; não reduzir local-first a cache.",
+      "checked_on": "2026-11-26"
     },
     {
       "id": "ink-malleable",
@@ -1920,9 +1921,10 @@
       "url": "https://learn.microsoft.com/en-us/azure/architecture/best-practices/background-jobs",
       "kind": "technical-architecture",
       "recorded_on": "2026-11-25",
-      "status": "Search-index evidence",
+      "status": "primary source text revalidated; application-specific implementation not verified",
       "storage": "link-only",
-      "notes": "Persistent checkpoints, retries, idempotency; technical enabling mechanism."
+      "notes": "Persistent checkpoints, retries, idempotency; technical enabling mechanism.",
+      "checked_on": "2026-11-26"
     },
     {
       "id": "w3c-aria12",
@@ -7185,6 +7187,46 @@
       "checked_on": "2026-11-26",
       "storage": "link-only",
       "rights": "redistribution permission not verified"
+    },
+    {
+      "id": "domain-adr-append-only",
+      "title": "Maintain an architecture decision record (ADR)",
+      "url": "https://learn.microsoft.com/en-us/azure/well-architected/architect-role/architecture-decision-record",
+      "kind": "official-architecture-guidance",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "primary source text retrieved; application-specific implementation not verified",
+      "storage": "link-only"
+    },
+    {
+      "id": "domain-git-bundle-prerequisites",
+      "title": "Git bundle documentation",
+      "url": "https://git-scm.com/docs/git-bundle",
+      "kind": "official-reference",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "primary source text retrieved; application-specific implementation not verified",
+      "storage": "link-only"
+    },
+    {
+      "id": "domain-git-object-identity",
+      "title": "Git cat-file documentation",
+      "url": "https://git-scm.com/docs/git-cat-file",
+      "kind": "official-reference",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "primary source text retrieved; application-specific implementation not verified",
+      "storage": "link-only"
+    },
+    {
+      "id": "domain-w3c-prov-model",
+      "title": "PROV-DM: The PROV Data Model",
+      "url": "https://www.w3.org/TR/prov-dm/",
+      "kind": "standard",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "primary source text retrieved; application-specific implementation not verified",
+      "storage": "link-only"
     }
   ],
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",
