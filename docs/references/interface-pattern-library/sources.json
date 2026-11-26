@@ -5820,6 +5820,28 @@
       "storage": "link-only",
       "notes": "Additional gap research.",
       "checked_on": "2026-11-26"
+    },
+    {
+      "id": "claude-whiteboards",
+      "title": "Get started with Claude Whiteboards",
+      "url": "https://support.claude.com/en/articles/18324319-get-started-with-claude-whiteboards",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official help article read; live UI not tested",
+      "storage": "link-only",
+      "notes": "Typed artifact editor flow."
+    },
+    {
+      "id": "claude-sheets",
+      "title": "Get started with Claude Sheets",
+      "url": "https://support.claude.com/en/articles/18324300-get-started-with-claude-sheets",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official help article read; live UI not tested",
+      "storage": "link-only",
+      "notes": "Typed artifact editor flow."
     }
   ],
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",

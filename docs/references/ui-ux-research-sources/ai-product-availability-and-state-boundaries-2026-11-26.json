@@ -1,0 +1,358 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-26",
+  "scope": "dated availability and state boundary matrix; not exhaustive; no live UI tests",
+  "rows": [
+    {
+      "id": "chatgpt-space-space",
+      "product": "chatgpt-space",
+      "feature": "Space pages",
+      "plan": "Plus eligible rollout; Pro, Business, Enterprise; 18+",
+      "platform": "Web/Desktop create/edit; iOS/Android edit, read/share/navigate",
+      "permissions": "Organization sharing policy; residency exceptions Canada/UAE for managed workspaces",
+      "source_id": "openai-space-help",
+      "source_url": "https://help.openai.com/en/articles/20001549-getting-started-with-space-in-chatgpt",
+      "status": "official documentation read 2026-11-26; runtime not tested"
+    },
+    {
+      "id": "chatgpt-space-space-formats",
+      "product": "chatgpt-space",
+      "feature": "Slides and Sheets",
+      "plan": "Slides rolling out to eligible Space users; Sheets coming soon",
+      "platform": "Exact editor platform availability not established here",
+      "permissions": "Do not claim Sheets shipped",
+      "source_id": "openai-space-help",
+      "source_url": "https://help.openai.com/en/articles/20001549-getting-started-with-space-in-chatgpt",
+      "status": "official documentation read 2026-11-26; runtime not tested"
+    },
+    {
+      "id": "chatgpt-space-page-permissions",
+      "product": "chatgpt-space",
+      "feature": "Page sharing",
+      "plan": "Eligible Space users; admin policy",
+      "platform": "Platform-specific sharing options not exhaustively tested",
+      "permissions": "View/edit; owner/creator can delete; embedded uploads follow page permissions; linked files keep own access",
+      "source_id": "openai-space-sharing",
+      "source_url": "https://help.openai.com/en/articles/20001544-chatgpt-space-sharing-data-and-controls",
+      "status": "official documentation read 2026-11-26; runtime not tested"
+    },
+    {
+      "id": "claude-artifact-creation",
+      "product": "claude",
+      "feature": "Artifacts / Docs / Slides / Design",
+      "plan": "Free, Pro, Max, Ultra, Team, Enterprise; file creation capability required",
+      "platform": "Web/Desktop create/edit/share; mobile design/deck/doc creation and editing; web/Desktop for sharing settings",
+      "permissions": "Enterprise settings may override availability",
+      "source_id": "claude-artifacts",
+      "source_url": "https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them",
+      "status": "official documentation read 2026-11-26; runtime not tested"
+    },
+    {
+      "id": "claude-data-template",
+      "product": "claude",
+      "feature": "Data template",
+      "plan": "Pro, Max, Ultra, Team, Enterprise",
+      "platform": "Template available web/Desktop; exact mobile editing unverified",
+      "permissions": "Enterprise default on Nov 20 unless owner already set preference",
+      "source_id": "claude-artifacts",
+      "source_url": "https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them",
+      "status": "official documentation read 2026-11-26; runtime not tested"
+    },
+    {
+      "id": "claude-sheets-whiteboards",
+      "product": "claude",
+      "feature": "Sheets and Whiteboards templates (beta)",
+      "plan": "Pro, Max, Ultra, Team, Enterprise",
+      "platform": "Web/Desktop; exact mobile behavior unverified",
+      "permissions": "On by default for Team, off for Enterprise until enabled",
+      "source_id": "claude-artifacts",
+      "source_url": "https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them",
+      "status": "official documentation read 2026-11-26; runtime not tested"
+    },
+    {
+      "id": "claude-motion-template",
+      "product": "claude",
+      "feature": "Motion template (beta)",
+      "plan": "Team and Enterprise",
+      "platform": "Web/Desktop; exact mobile behavior unverified",
+      "permissions": "Team default on; Enterprise default off",
+      "source_id": "claude-artifacts",
+      "source_url": "https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them",
+      "status": "official documentation read 2026-11-26; runtime not tested"
+    },
+    {
+      "id": "claude-artifact-storage",
+      "product": "claude",
+      "feature": "Artifact data storage",
+      "plan": "Pro, Max, Ultra, Team, Enterprise",
+      "platform": "Web/Desktop",
+      "permissions": "Personal and shared storage; confirmation for shared storage; legacy publishing constraints differ",
+      "source_id": "claude-artifacts",
+      "source_url": "https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them",
+      "status": "official documentation read 2026-11-26; runtime not tested"
+    },
+    {
+      "id": "claude-artifact-sharing",
+      "product": "claude",
+      "feature": "Artifact sharing",
+      "plan": "Public links and email invites on paid plans; email invite beta; organization-wide Team/Enterprise; groups Enterprise",
+      "platform": "Web/Desktop sharing settings; unavailable in mobile app",
+      "permissions": "Org external-sharing policy; view/comment/edit; legacy sharing separate",
+      "source_id": "claude-share",
+      "source_url": "https://support.claude.com/en/articles/9547008-share-artifacts",
+      "status": "official documentation read 2026-11-26; runtime not tested"
+    },
+    {
+      "id": "grok-bot-pages",
+      "product": "grok-bot",
+      "feature": "Pages",
+      "plan": "Gradual rollout; not available on Enterprise teams per guide",
+      "platform": "Desktop >=0.60.0; phone >=1.14.0",
+      "permissions": "Private default; audience options vary; only Bot edits; reader controls transient",
+      "source_id": "grok-bot-files",
+      "source_url": "https://docs.x.ai/grok-bot/files-and-results",
+      "status": "official documentation read 2026-11-26; runtime not tested"
+    },
+    {
+      "id": "gemini-canvas",
+      "product": "gemini",
+      "feature": "Canvas documents and apps",
+      "plan": "Signed in; add Gemini features and document transformations 18+",
+      "platform": "Computer guide; shared content opens on gemini.google.com, not mobile app",
+      "permissions": "Autosave editing; private/shared generated app storage separate",
+      "source_id": "gemini-canvas",
+      "source_url": "https://support.google.com/gemini/answer/16047321?hl=en-12",
+      "status": "official documentation read 2026-11-26; runtime not tested"
+    },
+    {
+      "id": "gemini-canvas-data",
+      "product": "gemini",
+      "feature": "Canvas persistent app data",
+      "plan": "App requires persistence; exact plan matrix not confirmed",
+      "platform": "Shared public links; private app user data and multi-user public database modes",
+      "permissions": "Anyone with public link to multi-user app can view/edit associated shared data",
+      "source_id": "gemini-canvas-security",
+      "source_url": "https://support.google.com/gemini/answer/16419134?hl=en-gi",
+      "status": "official documentation read 2026-11-26; runtime not tested"
+    },
+    {
+      "id": "gemini-notebook-sites",
+      "product": "gemini-notebook",
+      "feature": "Interactive Sites",
+      "plan": "18+; global web rollout including Workspace; usage limits",
+      "platform": "Web; mobile coming soon at Nov 16 announcement",
+      "permissions": "Notebook edit access needed to generate/delete; each user's inputs isolated; consumer owner/editor required for public site sharing",
+      "source_id": "gemini-notebook-sites",
+      "source_url": "https://support.google.com/gemininotebook/answer/18945748",
+      "status": "official documentation read 2026-11-26; runtime not tested"
+    },
+    {
+      "id": "gemini-notebook-sites-rollout",
+      "product": "gemini-notebook",
+      "feature": "Interactive Sites rollout",
+      "plan": "18+ including Google Workspace subscribers",
+      "platform": "Web at launch; mobile later",
+      "permissions": "Announcement is historical; confirm current access before assuming support",
+      "source_id": "gemini-notebook-sites-launch",
+      "source_url": "https://blog.google/innovation-and-ai/products/gemini-notebook/interactive-sites/?trk=public_post_comment-text",
+      "status": "official documentation read 2026-11-26; runtime not tested"
+    },
+    {
+      "id": "gemini-notebook-study-aids",
+      "product": "gemini-notebook",
+      "feature": "Flashcards and Quizzes",
+      "plan": "Notebook edit access required for creation/deletion; plan-specific quotas not verified here",
+      "platform": "Platform support not exhaustively tested here",
+      "permissions": "Saved progress, review/retake; CSV may be restricted for Play Books source content",
+      "source_id": "gemini-notebook-quiz",
+      "source_url": "https://support.google.com/gemininotebook/answer/16958963?hl=en",
+      "status": "official documentation read 2026-11-26; runtime not tested"
+    }
+  ],
+  "observations": [
+    {
+      "id": "chatgpt-space-embedded-vs-linked-files",
+      "product": "chatgpt-space",
+      "title": "Embedded file permission vs reference",
+      "description": "Uploaded files inherit page access; a link to a separately stored file does not itself grant access. Copied summaries on the page become visible to page readers.",
+      "source_id": "openai-space-sharing",
+      "source_url": "https://help.openai.com/en/articles/20001544-chatgpt-space-sharing-data-and-controls",
+      "acceptance": "Check view/edit roles, embedded files, external access and revoke behavior.",
+      "surface": "view:chatgpt-space:pages",
+      "classification": "official documented behavior; acceptance checks not executed"
+    },
+    {
+      "id": "claude-personal-shared-storage",
+      "product": "claude",
+      "title": "Personal vs shared artifact state",
+      "description": "Artifacts can store private per-user data or common shared data. First shared-storage use shows a confirmation. New artifacts can store before publishing; legacy artifacts require publication.",
+      "source_id": "claude-artifacts",
+      "source_url": "https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them",
+      "acceptance": "Test two accounts, save/reload and visibility; distinguish current and legacy artifacts.",
+      "surface": "view:claude:artifacts-tab",
+      "classification": "official documented behavior; acceptance checks not executed"
+    },
+    {
+      "id": "claude-invitation-lifecycle",
+      "product": "claude",
+      "title": "Invitation expiry and revocation",
+      "description": "Pending email invitations expire in 30 days; accepted invitations do not expire automatically. Removing a person revokes access immediately. Organization settings and plan affect invitations.",
+      "source_id": "claude-share",
+      "source_url": "https://support.claude.com/en/articles/9547008-share-artifacts",
+      "acceptance": "Test pending, expired, accepted, revoked and disabled external sharing.",
+      "surface": "view:claude:artifacts-tab",
+      "classification": "official documented behavior; acceptance checks not executed"
+    },
+    {
+      "id": "claude-sharing-role-boundaries",
+      "product": "claude",
+      "title": "Artifact permission roles",
+      "description": "Viewer reads artifact/comments; commenter adds comments and downloads offered files; editor can change content. External commenters and editors have limitations; editors cannot delete artifact.",
+      "source_id": "claude-share",
+      "source_url": "https://support.claude.com/en/articles/9547008-share-artifacts",
+      "acceptance": "Test each role and artifact type, including disabled comments and connectors.",
+      "surface": "view:claude:artifacts-tab",
+      "classification": "official documented behavior; acceptance checks not executed"
+    },
+    {
+      "id": "grok-bot-library-facets",
+      "product": "grok-bot",
+      "title": "Library content facets and pinned items",
+      "description": "Desktop Library filters All, Pages, Media, Links, Files, Apps and Pinned. Team Bot separates private-to-user and bot files; pin treatment differs.",
+      "source_id": "grok-bot-files",
+      "source_url": "https://docs.x.ai/grok-bot/files-and-results",
+      "acceptance": "Test filter results, pin/unpin and private/team visibility.",
+      "surface": "view:grok-bot:library",
+      "classification": "official documented behavior; acceptance checks not executed"
+    },
+    {
+      "id": "grok-bot-page-rename-stable-link",
+      "product": "grok-bot",
+      "title": "Stable page address and rename",
+      "description": "Rename commits with Enter or cancels with Escape; a public page address remains unchanged after renaming. Custom addresses are not supported per guide.",
+      "source_id": "grok-bot-files",
+      "source_url": "https://docs.x.ai/grok-bot/files-and-results",
+      "acceptance": "Test cancel, rename, stable link and access revoke.",
+      "surface": "view:grok-bot:pages",
+      "classification": "official documented behavior; acceptance checks not executed"
+    },
+    {
+      "id": "grok-bot-share-conflict-retry",
+      "product": "grok-bot",
+      "title": "Sharing conflict and retry",
+      "description": "Share menu explains unavailable audiences, failed access changes and concurrent access updates; failed saves offer Retry.",
+      "source_id": "grok-bot-files",
+      "source_url": "https://docs.x.ai/grok-bot/files-and-results",
+      "acceptance": "Exercise conflict, failed request, retry and inaccessible audience; no silent success.",
+      "surface": "view:grok-bot:pages",
+      "classification": "official documented behavior; acceptance checks not executed"
+    },
+    {
+      "id": "gemini-canvas-copy-versus-edit",
+      "product": "gemini",
+      "title": "Copy shared Canvas content",
+      "description": "A public shared Canvas result can be copied into a user's own editable Canvas; shared app data is a separate concept. Copy/edit shared content requires age 18+, and links open in web.",
+      "source_id": "gemini-canvas",
+      "source_url": "https://support.google.com/gemini/answer/16047321?hl=en-12",
+      "acceptance": "Test new object identity, original unchanged, shared data boundary and mobile limitation.",
+      "surface": "view:gemini:canvas",
+      "classification": "official documented behavior; acceptance checks not executed"
+    },
+    {
+      "id": "gemini-notebook-site-isolated-inputs",
+      "product": "gemini-notebook",
+      "title": "Shared site with private inputs",
+      "description": "Every user of a shared site, including owner, sees only their own saved inputs. Site viewers require access to the full notebook; public sharing requires consumer owner/editor.",
+      "source_id": "gemini-notebook-sites",
+      "source_url": "https://support.google.com/gemininotebook/answer/18945748",
+      "acceptance": "Test two users, saved selections, notebook permissions and no cross-user input leakage.",
+      "surface": "view:gemini-notebook:interactive-site",
+      "classification": "official documented behavior; acceptance checks not executed"
+    },
+    {
+      "id": "gemini-notebook-site-revoke-delete",
+      "product": "gemini-notebook",
+      "title": "Site revocation and deletion",
+      "description": "Turning off site sharing or deleting the site invalidates previously generated share links; sites can also be downloaded from Studio.",
+      "source_id": "gemini-notebook-sites",
+      "source_url": "https://support.google.com/gemininotebook/answer/18945748",
+      "acceptance": "Test old links, role checks, export and deletion confirmation.",
+      "surface": "view:gemini-notebook:interactive-site",
+      "classification": "official documented behavior; acceptance checks not executed"
+    }
+  ],
+  "correction": {
+    "id": "claude-share-access",
+    "description": "Artifact access can include view, comment or edit depending on role and type. Unpublishing a legacy artifact permanently deletes its stored data; do not generalize that rule to current artifacts.",
+    "source_urls": [
+      "https://support.claude.com/en/articles/9547008-share-artifacts",
+      "https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them"
+    ]
+  },
+  "visual_evidence": [
+    {
+      "id": "evidence:claude:design-tweaks-thumbnail",
+      "type": "evidence",
+      "label": "Claude Design — Tweaks panel and mobile preview",
+      "url": "https://www.anthropic.com/_next/image?q=75&url=https%3A%2F%2Fimg.youtube.com%2Fvi%2Ft_LBECIQQqs%2Fmaxresdefault.jpg&w=3840",
+      "status": "publisher-linked promotional video thumbnail visually inspected 2026-11-26; still only",
+      "storage": "link-only",
+      "rights": "Anthropic promotional media; redistribution license unverified",
+      "observed": [
+        "Tweaks toggle enabled",
+        "Comment / Edit / Draw controls",
+        "Zoom 100% and expand icon",
+        "Share and Export buttons",
+        "Mobile device preview selected; Desktop and Tablet options",
+        "Dark mode toggle, theme swatches, typography sliders and section toggle"
+      ],
+      "limitations": "No runtime state or motion timing measured; sliders and options may be generated for the example; not a universal native inspector."
+    }
+  ],
+  "source_refs": [
+    {
+      "id": "openai-space-help",
+      "url": "https://help.openai.com/en/articles/20001549-getting-started-with-space-in-chatgpt"
+    },
+    {
+      "id": "openai-space-sharing",
+      "url": "https://help.openai.com/en/articles/20001544-chatgpt-space-sharing-data-and-controls"
+    },
+    {
+      "id": "claude-artifacts",
+      "url": "https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them"
+    },
+    {
+      "id": "claude-share",
+      "url": "https://support.claude.com/en/articles/9547008-share-artifacts"
+    },
+    {
+      "id": "claude-design-launch",
+      "url": "https://www.anthropic.com/news/claude-design-anthropic-labs"
+    },
+    {
+      "id": "grok-bot-files",
+      "url": "https://docs.x.ai/grok-bot/files-and-results"
+    },
+    {
+      "id": "gemini-canvas",
+      "url": "https://support.google.com/gemini/answer/16047321?hl=en-12"
+    },
+    {
+      "id": "gemini-canvas-security",
+      "url": "https://support.google.com/gemini/answer/16419134?hl=en-gi"
+    },
+    {
+      "id": "gemini-notebook-sites",
+      "url": "https://support.google.com/gemininotebook/answer/18945748"
+    },
+    {
+      "id": "gemini-notebook-sites-launch",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/interactive-sites/?trk=public_post_comment-text"
+    },
+    {
+      "id": "gemini-notebook-quiz",
+      "url": "https://support.google.com/gemininotebook/answer/16958963?hl=en"
+    }
+  ]
+}

@@ -74,7 +74,9 @@
     "grok-bot-troubleshooting": "grok-bot-troubleshooting",
     "grok-bot-routines": "grok-bot-routines",
     "gemini-canvas-security": "gemini-canvas-security",
-    "gemini-notebook-faq": "gemini-notebook-faq"
+    "gemini-notebook-faq": "gemini-notebook-faq",
+    "claude-whiteboards": "claude-whiteboards",
+    "claude-sheets": "claude-sheets"
   },
   "nodes": [
     {
@@ -1592,9 +1594,9 @@
       "type": "feature-observation",
       "label": "Artifact sharing and storage lifecycle",
       "central_pattern_id": "claude-share-access",
-      "description": "Docs support view/comment/edit permissions; unpublishing an artifact can permanently delete associated personal/shared storage.",
+      "description": "Artifact access can include view, comment or edit depending on role and type. Unpublishing a legacy artifact permanently deletes its stored data; do not generalize that rule to current artifacts.",
       "acceptance": "Test permission matrix, warning and irreversible removal.",
-      "evidence_status": "official search excerpt; acceptance criteria not executed",
+      "evidence_status": "corrected using official help articles 2026-11-26; runtime not tested",
       "state_coverage": "not live tested"
     },
     {
@@ -1790,7 +1792,7 @@
       "type": "evidence-lead",
       "label": "3D visualizer",
       "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_Canvas_3D_planet_generato.width-1200.format-webp.webp",
-      "status": "official page image link and alt text retrieved; direct fetch unsupported content type; visual pixels not verified",
+      "status": "official image link and alt text retrieved; repeated direct fetch 2026-11-26 failed (unsupported application/octet-stream); pixels unverified",
       "storage": "link-only"
     },
     {
@@ -1798,7 +1800,7 @@
       "type": "evidence-lead",
       "label": "Physics quiz",
       "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/03_for_students_1_personalize_le.width-1200.format-webp.webp",
-      "status": "official page image link and alt text retrieved; direct fetch unsupported content type; visual pixels not verified",
+      "status": "official image link and alt text retrieved; repeated direct fetch 2026-11-26 failed (unsupported application/octet-stream); pixels unverified",
       "storage": "link-only"
     },
     {
@@ -1806,7 +1808,7 @@
       "type": "evidence-lead",
       "label": "Role and permission dashboard",
       "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/07_for_work_2_optimize_operation.width-1200.format-webp.webp",
-      "status": "official page image link and alt text retrieved; direct fetch unsupported content type; visual pixels not verified",
+      "status": "official image link and alt text retrieved; repeated direct fetch 2026-11-26 failed (unsupported application/octet-stream); pixels unverified",
       "storage": "link-only"
     },
     {
@@ -1814,7 +1816,7 @@
       "type": "evidence-lead",
       "label": "Speaker notes",
       "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/06_for_work_1_accelerate_impact_.width-1200.format-webp.webp",
-      "status": "official page image link and alt text retrieved; direct fetch unsupported content type; visual pixels not verified",
+      "status": "official image link and alt text retrieved; repeated direct fetch 2026-11-26 failed (unsupported application/octet-stream); pixels unverified",
       "storage": "link-only"
     },
     {
@@ -2194,6 +2196,320 @@
       "type": "state-candidate",
       "label": "read-only",
       "status": "unverified candidate"
+    },
+    {
+      "id": "source:claude-whiteboards",
+      "type": "source",
+      "label": "Get started with Claude Whiteboards",
+      "url": "https://support.claude.com/en/articles/18324319-get-started-with-claude-whiteboards",
+      "central_source_id": "claude-whiteboards",
+      "evidence_status": "official help article read; live UI not tested"
+    },
+    {
+      "id": "source:claude-sheets",
+      "type": "source",
+      "label": "Get started with Claude Sheets",
+      "url": "https://support.claude.com/en/articles/18324300-get-started-with-claude-sheets",
+      "central_source_id": "claude-sheets",
+      "evidence_status": "official help article read; live UI not tested"
+    },
+    {
+      "id": "flow:chatgpt-space-page-inline-generation",
+      "type": "documented-flow",
+      "label": "Inline content and revision",
+      "product": "ChatGPT Space",
+      "description": "Selection-based toolbar, block handle, inline generator and review",
+      "steps": [
+        "Open a page and invoke slash menu",
+        "Choose Generate and describe content",
+        "Review draft in place",
+        "Accept, request revision, or undo"
+      ],
+      "limitations": "Documented text; exact error/focus/animation not observed",
+      "evidence_status": "documented flow; not observed runtime"
+    },
+    {
+      "id": "flow:chatgpt-space-page-visualize",
+      "type": "documented-flow",
+      "label": "Interactive visualization inside a page",
+      "product": "ChatGPT Space",
+      "description": "Generated visualization is a different output from a native page block; persistence must be checked separately",
+      "steps": [
+        "Invoke Visualize with a request",
+        "Choose a starting point such as app, widget, screen or diagram",
+        "Review generated result and test controls",
+        "Request changes using adjacent chat"
+      ],
+      "limitations": "Official guide; not a native template inventory",
+      "evidence_status": "documented flow; not observed runtime"
+    },
+    {
+      "id": "flow:chatgpt-space-page-nesting-link",
+      "type": "documented-flow",
+      "label": "Child page versus reference",
+      "product": "ChatGPT Space",
+      "description": "Child containment differs from reference; drag handle can move an entire heading section",
+      "steps": [
+        "Open parent page",
+        "Choose Page to create a child, or Link to page to reference an existing page",
+        "Name new child or select target",
+        "Navigate the related content"
+      ],
+      "limitations": "Official guide; exact navigation history and deletion restoration untested",
+      "evidence_status": "documented flow; not observed runtime"
+    },
+    {
+      "id": "flow:claude-whiteboard-create-transform",
+      "type": "documented-flow",
+      "label": "Collaborative whiteboard workflow",
+      "product": "Claude",
+      "description": "Whiteboard beta; external invite policy; connected-app context not used on board per guide",
+      "steps": [
+        "Request a board or choose the Whiteboards tile",
+        "Arrange shapes, arrows and sections with collaborators",
+        "Optionally follow a teammate",
+        "Transform to a document/deck or export PNG"
+      ],
+      "limitations": "Official help; association with generic canvas is contextual, not same editor",
+      "evidence_status": "documented flow; not observed runtime"
+    },
+    {
+      "id": "flow:claude-sheet-create-edit",
+      "type": "documented-flow",
+      "label": "Collaborative spreadsheet workflow",
+      "product": "Claude",
+      "description": "Tabs, formulas, conditional formatting, dropdowns, checkboxes and charts; no connected-app live data at launch",
+      "steps": [
+        "Start blank or describe a sheet",
+        "Edit cells with Claude and collaborators",
+        "Inspect outlined changed cells and formulas",
+        "Use version history or export XLSX"
+      ],
+      "limitations": "Official help; visual selection and history behavior not tested",
+      "evidence_status": "documented flow; not observed runtime"
+    },
+    {
+      "id": "flow:grok-bot-page-lifecycle",
+      "type": "documented-flow",
+      "label": "Page creation, reading and update",
+      "product": "Grok Bot",
+      "description": "Desktop page dominates window; mobile closes back to chat. Reader filters/switches alter view only and do not save",
+      "steps": [
+        "Ask Bot to create page",
+        "Open title card in chat",
+        "Use adjacent page-specific chat to request revision",
+        "Earlier card indicates updated version; reopen latest"
+      ],
+      "limitations": "Official help; no reader-write persistence",
+      "evidence_status": "documented flow; not observed runtime"
+    },
+    {
+      "id": "flow:grok-bot-library-discovery",
+      "type": "documented-flow",
+      "label": "Library discovery and pinning",
+      "product": "Grok Bot",
+      "description": "Library excludes user uploads and Cloud Agent returned files per guide; desktop shortcut Cmd/Ctrl+K",
+      "steps": [
+        "Open Bot profile/details and Library",
+        "Browse date groups (five items at first) or use search",
+        "Show more or open item",
+        "Use overflow to pin/unpin; page owner can share"
+      ],
+      "limitations": "Official help; actual visual grouping and pin order untested",
+      "evidence_status": "documented flow; not observed runtime"
+    },
+    {
+      "id": "flow:grok-bot-page-sharing",
+      "type": "documented-flow",
+      "label": "Page sharing and access failure",
+      "product": "Grok Bot",
+      "description": "Private by default; public link allows reading and controls, but only Bot edits content; unavailable options explain why",
+      "steps": [
+        "Open page sharing settings",
+        "Choose permitted audience",
+        "Copy link or narrow access",
+        "If access update fails, retry"
+      ],
+      "limitations": "Official help; no live access matrix tested",
+      "evidence_status": "documented flow; not observed runtime"
+    },
+    {
+      "id": "flow:gemini-canvas-debug",
+      "type": "documented-flow",
+      "label": "Canvas application editing and debugging",
+      "product": "Gemini",
+      "description": "Edits auto-save; version controls documented for docs; preview errors and logs available",
+      "steps": [
+        "Open app in Canvas",
+        "Switch to Code to edit or request a change",
+        "Inspect preview console and recent changes",
+        "Use Select & ask for scoped revision"
+      ],
+      "limitations": "Official help; not inspected live",
+      "evidence_status": "documented flow; not observed runtime"
+    },
+    {
+      "id": "flow:gemini-canvas-sharing",
+      "type": "documented-flow",
+      "label": "Canvas sharing and app information review",
+      "product": "Gemini",
+      "description": "Anyone with public link may view/edit associated shared data; distinguish app data from document content",
+      "steps": [
+        "Open Share & export",
+        "Choose Share",
+        "Review app information about shared data, AI features and session persistence",
+        "Copy public link if appropriate"
+      ],
+      "limitations": "Official help; live security behavior not tested",
+      "evidence_status": "documented flow; not observed runtime"
+    },
+    {
+      "id": "flow:gemini-notebook-flashcard-review",
+      "type": "documented-flow",
+      "label": "Flashcard generation and review loop",
+      "product": "Gemini Notebook (formerly NotebookLM)",
+      "description": "Progress resumes; shuffle, delete card, restart, fullscreen and CSV where allowed. Edit access required to generate/delete study aid",
+      "steps": [
+        "Select sources and Studio Flashcards or customization pencil",
+        "Choose difficulty/prompt; generation runs in background",
+        "Study with Explain, previous/next, known/missed controls",
+        "Review results; retry same, all, or missed cards"
+      ],
+      "limitations": "Official help; correct/incorrect visual design and actual state persistence untested",
+      "evidence_status": "documented flow; not observed runtime"
+    },
+    {
+      "id": "flow:gemini-notebook-quiz-review",
+      "type": "documented-flow",
+      "label": "Quiz generation and review loop",
+      "product": "Gemini Notebook (formerly NotebookLM)",
+      "description": "Fullscreen and previous/next; no claim of exact submit-button behavior or answer timing",
+      "steps": [
+        "Choose Quiz in Studio, customize if needed",
+        "Wait while continuing other work",
+        "Answer and use Hint/Explain or navigate questions",
+        "Review or retake at end"
+      ],
+      "limitations": "Official help; feedback and score states need screenshots",
+      "evidence_status": "documented flow; not observed runtime"
+    },
+    {
+      "id": "feature:chatgpt-space-embedded-vs-linked-files",
+      "type": "feature-observation",
+      "label": "Embedded file permission vs reference",
+      "central_pattern_id": "chatgpt-space-embedded-vs-linked-files",
+      "description": "Uploaded files inherit page access; a link to a separately stored file does not itself grant access. Copied summaries on the page become visible to page readers.",
+      "acceptance": "Check view/edit roles, embedded files, external access and revoke behavior.",
+      "evidence_status": "official documented behavior; acceptance checks not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:claude-personal-shared-storage",
+      "type": "feature-observation",
+      "label": "Personal vs shared artifact state",
+      "central_pattern_id": "claude-personal-shared-storage",
+      "description": "Artifacts can store private per-user data or common shared data. First shared-storage use shows a confirmation. New artifacts can store before publishing; legacy artifacts require publication.",
+      "acceptance": "Test two accounts, save/reload and visibility; distinguish current and legacy artifacts.",
+      "evidence_status": "official documented behavior; acceptance checks not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:claude-invitation-lifecycle",
+      "type": "feature-observation",
+      "label": "Invitation expiry and revocation",
+      "central_pattern_id": "claude-invitation-lifecycle",
+      "description": "Pending email invitations expire in 30 days; accepted invitations do not expire automatically. Removing a person revokes access immediately. Organization settings and plan affect invitations.",
+      "acceptance": "Test pending, expired, accepted, revoked and disabled external sharing.",
+      "evidence_status": "official documented behavior; acceptance checks not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:claude-sharing-role-boundaries",
+      "type": "feature-observation",
+      "label": "Artifact permission roles",
+      "central_pattern_id": "claude-sharing-role-boundaries",
+      "description": "Viewer reads artifact/comments; commenter adds comments and downloads offered files; editor can change content. External commenters and editors have limitations; editors cannot delete artifact.",
+      "acceptance": "Test each role and artifact type, including disabled comments and connectors.",
+      "evidence_status": "official documented behavior; acceptance checks not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:grok-bot-library-facets",
+      "type": "feature-observation",
+      "label": "Library content facets and pinned items",
+      "central_pattern_id": "grok-bot-library-facets",
+      "description": "Desktop Library filters All, Pages, Media, Links, Files, Apps and Pinned. Team Bot separates private-to-user and bot files; pin treatment differs.",
+      "acceptance": "Test filter results, pin/unpin and private/team visibility.",
+      "evidence_status": "official documented behavior; acceptance checks not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:grok-bot-page-rename-stable-link",
+      "type": "feature-observation",
+      "label": "Stable page address and rename",
+      "central_pattern_id": "grok-bot-page-rename-stable-link",
+      "description": "Rename commits with Enter or cancels with Escape; a public page address remains unchanged after renaming. Custom addresses are not supported per guide.",
+      "acceptance": "Test cancel, rename, stable link and access revoke.",
+      "evidence_status": "official documented behavior; acceptance checks not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:grok-bot-share-conflict-retry",
+      "type": "feature-observation",
+      "label": "Sharing conflict and retry",
+      "central_pattern_id": "grok-bot-share-conflict-retry",
+      "description": "Share menu explains unavailable audiences, failed access changes and concurrent access updates; failed saves offer Retry.",
+      "acceptance": "Exercise conflict, failed request, retry and inaccessible audience; no silent success.",
+      "evidence_status": "official documented behavior; acceptance checks not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-canvas-copy-versus-edit",
+      "type": "feature-observation",
+      "label": "Copy shared Canvas content",
+      "central_pattern_id": "gemini-canvas-copy-versus-edit",
+      "description": "A public shared Canvas result can be copied into a user's own editable Canvas; shared app data is a separate concept. Copy/edit shared content requires age 18+, and links open in web.",
+      "acceptance": "Test new object identity, original unchanged, shared data boundary and mobile limitation.",
+      "evidence_status": "official documented behavior; acceptance checks not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-notebook-site-isolated-inputs",
+      "type": "feature-observation",
+      "label": "Shared site with private inputs",
+      "central_pattern_id": "gemini-notebook-site-isolated-inputs",
+      "description": "Every user of a shared site, including owner, sees only their own saved inputs. Site viewers require access to the full notebook; public sharing requires consumer owner/editor.",
+      "acceptance": "Test two users, saved selections, notebook permissions and no cross-user input leakage.",
+      "evidence_status": "official documented behavior; acceptance checks not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-notebook-site-revoke-delete",
+      "type": "feature-observation",
+      "label": "Site revocation and deletion",
+      "central_pattern_id": "gemini-notebook-site-revoke-delete",
+      "description": "Turning off site sharing or deleting the site invalidates previously generated share links; sites can also be downloaded from Studio.",
+      "acceptance": "Test old links, role checks, export and deletion confirmation.",
+      "evidence_status": "official documented behavior; acceptance checks not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "evidence:claude:design-tweaks-thumbnail",
+      "type": "evidence",
+      "label": "Claude Design — Tweaks panel and mobile preview",
+      "url": "https://www.anthropic.com/_next/image?q=75&url=https%3A%2F%2Fimg.youtube.com%2Fvi%2Ft_LBECIQQqs%2Fmaxresdefault.jpg&w=3840",
+      "status": "publisher-linked promotional video thumbnail visually inspected 2026-11-26; still only",
+      "storage": "link-only",
+      "rights": "Anthropic promotional media; redistribution license unverified",
+      "observed": [
+        "Tweaks toggle enabled",
+        "Comment / Edit / Draw controls",
+        "Zoom 100% and expand icon",
+        "Share and Export buttons",
+        "Mobile device preview selected; Desktop and Tablet options",
+        "Dark mode toggle, theme swatches, typography sliders and section toggle"
+      ],
+      "limitations": "No runtime state or motion timing measured; sliders and options may be generated for the example; not a universal native inspector."
     }
   ],
   "edges": [
@@ -4524,6 +4840,444 @@
       "to": "state:interactive-app:read-only",
       "relation": "investigate_state",
       "status": "proposed scope"
+    },
+    {
+      "from": "product:claude",
+      "to": "source:claude-whiteboards",
+      "relation": "documented_by",
+      "status": "official help"
+    },
+    {
+      "from": "product:claude",
+      "to": "source:claude-sheets",
+      "relation": "documented_by",
+      "status": "official help"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "flow:chatgpt-space-page-inline-generation",
+      "relation": "has_documented_flow",
+      "status": "official documentation; not runtime test"
+    },
+    {
+      "from": "flow:chatgpt-space-page-inline-generation",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "flow:chatgpt-space-page-inline-generation",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "documented or contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "flow:chatgpt-space-page-visualize",
+      "relation": "has_documented_flow",
+      "status": "official documentation; not runtime test"
+    },
+    {
+      "from": "flow:chatgpt-space-page-visualize",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "flow:chatgpt-space-page-visualize",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "documented or contextual association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "flow:chatgpt-space-page-nesting-link",
+      "relation": "has_documented_flow",
+      "status": "official documentation; not runtime test"
+    },
+    {
+      "from": "flow:chatgpt-space-page-nesting-link",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "flow:chatgpt-space-page-nesting-link",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "documented or contextual association"
+    },
+    {
+      "from": "product:claude",
+      "to": "flow:claude-whiteboard-create-transform",
+      "relation": "has_documented_flow",
+      "status": "official documentation; not runtime test"
+    },
+    {
+      "from": "flow:claude-whiteboard-create-transform",
+      "to": "source:claude-whiteboards",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "flow:claude-whiteboard-create-transform",
+      "to": "output:claude:whiteboards-beta",
+      "relation": "related_surface",
+      "status": "typed artifact output"
+    },
+    {
+      "from": "product:claude",
+      "to": "flow:claude-sheet-create-edit",
+      "relation": "has_documented_flow",
+      "status": "official documentation; not runtime test"
+    },
+    {
+      "from": "flow:claude-sheet-create-edit",
+      "to": "source:claude-sheets",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "flow:claude-sheet-create-edit",
+      "to": "view:claude:artifacts-tab",
+      "relation": "related_surface",
+      "status": "documented or contextual association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "flow:grok-bot-page-lifecycle",
+      "relation": "has_documented_flow",
+      "status": "official documentation; not runtime test"
+    },
+    {
+      "from": "flow:grok-bot-page-lifecycle",
+      "to": "source:grok-bot-files",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "flow:grok-bot-page-lifecycle",
+      "to": "view:grok-bot:pages",
+      "relation": "related_surface",
+      "status": "documented or contextual association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "flow:grok-bot-library-discovery",
+      "relation": "has_documented_flow",
+      "status": "official documentation; not runtime test"
+    },
+    {
+      "from": "flow:grok-bot-library-discovery",
+      "to": "source:grok-bot-files",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "flow:grok-bot-library-discovery",
+      "to": "view:grok-bot:library",
+      "relation": "related_surface",
+      "status": "documented or contextual association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "flow:grok-bot-page-sharing",
+      "relation": "has_documented_flow",
+      "status": "official documentation; not runtime test"
+    },
+    {
+      "from": "flow:grok-bot-page-sharing",
+      "to": "source:grok-bot-files",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "flow:grok-bot-page-sharing",
+      "to": "view:grok-bot:pages",
+      "relation": "related_surface",
+      "status": "documented or contextual association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "flow:gemini-canvas-debug",
+      "relation": "has_documented_flow",
+      "status": "official documentation; not runtime test"
+    },
+    {
+      "from": "flow:gemini-canvas-debug",
+      "to": "source:gemini-canvas",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "flow:gemini-canvas-debug",
+      "to": "view:gemini:canvas",
+      "relation": "related_surface",
+      "status": "documented or contextual association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "flow:gemini-canvas-sharing",
+      "relation": "has_documented_flow",
+      "status": "official documentation; not runtime test"
+    },
+    {
+      "from": "flow:gemini-canvas-sharing",
+      "to": "source:gemini-canvas",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "flow:gemini-canvas-sharing",
+      "to": "view:gemini:canvas",
+      "relation": "related_surface",
+      "status": "documented or contextual association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "flow:gemini-notebook-flashcard-review",
+      "relation": "has_documented_flow",
+      "status": "official documentation; not runtime test"
+    },
+    {
+      "from": "flow:gemini-notebook-flashcard-review",
+      "to": "source:gemini-notebook-quiz",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "flow:gemini-notebook-flashcard-review",
+      "to": "view:gemini-notebook:full-screen-study-view",
+      "relation": "related_surface",
+      "status": "documented or contextual association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "flow:gemini-notebook-quiz-review",
+      "relation": "has_documented_flow",
+      "status": "official documentation; not runtime test"
+    },
+    {
+      "from": "flow:gemini-notebook-quiz-review",
+      "to": "source:gemini-notebook-quiz",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "flow:gemini-notebook-quiz-review",
+      "to": "view:gemini-notebook:full-screen-study-view",
+      "relation": "related_surface",
+      "status": "documented or contextual association"
+    },
+    {
+      "from": "feature:claude-share-access",
+      "to": "source:claude-artifacts",
+      "relation": "supported_by",
+      "status": "official clarification"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "feature:chatgpt-space-embedded-vs-linked-files",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:chatgpt-space-embedded-vs-linked-files",
+      "to": "source:openai-space-sharing",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:chatgpt-space-embedded-vs-linked-files",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:claude",
+      "to": "feature:claude-personal-shared-storage",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:claude-personal-shared-storage",
+      "to": "source:claude-artifacts",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:claude-personal-shared-storage",
+      "to": "view:claude:artifacts-tab",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:claude",
+      "to": "feature:claude-invitation-lifecycle",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:claude-invitation-lifecycle",
+      "to": "source:claude-share",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:claude-invitation-lifecycle",
+      "to": "view:claude:artifacts-tab",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:claude",
+      "to": "feature:claude-sharing-role-boundaries",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:claude-sharing-role-boundaries",
+      "to": "source:claude-share",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:claude-sharing-role-boundaries",
+      "to": "view:claude:artifacts-tab",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "feature:grok-bot-library-facets",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:grok-bot-library-facets",
+      "to": "source:grok-bot-files",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:grok-bot-library-facets",
+      "to": "view:grok-bot:library",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "feature:grok-bot-page-rename-stable-link",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:grok-bot-page-rename-stable-link",
+      "to": "source:grok-bot-files",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:grok-bot-page-rename-stable-link",
+      "to": "view:grok-bot:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "feature:grok-bot-share-conflict-retry",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:grok-bot-share-conflict-retry",
+      "to": "source:grok-bot-files",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:grok-bot-share-conflict-retry",
+      "to": "view:grok-bot:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "feature:gemini-canvas-copy-versus-edit",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:gemini-canvas-copy-versus-edit",
+      "to": "source:gemini-canvas",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:gemini-canvas-copy-versus-edit",
+      "to": "view:gemini:canvas",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "feature:gemini-notebook-site-isolated-inputs",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:gemini-notebook-site-isolated-inputs",
+      "to": "source:gemini-notebook-sites",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:gemini-notebook-site-isolated-inputs",
+      "to": "view:gemini-notebook:interactive-site",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "feature:gemini-notebook-site-revoke-delete",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:gemini-notebook-site-revoke-delete",
+      "to": "source:gemini-notebook-sites",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:gemini-notebook-site-revoke-delete",
+      "to": "view:gemini-notebook:interactive-site",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:claude",
+      "to": "evidence:claude:design-tweaks-thumbnail",
+      "relation": "has_visual_lead",
+      "status": "publisher-linked image inspected"
+    },
+    {
+      "from": "evidence:claude:design-tweaks-thumbnail",
+      "to": "source:claude-design-launch",
+      "relation": "published_by",
+      "status": "Anthropic announcement"
+    },
+    {
+      "from": "output:claude:design",
+      "to": "evidence:claude:design-tweaks-thumbnail",
+      "relation": "illustrated_by",
+      "status": "marketing still; not behavior test"
+    },
+    {
+      "from": "view:claude:design-canvas",
+      "to": "evidence:claude:design-tweaks-thumbnail",
+      "relation": "illustrated_by",
+      "status": "marketing still; not behavior test"
     }
   ],
   "backlog": [
@@ -4651,6 +5405,8 @@
   "provenance": [
     "docs/references/ui-ux-research-sources/chatgpt-space-views-and-composable-pages-2026-11-26.json",
     "docs/references/ui-ux-research-sources/ai-product-views-and-artifacts-2026-11-26.json",
-    "docs/references/ui-ux-research-sources/ai-product-gap-delta-2026-11-26.json"
+    "docs/references/ui-ux-research-sources/ai-product-gap-delta-2026-11-26.json",
+    "docs/references/ui-ux-research-sources/ai-product-documented-flows-2026-11-26.json",
+    "docs/references/ui-ux-research-sources/ai-product-availability-and-state-boundaries-2026-11-26.json"
   ]
 }

@@ -40,6 +40,127 @@ def digest(data):
 def normalized(text):
     return "".join(c for c in unicodedata.normalize("NFKD", text.casefold()) if not unicodedata.combining(c))
 
+# Only explicitly reviewed public catalog files; no recursive scan of archive data.
+SUPPLEMENTAL_CATALOGS = (
+    ("async-ux", "asynchronous-non-blocking-ux.json", "patterns", "interacao"),
+    ("behavioral-ux", "behavioral-ux-quality-2026.json", "patterns", "interacao"),
+    ("component-behavior", "component-interaction-behavior-patterns.json", "patterns", "design-system"),
+    ("microinteraction", "microinteraction-state-and-polish.json", "patterns", "motion"),
+    ("agent-design-system", "agent-ready-design-system-completeness.json", "patterns", "design-system"),
+    ("ai-native", "ai-native-product-design.json", "records", "ai-native-ux"),
+    ("space-views", "chatgpt-space-views-and-composable-pages-2026-11-26.json", "patterns", "workspace"),
+    ("ai-product-views", "ai-product-views-and-artifacts-2026-11-26.json", "products", "ai-native-ux"),
+    ("design-activities", "ux-design-activities-2026-11-25.json", "activities", "produto"),
+)
+
+def supplemental_records(base=BASE):
+    """Project existing public records without changing their source JSON or hashes.
+
+    Source and pattern occurrences retain namespace, original fields and catalog
+    checksum. Cross-indexed patterns do not count as unique discoveries.
+    """
+    for namespace, filename, key, domain in SUPPLEMENTAL_CATALOGS:
+        path = base / "ui-ux-research-sources" / filename
+        raw = path.read_bytes()
+        doc = json.loads(raw)
+        catalog_date = next((doc[k] for k in ("reviewed_on","review_date","recorded_on","date") if doc.get(k)), None)
+        source_map = {x["id"]: x["url"] for x in doc["sources"]}
+        if len(source_map) != len(doc["sources"]):
+            raise ValueError(f"Duplicate source ID in {filename}")
+        def project(item, kind, product=None):
+            local_id = item["id"]
+            title = item.get("title") or item.get("name") or local_id.replace("-", " ")
+            ids = list(item.get("source_ids", []))
+            if item.get("source_id"):
+                ids.append(item["source_id"])
+            if any(s not in source_map for s in ids):
+                raise ValueError(f"Unresolved source ID in {filename}:{local_id}")
+            urls = [source_map[s] for s in ids]
+            if item.get("url"):
+                urls.append(item["url"])
+            if any(urlsplit(u).scheme != "https" or not urlsplit(u).hostname or urlsplit(u).username is not None for u in urls):
+                raise ValueError(f"Invalid public URL in {filename}:{local_id}")
+            # Do not guess an explicit evidence link where none is declared.
+            projected = dict(item)
+            if product:
+                projected.setdefault("product", product)
+            if kind == "pattern":
+                projected.setdefault("domain", domain)
+            return {"id":namespace + ("-sources" if kind=="source" else "") + ":" + local_id,
+                    "title":title,"kind":kind,
+                    "catalog":namespace + ("-sources" if kind=="source" else ""),
+                    "record_id":local_id,
+                    "catalog_path":"docs/references/ui-ux-research-sources/" + filename,
+                    "catalog_sha256":digest(raw),
+                    "record_sha256":digest(json.dumps(item,ensure_ascii=False,sort_keys=True).encode("utf-8")),
+                    "sources":list(dict.fromkeys(urls)),
+                    "date":item.get("checked_on") or item.get("recorded_on") or item.get("date") or catalog_date,
+                    "product":product or item.get("product"),
+                    "confidence":item.get("evidence_status") or item.get("evidence") or item.get("classification"),
+                    "license":item.get("license"),
+                    "availability":"link-only" if kind=="source" else "cataloged-synthesis",
+                    "record":projected}
+        for source in doc["sources"]:
+            yield project(source,"source")
+        if key=="products":
+            for product in doc[key]:
+                for item in product["patterns"]:
+                    yield project(item,"pattern",product=product["product"])
+        else:
+            for item in doc[key]:
+                yield project(item,"pattern")
+
+
+def product_graph_records(base=BASE):
+    """Project the reviewed product graph without treating candidates as evidence."""
+    path = base / "interface-pattern-library/ai-product-knowledge-graph.json"
+    raw = path.read_bytes()
+    doc = json.loads(raw)
+    nodes = {n["id"]: n for n in doc["nodes"]}
+    if len(nodes) != len(doc["nodes"]):
+        raise ValueError("Duplicate product graph node")
+    edges = doc["edges"]
+    if any(e["from"] not in nodes or e["to"] not in nodes for e in edges):
+        raise ValueError("Dangling product graph edge")
+    kinds = {"view-or-entry-point": "view", "output": "output",
+             "evidence": "visual", "evidence-lead": "visual",
+             "documented-flow": "flow"}
+    owners = {}
+    links = {}
+    for e in edges:
+        links.setdefault(e["from"], []).append(e)
+        if nodes[e["from"]]["type"] == "product":
+            owners[e["to"]] = nodes[e["from"]]["label"]
+    for e in edges:
+        if e["relation"] == "illustrated_by" and e["from"] in owners:
+            owners[e["to"]] = owners[e["from"]]
+    for ident, n in nodes.items():
+        if n["type"] not in kinds:
+            continue
+        direct = links.get(ident, [])
+        # Only explicit source edges; do not inherit product-level authority.
+        urls = [nodes[e["to"]]["url"] for e in direct
+                if nodes[e["to"]]["type"] == "source"]
+        if any(urlsplit(u).scheme != "https" or not urlsplit(u).hostname
+               or urlsplit(u).username is not None for u in urls):
+            raise ValueError("Invalid public graph source")
+        kind = kinds[n["type"]]
+        product = owners.get(ident) or n.get("product")
+        related = [{"relation": e["relation"], "node": e["to"],
+                    "label": nodes[e["to"]]["label"], "status": e["status"]}
+                   for e in direct]
+        record = dict(n, product=product, relations=related)
+        yield {"id": "ai-product-graph:" + ident, "title": n["label"],
+               "kind": kind, "catalog": "ai-product-graph", "record_id": ident,
+               "catalog_path": "docs/references/interface-pattern-library/ai-product-knowledge-graph.json",
+               "catalog_sha256": digest(raw),
+               "record_sha256": digest(json.dumps(n, ensure_ascii=False, sort_keys=True).encode("utf-8")),
+               "sources": list(dict.fromkeys(urls)), "date": doc["reviewed_on"],
+               "product": product, "confidence": n.get("evidence_status") or n.get("status") or n.get("classification"),
+               "license": n.get("rights"),
+               "availability": "link-only" if kind == "visual" else "cataloged-synthesis",
+               "record": record}
+
 def load_records():
     records, seen = [], set()
     general_sources = json.loads((BASE / "interface-pattern-library/sources.json").read_text(encoding="utf-8"))["sources"]
@@ -82,6 +203,11 @@ def load_records():
                     ("archived-blob-declared" if namespace == "grok-assets" else
                      "link-only" if namespace.endswith("sources") or namespace == "grok-links" else "documented"),
                 "record": item})
+    for row in (*supplemental_records(), *product_graph_records()):
+        if row["id"] in seen:
+            raise ValueError(f"Duplicate id: {row['id']}")
+        seen.add(row["id"])
+        records.append(row)
     return records
 
 def build(db, records):
@@ -234,7 +360,7 @@ def audit(records):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("query", nargs="?", default="")
-    p.add_argument("--kind", choices=["pattern","source","visual"])
+    p.add_argument("--kind", choices=["pattern","source","visual","view","output","flow"])
     p.add_argument("--limit", type=int, default=20)
     p.add_argument("--db", default=":memory:")
     p.add_argument("--coverage", action="store_true")

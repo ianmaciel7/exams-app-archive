@@ -50,3 +50,5 @@ Source and limitations: [research catalog](../ui-ux-research-sources/chatgpt-spa
 - [Gemini Canvas: Speaker notes](https://storage.googleapis.com/gweb-uniblog-publish-prod/images/06_for_work_1_accelerate_impact_.width-1200.format-webp.webp) — direct image URL; pixels not verified.
 
 [Benchmark and caveats](../ui-ux-research-sources/ai-product-views-and-artifacts-2026-11-26.md). Link-only.
+
+- [Claude Design — Tweaks panel and mobile preview](https://www.anthropic.com/_next/image?q=75&url=https%3A%2F%2Fimg.youtube.com%2Fvi%2Ft_LBECIQQqs%2Fmaxresdefault.jpg&w=3840) — visually inspected promotional thumbnail, not runtime evidence. [Publisher](https://www.anthropic.com/news/claude-design-anthropic-labs).

@@ -95,7 +95,7 @@ def reconcile_legacy_assets(records, *, root=ROOT):
                 errors.append("legacy byte size mismatch: " + ident)
                 continue
             data = path.read_bytes()
-            sha = hashlib.sha1(f"blob {size}\\0".encode() + data).hexdigest()
+            sha = hashlib.sha1(f"blob {size}\0".encode() + data).hexdigest()
             if sha != item.get("blob_sha"):
                 errors.append("legacy blob mismatch: " + ident)
                 continue
