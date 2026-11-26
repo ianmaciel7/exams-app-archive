@@ -100,7 +100,9 @@
     "google-research-generative-ui-implementation": "google-research-generative-ui-implementation",
     "google-research-generative-ui-demo-gallery": "google-research-generative-ui-demo-gallery",
     "gemini-guided-learning-help": "gemini-guided-learning-help",
-    "gemini-custom-gems-help": "gemini-custom-gems-help"
+    "gemini-custom-gems-help": "gemini-custom-gems-help",
+    "openai-sites-help": "openai-sites-help",
+    "gemini-notebook-public": "gemini-notebook-public"
   },
   "nodes": [
     {
@@ -743,13 +745,13 @@
       "id": "view:chatgpt-space:sites",
       "type": "view-or-entry-point",
       "label": "Sites",
-      "classification": "recorded label; native view vs mode to refine"
+      "classification": "Adjacent ChatGPT sidebar destination; exact placement within Space unverified"
     },
     {
       "id": "view:chatgpt-space:google-drive",
       "type": "view-or-entry-point",
       "label": "Google Drive",
-      "classification": "recorded label; native view vs mode to refine"
+      "classification": "External source entry documented in Library; exact placement within Space unverified"
     },
     {
       "id": "view:chatgpt-space:space",
@@ -851,7 +853,7 @@
       "id": "view:claude:installed-apps",
       "type": "view-or-entry-point",
       "label": "Installed apps",
-      "classification": "recorded label; native view vs mode to refine"
+      "classification": "Native desktop menu entry; not a web artifact collection"
     },
     {
       "id": "view:claude:inline-connected-app",
@@ -935,7 +937,7 @@
       "id": "view:grok-bot:computer",
       "type": "view-or-entry-point",
       "label": "Computer",
-      "classification": "recorded label; native view vs mode to refine"
+      "classification": "Official illustrated panel entry; runtime untested"
     },
     {
       "id": "view:grok-bot:pages",
@@ -947,7 +949,7 @@
       "id": "view:grok-bot:marketplace",
       "type": "view-or-entry-point",
       "label": "Marketplace",
-      "classification": "recorded label; native view vs mode to refine"
+      "classification": "Marketplace discovery entry; exact in-app layout untested"
     },
     {
       "id": "view:grok-bot:routines",
@@ -1139,7 +1141,7 @@
       "id": "view:gemini-notebook:notebook-collection",
       "type": "view-or-entry-point",
       "label": "Notebook collection",
-      "classification": "recorded label; native view vs mode to refine"
+      "classification": "Native notebook homepage and discovery collection"
     },
     {
       "id": "view:gemini-notebook:sources",
@@ -4344,6 +4346,22 @@
       "label": "Use Gems in Gemini Apps",
       "url": "https://support.google.com/gemini/answer/15146780?co=GENIE.Platform%3DDesktop&hl=en",
       "central_source_id": "gemini-custom-gems-help",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:openai-sites-help",
+      "type": "source",
+      "label": "Creating and using ChatGPT Sites",
+      "url": "https://help.openai.com/en/articles/20001339-creating-and-using-chatgpt-sites",
+      "central_source_id": "openai-sites-help",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:gemini-notebook-public",
+      "type": "source",
+      "label": "Use public notebooks and featured notebooks",
+      "url": "https://support.google.com/gemininotebook/answer/16322204?co=GENIE.Platform%3DDesktop&hl=en",
+      "central_source_id": "gemini-notebook-public",
       "evidence_status": "official source retrieved in research"
     }
   ],
@@ -10209,6 +10227,48 @@
       "to": "source:gemini-canvas-examples",
       "relation": "supported_by",
       "status": "Official product example checked 2026-11-26; not native template: Generated productivity example."
+    },
+    {
+      "from": "view:chatgpt-space:sites",
+      "to": "source:openai-sites-help",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Sites is a ChatGPT web/desktop sidebar destination, with edit and shared-with-you navigation. Not verified as an internal Space filter."
+    },
+    {
+      "from": "view:chatgpt-space:google-drive",
+      "to": "source:openai-library",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Library has a Google Drive entry for browsing authorized external files; Space-specific placement is not documented by this source."
+    },
+    {
+      "from": "view:chatgpt-space:google-drive",
+      "to": "source:openai-space-start",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Space pages can use connected Google Drive files as context; this does not establish a separate Space navigation view."
+    },
+    {
+      "from": "view:claude:installed-apps",
+      "to": "source:claude-install",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Claude Desktop File > Apps opens, manages permissions for and uninstalls installed artifacts on Windows/macOS; distinct from web Artifacts tab."
+    },
+    {
+      "from": "view:grok-bot:computer",
+      "to": "source:grok-bot-overview",
+      "relation": "supported_by",
+      "status": "Official product example checked 2026-11-26: publisher's interface illustration includes Computer alongside Details and Library, with a working-state screen; runtime behavior and geometry untested."
+    },
+    {
+      "from": "view:grok-bot:marketplace",
+      "to": "source:grok-bot-overview",
+      "relation": "supported_by",
+      "status": "Official product overview checked 2026-11-26: marketplace browsing and opening prebuilt Bots documented; exact in-app layout untested."
+    },
+    {
+      "from": "view:gemini-notebook:notebook-collection",
+      "to": "source:gemini-notebook-public",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: notebook homepage supports removal of recently opened shared items, public search and featured notebook discovery; consumer and workspace availability differ."
     }
   ],
   "backlog": [

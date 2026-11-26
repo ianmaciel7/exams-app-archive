@@ -6254,6 +6254,28 @@
       "notes": "Public help text; no authenticated UI testing.",
       "storage": "link-only",
       "checked_on": "2026-11-26"
+    },
+    {
+      "id": "openai-sites-help",
+      "title": "Creating and using ChatGPT Sites",
+      "url": "https://help.openai.com/en/articles/20001339-creating-and-using-chatgpt-sites",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "storage": "link-only",
+      "notes": "Feature-specific public help; authenticated layout untested."
+    },
+    {
+      "id": "gemini-notebook-public",
+      "title": "Use public notebooks and featured notebooks",
+      "url": "https://support.google.com/gemininotebook/answer/16322204?co=GENIE.Platform%3DDesktop&hl=en",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "status": "official source retrieved in research",
+      "storage": "link-only",
+      "notes": "Feature-specific public help; authenticated layout untested."
     }
   ],
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",
