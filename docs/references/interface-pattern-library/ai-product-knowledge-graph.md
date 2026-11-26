@@ -53,3 +53,7 @@ Every benchmark must resolve source IDs centrally, preserve stable observation I
 - [Twelve documented flows](../ui-ux-research-sources/ai-product-documented-flows-2026-11-26.md), with source-specific persistence boundaries and explicit untested behavior.
 - Graph now has 308 nodes and 426 edges; prior counts above are historical snapshots.
 - Public research FTS projects recorded views, outputs, visual references and documented flows. Candidate component/state nodes are excluded from search evidence. Existing pattern records are retained; graph feature observations remain centrally indexed without a third duplicate projection. CI and deployment are separate validation gates.
+
+## Availability and state boundaries
+
+[15-row matrix and 10 additional product observations](../ui-ux-research-sources/ai-product-availability-and-state-boundaries-2026-11-26.md). Graph now 319 nodes and 461 edges. Claude Design promotional thumbnail visually inspected; no motion inference.

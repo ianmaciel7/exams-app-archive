@@ -1079,12 +1079,13 @@
       "family": "ai-product-observation",
       "name": "Artifact sharing and storage lifecycle",
       "kind": "Product-specific documented behavior",
-      "definition": "Docs support view/comment/edit permissions; unpublishing an artifact can permanently delete associated personal/shared storage.",
+      "definition": "Artifact access can include view, comment or edit depending on role and type. Unpublishing a legacy artifact permanently deletes its stored data; do not generalize that rule to current artifacts.",
       "guardrail": "Test permission matrix, warning and irreversible removal.",
       "source_ids": [
-        "claude-share"
+        "claude-share",
+        "claude-artifacts"
       ],
-      "classification": "official search excerpt; acceptance criteria not executed",
+      "classification": "corrected using official help articles 2026-11-26; runtime not tested",
       "product": "Claude"
     },
     {
@@ -1150,6 +1151,136 @@
         "gemini-notebook-chat"
       ],
       "classification": "official search excerpt; acceptance criteria not executed",
+      "product": "Gemini Notebook (formerly NotebookLM)"
+    },
+    {
+      "id": "chatgpt-space-embedded-vs-linked-files",
+      "family": "ai-product-observation",
+      "name": "Embedded file permission vs reference",
+      "kind": "Product-specific documented behavior",
+      "definition": "Uploaded files inherit page access; a link to a separately stored file does not itself grant access. Copied summaries on the page become visible to page readers.",
+      "guardrail": "Check view/edit roles, embedded files, external access and revoke behavior.",
+      "source_ids": [
+        "openai-space-sharing"
+      ],
+      "classification": "official documented behavior; acceptance checks not executed",
+      "product": "ChatGPT Space"
+    },
+    {
+      "id": "claude-personal-shared-storage",
+      "family": "ai-product-observation",
+      "name": "Personal vs shared artifact state",
+      "kind": "Product-specific documented behavior",
+      "definition": "Artifacts can store private per-user data or common shared data. First shared-storage use shows a confirmation. New artifacts can store before publishing; legacy artifacts require publication.",
+      "guardrail": "Test two accounts, save/reload and visibility; distinguish current and legacy artifacts.",
+      "source_ids": [
+        "claude-artifacts"
+      ],
+      "classification": "official documented behavior; acceptance checks not executed",
+      "product": "Claude"
+    },
+    {
+      "id": "claude-invitation-lifecycle",
+      "family": "ai-product-observation",
+      "name": "Invitation expiry and revocation",
+      "kind": "Product-specific documented behavior",
+      "definition": "Pending email invitations expire in 30 days; accepted invitations do not expire automatically. Removing a person revokes access immediately. Organization settings and plan affect invitations.",
+      "guardrail": "Test pending, expired, accepted, revoked and disabled external sharing.",
+      "source_ids": [
+        "claude-share"
+      ],
+      "classification": "official documented behavior; acceptance checks not executed",
+      "product": "Claude"
+    },
+    {
+      "id": "claude-sharing-role-boundaries",
+      "family": "ai-product-observation",
+      "name": "Artifact permission roles",
+      "kind": "Product-specific documented behavior",
+      "definition": "Viewer reads artifact/comments; commenter adds comments and downloads offered files; editor can change content. External commenters and editors have limitations; editors cannot delete artifact.",
+      "guardrail": "Test each role and artifact type, including disabled comments and connectors.",
+      "source_ids": [
+        "claude-share"
+      ],
+      "classification": "official documented behavior; acceptance checks not executed",
+      "product": "Claude"
+    },
+    {
+      "id": "grok-bot-library-facets",
+      "family": "ai-product-observation",
+      "name": "Library content facets and pinned items",
+      "kind": "Product-specific documented behavior",
+      "definition": "Desktop Library filters All, Pages, Media, Links, Files, Apps and Pinned. Team Bot separates private-to-user and bot files; pin treatment differs.",
+      "guardrail": "Test filter results, pin/unpin and private/team visibility.",
+      "source_ids": [
+        "grok-bot-files"
+      ],
+      "classification": "official documented behavior; acceptance checks not executed",
+      "product": "Grok Bot"
+    },
+    {
+      "id": "grok-bot-page-rename-stable-link",
+      "family": "ai-product-observation",
+      "name": "Stable page address and rename",
+      "kind": "Product-specific documented behavior",
+      "definition": "Rename commits with Enter or cancels with Escape; a public page address remains unchanged after renaming. Custom addresses are not supported per guide.",
+      "guardrail": "Test cancel, rename, stable link and access revoke.",
+      "source_ids": [
+        "grok-bot-files"
+      ],
+      "classification": "official documented behavior; acceptance checks not executed",
+      "product": "Grok Bot"
+    },
+    {
+      "id": "grok-bot-share-conflict-retry",
+      "family": "ai-product-observation",
+      "name": "Sharing conflict and retry",
+      "kind": "Product-specific documented behavior",
+      "definition": "Share menu explains unavailable audiences, failed access changes and concurrent access updates; failed saves offer Retry.",
+      "guardrail": "Exercise conflict, failed request, retry and inaccessible audience; no silent success.",
+      "source_ids": [
+        "grok-bot-files"
+      ],
+      "classification": "official documented behavior; acceptance checks not executed",
+      "product": "Grok Bot"
+    },
+    {
+      "id": "gemini-canvas-copy-versus-edit",
+      "family": "ai-product-observation",
+      "name": "Copy shared Canvas content",
+      "kind": "Product-specific documented behavior",
+      "definition": "A public shared Canvas result can be copied into a user's own editable Canvas; shared app data is a separate concept. Copy/edit shared content requires age 18+, and links open in web.",
+      "guardrail": "Test new object identity, original unchanged, shared data boundary and mobile limitation.",
+      "source_ids": [
+        "gemini-canvas"
+      ],
+      "classification": "official documented behavior; acceptance checks not executed",
+      "product": "Gemini"
+    },
+    {
+      "id": "gemini-notebook-site-isolated-inputs",
+      "family": "ai-product-observation",
+      "name": "Shared site with private inputs",
+      "kind": "Product-specific documented behavior",
+      "definition": "Every user of a shared site, including owner, sees only their own saved inputs. Site viewers require access to the full notebook; public sharing requires consumer owner/editor.",
+      "guardrail": "Test two users, saved selections, notebook permissions and no cross-user input leakage.",
+      "source_ids": [
+        "gemini-notebook-sites"
+      ],
+      "classification": "official documented behavior; acceptance checks not executed",
+      "product": "Gemini Notebook (formerly NotebookLM)"
+    },
+    {
+      "id": "gemini-notebook-site-revoke-delete",
+      "family": "ai-product-observation",
+      "name": "Site revocation and deletion",
+      "kind": "Product-specific documented behavior",
+      "definition": "Turning off site sharing or deleting the site invalidates previously generated share links; sites can also be downloaded from Studio.",
+      "guardrail": "Test old links, role checks, export and deletion confirmation.",
+      "source_ids": [
+        "gemini-notebook-sites"
+      ],
+      "classification": "official documented behavior; acceptance checks not executed",
       "product": "Gemini Notebook (formerly NotebookLM)"
     }
   ]

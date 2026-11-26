@@ -156,3 +156,7 @@ Registrar URLs originais e redirects, datas de consulta, fonte e status (verific
 ## Documented product flows
 
 - [Interaction sequences and persistence boundaries](ai-product-documented-flows-2026-11-26.md) · [JSON](ai-product-documented-flows-2026-11-26.json)
+
+## Product availability and state boundaries
+
+- [Comparison and evidence](ai-product-availability-and-state-boundaries-2026-11-26.md) · [Structured matrix](ai-product-availability-and-state-boundaries-2026-11-26.json)

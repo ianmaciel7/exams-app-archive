@@ -1594,9 +1594,9 @@
       "type": "feature-observation",
       "label": "Artifact sharing and storage lifecycle",
       "central_pattern_id": "claude-share-access",
-      "description": "Docs support view/comment/edit permissions; unpublishing an artifact can permanently delete associated personal/shared storage.",
+      "description": "Artifact access can include view, comment or edit depending on role and type. Unpublishing a legacy artifact permanently deletes its stored data; do not generalize that rule to current artifacts.",
       "acceptance": "Test permission matrix, warning and irreversible removal.",
-      "evidence_status": "official search excerpt; acceptance criteria not executed",
+      "evidence_status": "corrected using official help articles 2026-11-26; runtime not tested",
       "state_coverage": "not live tested"
     },
     {
@@ -1792,7 +1792,7 @@
       "type": "evidence-lead",
       "label": "3D visualizer",
       "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_Canvas_3D_planet_generato.width-1200.format-webp.webp",
-      "status": "official page image link and alt text retrieved; direct fetch unsupported content type; visual pixels not verified",
+      "status": "official image link and alt text retrieved; repeated direct fetch 2026-11-26 failed (unsupported application/octet-stream); pixels unverified",
       "storage": "link-only"
     },
     {
@@ -1800,7 +1800,7 @@
       "type": "evidence-lead",
       "label": "Physics quiz",
       "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/03_for_students_1_personalize_le.width-1200.format-webp.webp",
-      "status": "official page image link and alt text retrieved; direct fetch unsupported content type; visual pixels not verified",
+      "status": "official image link and alt text retrieved; repeated direct fetch 2026-11-26 failed (unsupported application/octet-stream); pixels unverified",
       "storage": "link-only"
     },
     {
@@ -1808,7 +1808,7 @@
       "type": "evidence-lead",
       "label": "Role and permission dashboard",
       "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/07_for_work_2_optimize_operation.width-1200.format-webp.webp",
-      "status": "official page image link and alt text retrieved; direct fetch unsupported content type; visual pixels not verified",
+      "status": "official image link and alt text retrieved; repeated direct fetch 2026-11-26 failed (unsupported application/octet-stream); pixels unverified",
       "storage": "link-only"
     },
     {
@@ -1816,7 +1816,7 @@
       "type": "evidence-lead",
       "label": "Speaker notes",
       "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/06_for_work_1_accelerate_impact_.width-1200.format-webp.webp",
-      "status": "official page image link and alt text retrieved; direct fetch unsupported content type; visual pixels not verified",
+      "status": "official image link and alt text retrieved; repeated direct fetch 2026-11-26 failed (unsupported application/octet-stream); pixels unverified",
       "storage": "link-only"
     },
     {
@@ -2392,6 +2392,124 @@
       ],
       "limitations": "Official help; feedback and score states need screenshots",
       "evidence_status": "documented flow; not observed runtime"
+    },
+    {
+      "id": "feature:chatgpt-space-embedded-vs-linked-files",
+      "type": "feature-observation",
+      "label": "Embedded file permission vs reference",
+      "central_pattern_id": "chatgpt-space-embedded-vs-linked-files",
+      "description": "Uploaded files inherit page access; a link to a separately stored file does not itself grant access. Copied summaries on the page become visible to page readers.",
+      "acceptance": "Check view/edit roles, embedded files, external access and revoke behavior.",
+      "evidence_status": "official documented behavior; acceptance checks not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:claude-personal-shared-storage",
+      "type": "feature-observation",
+      "label": "Personal vs shared artifact state",
+      "central_pattern_id": "claude-personal-shared-storage",
+      "description": "Artifacts can store private per-user data or common shared data. First shared-storage use shows a confirmation. New artifacts can store before publishing; legacy artifacts require publication.",
+      "acceptance": "Test two accounts, save/reload and visibility; distinguish current and legacy artifacts.",
+      "evidence_status": "official documented behavior; acceptance checks not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:claude-invitation-lifecycle",
+      "type": "feature-observation",
+      "label": "Invitation expiry and revocation",
+      "central_pattern_id": "claude-invitation-lifecycle",
+      "description": "Pending email invitations expire in 30 days; accepted invitations do not expire automatically. Removing a person revokes access immediately. Organization settings and plan affect invitations.",
+      "acceptance": "Test pending, expired, accepted, revoked and disabled external sharing.",
+      "evidence_status": "official documented behavior; acceptance checks not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:claude-sharing-role-boundaries",
+      "type": "feature-observation",
+      "label": "Artifact permission roles",
+      "central_pattern_id": "claude-sharing-role-boundaries",
+      "description": "Viewer reads artifact/comments; commenter adds comments and downloads offered files; editor can change content. External commenters and editors have limitations; editors cannot delete artifact.",
+      "acceptance": "Test each role and artifact type, including disabled comments and connectors.",
+      "evidence_status": "official documented behavior; acceptance checks not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:grok-bot-library-facets",
+      "type": "feature-observation",
+      "label": "Library content facets and pinned items",
+      "central_pattern_id": "grok-bot-library-facets",
+      "description": "Desktop Library filters All, Pages, Media, Links, Files, Apps and Pinned. Team Bot separates private-to-user and bot files; pin treatment differs.",
+      "acceptance": "Test filter results, pin/unpin and private/team visibility.",
+      "evidence_status": "official documented behavior; acceptance checks not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:grok-bot-page-rename-stable-link",
+      "type": "feature-observation",
+      "label": "Stable page address and rename",
+      "central_pattern_id": "grok-bot-page-rename-stable-link",
+      "description": "Rename commits with Enter or cancels with Escape; a public page address remains unchanged after renaming. Custom addresses are not supported per guide.",
+      "acceptance": "Test cancel, rename, stable link and access revoke.",
+      "evidence_status": "official documented behavior; acceptance checks not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:grok-bot-share-conflict-retry",
+      "type": "feature-observation",
+      "label": "Sharing conflict and retry",
+      "central_pattern_id": "grok-bot-share-conflict-retry",
+      "description": "Share menu explains unavailable audiences, failed access changes and concurrent access updates; failed saves offer Retry.",
+      "acceptance": "Exercise conflict, failed request, retry and inaccessible audience; no silent success.",
+      "evidence_status": "official documented behavior; acceptance checks not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-canvas-copy-versus-edit",
+      "type": "feature-observation",
+      "label": "Copy shared Canvas content",
+      "central_pattern_id": "gemini-canvas-copy-versus-edit",
+      "description": "A public shared Canvas result can be copied into a user's own editable Canvas; shared app data is a separate concept. Copy/edit shared content requires age 18+, and links open in web.",
+      "acceptance": "Test new object identity, original unchanged, shared data boundary and mobile limitation.",
+      "evidence_status": "official documented behavior; acceptance checks not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-notebook-site-isolated-inputs",
+      "type": "feature-observation",
+      "label": "Shared site with private inputs",
+      "central_pattern_id": "gemini-notebook-site-isolated-inputs",
+      "description": "Every user of a shared site, including owner, sees only their own saved inputs. Site viewers require access to the full notebook; public sharing requires consumer owner/editor.",
+      "acceptance": "Test two users, saved selections, notebook permissions and no cross-user input leakage.",
+      "evidence_status": "official documented behavior; acceptance checks not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-notebook-site-revoke-delete",
+      "type": "feature-observation",
+      "label": "Site revocation and deletion",
+      "central_pattern_id": "gemini-notebook-site-revoke-delete",
+      "description": "Turning off site sharing or deleting the site invalidates previously generated share links; sites can also be downloaded from Studio.",
+      "acceptance": "Test old links, role checks, export and deletion confirmation.",
+      "evidence_status": "official documented behavior; acceptance checks not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "evidence:claude:design-tweaks-thumbnail",
+      "type": "evidence",
+      "label": "Claude Design — Tweaks panel and mobile preview",
+      "url": "https://www.anthropic.com/_next/image?q=75&url=https%3A%2F%2Fimg.youtube.com%2Fvi%2Ft_LBECIQQqs%2Fmaxresdefault.jpg&w=3840",
+      "status": "publisher-linked promotional video thumbnail visually inspected 2026-11-26; still only",
+      "storage": "link-only",
+      "rights": "Anthropic promotional media; redistribution license unverified",
+      "observed": [
+        "Tweaks toggle enabled",
+        "Comment / Edit / Draw controls",
+        "Zoom 100% and expand icon",
+        "Share and Export buttons",
+        "Mobile device preview selected; Desktop and Tablet options",
+        "Dark mode toggle, theme swatches, typography sliders and section toggle"
+      ],
+      "limitations": "No runtime state or motion timing measured; sliders and options may be generated for the example; not a universal native inspector."
     }
   ],
   "edges": [
@@ -4950,6 +5068,216 @@
       "to": "view:gemini-notebook:full-screen-study-view",
       "relation": "related_surface",
       "status": "documented or contextual association"
+    },
+    {
+      "from": "feature:claude-share-access",
+      "to": "source:claude-artifacts",
+      "relation": "supported_by",
+      "status": "official clarification"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "feature:chatgpt-space-embedded-vs-linked-files",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:chatgpt-space-embedded-vs-linked-files",
+      "to": "source:openai-space-sharing",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:chatgpt-space-embedded-vs-linked-files",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:claude",
+      "to": "feature:claude-personal-shared-storage",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:claude-personal-shared-storage",
+      "to": "source:claude-artifacts",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:claude-personal-shared-storage",
+      "to": "view:claude:artifacts-tab",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:claude",
+      "to": "feature:claude-invitation-lifecycle",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:claude-invitation-lifecycle",
+      "to": "source:claude-share",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:claude-invitation-lifecycle",
+      "to": "view:claude:artifacts-tab",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:claude",
+      "to": "feature:claude-sharing-role-boundaries",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:claude-sharing-role-boundaries",
+      "to": "source:claude-share",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:claude-sharing-role-boundaries",
+      "to": "view:claude:artifacts-tab",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "feature:grok-bot-library-facets",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:grok-bot-library-facets",
+      "to": "source:grok-bot-files",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:grok-bot-library-facets",
+      "to": "view:grok-bot:library",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "feature:grok-bot-page-rename-stable-link",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:grok-bot-page-rename-stable-link",
+      "to": "source:grok-bot-files",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:grok-bot-page-rename-stable-link",
+      "to": "view:grok-bot:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "feature:grok-bot-share-conflict-retry",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:grok-bot-share-conflict-retry",
+      "to": "source:grok-bot-files",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:grok-bot-share-conflict-retry",
+      "to": "view:grok-bot:pages",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "feature:gemini-canvas-copy-versus-edit",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:gemini-canvas-copy-versus-edit",
+      "to": "source:gemini-canvas",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:gemini-canvas-copy-versus-edit",
+      "to": "view:gemini:canvas",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "feature:gemini-notebook-site-isolated-inputs",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:gemini-notebook-site-isolated-inputs",
+      "to": "source:gemini-notebook-sites",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:gemini-notebook-site-isolated-inputs",
+      "to": "view:gemini-notebook:interactive-site",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "feature:gemini-notebook-site-revoke-delete",
+      "relation": "has_observation",
+      "status": "documented"
+    },
+    {
+      "from": "feature:gemini-notebook-site-revoke-delete",
+      "to": "source:gemini-notebook-sites",
+      "relation": "supported_by",
+      "status": "official documentation"
+    },
+    {
+      "from": "feature:gemini-notebook-site-revoke-delete",
+      "to": "view:gemini-notebook:interactive-site",
+      "relation": "related_surface",
+      "status": "contextual association"
+    },
+    {
+      "from": "product:claude",
+      "to": "evidence:claude:design-tweaks-thumbnail",
+      "relation": "has_visual_lead",
+      "status": "publisher-linked image inspected"
+    },
+    {
+      "from": "evidence:claude:design-tweaks-thumbnail",
+      "to": "source:claude-design-launch",
+      "relation": "published_by",
+      "status": "Anthropic announcement"
+    },
+    {
+      "from": "output:claude:design",
+      "to": "evidence:claude:design-tweaks-thumbnail",
+      "relation": "illustrated_by",
+      "status": "marketing still; not behavior test"
+    },
+    {
+      "from": "view:claude:design-canvas",
+      "to": "evidence:claude:design-tweaks-thumbnail",
+      "relation": "illustrated_by",
+      "status": "marketing still; not behavior test"
     }
   ],
   "backlog": [
@@ -5078,6 +5406,7 @@
     "docs/references/ui-ux-research-sources/chatgpt-space-views-and-composable-pages-2026-11-26.json",
     "docs/references/ui-ux-research-sources/ai-product-views-and-artifacts-2026-11-26.json",
     "docs/references/ui-ux-research-sources/ai-product-gap-delta-2026-11-26.json",
-    "docs/references/ui-ux-research-sources/ai-product-documented-flows-2026-11-26.json"
+    "docs/references/ui-ux-research-sources/ai-product-documented-flows-2026-11-26.json",
+    "docs/references/ui-ux-research-sources/ai-product-availability-and-state-boundaries-2026-11-26.json"
   ]
 }
