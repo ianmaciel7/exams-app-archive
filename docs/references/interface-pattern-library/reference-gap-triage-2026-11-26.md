@@ -53,3 +53,14 @@ All 35 URLs were matched to existing visual/Grok media manifests and both upstre
 | divyanshu-patil/blooby | 7 |
 
 Central registry now has 668 entries. Expected remaining unregistered URL occurrences: four external Grok leads; verify via fresh CI. No artificial links to unrelated sources.
+
+## Batch 3 — external Grok references
+
+Coverage artifact 15139413915 from CI 45865839269 (SHA-256 `fb9288c2e60732b8d47ac248e9bc6df0606bd4e2efb0e4167a47c4327884b079`) confirms 2055/2055 records with no provenance errors and four remaining unregistered reference occurrences. Registered the four exact existing URLs as links, not new visual observations.
+
+- [Grok Bot 101](https://www.youtube.com/watch?v=8xXhE25vJZY): original YouTube title retrieved; playback and publisher identity not independently verified. Existing workshop lead. Secondary transcript index identifies Grok channel and October 6, 2026; do not infer observed screen behavior or use transcript as a measured visual record.
+- [How SpaceXAI designers use Grok Bot and Figma MCP to ship faster](https://www.youtube.com/watch?v=zJEHbvT5_Yg): original video search listing and episode identity retrieved; direct fetch failed; playback not verified. How I AI interview. Host publication https://www.lennysnewsletter.com/p/how-i-ai-how-two-spacexai-designers corroborates subject. Designer accounts are not formal product documentation or proof of current availability.
+- [Taking Grok Bot outside the APP](https://www.novra.design/case-studies/grokbot): publisher case study text retrieved; interactive demo not exercised. Explicitly self-initiated, unaffiliated and not commissioned by xAI. Rive state buttons and multiple device surfaces are described by the creator; no motion timing, runtime or accessibility claims.
+- [Grok Bot iOS App UI/UX animation](https://60fps.design/apps/grok-bot): public gallery description retrieved; PRO media access restricted; animation not inspected. Gallery describes splash mascot expression animation. Do not treat as official spec, bypass access restrictions or infer measured motion.
+
+Central registry: 672 entries; expected zero unregistered URL occurrences, subject to new audit. Unlinked source inventory (374) and source-only domains (2) unchanged by intent. Prior benchmark artifact 15140122607 SHA-256 verified: default/compact recall 92.5%, relevance-first 97.5%, expanded 100%, 2/2 negative abstention, projected maximum 785 character-estimated tokens. Notebook-01 contract still missed; no tuning against the fixed suite. No visual playback, authenticated tests, independent relevance certification or redistribution rights claimed.

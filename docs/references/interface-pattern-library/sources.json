@@ -7137,6 +7137,54 @@
       "bytes": 259943,
       "archive_path": "docs/references/grok-bot/media/blooby/preset-walk.gif",
       "manifest_declared_license": "MIT"
+    },
+    {
+      "id": "grok-bot-101-video",
+      "title": "Grok Bot 101",
+      "url": "https://www.youtube.com/watch?v=8xXhE25vJZY",
+      "kind": "video-discovery-reference",
+      "status": "original YouTube title retrieved; playback and publisher identity not independently verified",
+      "notes": "Existing workshop lead. Secondary transcript index identifies Grok channel and October 6, 2026; do not infer observed screen behavior or use transcript as a measured visual record.",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "storage": "link-only",
+      "rights": "redistribution permission not verified"
+    },
+    {
+      "id": "how-i-ai-grok-bot-figma-video",
+      "title": "How SpaceXAI designers use Grok Bot and Figma MCP to ship faster",
+      "url": "https://www.youtube.com/watch?v=zJEHbvT5_Yg",
+      "kind": "third-party-interview-video",
+      "status": "original video search listing and episode identity retrieved; direct fetch failed; playback not verified",
+      "notes": "How I AI interview. Host publication https://www.lennysnewsletter.com/p/how-i-ai-how-two-spacexai-designers corroborates subject. Designer accounts are not formal product documentation or proof of current availability.",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "storage": "link-only",
+      "rights": "redistribution permission not verified"
+    },
+    {
+      "id": "novra-grok-bot-independent-concept",
+      "title": "Taking Grok Bot outside the APP",
+      "url": "https://www.novra.design/case-studies/grokbot",
+      "kind": "independent-design-concept",
+      "status": "publisher case study text retrieved; interactive demo not exercised",
+      "notes": "Explicitly self-initiated, unaffiliated and not commissioned by xAI. Rive state buttons and multiple device surfaces are described by the creator; no motion timing, runtime or accessibility claims.",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "storage": "link-only",
+      "rights": "redistribution permission not verified"
+    },
+    {
+      "id": "60fps-grok-bot-gallery",
+      "title": "Grok Bot iOS App UI/UX animation",
+      "url": "https://60fps.design/apps/grok-bot",
+      "kind": "third-party-motion-gallery",
+      "status": "public gallery description retrieved; PRO media access restricted; animation not inspected",
+      "notes": "Gallery describes splash mascot expression animation. Do not treat as official spec, bypass access restrictions or infer measured motion.",
+      "recorded_on": "2026-11-26",
+      "checked_on": "2026-11-26",
+      "storage": "link-only",
+      "rights": "redistribution permission not verified"
     }
   ],
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",
