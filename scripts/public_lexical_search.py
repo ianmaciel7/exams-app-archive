@@ -29,6 +29,10 @@ EXTRA = (
     ("interromper", "interruption", "interrupt", "interrupted", "cancelamento"),
     ("fallback", "alternativa", "degradacao"),
     ("carga", "workload"),
+    # Bilingual UI/learning vocabulary, not product- or query-ID rules.
+    ("estado", "estados", "state", "states", "status"),
+    ("progresso", "progress"),
+    ("estudo", "estudos", "study", "studies", "aprendizagem", "learning"),
 )
 
 @lru_cache(maxsize=2048)

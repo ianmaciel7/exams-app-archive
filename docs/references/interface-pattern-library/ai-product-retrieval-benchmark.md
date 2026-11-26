@@ -12,3 +12,17 @@ A separate public target-retrieval suite against the existing production federat
 ## Remaining work
 
 Independent reviewers must define relevant and irrelevant results, assess equivalent evidence records and judge answer/source grounding without seeing the original rankings first. Product UI verification requires authorized interactive sessions and measurement of actual states. No fabricated measurements.
+
+## Measured baseline and regression classification
+
+The first run on commit `865f5fb3b8e50aed59cfbe3aa3aea469a9e7dbbd` completed successfully: [run 45835682380](https://github.com/ianmaciel7/exams-app-archive/actions/runs/45835682380), [capture artifact](https://github.com/ianmaciel7/exams-app-archive/actions/runs/45835682380/artifacts/15125046781), [baseline metrics](../../../tests/evaluation/ai-product-baseline-2026-11-26.json).
+
+| Metric | Baseline |
+|---|---:|
+| Mean target recall@20 | 95% |
+| Mean labeled-hit fraction@20 | 47.5% |
+| MRR | 0.875 |
+| p95 | 3.768 s |
+| Negative abstention | 2/2 |
+
+The only missed expected record was the Gemini skill-progress dashboard (gemini-01). A plausible cause is missing bilingual vocabulary for state, progress and studies in public lexical ranking. Added domain-neutral term equivalences and a synthetic cross-domain test; no query IDs, gold labels or product-specific rules in the ranker. The original query and target files remain unchanged. Improvement is unconfirmed until the next real run. Because the benchmark informed this change, all subsequent scores are development-regression metrics, not independent validation. An independently annotated set and real UI tests remain required.
