@@ -1,6 +1,6 @@
 {
   "name": "exams-archive-native",
-  "version": "0.8.9",
+  "version": "0.8.10",
   "description": "Exams Archive: pesquisa histórica, UI/UX, grafo, componentes interativos, capturas e CLI/MCP local para agentes.",
   "author": {
     "name": "Ian Maciel de Carvalho"
