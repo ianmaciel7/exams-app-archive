@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "recorded_on": "2026-11-26",
-  "scope": "Initial verified public source extracts for issues #95–#101, not complete research",
+  "scope": "Public evidence extracts for #95–#101 and #104–#105; partial coverage, no historical or full product validation",
   "patterns": [
     {
       "id": "question-filter-state",
@@ -402,6 +402,187 @@
         "foundation-mdn-view-transitions"
       ],
       "classification": "Source-backed synthesis; proposed acceptance test, not executed product validation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "error-notebook-review",
+      "name": "Error notebook from performance records",
+      "aliases": [
+        "TEC Concursos",
+        "caderno de erros",
+        "questões erradas",
+        "incorrect questions"
+      ],
+      "family": "domain-research",
+      "issue": 95,
+      "definition": "The documented flow creates a separate notebook from incorrect answers in an existing notebook or statistics filtered by time, subject, board, folder and difficulty.",
+      "guardrail": "Treat historical attempt events separately from current review status; do not infer mastery from a corrected retry.",
+      "tests": "Create a fictional error set for a time range and verify exclusions, duplicate handling and source-attempt preservation.",
+      "source_ids": [
+        "domain-error-notebook-review"
+      ],
+      "classification": "product-documentation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "retrieval-testing-effect",
+      "name": "Retrieval practice and delayed retention",
+      "aliases": [
+        "testing effect",
+        "teste de memória",
+        "recall",
+        "aprendizagem"
+      ],
+      "family": "domain-research",
+      "issue": 96,
+      "definition": "The 2006 study compared memory testing and restudy with educationally relevant materials; later retention benefited from testing.",
+      "guardrail": "Do not equate immediate fluency or short-term quiz accuracy with durable learning; generalization beyond the study tasks needs evidence.",
+      "tests": "Compare delayed recall after equal-duration study and retrieval using equivalent original material.",
+      "source_ids": [
+        "domain-retrieval-testing-effect"
+      ],
+      "classification": "experimental-research",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "abstract-reviewed",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "spacing-retention-interval",
+      "name": "Spacing and retention interval",
+      "aliases": [
+        "efeito de espaçamento",
+        "distributed practice",
+        "intervalo",
+        "retention"
+      ],
+      "family": "domain-research",
+      "issue": 96,
+      "definition": "The review examined spacing, lag and interstudy intervals in verbal recall and found the optimal interval depends on the intended retention interval.",
+      "guardrail": "No universal fixed spacing schedule follows; the findings do not validate individual FSRS estimates.",
+      "tests": "Predefine a retention horizon, compare schedules and report time, recall and uncertainty.",
+      "source_ids": [
+        "domain-spacing-retention-interval"
+      ],
+      "classification": "meta-analysis",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "abstract-reviewed",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "question-bank-quiz-separation",
+      "name": "Question bank and reusable quizzes",
+      "aliases": [
+        "Moodle",
+        "banco de questões",
+        "question bank",
+        "tentativas",
+        "quiz"
+      ],
+      "family": "domain-research",
+      "issue": 97,
+      "definition": "Items live in a separate question bank and may be reused in quizzes. Quiz configuration controls behavior; defaults include repeat attempts and post-completion feedback.",
+      "guardrail": "Defaults are not mandatory policy; preserve the question version used in each attempt.",
+      "tests": "Edit a fictional bank item after an attempt; confirm the historical response and grading remain reproducible.",
+      "source_ids": [
+        "domain-question-bank-quiz-separation"
+      ],
+      "classification": "product-documentation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "graph-link-filtering",
+      "name": "Graph link semantics and filters",
+      "aliases": [
+        "Obsidian",
+        "grafo",
+        "backlinks",
+        "orphan nodes",
+        "filtros"
+      ],
+      "family": "domain-research",
+      "issue": 98,
+      "definition": "Nodes represent notes and edges internal links; documented graph filters include search, tags, attachments, existing files and orphans. Groups use color.",
+      "guardrail": "Node size based on incoming links is not semantic importance. Keep explicit relation types distinct from layout.",
+      "tests": "Verify toggles affect visibility without deleting underlying nodes and edges; provide keyboard alternative.",
+      "source_ids": [
+        "domain-graph-link-filtering"
+      ],
+      "classification": "product-documentation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "annotation-storage-export",
+      "name": "Annotation database and PDF export",
+      "aliases": [
+        "Zotero",
+        "anotações",
+        "PDF",
+        "embedded annotations",
+        "sync"
+      ],
+      "family": "domain-research",
+      "issue": 99,
+      "definition": "Zotero stores annotation records in its database and supports exporting PDFs with embedded annotations, allowing individual annotation synchronization.",
+      "guardrail": "Maintain export provenance and distinguish source document bytes from derived annotations. Do not assume identical conflict semantics in other readers.",
+      "tests": "Round-trip an original annotated sample and compare annotation identity, target and text; test concurrent edits separately.",
+      "source_ids": [
+        "domain-annotation-storage-export"
+      ],
+      "classification": "product-documentation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "token-format-interoperability",
+      "name": "Design token format interoperability",
+      "aliases": [
+        "DTCG",
+        "design tokens",
+        "aliases",
+        "tokens de design",
+        "JSON"
+      ],
+      "family": "domain-research",
+      "issue": 100,
+      "definition": "The final community group report defines an exchange format for design tokens across tools, including typed values and references.",
+      "guardrail": "This is not a W3C Recommendation or proof of accessibility; resolve references and verify actual rendered colors.",
+      "tests": "Round-trip an original token group, detect cycles and undefined references, and compare resolved typed values.",
+      "source_ids": [
+        "domain-token-format-interoperability"
+      ],
+      "classification": "community-group-report",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "selection-point-interval",
+      "name": "Point and interval selections in charts",
+      "aliases": [
+        "Vega-Lite",
+        "brush",
+        "cross-filter",
+        "seleção",
+        "zoom"
+      ],
+      "family": "domain-research",
+      "issue": 101,
+      "definition": "Selection parameters translate direct user interaction into data queries. Point selections target discrete values; interval selections target ranges.",
+      "guardrail": "Selection state must be visible and clearable. Pointer-only brushing needs a keyboard-accessible alternative.",
+      "tests": "Use fictional exam results, test selection and clearing, compare filtered row counts and accessible table.",
+      "source_ids": [
+        "domain-selection-point-interval"
+      ],
+      "classification": "technical-documentation",
       "recorded_on": "2026-11-26",
       "evidence_status": "documented",
       "media_status": "not-inspected"
