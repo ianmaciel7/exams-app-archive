@@ -31,7 +31,7 @@ jobs:
           python scripts/production_retrieval_eval.py run tests/evaluation/ai-product-queries.json "$RUNNER_TEMP/ai-product-eval/capture.json" --budget-tokens 2000
           python scripts/production_retrieval_eval.py run tests/evaluation/ai-product-queries.json "$RUNNER_TEMP/ai-product-eval/capture-expanded.json" --budget-tokens 8000
           python scripts/production_retrieval_eval.py run tests/evaluation/ai-product-queries.json "$RUNNER_TEMP/ai-product-eval/capture-compact.json" --budget-tokens 2000 --compact-occurrences
-          python scripts/production_retrieval_eval.py run tests/evaluation/ai-product-queries.json "$RUNNER_TEMP/ai-product-eval/capture-relevance-first.json" --budget-tokens 2000 --compact-occurrences --relevance-first
+          python scripts/production_retrieval_eval.py run tests/evaluation/ai-product-queries.json "$RUNNER_TEMP/ai-product-eval/capture-relevance-first.json" --budget-tokens 2000 --compact-occurrences --relevance-first --context-budget-tokens 2000
       - name: Score without changing the ranker
         run: |
           python scripts/production_retrieval_eval.py score "$RUNNER_TEMP/ai-product-eval/capture.json" "$RUNNER_TEMP/ai-product-gold/ai-product-labels.json" "$RUNNER_TEMP/ai-product-eval/score.json"
@@ -42,6 +42,7 @@ jobs:
           python scripts/summarize_ai_product_benchmark.py "$RUNNER_TEMP/ai-product-eval/capture-compact.json" "$RUNNER_TEMP/ai-product-eval/score-compact.json" "$RUNNER_TEMP/ai-product-gold/ai-product-labels.json" "$RUNNER_TEMP/ai-product-eval/summary-compact.json"
           python scripts/production_retrieval_eval.py score "$RUNNER_TEMP/ai-product-eval/capture-relevance-first.json" "$RUNNER_TEMP/ai-product-gold/ai-product-labels.json" "$RUNNER_TEMP/ai-product-eval/score-relevance-first.json"
           python scripts/summarize_ai_product_benchmark.py "$RUNNER_TEMP/ai-product-eval/capture-relevance-first.json" "$RUNNER_TEMP/ai-product-eval/score-relevance-first.json" "$RUNNER_TEMP/ai-product-gold/ai-product-labels.json" "$RUNNER_TEMP/ai-product-eval/summary-relevance-first.json"
+          python scripts/compare_public_context_payload.py "$RUNNER_TEMP/ai-product-eval/capture-relevance-first.json" "$RUNNER_TEMP/ai-product-gold/ai-product-labels.json" "$RUNNER_TEMP/ai-product-eval/context-projection-report.json"
       - uses: actions/upload-artifact@v4
         if: always()
         with:

@@ -61,3 +61,21 @@ def test_relevance_first_runner_flag_is_opt_in():
         compact_occurrences=True, relevance_first=True)
     assert seen == [{"scope": "public", "limit": 20, "budget_tokens": 2000,
                      "compact_occurrences": True, "relevance_first": True}]
+
+
+def test_runner_context_projection_and_scoring():
+    from compare_public_context_payload import compare
+    from public_context_payload import audit_digest
+    def retrieve(query, **options):
+        return {"scope": "public", "snapshot": "a"*64, "status": "ok",
+                "results": [{"id": "a", "scope": "public", "evidence_type": "pattern",
+                             "title": "Example", "snippet": "Evidence",
+                             "occurrences": [{"hit_id": "alias"}]}]}
+    rows = run([{"id": "q", "query": "example"}], retrieve, context_budget_tokens=2000)
+    assert rows[0]["context_payload"]["audit_sha256"] == audit_digest(rows[0]["audit_response"])
+    report = compare(rows, {"q": ["alias"]})
+    assert report["projected_score"]["mean_recall"] == 1
+    assert report["max_estimated_tokens"] <= 2000
+    rows[0]["context_payload"]["audit_sha256"] = "tampered"
+    with pytest.raises(ValueError):
+        compare(rows, {"q": ["alias"]})

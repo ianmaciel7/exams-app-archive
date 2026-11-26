@@ -12,7 +12,7 @@ def read(path):
 def write(path, data):
     Path(path).write_text(json.dumps(data, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
 
-def run(queries, retrieve, *, budget_tokens=None, compact_occurrences=False, relevance_first=False):
+def run(queries, retrieve, *, budget_tokens=None, compact_occurrences=False, relevance_first=False, context_budget_tokens=None):
     if budget_tokens is not None and (not isinstance(budget_tokens, int) or not 128 <= budget_tokens <= 128000):
         raise ValueError("budget_tokens must be between 128 and 128000")
     out = []
@@ -28,6 +28,12 @@ def run(queries, retrieve, *, budget_tokens=None, compact_occurrences=False, rel
         if relevance_first:
             options["relevance_first"] = True
         result = retrieve(q["query"], **options)
+        if context_budget_tokens is not None:
+            from public_context_payload import project_context
+            from federated_retrieval import expand_public_hit
+            full_audit = {**result, "results": [expand_public_hit(h) for h in result["results"]]}
+            full_audit.pop("occurrence_encoding", None)
+            projected = project_context(full_audit, budget_tokens=context_budget_tokens)
         out.append({"id": q["id"], "query": q["query"], "status": result["status"],
                     "hits": result["results"], "snapshot": result.get("snapshot"),
                     "unavailable": result.get("sources_unavailable", []),
@@ -36,6 +42,9 @@ def run(queries, retrieve, *, budget_tokens=None, compact_occurrences=False, rel
                     "available_by_type": result.get("available_by_type", {}),
                     "gaps": result.get("gaps", []),
                     "latency_ms": (time.perf_counter()-start)*1000})
+        if context_budget_tokens is not None:
+            out[-1]["context_payload"] = projected
+            out[-1]["audit_response"] = full_audit
     if len({r["id"] for r in out}) != len(out):
         raise ValueError("Duplicate query IDs")
     return out
@@ -94,6 +103,7 @@ def main():
     runner.add_argument("--budget-tokens", type=int, default=None)
     runner.add_argument("--compact-occurrences", action="store_true")
     runner.add_argument("--relevance-first", action="store_true")
+    runner.add_argument("--context-budget-tokens", type=int, default=None)
     diagnostic = sub.add_parser("diagnostic")
     diagnostic.add_argument("capture")
     scorer = sub.add_parser("score")
@@ -103,7 +113,7 @@ def main():
     args = parser.parse_args()
     if args.mode == "run":
         from federated_retrieval import federated_search
-        write(args.output, run(read(args.queries), federated_search, budget_tokens=args.budget_tokens, compact_occurrences=args.compact_occurrences, relevance_first=args.relevance_first))
+        write(args.output, run(read(args.queries), federated_search, budget_tokens=args.budget_tokens, compact_occurrences=args.compact_occurrences, relevance_first=args.relevance_first, context_budget_tokens=args.context_budget_tokens))
     elif args.mode == "diagnostic":
         print(json.dumps(summarize_public_capture(read(args.capture)),indent=2))
     else:
