@@ -389,6 +389,7 @@ def _normalize_hit(
     clean_snippet, s_sanitized = domain_ontology.sanitize_untrusted_text(snippet, max_length=900)
     identity_sha = blob_sha or record_sha256 or sha256_text(f"{source_channel}|{path}|{clean_snippet}")
     occurrence = {
+        "hit_id": hit_id,
         "source_channel": source_channel,
         "source_id": source_id,
         "repo": repo,
@@ -639,7 +640,7 @@ def _search_public_research_and_concepts(
                 license_name=row.get("license") or "",
                 domain="referencias-externas",
                 provenance_status="verified" if row.get("availability") in {"documented", "archived-blob-verified"} else "unverified",
-                metadata={"catalog": row.get("catalog"), "product": row.get("product"), "availability": row.get("availability")},
+                metadata={"catalog": row.get("catalog"), "record_id": row.get("id"), "source_urls": row.get("sources", []), "product": row.get("product"), "availability": row.get("availability")},
             )
         )
         pub_hits += 1

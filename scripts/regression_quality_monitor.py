@@ -472,11 +472,12 @@ def run_ci_quality_gate(
                 "status": "verified",
             },
             "real_catalog_and_gold_set": {
-                "scope": "573 approved public catalog records + 38 taxonomy concepts + 460 multidomain Gold Set queries",
+                "scope": "Label-aware legacy evaluation, including synthetic fixtures; not production evidence",
                 "total_queries": bench.get("total_queries", 0),
                 "total_domains": len(gsb.REQUIRED_23_DOMAINS),
-                "status": "verified" if not overall_regressions and not domain_regressions else "failed",
+                "status": "synthetic_regression_passed" if not overall_regressions and not domain_regressions else "synthetic_regression_failed",
             },
+            "production_retrieval_and_grounding": {"status": "NOT_RUN_BY_LEGACY_MONITOR"},
             "authenticated_historical_bundles": {
                 "scope": "local encrypted release bundles (not mounted in public CI)",
                 "status": "requires_authorized_local_restore",

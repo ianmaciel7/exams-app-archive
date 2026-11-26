@@ -121,3 +121,85 @@ Limits: Color must not be the only cue; distinguish missing values from zero and
 Acceptance: Check legend/labels, contrast, textual alternative and meaningful ordering with original sample data.
 
 Source: [IBM Carbon — Data visualization color palettes](https://www.carbondesignsystem.com/building-blocks/data-visualization/color-palettes). Access checked 2026-11-26; link-only, media not inspected.
+
+## Additional verified public documentation
+
+### Saved filters and exam attempts (#95)
+
+Save and reopen search criteria independently of the scored attempt. The help article places save and reopen controls below filtering.
+
+Limits: Do not assume that a saved filter freezes the set of items; distinguish query definition, notebook membership and attempt snapshot.
+
+Acceptance: Change the source set and compare saved query results against immutable attempt membership.
+
+Source: [QConcursos — saved filters](https://suporte.qconcursos.com/pt-BR/articles/11664140-como-salvar-e-acessar-seus-filtros). Link-only; product behavior and media not inspected.
+
+### FSRS review scheduling (#96)
+
+Deck settings include scheduling, desired retention, daily review limits and FSRS parameters. Higher retention targets trade review workload against expected forgetting.
+
+Limits: A target retention is an algorithmic objective, not a guaranteed outcome. Preserve review history and model version.
+
+Acceptance: Use fictional review histories, test schedule reproducibility and compare calibration on independent delayed recall.
+
+Source: [Anki manual — deck options](https://docs.ankiweb.net/manual/deck-options). Link-only; product behavior and media not inspected.
+
+### Learning activity event interoperability (#97)
+
+Use shared event vocabularies and profiles to capture learning activity across providers.
+
+Limits: Activity is not the same as measured learning outcome; avoid causal claims from clicks and time spent.
+
+Acceptance: Validate event schema, duplicate delivery, timestamps and distinction between event and scored outcome.
+
+Source: [1EdTech — Caliper Analytics](https://www.1edtech.org/standards/caliper). Link-only; product behavior and media not inspected.
+
+### Object query versus collection (#98)
+
+Queries can filter by object type, tags and linked objects. Model dynamic query results separately from explicit collections.
+
+Limits: Do not infer every product state from the documentation; preserve object identity and permissions.
+
+Acceptance: Compare a saved query before and after tag changes, and test inaccessible and deleted references.
+
+Source: [Capacities — Queries](https://docs.capacities.io/reference/queries). Link-only; product behavior and media not inspected.
+
+### Combobox popup focus (#100)
+
+Combobox keyboard navigation and focus behavior depend on popup type; a dialog popup receives DOM focus.
+
+Limits: Do not apply listbox focus semantics to a dialog. Native select may suffice.
+
+Acceptance: Verify tab, arrows, Escape, selection, focus restoration and accessible state in a real browser.
+
+Source: [W3C APG — combobox](https://www.w3.org/WAI/ARIA/apg/patterns/combobox/). Link-only; product behavior and media not inspected.
+
+### Static table versus interactive grid (#101)
+
+An interactive grid has a managed keyboard navigation model; ordinary tabular data may use a semantic table.
+
+Limits: Do not replace a static table with a grid role simply for visual styling. Editing controls can compete with arrow navigation.
+
+Acceptance: Validate row/column announcements, keyboard movement, edit mode and accessible fallback.
+
+Source: [W3C APG — grid](https://www.w3.org/WAI/ARIA/apg/patterns/grid/). Link-only; product behavior and media not inspected.
+
+### Common region and visual hierarchy (#104)
+
+A perceptible container groups related elements and can outweigh proximity. Choose containment when it clarifies relationships.
+
+Limits: Do not surround all elements with cards or assume grouping guarantees task success.
+
+Acceptance: Compare a list and grouped variant with real search tasks and comprehension measures.
+
+Source: [NN/g — The Principle of Common Region](https://www.nngroup.com/articles/common-region/). Link-only; product behavior and media not inspected.
+
+### View transition lifecycle and fallback (#105)
+
+View transitions expose lifecycle and skip functionality for visual changes. Application state and focus must be resolved independently of animation.
+
+Limits: Feature-detect, preserve an immediate fallback and avoid assuming support across all browsers or accessibility modes.
+
+Acceptance: Test unsupported API, interrupted transitions, reduced motion and route changes without animation.
+
+Source: [MDN — View Transition API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API). Link-only; product behavior and media not inspected.

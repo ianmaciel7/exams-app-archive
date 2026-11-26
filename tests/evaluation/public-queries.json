@@ -1,0 +1,46 @@
+[
+  {
+    "id": "u01",
+    "query": "Como guardar critérios de pesquisa e recuperar depois?"
+  },
+  {
+    "id": "u02",
+    "query": "What changes the workload of Anki review scheduling?"
+  },
+  {
+    "id": "u03",
+    "query": "Qual padrão serve para transportar questões entre plataformas?"
+  },
+  {
+    "id": "u04",
+    "query": "Como modelar eventos de atividade educacional interoperáveis?"
+  },
+  {
+    "id": "u05",
+    "query": "Capacities: qual diferença entre consulta dinâmica e coleção?"
+  },
+  {
+    "id": "u06",
+    "query": "TextQuoteSelector"
+  },
+  {
+    "id": "u07",
+    "query": "Keyboard focus when a combobox opens a dialog"
+  },
+  {
+    "id": "u08",
+    "query": "When should I use a table instead of an interactive grid?"
+  },
+  {
+    "id": "u09",
+    "query": "Como agrupar visualmente elementos relacionados sem confundir hierarquia?"
+  },
+  {
+    "id": "u10",
+    "query": "View Transition API interruption fallback"
+  },
+  {
+    "id": "u11",
+    "query": "What is the exact serial number of my physical kitchen refrigerator?"
+  }
+]

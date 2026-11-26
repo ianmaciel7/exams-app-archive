@@ -67,7 +67,7 @@ class ResearchIndexTests(unittest.TestCase):
     def test_domain_research_and_coverage_gaps(self):
         records = mod.load_records()
         domain = [r for r in records if r["catalog"] == "domain-research"]
-        self.assertEqual({r["record"]["issue"] for r in domain}, set(range(95,102)))
+        self.assertEqual({r["record"]["issue"] for r in domain}, set(range(95,102)) | {104,105})
         self.assertTrue(all(r["sources"] for r in domain))
         with sqlite3.connect(":memory:") as db:
             mod.build(db, records)

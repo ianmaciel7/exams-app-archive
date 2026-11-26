@@ -1,0 +1,33 @@
+{
+  "u01": [
+    "research:domain-research:saved-filter-vs-attempt"
+  ],
+  "u02": [
+    "research:domain-research:fsrs-review-scheduling"
+  ],
+  "u03": [
+    "research:domain-research:assessment-interoperability"
+  ],
+  "u04": [
+    "research:domain-research:learning-activity-events"
+  ],
+  "u05": [
+    "research:domain-research:query-collection-distinction"
+  ],
+  "u06": [
+    "research:domain-research:annotation-anchor-resilience"
+  ],
+  "u07": [
+    "research:domain-research:combobox-focus-popup"
+  ],
+  "u08": [
+    "research:domain-research:static-table-vs-interactive-grid"
+  ],
+  "u09": [
+    "research:domain-research:common-region-hierarchy"
+  ],
+  "u10": [
+    "research:domain-research:view-transition-lifecycle"
+  ],
+  "u11": []
+}

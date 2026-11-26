@@ -230,6 +230,181 @@
       "recorded_on": "2026-11-26",
       "evidence_status": "documented",
       "media_status": "not-inspected"
+    },
+    {
+      "id": "saved-filter-vs-attempt",
+      "name": "Saved filters and exam attempts",
+      "aliases": [
+        "filtros salvos",
+        "simulado",
+        "QConcursos"
+      ],
+      "family": "domain-research",
+      "issue": 95,
+      "definition": "Save and reopen search criteria independently of the scored attempt. The help article places save and reopen controls below filtering.",
+      "guardrail": "Do not assume that a saved filter freezes the set of items; distinguish query definition, notebook membership and attempt snapshot.",
+      "tests": "Change the source set and compare saved query results against immutable attempt membership.",
+      "source_ids": [
+        "domain-saved-filter-vs-attempt"
+      ],
+      "classification": "Source-backed synthesis; proposed acceptance test, not executed product validation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "fsrs-review-scheduling",
+      "name": "FSRS review scheduling",
+      "aliases": [
+        "Anki",
+        "FSRS",
+        "retenção desejada",
+        "revisão espaçada"
+      ],
+      "family": "domain-research",
+      "issue": 96,
+      "definition": "Deck settings include scheduling, desired retention, daily review limits and FSRS parameters. Higher retention targets trade review workload against expected forgetting.",
+      "guardrail": "A target retention is an algorithmic objective, not a guaranteed outcome. Preserve review history and model version.",
+      "tests": "Use fictional review histories, test schedule reproducibility and compare calibration on independent delayed recall.",
+      "source_ids": [
+        "domain-fsrs-review-scheduling"
+      ],
+      "classification": "Source-backed synthesis; proposed acceptance test, not executed product validation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "learning-activity-events",
+      "name": "Learning activity event interoperability",
+      "aliases": [
+        "Caliper",
+        "analytics educacional",
+        "eventos de aprendizagem"
+      ],
+      "family": "domain-research",
+      "issue": 97,
+      "definition": "Use shared event vocabularies and profiles to capture learning activity across providers.",
+      "guardrail": "Activity is not the same as measured learning outcome; avoid causal claims from clicks and time spent.",
+      "tests": "Validate event schema, duplicate delivery, timestamps and distinction between event and scored outcome.",
+      "source_ids": [
+        "domain-learning-activity-events"
+      ],
+      "classification": "Source-backed synthesis; proposed acceptance test, not executed product validation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "query-collection-distinction",
+      "name": "Object query versus collection",
+      "aliases": [
+        "Capacities",
+        "backlinks",
+        "coleção",
+        "consulta",
+        "object types"
+      ],
+      "family": "domain-research",
+      "issue": 98,
+      "definition": "Queries can filter by object type, tags and linked objects. Model dynamic query results separately from explicit collections.",
+      "guardrail": "Do not infer every product state from the documentation; preserve object identity and permissions.",
+      "tests": "Compare a saved query before and after tag changes, and test inaccessible and deleted references.",
+      "source_ids": [
+        "domain-query-collection-distinction"
+      ],
+      "classification": "Source-backed synthesis; proposed acceptance test, not executed product validation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "combobox-focus-popup",
+      "name": "Combobox popup focus",
+      "aliases": [
+        "combobox",
+        "popup",
+        "teclado",
+        "aria-activedescendant"
+      ],
+      "family": "domain-research",
+      "issue": 100,
+      "definition": "Combobox keyboard navigation and focus behavior depend on popup type; a dialog popup receives DOM focus.",
+      "guardrail": "Do not apply listbox focus semantics to a dialog. Native select may suffice.",
+      "tests": "Verify tab, arrows, Escape, selection, focus restoration and accessible state in a real browser.",
+      "source_ids": [
+        "domain-combobox-focus-popup"
+      ],
+      "classification": "Source-backed synthesis; proposed acceptance test, not executed product validation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "static-table-vs-interactive-grid",
+      "name": "Static table versus interactive grid",
+      "aliases": [
+        "tabela",
+        "grid",
+        "keyboard",
+        "data table"
+      ],
+      "family": "domain-research",
+      "issue": 101,
+      "definition": "An interactive grid has a managed keyboard navigation model; ordinary tabular data may use a semantic table.",
+      "guardrail": "Do not replace a static table with a grid role simply for visual styling. Editing controls can compete with arrow navigation.",
+      "tests": "Validate row/column announcements, keyboard movement, edit mode and accessible fallback.",
+      "source_ids": [
+        "domain-static-table-vs-interactive-grid"
+      ],
+      "classification": "Source-backed synthesis; proposed acceptance test, not executed product validation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "common-region-hierarchy",
+      "name": "Common region and visual hierarchy",
+      "aliases": [
+        "Gestalt",
+        "região comum",
+        "hierarquia",
+        "layout"
+      ],
+      "family": "domain-research",
+      "issue": 104,
+      "definition": "A perceptible container groups related elements and can outweigh proximity. Choose containment when it clarifies relationships.",
+      "guardrail": "Do not surround all elements with cards or assume grouping guarantees task success.",
+      "tests": "Compare a list and grouped variant with real search tasks and comprehension measures.",
+      "source_ids": [
+        "domain-common-region-hierarchy"
+      ],
+      "classification": "Source-backed synthesis; proposed acceptance test, not executed product validation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected"
+    },
+    {
+      "id": "view-transition-lifecycle",
+      "name": "View transition lifecycle and fallback",
+      "aliases": [
+        "View Transition API",
+        "motion",
+        "transição de tela",
+        "reduced motion"
+      ],
+      "family": "domain-research",
+      "issue": 105,
+      "definition": "View transitions expose lifecycle and skip functionality for visual changes. Application state and focus must be resolved independently of animation.",
+      "guardrail": "Feature-detect, preserve an immediate fallback and avoid assuming support across all browsers or accessibility modes.",
+      "tests": "Test unsupported API, interrupted transitions, reduced motion and route changes without animation.",
+      "source_ids": [
+        "foundation-mdn-view-transitions"
+      ],
+      "classification": "Source-backed synthesis; proposed acceptance test, not executed product validation",
+      "recorded_on": "2026-11-26",
+      "evidence_status": "documented",
+      "media_status": "not-inspected"
     }
   ]
 }

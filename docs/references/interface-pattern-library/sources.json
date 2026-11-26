@@ -4862,6 +4862,76 @@
       "status": "verified",
       "storage": "link-only",
       "notes": "Public documentation or abstract reviewed; full product behavior and media not independently inspected."
+    },
+    {
+      "id": "domain-saved-filter-vs-attempt",
+      "title": "QConcursos — saved filters",
+      "url": "https://suporte.qconcursos.com/pt-BR/articles/11664140-como-salvar-e-acessar-seus-filtros",
+      "kind": "product-documentation",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Public source documentation reviewed 2026-11-26; no product interaction or media verification implied."
+    },
+    {
+      "id": "domain-fsrs-review-scheduling",
+      "title": "Anki manual — deck options",
+      "url": "https://docs.ankiweb.net/manual/deck-options",
+      "kind": "product-documentation",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Public source documentation reviewed 2026-11-26; no product interaction or media verification implied."
+    },
+    {
+      "id": "domain-learning-activity-events",
+      "title": "1EdTech — Caliper Analytics",
+      "url": "https://www.1edtech.org/standards/caliper",
+      "kind": "technical-standard",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Public source documentation reviewed 2026-11-26; no product interaction or media verification implied."
+    },
+    {
+      "id": "domain-query-collection-distinction",
+      "title": "Capacities — Queries",
+      "url": "https://docs.capacities.io/reference/queries",
+      "kind": "product-documentation",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Public source documentation reviewed 2026-11-26; no product interaction or media verification implied."
+    },
+    {
+      "id": "domain-combobox-focus-popup",
+      "title": "W3C APG — combobox",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/combobox/",
+      "kind": "implementation-guidance",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Public source documentation reviewed 2026-11-26; no product interaction or media verification implied."
+    },
+    {
+      "id": "domain-static-table-vs-interactive-grid",
+      "title": "W3C APG — grid",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/grid/",
+      "kind": "implementation-guidance",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Public source documentation reviewed 2026-11-26; no product interaction or media verification implied."
+    },
+    {
+      "id": "domain-common-region-hierarchy",
+      "title": "NN/g — The Principle of Common Region",
+      "url": "https://www.nngroup.com/articles/common-region/",
+      "kind": "practitioner-guidance",
+      "checked_on": "2026-11-26",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Public source documentation reviewed 2026-11-26; no product interaction or media verification implied."
     }
   ],
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",

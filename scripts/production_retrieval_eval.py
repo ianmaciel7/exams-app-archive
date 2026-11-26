@@ -33,17 +33,32 @@ def score(rows, labels):
     results = []
     for row in rows:
         expected = set(labels[row["id"]])
-        actual = list(dict.fromkeys(h["id"] for h in row["hits"]))[:20]
-        correct = len(expected.intersection(actual))
+        actual = list({h["id"]: h for h in row["hits"]}.values())[:20]
+        matched = set()
+        relevant = 0
+        ranks = []
+        for rank, hit in enumerate(actual, 1):
+            candidates = {hit["id"]} | {o.get("hit_id") for o in hit.get("occurrences", [])}
+            found = expected & candidates
+            if found:
+                matched.update(found)
+                relevant += 1
+                ranks.append(rank)
+        correct = len(matched)
         results.append({"id": row["id"], "expected_count": len(expected), "returned_count": len(actual),
                         "recall_at_20": correct/len(expected) if expected else None,
-                        "precision_at_20": correct/len(actual) if actual else None,
+                        "precision_at_20": relevant/len(actual) if actual else (0.0 if expected else None),
+                        "reciprocal_rank": 1/ranks[0] if ranks else (0.0 if expected else None),
                         "abstained": not actual, "negative_case": not expected,
                         "sources_unavailable": row["unavailable"]})
     return {"status": "MEASURED_PUBLIC_RETRIEVAL_ONLY", "cases": results,
             "mean_recall": mean(r["recall_at_20"] for r in results),
             "mean_precision": mean(r["precision_at_20"] for r in results),
+            "mrr": mean(r["reciprocal_rank"] for r in results),
             "p50_ms": statistics.median([r["latency_ms"] for r in rows]) if rows else None,
+            "p95_ms": sorted(r["latency_ms"] for r in rows)[max(0, __import__("math").ceil(.95*len(rows))-1)] if rows else None,
+            "negative_cases": sum(r["negative_case"] for r in results),
+            "negative_abstention": mean(float(r["abstained"]) for r in results if r["negative_case"]),
             "limitations": ["No independent annotation attestation", "No claim/citation verification", "No private or agent evaluation"]}
 
 def mean(values):
