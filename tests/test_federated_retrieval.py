@@ -93,7 +93,7 @@ def _build_authenticated_fixtures() -> tuple[sqlite3.Connection, sqlite3.Connect
             "commit": "4eb93c5013c27ba6724b4f116cc9fe5846398eb8",
             "path": "docs/captures/app-header-tabs-pin.png",
             "screen": "app-header-tabs",
-            "blob_sha": "aa11bb22cc33dd44ee55ff667788990011223344",
+            "blob_sha": "a" * 40,
             "sha256": "11" * 32,
             "format": "png",
             "bytes": 42000,
@@ -271,6 +271,7 @@ class FederatedRetrievalTests(unittest.TestCase):
                     "evidence_type": "requirement",
                     "blob_sha": shared_blob,
                     "doc_sha256": "33" * 32,
+                    "provenance_status": "verified",
                 },
                 {
                     "repo": "notes-app",
@@ -283,6 +284,7 @@ class FederatedRetrievalTests(unittest.TestCase):
                     "evidence_type": "requirement",
                     "blob_sha": shared_blob,
                     "doc_sha256": "33" * 32,
+                    "provenance_status": "verified",
                 },
             ]
             auth_ctx = fr.AuthenticatedArchiveContext(

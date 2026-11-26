@@ -358,12 +358,26 @@ class AuthenticatedArchiveContext:
         if self.expected_index_checksum is not None:
             if not SHA256_RE.fullmatch(self.expected_index_checksum):
                 errors.append("invalid_expected_index_checksum: expected 64-char hex SHA-256")
-            elif self.actual_index_checksum and self.actual_index_checksum != self.expected_index_checksum:
+            elif self.actual_index_checksum != self.expected_index_checksum:
                 errors.append("index_digest_mismatch: actual index checksum does not match expected_index_checksum")
-        if not self.provenance_verified:
-            if not (self.pinned_source_sha or self.expected_index_checksum or self.knowledge_conn or self.evidence_conn or self.content_conn or self.ast_chunks or self.image_records or self.documents):
-                errors.append("unverified_provenance: authenticated_archive requires provenance_verified=True or pinned index/checksum")
+        if self.pinned_repo and self.allowed_repos and self.pinned_repo not in self.allowed_repos:
+            errors.append("repo_not_allowed: pinned repository outside authorized set")
+        if not self.provenance_verified and not (
+            self.expected_index_checksum and self.actual_index_checksum == self.expected_index_checksum
+            and SHA256_RE.fullmatch(self.expected_index_checksum)
+        ):
+            errors.append("unverified_provenance: requires trusted adapter attestation or matching index digest")
         return errors
+
+
+def _matches_archive_pins(ctx, repo, ref, commit):
+    """Missing metadata cannot satisfy an explicit authorization or revision pin."""
+    return not (
+        (ctx.allowed_repos and repo not in ctx.allowed_repos)
+        or (ctx.pinned_repo and repo != ctx.pinned_repo)
+        or (ctx.pinned_ref and ref != ctx.pinned_ref)
+        or (ctx.pinned_source_sha and commit != ctx.pinned_source_sha)
+    )
 
 
 def _normalize_hit(
@@ -1023,9 +1037,9 @@ def _search_authenticated_ast(
     for item in auth_ctx.ast_chunks:
         repo = item.get("repo", "")
         ref = item.get("ref", "")
-        if auth_ctx.pinned_repo and repo and repo != auth_ctx.pinned_repo:
+        if not _matches_archive_pins(auth_ctx, repo, ref, item.get("commit_sha", "")):
             continue
-        if auth_ctx.pinned_ref and ref and ref != auth_ctx.pinned_ref:
+        if auth_ctx.verified_only and item.get("provenance_status") != "verified":
             continue
         content = item.get("content", "")
         name = item.get("name", "")
@@ -1054,7 +1068,7 @@ def _search_authenticated_ast(
                 path=path,
                 version=item.get("extractor_version", ast_chunker.EXTRACTOR_VERSION),
                 domain="qualidade" if is_test else "engenharia",
-                provenance_status=item.get("provenance_status", "verified"),
+                provenance_status=item.get("provenance_status", "unverified"),
                 metadata={
                     "node_type": item.get("node_type"),
                     "symbol_id": item.get("symbol_id"),
@@ -1097,7 +1111,12 @@ def _search_authenticated_images(
     hits: list[dict[str, Any]] = []
     for img in auth_ctx.image_records:
         repo = img.get("repo") or img.get("origin") or ""
-        if auth_ctx.pinned_repo and repo and repo != auth_ctx.pinned_repo:
+        ref = img.get("ref") or (img.get("refs")[0] if img.get("refs") else "")
+        commit = img.get("commit") or img.get("commit_sha") or ""
+        if not _matches_archive_pins(auth_ctx, repo, ref, commit):
+            continue
+        # A catalog entry identifies a candidate, not freshly recovered bytes.
+        if auth_ctx.verified_only and not GIT_SHA_RE.fullmatch(img.get("blob_sha") or ""):
             continue
         path = img.get("path", "")
         screen = img.get("screen", "")
@@ -1124,7 +1143,7 @@ def _search_authenticated_images(
                 commit_sha=img.get("commit") or img.get("commit_sha") or "",
                 path=path,
                 domain="midia",
-                provenance_status="verified" if img.get("blob_sha") else "unverified",
+                provenance_status="indexed-not-recovered" if GIT_SHA_RE.fullmatch(img.get("blob_sha") or "") else "unverified",
                 metadata={"deleted": bool(img.get("deleted")), "bytes": img.get("bytes"), "dimensions": img.get("dimensions"), "visual_inspection": "not_performed_by_retrieval", "screen_label_origin": "filename", "verified_states": [], "retrieval": {"method": "authorized_local_git_blob" if img.get("blob_sha") else "unavailable", "bytes_verified_in_this_call": False, "branch_freshness": "not_checked"}},
             )
         )
@@ -1161,9 +1180,9 @@ def _search_authenticated_documents(
     for doc in auth_ctx.documents:
         repo = doc.get("repo", "")
         ref = doc.get("ref", "")
-        if auth_ctx.pinned_repo and repo and repo != auth_ctx.pinned_repo:
+        if not _matches_archive_pins(auth_ctx, repo, ref, doc.get("commit_sha", "")):
             continue
-        if auth_ctx.pinned_ref and ref and ref != auth_ctx.pinned_ref:
+        if auth_ctx.verified_only and doc.get("provenance_status") != "verified":
             continue
         text = doc.get("content", "") or doc.get("text", "")
         title = doc.get("title", "") or doc.get("path", "")
@@ -1190,7 +1209,7 @@ def _search_authenticated_documents(
                 path=doc.get("path", ""),
                 version=doc.get("version", ""),
                 domain=doc.get("domain", "produto"),
-                provenance_status=doc.get("provenance_status", "verified"),
+                provenance_status=doc.get("provenance_status", "unverified"),
                 metadata={"element_id": doc.get("element_id")},
             )
         )
@@ -1418,6 +1437,14 @@ def federated_search(
     channel_rankings: dict[str, list[str]] = defaultdict(list)
 
     def _record_channel(ch_hits: list[dict[str, Any]], audit: SourceAuditEntry) -> None:
+        if scope == "authenticated_archive" and audit.channel != "ontology":
+            before = len(ch_hits)
+            ch_hits = [hit for hit in ch_hits if _matches_archive_pins(
+                auth_context, hit["provenance"].get("repo"), hit["provenance"].get("ref"),
+                hit["provenance"].get("commit_sha"))]
+            audit.hits = len(ch_hits)
+            if before != len(ch_hits):
+                audit.reason += f" Excluded {before-len(ch_hits)} hits with missing or mismatched scope pins."
         if audit.status == "consulted":
             audits_consulted.append(audit.to_dict())
         elif audit.status == "omitted":
