@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "run_id": 45839109901,
+  "job_id": 139975733394,
+  "commit": "e5424b82bac37cf4859d2116963e61f0e882b40f",
+  "artifact_id": 15126353918,
+  "artifact_sha256": "d1e2072602244e1a545bfd62c2c33869ec4c76128335a875f93c83d2cf0238af",
+  "default": {
+    "budget": 2000,
+    "recall": 0.95,
+    "labeled_hit_fraction": 0.475,
+    "mrr": 0.875,
+    "p95_ms": 6240.457639000006,
+    "negative_abstention": 1
+  },
+  "compact": {
+    "budget": 2000,
+    "recall": 0.95,
+    "labeled_hit_fraction": 0.44166666666666665,
+    "mrr": 0.875,
+    "p95_ms": 6169.82787500001,
+    "negative_abstention": 1
+  },
+  "diagnostic": {
+    "id": "gemini-01",
+    "target": "research:general:gemini-skill-progress-dashboard",
+    "expanded_returned_position": 5,
+    "fused_score_rank_among_returned": 3,
+    "fused_score": 0.04840551,
+    "default_result_tokens": 1480,
+    "compact_result_tokens": 1274,
+    "default_remaining": 20,
+    "compact_remaining": 226,
+    "top_three_original_estimated_tokens": 1510
+  },
+  "quality_certified": false
+}

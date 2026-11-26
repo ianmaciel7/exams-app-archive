@@ -50,3 +50,14 @@ def test_compact_runner_flag_is_opt_in():
         return {"status": "ok", "results": []}
     run([{"id": "q", "query": "example"}], retrieve, budget_tokens=2000, compact_occurrences=True)
     assert seen == [{"scope": "public", "limit": 20, "budget_tokens": 2000, "compact_occurrences": True}]
+
+
+def test_relevance_first_runner_flag_is_opt_in():
+    seen = []
+    def retrieve(query, **options):
+        seen.append(options)
+        return {"status": "ok", "results": []}
+    run([{"id": "q", "query": "example"}], retrieve, budget_tokens=2000,
+        compact_occurrences=True, relevance_first=True)
+    assert seen == [{"scope": "public", "limit": 20, "budget_tokens": 2000,
+                     "compact_occurrences": True, "relevance_first": True}]

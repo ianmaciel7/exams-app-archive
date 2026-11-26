@@ -12,7 +12,7 @@ def read(path):
 def write(path, data):
     Path(path).write_text(json.dumps(data, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
 
-def run(queries, retrieve, *, budget_tokens=None, compact_occurrences=False):
+def run(queries, retrieve, *, budget_tokens=None, compact_occurrences=False, relevance_first=False):
     if budget_tokens is not None and (not isinstance(budget_tokens, int) or not 128 <= budget_tokens <= 128000):
         raise ValueError("budget_tokens must be between 128 and 128000")
     out = []
@@ -25,6 +25,8 @@ def run(queries, retrieve, *, budget_tokens=None, compact_occurrences=False):
             options["budget_tokens"] = budget_tokens
         if compact_occurrences:
             options["compact_occurrences"] = True
+        if relevance_first:
+            options["relevance_first"] = True
         result = retrieve(q["query"], **options)
         out.append({"id": q["id"], "query": q["query"], "status": result["status"],
                     "hits": result["results"], "snapshot": result.get("snapshot"),
@@ -91,6 +93,7 @@ def main():
     runner.add_argument("output")
     runner.add_argument("--budget-tokens", type=int, default=None)
     runner.add_argument("--compact-occurrences", action="store_true")
+    runner.add_argument("--relevance-first", action="store_true")
     diagnostic = sub.add_parser("diagnostic")
     diagnostic.add_argument("capture")
     scorer = sub.add_parser("score")
@@ -100,7 +103,7 @@ def main():
     args = parser.parse_args()
     if args.mode == "run":
         from federated_retrieval import federated_search
-        write(args.output, run(read(args.queries), federated_search, budget_tokens=args.budget_tokens, compact_occurrences=args.compact_occurrences))
+        write(args.output, run(read(args.queries), federated_search, budget_tokens=args.budget_tokens, compact_occurrences=args.compact_occurrences, relevance_first=args.relevance_first))
     elif args.mode == "diagnostic":
         print(json.dumps(summarize_public_capture(read(args.capture)),indent=2))
     else:

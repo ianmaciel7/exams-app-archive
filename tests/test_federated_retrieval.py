@@ -365,6 +365,23 @@ class FederatedRetrievalTests(unittest.TestCase):
         self.assertLessEqual(res["budget"]["total_tokens"], 2000)
         self.assertTrue(all(fr.expand_public_hit(r)["scope"] == "public" for r in res["results"]))
 
+    def test_public_relevance_prefix_preserves_rank_before_diversity(self) -> None:
+        from unittest.mock import patch
+        hits = [fr._normalize_hit(hit_id=str(i), evidence_type=kind, source_channel="public_research",
+                                  source_id="fictional", scope="public", title="Study progress",
+                                  snippet="Study progress", raw_score=1-i*.1, record_sha256=str(i)*64)
+                for i, kind in enumerate(("pattern", "pattern", "pattern", "source", "media"))]
+        with patch.object(fr, "_search_public_research_and_concepts", return_value=(hits, [])), \
+             patch.object(fr, "_search_ontology", return_value=([], fr.SourceAuditEntry("test", "ontology", "public", "consulted", "fictional"))), \
+             patch.object(fr, "_search_public_ast_code", return_value=([], fr.SourceAuditEntry("test-code", "public_ast_code", "public", "consulted", "fictional"))):
+            res = fr.federated_search("study progress", scope="public", budget_tokens=8000,
+                                      relevance_first=True, public_records=self.records,
+                                      public_taxonomy=self.taxonomy, ontology=self.ontology)
+        self.assertEqual(res["selection_policy"], "relevance-prefix-3-then-diversity-v1")
+        self.assertEqual([r["id"] for r in res["results"][:3]], ["0", "1", "2"])
+        with self.assertRaises(ValueError):
+            fr.federated_search("test", scope="authenticated_archive", relevance_first=True)
+
     def test_zero_emoji_compliance(self) -> None:
         for p in (SCRIPTS_DIR / "federated_retrieval.py", Path(__file__).resolve()):
             text = p.read_text(encoding="utf-8")

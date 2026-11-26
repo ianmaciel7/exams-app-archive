@@ -1359,6 +1359,7 @@ def federated_search(
     auth_context: AuthenticatedArchiveContext | None = None,
     public_records: list[dict[str, Any]] | None = None,
     compact_occurrences: bool = False,
+    relevance_first: bool = False,
     public_taxonomy: dict[str, Any] | None = None,
     public_code_paths: list[Path] | None = None,
     ontology: domain_ontology.DomainOntology | None = None,
@@ -1373,6 +1374,8 @@ def federated_search(
       - Deduplicates identical blobs while preserving all occurrences and pinned SHA-1/SHA-256.
       - Returns auditable lists of consulted, omitted, and unavailable sources plus gap diagnostics.
     """
+    if relevance_first and scope != "public":
+        raise ValueError("Relevance-first experiment is public-only")
     if compact_occurrences and scope != "public":
         raise ValueError("Compact occurrence format is public-only")
     if scope not in VALID_SCOPES:
@@ -1636,7 +1639,13 @@ def federated_search(
     deduped_hits.sort(key=lambda x: (-x["fused_score"], x["id"]))
 
     # Diversity interleaving across evidence types
-    diversified = _interleave_by_evidence_type(deduped_hits, limit=limit)
+    if relevance_first:
+        # Preserve the highest-scoring prefix before cross-type diversity.
+        prefix = min(3, limit, len(deduped_hits))
+        diversified = deduped_hits[:prefix] + _interleave_by_evidence_type(
+            deduped_hits[prefix:], limit=limit - prefix)
+    else:
+        diversified = _interleave_by_evidence_type(deduped_hits, limit=limit)
 
     # Identify evidence type gaps for the detected intent
     present_types = {h["evidence_type"] for h in diversified}
@@ -1681,6 +1690,8 @@ def federated_search(
         "sources_unavailable": audits_unavailable,
     }
 
+    if relevance_first:
+        envelope_meta["selection_policy"] = "relevance-prefix-3-then-diversity-v1"
     if compact_occurrences:
         envelope_meta["occurrence_encoding"] = "inherit-provenance-v1"
         diversified = [compact_public_hit(hit) for hit in diversified]
