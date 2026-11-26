@@ -35,3 +35,21 @@ Baseline: artifact 15139342197 from CI 45864154569 at 2891162137d66e0705afee3f59
 - Two source-only domains: architecture and history. Require explicit substantive public evidence; no private archive content published.
 
 No new ranking adjustments, runtime observations or claims of remaining gaps resolved. CI and benchmark rerun required.
+
+## Batch 2 — pinned media pointers
+
+All 35 URLs were matched to existing visual/Grok media manifests and both upstream Git trees at the original immutable commits and the archive Git tree at `38b41fe203ba48acb3f4186d5eb577d558ffac75`. All trees were non-truncated; all 35 blob SHA-1 values and byte sizes matched on both sides. Added 35 link-only registry entries, without copying media or modifying original visual records. Manifest license declarations retained as declarations, not newly verified asset-specific rights; no image inspection, video playback, or runtime observation in this pass. The independent mascot projects are not official Grok Bot UI assets.
+
+| Upstream project | Pointers |
+|---|---:|
+| clauderic/dnd-kit | 4 |
+| software-mansion/react-native-reanimated | 4 |
+| pmndrs/leva | 1 |
+| excalidraw/excalidraw | 5 |
+| storybookjs/storybook | 4 |
+| shadcn-ui/ui | 5 |
+| 0oooh/open-mascot-studio | 2 |
+| ThePeeps191/grok-bot-characters | 3 |
+| divyanshu-patil/blooby | 7 |
+
+Central registry now has 668 entries. Expected remaining unregistered URL occurrences: four external Grok leads; verify via fresh CI. No artificial links to unrelated sources.
