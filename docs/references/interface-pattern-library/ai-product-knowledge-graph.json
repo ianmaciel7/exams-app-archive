@@ -9663,6 +9663,90 @@
       "to": "evidence:gemini:research-demo-typing",
       "relation": "illustrated_by",
       "status": "conceptually related research example, not product capture"
+    },
+    {
+      "from": "view:grok-bot:chat",
+      "to": "source:grok-bot-files",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Conversation cards and contextual page chat; desktop and phone behavior."
+    },
+    {
+      "from": "view:grok-bot:details",
+      "to": "source:grok-bot-routines",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Bot Details contains routine management on desktop."
+    },
+    {
+      "from": "view:grok-bot:library",
+      "to": "source:grok-bot-files",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Bot Library groups results and provides type filtering and pinning."
+    },
+    {
+      "from": "view:grok-bot:pages",
+      "to": "source:grok-bot-files",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Page card opens a generated page; desktop retains contextual chat."
+    },
+    {
+      "from": "view:grok-bot:routines",
+      "to": "source:grok-bot-routines",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Desktop Details includes routines; phone profile includes Routines and history."
+    },
+    {
+      "from": "output:grok-bot:files",
+      "to": "source:grok-bot-files",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Generated files are shown as cards and can be previewed or saved."
+    },
+    {
+      "from": "output:grok-bot:pages",
+      "to": "source:grok-bot-files",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Generated pages are persistent objects in the Library."
+    },
+    {
+      "from": "output:grok-bot:dashboards",
+      "to": "source:grok-bot-files",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Documented example of a generated page; not a native dashboard template."
+    },
+    {
+      "from": "output:grok-bot:comparison-tables",
+      "to": "source:grok-bot-files",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Documented example of a generated page with a comparison table."
+    },
+    {
+      "from": "output:grok-bot:launch-project-trackers",
+      "to": "source:grok-bot-files",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Documented example of a generated launch tracker."
+    },
+    {
+      "from": "output:grok-bot:charts",
+      "to": "source:grok-bot-files",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Pages may contain charts; exact supported chart types not established."
+    },
+    {
+      "from": "output:grok-bot:filters-and-switches",
+      "to": "source:grok-bot-files",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Generated page controls change the reader view without persisting edits."
+    },
+    {
+      "from": "output:grok-bot:routine-generated-updates",
+      "to": "source:grok-bot-files",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Bot can create or update a page from a routine."
+    },
+    {
+      "from": "output:grok-bot:routine-generated-updates",
+      "to": "source:grok-bot-routines",
+      "relation": "supported_by",
+      "status": "Official documentation checked 2026-11-26: Routine schedules or event triggers execute a workflow; test results appear in chat."
     }
   ],
   "backlog": [

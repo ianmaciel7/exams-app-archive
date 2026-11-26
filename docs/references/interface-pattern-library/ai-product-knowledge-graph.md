@@ -94,3 +94,7 @@ Every benchmark must resolve source IDs centrally, preserve stable observation I
 ## Adjacent generative UI research examples
 
 [Research evidence and selected demo links](../ui-ux-research-sources/google-research-generative-ui-evidence-2026-11-26.md). One inspected original collage, five demo leads; not new native feature claims. Graph: 480 nodes, 889 edges.
+
+## Direct provenance coverage — Grok Bot, 2026-11-26
+
+Artifact 15127632547 contained 58 returned hits, all with a record or blob hash, but 4 hit occurrences (3 distinct Grok graph nodes) lacked direct source URLs. The graph projector intentionally requires explicit source edges. An audit found 0/41 view nodes and 0/48 output nodes with direct source edges. Verified the official [Files and results](https://docs.x.ai/grok-bot/files-and-results) and [Skills and routines](https://docs.x.ai/grok-bot/skills-routines-and-automations) documentation, updated 2026-11-19, and added 14 feature-specific source edges across 13 nodes. Direct coverage is now 5/41 views and 8/48 outputs; do not infer unsupported associations for the remainder. Generated examples are not native templates; reader controls are transient, Bot edits persist, and routines can create/update pages. Routines appear on desktop Details and the phone profile. No authenticated UI verification or ranking change. The exact current benchmark must be measured separately because catalog provenance changed.
