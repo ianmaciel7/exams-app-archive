@@ -73,3 +73,9 @@ No claims of a market-share ranking or universal effectiveness. Primary document
 
 - [Research synthesis](../ui-ux-research-sources/ai-native-product-design.md) and [structured cross-index](../ui-ux-research-sources/ai-native-product-design.json).
 - 10 families; 163 cross-indexed labels, 10 new source URLs, 387 retained. Especialista em UI/UX v1.8.12 and private Library readback verified; normalized source sets match. ChatGPT memory persistence unconfirmed. See [synchronization record](plugin-sync.json).
+
+## AI product cross-index and gap audit — 2026-11-26
+
+- [Knowledge graph](ai-product-knowledge-graph.md) · [JSON](ai-product-knowledge-graph.json)
+- [Gap delta](../ui-ux-research-sources/ai-product-gap-delta-2026-11-26.md)
+- 34 prior + 9 new product observations, 72 mapped source aliases. Current catalog: 90 patterns and 573 sources; historical entries retained. No live UI validation or plugin release claimed.

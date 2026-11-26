@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-26",
+  "observations": [
+    {
+      "id": "chatgpt-space-page-trash",
+      "product": "chatgpt-space",
+      "title": "Hierarchical deletion",
+      "description": "Deleting a page sends descendants to Trash, including descendants owned by others.",
+      "source_id": "openai-space-help",
+      "acceptance": "Test warning, child ownership, restoration scope and irreversible deletion.",
+      "target_type": "view",
+      "target": "Pages",
+      "classification": "official search excerpt; acceptance criteria not executed"
+    },
+    {
+      "id": "claude-data-refresh",
+      "product": "claude",
+      "title": "Dashboard refresh and connector access",
+      "description": "Dashboards refresh on open when due; live sharing can use the sharer's connector access, subject to admin policy.",
+      "source_id": "claude-data",
+      "acceptance": "Check stale/fresh/error, last refreshed, data provenance and revoked access.",
+      "target_type": "output",
+      "target": "Data",
+      "classification": "official search excerpt; acceptance criteria not executed"
+    },
+    {
+      "id": "claude-docs-history",
+      "product": "claude",
+      "title": "Responsive version history",
+      "description": "Claude Docs history overlays text when the artifact panel is too narrow; guide notes a keyboard navigation limitation.",
+      "source_id": "claude-docs",
+      "acceptance": "Test overlay/side-by-side widths, focus and version restore.",
+      "target_type": "output",
+      "target": "Docs",
+      "classification": "official search excerpt; acceptance criteria not executed"
+    },
+    {
+      "id": "claude-share-access",
+      "product": "claude",
+      "title": "Artifact sharing and storage lifecycle",
+      "description": "Docs support view/comment/edit permissions; unpublishing an artifact can permanently delete associated personal/shared storage.",
+      "source_id": "claude-share",
+      "acceptance": "Test permission matrix, warning and irreversible removal.",
+      "target_type": "view",
+      "target": "Artifacts tab",
+      "classification": "official search excerpt; acceptance criteria not executed"
+    },
+    {
+      "id": "grok-bot-approval-card",
+      "product": "grok-bot",
+      "title": "Approval gate",
+      "description": "Bot shows an approval card and waits; approvals for work started without the user can expire after about 30 minutes.",
+      "source_id": "grok-bot-troubleshooting",
+      "acceptance": "Test pending, approve, deny, expiry, notification and retry.",
+      "target_type": "view",
+      "target": "Chat",
+      "classification": "official search excerpt; acceptance criteria not executed"
+    },
+    {
+      "id": "grok-bot-event-routine",
+      "product": "grok-bot",
+      "title": "Event-triggered routine",
+      "description": "Slack triggers can start routines as well as schedules; trigger and app access are distinct.",
+      "source_id": "grok-bot-routines",
+      "acceptance": "Test setup, trigger, pause, failed run and approval boundary.",
+      "target_type": "view",
+      "target": "Routines",
+      "classification": "official search excerpt; acceptance criteria not executed"
+    },
+    {
+      "id": "gemini-persistent-canvas",
+      "product": "gemini",
+      "title": "Persistent Canvas app data",
+      "description": "Canvas creates a Firestore instance when persistence is required; shared-user data can be visible via a public shared link.",
+      "source_id": "gemini-canvas-security",
+      "acceptance": "Test private/shared data, reload, public-link warning and failure.",
+      "target_type": "view",
+      "target": "Canvas",
+      "classification": "official search excerpt; acceptance criteria not executed"
+    },
+    {
+      "id": "gemini-notebook-note-source",
+      "product": "gemini-notebook",
+      "title": "Note to source",
+      "description": "Convert notes to sources for Q&A, generated artifacts and citations; mobile note editing is unsupported per guide.",
+      "source_id": "gemini-notebook-notes",
+      "acceptance": "Test conversion, duplication, deletion, source selection and mobile.",
+      "target_type": "view",
+      "target": "Studio",
+      "classification": "official search excerpt; acceptance criteria not executed"
+    },
+    {
+      "id": "gemini-notebook-citation-navigation",
+      "product": "gemini-notebook",
+      "title": "Source citation navigation",
+      "description": "Selecting a citation navigates to quoted source context; saving chat as note retains inline citations.",
+      "source_id": "gemini-notebook-chat",
+      "acceptance": "Test exact anchor, unavailable source, keyboard and return.",
+      "target_type": "view",
+      "target": "Chat",
+      "classification": "official search excerpt; acceptance criteria not executed"
+    }
+  ],
+  "sources": [
+    {
+      "id": "claude-data",
+      "title": "Claude Data",
+      "url": "https://support.claude.com/en/articles/17454700-get-started-with-claude-data",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official search excerpt retrieved; full UI untested",
+      "storage": "link-only",
+      "notes": "Additional gap research."
+    },
+    {
+      "id": "claude-docs",
+      "title": "Claude Docs",
+      "url": "https://support.claude.com/en/articles/16923645-get-started-with-claude-docs",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official search excerpt retrieved; full UI untested",
+      "storage": "link-only",
+      "notes": "Additional gap research."
+    },
+    {
+      "id": "claude-share",
+      "title": "Share artifacts",
+      "url": "https://support.claude.com/en/articles/9547008-share-artifacts",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official search excerpt retrieved; full UI untested",
+      "storage": "link-only",
+      "notes": "Additional gap research."
+    },
+    {
+      "id": "claude-admin",
+      "title": "Artifacts administration",
+      "url": "https://support.claude.com/en/articles/16994751-artifacts-admin-guide-for-team-and-enterprise-plans",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official search excerpt retrieved; full UI untested",
+      "storage": "link-only",
+      "notes": "Additional gap research."
+    },
+    {
+      "id": "grok-bot-approvals",
+      "title": "Approvals, security and privacy",
+      "url": "https://docs.x.ai/grok-bot/approvals-security-and-privacy",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official search excerpt retrieved; full UI untested",
+      "storage": "link-only",
+      "notes": "Additional gap research."
+    },
+    {
+      "id": "grok-bot-troubleshooting",
+      "title": "Troubleshooting",
+      "url": "https://docs.x.ai/grok-bot/troubleshooting",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official search excerpt retrieved; full UI untested",
+      "storage": "link-only",
+      "notes": "Additional gap research."
+    },
+    {
+      "id": "grok-bot-routines",
+      "title": "Skills and routines",
+      "url": "https://docs.x.ai/grok-bot/skills-routines-and-automations",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official search excerpt retrieved; full UI untested",
+      "storage": "link-only",
+      "notes": "Additional gap research."
+    },
+    {
+      "id": "gemini-canvas-security",
+      "title": "Canvas safety and security",
+      "url": "https://support.google.com/gemini/answer/16419134?hl=en-gi",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official search excerpt retrieved; full UI untested",
+      "storage": "link-only",
+      "notes": "Additional gap research."
+    },
+    {
+      "id": "gemini-notebook-faq",
+      "title": "Gemini Notebook FAQ",
+      "url": "https://support.google.com/gemininotebook/answer/16269187?hl=en-45",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official search excerpt retrieved; full UI untested",
+      "storage": "link-only",
+      "notes": "Additional gap research."
+    }
+  ]
+}

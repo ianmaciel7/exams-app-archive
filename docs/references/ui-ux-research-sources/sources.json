@@ -991,6 +991,105 @@
       "status": "official source retrieved in research",
       "notes": "Gemini Notebook (formerly NotebookLM); product documentation or announcement, not independent efficacy evidence.",
       "storage": "link-only"
+    },
+    {
+      "id": "claude-data",
+      "title": "Claude Data",
+      "url": "https://support.claude.com/en/articles/17454700-get-started-with-claude-data",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official search excerpt retrieved; full UI untested",
+      "storage": "link-only",
+      "notes": "Additional gap research.",
+      "checked_on": "2026-11-26"
+    },
+    {
+      "id": "claude-docs",
+      "title": "Claude Docs",
+      "url": "https://support.claude.com/en/articles/16923645-get-started-with-claude-docs",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official search excerpt retrieved; full UI untested",
+      "storage": "link-only",
+      "notes": "Additional gap research.",
+      "checked_on": "2026-11-26"
+    },
+    {
+      "id": "claude-share",
+      "title": "Share artifacts",
+      "url": "https://support.claude.com/en/articles/9547008-share-artifacts",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official search excerpt retrieved; full UI untested",
+      "storage": "link-only",
+      "notes": "Additional gap research.",
+      "checked_on": "2026-11-26"
+    },
+    {
+      "id": "claude-admin",
+      "title": "Artifacts administration",
+      "url": "https://support.claude.com/en/articles/16994751-artifacts-admin-guide-for-team-and-enterprise-plans",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official search excerpt retrieved; full UI untested",
+      "storage": "link-only",
+      "notes": "Additional gap research.",
+      "checked_on": "2026-11-26"
+    },
+    {
+      "id": "grok-bot-approvals",
+      "title": "Approvals, security and privacy",
+      "url": "https://docs.x.ai/grok-bot/approvals-security-and-privacy",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official search excerpt retrieved; full UI untested",
+      "storage": "link-only",
+      "notes": "Additional gap research.",
+      "checked_on": "2026-11-26"
+    },
+    {
+      "id": "grok-bot-troubleshooting",
+      "title": "Troubleshooting",
+      "url": "https://docs.x.ai/grok-bot/troubleshooting",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official search excerpt retrieved; full UI untested",
+      "storage": "link-only",
+      "notes": "Additional gap research.",
+      "checked_on": "2026-11-26"
+    },
+    {
+      "id": "grok-bot-routines",
+      "title": "Skills and routines",
+      "url": "https://docs.x.ai/grok-bot/skills-routines-and-automations",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official search excerpt retrieved; full UI untested",
+      "storage": "link-only",
+      "notes": "Additional gap research.",
+      "checked_on": "2026-11-26"
+    },
+    {
+      "id": "gemini-canvas-security",
+      "title": "Canvas safety and security",
+      "url": "https://support.google.com/gemini/answer/16419134?hl=en-gi",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official search excerpt retrieved; full UI untested",
+      "storage": "link-only",
+      "notes": "Additional gap research.",
+      "checked_on": "2026-11-26"
+    },
+    {
+      "id": "gemini-notebook-faq",
+      "title": "Gemini Notebook FAQ",
+      "url": "https://support.google.com/gemininotebook/answer/16269187?hl=en-45",
+      "kind": "official-product-documentation",
+      "recorded_on": "2026-11-26",
+      "status": "official search excerpt retrieved; full UI untested",
+      "storage": "link-only",
+      "notes": "Additional gap research.",
+      "checked_on": "2026-11-26"
     }
   ]
 }

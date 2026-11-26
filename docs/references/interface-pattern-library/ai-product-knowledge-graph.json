@@ -1,0 +1,4656 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-26",
+  "scope": "five products; documented observations, marketing examples and unverified candidates distinguished",
+  "source_aliases": {
+    "openai-space-product": "openai-space-product",
+    "openai-space-help": "openai-space-help",
+    "openai-space-pages": "openai-space-pages",
+    "openai-space-agents": "openai-space-agents",
+    "openai-space-collaboration": "openai-space-collaboration",
+    "openai-visualizations": "openai-visualizations",
+    "openai-intelligent-ui": "openai-intelligent-ui",
+    "openai-global-search": "openai-global-search",
+    "openai-mobile": "openai-mobile",
+    "openai-space-overview": "openai-space-overview",
+    "openai-space-start": "openai-space-start",
+    "openai-space-sharing": "openai-space-sharing",
+    "openai-space-admin": "openai-space-admin",
+    "openai-mobile-classic": "openai-mobile-classic",
+    "openai-library": "openai-library",
+    "openai-slides": "openai-slides",
+    "openai-devday": "openai-devday",
+    "openai-release-notes": "openai-release-notes",
+    "openai-learn-changelog": "openai-learn-changelog",
+    "openai-sites": "openai-sites",
+    "openai-video": "openai-video",
+    "claude-artifacts": "claude-artifacts",
+    "claude-design": "claude-design",
+    "claude-design-launch": "claude-design-launch",
+    "claude-projects": "component-claude-projects",
+    "claude-projects-launch": "claude-projects-launch",
+    "claude-install": "claude-install",
+    "claude-connectors": "claude-connectors",
+    "claude-releases": "claude-releases",
+    "grok-bot-design": "grok",
+    "grok-bot-overview": "grok-bot-overview",
+    "grok-bot-files": "grok-bot-files",
+    "grok-bot-start": "grok-bot-start",
+    "grok-bot-bots": "grok-bot-bots",
+    "grok-bot-mobile": "grok-bot-mobile",
+    "grok-bot-one": "grok-bot-one",
+    "grok-bot-changelog": "grok-bot-changelog",
+    "grok-bot-marketplace": "grok-bot-marketplace",
+    "grok-bot-use-cases": "grok-bot-use-cases",
+    "gemini-canvas": "gemini-canvas",
+    "gemini-canvas-examples": "gemini-canvas-examples",
+    "gemini-dynamic": "gemini-dynamic",
+    "gemini-simulations": "gemini-simulations",
+    "gemini-immersive": "gemini-immersive",
+    "gemini-study": "gemini-study",
+    "gemini-sketch": "gemini-sketch",
+    "gemini-gems": "gemini-gems",
+    "gemini-images": "gemini-images",
+    "gemini-notebook-rename": "gemini-notebook-rename",
+    "gemini-notebook-help": "gemini-notebook-help",
+    "gemini-notebook-create": "gemini-notebook-create",
+    "gemini-notebook-quiz": "gemini-notebook-quiz",
+    "gemini-notebook-mindmap": "gemini-notebook-mindmap",
+    "gemini-notebook-sources": "gemini-notebook-sources",
+    "gemini-notebook-notes": "gemini-notebook-notes",
+    "gemini-notebook-chat": "gemini-notebook-chat",
+    "gemini-notebook-sites": "gemini-notebook-sites",
+    "gemini-notebook-sites-launch": "gemini-notebook-sites-launch",
+    "gemini-notebook-study": "gemini-notebook-study",
+    "gemini-notebook-review": "gemini-notebook-review",
+    "gemini-notebook-studio": "gemini-notebook-studio",
+    "gemini-notebook-mobile-quiz": "gemini-notebook-mobile-quiz",
+    "gemini-notebook-mobile": "gemini-notebook-mobile",
+    "claude-data": "claude-data",
+    "claude-docs": "claude-docs",
+    "claude-share": "claude-share",
+    "claude-admin": "claude-admin",
+    "grok-bot-approvals": "grok-bot-approvals",
+    "grok-bot-troubleshooting": "grok-bot-troubleshooting",
+    "grok-bot-routines": "grok-bot-routines",
+    "gemini-canvas-security": "gemini-canvas-security",
+    "gemini-notebook-faq": "gemini-notebook-faq"
+  },
+  "nodes": [
+    {
+      "id": "source:openai-space-product",
+      "type": "source",
+      "label": "ChatGPT Space product examples",
+      "url": "https://chatgpt.com/features/space/",
+      "central_source_id": "openai-space-product",
+      "evidence_status": "verified"
+    },
+    {
+      "id": "source:openai-space-help",
+      "type": "source",
+      "label": "Getting started with Space",
+      "url": "https://help.openai.com/en/articles/20001549-getting-started-with-space-in-chatgpt",
+      "central_source_id": "openai-space-help",
+      "evidence_status": "verified"
+    },
+    {
+      "id": "source:openai-space-pages",
+      "type": "source",
+      "label": "Work with pages",
+      "url": "https://learn.chatgpt.com/docs/space/pages",
+      "central_source_id": "openai-space-pages",
+      "evidence_status": "verified"
+    },
+    {
+      "id": "source:openai-space-agents",
+      "type": "source",
+      "label": "Work with agents",
+      "url": "https://learn.chatgpt.com/docs/space/agents",
+      "central_source_id": "openai-space-agents",
+      "evidence_status": "verified"
+    },
+    {
+      "id": "source:openai-space-collaboration",
+      "type": "source",
+      "label": "Collaborate in Space",
+      "url": "https://learn.chatgpt.com/docs/space/collaboration",
+      "central_source_id": "openai-space-collaboration",
+      "evidence_status": "verified"
+    },
+    {
+      "id": "source:openai-visualizations",
+      "type": "source",
+      "label": "Visualizations",
+      "url": "https://learn.chatgpt.com/docs/visualizations",
+      "central_source_id": "openai-visualizations",
+      "evidence_status": "verified"
+    },
+    {
+      "id": "source:openai-intelligent-ui",
+      "type": "source",
+      "label": "Intelligent UI",
+      "url": "https://help.openai.com/en/articles/20001598-intelligent-ui-in-chatgpt",
+      "central_source_id": "openai-intelligent-ui",
+      "evidence_status": "verified"
+    },
+    {
+      "id": "source:openai-global-search",
+      "type": "source",
+      "label": "Global search",
+      "url": "https://help.openai.com/en/articles/10056348-finding-your-chats-projects-and-files-in-chatgpt",
+      "central_source_id": "openai-global-search",
+      "evidence_status": "verified"
+    },
+    {
+      "id": "source:openai-mobile",
+      "type": "source",
+      "label": "New mobile experience",
+      "url": "https://help.openai.com/en/articles/20001723-using-the-new-experience-in-the-chatgpt-mobile-app",
+      "central_source_id": "openai-mobile",
+      "evidence_status": "verified"
+    },
+    {
+      "id": "source:openai-space-overview",
+      "type": "source",
+      "label": "Space overview",
+      "url": "https://learn.chatgpt.com/docs/space",
+      "central_source_id": "openai-space-overview",
+      "evidence_status": "prior research; recheck"
+    },
+    {
+      "id": "source:openai-space-start",
+      "type": "source",
+      "label": "Space getting started",
+      "url": "https://learn.chatgpt.com/docs/space/getting-started",
+      "central_source_id": "openai-space-start",
+      "evidence_status": "prior research; recheck"
+    },
+    {
+      "id": "source:openai-space-sharing",
+      "type": "source",
+      "label": "Space sharing and controls",
+      "url": "https://help.openai.com/en/articles/20001544-chatgpt-space-sharing-data-and-controls",
+      "central_source_id": "openai-space-sharing",
+      "evidence_status": "prior research; recheck"
+    },
+    {
+      "id": "source:openai-space-admin",
+      "type": "source",
+      "label": "Manage ChatGPT Space",
+      "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-space",
+      "central_source_id": "openai-space-admin",
+      "evidence_status": "prior research; recheck"
+    },
+    {
+      "id": "source:openai-mobile-classic",
+      "type": "source",
+      "label": "Classic mobile",
+      "url": "https://help.openai.com/en/articles/8142208-using-the-chatgpt-mobile-app-classic-experience",
+      "central_source_id": "openai-mobile-classic",
+      "evidence_status": "prior research; recheck"
+    },
+    {
+      "id": "source:openai-library",
+      "type": "source",
+      "label": "Library",
+      "url": "https://help.openai.com/en/articles/20001052-using-library-to-manage-files-in-chatgpt",
+      "central_source_id": "openai-library",
+      "evidence_status": "prior research; recheck"
+    },
+    {
+      "id": "source:openai-slides",
+      "type": "source",
+      "label": "ChatGPT Slides",
+      "url": "https://help.openai.com/en/articles/20001605-creating-and-collaborating-on-slides-in-chatgpt",
+      "central_source_id": "openai-slides",
+      "evidence_status": "prior research; recheck"
+    },
+    {
+      "id": "source:openai-devday",
+      "type": "source",
+      "label": "DevDay 2026 recap",
+      "url": "https://openai.com/index/devday-2026-recap/",
+      "central_source_id": "openai-devday",
+      "evidence_status": "prior research; recheck"
+    },
+    {
+      "id": "source:openai-release-notes",
+      "type": "source",
+      "label": "ChatGPT release notes",
+      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "central_source_id": "openai-release-notes",
+      "evidence_status": "prior research; recheck"
+    },
+    {
+      "id": "source:openai-learn-changelog",
+      "type": "source",
+      "label": "Learn changelog",
+      "url": "https://learn.chatgpt.com/docs/changelog",
+      "central_source_id": "openai-learn-changelog",
+      "evidence_status": "prior research; recheck"
+    },
+    {
+      "id": "source:openai-sites",
+      "type": "source",
+      "label": "ChatGPT Sites",
+      "url": "https://learn.chatgpt.com/docs/sites",
+      "central_source_id": "openai-sites",
+      "evidence_status": "prior research; recheck"
+    },
+    {
+      "id": "source:openai-video",
+      "type": "source",
+      "label": "Official video candidate",
+      "url": "https://www.youtube.com/watch?v=3_fayTbZrW8",
+      "central_source_id": "openai-video",
+      "evidence_status": "prior research; recheck publisher and content"
+    },
+    {
+      "id": "source:claude-artifacts",
+      "type": "source",
+      "label": "Artifacts guide",
+      "url": "https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them",
+      "central_source_id": "claude-artifacts",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:claude-design",
+      "type": "source",
+      "label": "Design help",
+      "url": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+      "central_source_id": "claude-design",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:claude-design-launch",
+      "type": "source",
+      "label": "Design launch and visual demos",
+      "url": "https://www.anthropic.com/news/claude-design-anthropic-labs",
+      "central_source_id": "claude-design-launch",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:component-claude-projects",
+      "type": "source",
+      "label": "Claude — Create and manage projects",
+      "url": "https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects",
+      "central_source_id": "component-claude-projects",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:claude-projects-launch",
+      "type": "source",
+      "label": "Projects visual examples",
+      "url": "https://www.anthropic.com/news/projects",
+      "central_source_id": "claude-projects-launch",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:claude-install",
+      "type": "source",
+      "label": "Install artifact as app",
+      "url": "https://support.claude.com/en/articles/18516354-install-an-artifact-as-an-app?frmapp=yes",
+      "central_source_id": "claude-install",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:claude-connectors",
+      "type": "source",
+      "label": "Interactive connectors",
+      "url": "https://support.claude.com/en/articles/13454812-use-interactive-connectors-in-claude",
+      "central_source_id": "claude-connectors",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:claude-releases",
+      "type": "source",
+      "label": "Release notes",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes?tab=tab-crm",
+      "central_source_id": "claude-releases",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:grok",
+      "type": "source",
+      "label": "xAI — Designing Grok Bot",
+      "url": "https://x.ai/news/designing-grok-bot",
+      "central_source_id": "grok",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:grok-bot-overview",
+      "type": "source",
+      "label": "Grok Bot overview",
+      "url": "https://docs.x.ai/grok-bot/overview",
+      "central_source_id": "grok-bot-overview",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:grok-bot-files",
+      "type": "source",
+      "label": "Files and results / Pages",
+      "url": "https://docs.x.ai/grok-bot/files-and-results",
+      "central_source_id": "grok-bot-files",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:grok-bot-start",
+      "type": "source",
+      "label": "Get started",
+      "url": "https://docs.x.ai/grok-bot/get-started",
+      "central_source_id": "grok-bot-start",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:grok-bot-bots",
+      "type": "source",
+      "label": "Create and manage Bots",
+      "url": "https://docs.x.ai/grok-bot/bots",
+      "central_source_id": "grok-bot-bots",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:grok-bot-mobile",
+      "type": "source",
+      "label": "Mobile guide",
+      "url": "https://docs.x.ai/grok-bot/mobile",
+      "central_source_id": "grok-bot-mobile",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:grok-bot-one",
+      "type": "source",
+      "label": "Grok Bot 1.0 announcement",
+      "url": "https://x.ai/news/grok-bot-1-0?trk=article-ssr-frontend-pulse_little-text-block",
+      "central_source_id": "grok-bot-one",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:grok-bot-changelog",
+      "type": "source",
+      "label": "Changelog",
+      "url": "https://x.ai/changelog/bot",
+      "central_source_id": "grok-bot-changelog",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:grok-bot-marketplace",
+      "type": "source",
+      "label": "Design marketplace",
+      "url": "https://x.ai/bot/marketplace/design",
+      "central_source_id": "grok-bot-marketplace",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:grok-bot-use-cases",
+      "type": "source",
+      "label": "Use cases",
+      "url": "https://docs.x.ai/grok-bot/use-cases",
+      "central_source_id": "grok-bot-use-cases",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:gemini-canvas",
+      "type": "source",
+      "label": "Canvas help",
+      "url": "https://support.google.com/gemini/answer/16047321?hl=en-12",
+      "central_source_id": "gemini-canvas",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:gemini-canvas-examples",
+      "type": "source",
+      "label": "Canvas examples 2026-11-23",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-canvas-tasks/",
+      "central_source_id": "gemini-canvas-examples",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:gemini-dynamic",
+      "type": "source",
+      "label": "Visual layout and Dynamic View announcement",
+      "url": "https://blog.google/products-and-platforms/products/gemini/gemini-3-gemini-app/",
+      "central_source_id": "gemini-dynamic",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:gemini-simulations",
+      "type": "source",
+      "label": "3D models and interactive charts",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/3d-models-charts/",
+      "central_source_id": "gemini-simulations",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:gemini-immersive",
+      "type": "source",
+      "label": "Immersive explorations",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/immersive-explorations-student-hub/?trk=article-ssr-frontend-pulse_little-text-block",
+      "central_source_id": "gemini-immersive",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:gemini-study",
+      "type": "source",
+      "label": "Study notebooks",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-study-notebooks/",
+      "central_source_id": "gemini-study",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:gemini-sketch",
+      "type": "source",
+      "label": "Sketch to app",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/turn-drawings-into-apps-gemini/",
+      "central_source_id": "gemini-sketch",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:gemini-gems",
+      "type": "source",
+      "label": "Gems mini-apps help (search excerpt; direct fetch redirected)",
+      "url": "https://support.google.com/gemini/answer/16802014?hl=en",
+      "central_source_id": "gemini-gems",
+      "evidence_status": "search excerpt; direct fetch failed"
+    },
+    {
+      "id": "source:gemini-images",
+      "type": "source",
+      "label": "Interactive images",
+      "url": "https://blog.google/products-and-platforms/products/education/gemini-interactive-images/",
+      "central_source_id": "gemini-images",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:gemini-notebook-rename",
+      "type": "source",
+      "label": "Rename announcement 2026-07-16",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/",
+      "central_source_id": "gemini-notebook-rename",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:gemini-notebook-help",
+      "type": "source",
+      "label": "Help center",
+      "url": "https://support.google.com/gemininotebook/",
+      "central_source_id": "gemini-notebook-help",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:gemini-notebook-create",
+      "type": "source",
+      "label": "Create notebook and Studio outputs",
+      "url": "https://support.google.com/gemininotebook/answer/16206563?hl=en-CA",
+      "central_source_id": "gemini-notebook-create",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:gemini-notebook-quiz",
+      "type": "source",
+      "label": "Flashcards and quizzes",
+      "url": "https://support.google.com/gemininotebook/answer/16958963?hl=en",
+      "central_source_id": "gemini-notebook-quiz",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:gemini-notebook-mindmap",
+      "type": "source",
+      "label": "Mind maps",
+      "url": "https://support.google.com/gemininotebook/answer/16212283",
+      "central_source_id": "gemini-notebook-mindmap",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:gemini-notebook-sources",
+      "type": "source",
+      "label": "Add or discover sources",
+      "url": "https://support.google.com/gemininotebook/answer/16215270?co=GENIE.Platform%3DDESKTOP&hl=en",
+      "central_source_id": "gemini-notebook-sources",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:gemini-notebook-notes",
+      "type": "source",
+      "label": "Notes",
+      "url": "https://support.google.com/gemininotebook/answer/16262519?hl=en",
+      "central_source_id": "gemini-notebook-notes",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:gemini-notebook-chat",
+      "type": "source",
+      "label": "Chat",
+      "url": "https://support.google.com/gemininotebook/answer/16179559",
+      "central_source_id": "gemini-notebook-chat",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:gemini-notebook-sites",
+      "type": "source",
+      "label": "Interactive sites help",
+      "url": "https://support.google.com/gemininotebook/answer/18945748",
+      "central_source_id": "gemini-notebook-sites",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:gemini-notebook-sites-launch",
+      "type": "source",
+      "label": "Interactive sites launch 2026-11-16",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/interactive-sites/?trk=public_post_comment-text",
+      "central_source_id": "gemini-notebook-sites-launch",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:gemini-notebook-study",
+      "type": "source",
+      "label": "Learning Overview and expanded quiz types",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/three-tips-study-gemini-notebook/?trk=article-ssr-frontend-pulse_little-text-block",
+      "central_source_id": "gemini-notebook-study",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:gemini-notebook-review",
+      "type": "source",
+      "label": "Slide and video review flow",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/co-create-slides-videos/?trk=article-ssr-frontend-pulse_little-text-block",
+      "central_source_id": "gemini-notebook-review",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:gemini-notebook-studio",
+      "type": "source",
+      "label": "Studio upgrade (historical)",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-video-overviews-studio-upgrades/",
+      "central_source_id": "gemini-notebook-studio",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:gemini-notebook-mobile-quiz",
+      "type": "source",
+      "label": "Mobile quiz visual examples (historical)",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-app-quizzes-flashcards/",
+      "central_source_id": "gemini-notebook-mobile-quiz",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:gemini-notebook-mobile",
+      "type": "source",
+      "label": "Mobile limitations",
+      "url": "https://support.google.com/gemininotebook/answer/16296687?co=GENIE.Platform%3DAndroid&hl=en",
+      "central_source_id": "gemini-notebook-mobile",
+      "evidence_status": "official source retrieved in research"
+    },
+    {
+      "id": "source:claude-data",
+      "type": "source",
+      "label": "Claude Data",
+      "url": "https://support.claude.com/en/articles/17454700-get-started-with-claude-data",
+      "central_source_id": "claude-data",
+      "evidence_status": "official search excerpt retrieved; full UI untested"
+    },
+    {
+      "id": "source:claude-docs",
+      "type": "source",
+      "label": "Claude Docs",
+      "url": "https://support.claude.com/en/articles/16923645-get-started-with-claude-docs",
+      "central_source_id": "claude-docs",
+      "evidence_status": "official search excerpt retrieved; full UI untested"
+    },
+    {
+      "id": "source:claude-share",
+      "type": "source",
+      "label": "Share artifacts",
+      "url": "https://support.claude.com/en/articles/9547008-share-artifacts",
+      "central_source_id": "claude-share",
+      "evidence_status": "official search excerpt retrieved; full UI untested"
+    },
+    {
+      "id": "source:claude-admin",
+      "type": "source",
+      "label": "Artifacts administration",
+      "url": "https://support.claude.com/en/articles/16994751-artifacts-admin-guide-for-team-and-enterprise-plans",
+      "central_source_id": "claude-admin",
+      "evidence_status": "official search excerpt retrieved; full UI untested"
+    },
+    {
+      "id": "source:grok-bot-approvals",
+      "type": "source",
+      "label": "Approvals, security and privacy",
+      "url": "https://docs.x.ai/grok-bot/approvals-security-and-privacy",
+      "central_source_id": "grok-bot-approvals",
+      "evidence_status": "official search excerpt retrieved; full UI untested"
+    },
+    {
+      "id": "source:grok-bot-troubleshooting",
+      "type": "source",
+      "label": "Troubleshooting",
+      "url": "https://docs.x.ai/grok-bot/troubleshooting",
+      "central_source_id": "grok-bot-troubleshooting",
+      "evidence_status": "official search excerpt retrieved; full UI untested"
+    },
+    {
+      "id": "source:grok-bot-routines",
+      "type": "source",
+      "label": "Skills and routines",
+      "url": "https://docs.x.ai/grok-bot/skills-routines-and-automations",
+      "central_source_id": "grok-bot-routines",
+      "evidence_status": "official search excerpt retrieved; full UI untested"
+    },
+    {
+      "id": "source:gemini-canvas-security",
+      "type": "source",
+      "label": "Canvas safety and security",
+      "url": "https://support.google.com/gemini/answer/16419134?hl=en-gi",
+      "central_source_id": "gemini-canvas-security",
+      "evidence_status": "official search excerpt retrieved; full UI untested"
+    },
+    {
+      "id": "source:gemini-notebook-faq",
+      "type": "source",
+      "label": "Gemini Notebook FAQ",
+      "url": "https://support.google.com/gemininotebook/answer/16269187?hl=en-45",
+      "central_source_id": "gemini-notebook-faq",
+      "evidence_status": "official search excerpt retrieved; full UI untested"
+    },
+    {
+      "id": "product:chatgpt-space",
+      "type": "product",
+      "label": "ChatGPT Space",
+      "availability": "per-feature matrix pending"
+    },
+    {
+      "id": "view:chatgpt-space:all",
+      "type": "view-or-entry-point",
+      "label": "All",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:chatgpt-space:your-items",
+      "type": "view-or-entry-point",
+      "label": "Your items",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:chatgpt-space:shared-with-you",
+      "type": "view-or-entry-point",
+      "label": "Shared with you",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:chatgpt-space:pages",
+      "type": "view-or-entry-point",
+      "label": "Pages",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:chatgpt-space:images",
+      "type": "view-or-entry-point",
+      "label": "Images",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:chatgpt-space:your-creations",
+      "type": "view-or-entry-point",
+      "label": "Your creations",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:chatgpt-space:uploads",
+      "type": "view-or-entry-point",
+      "label": "Uploads",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:chatgpt-space:suggested",
+      "type": "view-or-entry-point",
+      "label": "Suggested",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:chatgpt-space:recents",
+      "type": "view-or-entry-point",
+      "label": "Recents",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:chatgpt-space:sites",
+      "type": "view-or-entry-point",
+      "label": "Sites",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:chatgpt-space:google-drive",
+      "type": "view-or-entry-point",
+      "label": "Google Drive",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:chatgpt-space:space",
+      "type": "view-or-entry-point",
+      "label": "Space",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:chatgpt-space:parent-page",
+      "type": "view-or-entry-point",
+      "label": "Parent page",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:chatgpt-space:search",
+      "type": "view-or-entry-point",
+      "label": "Search",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "output:chatgpt-space:task-list",
+      "type": "output",
+      "label": "Task list",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:chatgpt-space:data-visualization",
+      "type": "output",
+      "label": "Data visualization",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:chatgpt-space:presentation",
+      "type": "output",
+      "label": "Presentation",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:chatgpt-space:client-portal",
+      "type": "output",
+      "label": "Client portal",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:chatgpt-space:project-tracker",
+      "type": "output",
+      "label": "Project tracker",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:chatgpt-space:interactive-prototype",
+      "type": "output",
+      "label": "Interactive prototype",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:chatgpt-space:pages",
+      "type": "output",
+      "label": "Pages",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:chatgpt-space:sites",
+      "type": "output",
+      "label": "Sites",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "product:claude",
+      "type": "product",
+      "label": "Claude",
+      "availability": "per-feature matrix pending"
+    },
+    {
+      "id": "view:claude:projects",
+      "type": "view-or-entry-point",
+      "label": "Projects",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:claude:artifacts-tab",
+      "type": "view-or-entry-point",
+      "label": "Artifacts tab",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:claude:side-by-side-chat-and-artifact",
+      "type": "view-or-entry-point",
+      "label": "Side-by-side chat and artifact",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:claude:design-canvas",
+      "type": "view-or-entry-point",
+      "label": "Design canvas",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:claude:installed-apps",
+      "type": "view-or-entry-point",
+      "label": "Installed apps",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:claude:inline-connected-app",
+      "type": "view-or-entry-point",
+      "label": "Inline connected app",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "output:claude:docs",
+      "type": "output",
+      "label": "Docs",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:claude:slides",
+      "type": "output",
+      "label": "Slides",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:claude:design",
+      "type": "output",
+      "label": "Design",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:claude:data",
+      "type": "output",
+      "label": "Data",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:claude:motion-beta",
+      "type": "output",
+      "label": "Motion (beta)",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:claude:sheets-beta",
+      "type": "output",
+      "label": "Sheets (beta)",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:claude:whiteboards-beta",
+      "type": "output",
+      "label": "Whiteboards (beta)",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:claude:interactive-tools-and-dashboards",
+      "type": "output",
+      "label": "Interactive tools and dashboards",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "product:grok-bot",
+      "type": "product",
+      "label": "Grok Bot",
+      "availability": "per-feature matrix pending"
+    },
+    {
+      "id": "view:grok-bot:chat",
+      "type": "view-or-entry-point",
+      "label": "Chat",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:grok-bot:details",
+      "type": "view-or-entry-point",
+      "label": "Details",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:grok-bot:library",
+      "type": "view-or-entry-point",
+      "label": "Library",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:grok-bot:computer",
+      "type": "view-or-entry-point",
+      "label": "Computer",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:grok-bot:pages",
+      "type": "view-or-entry-point",
+      "label": "Pages",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:grok-bot:marketplace",
+      "type": "view-or-entry-point",
+      "label": "Marketplace",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:grok-bot:routines",
+      "type": "view-or-entry-point",
+      "label": "Routines",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "output:grok-bot:files",
+      "type": "output",
+      "label": "Files",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:grok-bot:pages",
+      "type": "output",
+      "label": "Pages",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:grok-bot:dashboards",
+      "type": "output",
+      "label": "Dashboards",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:grok-bot:comparison-tables",
+      "type": "output",
+      "label": "Comparison tables",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:grok-bot:launch-project-trackers",
+      "type": "output",
+      "label": "Launch/project trackers",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:grok-bot:charts",
+      "type": "output",
+      "label": "Charts",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:grok-bot:filters-and-switches",
+      "type": "output",
+      "label": "Filters and switches",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:grok-bot:routine-generated-updates",
+      "type": "output",
+      "label": "Routine-generated updates",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "product:gemini",
+      "type": "product",
+      "label": "Gemini",
+      "availability": "per-feature matrix pending"
+    },
+    {
+      "id": "view:gemini:canvas",
+      "type": "view-or-entry-point",
+      "label": "Canvas",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:gemini:visual-layout",
+      "type": "view-or-entry-point",
+      "label": "Visual Layout",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:gemini:dynamic-view",
+      "type": "view-or-entry-point",
+      "label": "Dynamic View",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:gemini:gems",
+      "type": "view-or-entry-point",
+      "label": "Gems",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:gemini:study-notebooks",
+      "type": "view-or-entry-point",
+      "label": "Study Notebooks",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:gemini:guided-learning",
+      "type": "view-or-entry-point",
+      "label": "Guided Learning",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:gemini:immersive-explorations",
+      "type": "view-or-entry-point",
+      "label": "Immersive Explorations",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "output:gemini:documents",
+      "type": "output",
+      "label": "Documents",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:gemini:html-react-app-previews",
+      "type": "output",
+      "label": "HTML/React app previews",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:gemini:3d-visualizations",
+      "type": "output",
+      "label": "3D visualizations",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:gemini:games",
+      "type": "output",
+      "label": "Games",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:gemini:quizzes",
+      "type": "output",
+      "label": "Quizzes",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:gemini:flashcards",
+      "type": "output",
+      "label": "Flashcards",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:gemini:task-lists",
+      "type": "output",
+      "label": "Task lists",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:gemini:sales-trackers",
+      "type": "output",
+      "label": "Sales trackers",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:gemini:pricing-calculators",
+      "type": "output",
+      "label": "Pricing calculators",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:gemini:slides",
+      "type": "output",
+      "label": "Slides",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:gemini:infographics",
+      "type": "output",
+      "label": "Infographics",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:gemini:web-pages",
+      "type": "output",
+      "label": "Web pages",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:gemini:audio-overview",
+      "type": "output",
+      "label": "Audio Overview",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "product:gemini-notebook",
+      "type": "product",
+      "label": "Gemini Notebook (formerly NotebookLM)",
+      "availability": "per-feature matrix pending"
+    },
+    {
+      "id": "view:gemini-notebook:notebook-collection",
+      "type": "view-or-entry-point",
+      "label": "Notebook collection",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:gemini-notebook:sources",
+      "type": "view-or-entry-point",
+      "label": "Sources",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:gemini-notebook:chat",
+      "type": "view-or-entry-point",
+      "label": "Chat",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:gemini-notebook:studio",
+      "type": "view-or-entry-point",
+      "label": "Studio",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:gemini-notebook:artifact-viewer",
+      "type": "view-or-entry-point",
+      "label": "Artifact viewer",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:gemini-notebook:full-screen-study-view",
+      "type": "view-or-entry-point",
+      "label": "Full-screen study view",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "view:gemini-notebook:interactive-site",
+      "type": "view-or-entry-point",
+      "label": "Interactive site",
+      "classification": "recorded label; native view vs mode to refine"
+    },
+    {
+      "id": "output:gemini-notebook:audio-overview",
+      "type": "output",
+      "label": "Audio Overview",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:gemini-notebook:video-overview",
+      "type": "output",
+      "label": "Video Overview",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:gemini-notebook:mind-map",
+      "type": "output",
+      "label": "Mind Map",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:gemini-notebook:reports",
+      "type": "output",
+      "label": "Reports",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:gemini-notebook:data-tables",
+      "type": "output",
+      "label": "Data Tables",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:gemini-notebook:flashcards",
+      "type": "output",
+      "label": "Flashcards",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:gemini-notebook:quizzes",
+      "type": "output",
+      "label": "Quizzes",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:gemini-notebook:slide-decks",
+      "type": "output",
+      "label": "Slide Decks",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:gemini-notebook:infographics",
+      "type": "output",
+      "label": "Infographics",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:gemini-notebook:notes",
+      "type": "output",
+      "label": "Notes",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "output:gemini-notebook:interactive-sites",
+      "type": "output",
+      "label": "Interactive Sites",
+      "classification": "creatable output; not necessarily native template"
+    },
+    {
+      "id": "feature:chatgpt-space-space-vs-project",
+      "type": "feature-observation",
+      "label": "Separate organizational contexts",
+      "central_pattern_id": "chatgpt-space-space-vs-project",
+      "description": "Group related objects without conflating a shared content space and a conversation project.",
+      "acceptance": "Test membership, access and movement independently.",
+      "evidence_status": "product evidence / derived acceptance tests",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:chatgpt-space-object-views",
+      "type": "feature-observation",
+      "label": "Object collections and facets",
+      "central_pattern_id": "chatgpt-space-object-views",
+      "description": "Separate ownership, access, object type, origin and activity from hierarchy.",
+      "acceptance": "Test shared-space indirect access, empty results, filters and permissions.",
+      "evidence_status": "product evidence / derived acceptance tests",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:chatgpt-space-block-editor",
+      "type": "feature-observation",
+      "label": "Composable page / block editor",
+      "central_pattern_id": "chatgpt-space-block-editor",
+      "description": "Use searchable slash menu for content, references and interactive tools; create nested page or link existing page.",
+      "acceptance": "Test keyboard, touch, focus, insert/reorder, deletion and reference identity.",
+      "evidence_status": "product evidence / derived acceptance tests",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:chatgpt-space-width-controls",
+      "type": "feature-observation",
+      "label": "Per-block table width and fit",
+      "central_pattern_id": "chatgpt-space-width-controls",
+      "description": "Normal, Flexible, Full width and readability/equal columns. Do not infer exact sizes.",
+      "acceptance": "Test narrow viewport, overflow, fit and screen reader headers.",
+      "evidence_status": "product evidence / derived acceptance tests",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:chatgpt-space-contextual-ai",
+      "type": "feature-observation",
+      "label": "Contextual AI and scoped edits",
+      "central_pattern_id": "chatgpt-space-contextual-ai",
+      "description": "Side chat for broad work; selected text, inline mentions and comments for scoped work. Review proposals before acceptance.",
+      "acceptance": "Test scope, undo/review, permission, cancellation, errors, keyboard.",
+      "evidence_status": "product evidence / derived acceptance tests",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:chatgpt-space-recurring-work",
+      "type": "feature-observation",
+      "label": "Verified recurring updates",
+      "central_pattern_id": "chatgpt-space-recurring-work",
+      "description": "Distinguish a generated tracker from actual scheduled execution; verify saved task and run. Keep Updated unavailable at launch per guide.",
+      "acceptance": "Test task enablement, next run, freshness, source and failure.",
+      "evidence_status": "product evidence / derived acceptance tests",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:chatgpt-space-adaptive-ui",
+      "type": "feature-observation",
+      "label": "Intelligent UI / generated interface",
+      "central_pattern_id": "chatgpt-space-adaptive-ui",
+      "description": "Choose text, cards, forms, charts or interactive output based on need; state persistence varies by experience and chat.",
+      "acceptance": "Test fallback text, state reload, control semantics, contrast and reduced motion.",
+      "evidence_status": "product evidence / derived acceptance tests",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:chatgpt-space-visualization-lifecycle",
+      "type": "feature-observation",
+      "label": "Interactive visualization vs persistent app",
+      "central_pattern_id": "chatgpt-space-visualization-lifecycle",
+      "description": "Visualization is generally snapshot; sites are a distinct option. Show data context, labels, accessibility and simpler fallback on failure.",
+      "acceptance": "Test keyboard, data table, units, blank/loading/error and export.",
+      "evidence_status": "product evidence / derived acceptance tests",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:chatgpt-space-search",
+      "type": "feature-observation",
+      "label": "Unified content search",
+      "central_pattern_id": "chatgpt-space-search",
+      "description": "Search existing objects by type, with permission boundaries; Ctrl/Cmd+K. Not web search.",
+      "acceptance": "Test keyboard, archived vs deleted/locked, access and filter reset.",
+      "evidence_status": "product evidence / derived acceptance tests",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:chatgpt-space-mobile-navigation",
+      "type": "feature-observation",
+      "label": "Customizable mobile navigation",
+      "central_pattern_id": "chatgpt-space-mobile-navigation",
+      "description": "Home and Explore separate frequent work from discovery; pin/unpin/replace shortcuts.",
+      "acceptance": "Test touch, focus, available destinations, full tab bar and responsive behavior.",
+      "evidence_status": "product evidence / derived acceptance tests",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:chatgpt-space-collaboration",
+      "type": "feature-observation",
+      "label": "Contextual collaboration",
+      "central_pattern_id": "chatgpt-space-collaboration",
+      "description": "Shared page editing, comments anchored to content, review attribution and sharing controls when offered.",
+      "acceptance": "Test permissions and simultaneous edits; do not infer implementation.",
+      "evidence_status": "product evidence / derived acceptance tests",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:claude-artifact-lifecycle",
+      "type": "feature-observation",
+      "label": "artifact lifecycle",
+      "central_pattern_id": "claude-artifact-lifecycle",
+      "description": "Reusable artifact separate from conversation; create, edit, revisit, share; legacy artifacts before 2026-09-16 are distinct.",
+      "acceptance": "Test reopening, editing, share permissions, plan restrictions.",
+      "evidence_status": "documented product behavior / derived acceptance criteria",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:claude-fine-grained-design",
+      "type": "feature-observation",
+      "label": "fine grained design",
+      "central_pattern_id": "claude-fine-grained-design",
+      "description": "Direct text edits, element comments and generated adjustment controls for spacing/colors/layout; design system context; handoff bundle.",
+      "acceptance": "Verify scope of edits, controls via keyboard, review and export.",
+      "evidence_status": "documented product behavior / derived acceptance criteria",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:claude-project-context",
+      "type": "feature-observation",
+      "label": "project context",
+      "central_pattern_id": "claude-project-context",
+      "description": "Project-level knowledge and instructions organize related conversations; not equivalent to artifact.",
+      "acceptance": "Test project boundaries and file access.",
+      "evidence_status": "documented product behavior / derived acceptance criteria",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:claude-installable-artifact",
+      "type": "feature-observation",
+      "label": "installable artifact",
+      "central_pattern_id": "claude-installable-artifact",
+      "description": "Desktop installation gives app a separate entry point.",
+      "acceptance": "Test installation availability, reopening, permissions, uninstall.",
+      "evidence_status": "documented product behavior / derived acceptance criteria",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:claude-interactive-connectors",
+      "type": "feature-observation",
+      "label": "interactive connectors",
+      "central_pattern_id": "claude-interactive-connectors",
+      "description": "Connected service UI can appear inside chat; distinguish provider actions from generated app.",
+      "acceptance": "Review tools and permission before actions.",
+      "evidence_status": "documented product behavior / derived acceptance criteria",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:grok-bot-persistent-agent",
+      "type": "feature-observation",
+      "label": "persistent agent",
+      "central_pattern_id": "grok-bot-persistent-agent",
+      "description": "Agent has durable identity, job and working context; chat is one entry point.",
+      "acceptance": "Test agent selection and context boundaries.",
+      "evidence_status": "documented product behavior / derived acceptance criteria",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:grok-bot-avatar-states",
+      "type": "feature-observation",
+      "label": "avatar states",
+      "central_pattern_id": "grok-bot-avatar-states",
+      "description": "Idle, Thinking, Working, Waiting, Blocked, Done; motion communicates state, distinguish identity from progress.",
+      "acceptance": "Provide readable text state and reduced motion; measure timing only from recordings.",
+      "evidence_status": "documented product behavior / derived acceptance criteria",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:grok-bot-execution-visibility",
+      "type": "feature-observation",
+      "label": "execution visibility",
+      "central_pattern_id": "grok-bot-execution-visibility",
+      "description": "Show meaningful task execution rather than undifferentiated loading dots.",
+      "acceptance": "Test blocked/approval/error and actual progress without fake percentages.",
+      "evidence_status": "documented product behavior / derived acceptance criteria",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:grok-bot-pages",
+      "type": "feature-observation",
+      "label": "pages",
+      "central_pattern_id": "grok-bot-pages",
+      "description": "Pages reside in Bot Library; open via chat card; primary page beside smaller chat panel; controls and sharing; gradual rollout, Enterprise excluded per guide.",
+      "acceptance": "Verify plan, permission, state persistence, loading and export.",
+      "evidence_status": "documented product behavior / derived acceptance criteria",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:grok-bot-recurring",
+      "type": "feature-observation",
+      "label": "recurring",
+      "central_pattern_id": "grok-bot-recurring",
+      "description": "Routines run on schedule; can update pages; distinguish saved routine from generated tracker.",
+      "acceptance": "Verify cadence, run status, review and failure.",
+      "evidence_status": "documented product behavior / derived acceptance criteria",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-canvas-edit",
+      "type": "feature-observation",
+      "label": "canvas edit",
+      "central_pattern_id": "gemini-canvas-edit",
+      "description": "Chat beside editable canvas; Select & ask for scoped edits; previous/next versions; export.",
+      "acceptance": "Test selection precision, version changes, autosave, keyboard and export.",
+      "evidence_status": "documented product behavior / derived acceptance criteria",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-adaptive-generative-ui",
+      "type": "feature-observation",
+      "label": "adaptive generative ui",
+      "central_pattern_id": "gemini-adaptive-generative-ui",
+      "description": "Visual Layout and Dynamic View were introduced as generative-interface experiments; do not assume universal availability.",
+      "acceptance": "Test semantic fallback and responsive layout.",
+      "evidence_status": "documented product behavior / derived acceptance criteria",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-simulation",
+      "type": "feature-observation",
+      "label": "simulation",
+      "central_pattern_id": "gemini-simulation",
+      "description": "Interactive 3D models and charts for learning.",
+      "acceptance": "Provide labels, units, keyboard controls and static fallback.",
+      "evidence_status": "documented product behavior / derived acceptance criteria",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-document-transform",
+      "type": "feature-observation",
+      "label": "document transform",
+      "central_pattern_id": "gemini-document-transform",
+      "description": "Create quiz, infographic, web page, audio or slides from a document.",
+      "acceptance": "Check source traceability and distinguish generated results from original content.",
+      "evidence_status": "documented product behavior / derived acceptance criteria",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-study-space",
+      "type": "feature-observation",
+      "label": "study space",
+      "central_pattern_id": "gemini-study-space",
+      "description": "Study notebooks synchronize sources across Gemini and Gemini Notebook.",
+      "acceptance": "Test source selection and cross-app identity.",
+      "evidence_status": "documented product behavior / derived acceptance criteria",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-notebook-three-region-shell",
+      "type": "feature-observation",
+      "label": "three region shell",
+      "central_pattern_id": "gemini-notebook-three-region-shell",
+      "description": "Separate evidence sources, interaction and generated outputs; select sources and label categories.",
+      "acceptance": "Test independent selection, focus and reflow.",
+      "evidence_status": "documented product behavior / derived acceptance criteria",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-notebook-source-grounding",
+      "type": "feature-observation",
+      "label": "source grounding",
+      "central_pattern_id": "gemini-notebook-source-grounding",
+      "description": "Sources can be selected for chat or outputs; changes/deletion do not automatically update already generated outputs.",
+      "acceptance": "Show provenance, generation date and stale outputs.",
+      "evidence_status": "documented product behavior / derived acceptance criteria",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-notebook-study-loop",
+      "type": "feature-observation",
+      "label": "study loop",
+      "central_pattern_id": "gemini-notebook-study-loop",
+      "description": "Difficulty, number, explain, previous/next, Got it/Missed it, review/retake, missed-only, shuffle, resume, full screen, restart and CSV when permitted.",
+      "acceptance": "Test answer feedback, progress resume and missed-only filtering.",
+      "evidence_status": "documented product behavior / derived acceptance criteria",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-notebook-question-formats",
+      "type": "feature-observation",
+      "label": "question formats",
+      "central_pattern_id": "gemini-notebook-question-formats",
+      "description": "Short answer, multi-select and fill-in-the-blank in addition to quizzes; Learning Overview combines summaries and studio outputs.",
+      "acceptance": "Test multiple answer validation, accessibility and source-based explanation.",
+      "evidence_status": "documented product behavior / derived acceptance criteria",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-notebook-async-output",
+      "type": "feature-observation",
+      "label": "async output",
+      "central_pattern_id": "gemini-notebook-async-output",
+      "description": "Studio generation runs while user continues working; completion can notify and mark unread.",
+      "acceptance": "Test generation pending, unread persistence, failure and notification preferences.",
+      "evidence_status": "documented product behavior / derived acceptance criteria",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-notebook-review-before-render",
+      "type": "feature-observation",
+      "label": "review before render",
+      "central_pattern_id": "gemini-notebook-review-before-render",
+      "description": "Optional Review toggle for slide outlines or video producer notes; refine before Proceed.",
+      "acceptance": "Test editable plan, confirmation, cancellation and skip review.",
+      "evidence_status": "documented product behavior / derived acceptance criteria",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-notebook-interactive-site-state",
+      "type": "feature-observation",
+      "label": "interactive site state",
+      "central_pattern_id": "gemini-notebook-interactive-site-state",
+      "description": "Sites built from sources can save checkbox/field selections; web rollout 18+; mobile coming soon at announcement.",
+      "acceptance": "Test persisted input and sharing separately; no assumption of collaborative state.",
+      "evidence_status": "documented product behavior / derived acceptance criteria",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-notebook-mobile-constraints",
+      "type": "feature-observation",
+      "label": "mobile constraints",
+      "central_pattern_id": "gemini-notebook-mobile-constraints",
+      "description": "Mobile support differs; notes, mind maps, reports and data table generation restricted per guide.",
+      "acceptance": "Test platform-specific capability availability.",
+      "evidence_status": "documented product behavior / derived acceptance criteria",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:chatgpt-space-page-trash",
+      "type": "feature-observation",
+      "label": "Hierarchical deletion",
+      "central_pattern_id": "chatgpt-space-page-trash",
+      "description": "Deleting a page sends descendants to Trash, including descendants owned by others.",
+      "acceptance": "Test warning, child ownership, restoration scope and irreversible deletion.",
+      "evidence_status": "official search excerpt; acceptance criteria not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:claude-data-refresh",
+      "type": "feature-observation",
+      "label": "Dashboard refresh and connector access",
+      "central_pattern_id": "claude-data-refresh",
+      "description": "Dashboards refresh on open when due; live sharing can use the sharer's connector access, subject to admin policy.",
+      "acceptance": "Check stale/fresh/error, last refreshed, data provenance and revoked access.",
+      "evidence_status": "official search excerpt; acceptance criteria not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:claude-docs-history",
+      "type": "feature-observation",
+      "label": "Responsive version history",
+      "central_pattern_id": "claude-docs-history",
+      "description": "Claude Docs history overlays text when the artifact panel is too narrow; guide notes a keyboard navigation limitation.",
+      "acceptance": "Test overlay/side-by-side widths, focus and version restore.",
+      "evidence_status": "official search excerpt; acceptance criteria not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:claude-share-access",
+      "type": "feature-observation",
+      "label": "Artifact sharing and storage lifecycle",
+      "central_pattern_id": "claude-share-access",
+      "description": "Docs support view/comment/edit permissions; unpublishing an artifact can permanently delete associated personal/shared storage.",
+      "acceptance": "Test permission matrix, warning and irreversible removal.",
+      "evidence_status": "official search excerpt; acceptance criteria not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:grok-bot-approval-card",
+      "type": "feature-observation",
+      "label": "Approval gate",
+      "central_pattern_id": "grok-bot-approval-card",
+      "description": "Bot shows an approval card and waits; approvals for work started without the user can expire after about 30 minutes.",
+      "acceptance": "Test pending, approve, deny, expiry, notification and retry.",
+      "evidence_status": "official search excerpt; acceptance criteria not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:grok-bot-event-routine",
+      "type": "feature-observation",
+      "label": "Event-triggered routine",
+      "central_pattern_id": "grok-bot-event-routine",
+      "description": "Slack triggers can start routines as well as schedules; trigger and app access are distinct.",
+      "acceptance": "Test setup, trigger, pause, failed run and approval boundary.",
+      "evidence_status": "official search excerpt; acceptance criteria not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-persistent-canvas",
+      "type": "feature-observation",
+      "label": "Persistent Canvas app data",
+      "central_pattern_id": "gemini-persistent-canvas",
+      "description": "Canvas creates a Firestore instance when persistence is required; shared-user data can be visible via a public shared link.",
+      "acceptance": "Test private/shared data, reload, public-link warning and failure.",
+      "evidence_status": "official search excerpt; acceptance criteria not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-notebook-note-source",
+      "type": "feature-observation",
+      "label": "Note to source",
+      "central_pattern_id": "gemini-notebook-note-source",
+      "description": "Convert notes to sources for Q&A, generated artifacts and citations; mobile note editing is unsupported per guide.",
+      "acceptance": "Test conversion, duplication, deletion, source selection and mobile.",
+      "evidence_status": "official search excerpt; acceptance criteria not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "feature:gemini-notebook-citation-navigation",
+      "type": "feature-observation",
+      "label": "Source citation navigation",
+      "central_pattern_id": "gemini-notebook-citation-navigation",
+      "description": "Selecting a citation navigates to quoted source context; saving chat as note retains inline citations.",
+      "acceptance": "Test exact anchor, unavailable source, keyboard and return.",
+      "evidence_status": "official search excerpt; acceptance criteria not executed",
+      "state_coverage": "not live tested"
+    },
+    {
+      "id": "evidence:chatgpt-space:todos",
+      "type": "evidence",
+      "label": "Task list",
+      "url": "https://images.ctfassets.net/8su2tbn87fck/3DG9uFmP0vdJubLdCrPcs8/485f9dab24ece5c968b9cbf000d27a2b/chatgpt-space-todos-desktop-light.png?fm=webp&q=80&w=1340",
+      "status": "opened and visually inspected 2026-11-26",
+      "storage": "link-only",
+      "rights": "OpenAI marketing media; redistribution license not verified"
+    },
+    {
+      "id": "evidence:chatgpt-space:sankey",
+      "type": "evidence",
+      "label": "Data visualization",
+      "url": "https://images.ctfassets.net/8su2tbn87fck/6G6cC1s3Do82N8yZfMofXk/6652364afaf5d1dbfebf127243576879/chatgpt-space-data-desktop-light.png?fm=webp&q=80&w=1340",
+      "status": "opened and visually inspected 2026-11-26",
+      "storage": "link-only",
+      "rights": "OpenAI marketing media; redistribution license not verified"
+    },
+    {
+      "id": "evidence:chatgpt-space:pitch",
+      "type": "evidence",
+      "label": "Presentation",
+      "url": "https://images.ctfassets.net/8su2tbn87fck/44xcuWcnbu4VdjgnJBciwX/e61163d8eb98a27aa4ef845a51636f4e/chatgpt-space-brand-pitch-desktop-light.png?fm=webp&q=80&w=1340",
+      "status": "opened and visually inspected 2026-11-26",
+      "storage": "link-only",
+      "rights": "OpenAI marketing media; redistribution license not verified"
+    },
+    {
+      "id": "evidence:chatgpt-space:portal",
+      "type": "evidence",
+      "label": "Client portal",
+      "url": "https://images.ctfassets.net/8su2tbn87fck/0VCz9UfZ9PLozjGMdK1Xp/13b658fc92c55bbfa418dc82246b593e/chatgpt-space-sites-desktop-light.png?fm=webp&q=80&w=1340",
+      "status": "opened and visually inspected 2026-11-26",
+      "storage": "link-only",
+      "rights": "OpenAI marketing media; redistribution license not verified"
+    },
+    {
+      "id": "evidence:chatgpt-space:tracker",
+      "type": "evidence",
+      "label": "Project tracker",
+      "url": "https://images.ctfassets.net/8su2tbn87fck/1XD9GxCSgSCal5pWFsR1P4/e27811173504cb6587e21c1e1bd8f50d/chatgpt-space-sprint-desktop-light.png?fm=webp&q=80&w=1340",
+      "status": "opened and visually inspected 2026-11-26",
+      "storage": "link-only",
+      "rights": "OpenAI marketing media; redistribution license not verified"
+    },
+    {
+      "id": "evidence:chatgpt-space:prototype",
+      "type": "evidence",
+      "label": "Interactive prototype",
+      "url": "https://images.ctfassets.net/8su2tbn87fck/rV0a4g28Lvgu6fnTDdmlp/3c11073bb05593530b026539ebe98f5b/chatgpt-space-prototype-desktop-light.png?fm=webp&q=80&w=1340",
+      "status": "opened and visually inspected 2026-11-26",
+      "storage": "link-only",
+      "rights": "OpenAI marketing media; redistribution license not verified"
+    },
+    {
+      "id": "evidence:claude:design-prototypes-and-refinement",
+      "type": "evidence-lead",
+      "label": "Design prototypes and refinement",
+      "status": "publisher page with visual examples or documentation; inspect original media separately",
+      "storage": "link-only"
+    },
+    {
+      "id": "evidence:claude:project-context-and-artifacts",
+      "type": "evidence-lead",
+      "label": "Project context and artifacts",
+      "status": "publisher page with visual examples or documentation; inspect original media separately",
+      "storage": "link-only"
+    },
+    {
+      "id": "evidence:grok-bot:avatar-motion-and-execution-states",
+      "type": "evidence-lead",
+      "label": "Avatar motion and execution states",
+      "status": "publisher page with visual examples or documentation; inspect original media separately",
+      "storage": "link-only"
+    },
+    {
+      "id": "evidence:grok-bot:team-and-agent-ui",
+      "type": "evidence-lead",
+      "label": "Team and agent UI",
+      "status": "publisher page with visual examples or documentation; inspect original media separately",
+      "storage": "link-only"
+    },
+    {
+      "id": "evidence:grok-bot:page-examples-and-library-behavior",
+      "type": "evidence-lead",
+      "label": "Page examples and library behavior",
+      "status": "publisher page with visual examples or documentation; inspect original media separately",
+      "storage": "link-only"
+    },
+    {
+      "id": "evidence:gemini:3d-game-quiz-dashboard-and-document-examples",
+      "type": "evidence-lead",
+      "label": "3D game, quiz, dashboard and document examples",
+      "status": "publisher page with visual examples or documentation; inspect original media separately",
+      "storage": "link-only"
+    },
+    {
+      "id": "evidence:gemini:interactive-simulations-and-models",
+      "type": "evidence-lead",
+      "label": "Interactive simulations and models",
+      "status": "publisher page with visual examples or documentation; inspect original media separately",
+      "storage": "link-only"
+    },
+    {
+      "id": "evidence:gemini:visual-layout-and-dynamic-view-demos",
+      "type": "evidence-lead",
+      "label": "Visual Layout and Dynamic View demos",
+      "status": "publisher page with visual examples or documentation; inspect original media separately",
+      "storage": "link-only"
+    },
+    {
+      "id": "evidence:gemini-notebook:studio-output-gallery-and-video-overview",
+      "type": "evidence-lead",
+      "label": "Studio output gallery and video overview",
+      "status": "publisher page with visual examples or documentation; inspect original media separately",
+      "storage": "link-only"
+    },
+    {
+      "id": "evidence:gemini-notebook:mobile-flashcard-and-quiz-examples",
+      "type": "evidence-lead",
+      "label": "Mobile flashcard and quiz examples",
+      "status": "publisher page with visual examples or documentation; inspect original media separately",
+      "storage": "link-only"
+    },
+    {
+      "id": "evidence:gemini-notebook:slide-video-review-walkthroughs",
+      "type": "evidence-lead",
+      "label": "Slide/video review walkthroughs",
+      "status": "publisher page with visual examples or documentation; inspect original media separately",
+      "storage": "link-only"
+    },
+    {
+      "id": "evidence:gemini-notebook:interactive-site-examples",
+      "type": "evidence-lead",
+      "label": "Interactive site examples",
+      "status": "publisher page with visual examples or documentation; inspect original media separately",
+      "storage": "link-only"
+    },
+    {
+      "id": "evidence:gemini:3d-visualizer",
+      "type": "evidence-lead",
+      "label": "3D visualizer",
+      "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_Canvas_3D_planet_generato.width-1200.format-webp.webp",
+      "status": "official page image link and alt text retrieved; direct fetch unsupported content type; visual pixels not verified",
+      "storage": "link-only"
+    },
+    {
+      "id": "evidence:gemini:physics-quiz",
+      "type": "evidence-lead",
+      "label": "Physics quiz",
+      "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/03_for_students_1_personalize_le.width-1200.format-webp.webp",
+      "status": "official page image link and alt text retrieved; direct fetch unsupported content type; visual pixels not verified",
+      "storage": "link-only"
+    },
+    {
+      "id": "evidence:gemini:role-and-permission-dashboard",
+      "type": "evidence-lead",
+      "label": "Role and permission dashboard",
+      "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/07_for_work_2_optimize_operation.width-1200.format-webp.webp",
+      "status": "official page image link and alt text retrieved; direct fetch unsupported content type; visual pixels not verified",
+      "storage": "link-only"
+    },
+    {
+      "id": "evidence:gemini:speaker-notes",
+      "type": "evidence-lead",
+      "label": "Speaker notes",
+      "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/06_for_work_1_accelerate_impact_.width-1200.format-webp.webp",
+      "status": "official page image link and alt text retrieved; direct fetch unsupported content type; visual pixels not verified",
+      "storage": "link-only"
+    },
+    {
+      "id": "concept:task-list",
+      "type": "comparison-concept",
+      "label": "Task list / checklist",
+      "status": "analyst grouping"
+    },
+    {
+      "id": "component:task-list:checkbox",
+      "type": "component-candidate",
+      "label": "checkbox",
+      "status": "research target; not confirmed across products"
+    },
+    {
+      "id": "component:task-list:task-row",
+      "type": "component-candidate",
+      "label": "task row",
+      "status": "research target; not confirmed across products"
+    },
+    {
+      "id": "state:task-list:empty",
+      "type": "state-candidate",
+      "label": "empty",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "state:task-list:unchecked",
+      "type": "state-candidate",
+      "label": "unchecked",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "state:task-list:checked",
+      "type": "state-candidate",
+      "label": "checked",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "state:task-list:saving",
+      "type": "state-candidate",
+      "label": "saving",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "state:task-list:error",
+      "type": "state-candidate",
+      "label": "error",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "state:task-list:read-only",
+      "type": "state-candidate",
+      "label": "read-only",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "concept:dashboard",
+      "type": "comparison-concept",
+      "label": "Dashboard / tracker",
+      "status": "analyst grouping"
+    },
+    {
+      "id": "component:dashboard:chart",
+      "type": "component-candidate",
+      "label": "chart",
+      "status": "research target; not confirmed across products"
+    },
+    {
+      "id": "component:dashboard:filter",
+      "type": "component-candidate",
+      "label": "filter",
+      "status": "research target; not confirmed across products"
+    },
+    {
+      "id": "component:dashboard:metric-card",
+      "type": "component-candidate",
+      "label": "metric card",
+      "status": "research target; not confirmed across products"
+    },
+    {
+      "id": "state:dashboard:empty",
+      "type": "state-candidate",
+      "label": "empty",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "state:dashboard:loading",
+      "type": "state-candidate",
+      "label": "loading",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "state:dashboard:ready",
+      "type": "state-candidate",
+      "label": "ready",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "state:dashboard:stale",
+      "type": "state-candidate",
+      "label": "stale",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "state:dashboard:error",
+      "type": "state-candidate",
+      "label": "error",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "concept:quiz",
+      "type": "comparison-concept",
+      "label": "Quiz",
+      "status": "analyst grouping"
+    },
+    {
+      "id": "component:quiz:question",
+      "type": "component-candidate",
+      "label": "question",
+      "status": "research target; not confirmed across products"
+    },
+    {
+      "id": "component:quiz:answer-option",
+      "type": "component-candidate",
+      "label": "answer option",
+      "status": "research target; not confirmed across products"
+    },
+    {
+      "id": "component:quiz:explanation",
+      "type": "component-candidate",
+      "label": "explanation",
+      "status": "research target; not confirmed across products"
+    },
+    {
+      "id": "state:quiz:unanswered",
+      "type": "state-candidate",
+      "label": "unanswered",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "state:quiz:selected",
+      "type": "state-candidate",
+      "label": "selected",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "state:quiz:submitted",
+      "type": "state-candidate",
+      "label": "submitted",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "state:quiz:correct",
+      "type": "state-candidate",
+      "label": "correct",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "state:quiz:incorrect",
+      "type": "state-candidate",
+      "label": "incorrect",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "state:quiz:review",
+      "type": "state-candidate",
+      "label": "review",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "concept:flashcards",
+      "type": "comparison-concept",
+      "label": "Flashcards",
+      "status": "analyst grouping"
+    },
+    {
+      "id": "component:flashcards:flashcard",
+      "type": "component-candidate",
+      "label": "flashcard",
+      "status": "research target; not confirmed across products"
+    },
+    {
+      "id": "component:flashcards:review-control",
+      "type": "component-candidate",
+      "label": "review control",
+      "status": "research target; not confirmed across products"
+    },
+    {
+      "id": "state:flashcards:front",
+      "type": "state-candidate",
+      "label": "front",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "state:flashcards:back",
+      "type": "state-candidate",
+      "label": "back",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "state:flashcards:known",
+      "type": "state-candidate",
+      "label": "known",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "state:flashcards:missed",
+      "type": "state-candidate",
+      "label": "missed",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "state:flashcards:completed",
+      "type": "state-candidate",
+      "label": "completed",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "concept:visualization",
+      "type": "comparison-concept",
+      "label": "Data visualization",
+      "status": "analyst grouping"
+    },
+    {
+      "id": "component:visualization:chart",
+      "type": "component-candidate",
+      "label": "chart",
+      "status": "research target; not confirmed across products"
+    },
+    {
+      "id": "component:visualization:legend",
+      "type": "component-candidate",
+      "label": "legend",
+      "status": "research target; not confirmed across products"
+    },
+    {
+      "id": "component:visualization:tooltip",
+      "type": "component-candidate",
+      "label": "tooltip",
+      "status": "research target; not confirmed across products"
+    },
+    {
+      "id": "state:visualization:loading",
+      "type": "state-candidate",
+      "label": "loading",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "state:visualization:empty",
+      "type": "state-candidate",
+      "label": "empty",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "state:visualization:ready",
+      "type": "state-candidate",
+      "label": "ready",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "state:visualization:filtered",
+      "type": "state-candidate",
+      "label": "filtered",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "state:visualization:error",
+      "type": "state-candidate",
+      "label": "error",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "concept:document",
+      "type": "comparison-concept",
+      "label": "Document / page",
+      "status": "analyst grouping"
+    },
+    {
+      "id": "component:document:block",
+      "type": "component-candidate",
+      "label": "block",
+      "status": "research target; not confirmed across products"
+    },
+    {
+      "id": "component:document:toolbar",
+      "type": "component-candidate",
+      "label": "toolbar",
+      "status": "research target; not confirmed across products"
+    },
+    {
+      "id": "component:document:editor",
+      "type": "component-candidate",
+      "label": "editor",
+      "status": "research target; not confirmed across products"
+    },
+    {
+      "id": "state:document:view",
+      "type": "state-candidate",
+      "label": "view",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "state:document:edit",
+      "type": "state-candidate",
+      "label": "edit",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "state:document:saving",
+      "type": "state-candidate",
+      "label": "saving",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "state:document:saved",
+      "type": "state-candidate",
+      "label": "saved",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "state:document:conflict",
+      "type": "state-candidate",
+      "label": "conflict",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "state:document:error",
+      "type": "state-candidate",
+      "label": "error",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "concept:interactive-app",
+      "type": "comparison-concept",
+      "label": "Interactive application",
+      "status": "analyst grouping"
+    },
+    {
+      "id": "component:interactive-app:control",
+      "type": "component-candidate",
+      "label": "control",
+      "status": "research target; not confirmed across products"
+    },
+    {
+      "id": "component:interactive-app:preview",
+      "type": "component-candidate",
+      "label": "preview",
+      "status": "research target; not confirmed across products"
+    },
+    {
+      "id": "state:interactive-app:loading",
+      "type": "state-candidate",
+      "label": "loading",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "state:interactive-app:ready",
+      "type": "state-candidate",
+      "label": "ready",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "state:interactive-app:running",
+      "type": "state-candidate",
+      "label": "running",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "state:interactive-app:error",
+      "type": "state-candidate",
+      "label": "error",
+      "status": "unverified candidate"
+    },
+    {
+      "id": "state:interactive-app:read-only",
+      "type": "state-candidate",
+      "label": "read-only",
+      "status": "unverified candidate"
+    }
+  ],
+  "edges": [
+    {
+      "from": "product:chatgpt-space",
+      "to": "view:chatgpt-space:all",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "view:chatgpt-space:your-items",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "view:chatgpt-space:shared-with-you",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "view:chatgpt-space:pages",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "view:chatgpt-space:images",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "view:chatgpt-space:your-creations",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "view:chatgpt-space:uploads",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "view:chatgpt-space:suggested",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "view:chatgpt-space:recents",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "view:chatgpt-space:sites",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "view:chatgpt-space:google-drive",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "view:chatgpt-space:space",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "view:chatgpt-space:parent-page",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "view:chatgpt-space:search",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "output:chatgpt-space:task-list",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "output:chatgpt-space:data-visualization",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "output:chatgpt-space:presentation",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "output:chatgpt-space:client-portal",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "output:chatgpt-space:project-tracker",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "output:chatgpt-space:interactive-prototype",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "output:chatgpt-space:pages",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "output:chatgpt-space:sites",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "source:openai-space-product",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "source:openai-space-help",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "source:openai-space-pages",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "source:openai-space-agents",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "source:openai-space-collaboration",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "source:openai-visualizations",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "source:openai-intelligent-ui",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "source:openai-global-search",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "source:openai-mobile",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "source:openai-space-overview",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "source:openai-space-start",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "source:openai-space-sharing",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "source:openai-space-admin",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "source:openai-mobile-classic",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "source:openai-library",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "source:openai-slides",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "source:openai-devday",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "source:openai-release-notes",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "source:openai-learn-changelog",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "source:openai-sites",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "source:openai-video",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:claude",
+      "to": "view:claude:projects",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:claude",
+      "to": "view:claude:artifacts-tab",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:claude",
+      "to": "view:claude:side-by-side-chat-and-artifact",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:claude",
+      "to": "view:claude:design-canvas",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:claude",
+      "to": "view:claude:installed-apps",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:claude",
+      "to": "view:claude:inline-connected-app",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:claude",
+      "to": "output:claude:docs",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:claude",
+      "to": "output:claude:slides",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:claude",
+      "to": "output:claude:design",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:claude",
+      "to": "output:claude:data",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:claude",
+      "to": "output:claude:motion-beta",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:claude",
+      "to": "output:claude:sheets-beta",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:claude",
+      "to": "output:claude:whiteboards-beta",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:claude",
+      "to": "output:claude:interactive-tools-and-dashboards",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:claude",
+      "to": "source:claude-artifacts",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:claude",
+      "to": "source:claude-design",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:claude",
+      "to": "source:claude-design-launch",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:claude",
+      "to": "source:component-claude-projects",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:claude",
+      "to": "source:claude-projects-launch",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:claude",
+      "to": "source:claude-install",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:claude",
+      "to": "source:claude-connectors",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:claude",
+      "to": "source:claude-releases",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "view:grok-bot:chat",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "view:grok-bot:details",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "view:grok-bot:library",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "view:grok-bot:computer",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "view:grok-bot:pages",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "view:grok-bot:marketplace",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "view:grok-bot:routines",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "output:grok-bot:files",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "output:grok-bot:pages",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "output:grok-bot:dashboards",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "output:grok-bot:comparison-tables",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "output:grok-bot:launch-project-trackers",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "output:grok-bot:charts",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "output:grok-bot:filters-and-switches",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "output:grok-bot:routine-generated-updates",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "source:grok",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "source:grok-bot-overview",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "source:grok-bot-files",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "source:grok-bot-start",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "source:grok-bot-bots",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "source:grok-bot-mobile",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "source:grok-bot-one",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "source:grok-bot-changelog",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "source:grok-bot-marketplace",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "source:grok-bot-use-cases",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "view:gemini:canvas",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "view:gemini:visual-layout",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "view:gemini:dynamic-view",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "view:gemini:gems",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "view:gemini:study-notebooks",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "view:gemini:guided-learning",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "view:gemini:immersive-explorations",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "output:gemini:documents",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "output:gemini:html-react-app-previews",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "output:gemini:3d-visualizations",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "output:gemini:games",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "output:gemini:quizzes",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "output:gemini:flashcards",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "output:gemini:task-lists",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "output:gemini:sales-trackers",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "output:gemini:pricing-calculators",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "output:gemini:slides",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "output:gemini:infographics",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "output:gemini:web-pages",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "output:gemini:audio-overview",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "source:gemini-canvas",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "source:gemini-canvas-examples",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "source:gemini-dynamic",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "source:gemini-simulations",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "source:gemini-immersive",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "source:gemini-study",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "source:gemini-sketch",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "source:gemini-gems",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "source:gemini-images",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "view:gemini-notebook:notebook-collection",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "view:gemini-notebook:sources",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "view:gemini-notebook:chat",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "view:gemini-notebook:studio",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "view:gemini-notebook:artifact-viewer",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "view:gemini-notebook:full-screen-study-view",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "view:gemini-notebook:interactive-site",
+      "relation": "has_recorded_view",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "output:gemini-notebook:audio-overview",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "output:gemini-notebook:video-overview",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "output:gemini-notebook:mind-map",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "output:gemini-notebook:reports",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "output:gemini-notebook:data-tables",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "output:gemini-notebook:flashcards",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "output:gemini-notebook:quizzes",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "output:gemini-notebook:slide-decks",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "output:gemini-notebook:infographics",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "output:gemini-notebook:notes",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "output:gemini-notebook:interactive-sites",
+      "relation": "has_recorded_output",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "source:gemini-notebook-rename",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "source:gemini-notebook-help",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "source:gemini-notebook-create",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "source:gemini-notebook-quiz",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "source:gemini-notebook-mindmap",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "source:gemini-notebook-sources",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "source:gemini-notebook-notes",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "source:gemini-notebook-chat",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "source:gemini-notebook-sites",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "source:gemini-notebook-sites-launch",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "source:gemini-notebook-study",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "source:gemini-notebook-review",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "source:gemini-notebook-studio",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "source:gemini-notebook-mobile-quiz",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "source:gemini-notebook-mobile",
+      "relation": "documented_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "feature:chatgpt-space-space-vs-project",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:chatgpt-space-space-vs-project",
+      "to": "source:openai-space-help",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "feature:chatgpt-space-object-views",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:chatgpt-space-object-views",
+      "to": "source:openai-space-help",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "feature:chatgpt-space-block-editor",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:chatgpt-space-block-editor",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "feature:chatgpt-space-width-controls",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:chatgpt-space-width-controls",
+      "to": "source:openai-space-pages",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "feature:chatgpt-space-contextual-ai",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:chatgpt-space-contextual-ai",
+      "to": "source:openai-space-agents",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "feature:chatgpt-space-recurring-work",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:chatgpt-space-recurring-work",
+      "to": "source:openai-space-agents",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "feature:chatgpt-space-adaptive-ui",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:chatgpt-space-adaptive-ui",
+      "to": "source:openai-intelligent-ui",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "feature:chatgpt-space-visualization-lifecycle",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:chatgpt-space-visualization-lifecycle",
+      "to": "source:openai-visualizations",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "feature:chatgpt-space-search",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:chatgpt-space-search",
+      "to": "source:openai-global-search",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "feature:chatgpt-space-mobile-navigation",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:chatgpt-space-mobile-navigation",
+      "to": "source:openai-mobile",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "feature:chatgpt-space-collaboration",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:chatgpt-space-collaboration",
+      "to": "source:openai-space-collaboration",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:claude",
+      "to": "feature:claude-artifact-lifecycle",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:claude-artifact-lifecycle",
+      "to": "source:claude-artifacts",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:claude",
+      "to": "feature:claude-fine-grained-design",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:claude-fine-grained-design",
+      "to": "source:claude-design-launch",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:claude",
+      "to": "feature:claude-project-context",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:claude-project-context",
+      "to": "source:component-claude-projects",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:claude",
+      "to": "feature:claude-installable-artifact",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:claude-installable-artifact",
+      "to": "source:claude-install",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:claude",
+      "to": "feature:claude-interactive-connectors",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:claude-interactive-connectors",
+      "to": "source:claude-connectors",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "feature:grok-bot-persistent-agent",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:grok-bot-persistent-agent",
+      "to": "source:grok-bot-bots",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "feature:grok-bot-avatar-states",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:grok-bot-avatar-states",
+      "to": "source:grok",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "feature:grok-bot-execution-visibility",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:grok-bot-execution-visibility",
+      "to": "source:grok",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "feature:grok-bot-pages",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:grok-bot-pages",
+      "to": "source:grok-bot-files",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "feature:grok-bot-recurring",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:grok-bot-recurring",
+      "to": "source:grok-bot-overview",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "feature:gemini-canvas-edit",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:gemini-canvas-edit",
+      "to": "source:gemini-canvas",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "feature:gemini-adaptive-generative-ui",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:gemini-adaptive-generative-ui",
+      "to": "source:gemini-dynamic",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "feature:gemini-simulation",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:gemini-simulation",
+      "to": "source:gemini-simulations",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "feature:gemini-document-transform",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:gemini-document-transform",
+      "to": "source:gemini-canvas",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "feature:gemini-study-space",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:gemini-study-space",
+      "to": "source:gemini-study",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "feature:gemini-notebook-three-region-shell",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:gemini-notebook-three-region-shell",
+      "to": "source:gemini-notebook-create",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "feature:gemini-notebook-source-grounding",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:gemini-notebook-source-grounding",
+      "to": "source:gemini-notebook-sources",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "feature:gemini-notebook-study-loop",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:gemini-notebook-study-loop",
+      "to": "source:gemini-notebook-quiz",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "feature:gemini-notebook-question-formats",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:gemini-notebook-question-formats",
+      "to": "source:gemini-notebook-study",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "feature:gemini-notebook-async-output",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:gemini-notebook-async-output",
+      "to": "source:gemini-notebook-create",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "feature:gemini-notebook-review-before-render",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:gemini-notebook-review-before-render",
+      "to": "source:gemini-notebook-review",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "feature:gemini-notebook-interactive-site-state",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:gemini-notebook-interactive-site-state",
+      "to": "source:gemini-notebook-sites",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "feature:gemini-notebook-mobile-constraints",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:gemini-notebook-mobile-constraints",
+      "to": "source:gemini-notebook-mobile",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:chatgpt-space",
+      "to": "feature:chatgpt-space-page-trash",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:chatgpt-space-page-trash",
+      "to": "source:openai-space-help",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:chatgpt-space-page-trash",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "contextual association; verify exact UI"
+    },
+    {
+      "from": "product:claude",
+      "to": "feature:claude-data-refresh",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:claude-data-refresh",
+      "to": "source:claude-data",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:claude-data-refresh",
+      "to": "output:claude:data",
+      "relation": "related_surface",
+      "status": "contextual association; verify exact UI"
+    },
+    {
+      "from": "product:claude",
+      "to": "feature:claude-docs-history",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:claude-docs-history",
+      "to": "source:claude-docs",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:claude-docs-history",
+      "to": "output:claude:docs",
+      "relation": "related_surface",
+      "status": "contextual association; verify exact UI"
+    },
+    {
+      "from": "product:claude",
+      "to": "feature:claude-share-access",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:claude-share-access",
+      "to": "source:claude-share",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:claude-share-access",
+      "to": "view:claude:artifacts-tab",
+      "relation": "related_surface",
+      "status": "contextual association; verify exact UI"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "feature:grok-bot-approval-card",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:grok-bot-approval-card",
+      "to": "source:grok-bot-troubleshooting",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:grok-bot-approval-card",
+      "to": "view:grok-bot:chat",
+      "relation": "related_surface",
+      "status": "contextual association; verify exact UI"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "feature:grok-bot-event-routine",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:grok-bot-event-routine",
+      "to": "source:grok-bot-routines",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:grok-bot-event-routine",
+      "to": "view:grok-bot:routines",
+      "relation": "related_surface",
+      "status": "contextual association; verify exact UI"
+    },
+    {
+      "from": "product:gemini",
+      "to": "feature:gemini-persistent-canvas",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:gemini-persistent-canvas",
+      "to": "source:gemini-canvas-security",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:gemini-persistent-canvas",
+      "to": "view:gemini:canvas",
+      "relation": "related_surface",
+      "status": "contextual association; verify exact UI"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "feature:gemini-notebook-note-source",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:gemini-notebook-note-source",
+      "to": "source:gemini-notebook-notes",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:gemini-notebook-note-source",
+      "to": "view:gemini-notebook:studio",
+      "relation": "related_surface",
+      "status": "contextual association; verify exact UI"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "feature:gemini-notebook-citation-navigation",
+      "relation": "has_observation",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:gemini-notebook-citation-navigation",
+      "to": "source:gemini-notebook-chat",
+      "relation": "supported_by",
+      "status": "documented association"
+    },
+    {
+      "from": "feature:gemini-notebook-citation-navigation",
+      "to": "view:gemini-notebook:chat",
+      "relation": "related_surface",
+      "status": "contextual association; verify exact UI"
+    },
+    {
+      "from": "feature:chatgpt-space-block-editor",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "analyst association based on documented behavior"
+    },
+    {
+      "from": "feature:chatgpt-space-width-controls",
+      "to": "view:chatgpt-space:pages",
+      "relation": "related_surface",
+      "status": "analyst association based on documented behavior"
+    },
+    {
+      "from": "feature:chatgpt-space-search",
+      "to": "view:chatgpt-space:search",
+      "relation": "related_surface",
+      "status": "analyst association based on documented behavior"
+    },
+    {
+      "from": "feature:claude-artifact-lifecycle",
+      "to": "view:claude:artifacts-tab",
+      "relation": "related_surface",
+      "status": "analyst association based on documented behavior"
+    },
+    {
+      "from": "feature:claude-fine-grained-design",
+      "to": "view:claude:design-canvas",
+      "relation": "related_surface",
+      "status": "analyst association based on documented behavior"
+    },
+    {
+      "from": "feature:claude-project-context",
+      "to": "view:claude:projects",
+      "relation": "related_surface",
+      "status": "analyst association based on documented behavior"
+    },
+    {
+      "from": "feature:grok-bot-pages",
+      "to": "view:grok-bot:pages",
+      "relation": "related_surface",
+      "status": "analyst association based on documented behavior"
+    },
+    {
+      "from": "feature:grok-bot-recurring",
+      "to": "view:grok-bot:routines",
+      "relation": "related_surface",
+      "status": "analyst association based on documented behavior"
+    },
+    {
+      "from": "feature:gemini-canvas-edit",
+      "to": "view:gemini:canvas",
+      "relation": "related_surface",
+      "status": "analyst association based on documented behavior"
+    },
+    {
+      "from": "feature:gemini-study-space",
+      "to": "view:gemini:study-notebooks",
+      "relation": "related_surface",
+      "status": "analyst association based on documented behavior"
+    },
+    {
+      "from": "feature:gemini-notebook-source-grounding",
+      "to": "view:gemini-notebook:sources",
+      "relation": "related_surface",
+      "status": "analyst association based on documented behavior"
+    },
+    {
+      "from": "feature:gemini-notebook-study-loop",
+      "to": "view:gemini-notebook:full-screen-study-view",
+      "relation": "related_surface",
+      "status": "analyst association based on documented behavior"
+    },
+    {
+      "from": "feature:gemini-notebook-async-output",
+      "to": "view:gemini-notebook:studio",
+      "relation": "related_surface",
+      "status": "analyst association based on documented behavior"
+    },
+    {
+      "from": "feature:gemini-notebook-interactive-site-state",
+      "to": "view:gemini-notebook:interactive-site",
+      "relation": "related_surface",
+      "status": "analyst association based on documented behavior"
+    },
+    {
+      "from": "evidence:chatgpt-space:todos",
+      "to": "source:openai-space-product",
+      "relation": "published_by",
+      "status": "documented association"
+    },
+    {
+      "from": "output:chatgpt-space:task-list",
+      "to": "evidence:chatgpt-space:todos",
+      "relation": "illustrated_by",
+      "status": "marketing example; not behavior test"
+    },
+    {
+      "from": "evidence:chatgpt-space:sankey",
+      "to": "source:openai-space-product",
+      "relation": "published_by",
+      "status": "documented association"
+    },
+    {
+      "from": "output:chatgpt-space:data-visualization",
+      "to": "evidence:chatgpt-space:sankey",
+      "relation": "illustrated_by",
+      "status": "marketing example; not behavior test"
+    },
+    {
+      "from": "evidence:chatgpt-space:pitch",
+      "to": "source:openai-space-product",
+      "relation": "published_by",
+      "status": "documented association"
+    },
+    {
+      "from": "output:chatgpt-space:presentation",
+      "to": "evidence:chatgpt-space:pitch",
+      "relation": "illustrated_by",
+      "status": "marketing example; not behavior test"
+    },
+    {
+      "from": "evidence:chatgpt-space:portal",
+      "to": "source:openai-space-product",
+      "relation": "published_by",
+      "status": "documented association"
+    },
+    {
+      "from": "output:chatgpt-space:client-portal",
+      "to": "evidence:chatgpt-space:portal",
+      "relation": "illustrated_by",
+      "status": "marketing example; not behavior test"
+    },
+    {
+      "from": "evidence:chatgpt-space:tracker",
+      "to": "source:openai-space-product",
+      "relation": "published_by",
+      "status": "documented association"
+    },
+    {
+      "from": "output:chatgpt-space:project-tracker",
+      "to": "evidence:chatgpt-space:tracker",
+      "relation": "illustrated_by",
+      "status": "marketing example; not behavior test"
+    },
+    {
+      "from": "evidence:chatgpt-space:prototype",
+      "to": "source:openai-space-product",
+      "relation": "published_by",
+      "status": "documented association"
+    },
+    {
+      "from": "output:chatgpt-space:interactive-prototype",
+      "to": "evidence:chatgpt-space:prototype",
+      "relation": "illustrated_by",
+      "status": "marketing example; not behavior test"
+    },
+    {
+      "from": "product:claude",
+      "to": "evidence:claude:design-prototypes-and-refinement",
+      "relation": "has_visual_lead",
+      "status": "documented association"
+    },
+    {
+      "from": "evidence:claude:design-prototypes-and-refinement",
+      "to": "source:claude-design-launch",
+      "relation": "published_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:claude",
+      "to": "evidence:claude:project-context-and-artifacts",
+      "relation": "has_visual_lead",
+      "status": "documented association"
+    },
+    {
+      "from": "evidence:claude:project-context-and-artifacts",
+      "to": "source:claude-projects-launch",
+      "relation": "published_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "evidence:grok-bot:avatar-motion-and-execution-states",
+      "relation": "has_visual_lead",
+      "status": "documented association"
+    },
+    {
+      "from": "evidence:grok-bot:avatar-motion-and-execution-states",
+      "to": "source:grok",
+      "relation": "published_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "evidence:grok-bot:team-and-agent-ui",
+      "relation": "has_visual_lead",
+      "status": "documented association"
+    },
+    {
+      "from": "evidence:grok-bot:team-and-agent-ui",
+      "to": "source:grok-bot-one",
+      "relation": "published_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:grok-bot",
+      "to": "evidence:grok-bot:page-examples-and-library-behavior",
+      "relation": "has_visual_lead",
+      "status": "documented association"
+    },
+    {
+      "from": "evidence:grok-bot:page-examples-and-library-behavior",
+      "to": "source:grok-bot-files",
+      "relation": "published_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "evidence:gemini:3d-game-quiz-dashboard-and-document-examples",
+      "relation": "has_visual_lead",
+      "status": "documented association"
+    },
+    {
+      "from": "evidence:gemini:3d-game-quiz-dashboard-and-document-examples",
+      "to": "source:gemini-canvas-examples",
+      "relation": "published_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "evidence:gemini:interactive-simulations-and-models",
+      "relation": "has_visual_lead",
+      "status": "documented association"
+    },
+    {
+      "from": "evidence:gemini:interactive-simulations-and-models",
+      "to": "source:gemini-simulations",
+      "relation": "published_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "evidence:gemini:visual-layout-and-dynamic-view-demos",
+      "relation": "has_visual_lead",
+      "status": "documented association"
+    },
+    {
+      "from": "evidence:gemini:visual-layout-and-dynamic-view-demos",
+      "to": "source:gemini-dynamic",
+      "relation": "published_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "evidence:gemini-notebook:studio-output-gallery-and-video-overview",
+      "relation": "has_visual_lead",
+      "status": "documented association"
+    },
+    {
+      "from": "evidence:gemini-notebook:studio-output-gallery-and-video-overview",
+      "to": "source:gemini-notebook-studio",
+      "relation": "published_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "evidence:gemini-notebook:mobile-flashcard-and-quiz-examples",
+      "relation": "has_visual_lead",
+      "status": "documented association"
+    },
+    {
+      "from": "evidence:gemini-notebook:mobile-flashcard-and-quiz-examples",
+      "to": "source:gemini-notebook-mobile-quiz",
+      "relation": "published_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "evidence:gemini-notebook:slide-video-review-walkthroughs",
+      "relation": "has_visual_lead",
+      "status": "documented association"
+    },
+    {
+      "from": "evidence:gemini-notebook:slide-video-review-walkthroughs",
+      "to": "source:gemini-notebook-review",
+      "relation": "published_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini-notebook",
+      "to": "evidence:gemini-notebook:interactive-site-examples",
+      "relation": "has_visual_lead",
+      "status": "documented association"
+    },
+    {
+      "from": "evidence:gemini-notebook:interactive-site-examples",
+      "to": "source:gemini-notebook-sites-launch",
+      "relation": "published_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "evidence:gemini:3d-visualizer",
+      "relation": "has_visual_lead",
+      "status": "documented association"
+    },
+    {
+      "from": "evidence:gemini:3d-visualizer",
+      "to": "source:gemini-canvas-examples",
+      "relation": "published_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "evidence:gemini:physics-quiz",
+      "relation": "has_visual_lead",
+      "status": "documented association"
+    },
+    {
+      "from": "evidence:gemini:physics-quiz",
+      "to": "source:gemini-canvas-examples",
+      "relation": "published_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "evidence:gemini:role-and-permission-dashboard",
+      "relation": "has_visual_lead",
+      "status": "documented association"
+    },
+    {
+      "from": "evidence:gemini:role-and-permission-dashboard",
+      "to": "source:gemini-canvas-examples",
+      "relation": "published_by",
+      "status": "documented association"
+    },
+    {
+      "from": "product:gemini",
+      "to": "evidence:gemini:speaker-notes",
+      "relation": "has_visual_lead",
+      "status": "documented association"
+    },
+    {
+      "from": "evidence:gemini:speaker-notes",
+      "to": "source:gemini-canvas-examples",
+      "relation": "published_by",
+      "status": "documented association"
+    },
+    {
+      "from": "output:chatgpt-space:task-list",
+      "to": "concept:task-list",
+      "relation": "classified_as",
+      "status": "analyst cross-index"
+    },
+    {
+      "from": "output:gemini:task-lists",
+      "to": "concept:task-list",
+      "relation": "classified_as",
+      "status": "analyst cross-index"
+    },
+    {
+      "from": "concept:task-list",
+      "to": "component:task-list:checkbox",
+      "relation": "investigate_component",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:task-list",
+      "to": "component:task-list:task-row",
+      "relation": "investigate_component",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:task-list",
+      "to": "state:task-list:empty",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:task-list",
+      "to": "state:task-list:unchecked",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:task-list",
+      "to": "state:task-list:checked",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:task-list",
+      "to": "state:task-list:saving",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:task-list",
+      "to": "state:task-list:error",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:task-list",
+      "to": "state:task-list:read-only",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "output:chatgpt-space:client-portal",
+      "to": "concept:dashboard",
+      "relation": "classified_as",
+      "status": "analyst cross-index"
+    },
+    {
+      "from": "output:chatgpt-space:project-tracker",
+      "to": "concept:dashboard",
+      "relation": "classified_as",
+      "status": "analyst cross-index"
+    },
+    {
+      "from": "output:claude:interactive-tools-and-dashboards",
+      "to": "concept:dashboard",
+      "relation": "classified_as",
+      "status": "analyst cross-index"
+    },
+    {
+      "from": "output:grok-bot:dashboards",
+      "to": "concept:dashboard",
+      "relation": "classified_as",
+      "status": "analyst cross-index"
+    },
+    {
+      "from": "output:grok-bot:launch-project-trackers",
+      "to": "concept:dashboard",
+      "relation": "classified_as",
+      "status": "analyst cross-index"
+    },
+    {
+      "from": "output:gemini:sales-trackers",
+      "to": "concept:dashboard",
+      "relation": "classified_as",
+      "status": "analyst cross-index"
+    },
+    {
+      "from": "concept:dashboard",
+      "to": "component:dashboard:chart",
+      "relation": "investigate_component",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:dashboard",
+      "to": "component:dashboard:filter",
+      "relation": "investigate_component",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:dashboard",
+      "to": "component:dashboard:metric-card",
+      "relation": "investigate_component",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:dashboard",
+      "to": "state:dashboard:empty",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:dashboard",
+      "to": "state:dashboard:loading",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:dashboard",
+      "to": "state:dashboard:ready",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:dashboard",
+      "to": "state:dashboard:stale",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:dashboard",
+      "to": "state:dashboard:error",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "output:gemini:quizzes",
+      "to": "concept:quiz",
+      "relation": "classified_as",
+      "status": "analyst cross-index"
+    },
+    {
+      "from": "output:gemini-notebook:quizzes",
+      "to": "concept:quiz",
+      "relation": "classified_as",
+      "status": "analyst cross-index"
+    },
+    {
+      "from": "concept:quiz",
+      "to": "component:quiz:question",
+      "relation": "investigate_component",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:quiz",
+      "to": "component:quiz:answer-option",
+      "relation": "investigate_component",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:quiz",
+      "to": "component:quiz:explanation",
+      "relation": "investigate_component",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:quiz",
+      "to": "state:quiz:unanswered",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:quiz",
+      "to": "state:quiz:selected",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:quiz",
+      "to": "state:quiz:submitted",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:quiz",
+      "to": "state:quiz:correct",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:quiz",
+      "to": "state:quiz:incorrect",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:quiz",
+      "to": "state:quiz:review",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "output:gemini:flashcards",
+      "to": "concept:flashcards",
+      "relation": "classified_as",
+      "status": "analyst cross-index"
+    },
+    {
+      "from": "output:gemini-notebook:flashcards",
+      "to": "concept:flashcards",
+      "relation": "classified_as",
+      "status": "analyst cross-index"
+    },
+    {
+      "from": "concept:flashcards",
+      "to": "component:flashcards:flashcard",
+      "relation": "investigate_component",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:flashcards",
+      "to": "component:flashcards:review-control",
+      "relation": "investigate_component",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:flashcards",
+      "to": "state:flashcards:front",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:flashcards",
+      "to": "state:flashcards:back",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:flashcards",
+      "to": "state:flashcards:known",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:flashcards",
+      "to": "state:flashcards:missed",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:flashcards",
+      "to": "state:flashcards:completed",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "output:chatgpt-space:data-visualization",
+      "to": "concept:visualization",
+      "relation": "classified_as",
+      "status": "analyst cross-index"
+    },
+    {
+      "from": "output:claude:data",
+      "to": "concept:visualization",
+      "relation": "classified_as",
+      "status": "analyst cross-index"
+    },
+    {
+      "from": "output:grok-bot:charts",
+      "to": "concept:visualization",
+      "relation": "classified_as",
+      "status": "analyst cross-index"
+    },
+    {
+      "from": "output:gemini:3d-visualizations",
+      "to": "concept:visualization",
+      "relation": "classified_as",
+      "status": "analyst cross-index"
+    },
+    {
+      "from": "concept:visualization",
+      "to": "component:visualization:chart",
+      "relation": "investigate_component",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:visualization",
+      "to": "component:visualization:legend",
+      "relation": "investigate_component",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:visualization",
+      "to": "component:visualization:tooltip",
+      "relation": "investigate_component",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:visualization",
+      "to": "state:visualization:loading",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:visualization",
+      "to": "state:visualization:empty",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:visualization",
+      "to": "state:visualization:ready",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:visualization",
+      "to": "state:visualization:filtered",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:visualization",
+      "to": "state:visualization:error",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "output:chatgpt-space:pages",
+      "to": "concept:document",
+      "relation": "classified_as",
+      "status": "analyst cross-index"
+    },
+    {
+      "from": "output:claude:docs",
+      "to": "concept:document",
+      "relation": "classified_as",
+      "status": "analyst cross-index"
+    },
+    {
+      "from": "output:grok-bot:pages",
+      "to": "concept:document",
+      "relation": "classified_as",
+      "status": "analyst cross-index"
+    },
+    {
+      "from": "output:gemini:documents",
+      "to": "concept:document",
+      "relation": "classified_as",
+      "status": "analyst cross-index"
+    },
+    {
+      "from": "output:gemini-notebook:reports",
+      "to": "concept:document",
+      "relation": "classified_as",
+      "status": "analyst cross-index"
+    },
+    {
+      "from": "output:gemini-notebook:notes",
+      "to": "concept:document",
+      "relation": "classified_as",
+      "status": "analyst cross-index"
+    },
+    {
+      "from": "concept:document",
+      "to": "component:document:block",
+      "relation": "investigate_component",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:document",
+      "to": "component:document:toolbar",
+      "relation": "investigate_component",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:document",
+      "to": "component:document:editor",
+      "relation": "investigate_component",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:document",
+      "to": "state:document:view",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:document",
+      "to": "state:document:edit",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:document",
+      "to": "state:document:saving",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:document",
+      "to": "state:document:saved",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:document",
+      "to": "state:document:conflict",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:document",
+      "to": "state:document:error",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "output:chatgpt-space:interactive-prototype",
+      "to": "concept:interactive-app",
+      "relation": "classified_as",
+      "status": "analyst cross-index"
+    },
+    {
+      "from": "output:chatgpt-space:sites",
+      "to": "concept:interactive-app",
+      "relation": "classified_as",
+      "status": "analyst cross-index"
+    },
+    {
+      "from": "output:gemini:html-react-app-previews",
+      "to": "concept:interactive-app",
+      "relation": "classified_as",
+      "status": "analyst cross-index"
+    },
+    {
+      "from": "output:gemini:games",
+      "to": "concept:interactive-app",
+      "relation": "classified_as",
+      "status": "analyst cross-index"
+    },
+    {
+      "from": "output:gemini-notebook:interactive-sites",
+      "to": "concept:interactive-app",
+      "relation": "classified_as",
+      "status": "analyst cross-index"
+    },
+    {
+      "from": "concept:interactive-app",
+      "to": "component:interactive-app:control",
+      "relation": "investigate_component",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:interactive-app",
+      "to": "component:interactive-app:preview",
+      "relation": "investigate_component",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:interactive-app",
+      "to": "state:interactive-app:loading",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:interactive-app",
+      "to": "state:interactive-app:ready",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:interactive-app",
+      "to": "state:interactive-app:running",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:interactive-app",
+      "to": "state:interactive-app:error",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    },
+    {
+      "from": "concept:interactive-app",
+      "to": "state:interactive-app:read-only",
+      "relation": "investigate_state",
+      "status": "proposed scope"
+    }
+  ],
+  "backlog": [
+    {
+      "id": "GAP-01",
+      "priority": "P0",
+      "title": "Feature inventory and availability",
+      "acceptance": "Capability matrix; native feature vs generated example",
+      "status": "open",
+      "related_issue": 102
+    },
+    {
+      "id": "GAP-02",
+      "priority": "P0",
+      "title": "Templates and editors",
+      "acceptance": "Template cards, creation, per-editor controls and export",
+      "status": "open",
+      "related_issue": null
+    },
+    {
+      "id": "GAP-03",
+      "priority": "P0",
+      "title": "States and transitions",
+      "acceptance": "Trigger, before/after, focus, interruption and recovery",
+      "status": "open",
+      "related_issue": 105
+    },
+    {
+      "id": "GAP-04",
+      "priority": "P0",
+      "title": "End-to-end flows",
+      "acceptance": "Create/edit/share/reopen/delete; question and flashcard review",
+      "status": "open",
+      "related_issue": null
+    },
+    {
+      "id": "GAP-05",
+      "priority": "P0",
+      "title": "Visual evidence",
+      "acceptance": "Publisher URL, exact frame, date, viewport, rights, evidence-to-feature relation",
+      "status": "open",
+      "related_issue": null
+    },
+    {
+      "id": "GAP-06",
+      "priority": "P0",
+      "title": "Central catalog integration",
+      "acceptance": "Register every benchmark source alias and observation",
+      "status": "resolved",
+      "related_issue": null
+    },
+    {
+      "id": "GAP-07",
+      "priority": "P0",
+      "title": "Relationship graph",
+      "acceptance": "Stable typed nodes, edges and source references; expand evidence and live state relations",
+      "status": "partial",
+      "related_issue": 106
+    },
+    {
+      "id": "GAP-08",
+      "priority": "P0",
+      "title": "Persistence and permissions",
+      "acceptance": "Save/reload/sharing/roles/deletion/version/conflict matrix",
+      "status": "partial",
+      "related_issue": null
+    },
+    {
+      "id": "GAP-09",
+      "priority": "P1",
+      "title": "Data visualization and generated UI",
+      "acceptance": "Chart controls, tooltips, drill-down, keyboard, data fallback",
+      "status": "open",
+      "related_issue": 101
+    },
+    {
+      "id": "GAP-10",
+      "priority": "P1",
+      "title": "App shell and responsiveness",
+      "acceptance": "Measure widths, resizing, collapse, overflow and reflow",
+      "status": "open",
+      "related_issue": null
+    },
+    {
+      "id": "GAP-11",
+      "priority": "P1",
+      "title": "Motion and microinteractions",
+      "acceptance": "Record state changes and reduced motion; measure timing",
+      "status": "open",
+      "related_issue": 105
+    },
+    {
+      "id": "GAP-12",
+      "priority": "P1",
+      "title": "Tokens and typography",
+      "acceptance": "Measure actual styles and contrast; no inferred CSS",
+      "status": "open",
+      "related_issue": 104
+    },
+    {
+      "id": "GAP-13",
+      "priority": "P1",
+      "title": "Accessibility and keyboard",
+      "acceptance": "Actual focus, keyboard and assistive technology tests",
+      "status": "open",
+      "related_issue": 100
+    },
+    {
+      "id": "GAP-14",
+      "priority": "P1",
+      "title": "Plan and platform availability",
+      "acceptance": "Record feature, plan, platform and release date",
+      "status": "open",
+      "related_issue": 102
+    },
+    {
+      "id": "GAP-15",
+      "priority": "P1",
+      "title": "Errors and recovery",
+      "acceptance": "Failed save, offline, permission, retry and cancellation",
+      "status": "open",
+      "related_issue": 105
+    }
+  ],
+  "provenance": [
+    "docs/references/ui-ux-research-sources/chatgpt-space-views-and-composable-pages-2026-11-26.json",
+    "docs/references/ui-ux-research-sources/ai-product-views-and-artifacts-2026-11-26.json",
+    "docs/references/ui-ux-research-sources/ai-product-gap-delta-2026-11-26.json"
+  ]
+}

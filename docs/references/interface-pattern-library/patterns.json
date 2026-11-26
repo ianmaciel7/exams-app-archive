@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-11-25",
+  "as_of": "2026-11-26",
   "scope": "general UI/UX",
   "patterns": [
     {
@@ -592,6 +592,522 @@
         "noise"
       ],
       "classification": "documented concept or applied synthesis; not measured 2026 adoption"
+    },
+    {
+      "id": "chatgpt-space-space-vs-project",
+      "family": "ai-product-observation",
+      "name": "Separate organizational contexts",
+      "kind": "Product-specific documented behavior",
+      "definition": "Group related objects without conflating a shared content space and a conversation project.",
+      "guardrail": "Test membership, access and movement independently.",
+      "source_ids": [
+        "openai-space-help"
+      ],
+      "classification": "product evidence / derived acceptance tests"
+    },
+    {
+      "id": "chatgpt-space-object-views",
+      "family": "ai-product-observation",
+      "name": "Object collections and facets",
+      "kind": "Product-specific documented behavior",
+      "definition": "Separate ownership, access, object type, origin and activity from hierarchy.",
+      "guardrail": "Test shared-space indirect access, empty results, filters and permissions.",
+      "source_ids": [
+        "openai-space-help"
+      ],
+      "classification": "product evidence / derived acceptance tests"
+    },
+    {
+      "id": "chatgpt-space-block-editor",
+      "family": "ai-product-observation",
+      "name": "Composable page / block editor",
+      "kind": "Product-specific documented behavior",
+      "definition": "Use searchable slash menu for content, references and interactive tools; create nested page or link existing page.",
+      "guardrail": "Test keyboard, touch, focus, insert/reorder, deletion and reference identity.",
+      "source_ids": [
+        "openai-space-pages"
+      ],
+      "classification": "product evidence / derived acceptance tests"
+    },
+    {
+      "id": "chatgpt-space-width-controls",
+      "family": "ai-product-observation",
+      "name": "Per-block table width and fit",
+      "kind": "Product-specific documented behavior",
+      "definition": "Normal, Flexible, Full width and readability/equal columns. Do not infer exact sizes.",
+      "guardrail": "Test narrow viewport, overflow, fit and screen reader headers.",
+      "source_ids": [
+        "openai-space-pages"
+      ],
+      "classification": "product evidence / derived acceptance tests"
+    },
+    {
+      "id": "chatgpt-space-contextual-ai",
+      "family": "ai-product-observation",
+      "name": "Contextual AI and scoped edits",
+      "kind": "Product-specific documented behavior",
+      "definition": "Side chat for broad work; selected text, inline mentions and comments for scoped work. Review proposals before acceptance.",
+      "guardrail": "Test scope, undo/review, permission, cancellation, errors, keyboard.",
+      "source_ids": [
+        "openai-space-agents"
+      ],
+      "classification": "product evidence / derived acceptance tests"
+    },
+    {
+      "id": "chatgpt-space-recurring-work",
+      "family": "ai-product-observation",
+      "name": "Verified recurring updates",
+      "kind": "Product-specific documented behavior",
+      "definition": "Distinguish a generated tracker from actual scheduled execution; verify saved task and run. Keep Updated unavailable at launch per guide.",
+      "guardrail": "Test task enablement, next run, freshness, source and failure.",
+      "source_ids": [
+        "openai-space-agents"
+      ],
+      "classification": "product evidence / derived acceptance tests"
+    },
+    {
+      "id": "chatgpt-space-adaptive-ui",
+      "family": "ai-product-observation",
+      "name": "Intelligent UI / generated interface",
+      "kind": "Product-specific documented behavior",
+      "definition": "Choose text, cards, forms, charts or interactive output based on need; state persistence varies by experience and chat.",
+      "guardrail": "Test fallback text, state reload, control semantics, contrast and reduced motion.",
+      "source_ids": [
+        "openai-intelligent-ui"
+      ],
+      "classification": "product evidence / derived acceptance tests"
+    },
+    {
+      "id": "chatgpt-space-visualization-lifecycle",
+      "family": "ai-product-observation",
+      "name": "Interactive visualization vs persistent app",
+      "kind": "Product-specific documented behavior",
+      "definition": "Visualization is generally snapshot; sites are a distinct option. Show data context, labels, accessibility and simpler fallback on failure.",
+      "guardrail": "Test keyboard, data table, units, blank/loading/error and export.",
+      "source_ids": [
+        "openai-visualizations"
+      ],
+      "classification": "product evidence / derived acceptance tests"
+    },
+    {
+      "id": "chatgpt-space-search",
+      "family": "ai-product-observation",
+      "name": "Unified content search",
+      "kind": "Product-specific documented behavior",
+      "definition": "Search existing objects by type, with permission boundaries; Ctrl/Cmd+K. Not web search.",
+      "guardrail": "Test keyboard, archived vs deleted/locked, access and filter reset.",
+      "source_ids": [
+        "openai-global-search"
+      ],
+      "classification": "product evidence / derived acceptance tests"
+    },
+    {
+      "id": "chatgpt-space-mobile-navigation",
+      "family": "ai-product-observation",
+      "name": "Customizable mobile navigation",
+      "kind": "Product-specific documented behavior",
+      "definition": "Home and Explore separate frequent work from discovery; pin/unpin/replace shortcuts.",
+      "guardrail": "Test touch, focus, available destinations, full tab bar and responsive behavior.",
+      "source_ids": [
+        "openai-mobile"
+      ],
+      "classification": "product evidence / derived acceptance tests"
+    },
+    {
+      "id": "chatgpt-space-collaboration",
+      "family": "ai-product-observation",
+      "name": "Contextual collaboration",
+      "kind": "Product-specific documented behavior",
+      "definition": "Shared page editing, comments anchored to content, review attribution and sharing controls when offered.",
+      "guardrail": "Test permissions and simultaneous edits; do not infer implementation.",
+      "source_ids": [
+        "openai-space-collaboration"
+      ],
+      "classification": "product evidence / derived acceptance tests"
+    },
+    {
+      "id": "claude-artifact-lifecycle",
+      "family": "ai-product-observation",
+      "name": "artifact lifecycle",
+      "kind": "Product-specific documented behavior",
+      "definition": "Reusable artifact separate from conversation; create, edit, revisit, share; legacy artifacts before 2026-09-16 are distinct.",
+      "guardrail": "Test reopening, editing, share permissions, plan restrictions.",
+      "source_ids": [
+        "claude-artifacts"
+      ],
+      "classification": "documented product behavior / derived acceptance criteria"
+    },
+    {
+      "id": "claude-fine-grained-design",
+      "family": "ai-product-observation",
+      "name": "fine grained design",
+      "kind": "Product-specific documented behavior",
+      "definition": "Direct text edits, element comments and generated adjustment controls for spacing/colors/layout; design system context; handoff bundle.",
+      "guardrail": "Verify scope of edits, controls via keyboard, review and export.",
+      "source_ids": [
+        "claude-design-launch"
+      ],
+      "classification": "documented product behavior / derived acceptance criteria"
+    },
+    {
+      "id": "claude-project-context",
+      "family": "ai-product-observation",
+      "name": "project context",
+      "kind": "Product-specific documented behavior",
+      "definition": "Project-level knowledge and instructions organize related conversations; not equivalent to artifact.",
+      "guardrail": "Test project boundaries and file access.",
+      "source_ids": [
+        "component-claude-projects"
+      ],
+      "classification": "documented product behavior / derived acceptance criteria"
+    },
+    {
+      "id": "claude-installable-artifact",
+      "family": "ai-product-observation",
+      "name": "installable artifact",
+      "kind": "Product-specific documented behavior",
+      "definition": "Desktop installation gives app a separate entry point.",
+      "guardrail": "Test installation availability, reopening, permissions, uninstall.",
+      "source_ids": [
+        "claude-install"
+      ],
+      "classification": "documented product behavior / derived acceptance criteria"
+    },
+    {
+      "id": "claude-interactive-connectors",
+      "family": "ai-product-observation",
+      "name": "interactive connectors",
+      "kind": "Product-specific documented behavior",
+      "definition": "Connected service UI can appear inside chat; distinguish provider actions from generated app.",
+      "guardrail": "Review tools and permission before actions.",
+      "source_ids": [
+        "claude-connectors"
+      ],
+      "classification": "documented product behavior / derived acceptance criteria"
+    },
+    {
+      "id": "grok-bot-persistent-agent",
+      "family": "ai-product-observation",
+      "name": "persistent agent",
+      "kind": "Product-specific documented behavior",
+      "definition": "Agent has durable identity, job and working context; chat is one entry point.",
+      "guardrail": "Test agent selection and context boundaries.",
+      "source_ids": [
+        "grok-bot-bots"
+      ],
+      "classification": "documented product behavior / derived acceptance criteria"
+    },
+    {
+      "id": "grok-bot-avatar-states",
+      "family": "ai-product-observation",
+      "name": "avatar states",
+      "kind": "Product-specific documented behavior",
+      "definition": "Idle, Thinking, Working, Waiting, Blocked, Done; motion communicates state, distinguish identity from progress.",
+      "guardrail": "Provide readable text state and reduced motion; measure timing only from recordings.",
+      "source_ids": [
+        "grok"
+      ],
+      "classification": "documented product behavior / derived acceptance criteria"
+    },
+    {
+      "id": "grok-bot-execution-visibility",
+      "family": "ai-product-observation",
+      "name": "execution visibility",
+      "kind": "Product-specific documented behavior",
+      "definition": "Show meaningful task execution rather than undifferentiated loading dots.",
+      "guardrail": "Test blocked/approval/error and actual progress without fake percentages.",
+      "source_ids": [
+        "grok"
+      ],
+      "classification": "documented product behavior / derived acceptance criteria"
+    },
+    {
+      "id": "grok-bot-pages",
+      "family": "ai-product-observation",
+      "name": "pages",
+      "kind": "Product-specific documented behavior",
+      "definition": "Pages reside in Bot Library; open via chat card; primary page beside smaller chat panel; controls and sharing; gradual rollout, Enterprise excluded per guide.",
+      "guardrail": "Verify plan, permission, state persistence, loading and export.",
+      "source_ids": [
+        "grok-bot-files"
+      ],
+      "classification": "documented product behavior / derived acceptance criteria"
+    },
+    {
+      "id": "grok-bot-recurring",
+      "family": "ai-product-observation",
+      "name": "recurring",
+      "kind": "Product-specific documented behavior",
+      "definition": "Routines run on schedule; can update pages; distinguish saved routine from generated tracker.",
+      "guardrail": "Verify cadence, run status, review and failure.",
+      "source_ids": [
+        "grok-bot-overview"
+      ],
+      "classification": "documented product behavior / derived acceptance criteria"
+    },
+    {
+      "id": "gemini-canvas-edit",
+      "family": "ai-product-observation",
+      "name": "canvas edit",
+      "kind": "Product-specific documented behavior",
+      "definition": "Chat beside editable canvas; Select & ask for scoped edits; previous/next versions; export.",
+      "guardrail": "Test selection precision, version changes, autosave, keyboard and export.",
+      "source_ids": [
+        "gemini-canvas"
+      ],
+      "classification": "documented product behavior / derived acceptance criteria"
+    },
+    {
+      "id": "gemini-adaptive-generative-ui",
+      "family": "ai-product-observation",
+      "name": "adaptive generative ui",
+      "kind": "Product-specific documented behavior",
+      "definition": "Visual Layout and Dynamic View were introduced as generative-interface experiments; do not assume universal availability.",
+      "guardrail": "Test semantic fallback and responsive layout.",
+      "source_ids": [
+        "gemini-dynamic"
+      ],
+      "classification": "documented product behavior / derived acceptance criteria"
+    },
+    {
+      "id": "gemini-simulation",
+      "family": "ai-product-observation",
+      "name": "simulation",
+      "kind": "Product-specific documented behavior",
+      "definition": "Interactive 3D models and charts for learning.",
+      "guardrail": "Provide labels, units, keyboard controls and static fallback.",
+      "source_ids": [
+        "gemini-simulations"
+      ],
+      "classification": "documented product behavior / derived acceptance criteria"
+    },
+    {
+      "id": "gemini-document-transform",
+      "family": "ai-product-observation",
+      "name": "document transform",
+      "kind": "Product-specific documented behavior",
+      "definition": "Create quiz, infographic, web page, audio or slides from a document.",
+      "guardrail": "Check source traceability and distinguish generated results from original content.",
+      "source_ids": [
+        "gemini-canvas"
+      ],
+      "classification": "documented product behavior / derived acceptance criteria"
+    },
+    {
+      "id": "gemini-study-space",
+      "family": "ai-product-observation",
+      "name": "study space",
+      "kind": "Product-specific documented behavior",
+      "definition": "Study notebooks synchronize sources across Gemini and Gemini Notebook.",
+      "guardrail": "Test source selection and cross-app identity.",
+      "source_ids": [
+        "gemini-study"
+      ],
+      "classification": "documented product behavior / derived acceptance criteria"
+    },
+    {
+      "id": "gemini-notebook-three-region-shell",
+      "family": "ai-product-observation",
+      "name": "three region shell",
+      "kind": "Product-specific documented behavior",
+      "definition": "Separate evidence sources, interaction and generated outputs; select sources and label categories.",
+      "guardrail": "Test independent selection, focus and reflow.",
+      "source_ids": [
+        "gemini-notebook-create"
+      ],
+      "classification": "documented product behavior / derived acceptance criteria"
+    },
+    {
+      "id": "gemini-notebook-source-grounding",
+      "family": "ai-product-observation",
+      "name": "source grounding",
+      "kind": "Product-specific documented behavior",
+      "definition": "Sources can be selected for chat or outputs; changes/deletion do not automatically update already generated outputs.",
+      "guardrail": "Show provenance, generation date and stale outputs.",
+      "source_ids": [
+        "gemini-notebook-sources"
+      ],
+      "classification": "documented product behavior / derived acceptance criteria"
+    },
+    {
+      "id": "gemini-notebook-study-loop",
+      "family": "ai-product-observation",
+      "name": "study loop",
+      "kind": "Product-specific documented behavior",
+      "definition": "Difficulty, number, explain, previous/next, Got it/Missed it, review/retake, missed-only, shuffle, resume, full screen, restart and CSV when permitted.",
+      "guardrail": "Test answer feedback, progress resume and missed-only filtering.",
+      "source_ids": [
+        "gemini-notebook-quiz"
+      ],
+      "classification": "documented product behavior / derived acceptance criteria"
+    },
+    {
+      "id": "gemini-notebook-question-formats",
+      "family": "ai-product-observation",
+      "name": "question formats",
+      "kind": "Product-specific documented behavior",
+      "definition": "Short answer, multi-select and fill-in-the-blank in addition to quizzes; Learning Overview combines summaries and studio outputs.",
+      "guardrail": "Test multiple answer validation, accessibility and source-based explanation.",
+      "source_ids": [
+        "gemini-notebook-study"
+      ],
+      "classification": "documented product behavior / derived acceptance criteria"
+    },
+    {
+      "id": "gemini-notebook-async-output",
+      "family": "ai-product-observation",
+      "name": "async output",
+      "kind": "Product-specific documented behavior",
+      "definition": "Studio generation runs while user continues working; completion can notify and mark unread.",
+      "guardrail": "Test generation pending, unread persistence, failure and notification preferences.",
+      "source_ids": [
+        "gemini-notebook-create"
+      ],
+      "classification": "documented product behavior / derived acceptance criteria"
+    },
+    {
+      "id": "gemini-notebook-review-before-render",
+      "family": "ai-product-observation",
+      "name": "review before render",
+      "kind": "Product-specific documented behavior",
+      "definition": "Optional Review toggle for slide outlines or video producer notes; refine before Proceed.",
+      "guardrail": "Test editable plan, confirmation, cancellation and skip review.",
+      "source_ids": [
+        "gemini-notebook-review"
+      ],
+      "classification": "documented product behavior / derived acceptance criteria"
+    },
+    {
+      "id": "gemini-notebook-interactive-site-state",
+      "family": "ai-product-observation",
+      "name": "interactive site state",
+      "kind": "Product-specific documented behavior",
+      "definition": "Sites built from sources can save checkbox/field selections; web rollout 18+; mobile coming soon at announcement.",
+      "guardrail": "Test persisted input and sharing separately; no assumption of collaborative state.",
+      "source_ids": [
+        "gemini-notebook-sites"
+      ],
+      "classification": "documented product behavior / derived acceptance criteria"
+    },
+    {
+      "id": "gemini-notebook-mobile-constraints",
+      "family": "ai-product-observation",
+      "name": "mobile constraints",
+      "kind": "Product-specific documented behavior",
+      "definition": "Mobile support differs; notes, mind maps, reports and data table generation restricted per guide.",
+      "guardrail": "Test platform-specific capability availability.",
+      "source_ids": [
+        "gemini-notebook-mobile"
+      ],
+      "classification": "documented product behavior / derived acceptance criteria"
+    },
+    {
+      "id": "chatgpt-space-page-trash",
+      "family": "ai-product-observation",
+      "name": "Hierarchical deletion",
+      "kind": "Product-specific documented behavior",
+      "definition": "Deleting a page sends descendants to Trash, including descendants owned by others.",
+      "guardrail": "Test warning, child ownership, restoration scope and irreversible deletion.",
+      "source_ids": [
+        "openai-space-help"
+      ],
+      "classification": "official search excerpt; acceptance criteria not executed"
+    },
+    {
+      "id": "claude-data-refresh",
+      "family": "ai-product-observation",
+      "name": "Dashboard refresh and connector access",
+      "kind": "Product-specific documented behavior",
+      "definition": "Dashboards refresh on open when due; live sharing can use the sharer's connector access, subject to admin policy.",
+      "guardrail": "Check stale/fresh/error, last refreshed, data provenance and revoked access.",
+      "source_ids": [
+        "claude-data"
+      ],
+      "classification": "official search excerpt; acceptance criteria not executed"
+    },
+    {
+      "id": "claude-docs-history",
+      "family": "ai-product-observation",
+      "name": "Responsive version history",
+      "kind": "Product-specific documented behavior",
+      "definition": "Claude Docs history overlays text when the artifact panel is too narrow; guide notes a keyboard navigation limitation.",
+      "guardrail": "Test overlay/side-by-side widths, focus and version restore.",
+      "source_ids": [
+        "claude-docs"
+      ],
+      "classification": "official search excerpt; acceptance criteria not executed"
+    },
+    {
+      "id": "claude-share-access",
+      "family": "ai-product-observation",
+      "name": "Artifact sharing and storage lifecycle",
+      "kind": "Product-specific documented behavior",
+      "definition": "Docs support view/comment/edit permissions; unpublishing an artifact can permanently delete associated personal/shared storage.",
+      "guardrail": "Test permission matrix, warning and irreversible removal.",
+      "source_ids": [
+        "claude-share"
+      ],
+      "classification": "official search excerpt; acceptance criteria not executed"
+    },
+    {
+      "id": "grok-bot-approval-card",
+      "family": "ai-product-observation",
+      "name": "Approval gate",
+      "kind": "Product-specific documented behavior",
+      "definition": "Bot shows an approval card and waits; approvals for work started without the user can expire after about 30 minutes.",
+      "guardrail": "Test pending, approve, deny, expiry, notification and retry.",
+      "source_ids": [
+        "grok-bot-troubleshooting"
+      ],
+      "classification": "official search excerpt; acceptance criteria not executed"
+    },
+    {
+      "id": "grok-bot-event-routine",
+      "family": "ai-product-observation",
+      "name": "Event-triggered routine",
+      "kind": "Product-specific documented behavior",
+      "definition": "Slack triggers can start routines as well as schedules; trigger and app access are distinct.",
+      "guardrail": "Test setup, trigger, pause, failed run and approval boundary.",
+      "source_ids": [
+        "grok-bot-routines"
+      ],
+      "classification": "official search excerpt; acceptance criteria not executed"
+    },
+    {
+      "id": "gemini-persistent-canvas",
+      "family": "ai-product-observation",
+      "name": "Persistent Canvas app data",
+      "kind": "Product-specific documented behavior",
+      "definition": "Canvas creates a Firestore instance when persistence is required; shared-user data can be visible via a public shared link.",
+      "guardrail": "Test private/shared data, reload, public-link warning and failure.",
+      "source_ids": [
+        "gemini-canvas-security"
+      ],
+      "classification": "official search excerpt; acceptance criteria not executed"
+    },
+    {
+      "id": "gemini-notebook-note-source",
+      "family": "ai-product-observation",
+      "name": "Note to source",
+      "kind": "Product-specific documented behavior",
+      "definition": "Convert notes to sources for Q&A, generated artifacts and citations; mobile note editing is unsupported per guide.",
+      "guardrail": "Test conversion, duplication, deletion, source selection and mobile.",
+      "source_ids": [
+        "gemini-notebook-notes"
+      ],
+      "classification": "official search excerpt; acceptance criteria not executed"
+    },
+    {
+      "id": "gemini-notebook-citation-navigation",
+      "family": "ai-product-observation",
+      "name": "Source citation navigation",
+      "kind": "Product-specific documented behavior",
+      "definition": "Selecting a citation navigates to quoted source context; saving chat as note retains inline citations.",
+      "guardrail": "Test exact anchor, unavailable source, keyboard and return.",
+      "source_ids": [
+        "gemini-notebook-chat"
+      ],
+      "classification": "official search excerpt; acceptance criteria not executed"
     }
   ]
 }

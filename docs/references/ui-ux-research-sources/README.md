@@ -147,3 +147,8 @@ Registrar URLs originais e redirects, datas de consulta, fonte e status (verific
 
 - [Benchmark](ai-product-views-and-artifacts-2026-11-26.md) · [JSON catalog](ai-product-views-and-artifacts-2026-11-26.json)
 - 42 official documentation references, 23 product patterns, 12 publisher-page visual leads, 4 direct image URLs (not pixel-verified). New sources: 42. Companion to ChatGPT Space.
+
+## AI product gap research and cross-index (2026-11-26)
+
+- [Gap delta](ai-product-gap-delta-2026-11-26.md) · [JSON](ai-product-gap-delta-2026-11-26.json)
+- [Graph and backlog](../interface-pattern-library/ai-product-knowledge-graph.md)
