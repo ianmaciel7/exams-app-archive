@@ -7,7 +7,7 @@ from research_index import load_records, audit
 
 def projection(records):
     fields = ("id", "title", "kind", "product", "availability", "date",
-              "license", "confidence", "catalog_path", "catalog_sha256", "record_sha256", "sources")
+              "license", "confidence", "catalog_path", "catalog_sha256", "record_sha256", "record_pointer", "projection_sha256", "sources")
     return {"version": 1, "scope": "public research metadata only",
             "records": [{**{k: r.get(k) for k in fields},
                          "keywords": r["record"].get("keywords", []),

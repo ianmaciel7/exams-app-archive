@@ -129,7 +129,10 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument("--output",type=Path)
     args=p.parse_args()
-    result=audit(research_index.load_records(), concept_packs.load_taxonomy())
+    records=research_index.load_records()
+    result=audit(records, concept_packs.load_taxonomy())
+    result["record_provenance"]=research_index.verify_record_provenance(records)
+    result["integrity_passed"] = result["integrity_passed"] and result["record_provenance"]["integrity_passed"]
     serialized=json.dumps(result,ensure_ascii=False,indent=2)+"\n"
     if args.output:
         args.output.write_text(serialized,encoding="utf-8")
