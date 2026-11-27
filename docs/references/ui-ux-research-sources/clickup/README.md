@@ -165,3 +165,8 @@ Machine-readable inventory: [inventory.json](inventory.json). Source registry: [
 
 - [Remaining-source review, planning and portability](review-planning-portability-2026-11-27.md)
 - [Structured review](review-planning-portability-2026-11-27.json)
+
+## Twelfth extraction batch
+
+- [Accessibility and pinned component source evidence](accessibility-source-evidence-2026-11-27.md)
+- [Structured evidence](accessibility-source-evidence-2026-11-27.json)

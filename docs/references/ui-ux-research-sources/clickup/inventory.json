@@ -421,6 +421,16 @@
       "failed_source_count": 8,
       "interaction_count": 16,
       "indexed_observation_count": 126
+    },
+    {
+      "id": "accessibility-source-evidence-2026-11-27",
+      "path": "accessibility-source-evidence-2026-11-27.json",
+      "source_count": 15,
+      "interaction_count": 8,
+      "indexed_observation_count": 134,
+      "pinned_source_files": 4,
+      "golden_file_leads": 11,
+      "opened_visual_count": 0
     }
   ]
 }

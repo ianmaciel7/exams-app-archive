@@ -3698,7 +3698,7 @@
       "storage": "link-only",
       "product": "ClickUp",
       "reviewed_on": "2026-11-27",
-      "review_note": "Redirect loop; discovery lead retained, not a verified screen or runtime observation."
+      "review_note": "redirect loop on retry; link only."
     },
     {
       "id": "clickup-sitepeel",
@@ -3711,7 +3711,7 @@
       "storage": "link-only",
       "product": "ClickUp",
       "reviewed_on": "2026-11-27",
-      "review_note": "Cache miss; discovery lead retained, not a verified screen or runtime observation."
+      "review_note": "cache miss on retry; link only."
     },
     {
       "id": "clickup-refero-styles",
@@ -3872,7 +3872,7 @@
       "storage": "link-only",
       "product": "ClickUp",
       "reviewed_on": "2026-11-27",
-      "review_note": "Cache miss; discovery lead retained, not a verified screen or runtime observation."
+      "review_note": "cache miss on retry; link only."
     },
     {
       "id": "clickup-nicelydone",
@@ -5109,6 +5109,173 @@
       "product": "ClickUp",
       "reviewed_on": "2026-11-27",
       "review_note": "Section index: backup, prompt injection, third-party cookies, public authentication, retention and SSO."
+    },
+    {
+      "id": "clickup-accessibility",
+      "title": "Official accessibility statement",
+      "url": "https://clickup.com/accessibility",
+      "kind": "official-documentation",
+      "status": "verified",
+      "notes": "Vendor program, WCAG 2.2 AA goal, screen reader testing and VPAT available on request; not conformance certificate.",
+      "product": "ClickUp",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-accessibility-feedback",
+      "title": "Public accessibility feedback",
+      "url": "https://feedback.clickup.com/feature-requests/p/make-clickup-more-accessible",
+      "kind": "community-feedback",
+      "status": "verified",
+      "notes": "Vendor response describes internal design system and accessibility improvements; historical report, not current verified failure.",
+      "product": "ClickUp",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-form-accessibility-feedback",
+      "title": "Form screen reader feedback",
+      "url": "https://feedback.clickup.com/feature-requests/p/click-up-forms-no-fully-accessible",
+      "kind": "community-feedback",
+      "status": "verified",
+      "notes": "User-reported difficulties navigating answer choices and CAPTCHA; not reproduced.",
+      "product": "ClickUp",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-scrollbar-feedback",
+      "title": "Form scrollbar feedback",
+      "url": "https://feedback.clickup.com/feature-requests/p/make-vertical-scrollbar-visible-in-forms",
+      "kind": "community-feedback",
+      "status": "verified",
+      "notes": "User report dated 2025-06-02; not reproduced.",
+      "product": "ClickUp",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-docs-keyboard",
+      "title": "Keyboard shortcuts in Docs",
+      "url": "https://help.clickup.com/hc/en-us/articles/31672708905495-Keyboard-shortcuts-in-Docs",
+      "kind": "official-documentation",
+      "status": "verified",
+      "notes": "Block movement, formatting, selected text conversion and scoped high-contrast chevron treatment.",
+      "product": "ClickUp",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-fading-scroll-repo",
+      "title": "ClickUp mobile FadingScroll repository",
+      "url": "https://github.com/clickup/clickup_fading_scroll/",
+      "kind": "official-source",
+      "status": "verified",
+      "notes": "Official public Flutter component; not web app CSS.",
+      "product": "ClickUp",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-fading-scroll-code",
+      "title": "FadingScroll implementation",
+      "url": "https://github.com/clickup/clickup_fading_scroll/blob/d41d2af2cc1ab918fd6939e62a6730a6392c84df/lib/clickup_fading_scroll.dart",
+      "kind": "official-source",
+      "status": "verified",
+      "notes": "Code body read at pinned commit; no redistribution permission established.",
+      "product": "ClickUp",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-fading-scroll-tests",
+      "title": "FadingScroll visual tests",
+      "url": "https://github.com/clickup/clickup_fading_scroll/blob/d41d2af2cc1ab918fd6939e62a6730a6392c84df/test/fading_scroll_test.dart",
+      "kind": "official-source",
+      "status": "verified",
+      "notes": "Test code read, not executed. 11 golden references.",
+      "product": "ClickUp",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-fading-scroll-license",
+      "title": "FadingScroll license placeholder",
+      "url": "https://github.com/clickup/clickup_fading_scroll/blob/d41d2af2cc1ab918fd6939e62a6730a6392c84df/LICENSE",
+      "kind": "official-source",
+      "status": "verified",
+      "notes": "License file is a TODO placeholder; link only.",
+      "product": "ClickUp",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-fading-scroll-demo",
+      "title": "FadingScroll demo",
+      "url": "https://clickup.github.io/clickup_fading_scroll/",
+      "kind": "official-demo",
+      "status": "direct fetch failed",
+      "notes": "Cache miss; not executed.",
+      "product": "ClickUp",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only",
+      "reviewed_on": "2026-11-27",
+      "review_note": "cache miss; link only."
+    },
+    {
+      "id": "clickup-supademo-lead",
+      "title": "Third-party ClickUp overview",
+      "url": "https://app.supademo.com/demo/clwhqrv0l09wgpdhh2ukkg1yh?preview=true",
+      "kind": "third-party-demo",
+      "status": "search-result reviewed; playback pending",
+      "notes": "Landing metadata only; no steps replayed.",
+      "product": "ClickUp",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-wcag-dragging-reference",
+      "title": "WCAG 2.2 dragging movements",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html",
+      "kind": "normative-guidance",
+      "status": "verified",
+      "notes": "External criterion for proposed QA, not ClickUp conformance.",
+      "product": "ClickUp",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-wcag-focus-reference",
+      "title": "WCAG 2.2 focus not obscured",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html",
+      "kind": "normative-guidance",
+      "status": "verified",
+      "notes": "External criterion for proposed QA.",
+      "product": "ClickUp",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-wcag-target-reference",
+      "title": "WCAG 2.2 target size",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html",
+      "kind": "normative-guidance",
+      "status": "verified",
+      "notes": "24 CSS px with exceptions; external criterion.",
+      "product": "ClickUp",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-wcag-reflow-reference",
+      "title": "WCAG 2.2 reflow",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html",
+      "kind": "normative-guidance",
+      "status": "verified",
+      "notes": "320 CSS px width and specified exceptions; external criterion.",
+      "product": "ClickUp",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
     }
   ]
 }

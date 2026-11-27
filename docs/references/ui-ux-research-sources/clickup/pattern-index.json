@@ -3922,6 +3922,230 @@
           "status": "verified"
         }
       ]
+    },
+    {
+      "id": "clickup-scroll-edge-affordance",
+      "title": "Scroll overflow edge fading",
+      "product": "ClickUp",
+      "domain": "workspace",
+      "source_ids": [
+        "clickup-fading-scroll-code",
+        "clickup-fading-scroll-tests",
+        "clickup-fading-scroll-license"
+      ],
+      "definition": "Official Flutter source computes separate fades from hidden content before/after the viewport; supports horizontal and vertical axes. Default threshold 50 logical units, fade proportion capped at half the viewport. No fade when no content hidden on that edge. Optional animation duration; linear default curve, no animation when duration omitted.",
+      "guardrail": "Test scroll positions, resizing, no overflow, high contrast, reduced motion, focus and visible scrollbar; don't assume web or production app uses these values.",
+      "evidence": "pinned source inspected; runtime not executed",
+      "classification": "product-specific observation or explicitly external QA guidance",
+      "origin": {
+        "path": "docs/references/ui-ux-research-sources/clickup/accessibility-source-evidence-2026-11-27.json",
+        "pointer": "/patterns/0"
+      },
+      "source_review_status": [
+        {
+          "id": "clickup-fading-scroll-code",
+          "status": "verified"
+        },
+        {
+          "id": "clickup-fading-scroll-tests",
+          "status": "verified"
+        },
+        {
+          "id": "clickup-fading-scroll-license",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "id": "clickup-keyboard-context-scope",
+      "title": "Context-sensitive keyboard shortcuts",
+      "product": "ClickUp",
+      "domain": "workspace",
+      "source_ids": [
+        "clickup-keyboard",
+        "clickup-docs-keyboard"
+      ],
+      "definition": "Global shortcuts configurable and initially disabled. Editor and task contexts have different bindings; navigation, closing and inbox commands documented. Docs support moving a block and converting selected text to a task or comment.",
+      "guardrail": "Test input focus, shortcut conflicts, discoverability, platform mapping and ability to perform all actions without shortcut.",
+      "evidence": "official documentation; runtime unverified",
+      "classification": "product-specific observation or explicitly external QA guidance",
+      "origin": {
+        "path": "docs/references/ui-ux-research-sources/clickup/accessibility-source-evidence-2026-11-27.json",
+        "pointer": "/patterns/1"
+      },
+      "source_review_status": [
+        {
+          "id": "clickup-keyboard",
+          "status": "verified"
+        },
+        {
+          "id": "clickup-docs-keyboard",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "id": "clickup-persistent-chevron",
+      "title": "Persistent high-contrast disclosure indicator",
+      "product": "ClickUp",
+      "domain": "workspace",
+      "source_ids": [
+        "clickup-docs-keyboard",
+        "clickup-high-contrast"
+      ],
+      "definition": "Vendor documents a persistent background treatment for toggle-list chevrons in authenticated Docs; hover supplements visibility. Scope excludes public and several embedded surfaces.",
+      "guardrail": "Test actual resting/hover/focus appearance, contrast, accessible expanded state and all excluded surfaces separately.",
+      "evidence": "official documentation; runtime unverified",
+      "classification": "product-specific observation or explicitly external QA guidance",
+      "origin": {
+        "path": "docs/references/ui-ux-research-sources/clickup/accessibility-source-evidence-2026-11-27.json",
+        "pointer": "/patterns/2"
+      },
+      "source_review_status": [
+        {
+          "id": "clickup-docs-keyboard",
+          "status": "verified"
+        },
+        {
+          "id": "clickup-high-contrast",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "id": "clickup-accessible-drag-alternative",
+      "title": "Non-drag pointer and keyboard alternatives",
+      "product": "ClickUp",
+      "domain": "workspace",
+      "source_ids": [
+        "clickup-accessibility",
+        "clickup-wcag-dragging-reference"
+      ],
+      "definition": "External WCAG criterion requires a single-pointer alternative for nonessential drag functionality. Keyboard accessibility is separate. Proposed for sortable tabs, cards and panels, not a confirmed ClickUp feature.",
+      "guardrail": "Test click/tap move menu, keyboard reorder, cancel, focus restoration and result announcement.",
+      "evidence": "external standard and proposed QA; no ClickUp conformance claim",
+      "classification": "product-specific observation or explicitly external QA guidance",
+      "origin": {
+        "path": "docs/references/ui-ux-research-sources/clickup/accessibility-source-evidence-2026-11-27.json",
+        "pointer": "/patterns/3"
+      },
+      "source_review_status": [
+        {
+          "id": "clickup-accessibility",
+          "status": "verified"
+        },
+        {
+          "id": "clickup-wcag-dragging-reference",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "id": "clickup-visible-focused-control",
+      "title": "Focus visibility with overlays",
+      "product": "ClickUp",
+      "domain": "workspace",
+      "source_ids": [
+        "clickup-wcag-focus-reference",
+        "clickup-accessibility"
+      ],
+      "definition": "External minimum criterion requires focused controls not fully hidden by author content; sticky headers/footers and nonmodal overlays are relevant.",
+      "guardrail": "Test sidebar popover, tab strip, sticky answer toolbar, toast and modal; verify focus indicator independently.",
+      "evidence": "external standard and proposed QA; no runtime observation",
+      "classification": "product-specific observation or explicitly external QA guidance",
+      "origin": {
+        "path": "docs/references/ui-ux-research-sources/clickup/accessibility-source-evidence-2026-11-27.json",
+        "pointer": "/patterns/4"
+      },
+      "source_review_status": [
+        {
+          "id": "clickup-wcag-focus-reference",
+          "status": "verified"
+        },
+        {
+          "id": "clickup-accessibility",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "id": "clickup-dense-targets",
+      "title": "Minimum pointer targets in dense workspace",
+      "product": "ClickUp",
+      "domain": "workspace",
+      "source_ids": [
+        "clickup-wcag-target-reference"
+      ],
+      "definition": "External WCAG criterion specifies 24 by 24 CSS pixels or qualifying exceptions/spacing. Icon glyph size differs from clickable target.",
+      "guardrail": "Measure hit areas rather than glyphs; verify close, more, checkbox, resize controls and mobile alternative.",
+      "evidence": "external standard; proposed QA",
+      "classification": "product-specific observation or explicitly external QA guidance",
+      "origin": {
+        "path": "docs/references/ui-ux-research-sources/clickup/accessibility-source-evidence-2026-11-27.json",
+        "pointer": "/patterns/5"
+      },
+      "source_review_status": [
+        {
+          "id": "clickup-wcag-target-reference",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "id": "clickup-responsive-reflow",
+      "title": "Reflow versus two-dimensional work surfaces",
+      "product": "ClickUp",
+      "domain": "workspace",
+      "source_ids": [
+        "clickup-wcag-reflow-reference"
+      ],
+      "definition": "External WCAG criterion covers reflow at 320 CSS px width for vertical reading, with exceptions for content requiring two-dimensional layout.",
+      "guardrail": "Test question reader, notes, sidebar controls and dialog at 320 CSS px, 400% zoom; isolate table/graph exceptions and maintain reachable controls.",
+      "evidence": "external standard; proposed QA",
+      "classification": "product-specific observation or explicitly external QA guidance",
+      "origin": {
+        "path": "docs/references/ui-ux-research-sources/clickup/accessibility-source-evidence-2026-11-27.json",
+        "pointer": "/patterns/6"
+      },
+      "source_review_status": [
+        {
+          "id": "clickup-wcag-reflow-reference",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "id": "clickup-feedback-risk-form",
+      "title": "Form accessibility risk and validation",
+      "product": "ClickUp",
+      "domain": "workspace",
+      "source_ids": [
+        "clickup-form-accessibility-feedback",
+        "clickup-scrollbar-feedback",
+        "clickup-accessibility"
+      ],
+      "definition": "Community reports describe inaccessible answer options, CAPTCHA and scrollbars; vendor acknowledges ongoing accessibility work. Reports not independently reproduced.",
+      "guardrail": "Use native radio grouping, accessible names and error announcements, keyboard navigation, visible overflow, accessible alternatives to CAPTCHA and manual screen reader tests.",
+      "evidence": "community report; not independently reproduced",
+      "classification": "product-specific observation or explicitly external QA guidance",
+      "origin": {
+        "path": "docs/references/ui-ux-research-sources/clickup/accessibility-source-evidence-2026-11-27.json",
+        "pointer": "/patterns/7"
+      },
+      "source_review_status": [
+        {
+          "id": "clickup-form-accessibility-feedback",
+          "status": "verified"
+        },
+        {
+          "id": "clickup-scrollbar-feedback",
+          "status": "verified"
+        },
+        {
+          "id": "clickup-accessibility",
+          "status": "verified"
+        }
+      ]
     }
   ]
 }

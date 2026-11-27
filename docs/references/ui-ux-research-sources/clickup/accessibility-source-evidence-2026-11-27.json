@@ -1,0 +1,254 @@
+{
+  "schema_version": 1,
+  "product": "ClickUp",
+  "reviewed_on": "2026-11-27",
+  "baseline_commit": "fb79a22dd928c2a87739bbb72f12a150a813c134",
+  "scope": "Public vendor documentation, community leads, external WCAG guidance, pinned Flutter source text and Git tree. No runtime inspection.",
+  "patterns": [
+    {
+      "id": "clickup-scroll-edge-affordance",
+      "title": "Scroll overflow edge fading",
+      "source_ids": [
+        "clickup-fading-scroll-code",
+        "clickup-fading-scroll-tests",
+        "clickup-fading-scroll-license"
+      ],
+      "documented_behavior": "Official Flutter source computes separate fades from hidden content before/after the viewport; supports horizontal and vertical axes. Default threshold 50 logical units, fade proportion capped at half the viewport. No fade when no content hidden on that edge. Optional animation duration; linear default curve, no animation when duration omitted.",
+      "proposed_qa": "Test scroll positions, resizing, no overflow, high contrast, reduced motion, focus and visible scrollbar; don't assume web or production app uses these values.",
+      "evidence_status": "pinned source inspected; runtime not executed"
+    },
+    {
+      "id": "clickup-keyboard-context-scope",
+      "title": "Context-sensitive keyboard shortcuts",
+      "source_ids": [
+        "clickup-keyboard",
+        "clickup-docs-keyboard"
+      ],
+      "documented_behavior": "Global shortcuts configurable and initially disabled. Editor and task contexts have different bindings; navigation, closing and inbox commands documented. Docs support moving a block and converting selected text to a task or comment.",
+      "proposed_qa": "Test input focus, shortcut conflicts, discoverability, platform mapping and ability to perform all actions without shortcut.",
+      "evidence_status": "official documentation; runtime unverified"
+    },
+    {
+      "id": "clickup-persistent-chevron",
+      "title": "Persistent high-contrast disclosure indicator",
+      "source_ids": [
+        "clickup-docs-keyboard",
+        "clickup-high-contrast"
+      ],
+      "documented_behavior": "Vendor documents a persistent background treatment for toggle-list chevrons in authenticated Docs; hover supplements visibility. Scope excludes public and several embedded surfaces.",
+      "proposed_qa": "Test actual resting/hover/focus appearance, contrast, accessible expanded state and all excluded surfaces separately.",
+      "evidence_status": "official documentation; runtime unverified"
+    },
+    {
+      "id": "clickup-accessible-drag-alternative",
+      "title": "Non-drag pointer and keyboard alternatives",
+      "source_ids": [
+        "clickup-accessibility",
+        "clickup-wcag-dragging-reference"
+      ],
+      "documented_behavior": "External WCAG criterion requires a single-pointer alternative for nonessential drag functionality. Keyboard accessibility is separate. Proposed for sortable tabs, cards and panels, not a confirmed ClickUp feature.",
+      "proposed_qa": "Test click/tap move menu, keyboard reorder, cancel, focus restoration and result announcement.",
+      "evidence_status": "external standard and proposed QA; no ClickUp conformance claim"
+    },
+    {
+      "id": "clickup-visible-focused-control",
+      "title": "Focus visibility with overlays",
+      "source_ids": [
+        "clickup-wcag-focus-reference",
+        "clickup-accessibility"
+      ],
+      "documented_behavior": "External minimum criterion requires focused controls not fully hidden by author content; sticky headers/footers and nonmodal overlays are relevant.",
+      "proposed_qa": "Test sidebar popover, tab strip, sticky answer toolbar, toast and modal; verify focus indicator independently.",
+      "evidence_status": "external standard and proposed QA; no runtime observation"
+    },
+    {
+      "id": "clickup-dense-targets",
+      "title": "Minimum pointer targets in dense workspace",
+      "source_ids": [
+        "clickup-wcag-target-reference"
+      ],
+      "documented_behavior": "External WCAG criterion specifies 24 by 24 CSS pixels or qualifying exceptions/spacing. Icon glyph size differs from clickable target.",
+      "proposed_qa": "Measure hit areas rather than glyphs; verify close, more, checkbox, resize controls and mobile alternative.",
+      "evidence_status": "external standard; proposed QA"
+    },
+    {
+      "id": "clickup-responsive-reflow",
+      "title": "Reflow versus two-dimensional work surfaces",
+      "source_ids": [
+        "clickup-wcag-reflow-reference"
+      ],
+      "documented_behavior": "External WCAG criterion covers reflow at 320 CSS px width for vertical reading, with exceptions for content requiring two-dimensional layout.",
+      "proposed_qa": "Test question reader, notes, sidebar controls and dialog at 320 CSS px, 400% zoom; isolate table/graph exceptions and maintain reachable controls.",
+      "evidence_status": "external standard; proposed QA"
+    },
+    {
+      "id": "clickup-feedback-risk-form",
+      "title": "Form accessibility risk and validation",
+      "source_ids": [
+        "clickup-form-accessibility-feedback",
+        "clickup-scrollbar-feedback",
+        "clickup-accessibility"
+      ],
+      "documented_behavior": "Community reports describe inaccessible answer options, CAPTCHA and scrollbars; vendor acknowledges ongoing accessibility work. Reports not independently reproduced.",
+      "proposed_qa": "Use native radio grouping, accessible names and error announcements, keyboard navigation, visible overflow, accessible alternatives to CAPTCHA and manual screen reader tests.",
+      "evidence_status": "community report; not independently reproduced"
+    }
+  ],
+  "source_ids": [
+    "clickup-accessibility",
+    "clickup-accessibility-feedback",
+    "clickup-form-accessibility-feedback",
+    "clickup-scrollbar-feedback",
+    "clickup-docs-keyboard",
+    "clickup-fading-scroll-repo",
+    "clickup-fading-scroll-code",
+    "clickup-fading-scroll-tests",
+    "clickup-fading-scroll-license",
+    "clickup-fading-scroll-demo",
+    "clickup-supademo-lead",
+    "clickup-wcag-dragging-reference",
+    "clickup-wcag-focus-reference",
+    "clickup-wcag-target-reference",
+    "clickup-wcag-reflow-reference"
+  ],
+  "source_code_evidence": {
+    "repository": "clickup/clickup_fading_scroll",
+    "commit": "d41d2af2cc1ab918fd6939e62a6730a6392c84df",
+    "license_status": "placeholder; redistribution not established",
+    "files": [
+      {
+        "path": "lib/clickup_fading_scroll.dart",
+        "blob_sha": "9a9b4daf63034e2b18a32064cb4c5222628ab086",
+        "url": "https://github.com/clickup/clickup_fading_scroll/blob/d41d2af2cc1ab918fd6939e62a6730a6392c84df/lib/clickup_fading_scroll.dart",
+        "status": "source text read; link only"
+      },
+      {
+        "path": "test/fading_scroll_test.dart",
+        "blob_sha": "a763d3bee5a3c8d05579d2bee15ad4ef6c3c3156",
+        "url": "https://github.com/clickup/clickup_fading_scroll/blob/d41d2af2cc1ab918fd6939e62a6730a6392c84df/test/fading_scroll_test.dart",
+        "status": "source text read; link only"
+      },
+      {
+        "path": "LICENSE",
+        "blob_sha": "ba75c69f7f2175380928fff6693b797e2373e603",
+        "url": "https://github.com/clickup/clickup_fading_scroll/blob/d41d2af2cc1ab918fd6939e62a6730a6392c84df/LICENSE",
+        "status": "source text read; link only"
+      },
+      {
+        "path": "README.md",
+        "blob_sha": "3f00ba98ec7886256629b845f81ef1cb6617af00",
+        "url": "https://github.com/clickup/clickup_fading_scroll/blob/d41d2af2cc1ab918fd6939e62a6730a6392c84df/README.md",
+        "status": "source text read; link only"
+      }
+    ],
+    "goldens": [
+      {
+        "path": "test/not_scrollable.png",
+        "blob_sha": "8240851ff475f00eac5711911c6ec008eb00ebbe",
+        "url": "https://github.com/clickup/clickup_fading_scroll/blob/d41d2af2cc1ab918fd6939e62a6730a6392c84df/test/not_scrollable.png",
+        "status": "tree and test reference verified; image bytes not retrieved"
+      },
+      {
+        "path": "test/horizontal_01_start.png",
+        "blob_sha": "131d0a4d0ecc93b9bebe6fb45edb69bb6a6f9deb",
+        "url": "https://github.com/clickup/clickup_fading_scroll/blob/d41d2af2cc1ab918fd6939e62a6730a6392c84df/test/horizontal_01_start.png",
+        "status": "tree and test reference verified; image bytes not retrieved"
+      },
+      {
+        "path": "test/horizontal_02_near_start.png",
+        "blob_sha": "d59c20c2dc90d7681519d3743d632c80db35da20",
+        "url": "https://github.com/clickup/clickup_fading_scroll/blob/d41d2af2cc1ab918fd6939e62a6730a6392c84df/test/horizontal_02_near_start.png",
+        "status": "tree and test reference verified; image bytes not retrieved"
+      },
+      {
+        "path": "test/horizontal_03_middle.png",
+        "blob_sha": "a4f9aa9f3892fc2c6effccb4cd9ca7884b08aa9e",
+        "url": "https://github.com/clickup/clickup_fading_scroll/blob/d41d2af2cc1ab918fd6939e62a6730a6392c84df/test/horizontal_03_middle.png",
+        "status": "tree and test reference verified; image bytes not retrieved"
+      },
+      {
+        "path": "test/horizontal_04_near_end.png",
+        "blob_sha": "4b8d61e243e1626afeb82cf226fc136d33969774",
+        "url": "https://github.com/clickup/clickup_fading_scroll/blob/d41d2af2cc1ab918fd6939e62a6730a6392c84df/test/horizontal_04_near_end.png",
+        "status": "tree and test reference verified; image bytes not retrieved"
+      },
+      {
+        "path": "test/horizontal_05_end.png",
+        "blob_sha": "491e023ee6cca2145e3bfedd9fa64faedb28ede0",
+        "url": "https://github.com/clickup/clickup_fading_scroll/blob/d41d2af2cc1ab918fd6939e62a6730a6392c84df/test/horizontal_05_end.png",
+        "status": "tree and test reference verified; image bytes not retrieved"
+      },
+      {
+        "path": "test/vertical_01_start.png",
+        "blob_sha": "8aacb421e83e9d35ba6a5ec26d399eafdc43986e",
+        "url": "https://github.com/clickup/clickup_fading_scroll/blob/d41d2af2cc1ab918fd6939e62a6730a6392c84df/test/vertical_01_start.png",
+        "status": "tree and test reference verified; image bytes not retrieved"
+      },
+      {
+        "path": "test/vertical_02_near_start.png",
+        "blob_sha": "eeed7fab092ae7e11e82f0bddb8f604fb2979a2f",
+        "url": "https://github.com/clickup/clickup_fading_scroll/blob/d41d2af2cc1ab918fd6939e62a6730a6392c84df/test/vertical_02_near_start.png",
+        "status": "tree and test reference verified; image bytes not retrieved"
+      },
+      {
+        "path": "test/vertical_03_middle.png",
+        "blob_sha": "4b6660b6e1c02553299248704a1ab1db3e79ef7e",
+        "url": "https://github.com/clickup/clickup_fading_scroll/blob/d41d2af2cc1ab918fd6939e62a6730a6392c84df/test/vertical_03_middle.png",
+        "status": "tree and test reference verified; image bytes not retrieved"
+      },
+      {
+        "path": "test/vertical_04_near_end.png",
+        "blob_sha": "fadd0e9c784fbfb0b9755154770cc5c099d1dc2a",
+        "url": "https://github.com/clickup/clickup_fading_scroll/blob/d41d2af2cc1ab918fd6939e62a6730a6392c84df/test/vertical_04_near_end.png",
+        "status": "tree and test reference verified; image bytes not retrieved"
+      },
+      {
+        "path": "test/vertical_05_end.png",
+        "blob_sha": "bdc8b6fe067b5aae89085fe49f27419b360754ce",
+        "url": "https://github.com/clickup/clickup_fading_scroll/blob/d41d2af2cc1ab918fd6939e62a6730a6392c84df/test/vertical_05_end.png",
+        "status": "tree and test reference verified; image bytes not retrieved"
+      }
+    ],
+    "source_observations": {
+      "default_scroll_extent_logical_units": 50,
+      "max_mask_fraction_per_edge": 0.5,
+      "optional_transition_duration": true,
+      "default_curve_if_animated": "linear",
+      "golden_viewport_logical": [
+        500,
+        400
+      ],
+      "golden_device_pixel_ratio": 1,
+      "warning": "Values are specific to pinned Flutter package, not measured production ClickUp web or mobile UI. 1 ms in test moves scroll controller, not a production animation timing."
+    }
+  },
+  "retrieval_failures": [
+    {
+      "id": "clickup-sitepeel",
+      "reason": "cache miss on retry"
+    },
+    {
+      "id": "clickup-ui-archive",
+      "reason": "redirect loop on retry"
+    },
+    {
+      "id": "clickup-gummble-ios",
+      "reason": "cache miss on retry"
+    },
+    {
+      "id": "clickup-fading-scroll-demo",
+      "reason": "cache miss"
+    },
+    {
+      "url": "https://help.clickup.com/hc/en-us/sitemap.xml",
+      "reason": "not accessible via web tool"
+    }
+  ],
+  "remaining": [
+    "Actual VPAT content not retrieved; requires request to vendor",
+    "Authenticated workspace DOM, CSS, accessibility tree and visual/motion capture",
+    "Golden PNG bytes not retrieved or inspected; tests not executed",
+    "Other gallery leads remain inaccessible; no bypass attempted",
+    "Complete Help Center enumeration remains unestablished"
+  ]
+}
