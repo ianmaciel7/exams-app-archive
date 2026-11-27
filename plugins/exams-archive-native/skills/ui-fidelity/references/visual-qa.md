@@ -44,3 +44,14 @@ Nunca dizer que uma prévia improvisada é "o preview do repo". Se o ambiente n�
 - [ ] Para ChatGPT: abrir a prévia **na própria resposta**, com HTML/CSS/JS embutidos quando houver mecanismo adequado; nunca iframe GitHub/Raw, `fetch()` externo, `src` remota ou assets externos; sem promessa de equivalência com imagem não inspecionada.
 - [ ] Testar em largura do embed e celular, inclusive abertura/fechamento de menu, posicionamento de popover em bordas, árvore com muitos itens, foco, sem scroll horizontal e render após alteração de tema.
 - [ ] Dizer quais capturas foram realmente inspecionadas (nomes e ref), quais estados foram executados agora e quais são somente descritos no repositório. Capturas do Capacities de 2026 não garantem versão atual.
+
+## Gate de fidelidade por etapa — Greybox após Sketch (2026-11-27)
+
+Consulte a seção 06 do [registro de atividades UX](https://github.com/ianmaciel7/exams-app-archive/blob/main/docs/references/ui-ux-research-sources/ux-design-activities-2026-11-25.md#06--low-fidelity-wireframe) e o Especialista em UI/UX. Greybox regular após aprovação do Sketch é uma convenção do Exam App para validar estrutura, não definição universal de wireframe. Wireframes manuscritos permanecem válidos em outros contextos.
+
+- [ ] Preserve o Sketch histórico, identifique a etapa e compare a captura do wireframe com a hipótese: regiões neutras, blocos de conteúdo abstrato, rótulos essenciais, controles reconhecíveis e feedback sem depender só de cor; não apenas troca de fonte ou acabamento de mockup.
+- [ ] Use shapes/retângulos nativos editáveis e texto; quando a suavização de traços fechados de poucos pontos deformar retângulos, use geometria semântica validada ou segmentos retos independentes. Não aplique o preset de caneta do Sketch ao greybox; confirme versão/API do renderer.
+- [ ] Confirme SHA, arquivo, variante, tema, dimensões e recorte. Inspecione todas as capturas pertinentes no runtime real; valide bordas retas, botões, clipping, overflow em sidebar estreita, alinhamentos, hierarquia, espaçamentos, contraste e legibilidade. Preserve notas/comentários e diferencie proposta de requisito aprovado.
+- [ ] Integridade de IDs e PNG gerado não aprovam a qualidade visual. Corrija defeitos antes de pedir aprovação; se não houver render, rotule conceito como conceito e indique o bloqueio. Imagem estática não prova interação, acessibilidade funcional ou responsividade.
+
+Fontes de orientação (não normas): [Figma — How to wireframe](https://www.figma.com/blog/how-to-wireframe/), [Figma — Wireframe vs. Mockup](https://www.figma.com/resource-library/wireframe-vs-mockup/), [Balsamiq — What is a wireframe?](https://balsamiq.com/blog/what-are-wireframes/), [Balsamiq — exemplos](https://balsamiq.com/examples/). Consultadas documentalmente em 2026-11-27; sem teste externo ou redistribuição de imagens.
