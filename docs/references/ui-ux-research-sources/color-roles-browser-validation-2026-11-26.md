@@ -21,3 +21,13 @@ The thresholds for ordinary text and required non-text indicators are from [WCAG
 - `python tests/smoke_token_colors.py /tmp/token-evidence`: Chromium light/dark, actual computed color conversion, composited overlay, focus ring, identity chips, deliberate mutation, forced-colors keyboard selection and mobile reflow. CI archives the HTML, screenshots and JSON report, including individual ratios.
 
 Browser colors use 8-bit sRGB samples; source-token checks retain unquantized calculations. A passed fixture is not an accessibility audit of the whole app. P3 hardware, gradients/images, color-vision simulation, manual assistive-technology testing and other browser engines remain separate requirements. The chart palette examples and product-level state coverage still need separate empirical testing.
+
+## Brand-to-product selection — research 2026-11-27
+
+Query: brand color selection, color theory, semantic roles and accessibility. Public search excerpts reviewed, not a product audit.
+
+- Define audience, positioning, differentiation and context before hue. Color associations are culturally contingent, not universal. Compare realistic brand and UI samples.
+- Explore monochromatic, analogous, complementary, split-complementary, triadic and tetradic harmony as options, not requirements. Select a brand seed and neutral family, derive tonal scales, and separate interaction, status and data roles. Brand logo color need not be the default action color.
+- Material 3 demonstrates tonal role pairs; Carbon demonstrates stable roles with theme-specific values. Test actual foreground/background combinations, non-color cues and light/dark states. Aesthetic proportions are heuristics; WCAG criteria are normative.
+
+Sources: [Adobe brand identity](https://www.adobe.com/creativecloud/business/teams/resources/how-to/brand-identity.html), [Adobe color theory](https://www.adobe.com/br/express/learn/blog/common-color-theory-mistakes), [Material 3 theming](https://developer.android.com/codelabs/m3-design-theming), [Carbon color](https://www.carbondesignsystem.com/building-blocks/foundations/color/overview), [WCAG 2.2](https://www.w3.org/TR/WCAG22/).
