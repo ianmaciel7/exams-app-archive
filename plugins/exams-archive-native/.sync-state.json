@@ -2,13 +2,13 @@
   "schema": 2,
   "source_of_truth": "ianmaciel7/exams-app-archive@main:plugins/exams-archive-native/",
   "plugin_id": "plugins_6b04aaa9fd848191a24525011f76e2bb",
-  "desired_version": "0.8.20",
+  "desired_version": "0.8.23",
   "last_published_release_id": null,
-  "last_published_version": "0.8.20",
-  "status": "verified-synced",
-  "note": "All 30 source files compared byte-for-byte after Laws of UX skill publication; four manifests aligned. Local clients not run.",
-  "verified_files": 30,
-  "byte_identical_files": 30,
+  "last_published_version": "0.8.23",
+  "status": "changed-files-verified",
+  "note": "Four manifests and new app-shell-selection skill verified byte-for-byte between published release and GitHub. Prior full-package baseline not revalidated; no local client or CI run claimed. Private release identifiers not exported.",
+  "verified_files": 5,
+  "byte_identical_files": 5,
   "json_semantic_equivalent_files": [],
-  "verified_commit": "d3d5616290a5b47a572aca394d98b2415d891b8d"
+  "verified_commit": "ed03f0bf3fcb25b2f9e07d6fab23c843c9c42c71"
 }
