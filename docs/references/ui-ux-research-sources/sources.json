@@ -3418,6 +3418,266 @@
       "status": "verified",
       "storage": "link-only",
       "notes": "Section listing opened; parent article advertises 20 articles; not all pages traversed."
+    },
+    {
+      "id": "clickup-brand",
+      "title": "ClickUp brand guidelines",
+      "url": "https://clickup.com/brand?content_language=English",
+      "kind": "official-documentation",
+      "status": "verified",
+      "notes": "Brand palette, typography, logo usage and product illustration categories; not authenticated UI tokens.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-uizze",
+      "title": "Uizze ClickUp design measurements",
+      "url": "https://uizze.com/design/clickup",
+      "kind": "third-party-design-analysis",
+      "status": "verified",
+      "notes": "Public marketing site measured 2026-10-27; not official internal tokens.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-ui-archive",
+      "title": "UI Archive ClickUp",
+      "url": "https://ui-archive.com/clickup.com",
+      "kind": "third-party-design-analysis",
+      "status": "search-result reviewed; direct fetch failed",
+      "notes": "Redirect loop; token categories listed in search only.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-sitepeel",
+      "title": "Sitepeel ClickUp design extraction",
+      "url": "https://sitepeel.dev/design-md/clickup.com/",
+      "kind": "third-party-design-analysis",
+      "status": "search-result reviewed; direct fetch failed",
+      "notes": "Cache miss; do not use purported tokens as verified.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-refero-styles",
+      "title": "Refero Styles ClickUp",
+      "url": "https://styles.refero.design/style/efcb73cb-b84a-4ae7-9a2b-e1116f79f130",
+      "kind": "third-party-design-analysis",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Marketing site token candidate, not production workspace.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-view-icons",
+      "title": "Use custom icons for your views",
+      "url": "https://help.clickup.com/hc/en-us/articles/33624087758487-Use-custom-icons-for-your-views",
+      "kind": "official-documentation",
+      "status": "verified",
+      "notes": "Shared view icon, searchable picker and reset to type default.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-doc-page-styles",
+      "title": "Customize Page styles in Docs",
+      "url": "https://help.clickup.com/hc/en-us/articles/6325167441175-Customize-Page-styles-in-Docs",
+      "kind": "official-documentation",
+      "status": "verified",
+      "notes": "Font family categories, sizes, page widths, focus mode, outline and relationship layouts.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-desktop",
+      "title": "Use the ClickUp desktop app",
+      "url": "https://help.clickup.com/hc/en-us/articles/6311884486423-Use-the-ClickUp-desktop-app",
+      "kind": "official-documentation",
+      "status": "verified",
+      "notes": "System-wide command bar, clipboard history, deep linking and shortcut customization.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-workload-style",
+      "title": "Customize your Workload view",
+      "url": "https://help.clickup.com/hc/en-us/articles/30799933602327-Customize-your-Workload-view",
+      "kind": "official-documentation",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Color by list, status, priority or dropdown property.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-timeline-style",
+      "title": "Customize your Timeline view",
+      "url": "https://help.clickup.com/hc/en-us/articles/31440640517015-Customize-your-Timeline-view",
+      "kind": "official-documentation",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Color by list, status, priority or dropdown property.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-timeline-interactions",
+      "title": "Add and manage tasks in Timeline view",
+      "url": "https://help.clickup.com/hc/en-us/articles/31440880547991-Add-and-manage-tasks-in-Timeline-view",
+      "kind": "official-documentation",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Drag date range endpoints, context-derived task defaults.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-button-field",
+      "title": "Use Button Custom Fields",
+      "url": "https://help.clickup.com/hc/en-us/articles/30117356611735-Use-Button-Custom-Fields",
+      "kind": "official-documentation",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Configurable icon/color and automation action.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-design-review",
+      "title": "Use ClickUp for design reviews",
+      "url": "https://help.clickup.com/hc/en-us/articles/6328033402007-Use-ClickUp-for-design-reviews",
+      "kind": "official-documentation",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Annotation of image, video and PDF.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-account-settings-index",
+      "title": "Account settings",
+      "url": "https://help.clickup.com/hc/en-us/sections/17042819979543-Account-settings",
+      "kind": "official-documentation",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Theme, contrast and user settings.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-core-features",
+      "title": "Core ClickUp features",
+      "url": "https://help.clickup.com/hc/en-us/articles/6311563319063-Core-ClickUp-features",
+      "kind": "official-documentation",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Feature overview.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-gummble-web",
+      "title": "Gummble ClickUp web gallery",
+      "url": "https://gummble.com/apps/clickup-web",
+      "kind": "product-gallery",
+      "status": "verified",
+      "notes": "Gallery reports 964 screens, 207 flows, three captured versions, latest capture 2025-11-05; only preview listing inspected.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-gummble-ios",
+      "title": "Gummble ClickUp iOS gallery",
+      "url": "https://gummble.com/apps/clickup-ios",
+      "kind": "product-gallery",
+      "status": "search-result reviewed; direct fetch failed",
+      "notes": "Cache miss; no iOS screen count asserted.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-nicelydone",
+      "title": "Nicelydone ClickUp examples",
+      "url": "https://nicelydone.club/examples/apps/clickup",
+      "kind": "product-gallery",
+      "status": "verified",
+      "notes": "Product screens, onboarding, flows and component directory; text descriptions inspected.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-nicelydone-components",
+      "title": "Nicelydone ClickUp components",
+      "url": "https://nicelydone.club/examples/apps/clickup/components",
+      "kind": "product-gallery",
+      "status": "verified",
+      "notes": "Descriptions of reversible notification toast and empty folder state; images not opened.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-uiland",
+      "title": "Uiland ClickUp mobile gallery",
+      "url": "https://uiland.design/screens/clickup/screens/f317d0bb-e252-4c38-aa56-37cef23f0972",
+      "kind": "product-gallery",
+      "status": "verified",
+      "notes": "Directory reports 218 screens and 14 flows; sign-in required for most images.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-uiland-create",
+      "title": "Uiland ClickUp create screen",
+      "url": "https://uiland.design/screens/clickup/screens/f317d0bb-e252-4c38-aa56-37cef23f0972/screen/d79f0e53-99f5-4017-a5fe-fbcfdb2abce2",
+      "kind": "product-gallery",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Mobile creation screen candidate.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-uiland-goal",
+      "title": "Uiland ClickUp goal and task",
+      "url": "https://uiland.design/screens/clickup/screens/f317d0bb-e252-4c38-aa56-37cef23f0972/screen/d464f66f-0dbd-4ad2-ad52-1c04ce530028",
+      "kind": "product-gallery",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Mobile goal/task screen candidate.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-uiland-bookmark",
+      "title": "Uiland ClickUp bookmarks",
+      "url": "https://uiland.design/screens/clickup/screens/f317d0bb-e252-4c38-aa56-37cef23f0972/screen/8bd80c6a-c7f0-4a18-8881-69f327df7ca7",
+      "kind": "product-gallery",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Mobile bottom sheet candidate.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-mobbin-web-a",
+      "title": "Mobbin ClickUp web screen A",
+      "url": "https://mobbin.com/explore/screens/cb9d3f68-0824-457e-b951-cb42b20fdf7b",
+      "kind": "product-gallery",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Screen candidate; no visual behavior claim.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-mobbin-web-b",
+      "title": "Mobbin ClickUp web screen B",
+      "url": "https://mobbin.com/explore/screens/7587be5b-57f1-49c3-b571-58b7859abb59",
+      "kind": "product-gallery",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Screen candidate; no visual behavior claim.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-squint",
+      "title": "Squint landing-page teardown",
+      "url": "https://squint.page/sample-11/",
+      "kind": "third-party-design-analysis",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Marketing page hierarchy analysis; not application CSS.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
     }
   ]
 }

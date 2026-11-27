@@ -129,3 +129,8 @@ Machine-readable inventory: [inventory.json](inventory.json). Source registry: [
 
 - [Component and state contracts](component-states-2026-11-27.md)
 - [Structured state inventory](component-states-2026-11-27.json)
+
+## Fifth extraction batch
+
+- [Visual system and evidence](visual-system-2026-11-27.md)
+- [Structured visual evidence](visual-system-2026-11-27.json)

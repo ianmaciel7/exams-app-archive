@@ -1,0 +1,233 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-27",
+  "baseline_commit": "0e02393d0795aa78bc1a1df42b5c62a77b738c91",
+  "brand": {
+    "source_id": "clickup-brand",
+    "scope": "official brand; not app tokens",
+    "gradient_endpoints": [
+      [
+        "#FF02F0",
+        "#FC6D2D"
+      ],
+      [
+        "#6647F0",
+        "#0091FF"
+      ]
+    ],
+    "fonts": {
+      "headlines": "Plus Jakarta Sans",
+      "body": "Inter",
+      "captions": "Sometype Mono"
+    }
+  },
+  "marketing_measurements": {
+    "source_id": "clickup-uizze",
+    "measured_on": "2026-10-27",
+    "scope": "third-party public website measurement; not verified app tokens",
+    "colors": [
+      "#FFFFFF",
+      "#292D34",
+      "#838383",
+      "#646464",
+      "#000000",
+      "#7B68EE"
+    ],
+    "heading_px": 60,
+    "body_px": 22,
+    "button_radius_px": 8
+  },
+  "patterns": [
+    {
+      "id": "clickup-resizable-split-panel",
+      "source_ids": [
+        "clickup-sidebar-search"
+      ],
+      "documented_behavior": "Close/open via arrow and shortcut; drag divider; double-click resets default width; search filters while typing.",
+      "proposed_validation": "Record default/min/max widths at runtime, pointer capture, keyboard resize alternative, reset, collapsed/focus/touch.",
+      "evidence_status": "official documentation; runtime-unverified"
+    },
+    {
+      "id": "clickup-view-icon-override",
+      "source_ids": [
+        "clickup-view-icons"
+      ],
+      "documented_behavior": "View type icon can be overridden through searchable picker; persists for viewers, favorites and templates; clear restores default.",
+      "proposed_validation": "Test fallback, shared settings, icon-only accessible name and consistency across surfaces.",
+      "evidence_status": "official documentation; runtime-unverified"
+    },
+    {
+      "id": "clickup-reader-appearance",
+      "source_ids": [
+        "clickup-doc-page-styles"
+      ],
+      "documented_behavior": "Sans/serif/mono, three sizes, default/full width, apply typography to all pages, optional header metadata, relationships dialog or accordion, sticky outline.",
+      "proposed_validation": "Separate per-page from document settings; test text zoom, persistence, reading width, mobile and semantic headings.",
+      "evidence_status": "official documentation; runtime-unverified"
+    },
+    {
+      "id": "clickup-reader-focus",
+      "source_ids": [
+        "clickup-doc-page-styles"
+      ],
+      "documented_behavior": "Block focus dims other content while typing; page focus hides sidebars during typing.",
+      "proposed_validation": "Test keyboard, reading/typing transition, contrast of dimmed content, reduced motion and restoring panels.",
+      "evidence_status": "official documentation; runtime-unverified"
+    },
+    {
+      "id": "clickup-list-density",
+      "source_ids": [
+        "clickup-list-customize"
+      ],
+      "documented_behavior": "Wrap text, property icons, breadcrumb, parent names, hide tags, empty statuses, collapsed/expanded/flat subtasks and hide header.",
+      "proposed_validation": "Test keyboard discoverability, search/filter semantics, overflow, long titles, layout shift.",
+      "evidence_status": "official documentation; runtime-unverified"
+    },
+    {
+      "id": "clickup-canvas-connection",
+      "source_ids": [
+        "clickup-whiteboard-items"
+      ],
+      "documented_behavior": "Selection bounding box, resize/rotate, endpoint snapping, visible connectors, minimap, keyboard pan and move.",
+      "proposed_validation": "Test zoom coordinate mapping, endpoint drag, undo, keyboard, focus, touch and disconnected states.",
+      "evidence_status": "official documentation; runtime-unverified"
+    },
+    {
+      "id": "clickup-canvas-motion-preference",
+      "source_ids": [
+        "clickup-whiteboard-items"
+      ],
+      "documented_behavior": "Whiteboard preferences include reduced motion enabled by default, alignment guides, edge scrolling and grid toggles. Scope is Whiteboard only.",
+      "proposed_validation": "Measure actual timing with recording; test OS reduced motion, interruption, scroll and non-motion feedback.",
+      "evidence_status": "third-party description; image not inspected"
+    },
+    {
+      "id": "clickup-system-command-palette",
+      "source_ids": [
+        "clickup-desktop"
+      ],
+      "documented_behavior": "Desktop global command bar, configurable hotkey, local clipboard history (screenshot history Mac only), browser-to-app redirect preference.",
+      "proposed_validation": "Test launch, foreground focus restore, consent, cross-platform conflicts, privacy and offline failure.",
+      "evidence_status": "official documentation; runtime-unverified"
+    },
+    {
+      "id": "clickup-undo-toast-reference",
+      "source_ids": [
+        "clickup-nicelydone-components"
+      ],
+      "documented_behavior": "Third-party text description identifies status-change toast with undo and close.",
+      "proposed_validation": "Inspect screenshot and test undo availability, expiration, competing operations, accessible live region.",
+      "evidence_status": "third-party description; image not inspected"
+    },
+    {
+      "id": "clickup-empty-folder-reference",
+      "source_ids": [
+        "clickup-nicelydone-components"
+      ],
+      "documented_behavior": "Third-party description identifies empty folder illustration, explanation and create-list CTA.",
+      "proposed_validation": "Test distinction between truly empty, filtered empty, permission failure and loading; CTA relevance.",
+      "evidence_status": "third-party description; image not inspected"
+    }
+  ],
+  "visual_evidence": [
+    {
+      "id": "clickup-sidebar-resize",
+      "source_id": "clickup-sidebar-search",
+      "url": "https://help.clickup.com/hc/article_attachments/36607098050455",
+      "media_type": "image",
+      "evidence_status": "opened",
+      "observation": "Divider hover shows Close, Resize Drag and Reset Double-click; nested tree, icon rail, selected row and contextual plus/ellipsis.",
+      "storage": "link-only",
+      "rights": "redistribution not established",
+      "observed_on": "2026-11-27"
+    },
+    {
+      "id": "clickup-view-custom-icon",
+      "source_id": "clickup-view-icons",
+      "url": "https://help.clickup.com/hc/article_attachments/37480818868503",
+      "media_type": "image",
+      "evidence_status": "opened",
+      "observation": "Selected List view has a globe icon, black underline; adjacent tabs include pinned icons and add-view affordance.",
+      "storage": "link-only",
+      "rights": "redistribution not established",
+      "observed_on": "2026-11-27"
+    },
+    {
+      "id": "clickup-page-style-panel",
+      "source_id": "clickup-doc-page-styles",
+      "url": "https://help.clickup.com/hc/article_attachments/35207206612503",
+      "media_type": "image",
+      "evidence_status": "opened",
+      "observation": "Segmented tiles for font style, size and width; tinted selected tile; header switches with labels and icons.",
+      "storage": "link-only",
+      "rights": "redistribution not established",
+      "observed_on": "2026-11-27"
+    },
+    {
+      "id": "clickup-whiteboard-connection",
+      "source_id": "clickup-whiteboard-items",
+      "url": "https://help.clickup.com/hc/article_attachments/31273397360919",
+      "media_type": "image",
+      "evidence_status": "opened",
+      "observation": "Two shapes connected by arrow, blue anchors, dashed guides, floating contextual toolbar.",
+      "storage": "link-only",
+      "rights": "redistribution not established",
+      "observed_on": "2026-11-27"
+    },
+    {
+      "id": "clickup-list-column-resize-gif",
+      "source_id": "clickup-list-customize",
+      "url": "https://help.clickup.com/hc/article_attachments/44225755104407",
+      "media_type": "gif",
+      "evidence_status": "unsupported-content-type",
+      "observation": "Official article labels GIF as column resizing; animation not reproduced.",
+      "storage": "link-only",
+      "rights": "redistribution not established",
+      "observed_on": "2026-11-27"
+    },
+    {
+      "id": "clickup-whiteboard-create-gif",
+      "source_id": "clickup-whiteboard-items",
+      "url": "https://help.clickup.com/hc/article_attachments/39340374185111",
+      "media_type": "gif",
+      "evidence_status": "unsupported-content-type",
+      "observation": "Official article labels GIF showing whiteboard; animation not reproduced.",
+      "storage": "link-only",
+      "rights": "redistribution not established",
+      "observed_on": "2026-11-27"
+    },
+    {
+      "id": "clickup-desktop-command-gif",
+      "source_id": "clickup-desktop",
+      "url": "https://help.clickup.com/hc/article_attachments/39020992302487",
+      "media_type": "gif",
+      "evidence_status": "cache-miss",
+      "observation": "Article describes desktop AI Command Bar launched from another app; file fetch failed.",
+      "storage": "link-only",
+      "rights": "redistribution not established",
+      "observed_on": "2026-11-27"
+    }
+  ],
+  "galleries": [
+    {
+      "source_id": "clickup-gummble-web",
+      "reported_screens": 964,
+      "reported_flows": 207,
+      "latest_capture": "2025-11-05",
+      "status": "catalog counts only; not extracted"
+    },
+    {
+      "source_id": "clickup-uiland",
+      "reported_screens": 218,
+      "reported_flows": 14,
+      "status": "catalog counts only; most require sign-in"
+    }
+  ],
+  "remaining": [
+    "Authenticated app CSS and computed styles, actual icon paths, semantic color tokens, spacing scale, typography, breakpoints",
+    "Motion GIF decoding and frame/timing measurements; three linked GIFs not inspected",
+    "Full gallery screens and flows subject to access and rights",
+    "Actual accessibility, contrast and focus order verification",
+    "Official article-by-article enumeration remains incomplete"
+  ]
+}

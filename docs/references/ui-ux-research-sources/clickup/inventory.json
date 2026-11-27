@@ -359,6 +359,14 @@
       "opened_article_count": 12,
       "search_preview_count": 23,
       "section_count": 3
+    },
+    {
+      "id": "visual-system-2026-11-27",
+      "path": "visual-system-2026-11-27.json",
+      "source_count": 26,
+      "interaction_count": 10,
+      "opened_visual_count": 4,
+      "failed_visual_count": 3
     }
   ]
 }
