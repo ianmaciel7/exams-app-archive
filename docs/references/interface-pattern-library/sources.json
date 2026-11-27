@@ -7578,6 +7578,138 @@
       "notes": "Role-based tokens and theme values.",
       "checked_on": "2026-11-27",
       "storage": "link-only"
+    },
+    {
+      "id": "brand-science-wheeler",
+      "title": "Wiley — Designing Brand Identity, 6th ed.",
+      "url": "https://www.wiley.com/en-sg/designing-brand-identity-a-comprehensive-guide-to-the-world-of-brands-and-branding-6th-edition-p-9781119984818",
+      "status": "search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "publisher contents; book not read",
+      "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "brand-science-albers",
+      "title": "Yale — Interaction of Color",
+      "url": "https://yalebooks.yale.edu/book/9780300179354/interaction-of-color/",
+      "status": "search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "publisher description; book not read",
+      "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "brand-science-elliot-maier",
+      "title": "Elliot & Maier 2014, Annual Review of Psychology",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23808916/",
+      "status": "search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "peer-reviewed review abstract",
+      "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "brand-science-adobe-harmony",
+      "title": "Adobe — Colour Palette Guide",
+      "url": "https://www.adobe.com/uk/creativecloud/design/discover/color-palette.html",
+      "status": "search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "educational guidance",
+      "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "brand-science-css4-2026",
+      "title": "W3C CSS Color 4, 2026-10-29 CRD",
+      "url": "https://www.w3.org/TR/2026/CRD-css-color-4-20261029/",
+      "status": "search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "candidate recommendation draft",
+      "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "brand-science-css5-2026",
+      "title": "W3C CSS Color 5, 2026-11-16",
+      "url": "https://www.w3.org/TR/2026/WD-css-color-5-20261116/",
+      "status": "search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "working draft",
+      "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "brand-science-icc",
+      "title": "ICC specifications",
+      "url": "https://www.color.org/icc_specs2/",
+      "status": "search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "official profile specification summary",
+      "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "brand-science-icc-cie",
+      "title": "ICC/CIE colorimetry data",
+      "url": "https://registry.color.org/colorimetry-data/",
+      "status": "search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "official data reference",
+      "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "brand-science-material-tonal",
+      "title": "Material color utilities — dynamic color scheme",
+      "url": "https://github.com/material-foundation/material-color-utilities/blob/main/concepts/dynamic_color_scheme.md",
+      "status": "search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "official library documentation",
+      "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "brand-science-radix-scale",
+      "title": "Radix Colors — Understanding the scale",
+      "url": "https://github.com/radix-ui/website/blob/main/data/colors/docs/palette-composition/understanding-the-scale.mdx",
+      "status": "search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "official library documentation",
+      "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "brand-science-ibm-color",
+      "title": "IBM Design Language — Color",
+      "url": "https://www.ibm.com/design/language/color/",
+      "status": "search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "official brand guidance",
+      "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "brand-science-wcag-nontext",
+      "title": "W3C Understanding Non-text Contrast",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html",
+      "status": "search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "informative guidance",
+      "recorded_on": "2026-11-27"
     }
   ],
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",
