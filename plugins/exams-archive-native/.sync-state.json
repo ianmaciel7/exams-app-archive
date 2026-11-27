@@ -2,13 +2,13 @@
   "schema": 2,
   "source_of_truth": "ianmaciel7/exams-app-archive@main:plugins/exams-archive-native/",
   "plugin_id": "plugins_6b04aaa9fd848191a24525011f76e2bb",
-  "desired_version": "0.8.18",
+  "desired_version": "0.8.20",
   "last_published_release_id": null,
-  "last_published_version": "0.8.18",
+  "last_published_version": "0.8.20",
   "status": "verified-synced",
-  "note": "All 29 plugin source files compared byte-for-byte with private 0.8.18 release and canonical mirror commit. Four manifests and shared wireframe source-review workflow updated. Private release identifier not exported. Local runtime and third-party renderers not tested.",
-  "verified_files": 29,
-  "byte_identical_files": 29,
+  "note": "All 30 source files compared byte-for-byte after Laws of UX skill publication; four manifests aligned. Local clients not run.",
+  "verified_files": 30,
+  "byte_identical_files": 30,
   "json_semantic_equivalent_files": [],
-  "verified_commit": "fda4c3b8240810b8ebcbd7e7492d6c5b1629e282"
+  "verified_commit": "d3d5616290a5b47a572aca394d98b2415d891b8d"
 }
