@@ -7227,8 +7227,179 @@
       "checked_on": "2026-11-26",
       "status": "primary source text retrieved; application-specific implementation not verified",
       "storage": "link-only"
+    },
+    {
+      "id": "app-shell-s1",
+      "title": "Community layout catalog",
+      "url": "https://ui.wei-dev.com/docs/patterns/layouts",
+      "kind": "community",
+      "recorded_on": "2026-11-27",
+      "status": "Search-excerpt evidence retained from dated taxonomy; no runtime verification or new reachability check",
+      "storage": "link-only"
+    },
+    {
+      "id": "app-shell-s2",
+      "title": "Tinyrack — App Shell",
+      "url": "https://design.tinyrack.net/en/web/components/app-shell/",
+      "kind": "design-system",
+      "recorded_on": "2026-11-27",
+      "status": "Search-excerpt evidence retained from dated taxonomy; no runtime verification or new reachability check",
+      "storage": "link-only"
+    },
+    {
+      "id": "app-shell-s3",
+      "title": "VS Code — User interface",
+      "url": "https://code.visualstudio.com/docs/editing/getting-started/userinterface",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-27",
+      "status": "Search-excerpt evidence retained from dated taxonomy; no runtime verification or new reachability check",
+      "storage": "link-only"
+    },
+    {
+      "id": "app-shell-s4a",
+      "title": "Golden Layout — Structure",
+      "url": "https://golden-layout.github.io/golden-layout/structure/",
+      "kind": "primary-library",
+      "recorded_on": "2026-11-27",
+      "status": "Search-excerpt evidence retained from dated taxonomy; no runtime verification or new reachability check",
+      "storage": "link-only"
+    },
+    {
+      "id": "app-shell-s4b",
+      "title": "Golden Layout",
+      "url": "https://golden-layout.github.io/golden-layout/",
+      "kind": "primary-library",
+      "recorded_on": "2026-11-27",
+      "status": "Search-excerpt evidence retained from dated taxonomy; no runtime verification or new reachability check",
+      "storage": "link-only"
+    },
+    {
+      "id": "app-shell-s5",
+      "title": "SAP Fiori — Flexible Column Layout",
+      "url": "https://www.sap.com/design-system/fiori-design-web/v1-154/page-types/page-layouts/flexible-column-layout",
+      "kind": "design-system",
+      "recorded_on": "2026-11-27",
+      "status": "Search-excerpt evidence retained from dated taxonomy; no runtime verification or new reachability check",
+      "storage": "link-only"
+    },
+    {
+      "id": "app-shell-s6",
+      "title": "Apple HIG — Split views",
+      "url": "https://developer.apple.com/design/human-interface-guidelines/split-views",
+      "kind": "primary-platform",
+      "recorded_on": "2026-11-27",
+      "status": "Search-excerpt evidence retained from dated taxonomy; no runtime verification or new reachability check",
+      "storage": "link-only"
+    },
+    {
+      "id": "app-shell-s7",
+      "title": "Android — Canonical layouts",
+      "url": "https://developer.android.com/develop/adaptive-apps/guides/canonical-layouts",
+      "kind": "primary-platform",
+      "recorded_on": "2026-11-27",
+      "status": "Search-excerpt evidence retained from dated taxonomy; no runtime verification or new reachability check",
+      "storage": "link-only"
+    },
+    {
+      "id": "app-shell-s8",
+      "title": "Cloudscape — Secondary panels",
+      "url": "https://cloudscape.design/patterns/general/secondary-panels/",
+      "kind": "design-system",
+      "recorded_on": "2026-11-27",
+      "status": "Search-excerpt evidence retained from dated taxonomy; no runtime verification or new reachability check",
+      "storage": "link-only"
+    },
+    {
+      "id": "app-shell-s9",
+      "title": "Tailwind — Responsive design",
+      "url": "https://tailwindcss.com/docs/responsive-design",
+      "kind": "primary-library",
+      "recorded_on": "2026-11-27",
+      "status": "Search-excerpt evidence retained from dated taxonomy; no runtime verification or new reachability check",
+      "storage": "link-only"
+    },
+    {
+      "id": "app-shell-s10",
+      "title": "Android — Layout and navigation patterns",
+      "url": "https://developer.android.com/design/ui/mobile/guides/layout-and-content/layout-and-nav-patterns",
+      "kind": "primary-platform",
+      "recorded_on": "2026-11-27",
+      "status": "Search-excerpt evidence retained from dated taxonomy; no runtime verification or new reachability check",
+      "storage": "link-only"
+    },
+    {
+      "id": "app-shell-s11",
+      "title": "Apple HIG — Windows",
+      "url": "https://developer.apple.com/design/human-interface-guidelines/windows",
+      "kind": "primary-platform",
+      "recorded_on": "2026-11-27",
+      "status": "Search-excerpt evidence retained from dated taxonomy; no runtime verification or new reachability check",
+      "storage": "link-only"
+    },
+    {
+      "id": "app-shell-s12",
+      "title": "Salesforce — Console developer guide",
+      "url": "https://developer.salesforce.com/docs/service/api-console/guide/sforce-api-console-js-lex-intro.html",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-27",
+      "status": "Search-excerpt evidence retained from dated taxonomy; no runtime verification or new reachability check",
+      "storage": "link-only"
+    },
+    {
+      "id": "app-shell-s13a",
+      "title": "Microsoft — Navigation basics",
+      "url": "https://learn.microsoft.com/windows/apps/design/basics/navigation-basics",
+      "kind": "primary-platform",
+      "recorded_on": "2026-11-27",
+      "status": "Search-excerpt evidence retained from dated taxonomy; no runtime verification or new reachability check",
+      "storage": "link-only"
+    },
+    {
+      "id": "app-shell-s13b",
+      "title": "Microsoft — Historical navigation essentials",
+      "url": "https://learn.microsoft.com/en-us/archive/msdn-magazine/2013/august/modern-apps-navigation-essentials-in-windows-store-apps",
+      "kind": "historical-guidance",
+      "recorded_on": "2026-11-27",
+      "status": "Search-excerpt evidence retained from dated taxonomy; no runtime verification or new reachability check",
+      "storage": "link-only"
+    },
+    {
+      "id": "app-shell-s14",
+      "title": "Rocky Mountaineer — App Shell Navigation",
+      "url": "https://dx.dev.rockymountaineer.com/docs/patterns/app-shell-navigation",
+      "kind": "design-system",
+      "recorded_on": "2026-11-27",
+      "status": "Search-excerpt evidence retained from dated taxonomy; no runtime verification or new reachability check",
+      "storage": "link-only"
+    },
+    {
+      "id": "app-shell-extra1",
+      "title": "Tailwind — Application UI",
+      "url": "https://tailwindcss.com/plus/ui-blocks/application-ui",
+      "kind": "commercial-catalog",
+      "recorded_on": "2026-11-27",
+      "status": "Search-excerpt evidence retained from dated taxonomy; no runtime verification or new reachability check",
+      "storage": "link-only"
+    },
+    {
+      "id": "app-shell-extra2",
+      "title": "Cloudscape — App Layout",
+      "url": "https://cloudscape.design/components/app-layout/",
+      "kind": "design-system",
+      "recorded_on": "2026-11-27",
+      "status": "Search-excerpt evidence retained from dated taxonomy; no runtime verification or new reachability check",
+      "storage": "link-only"
+    },
+    {
+      "id": "app-shell-extra3",
+      "title": "MDN — PWA App structure",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Tutorials/js13kGames/App_structure",
+      "kind": "technical-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "Search-excerpt evidence retained from dated taxonomy; no runtime verification or new reachability check",
+      "storage": "link-only"
     }
   ],
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",
-  "updated_on": "2026-11-26"
+  "updated_on": "2026-11-27"
 }
