@@ -102,7 +102,7 @@ class RegressionQualityMonitorTests(unittest.TestCase):
                 json_report_path=tmp_path / "QUALITY-MONITOR-REPORT.json",
                 md_report_path=tmp_path / "QUALITY-MONITOR-REPORT.md",
             )
-            self.assertTrue(pass_rep["gate_passed"])
+            self.assertTrue(pass_rep["gate_passed"], json.dumps({"regressions": pass_rep["regressions"], "plugin_sync": pass_rep["plugin_sync"]}, ensure_ascii=False))
             self.assertEqual(pass_rep["regressions"]["domain_regressions_count"], 0)
             self.assertTrue(pass_rep["privacy_and_security"]["passed"])
             self.assertTrue(pass_rep["zero_emoji_compliance"]["passed"])
@@ -131,8 +131,9 @@ class RegressionQualityMonitorTests(unittest.TestCase):
             [sys.executable, str(SCRIPTS_DIR / "regression_quality_monitor.py"), "--no-write"],
             capture_output=True,
             text=True,
-            check=True,
+            check=False,
         )
+        self.assertEqual(proc.returncode, 0, proc.stdout + proc.stderr)
         parsed = json.loads(proc.stdout)
         self.assertTrue(parsed["gate_passed"])
 

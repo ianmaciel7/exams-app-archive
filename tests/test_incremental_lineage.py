@@ -102,6 +102,52 @@ class IncrementalLineageTests(unittest.TestCase):
         self.assertEqual(r_chk["stage_computed"]["entity_edge"], 2)
         self.assertEqual(r_chk["stage_computed"]["index_context"], 2)
 
+    def test_identical_bytes_keep_occurrence_and_language_provenance(self) -> None:
+        content = "export const X = 1;\n"
+        sources = [
+            il.SourceInput("repo.a", "src/A.ts", content),
+            il.SourceInput("repo.a", "src/B.md", content),
+            il.SourceInput("repo.b", "src/A.ts", content, language="text"),
+        ]
+        first = self.engine.refresh(sources, scope="public")
+        self.assertEqual(first["status"], "committed")
+        rows = self.conn.execute(
+            "SELECT source_id, source_path, payload_json FROM lineage_nodes "
+            "WHERE scope='public' AND stage='extraction'"
+        ).fetchall()
+        extracted = {(sid, path): json.loads(payload) for sid, path, payload in rows}
+        self.assertEqual(len(extracted), 3)
+        for src in sources:
+            payload = extracted[(src.source_id, src.path)]
+            self.assertEqual(payload["source_id"], src.source_id)
+            self.assertEqual(payload["path"], src.path)
+        self.assertEqual(extracted[("repo.a", "src/A.ts")]["language"], "typescript")
+        self.assertEqual(extracted[("repo.a", "src/B.md")]["language"], "text")
+        self.assertEqual(extracted[("repo.b", "src/A.ts")]["language"], "text")
+        chunks = self.conn.execute(
+            "SELECT payload_json FROM lineage_nodes WHERE source_id='repo.a' "
+            "AND source_path='src/B.md' AND stage='chunk'"
+        ).fetchone()
+        self.assertEqual(json.loads(chunks[0])["chunks"][0]["name"], "B.md")
+        second = self.engine.refresh(sources, scope="public")
+        self.assertEqual(second["memo_hits"], 12)
+        self.assertEqual(second["state_hash"], first["state_hash"])
+        full = self.engine.refresh(sources, scope="public", incremental=False)
+        self.assertEqual(full["state_hash"], first["state_hash"])
+
+    def test_language_override_change_invalidates_extraction(self) -> None:
+        src = il.SourceInput("repo.a", "src/A.ts", "export const X = 1;")
+        self.engine.refresh([src], scope="public")
+        changed = il.SourceInput(src.source_id, src.path, src.content, language="text")
+        result = self.engine.refresh([changed], scope="public")
+        self.assertEqual(result["stage_computed"]["extraction"], 1)
+        row = self.conn.execute(
+            "SELECT payload_json FROM lineage_nodes WHERE stage='extraction'"
+        ).fetchone()
+        self.assertEqual(json.loads(row[0])["language"], "text")
+        full = self.engine.refresh([changed], scope="public", incremental=False)
+        self.assertEqual(result["state_hash"], full["state_hash"])
+
     def test_scope_isolation_prevents_cross_acl_cache_reuse(self) -> None:
         cfg = il.PipelineConfig()
         private_sources = [

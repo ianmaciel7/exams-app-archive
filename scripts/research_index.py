@@ -432,12 +432,20 @@ def build(db, records):
     CREATE TABLE IF NOT EXISTS research(id TEXT PRIMARY KEY, kind TEXT NOT NULL, catalog TEXT NOT NULL, payload TEXT NOT NULL);
     CREATE VIRTUAL TABLE IF NOT EXISTS research_fts USING fts5(id UNINDEXED, title, body, tokenize='unicode61 remove_diacritics 2');
     """)
-    previous = dict(db.execute("SELECT id, payload FROM research"))
+    previous = {ident: (kind, catalog, payload) for ident, kind, catalog, payload in
+                db.execute("SELECT id, kind, catalog, payload FROM research")}
+    fts_rows = {}
+    for ident, title, body in db.execute("SELECT id, title, body FROM research_fts"):
+        fts_rows.setdefault(ident, []).append((title, body))
     removed = sorted(previous.keys() - incoming.keys())
-    changed = sorted(ident for ident, (_, payload) in incoming.items()
-                     if previous.get(ident) != payload)
+    orphaned_fts = fts_rows.keys() - incoming.keys()
+    changed = sorted(ident for ident, (row, payload) in incoming.items()
+                     if previous.get(ident) != (row["kind"], row["catalog"], payload)
+                     or fts_rows.get(ident) != [(row["title"], payload)])
     added = sum(ident not in previous for ident in changed)
     with db:
+        for ident in orphaned_fts:
+            db.execute("DELETE FROM research_fts WHERE id IS ?", (ident,))
         for ident in removed:
             db.execute("DELETE FROM research_fts WHERE id=?", (ident,))
             db.execute("DELETE FROM research WHERE id=?", (ident,))
@@ -489,10 +497,67 @@ def search(db, query, kind=None, limit=20, *, product=None, source=None,
     return [json.loads(r[0]) for r in db.execute(sql, (*args, limit))]
 
 
-def coverage(records):
+def index_membership(db, records):
+    """Compare canonical projected records with actual SQLite metadata and FTS rows.
+
+    This measures exact stored membership, not retrieval relevance, media inspection
+    or coverage of external/private sources. Do not use catalog counts as index counts.
+    """
+    expected = {}
+    for row in records:
+        if row["id"] in expected:
+            raise ValueError(f"Duplicate id: {row['id']}")
+        expected[row["id"]] = row
+    metadata = {ident: (kind, catalog, payload) for ident, kind, catalog, payload in
+                db.execute("SELECT id, kind, catalog, payload FROM research")}
+    fts = {}
+    for ident, title, body in db.execute("SELECT id, title, body FROM research_fts"):
+        fts.setdefault(ident, []).append((title, body))
+    missing_metadata, missing_fts, stale_metadata, stale_fts, matched = [], [], [], [], []
+    duplicates = [ident for ident, rows in fts.items() if len(rows) != 1]
+    by_catalog = {}
+    for ident, row in expected.items():
+        counts = by_catalog.setdefault(row["catalog"], {"eligible": 0, "matched": 0})
+        counts["eligible"] += 1
+        payload = json.dumps(row, ensure_ascii=False, sort_keys=True)
+        meta_ok = metadata.get(ident) == (row["kind"], row["catalog"], payload)
+        fts_ok = fts.get(ident) == [(row["title"], payload)]
+        if not meta_ok:
+            (missing_metadata if ident not in metadata else stale_metadata).append(ident)
+        if not fts_ok:
+            (missing_fts if ident not in fts else stale_fts).append(ident)
+        if meta_ok and fts_ok:
+            matched.append(ident)
+            counts["matched"] += 1
+    extras_meta = set(metadata) - set(expected)
+    extras_fts = set(fts) - set(expected)
+    def ordered(values):
+        return sorted(values, key=lambda v: (v is not None, str(v)))
+    return {
+        "scope": "explicit public catalog projection; excludes historical/private and unregistered sources",
+        "eligible_records": len(expected),
+        "matched_records": len(matched),
+        "membership_percent": 100 * len(matched) / len(expected) if expected else None,
+        "by_catalog": dict(sorted(by_catalog.items())),
+        "missing_metadata_ids": ordered(missing_metadata),
+        "missing_fts_ids": ordered(missing_fts),
+        "stale_metadata_ids": ordered(stale_metadata),
+        "stale_fts_ids": ordered(stale_fts),
+        "duplicate_fts_ids": ordered(duplicates),
+        "unexpected_metadata_ids": ordered(extras_meta),
+        "unexpected_fts_ids": ordered(extras_fts),
+        "integrity_passed": bool(expected) and len(matched) == len(expected)
+                            and not extras_meta and not extras_fts,
+    }
+
+
+def coverage(records, db=None):
     counts = Counter(r["catalog"] for r in records)
-    return {"records": len(records), "catalogs": dict(counts),
-            "scope": "explicit public research catalogs only; historical and private index not included"}
+    result = {"records": len(records), "catalogs": dict(counts),
+              "scope": "explicit public research catalogs only; historical and private index not included"}
+    if db is not None:
+        result["index_membership"] = index_membership(db, records)
+    return result
 
 
 def provenance_graph(records):
@@ -550,9 +615,10 @@ def audit(records):
     graph = provenance_graph(records)
     with sqlite3.connect(":memory:") as db:
         build(db, records)
+        measured_coverage = coverage(records, db)
         queries = {q: len(search(db, q, limit=20)) for q in
                    ("side panel", "wall", "shared layout", "agent mascot", "generative UI", "vídeo", "kanban")}
-    return {**coverage(records), "knowledge_coverage_gaps": coverage_gaps(records), "unknown_metadata_counts": dict(gaps),
+    return {**measured_coverage, "knowledge_coverage_gaps": coverage_gaps(records), "unknown_metadata_counts": dict(gaps),
             "visual_matrix": [{"product": p, "modality": k, "availability": a, "records": n}
                               for (p,k,a),n in sorted(visual.items())],
             "graph": {"nodes": len(graph["nodes"]), "edges": len(graph["edges"])},
@@ -569,12 +635,20 @@ def main():
     p.add_argument("--limit", type=int, default=20)
     p.add_argument("--db", default=":memory:")
     p.add_argument("--coverage", action="store_true")
+    p.add_argument("--verify-index", action="store_true", help="Audit an existing database without rebuilding it")
     p.add_argument("--audit", action="store_true")
     p.add_argument("--graph", action="store_true")
     for name in ("product", "source", "availability", "confidence", "since", "until"):
         p.add_argument("--" + name)
     args = p.parse_args()
     records = load_records()
+    if args.verify_index:
+        if args.db == ":memory:" or not Path(args.db).is_file():
+            p.error("--verify-index requires an existing --db file")
+        with sqlite3.connect(Path(args.db).resolve().as_uri() + "?mode=ro", uri=True) as db:
+            out = index_membership(db, records)
+        print(json.dumps(out, ensure_ascii=False, indent=2))
+        raise SystemExit(0 if out["integrity_passed"] else 1)
     with sqlite3.connect(args.db) as db:
         build(db,records)
         if args.audit:
@@ -582,7 +656,7 @@ def main():
         elif args.graph:
             out = provenance_graph(records)
         elif args.coverage:
-            out = coverage(records)
+            out = coverage(records, db)
         else:
             out = search(db, args.query, args.kind, args.limit, product=args.product,
                          source=args.source, availability=args.availability,

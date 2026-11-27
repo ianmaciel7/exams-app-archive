@@ -11,7 +11,8 @@ Implements deterministic, offline incremental indexing primitives in pure Python
      - Enforces strict scope isolation (a `public` memoization lookup can never
        reuse an `authenticated_archive` artifact, and vice versa).
      - Reuses cached extraction outputs when `(content_sha, fn_name, fn_version,
-       config_hash, scope)` match; never recomputes unchanged nodes.
+       config_hash, scope)` match; extraction config includes occurrence and
+       language because these are part of its output. Unchanged nodes are reused.
   3. Selective downstream invalidation:
      - Changing a taxonomy hash, policy hash, extractor version, or source file
        invalidates ONLY downstream dependent nodes in the DAG.
@@ -512,7 +513,17 @@ class IncrementalLineageEngine:
                     )
 
                     # Stage 1: extraction
-                    ext_cfg = cfg.stage_config_hash("extract")
+                    # Extraction payloads contain occurrence metadata and resolved language.
+                    # Salt the cache by these inputs to prevent identical bytes at another
+                    # path/repository (or with another language override) reusing stale metadata.
+                    ext_cfg = sha256_obj({
+                        "stage_cfg": cfg.stage_config_hash("extract"),
+                        "source_id": src.source_id,
+                        "path": src.path,
+                        "language": src.language or ast_chunker.LANGUAGE_ALIASES.get(
+                            Path(src.path).suffix.lower(), "text"
+                        ),
+                    })
                     ext_ver = cfg.extractor_versions.get("extract", "1.0.0")
                     ext_out = self._memo_get(
                         scope=scope, content_sha=c_sha, fn_name="extract", fn_version=ext_ver, config_hash=ext_cfg
@@ -543,7 +554,7 @@ class IncrementalLineageEngine:
                     )
                     new_edges.append((src_nid, ext_nid, "DERIVES"))
 
-                    # Stage 2: chunk (input identity depends on upstream extraction output_sha; path-independent!)
+                    # Stage 2: chunk (input identity depends on occurrence-aware extraction output_sha)
                     chk_cfg = cfg.stage_config_hash("chunk")
                     chk_ver = cfg.extractor_versions.get("chunk", "1.0.0")
                     chk_out = self._memo_get(
