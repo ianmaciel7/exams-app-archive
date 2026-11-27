@@ -54,3 +54,22 @@ For dense productivity apps prefer Impeccable as the primary design skill, targe
 ## Source review and integration — 2026-11-27
 
 All 16 design project landing pages and relevant README sections were accessed, with selected primary skill/catalog texts (Anthropic frontend-design, Hallmark, nyrthoughts anti-slop-ui, claudiusararu TELLS, wpgaurav design-slop, Copilot anti-ui-slop). No recursive file audit or runtime execution. New module `anti-ai-slop-design` in Especialista em UI/UX v1.12.0, verified release `pluginrel_6b09e04642c881918ae0b2b483b62273`: 12 diagnostic families, positive product-specific visual contract, baseline and semantic control inventory, scoped repair, second-order cliché detection, matched before/after evidence, accessibility and behavior gates, exception log, stage-aware evaluation. Preserve approved identity and features; automated scores and trend-based signals are not UX standards or AI authorship proof. Primary paths: https://raw.githubusercontent.com/anthropics/skills/main/skills/frontend-design/SKILL.md ; https://raw.githubusercontent.com/Nutlope/hallmark/main/skills/hallmark/SKILL.md ; https://raw.githubusercontent.com/nyrthoughts/anti-slop-design/main/skills/anti-slop-ui/SKILL.md ; https://raw.githubusercontent.com/claudiusararu/unslop-ui-skill/main/TELLS.md ; https://raw.githubusercontent.com/wpgaurav/design-slop/main/SKILL.md ; https://awesome-copilot.github.com/skill/anti-ui-slop/ . Source register is a documentary synthesis, not an effectiveness or security benchmark.
+
+## Follow-up gap audit — 2026-11-27
+
+Verified plugin v1.12.0 lacked explicit audit and core routing, central learning entry and README summary, specific diagnostics and source revisions. Follow-up release v1.12.1 (`pluginrel_6b09e5f551d081918db2da91982f29e9`) adds a diagnostic playbook, 18 concrete examples, five proposed validation fixtures, README and audit routing. Source file readback below records Git blob SHA (not commit SHA); all sources are community guidance, not norms. No external scripts or hooks executed.
+
+| Direct source path | Retrieved blob SHA |
+|---|---|
+| https://github.com/pbakaus/impeccable/blob/main/plugin/skills/impeccable/SKILL.md | 3b8f11f8499e7c1412a930d0ebadb2429d3e4df9 |
+| https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/SKILL.md | 7dc7a9fed097364515581a28ec45ef955620eede |
+| https://github.com/heydamir/unslop/blob/main/skills/unslop/SKILL.md | 93eed69f2a91b28035e91998a641d6a3faf9b62e |
+| https://github.com/ibelick/ui-skills/blob/main/skills/baseline-ui/SKILL.md | 98477ee0f2e9cc7506453ee5aa9f88d1d033ab2f |
+| https://github.com/emilkowalski/skills/blob/main/skills/emil-design-eng/SKILL.md | 5155a4bf33e99028645dbdad4c049a3d209b1f21 |
+| https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/ui-ux-pro-max/SKILL.md | 64366d50b96911a3d9f29d898371fa4b29d28c3e |
+| https://github.com/elayadesign/ai-design-skills/blob/main/skills/figma-designer/SKILL.md | d9aba588919e3dccee89355df8fa8501c2e92eae |
+| https://github.com/funboy322/avoid-ai-design/blob/main/SKILL.md | 9852e4d47791668714350da5b11dc62524cd135c |
+| https://github.com/marcosnovo/unslop-design/blob/main/SKILL.md | 624eeca88a8b18de18e5cc727a95f6df8a0ba218 |
+| https://github.com/claudiusararu/unslop-ui-skill/blob/main/.claude/skills/no-ai-slop/SKILL.md | fd9f56ff67274d94fb0ea592fa3d6df5ffb48f29 |
+
+New insights: distinguish persuasion/experience from operation/reading, detect-only vs polish/restyle/redesign, grayscale/silhouette checks as clues, explicit exceptions and failed/unavailable QA, logical RTL layout and localization, semantic Figma token aliases and live foundation samples, predictable motion and safe areas. Preserve approved brand, behavior and accessibility; avoid universal aesthetic bans. Proposed fixtures: legitimate conventional design vs gratuitous template, marketing vs workspace, feature-regression form, static vs rendered evidence, localization/RTL/mobile. Remaining: central learning record and core route, Frontend Craft skill path (root returned 404), all nested catalogs/scripts and runtime/participant validation. No full recursive coverage claimed.
