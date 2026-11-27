@@ -5,10 +5,10 @@
   "desired_version": "0.8.16",
   "last_published_release_id": null,
   "last_published_version": "0.8.16",
-  "status": "verification-pending-readback",
-  "note": "Previous 28-file verified mirror remained byte-identical by Git blob SHA comparison; four manifests and one new skill copied from the private 0.8.16 release. Public readback pending. Private release identifier not exported. Local runtime not tested.",
-  "verified_files": 24,
-  "byte_identical_files": 24,
+  "status": "verified-synced",
+  "note": "Four manifests and the new skill compared byte-for-byte with private 0.8.16 release after publication; 24 retained source files unchanged by Git blob SHA against the previous verified mirror. Private release identifier not exported. Local runtime not tested.",
+  "verified_files": 29,
+  "byte_identical_files": 29,
   "json_semantic_equivalent_files": [],
-  "verified_commit": "c726bdad782d984be25402b60b69e6c122ff4773"
+  "verified_commit": "79ba80183c12d1185e7cdb056f455a2da2c3c993"
 }
