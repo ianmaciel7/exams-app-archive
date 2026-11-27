@@ -65,3 +65,31 @@ Sources: [wheeler](https://www.wiley.com/en-sg/designing-brand-identity-a-compre
 
 - [Design foundations](design-foundations-and-state-transitions-2026-11-25.md)
 - [Rendered color validation](color-roles-browser-validation-2026-11-26.md)
+
+## Color-specific UX laws and perceptual effects — supplemental research
+
+### Gestalt similarity, figure-ground and competing cues (color-gestalt-grouping)
+
+Similar hues can group objects; figure-ground and proximity can reinforce or compete. Apply consistent color to equivalent roles and combine labels/shape/spacing; test whether users identify the groups correctly. **Limit:** Perceptual grouping is context-sensitive, not an exclusive color law.
+
+Sources: [Wagemans et al. — A century of Gestalt psychology](https://pubmed.ncbi.nlm.nih.gov/22845751/); [Grouping by proximity or similarity?](https://pubmed.ncbi.nlm.nih.gov/9797920/). Search excerpts/abstracts reviewed 2026-11-27.
+
+### Preattentive features, selective attention and Guided Search 6.0 (color-visual-search)
+
+Hue can guide visual search; top-down goals, bottom-up salience, history, reward and scene context influence priority. Compare time to find and error rates with matched distractors; avoid competing accent colors. **Limit:** Guidance is not a guarantee of instantaneous detection; Guided Search 6.0 is a newer model, not a normative standard.
+
+Sources: [Wolfe — Guided Search 6.0](https://doi.org/10.3758/s13423-020-01859-9); [Wolfe — Visual Search](https://doi.org/10.1146/annurev-vision-091718-015048). Search excerpts/abstracts reviewed 2026-11-27.
+
+### Von Restorff isolation versus salience (color-isolation-memory)
+
+Distinctiveness can improve memory in isolation paradigms; visual salience and memory are separate outcomes. Use a distinct meaningful accent sparingly, measure detection and recall separately. **Limit:** Does not establish conversion or task success.
+
+Sources: [What explains the von Restorff effect?](https://www.sciencedirect.com/science/article/pii/S0749596X17300864); [Wolfe — Guided Search 6.0](https://doi.org/10.3758/s13423-020-01859-9). Search excerpts/abstracts reviewed 2026-11-27.
+
+### Simultaneous color contrast and chromatic adaptation (color-context-adaptation)
+
+Surround changes perceived color; temporal adaptation and contextual induction are distinct contributors. Compare the same token on actual surfaces, themes and ambient viewing conditions; validate separately from numerical WCAG contrast. **Limit:** Mechanisms and magnitude depend on conditions; do not infer a universal correction factor.
+
+Sources: [Basic characteristics of simultaneous color contrast revisited](https://pubmed.ncbi.nlm.nih.gov/22983761/); [An empirical explanation of color contrast](https://pmc.ncbi.nlm.nih.gov/articles/PMC18850/). Search excerpts/abstracts reviewed 2026-11-27.
+
+Weber, Weber–Fechner and Stevens are psychophysical models, not universal design-token spacing or contrast formulas. Existing Laws of UX catalog covers similarity, selective attention and Von Restorff; do not count these as new laws. Feature Integration Theory is a historical model; Guided Search 6.0 supplements earlier models. WCAG 2.2 remains distinct normative accessibility guidance.
