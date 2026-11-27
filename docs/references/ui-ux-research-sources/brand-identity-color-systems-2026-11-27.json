@@ -1,0 +1,199 @@
+{
+  "id": "brand-identity-color-systems-2026-11-27",
+  "date": "2026-11-27",
+  "scope": "public excerpts and original synthesis; no product audit",
+  "records": [
+    {
+      "id": "brand-strategy-identity",
+      "title": "Brand strategy and identity",
+      "definition": "Define audience, problem, competitive alternatives, positioning, promise, personality and brand architecture; use research and brief before visual explorations. Separate brand voice, logo, typography, imagery, color and motion; build usage rules for product, marketing and print. Compare 2–3 directions against same brief, not arbitrary hue associations. Test recognition, differentiation and task performance; obtain owner approval.",
+      "source_ids": [
+        "wheeler",
+        "ibm-color"
+      ],
+      "limit": "Method synthesis; no universal number of alternatives."
+    },
+    {
+      "id": "color-harmony",
+      "title": "Color theory and harmony",
+      "definition": "Hue, lightness/value, chroma and saturation are distinct; tint/shade/tone are traditional mixing concepts, not exact CSS operations. Explore monochromatic, analogous, complementary, split-complementary, triadic, tetradic and square harmonies as hypotheses. Wheel angles depend on chosen color model. Vary hierarchy and surface area; compare identical foreground colors on differing surrounds (simultaneous contrast).",
+      "source_ids": [
+        "adobe-harmony",
+        "albers"
+      ],
+      "limit": "Educational methods, not accessibility guarantees or causal laws."
+    },
+    {
+      "id": "color-psychology",
+      "title": "Color perception and psychology",
+      "definition": "Color can influence affect, cognition and behavior; context, culture, task, prior learning and stimulus properties moderate effects. Do not claim blue always means trust or red always means danger. Test matched alternatives with representative users, neutral wording, counterbalanced order, controlled contrast and recorded uncertainty.",
+      "source_ids": [
+        "elliot-maier",
+        "albers"
+      ],
+      "limit": "Review abstract explicitly notes limits to generalization; no full-paper audit."
+    },
+    {
+      "id": "color-science",
+      "title": "Color science and reproduction",
+      "definition": "RGB is additive; CMYK device/print-dependent subtractive process. HSL/HSV are useful selection models, not perceptually uniform. CIE XYZ/Lab/LCH and Oklab/OKLCH describe color differently; OKLCH L is perceptual lightness, C chroma, H hue, not WCAG luminance. sRGB and Display P3 have different gamuts. Specify target space, white point/profile where relevant, gamut-map and verify output; for print use actual ICC profiles and proof, not universal RGB-to-CMYK conversion. CSS Color 4/5 maturity and browser support are separate.",
+      "source_ids": [
+        "css4-2026",
+        "css5-2026",
+        "icc",
+        "icc-cie"
+      ],
+      "limit": "Draft specifications are not guarantees of browser behavior."
+    },
+    {
+      "id": "color-system-engineering",
+      "title": "Color system engineering",
+      "definition": "Choose seed, neutrals and distinct semantic families; derive ramps with target gamut, role contrast and usable chroma. Map primitive → semantic → component/state tokens; retain on-color pairs. Brand logo may differ from action accent. Material tonal palettes, Radix 12-step role scales and IBM 12 grades are distinct conventions, not interchangeable. Use semantic roles for surface/text/border/action/status/selection/focus/data; specify default/hover/pressed/disabled/selected/invalid and theme mappings. Check alpha against actual backdrop, gradients at worst case, and forced colors.",
+      "source_ids": [
+        "material-tonal",
+        "radix-scale",
+        "ibm-color",
+        "carbon-color",
+        "css4-2026"
+      ],
+      "limit": "No mandatory ramp count or 60/30/10 ratio."
+    },
+    {
+      "id": "color-accessibility-evaluation",
+      "title": "Accessibility and evaluation",
+      "definition": "WCAG 2.2 AA normal text 4.5:1; large text 3:1; applicable non-text cues 3:1 against adjacent colors. Evaluate exceptions and exact pairs without rounding up. Redundant labels/icons/patterns; test color-vision simulation, keyboard focus, forced colors, both themes, screenshots and assistive technology. Categorical/sequential/diverging encodings by data semantics. Contrast automation is necessary but not sufficient.",
+      "source_ids": [
+        "wcag",
+        "wcag-nontext",
+        "carbon-color"
+      ],
+      "limit": "APCA is not a WCAG 2.2 substitute; actual product audit still required."
+    },
+    {
+      "id": "color-governance",
+      "title": "Governance and handoff",
+      "definition": "Record role, value, color space, allowed pairs, forbidden uses, theme overrides, contrast tests, owner and source. Review changes with versioned token diff, alias resolution, visual regression and migration plan; maintain brand guidelines separate from product tokens and cross-reference them. Tools: Adobe palette guidance for exploration; browser rendered fixtures and existing archive test suite for verification. Track unresolved issues and compare same tasks before/after.",
+      "source_ids": [
+        "wheeler",
+        "carbon-color",
+        "css4-2026",
+        "wcag"
+      ],
+      "limit": "Proposed operational workflow; no claim that tests were run here."
+    }
+  ],
+  "sources": [
+    {
+      "id": "wheeler",
+      "title": "Wiley — Designing Brand Identity, 6th ed.",
+      "url": "https://www.wiley.com/en-sg/designing-brand-identity-a-comprehensive-guide-to-the-world-of-brands-and-branding-6th-edition-p-9781119984818",
+      "status": "publisher contents; book not read",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "albers",
+      "title": "Yale — Interaction of Color",
+      "url": "https://yalebooks.yale.edu/book/9780300179354/interaction-of-color/",
+      "status": "publisher description; book not read",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "elliot-maier",
+      "title": "Elliot & Maier 2014, Annual Review of Psychology",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23808916/",
+      "status": "peer-reviewed review abstract",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "adobe-harmony",
+      "title": "Adobe — Colour Palette Guide",
+      "url": "https://www.adobe.com/uk/creativecloud/design/discover/color-palette.html",
+      "status": "educational guidance",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "css4-2026",
+      "title": "W3C CSS Color 4, 2026-10-29 CRD",
+      "url": "https://www.w3.org/TR/2026/CRD-css-color-4-20261029/",
+      "status": "candidate recommendation draft",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "css5-2026",
+      "title": "W3C CSS Color 5, 2026-11-16",
+      "url": "https://www.w3.org/TR/2026/WD-css-color-5-20261116/",
+      "status": "working draft",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "icc",
+      "title": "ICC specifications",
+      "url": "https://www.color.org/icc_specs2/",
+      "status": "official profile specification summary",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "icc-cie",
+      "title": "ICC/CIE colorimetry data",
+      "url": "https://registry.color.org/colorimetry-data/",
+      "status": "official data reference",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "material-tonal",
+      "title": "Material color utilities — dynamic color scheme",
+      "url": "https://github.com/material-foundation/material-color-utilities/blob/main/concepts/dynamic_color_scheme.md",
+      "status": "official library documentation",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "radix-scale",
+      "title": "Radix Colors — Understanding the scale",
+      "url": "https://github.com/radix-ui/website/blob/main/data/colors/docs/palette-composition/understanding-the-scale.mdx",
+      "status": "official library documentation",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "ibm-color",
+      "title": "IBM Design Language — Color",
+      "url": "https://www.ibm.com/design/language/color/",
+      "status": "official brand guidance",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "carbon-color",
+      "title": "Carbon — Color",
+      "url": "https://www.carbondesignsystem.com/building-blocks/foundations/color/overview",
+      "status": "official product guidance",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "wcag",
+      "title": "WCAG 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "status": "normative recommendation, related excerpt reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "wcag-nontext",
+      "title": "W3C Understanding Non-text Contrast",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html",
+      "status": "informative guidance",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    }
+  ]
+}
