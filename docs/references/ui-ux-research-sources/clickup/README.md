@@ -134,3 +134,8 @@ Machine-readable inventory: [inventory.json](inventory.json). Source registry: [
 
 - [Visual system and evidence](visual-system-2026-11-27.md)
 - [Structured visual evidence](visual-system-2026-11-27.json)
+
+## Sixth extraction batch
+
+- [Release-aware flows and motion discovery](flows-motion-2026-11-27.md)
+- [Structured flow and release inventory](flows-motion-2026-11-27.json)

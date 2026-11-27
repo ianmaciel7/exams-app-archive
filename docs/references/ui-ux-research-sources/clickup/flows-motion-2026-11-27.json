@@ -1,0 +1,480 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-27",
+  "baseline_commit": "c6ad8edd3784d3b88e246c8d8517d692cd1ade67",
+  "scope": "Public release/catalog excerpts, documented interaction sequences and video-directory metadata. No media playback.",
+  "source_ids": [
+    "clickup-feature-catalog",
+    "clickup-release-feed",
+    "clickup-videos",
+    "clickup-v4",
+    "clickup-v4-news",
+    "clickup-clips-hub",
+    "clickup-clip-recording",
+    "clickup-clip-limits",
+    "clickup-voice-clips",
+    "clickup-syncup-recordings",
+    "clickup-intro-comments",
+    "clickup-customizable-features",
+    "clickup-demo-video-guide"
+  ],
+  "releases": [
+    {
+      "name": "Artifact remix",
+      "date_as_displayed": "Nov 14",
+      "label": "New",
+      "description": "Independent copy of artifact; original stays intact.",
+      "source_id": "clickup-release-feed"
+    },
+    {
+      "name": "LaTeX",
+      "date_as_displayed": "Nov 14",
+      "label": "Out of Labs",
+      "description": "Equation rendering in rich text and Doc exports.",
+      "source_id": "clickup-release-feed"
+    },
+    {
+      "name": "Timeline hours scale",
+      "date_as_displayed": "Nov 14",
+      "label": "Out of Labs",
+      "description": "15, 30 or 60-minute scheduling intervals.",
+      "source_id": "clickup-release-feed"
+    },
+    {
+      "name": "Deep Research",
+      "date_as_displayed": "Nov 9",
+      "label": "New feature",
+      "description": "Research spans workspace, connections and web; report includes sources.",
+      "source_id": "clickup-release-feed"
+    },
+    {
+      "name": "Task settings menu",
+      "date_as_displayed": "Nov 9",
+      "label": "New feature",
+      "description": "Context menu for object operations.",
+      "source_id": "clickup-release-feed"
+    },
+    {
+      "name": "Agent Workflows",
+      "date_as_displayed": "Nov 8",
+      "label": "Beta / feed says Out of Labs",
+      "description": "Visual agent steps, branches and approvals; availability ambiguity must be revalidated.",
+      "source_id": "clickup-release-feed"
+    },
+    {
+      "name": "Artifact co-editing",
+      "date_as_displayed": "Nov 8",
+      "label": "New / Out of Labs",
+      "description": "Shared editing and collaborator presence.",
+      "source_id": "clickup-release-feed"
+    }
+  ],
+  "catalog": [
+    {
+      "id": "clickup-live-artifacts",
+      "label": "Beta",
+      "description": "Artifact reads workspace on open; certain changes require approval.",
+      "source_id": "clickup-feature-catalog",
+      "evidence": "vendor catalog; live availability not verified"
+    },
+    {
+      "id": "clickup-artifact-templates",
+      "label": "Beta",
+      "description": "Save as reusable starting point.",
+      "source_id": "clickup-feature-catalog",
+      "evidence": "vendor catalog; live availability not verified"
+    },
+    {
+      "id": "clickup-artifact-walkthroughs",
+      "label": "New",
+      "description": "Vendor describes AI-narrated demo generation.",
+      "source_id": "clickup-feature-catalog",
+      "evidence": "vendor catalog; live availability not verified"
+    },
+    {
+      "id": "clickup-skill-demonstrations",
+      "label": "Unspecified",
+      "description": "Convert recorded or live browser procedures to reusable skills.",
+      "source_id": "clickup-feature-catalog",
+      "evidence": "vendor catalog; live availability not verified"
+    },
+    {
+      "id": "clickup-skill-miner",
+      "label": "Unspecified",
+      "description": "Suggest reusable workflows based on repeated activity.",
+      "source_id": "clickup-feature-catalog",
+      "evidence": "vendor catalog; live availability not verified"
+    },
+    {
+      "id": "clickup-browser-session",
+      "label": "Unspecified",
+      "description": "Visible browser automation steps and saved recording.",
+      "source_id": "clickup-feature-catalog",
+      "evidence": "vendor catalog; live availability not verified"
+    },
+    {
+      "id": "clickup-ai-governance",
+      "label": "New",
+      "description": "Per-user feature, model and credit controls.",
+      "source_id": "clickup-feature-catalog",
+      "evidence": "vendor catalog; live availability not verified"
+    },
+    {
+      "id": "clickup-ai-usage-dashboard",
+      "label": "Unspecified",
+      "description": "Workspace AI credit and run activity reporting.",
+      "source_id": "clickup-feature-catalog",
+      "evidence": "vendor catalog; live availability not verified"
+    },
+    {
+      "id": "clickup-brain-voice",
+      "label": "Beta",
+      "description": "Live voice in Ask AI sidebar via Labs.",
+      "source_id": "clickup-feature-catalog",
+      "evidence": "vendor catalog; live availability not verified"
+    },
+    {
+      "id": "clickup-cursor-agents",
+      "label": "Beta",
+      "description": "External coding agents assigned work with progress shown.",
+      "source_id": "clickup-feature-catalog",
+      "evidence": "vendor catalog; live availability not verified"
+    },
+    {
+      "id": "clickup-deep-search",
+      "label": "Unspecified",
+      "description": "Multi-step search across connected and workspace data.",
+      "source_id": "clickup-feature-catalog",
+      "evidence": "vendor catalog; live availability not verified"
+    }
+  ],
+  "flows": [
+    {
+      "id": "clickup-clip-record",
+      "title": "Capture workflow",
+      "source_ids": [
+        "clickup-clip-recording"
+      ],
+      "documented_sequence": [
+        "entry from context",
+        "screen/window/tab and audio choice",
+        "browser permission",
+        "3-second countdown",
+        "recording",
+        "pause/restart/discard or stop",
+        "saved with preview/link/task actions"
+      ],
+      "proposed_qa": "Test denied permission, cancellation before start, interrupted recording, upload pending/error, duplicate save, recording privacy and visible indicators.",
+      "evidence": "official help text; not runtime playback or measurement"
+    },
+    {
+      "id": "clickup-clip-transcript",
+      "title": "Media transcript navigation",
+      "source_ids": [
+        "clickup-clip-recording"
+      ],
+      "documented_sequence": [
+        "open recording",
+        "show transcript sidebar",
+        "choose timestamped snippet",
+        "seek playback",
+        "copy snippet or all"
+      ],
+      "proposed_qa": "Test keyboard navigation, transcript processing/empty/failure, timing alignment, access and copy feedback.",
+      "evidence": "official help text; not runtime playback or measurement"
+    },
+    {
+      "id": "clickup-clip-review",
+      "title": "Temporal annotations",
+      "source_ids": [
+        "clickup-clip-recording"
+      ],
+      "documented_sequence": [
+        "open preview",
+        "add comment",
+        "choose playback position and point",
+        "draft",
+        "send or assign",
+        "navigate via timeline marker"
+      ],
+      "proposed_qa": "Test comments on seek, assigned item resolution, permission, empty comments and hidden resolved state.",
+      "evidence": "official help text; not runtime playback or measurement"
+    },
+    {
+      "id": "clickup-clip-share",
+      "title": "Share and embed",
+      "source_ids": [
+        "clickup-clip-recording"
+      ],
+      "documented_sequence": [
+        "open saved recording",
+        "copy link",
+        "paste URL into rich text",
+        "embedded player"
+      ],
+      "proposed_qa": "Vendor says link holders can access Clip; test disclosure, revocation, recipient permission and no unintended public exposure. Do not assume private by default.",
+      "evidence": "official help text; not runtime playback or measurement"
+    },
+    {
+      "id": "clickup-column-resize",
+      "title": "Column boundary resize",
+      "source_ids": [
+        "clickup-list-customize"
+      ],
+      "documented_sequence": [
+        "pointer at header edge",
+        "drag to desired width",
+        "release"
+      ],
+      "proposed_qa": "Documented action, GIF inaccessible. Measure width, min/max, persistence, keyboard alternative and layout behavior only after runtime capture.",
+      "evidence": "official help text; not runtime playback or measurement"
+    },
+    {
+      "id": "clickup-canvas-connect",
+      "title": "Canvas connection and snapping",
+      "source_ids": [
+        "clickup-whiteboard-items"
+      ],
+      "documented_sequence": [
+        "select arrow tool",
+        "drag from source toward target",
+        "guide appears",
+        "release to snap",
+        "adjust or disconnect endpoint"
+      ],
+      "proposed_qa": "Test zoom, target hit region, cancellation, anchor persistence, undo, keyboard equivalent and reduced motion.",
+      "evidence": "official help text; not runtime playback or measurement"
+    },
+    {
+      "id": "clickup-canvas-rotate",
+      "title": "Rotation affordance",
+      "source_ids": [
+        "clickup-whiteboard-items"
+      ],
+      "documented_sequence": [
+        "select object",
+        "hover near corner",
+        "rotation cursor",
+        "drag",
+        "release"
+      ],
+      "proposed_qa": "Test touch, snapping, keyboard alternative, rotation bounds and cancel.",
+      "evidence": "official help text; not runtime playback or measurement"
+    },
+    {
+      "id": "clickup-canvas-cursor-chat",
+      "title": "Ephemeral cursor message",
+      "source_ids": [
+        "clickup-whiteboard-items"
+      ],
+      "documented_sequence": [
+        "invoke cursor chat",
+        "type",
+        "move cursor",
+        "message disappears after a few seconds or click"
+      ],
+      "proposed_qa": "Exact duration not stated. Test screen reader visibility, focus, dismissal, reduced motion, user consent and history expectations.",
+      "evidence": "official help text; not runtime playback or measurement"
+    },
+    {
+      "id": "clickup-personal-preferences",
+      "title": "User-controlled feedback and performance",
+      "source_ids": [
+        "clickup-my-settings"
+      ],
+      "documented_sequence": [
+        "open settings",
+        "toggle toast/confetti/keyboard/Markdown or performance",
+        "refresh if required"
+      ],
+      "proposed_qa": "Test persistence, effects on essential error feedback, system reduced motion, and performance trade-offs; not a compliance claim.",
+      "evidence": "official help text; not runtime playback or measurement"
+    }
+  ],
+  "videos": [
+    {
+      "title": "Chat View",
+      "listed_duration": "1:54",
+      "source_id": "clickup-videos",
+      "status": "directory-metadata-only",
+      "version": "unverified; may be legacy"
+    },
+    {
+      "title": "Board View",
+      "listed_duration": "3:03",
+      "source_id": "clickup-videos",
+      "status": "directory-metadata-only",
+      "version": "unverified; may be legacy"
+    },
+    {
+      "title": "Form View",
+      "listed_duration": "5:00",
+      "source_id": "clickup-videos",
+      "status": "directory-metadata-only",
+      "version": "unverified; may be legacy"
+    },
+    {
+      "title": "Box View",
+      "listed_duration": "4:12",
+      "source_id": "clickup-videos",
+      "status": "directory-metadata-only",
+      "version": "unverified; may be legacy"
+    },
+    {
+      "title": "Calendar View",
+      "listed_duration": "6:59",
+      "source_id": "clickup-videos",
+      "status": "directory-metadata-only",
+      "version": "unverified; may be legacy"
+    },
+    {
+      "title": "Timeline View",
+      "listed_duration": "3:58",
+      "source_id": "clickup-videos",
+      "status": "directory-metadata-only",
+      "version": "unverified; may be legacy"
+    },
+    {
+      "title": "Doc View",
+      "listed_duration": "5:05",
+      "source_id": "clickup-videos",
+      "status": "directory-metadata-only",
+      "version": "unverified; may be legacy"
+    },
+    {
+      "title": "Workload View",
+      "listed_duration": "8:24",
+      "source_id": "clickup-videos",
+      "status": "directory-metadata-only",
+      "version": "unverified; may be legacy"
+    },
+    {
+      "title": "Map View",
+      "listed_duration": "4 min",
+      "source_id": "clickup-videos",
+      "status": "directory-metadata-only",
+      "version": "unverified; may be legacy"
+    },
+    {
+      "title": "Gantt View",
+      "listed_duration": "5 min",
+      "source_id": "clickup-videos",
+      "status": "directory-metadata-only",
+      "version": "unverified; may be legacy"
+    },
+    {
+      "title": "Bulk Action Toolbar",
+      "listed_duration": "2:17",
+      "source_id": "clickup-videos",
+      "status": "directory-metadata-only",
+      "version": "unverified; may be legacy"
+    },
+    {
+      "title": "Sprints ClickApp",
+      "listed_duration": "8 min",
+      "source_id": "clickup-videos",
+      "status": "directory-metadata-only",
+      "version": "unverified; may be legacy"
+    },
+    {
+      "title": "Automations",
+      "listed_duration": "4:21",
+      "source_id": "clickup-videos",
+      "status": "directory-metadata-only",
+      "version": "unverified; may be legacy"
+    },
+    {
+      "title": "Milestones",
+      "listed_duration": "1:53",
+      "source_id": "clickup-videos",
+      "status": "directory-metadata-only",
+      "version": "unverified; may be legacy"
+    },
+    {
+      "title": "Chrome Extension",
+      "listed_duration": "3:17",
+      "source_id": "clickup-videos",
+      "status": "directory-metadata-only",
+      "version": "unverified; may be legacy"
+    },
+    {
+      "title": "Home/Inbox",
+      "listed_duration": "1:53",
+      "source_id": "clickup-videos",
+      "status": "directory-metadata-only",
+      "version": "unverified; may be legacy"
+    },
+    {
+      "title": "LineUp",
+      "listed_duration": "1:43",
+      "source_id": "clickup-videos",
+      "status": "directory-metadata-only",
+      "version": "unverified; may be legacy"
+    },
+    {
+      "title": "Mind Maps",
+      "listed_duration": "4 min",
+      "source_id": "clickup-videos",
+      "status": "directory-metadata-only",
+      "version": "unverified; may be legacy"
+    },
+    {
+      "title": "Assignees",
+      "listed_duration": "2 min",
+      "source_id": "clickup-videos",
+      "status": "directory-metadata-only",
+      "version": "unverified; may be legacy"
+    },
+    {
+      "title": "Image & Doc Proofing",
+      "listed_duration": "1 min",
+      "source_id": "clickup-videos",
+      "status": "directory-metadata-only",
+      "version": "unverified; may be legacy"
+    },
+    {
+      "title": "Formula Fields",
+      "listed_duration": "7 min",
+      "source_id": "clickup-videos",
+      "status": "directory-metadata-only",
+      "version": "unverified; may be legacy"
+    },
+    {
+      "title": "Dashboards",
+      "listed_duration": "7 min",
+      "source_id": "clickup-videos",
+      "status": "directory-metadata-only",
+      "version": "unverified; may be legacy"
+    },
+    {
+      "title": "Pulse",
+      "listed_duration": "1 min",
+      "source_id": "clickup-videos",
+      "status": "directory-metadata-only",
+      "version": "unverified; may be legacy"
+    },
+    {
+      "title": "Email ClickApp",
+      "listed_duration": "4 min",
+      "source_id": "clickup-videos",
+      "status": "directory-metadata-only",
+      "version": "unverified; may be legacy"
+    }
+  ],
+  "failed_media": [
+    {
+      "url": "https://help.clickup.com/hc/article_attachments/44225755104407",
+      "source_id": "clickup-list-customize",
+      "status": "web-retry-rejected-image/gif; local-request-DNS-failure",
+      "verified": "article explicitly labels GIF and describes drag resize",
+      "unverified": "file bytes, frame count, durations, easing, screenshot sequence"
+    }
+  ],
+  "remaining": [
+    "No full Help Center article denominator or exhaustive extraction",
+    "No official GIF/video frame decoding, captured runtime or motion measurements",
+    "Release feed visible excerpt only; Show more not traversed",
+    "Video titles/durations are metadata, not verified visual evidence or current version",
+    "No computed app CSS, accessibility tests or private session"
+  ]
+}

@@ -367,6 +367,17 @@
       "interaction_count": 10,
       "opened_visual_count": 4,
       "failed_visual_count": 3
+    },
+    {
+      "id": "flows-motion-2026-11-27",
+      "path": "flows-motion-2026-11-27.json",
+      "source_count": 13,
+      "flow_count": 9,
+      "release_observation_count": 7,
+      "feature_observation_count": 11,
+      "video_directory_count": 24,
+      "opened_visual_count": 0,
+      "failed_media_retry_count": 1
     }
   ]
 }

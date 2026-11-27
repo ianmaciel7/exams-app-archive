@@ -3678,6 +3678,136 @@
       "notes": "Marketing page hierarchy analysis; not application CSS.",
       "recorded_on": "2026-11-27",
       "storage": "link-only"
+    },
+    {
+      "id": "clickup-feature-catalog",
+      "title": "ClickUp product feature catalog",
+      "url": "https://clickup.com/features?gad=1",
+      "kind": "official-documentation",
+      "status": "verified",
+      "notes": "Vendor feature/plan listing including AI governance, skills, live artifacts, browser sessions; not runtime verification.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-release-feed",
+      "title": "ClickUp product update feed",
+      "url": "https://clickup.com/features/feed",
+      "kind": "official-release-feed",
+      "status": "verified",
+      "notes": "Visible feed excerpt dated Nov 8–14; remaining updates behind Show more. Release labels and beta may coexist.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-videos",
+      "title": "ClickUp video library",
+      "url": "https://clickup.com/videos",
+      "kind": "official-video-directory",
+      "status": "verified",
+      "notes": "Tutorial directory with titles and displayed durations, including legacy 2.0. No playback performed.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-v4",
+      "title": "ClickUp 4.0 product page",
+      "url": "https://clickup.com/v4",
+      "kind": "official-documentation",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Vendor product positioning and navigation overview.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-v4-news",
+      "title": "ClickUp 4.0 announcement",
+      "url": "https://clickup.com/news/clickup-4-0",
+      "kind": "official-documentation",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Version announcement and personalized navigation.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-clips-hub",
+      "title": "Clips Hub",
+      "url": "https://help.clickup.com/hc/en-us/articles/22210821909271-Clips-Hub",
+      "kind": "official-documentation",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Recording hub and timestamped comments.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-clip-recording",
+      "title": "Clip screen recordings",
+      "url": "https://help.clickup.com/hc/en-us/articles/6311242882967-Clip-screen-recordings",
+      "kind": "official-documentation",
+      "status": "verified",
+      "notes": "Recording state machine, playback, transcript navigation, link sharing.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-clip-limits",
+      "title": "Clips feature availability and limits",
+      "url": "https://help.clickup.com/hc/en-us/articles/32213057971095-Clips-feature-availability-and-limits",
+      "kind": "official-documentation",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Plan-dependent feature availability.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-voice-clips",
+      "title": "Record, send, and transcribe Voice Clips",
+      "url": "https://help.clickup.com/hc/en-us/articles/9810744743703-Record-send-and-transcribe-Voice-Clips",
+      "kind": "official-documentation",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Audio comments and transcription.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-syncup-recordings",
+      "title": "Access, share, and comment on SyncUp recordings",
+      "url": "https://help.clickup.com/hc/en-us/articles/31511366484759-Access-share-and-comment-on-SyncUp-recordings",
+      "kind": "official-documentation",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Meeting recording playback, comments and sharing.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-intro-comments",
+      "title": "Intro to comments",
+      "url": "https://help.clickup.com/hc/en-us/articles/6309646134295-Intro-to-comments",
+      "kind": "official-documentation",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Video and voice recording from comment composer.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-customizable-features",
+      "title": "Customizable ClickUp features",
+      "url": "https://help.clickup.com/hc/en-us/articles/9559764679831-Customizable-ClickUp-features",
+      "kind": "official-documentation",
+      "status": "search-result reviewed; full article pending",
+      "notes": "General product feature behavior.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-demo-video-guide",
+      "title": "Product demo video guide",
+      "url": "https://clickup.com/blog/how-to-create-product-demo-video/",
+      "kind": "vendor-editorial",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Editorial pointer to 4.0 product demonstration; no video inspected.",
+      "recorded_on": "2026-11-27",
+      "storage": "link-only"
     }
   ]
 }
