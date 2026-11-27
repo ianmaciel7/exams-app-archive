@@ -70,3 +70,15 @@ Publisher catalog and preview pages confirmed in search; no full paid text acces
 - Laws of UX 2e Portuguese https://www.oreilly.com/library/view/leis-de-ux/9798341636989/ ; author public site https://lawsofux.com/book/ .
 - Publisher subscription/trial https://www.oreilly.com/online-learning/individuals (10-day trial advertised; eligibility and terms apply). Library lending catalog for older Designing Interfaces edition https://www.overdrive.com/media/595905/designing-interfaces ; actual loan availability depends on library.
 Do not bypass access controls or treat preview navigation as full chapter access. No full texts, artwork, complete TOCs or restricted assets retained. No plugin release or index rebuild in this discovery.
+
+## Markdown research candidates — 2026-11-27
+
+Targeted public search for Markdown source notes and legitimate companion material. No authorized complete Markdown edition of the prioritized O'Reilly books located in this search. New leads, link-only until source and license review:
+- https://github.com/Kevinchamplin/claude-skills/blob/main/ux-designer/references/02-laws-of-ux.md — community Markdown reference about psychology and UX laws.
+- https://joamatab.github.io/book-notes/information-architecture.html — rendered reading notes attributed on the page to Michael Parker; original Markdown file not verified.
+- https://github.com/Atyab124/production-framework/blob/main/docs/research/agent-design-ux-design.md — secondary synthesis citing Information Architecture 4e; not the book.
+- https://github.com/BenVanZee/ux-review — advertises 48 heuristics and six book-specific reference files; actual coverage and license require audit.
+- https://github.com/natenberenstein/deep-dive-ui-ux/blob/main/resources/books-and-papers.md — reading list and takeaways; previously registered repository, not new full text.
+- https://github.com/RizwanZafaris/product-manager-OS/blob/main/docs/REFERENCES-DESIGN.md — additional candidate for source provenance and reuse classification; community policy, not legal authority.
+- https://www.oreilly.com/library/view/designing-ai-interfaces/9798341639812/ch01.html — publisher preview, not Markdown or full access.
+Create independent, concise Markdown research notes from permitted sources rather than copying commercial books. No full-text extraction, plugin publication or catalog rebuild performed in this lookup.
