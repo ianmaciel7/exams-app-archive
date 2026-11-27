@@ -94,3 +94,5 @@ No claims of a market-share ranking or universal effectiveness. Primary document
 ## App Shell taxonomy — 2026-11-27
 
 - [App Shell taxonomy and gap review](../ui-ux-research-sources/app-shell-taxonomy-2026-11-27.md): geometry, navigation topology, pane relationships, workspace management and domain compositions; 18 gap records with sources and QA. Not a universal taxonomy or runtime validation.
+
+- [Selection guide](../ui-ux-research-sources/app-shell-selection-guide-2026-11-27.md): decision and rejection criteria for 48 prior labels, additional dimensions, responsive policy and acceptance criteria. Indexed as 27 app-shell taxonomy records total (18 prior + 9 new); general register contains 175 patterns and 711 source records at this update. Both private plugins read back (UX 1.10.42; Exams Archive 0.8.23). Catalog validation does not imply full CI execution or live UI testing.
