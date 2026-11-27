@@ -18,9 +18,9 @@ class AppShellTaxonomyTests(unittest.TestCase):
         taxonomy = concept_packs.load_taxonomy()
         concepts = concept_packs.validate(taxonomy, rows)
         concept = concepts["ui.layout.app-shell"]
-        self.assertGreaterEqual(len(shells), 18)
+        self.assertGreaterEqual(len(shells), 27)
         self.assertEqual(set(concept["members"]), set(shells))
-        for alias in ("tipos de app shell", "app shell taxonomy", "app shell", "app-shell", "shell de aplicação"):
+        for alias in ("tipos de app shell", "app shell taxonomy", "app shell", "app-shell", "shell de aplicação", "como escolher app shell", "app shell selection"):
             self.assertEqual(concept_packs.resolve(alias, concepts), [concept["id"]])
         self.assertTrue(all(r["sources"] and r["confidence"] for r in shells.values()))
         self.assertTrue(research_index.verify_record_provenance(list(shells.values()))["integrity_passed"])
@@ -31,6 +31,12 @@ class AppShellTaxonomyTests(unittest.TestCase):
                 ("painel auxiliar", "general:shell.supporting-pane"),
                 ("múltiplas janelas", "general:shell.multi-window"),
                 ("list detail detail", "general:shell.list-detail-detail"),
+                ("SDI", "general:shell.sdi"),
+                ("MDI", "general:shell.mdi"),
+                ("TDI", "general:shell.tdi"),
+                ("faixa de opções", "general:shell.ribbon"),
+                ("mapa e lista", "general:shell.map-list"),
+                ("como escolher app shell", "general:shell.selection-method"),
             ):
                 matches = research_index.search(db, query, "pattern", limit=100)
                 self.assertIn(ident, {row["id"] for row in matches}, query)
