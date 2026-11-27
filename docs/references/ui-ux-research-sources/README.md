@@ -197,4 +197,4 @@ Registrar URLs originais e redirects, datas de consulta, fonte e status (verific
 
 ## Brand identity and color systems
 
-- [Decision guide](brand-identity-color-systems-2026-11-27.md) and [structured records](brand-identity-color-systems-2026-11-27.json): seven frameworks bridging brand strategy, theory, color psychology, science, system engineering, accessibility and governance. Search excerpts reviewed; no full-book audit or product tests.
+- [Decision guide](brand-identity-color-systems-2026-11-27.md) and [structured records](brand-identity-color-systems-2026-11-27.json): 17 structured records and 34 sources bridging brand strategy, harmony, psychology, science, engineering, accessibility, governance and visual perception, including Stroop interference, opponent processing, constancy, CIECAM16, color discrimination and Feature Congestion. Public abstracts and excerpts reviewed; no full-book/standard audit or product tests.
