@@ -184,3 +184,9 @@ Registrar URLs originais e redirects, datas de consulta, fonte e status (verific
 ## Generative UI research examples
 
 [Google Research reference](google-research-generative-ui-evidence-2026-11-26.md) · [JSON](google-research-generative-ui-evidence-2026-11-26.json)
+
+## Product-specific research: ClickUp
+
+- [Initial coverage audit](clickup-coverage-audit-2026-11-27.md)
+- [Expanded ClickUp interaction inventory](clickup/README.md) — official-source summaries, visual links, and explicit runtime gaps.
+- [Machine-readable ClickUp inventory](clickup/inventory.json)

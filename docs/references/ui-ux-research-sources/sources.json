@@ -1658,6 +1658,1136 @@
       "status": "verified",
       "notes": "Conditional rules.",
       "storage": "link-only"
+    },
+    {
+      "id": "clickup-global-nav",
+      "title": "ClickUp Help — What is Global Navigation",
+      "url": "https://help.clickup.com/hc/en-us/articles/32050886697495-What-is-Global-Navigation",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Global navigation persists across contexts.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-home-sidebar",
+      "title": "ClickUp Help — What is the Home Sidebar",
+      "url": "https://help.clickup.com/hc/en-us/articles/32057009861271-What-is-the-Home-Sidebar",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Personal pages, hierarchy and favorites.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-sidebar-defaults",
+      "title": "ClickUp Help — Default Home Sidebar sections and settings",
+      "url": "https://help.clickup.com/hc/en-us/articles/32854720651543-Default-Home-Sidebar-sections-and-settings",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Default section configuration.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-sidebar-custom",
+      "title": "ClickUp Help — Create custom Home Sidebar sections",
+      "url": "https://help.clickup.com/hc/en-us/articles/32855333466903-Create-custom-Home-Sidebar-sections",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Custom sections and contextual plus controls.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-sidebar-search",
+      "title": "ClickUp Help — Create and search items in the Home and Spaces Sidebars",
+      "url": "https://help.clickup.com/hc/en-us/articles/32490367010839-Create-and-search-items-in-the-Home-and-Spaces-Sidebars",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Search and create inside sidebars.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-favorites",
+      "title": "ClickUp Help — Favorites",
+      "url": "https://help.clickup.com/hc/en-us/articles/6308862167575-Favorites",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Pin frequently used items.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-location-header",
+      "title": "ClickUp Help — Expand the location header",
+      "url": "https://help.clickup.com/hc/en-us/articles/33801223563415-Expand-the-location-header",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Contextual quick actions and expanded location header.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-command",
+      "title": "ClickUp Help — What is the AI Command Bar",
+      "url": "https://help.clickup.com/hc/en-us/articles/6533695640343-What-is-the-AI-Command-Bar",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Global commands, search and AI entry.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-search",
+      "title": "ClickUp Help — Search your Workspace",
+      "url": "https://help.clickup.com/hc/en-us/articles/6311703331479-Search-your-Workspace",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Workspace and connected search.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-search-filter",
+      "title": "ClickUp Help — Sort and filter AI Command Bar results",
+      "url": "https://help.clickup.com/hc/en-us/articles/12609594406679-Sort-and-filter-AI-Command-Bar-results",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Pinned type/location filters and ordering.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-toolbar",
+      "title": "ClickUp Help — Intro to the toolbar",
+      "url": "https://help.clickup.com/hc/en-us/articles/11583054545303-Intro-to-the-toolbar",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Global toolbar and commands (layout may differ).",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-customize",
+      "title": "ClickUp Help — Customize your ClickUp experience",
+      "url": "https://help.clickup.com/hc/en-us/articles/35709363436823-Customize-your-ClickUp-experience",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Personal preferences and sidebar customization.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-gallery",
+      "title": "ClickUp Help — Create and customize Gallery view",
+      "url": "https://help.clickup.com/hc/en-us/articles/45014882844567-Create-and-customize-Gallery-view",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Responsive image-first cards, cover, density, fields, grouping, save/revert, contextual menu.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-add-view",
+      "title": "ClickUp Help — Add a view",
+      "url": "https://help.clickup.com/hc/en-us/articles/26032576190615-Add-a-view",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Create a view in the context of a location.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-list-customize",
+      "title": "ClickUp Help — Customize List view",
+      "url": "https://help.clickup.com/hc/en-us/articles/7255389296919-Customize-List-view",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Resizable columns and view settings.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-board",
+      "title": "ClickUp Help — Create and share a Board view",
+      "url": "https://help.clickup.com/hc/en-us/articles/6310080798615-Create-and-share-a-Board-view",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Group cards and drag tasks among statuses.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-board-customize",
+      "title": "ClickUp Help — Customize Board view",
+      "url": "https://help.clickup.com/hc/en-us/articles/35342044832279-Customize-Board-view",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Visibility and card configuration.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-table",
+      "title": "ClickUp Help — Create and share a Table view",
+      "url": "https://help.clickup.com/hc/en-us/articles/6329890854935-Create-and-share-a-Table-view",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Pin columns, edit cells and fill down.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-calendar",
+      "title": "ClickUp Help — Intro to Calendar view",
+      "url": "https://help.clickup.com/hc/en-us/articles/6310085740183-Intro-to-Calendar-view",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Navigate calendar periods.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-gantt",
+      "title": "ClickUp Help — Create and share a Gantt view",
+      "url": "https://help.clickup.com/hc/en-us/articles/6310249474967-Create-and-share-a-Gantt-view",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Scheduling and hierarchy.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-timeline",
+      "title": "ClickUp Help — Create and share a Timeline view",
+      "url": "https://help.clickup.com/hc/en-us/articles/6310399909143-Create-and-share-a-Timeline-view",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Grouped rows and time periods.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-mind-map",
+      "title": "ClickUp Help — Create and share a Mind Map",
+      "url": "https://help.clickup.com/hc/en-us/articles/6310295262231-Create-and-share-a-Mind-Map",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Task-based or freeform maps.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-workload",
+      "title": "ClickUp Help — Use Workload view",
+      "url": "https://help.clickup.com/hc/en-us/articles/6310449699735-Use-Workload-view",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Capacity allocation and creation from canvas.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-create-from-views",
+      "title": "ClickUp Help — Create a task from views",
+      "url": "https://help.clickup.com/hc/en-us/articles/31463619842711-Create-a-task-from-views",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Context-derived defaults when creating on a view.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-view-private",
+      "title": "ClickUp Help — Create and share a private view",
+      "url": "https://help.clickup.com/hc/en-us/articles/6310155254039-Create-and-share-a-private-view",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Private view sharing.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-view-export",
+      "title": "ClickUp Help — Export List and Table views",
+      "url": "https://help.clickup.com/hc/en-us/articles/6310174308631-Export-List-and-Table-views",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Export view data.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-tag-filter",
+      "title": "ClickUp Help — Filter tags in views",
+      "url": "https://help.clickup.com/hc/en-us/articles/6310140728855-Filter-tags-in-views",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Tag query filtering.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-task-type",
+      "title": "ClickUp Help — Custom task types",
+      "url": "https://help.clickup.com/hc/en-us/articles/17564381376919-Custom-task-types",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Typed objects with icons and type-specific fields.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-field-types",
+      "title": "ClickUp Help — Custom Field types",
+      "url": "https://help.clickup.com/hc/en-us/articles/6303499162647-Custom-Field-types",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Typed property catalog.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-field-manager",
+      "title": "ClickUp Help — Intro to Custom Field Manager",
+      "url": "https://help.clickup.com/hc/en-us/articles/13066263096727-Intro-to-Custom-Field-Manager",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Manage by type and location.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-field-create",
+      "title": "ClickUp Help — Create Custom Fields",
+      "url": "https://help.clickup.com/hc/en-us/articles/6303481086487-Create-Custom-Fields",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Create custom fields.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-field-by-type",
+      "title": "ClickUp Help — Create Custom Fields by task type",
+      "url": "https://help.clickup.com/hc/en-us/articles/30974227164311-Create-Custom-Fields-by-task-type",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Object schema by type.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-field-defaults",
+      "title": "ClickUp Help — Set default values for Custom Fields",
+      "url": "https://help.clickup.com/hc/en-us/articles/30406587945879-Set-default-values-for-Custom-Fields",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Default property values.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-field-convert",
+      "title": "ClickUp Help — Convert Custom Fields",
+      "url": "https://help.clickup.com/hc/en-us/articles/14277190461207-Convert-Custom-Fields",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Convert field type.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-field-merge",
+      "title": "ClickUp Help — Merge Custom Fields",
+      "url": "https://help.clickup.com/hc/en-us/articles/14277239882519-Merge-Custom-Fields",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Merge fields of same type.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-task-menu",
+      "title": "ClickUp Help — Task settings menu",
+      "url": "https://help.clickup.com/hc/en-us/articles/34908401465111-Task-settings-menu",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Task context actions.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-task-description",
+      "title": "ClickUp Help — Task fields and the task description",
+      "url": "https://help.clickup.com/hc/en-us/articles/34958796358039-Task-fields-and-the-task-description",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Status, assignee, priority, dates and description.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-bulk",
+      "title": "ClickUp Help — Manage tasks with the Bulk Action Toolbar",
+      "url": "https://help.clickup.com/hc/en-us/articles/6309768265495-Manage-tasks-with-the-Bulk-Action-Toolbar",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Selection-driven bulk operations.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-bulk-subtasks",
+      "title": "ClickUp Help — Manage subtasks in a task window using the Bulk Action Toolbar",
+      "url": "https://help.clickup.com/hc/en-us/articles/6309490332695-Manage-subtasks-in-a-task-window-using-the-Bulk-Action-Toolbar",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Bulk subtasks.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-link-task",
+      "title": "ClickUp Help — Link tasks",
+      "url": "https://help.clickup.com/hc/en-us/articles/6309896464407-Link-tasks",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Permission-aware linked objects.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-recurring",
+      "title": "ClickUp Help — Use recurring tasks",
+      "url": "https://help.clickup.com/hc/en-us/articles/6309885016471-Use-recurring-tasks",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Recurring object settings.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-lists",
+      "title": "ClickUp Help — Intro to Lists",
+      "url": "https://help.clickup.com/hc/en-us/articles/6311877646999-Intro-to-Lists",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Lists contain tasks with icon and color configuration.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-docs",
+      "title": "ClickUp Help — Intro to Docs",
+      "url": "https://help.clickup.com/hc/en-us/articles/6328174371351-Intro-to-Docs",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Docs integrated with tasks; PDF/HTML/Markdown export.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-doc-page-settings",
+      "title": "ClickUp Help — Page Settings Menu",
+      "url": "https://help.clickup.com/hc/en-us/articles/6325436135191-Page-Settings-Menu",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Per-page options, import/export and trash.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-doc-settings",
+      "title": "ClickUp Help — Doc settings",
+      "url": "https://help.clickup.com/hc/en-us/articles/6325168155415-Doc-settings",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Document-level management.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-docs-hub",
+      "title": "ClickUp Help — Docs Hub",
+      "url": "https://help.clickup.com/hc/en-us/articles/14235667017495-Docs-Hub",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Central discovery, tags and filters.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-slash",
+      "title": "ClickUp Help — Use Slash Commands",
+      "url": "https://help.clickup.com/hc/en-us/articles/6308960837911-Use-Slash-Commands",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Contextual editor commands, Docs-specific UI revision.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-text-format",
+      "title": "ClickUp Help — Intro to text formatting",
+      "url": "https://help.clickup.com/hc/en-us/articles/6311721231639-Intro-to-text-formatting",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Shared rich text behavior across surfaces.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-whiteboard-items",
+      "title": "ClickUp Help — Add items to a Whiteboard",
+      "url": "https://help.clickup.com/hc/en-us/articles/6326217118615-Add-items-to-a-Whiteboard",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Canvas objects, main and floating toolbar, group export.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-whiteboard-create",
+      "title": "ClickUp Help — Create a Whiteboard",
+      "url": "https://help.clickup.com/hc/en-us/articles/6326337792023-Create-a-Whiteboard",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Creation from hub, sidebar and slash command.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-whiteboard-limits",
+      "title": "ClickUp Help — Whiteboards feature availability and limits",
+      "url": "https://help.clickup.com/hc/en-us/articles/29295148751639-Whiteboards-feature-availability-and-limits",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Availability by role/plan.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-form-logic",
+      "title": "ClickUp Help — Use conditional logic in Forms",
+      "url": "https://help.clickup.com/hc/en-us/articles/30720189184791-Use-conditional-logic-in-Forms",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Conditional form rules, nesting up to five levels as documented.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-form-questions",
+      "title": "ClickUp Help — Add questions to a Form",
+      "url": "https://help.clickup.com/hc/en-us/articles/30688109079191-Add-questions-to-a-Form",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Question builder and field mapping.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-form-design",
+      "title": "ClickUp Help — Customize a Form s design",
+      "url": "https://help.clickup.com/hc/en-us/articles/30720459329047-Customize-a-Form-s-design",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Presentation and branding settings.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-form-create",
+      "title": "ClickUp Help — Create and access Forms",
+      "url": "https://help.clickup.com/hc/en-us/articles/30687934700055-Create-and-access-Forms",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Multiple creation surfaces.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-form-hub",
+      "title": "ClickUp Help — Forms Hub",
+      "url": "https://help.clickup.com/hc/en-us/articles/26301017413911-Forms-Hub",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Form discovery and contextual actions.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-sheets-hub",
+      "title": "ClickUp Help — Sheets Hub",
+      "url": "https://help.clickup.com/hc/en-us/articles/44459955883799-Sheets-Hub",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Templates, blank Sheets and row hover actions.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-sheets-limits",
+      "title": "ClickUp Help — Sheets feature availability and limits",
+      "url": "https://help.clickup.com/hc/en-us/articles/44538262976791-Sheets-feature-availability-and-limits",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Sheets availability and sharing.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-cards",
+      "title": "ClickUp Help — Intro to cards",
+      "url": "https://help.clickup.com/hc/en-us/articles/25757497269143-Intro-to-cards",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Card categories including AI, custom and sprint cards.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-card-data",
+      "title": "ClickUp Help — Data available on cards",
+      "url": "https://help.clickup.com/hc/en-us/articles/29783222444823-Data-available-on-cards",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Data and field compatibility by card type.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-dashboard-drill",
+      "title": "ClickUp Help — Drill down view for Dashboard cards",
+      "url": "https://help.clickup.com/hc/en-us/articles/14995002699927-Drill-down-view-for-Dashboard-cards",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Chart selection opens contributing tasks.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-dashboard-settings",
+      "title": "ClickUp Help — Dashboard settings",
+      "url": "https://help.clickup.com/hc/en-us/articles/35663348616343-Dashboard-settings",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Auto layout and PDF export.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-resource",
+      "title": "ClickUp Help — Resource management",
+      "url": "https://help.clickup.com/hc/en-us/articles/6310374956439-Resource-management",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Capacity and resource dashboards.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-time-track",
+      "title": "ClickUp Help — Track time on tasks",
+      "url": "https://help.clickup.com/hc/en-us/articles/6304106812823-Track-time-on-tasks",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Track time from tasks and AI.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-time-report",
+      "title": "ClickUp Help — Use views for time reporting",
+      "url": "https://help.clickup.com/hc/en-us/articles/15479699552151-Use-views-for-time-reporting",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Time fields and sorting in views.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-planner",
+      "title": "ClickUp Help — What is the Planner",
+      "url": "https://help.clickup.com/hc/en-us/articles/29051586233879-What-is-the-Planner",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Planning and calendar integrations.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-planner-open",
+      "title": "ClickUp Help — Open your Planner",
+      "url": "https://help.clickup.com/hc/en-us/articles/35975772703767-Open-your-Planner",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Planner tasks and external calendar boundaries.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-planner-customize",
+      "title": "ClickUp Help — Customize your Planner",
+      "url": "https://help.clickup.com/hc/en-us/articles/35975729722519-Customize-your-Planner",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Personal planner settings.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-inbox",
+      "title": "ClickUp Help — What is the Inbox",
+      "url": "https://help.clickup.com/hc/en-us/articles/33947959867543-What-is-the-Inbox",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Notification aggregation and configurable notifications.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-inbox-custom",
+      "title": "ClickUp Help — Customize your Inbox",
+      "url": "https://help.clickup.com/hc/en-us/articles/16101057400471-Customize-your-Inbox",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Notification grouping by date.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-notifications",
+      "title": "ClickUp Help — Notification settings",
+      "url": "https://help.clickup.com/hc/en-us/articles/6325918957335-Notification-settings",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Inbox, email, browser and mobile channels.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-permissions",
+      "title": "ClickUp Help — Intro to permissions",
+      "url": "https://help.clickup.com/hc/en-us/articles/6309225399703-Intro-to-permissions",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Role and item permission levels.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-permissions-detail",
+      "title": "ClickUp Help — Permissions in detail",
+      "url": "https://help.clickup.com/hc/en-us/articles/6309221065495-Permissions-in-detail",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Permission matrix by resource and role.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-role-permissions",
+      "title": "ClickUp Help — Manage Custom Role permissions",
+      "url": "https://help.clickup.com/hc/en-us/articles/6309195687959-Manage-Custom-Role-permissions",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Custom role capabilities.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-share",
+      "title": "ClickUp Help — Share Spaces Folders Subfolders Lists and tasks",
+      "url": "https://help.clickup.com/hc/en-us/articles/6309266954263-Share-Spaces-Folders-Subfolders-Lists-and-tasks",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Sharing modal and granular access.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-trash",
+      "title": "ClickUp Help — Restore items from the Trash",
+      "url": "https://help.clickup.com/hc/en-us/articles/6311742742423-Restore-items-from-the-Trash",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Restore deleted objects.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-task-delete",
+      "title": "ClickUp Help — Delete a task",
+      "url": "https://help.clickup.com/hc/en-us/articles/6311358652951-Delete-a-task",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Deletion workflow.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-audit",
+      "title": "ClickUp Help — Workspace audit logs",
+      "url": "https://help.clickup.com/hc/en-us/articles/21929900448535-Workspace-audit-logs",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Workspace and agent activity logs.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-ai-intro",
+      "title": "ClickUp Help — What is ClickUp AI",
+      "url": "https://help.clickup.com/hc/en-us/articles/12578085238039-What-is-ClickUp-AI",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Brain, Super Agents and embedded AI.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-ai-tools",
+      "title": "ClickUp Help — What are ClickUp AI tools",
+      "url": "https://help.clickup.com/hc/en-us/articles/33032484272023-What-are-ClickUp-AI-tools",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Tool catalog and skills.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-brain-chat",
+      "title": "ClickUp Help — Chat with Brain",
+      "url": "https://help.clickup.com/hc/en-us/articles/28401383762455-Chat-with-Brain",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Chat modal and suggested actions.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-brain-context",
+      "title": "ClickUp Help — Collaborate with ClickUp Brain anywhere in your Workspace",
+      "url": "https://help.clickup.com/hc/en-us/articles/20658787666071-Collaborate-with-ClickUp-Brain-anywhere-in-your-Workspace",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Contextual AI in objects and messages.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-brain-in-chat",
+      "title": "ClickUp Help — Use ClickUp Brain in Chat",
+      "url": "https://help.clickup.com/hc/en-us/articles/28287152693783-Use-ClickUp-Brain-in-Chat",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Task creation and thread summaries.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-agent-chat",
+      "title": "ClickUp Help — Use ClickUp Agents in Chat",
+      "url": "https://help.clickup.com/hc/en-us/articles/37131966192151-Use-ClickUp-Agents-in-Chat",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Agent invocation from channel automation.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-agent-overview",
+      "title": "ClickUp Help — How can Super Agents help your team",
+      "url": "https://help.clickup.com/hc/en-us/articles/36487554975255-How-can-Super-Agents-help-your-team",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Agent configuration and activity.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-agent-config",
+      "title": "ClickUp Help — Super Agent instructions Skills triggers knowledge and memory",
+      "url": "https://help.clickup.com/hc/en-us/articles/37092796379927-Super-Agent-instructions-Skills-triggers-knowledge-and-memory",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Instructions, skills, tools, memory, schedules and permission boundaries.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-ai-access",
+      "title": "ClickUp Help — Manage ClickUp AI access for roles and people",
+      "url": "https://help.clickup.com/hc/en-us/articles/44785311467671-Manage-ClickUp-AI-access-for-roles-and-people",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Role-level and individual AI access.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-agent-workflow",
+      "title": "ClickUp Help — Create and run an Agent Workflow",
+      "url": "https://help.clickup.com/hc/en-us/articles/44785851374487-Create-and-run-an-Agent-Workflow",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Visual orchestration of Brain, agents and decisions; beta.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-agent-workflow-limits",
+      "title": "ClickUp Help — Agent Workflows feature availability and limits",
+      "url": "https://help.clickup.com/hc/en-us/articles/44786053516439-Agent-Workflows-feature-availability-and-limits",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Beta and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-ai-drive",
+      "title": "ClickUp Help — Use AI Drive",
+      "url": "https://help.clickup.com/hc/en-us/articles/45020575265687-Use-AI-Drive",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Labs storage and discovery surface.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-artifacts",
+      "title": "ClickUp Help — Create custom apps dashboards prototypes and other Artifacts",
+      "url": "https://help.clickup.com/hc/en-us/articles/40440126306199-Create-custom-apps-dashboards-prototypes-and-other-Artifacts",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "AI creation of apps, prototypes, decks and reports.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-creative-studio",
+      "title": "ClickUp Help — Use Creative Studio",
+      "url": "https://help.clickup.com/hc/en-us/articles/44786325764247-Use-Creative-Studio",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Scene editor with media, shapes and export.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-automation-modal",
+      "title": "ClickUp Help — Access the Automations modal",
+      "url": "https://help.clickup.com/hc/en-us/articles/34136507954583-Access-the-Automations-modal",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Automation creation from multiple locations.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-calendar-automation",
+      "title": "ClickUp Help — Google Calendar Automations",
+      "url": "https://help.clickup.com/hc/en-us/articles/29626553900951-Google-Calendar-Automations",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Calendar integration actions.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-keyboard",
+      "title": "ClickUp Help — Use keyboard shortcuts",
+      "url": "https://help.clickup.com/hc/en-us/articles/6309030550167-Use-keyboard-shortcuts",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Keyboard navigation and commands.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-my-settings",
+      "title": "ClickUp Help — My Settings",
+      "url": "https://help.clickup.com/hc/en-us/articles/6311968998167-My-Settings",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Accessibility and personal settings.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-theme",
+      "title": "ClickUp Help — Change your Workspace appearance and theme",
+      "url": "https://help.clickup.com/hc/en-us/articles/6310791806359-Change-your-Workspace-appearance-and-theme",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Theme and high contrast.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-mobile-menu",
+      "title": "ClickUp Help — Access your work from the More menu on mobile",
+      "url": "https://help.clickup.com/hc/en-us/articles/34981300374679-Access-your-work-from-the-More-menu-on-mobile",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Mobile More menu and feature access.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-mobile-inbox",
+      "title": "ClickUp Help — Intro to Inbox on mobile",
+      "url": "https://help.clickup.com/hc/en-us/articles/15147158275735-Intro-to-Inbox-on-mobile",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Mobile notifications.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-browser-tabs",
+      "title": "ClickUp Help — Browser tab limits",
+      "url": "https://help.clickup.com/hc/en-us/articles/30999959024151-Browser-tab-limits",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Inactive browser tab sleeping; not proof of app-level tabs.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-help",
+      "title": "ClickUp — Official help taxonomy",
+      "url": "https://help.clickup.com/hc/en-us",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Official help taxonomy",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-features-index",
+      "title": "ClickUp — Features/ClickApps directory",
+      "url": "https://help.clickup.com/hc/en-us/categories/5414365970455-Features-and-ClickApps",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Features/ClickApps directory",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-views-index",
+      "title": "ClickUp — Views directory including Gallery and legacy Chat",
+      "url": "https://help.clickup.com/hc/en-us/sections/39723873580823-Views",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Views directory including Gallery and legacy Chat",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-docs-index",
+      "title": "ClickUp — Docs directory",
+      "url": "https://help.clickup.com/hc/en-us/sections/5414415869463-Docs",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Docs directory",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-agents-index",
+      "title": "ClickUp — Agent directory",
+      "url": "https://help.clickup.com/hc/en-us/categories/37728141474071-ClickUp-Agents",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Agent directory",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-ai-index",
+      "title": "ClickUp — AI directory",
+      "url": "https://help.clickup.com/hc/en-us/categories/37648258297623-ClickUp-AI",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "AI directory",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-chat-index",
+      "title": "ClickUp — Chat directory",
+      "url": "https://help.clickup.com/hc/en-us/categories/29564258203671-Chat",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Chat directory",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-integrations-index",
+      "title": "ClickUp — Integration/API/MCP directory",
+      "url": "https://help.clickup.com/hc/en-us/categories/5735460831255-Integrations-API-and-MCP",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Integration/API/MCP directory",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-sheets-index",
+      "title": "ClickUp — Sheets directory and spreadsheet description",
+      "url": "https://help.clickup.com/hc/en-us/sections/44444693743255-Sheets",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Sheets directory and spreadsheet description",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-api",
+      "title": "ClickUp — API overview and per-token rate limits",
+      "url": "https://developer.clickup.com/docs/Getting%20Started",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "API overview and per-token rate limits",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-api-auth",
+      "title": "ClickUp — OAuth 2.0 and token authentication",
+      "url": "https://developer.clickup.com/docs/authentication",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "OAuth 2.0 and token authentication",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-api-webhooks",
+      "title": "ClickUp — Scoped event subscriptions and payload caveats",
+      "url": "https://developer.clickup.com/docs/webhooks",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Scoped event subscriptions and payload caveats",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-api-errors",
+      "title": "ClickUp — API errors including 429",
+      "url": "https://developer.clickup.com/docs/common_errors",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "API errors including 429",
+      "storage": "link-only"
     }
   ]
 }
