@@ -25,6 +25,26 @@ class ConceptPackTests(unittest.TestCase):
         self.assertEqual({p["concept"]["id"] for p in both["packs"]},
                          {"ui.navigation.side-panel", "ui.navigation.sidebar"})
 
+    def test_grouping_normalizes_labels_once_and_tracks_taxonomy_changes(self):
+        from unittest.mock import patch
+        from copy import deepcopy
+
+        with patch.object(mod, "labels", wraps=mod.labels) as counted:
+            concepts, groups = mod.group_records(self.records, self.taxonomy)
+            self.assertEqual(counted.call_count, len(concepts))
+        for row in self.records:
+            if row["kind"] not in {"pattern", "visual"}:
+                continue
+            for field in [row["title"], *row.get("record", {}).get("keywords", [])]:
+                for ident in mod.resolve(field, concepts):
+                    self.assertIn(row["id"], groups[ident])
+        changed = deepcopy(self.taxonomy)
+        sidebar = next(c for c in changed["concepts"] if c["id"] == "ui.navigation.sidebar")
+        sidebar["aliases"].append("unique taxonomy test alias")
+        self.assertEqual(mod.resolve("unique taxonomy test alias", mod.validate(changed, self.records)),
+                         ["ui.navigation.sidebar"])
+        self.assertNotIn("ui.navigation.sidebar", mod.resolve("unique taxonomy test alias", concepts))
+
     def test_cross_catalog_and_budget(self):
         pack = mod.build_pack("reorder", self.records, self.taxonomy, 2)["packs"][0]
         self.assertEqual(set(pack["returned_by_kind"]), {"visual", "pattern"})

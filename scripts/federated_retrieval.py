@@ -571,11 +571,10 @@ def _search_public_research_and_concepts(
     audits: list[SourceAuditEntry] = []
 
     # 1. Concept packs resolution
-    catalog, groups = concept_packs.group_records(records, taxonomy)
-    matched_concepts = concept_packs.resolve(query, catalog)
     pack_hits = 0
-    if matched_concepts:
-        pack_res = concept_packs.build_pack(query, records, taxonomy, limit=12)
+    # build_pack already resolves the query and groups the same catalog.
+    pack_res = concept_packs.build_pack(query, records, taxonomy, limit=12)
+    if pack_res.get("packs"):
         for pack in pack_res.get("packs", []):
             cid = pack["concept"]["id"]
             for ev in pack.get("evidence", []):
