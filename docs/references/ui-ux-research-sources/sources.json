@@ -3038,6 +3038,386 @@
       "status": "verified",
       "notes": "Draft/scheduled/sent lifecycle, filters and row actions.",
       "storage": "link-only"
+    },
+    {
+      "id": "clickup-bottom-pin",
+      "title": "ClickUp Help — Pin tasks or Docs to the bottom of your Workspace",
+      "url": "https://help.clickup.com/hc/en-us/articles/6309949834263-Pin-tasks-or-Docs-to-the-bottom-of-your-Workspace",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Persistent bottom favorites; drag reorder and hover unpin."
+    },
+    {
+      "id": "clickup-filter-builder",
+      "title": "ClickUp Help — Use filters to search tasks",
+      "url": "https://help.clickup.com/hc/en-us/articles/6308875427223-Use-filters-to-search-tasks",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Nested boolean predicates, search scope, supported field defaults, AI generated editable filters."
+    },
+    {
+      "id": "clickup-offline",
+      "title": "ClickUp Help — Offline Mode",
+      "url": "https://help.clickup.com/hc/en-us/articles/6308895791127-Offline-Mode",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Disconnect notice, limited offline creation/read, reconnect sync."
+    },
+    {
+      "id": "clickup-proofing",
+      "title": "ClickUp Help — Annotate images videos and PDFs with Proofing",
+      "url": "https://help.clickup.com/hc/en-us/articles/6325985679383-Annotate-images-videos-and-PDFs-with-Proofing",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Spatial/time anchored review comments and assignment."
+    },
+    {
+      "id": "clickup-save-view",
+      "title": "ClickUp Help — Save view changes",
+      "url": "https://help.clickup.com/hc/en-us/articles/6310370965911-Save-view-changes",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Save, autosave, duplicate, revert, access limits and delayed shared refresh."
+    },
+    {
+      "id": "clickup-comments-revision",
+      "title": "ClickUp Help — Task comments now work like Chat",
+      "url": "https://help.clickup.com/hc/en-us/articles/44421277995415-Task-comments-now-work-like-Chat",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Separate default Comments and full Activity; migration and scope."
+    },
+    {
+      "id": "clickup-grouping",
+      "title": "ClickUp Help — Use grouping in views",
+      "url": "https://help.clickup.com/hc/en-us/articles/6310202447511-Use-grouping-in-views",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Single-value groups, identity preservation, grouping menu and collapse."
+    },
+    {
+      "id": "clickup-status-management",
+      "title": "ClickUp Help — Manage task statuses",
+      "url": "https://help.clickup.com/hc/en-us/articles/6309452618647-Manage-task-statuses",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Lifecycle semantics, scoped inheritance, hidden closed tasks and reorder."
+    },
+    {
+      "id": "clickup-task-template",
+      "title": "ClickUp Help — Use task templates",
+      "url": "https://help.clickup.com/hc/en-us/articles/6309918176535-Use-task-templates",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Selective import, template apply, schema conflicts and irreversible operations."
+    },
+    {
+      "id": "clickup-assign-comment",
+      "title": "ClickUp Help — Assign comments",
+      "url": "https://help.clickup.com/hc/en-us/articles/6311126397591-Assign-comments",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Assign, resolve, navigate and notify; cross-surface action items."
+    },
+    {
+      "id": "clickup-text-toolbar",
+      "title": "ClickUp Help — Format text using the text toolbar",
+      "url": "https://help.clickup.com/hc/en-us/articles/6325395888023-Format-text-using-the-text-toolbar",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Selected or pinned toolbar, undo/redo, contextual actions."
+    },
+    {
+      "id": "clickup-high-contrast",
+      "title": "ClickUp Help — Activate High Contrast mode",
+      "url": "https://help.clickup.com/hc/en-us/articles/6310793610391-Activate-High-Contrast-mode",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Optional contrast preference, not a compliance certification."
+    },
+    {
+      "id": "clickup-task-activity",
+      "title": "ClickUp Help — Task activity and comments",
+      "url": "https://help.clickup.com/hc/en-us/articles/29723182607127-Task-activity-and-comments",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "storage": "link-only",
+      "notes": "Comments and activity panels."
+    },
+    {
+      "id": "clickup-activity-filter",
+      "title": "ClickUp Help — Search and filter task activity",
+      "url": "https://help.clickup.com/hc/en-us/articles/6309921223191-Search-and-filter-task-activity",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "storage": "link-only",
+      "notes": "Activity filter and follower controls."
+    },
+    {
+      "id": "clickup-reply-comments",
+      "title": "ClickUp Help — Reply to task comments",
+      "url": "https://help.clickup.com/hc/en-us/articles/6308954445591-Reply-to-task-comments",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "storage": "link-only",
+      "notes": "Thread reply and quoting."
+    },
+    {
+      "id": "clickup-status-templates",
+      "title": "ClickUp Help — Status templates",
+      "url": "https://help.clickup.com/hc/en-us/articles/6309533958935-Status-templates",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "storage": "link-only",
+      "notes": "Reusable workflow configurations."
+    },
+    {
+      "id": "clickup-done-status",
+      "title": "ClickUp Help — Use Done statuses",
+      "url": "https://help.clickup.com/hc/en-us/articles/6309517280919-Use-Done-statuses",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "storage": "link-only",
+      "notes": "Done semantics, dependency clearing and drag reorder."
+    },
+    {
+      "id": "clickup-status-faq",
+      "title": "ClickUp Help — Statuses FAQ",
+      "url": "https://help.clickup.com/hc/en-us/articles/6309465975063-Statuses-FAQ",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "storage": "link-only",
+      "notes": "Status FAQ and secondary status field automations."
+    },
+    {
+      "id": "clickup-view-reorder",
+      "title": "ClickUp Help — Group and reorder views",
+      "url": "https://help.clickup.com/hc/en-us/articles/26004419744023-Group-and-reorder-views",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "storage": "link-only",
+      "notes": "Group views by type and reorder."
+    },
+    {
+      "id": "clickup-custom-fields-query",
+      "title": "ClickUp Help — Search sort and filter tasks by Custom Fields",
+      "url": "https://help.clickup.com/hc/en-us/articles/12665650881943-Search-sort-and-filter-tasks-by-Custom-Fields",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "storage": "link-only",
+      "notes": "Column sorting and field search."
+    },
+    {
+      "id": "clickup-timeline-group",
+      "title": "ClickUp Help — Group tasks in Timeline view",
+      "url": "https://help.clickup.com/hc/en-us/articles/31440827150615-Group-tasks-in-Timeline-view",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "storage": "link-only",
+      "notes": "Nested rows and grouping location boundaries."
+    },
+    {
+      "id": "clickup-view-customization",
+      "title": "ClickUp Help — Customize views to increase productivity",
+      "url": "https://help.clickup.com/hc/en-us/articles/7255480884887-Customize-views-to-increase-productivity",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "storage": "link-only",
+      "notes": "Saved filter views and sorting."
+    },
+    {
+      "id": "clickup-list-filter",
+      "title": "ClickUp Help — Filter and search tasks in List view",
+      "url": "https://help.clickup.com/hc/en-us/articles/6310206119575-Filter-and-search-tasks-in-List-view",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "storage": "link-only",
+      "notes": "Filter builder and undo generated filters."
+    },
+    {
+      "id": "clickup-dashboard-mixed-filters",
+      "title": "ClickUp Help — Use mixed filters in Dashboards and cards",
+      "url": "https://help.clickup.com/hc/en-us/articles/16154237385495-Use-mixed-filters-in-Dashboards-and-cards",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "storage": "link-only",
+      "notes": "Filter group clearing and nested filter options."
+    },
+    {
+      "id": "clickup-task-creation",
+      "title": "ClickUp Help — Create a task",
+      "url": "https://help.clickup.com/hc/en-us/articles/6309647350807-Create-a-task",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "storage": "link-only",
+      "notes": "Creation from multiple contexts including text toolbar."
+    },
+    {
+      "id": "clickup-docs-pin",
+      "title": "ClickUp Help — Minimize Docs to the Tray",
+      "url": "https://help.clickup.com/hc/en-us/articles/7245958790807-Minimize-Docs-to-the-Tray",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "storage": "link-only",
+      "notes": "Legacy naming and pinning documents; check layout version."
+    },
+    {
+      "id": "clickup-template-library",
+      "title": "ClickUp Help — Add a template to your library",
+      "url": "https://help.clickup.com/hc/en-us/articles/6326023965591-Add-a-template-to-your-library",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "storage": "link-only",
+      "notes": "Template Center access and personal library."
+    },
+    {
+      "id": "clickup-template-customize",
+      "title": "ClickUp Help — Customize a template",
+      "url": "https://help.clickup.com/hc/en-us/articles/6326086730263-Customize-a-template",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "storage": "link-only",
+      "notes": "Selective import of template properties."
+    },
+    {
+      "id": "clickup-checklist-templates",
+      "title": "ClickUp Help — Create checklist templates",
+      "url": "https://help.clickup.com/hc/en-us/articles/13455445264663-Create-checklist-templates",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "storage": "link-only",
+      "notes": "Checklist templates and automation."
+    },
+    {
+      "id": "clickup-archive-task",
+      "title": "ClickUp Help — Archive a task",
+      "url": "https://help.clickup.com/hc/en-us/articles/6329610622487-Archive-a-task",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "storage": "link-only",
+      "notes": "Archive separate from deletion."
+    },
+    {
+      "id": "clickup-message-edit-delete",
+      "title": "ClickUp Help — Edit or delete messages",
+      "url": "https://help.clickup.com/hc/en-us/articles/30092637130263-Edit-or-delete-messages",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "storage": "link-only",
+      "notes": "Short-lived undo of sent message deletion."
+    },
+    {
+      "id": "clickup-my-tasks",
+      "title": "ClickUp Help — My Tasks page formerly Home",
+      "url": "https://help.clickup.com/hc/en-us/articles/18944788880791-My-Tasks-page-formerly-Home",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "storage": "link-only",
+      "notes": "Personal priorities, assigned comments and agenda."
+    },
+    {
+      "id": "clickup-personal-list-filter",
+      "title": "ClickUp Help — Group and Filter your Personal List",
+      "url": "https://help.clickup.com/hc/en-us/articles/31409908744727-Group-and-Filter-your-Personal-List",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "storage": "link-only",
+      "notes": "Personal List grouping and filtering."
+    },
+    {
+      "id": "clickup-individual-workspace",
+      "title": "ClickUp Help — Set up your individual Workspace",
+      "url": "https://help.clickup.com/hc/en-us/articles/9563959684119-Set-up-your-individual-Workspace",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "storage": "link-only",
+      "notes": "Personal setup and pinned items."
+    },
+    {
+      "id": "clickup-chrome-extension",
+      "title": "ClickUp Help — Use the Chrome extension",
+      "url": "https://help.clickup.com/hc/en-us/articles/6305599755671-Use-the-Chrome-extension",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "storage": "link-only",
+      "notes": "Capture, annotation and attach web content."
+    },
+    {
+      "id": "clickup-tasks-section",
+      "title": "ClickUp Help — Tasks",
+      "url": "https://help.clickup.com/hc/en-us/sections/17043616404631-Tasks",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Section listing opened; parent article advertises 72 articles; not all pages traversed."
+    },
+    {
+      "id": "clickup-intro-views-section",
+      "title": "ClickUp Help — Intro to views",
+      "url": "https://help.clickup.com/hc/en-us/sections/17044387445399-Intro-to-views",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Section listing opened; parent article advertises 28 articles; not all pages traversed."
+    },
+    {
+      "id": "clickup-communication-section",
+      "title": "ClickUp Help — Communicating in ClickUp",
+      "url": "https://help.clickup.com/hc/en-us/sections/17043486267927-Communicating-in-ClickUp",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "storage": "link-only",
+      "notes": "Section listing opened; parent article advertises 20 articles; not all pages traversed."
     }
   ]
 }

@@ -350,6 +350,15 @@
       "interaction_count": 13,
       "opened_visual_count": 3,
       "failed_visual_count": 1
+    },
+    {
+      "id": "component-states-2026-11-27",
+      "path": "component-states-2026-11-27.json",
+      "source_count": 38,
+      "interaction_count": 14,
+      "opened_article_count": 12,
+      "search_preview_count": 23,
+      "section_count": 3
     }
   ]
 }

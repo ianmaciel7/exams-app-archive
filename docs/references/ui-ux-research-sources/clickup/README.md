@@ -124,3 +124,8 @@ Machine-readable inventory: [inventory.json](inventory.json). Source registry: [
 
 - [Technical architecture and interaction contracts](technical-interactions-2026-11-27.md)
 - [Structured technical inventory](technical-interactions-2026-11-27.json)
+
+## Fourth extraction batch
+
+- [Component and state contracts](component-states-2026-11-27.md)
+- [Structured state inventory](component-states-2026-11-27.json)

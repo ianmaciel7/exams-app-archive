@@ -1,0 +1,322 @@
+{
+  "schema_version": 1,
+  "product": "ClickUp",
+  "reviewed_on": "2026-11-27",
+  "baseline_commit": "e6603012b7cb0895c4ec2d72039bff6c0aca372f",
+  "scope": "Focused extraction from official help articles and search previews. State models are analysis, acceptance tests proposed, not runtime measurements.",
+  "sources": {
+    "new": [
+      "clickup-bottom-pin",
+      "clickup-filter-builder",
+      "clickup-offline",
+      "clickup-proofing",
+      "clickup-save-view",
+      "clickup-comments-revision",
+      "clickup-grouping",
+      "clickup-status-management",
+      "clickup-task-template",
+      "clickup-assign-comment",
+      "clickup-text-toolbar",
+      "clickup-high-contrast",
+      "clickup-task-activity",
+      "clickup-activity-filter",
+      "clickup-reply-comments",
+      "clickup-status-templates",
+      "clickup-done-status",
+      "clickup-status-faq",
+      "clickup-view-reorder",
+      "clickup-custom-fields-query",
+      "clickup-timeline-group",
+      "clickup-view-customization",
+      "clickup-list-filter",
+      "clickup-dashboard-mixed-filters",
+      "clickup-task-creation",
+      "clickup-docs-pin",
+      "clickup-template-library",
+      "clickup-template-customize",
+      "clickup-checklist-templates",
+      "clickup-archive-task",
+      "clickup-message-edit-delete",
+      "clickup-my-tasks",
+      "clickup-personal-list-filter",
+      "clickup-individual-workspace",
+      "clickup-chrome-extension",
+      "clickup-tasks-section",
+      "clickup-intro-views-section",
+      "clickup-communication-section"
+    ],
+    "full_articles": 12,
+    "search_previews": 23,
+    "section_listings": 3
+  },
+  "patterns": [
+    {
+      "id": "clickup-bottom-pinned-items",
+      "source_ids": [
+        "clickup-bottom-pin"
+      ],
+      "priority": "P0",
+      "title": "Pinned object strip",
+      "documented_behavior": "Object is pinned at bottom until explicitly removed. Reordering uses drag; hovering exposes unpin. This is not proof of app tab history or preservation of unsaved state.",
+      "documented_or_derived_state_model": [
+        "unpinned",
+        "pinned",
+        "hovered",
+        "reordered",
+        "unpinned"
+      ],
+      "proposed_acceptance_tests": "Pin same ID twice, reopen existing object, reorder by keyboard, narrow overflow, permission revoked, deleted item.",
+      "evidence_status": "official documentation; no live runtime test"
+    },
+    {
+      "id": "clickup-boolean-filter-builder",
+      "source_ids": [
+        "clickup-filter-builder"
+      ],
+      "priority": "P0",
+      "title": "Structured query editor",
+      "documented_behavior": "Select field/operator/value and combine with AND/OR nested groups. Text search scope can be selected; visible custom fields are searched. Some filter values prefill newly created records. AI-built filters remain editable and can be reverted.",
+      "documented_or_derived_state_model": [
+        "empty",
+        "draft",
+        "applied",
+        "nested",
+        "generated",
+        "reverted",
+        "zero matches"
+      ],
+      "proposed_acceptance_tests": "Boolean truth table, invalid values, no matches versus failure, clear group, contextual creation preview, AI unmatched constraint disclosure.",
+      "evidence_status": "official documentation; no live runtime test"
+    },
+    {
+      "id": "clickup-shared-view-persistence",
+      "source_ids": [
+        "clickup-save-view"
+      ],
+      "priority": "P0",
+      "title": "Draft versus shared configuration",
+      "documented_behavior": "Changed view displays save control. Save updates all with access, autosave persists future changes, save-as creates separate view, revert removes latest change. Concurrent viewers may need reload; guests cannot save.",
+      "documented_or_derived_state_model": [
+        "clean",
+        "dirty",
+        "save",
+        "autosave",
+        "duplicate",
+        "revert",
+        "protected"
+      ],
+      "proposed_acceptance_tests": "Permission rejection, concurrent change, no accidental duplicate, draft navigation and reload; no assumption of real-time shared propagation.",
+      "evidence_status": "official documentation; no live runtime test"
+    },
+    {
+      "id": "clickup-single-value-projection",
+      "source_ids": [
+        "clickup-grouping"
+      ],
+      "priority": "P0",
+      "title": "One object in multiple groups",
+      "documented_behavior": "List can show same item in each matching multi-value group rather than a combined group. The default is combined; setting saved per view, unavailable on Board. All appearances represent one object.",
+      "documented_or_derived_state_model": [
+        "combined",
+        "single value",
+        "filtered",
+        "collapsed",
+        "ungrouped"
+      ],
+      "proposed_acceptance_tests": "Same ID across groups, edit reflected everywhere, counts distinct IDs versus occurrences, selection deduplication.",
+      "evidence_status": "official documentation; no live runtime test"
+    },
+    {
+      "id": "clickup-workflow-status-groups",
+      "source_ids": [
+        "clickup-status-management"
+      ],
+      "priority": "P0",
+      "title": "Semantic status and scoped inheritance",
+      "documented_behavior": "Active, Done and Closed have distinct meaning; optional Not Started group. Children inherit statuses unless customized. Done clears dependencies and is not overdue; Closed hidden by default in List. Custom Closed states unavailable; rename possible.",
+      "documented_or_derived_state_model": [
+        "active",
+        "done",
+        "closed",
+        "optional not started",
+        "inherited",
+        "override"
+      ],
+      "proposed_acceptance_tests": "Move between location schemas, reject unauthorized edit, preserve stable status ID, visible closed toggle, dependency semantics.",
+      "evidence_status": "official documentation; no live runtime test"
+    },
+    {
+      "id": "clickup-template-selective-copy",
+      "source_ids": [
+        "clickup-task-template"
+      ],
+      "priority": "P1",
+      "title": "Configurable template application",
+      "documented_behavior": "Template can copy selected properties and settings, including dependencies, dates and subtasks. Formula fields excluded. Same-name distinct custom fields may coexist. Applying a task template cannot be undone; update cannot revert to previous version.",
+      "documented_or_derived_state_model": [
+        "browse",
+        "preview",
+        "select fields",
+        "apply",
+        "success",
+        "limit failure"
+      ],
+      "proposed_acceptance_tests": "Preview destructive effects, schema mapping, duplicate property names, limits, failure atomicity, explicit irreversible confirmation (proposal).",
+      "evidence_status": "official documentation; no live runtime test"
+    },
+    {
+      "id": "clickup-offline-limited-mode",
+      "source_ids": [
+        "clickup-offline"
+      ],
+      "priority": "P0",
+      "title": "Offline capability boundary",
+      "documented_behavior": "Notice appears on disconnect. Previously opened tasks and notes readable but not editable; offline task creation syncs on reconnect. Reminders not creatable offline on mobile; subtasks not creatable offline. Tray tasks cached.",
+      "documented_or_derived_state_model": [
+        "online",
+        "disconnected",
+        "cached read",
+        "offline created",
+        "reconnected"
+      ],
+      "proposed_acceptance_tests": "Queue idempotency, reconnect conflict, failed sync, status visible, mobile capability differences; documentation does not establish conflict algorithm.",
+      "evidence_status": "official documentation; no live runtime test"
+    },
+    {
+      "id": "clickup-anchored-proofing",
+      "source_ids": [
+        "clickup-proofing"
+      ],
+      "priority": "P0",
+      "title": "Attachment review",
+      "documented_behavior": "Add comments at points on image/PDF and at video time; assign, reply and resolve. Video shows timestamps in playback; unavailable for cloud attachments.",
+      "documented_or_derived_state_model": [
+        "preview",
+        "add comment",
+        "selected point",
+        "draft",
+        "posted",
+        "assigned",
+        "resolved"
+      ],
+      "proposed_acceptance_tests": "Coordinate transforms with zoom/rotation; page index, media time seek, accessible comment navigation, deleted file/version, permission.",
+      "evidence_status": "official documentation; no live runtime test"
+    },
+    {
+      "id": "clickup-conversation-history-separation",
+      "source_ids": [
+        "clickup-comments-revision"
+      ],
+      "priority": "P0",
+      "title": "Conversation versus audit feed",
+      "documented_behavior": "New Comments default panel contains discussion and selected high-level updates; Activity retains full history. Task comments now support Chat-style threading, forward and scheduled send. Other comment surfaces not migrated.",
+      "documented_or_derived_state_model": [
+        "comments",
+        "activity",
+        "unread",
+        "thread",
+        "reply",
+        "scheduled"
+      ],
+      "proposed_acceptance_tests": "Unread counts, deep link, audit completeness, no duplicate events, legacy surface support and migration.",
+      "evidence_status": "official documentation; no live runtime test"
+    },
+    {
+      "id": "clickup-assigned-comment-lifecycle",
+      "source_ids": [
+        "clickup-assign-comment"
+      ],
+      "priority": "P1",
+      "title": "Conversation to actionable item",
+      "documented_behavior": "Assign a new/existing comment; notify recipient; resolve using checkbox; links from action items navigate to comment. Resolution notification shows actor. Assignment integrates with task closure warning where configured.",
+      "documented_or_derived_state_model": [
+        "unassigned",
+        "assigned",
+        "unresolved",
+        "resolved"
+      ],
+      "proposed_acceptance_tests": "Assignment change, permissions, notification, jump to source, duplicate assignment and reopen behavior (unverified).",
+      "evidence_status": "official documentation; no live runtime test"
+    },
+    {
+      "id": "clickup-selection-toolbar-position",
+      "source_ids": [
+        "clickup-text-toolbar"
+      ],
+      "priority": "P1",
+      "title": "Contextual or pinned editor toolbar",
+      "documented_behavior": "Default toolbar appears near selected text; user may pin to top. Commands vary by surface; undo, redo, insert, clear format and Markdown copy documented.",
+      "documented_or_derived_state_model": [
+        "no selection",
+        "selection",
+        "toolbar",
+        "pinned",
+        "command"
+      ],
+      "proposed_acceptance_tests": "Focus, selection preservation, keyboard, clipping, touch, disabled command, formatting undo.",
+      "evidence_status": "official documentation; no live runtime test"
+    },
+    {
+      "id": "clickup-high-contrast-preference",
+      "source_ids": [
+        "clickup-high-contrast",
+        "clickup-text-toolbar"
+      ],
+      "priority": "P1",
+      "title": "Visual accessibility preference",
+      "documented_behavior": "User enables contrast mode. Authenticated Docs toggle-list treatment additionally described in text toolbar article; do not generalize to public or mobile surfaces.",
+      "documented_or_derived_state_model": [
+        "normal",
+        "high contrast",
+        "light",
+        "dark"
+      ],
+      "proposed_acceptance_tests": "Measure contrast, visible focus, reduced motion, screen reader and zoom independently; no WCAG conformance assertion.",
+      "evidence_status": "official documentation; no live runtime test"
+    },
+    {
+      "id": "clickup-inbox-notification-lifecycle",
+      "source_ids": [
+        "clickup-inbox"
+      ],
+      "priority": "P1",
+      "title": "Notification grouping and reversible clearing",
+      "documented_behavior": "Primary, Other, Later and Cleared tabs; same object notifications grouped; filters persist. Cleared groups recoverable for 30 days; clear-all respects active filter. Open group displays related object/details.",
+      "documented_or_derived_state_model": [
+        "unread",
+        "read",
+        "snoozed",
+        "cleared",
+        "restored",
+        "expired"
+      ],
+      "proposed_acceptance_tests": "No duplicate notifications, keyboard parity, filtered bulk scope, restore order, time zone and accessible badge.",
+      "evidence_status": "official documentation; no live runtime test"
+    },
+    {
+      "id": "clickup-labs-shell-boundary",
+      "source_ids": [
+        "clickup-layout"
+      ],
+      "priority": "P0",
+      "title": "Experimental layout provenance",
+      "documented_behavior": "Global rail remains visible; contextual sidebar can collapse and preview on hover. Labs toggle can restore older layout. Recents can pin current page or everywhere. Page navigation can nest under sidebar shortcuts.",
+      "documented_or_derived_state_model": [
+        "legacy",
+        "Labs enabled",
+        "expanded",
+        "collapsed",
+        "preview",
+        "pinned"
+      ],
+      "proposed_acceptance_tests": "Pointer, keyboard, touch, width, permission, settings persistence and old/new layout migration; not all accounts have same UI.",
+      "evidence_status": "official documentation; no live runtime test"
+    }
+  ],
+  "remaining": [
+    "Article directory pagination and full article retrieval of search-only entries",
+    "Direct official media inspection and videos; no new media claims this batch",
+    "Live UI verification of states, motion, keyboard, touch, focus, responsive behavior",
+    "Cross-index reusable patterns with evidence status; no application implementation"
+  ]
+}
