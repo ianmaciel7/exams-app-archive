@@ -120,6 +120,70 @@
         "color-induction"
       ],
       "limit": "Mechanisms and magnitude depend on conditions; do not infer a universal correction factor."
+    },
+    {
+      "id": "color-stroop-interference",
+      "title": "Stroop effect and semantic color interference",
+      "definition": "Conflicting word meaning and ink color can interfere with a color-naming task. In product design, avoid conflicting learned status colors and labels; use consistent text, icon and color for success/error. Compare congruent and conflicting alternatives with identical task, contrast and content; measure response time, errors and comprehension.",
+      "source_ids": [
+        "stroop-1935",
+        "macleod-1991",
+        "wcag-use-color"
+      ],
+      "limit": "Experimental color-word effect is not proof of a universal red/green convention or a fixed UI performance penalty; localize and test. Color labels are a design extrapolation."
+    },
+    {
+      "id": "color-opponent-processing",
+      "title": "Opponent processing and color vision",
+      "definition": "Trichromatic cone signals are processed by opponent neural mechanisms; historical red–green and blue–yellow appearance models are not identical to physiological channels. Distinguish opponent encoding from complementary wheel hues, and account for variation in color vision; pair status color with labels/icons and validate with representative users.",
+      "source_ids": [
+        "hurvich-jameson-1957",
+        "opponent-reassessment-2023",
+        "wcag-use-color"
+      ],
+      "limit": "Historical Hering/Hurvich–Jameson links between neural opponency and unique hue appearance are challenged; do not treat them as settled or use them as palette-generation rules."
+    },
+    {
+      "id": "color-constancy",
+      "title": "Color constancy and viewing conditions",
+      "definition": "Perceived surface color may remain relatively stable as illumination changes; constancy is imperfect and differs by scene, stimulus and observer. Distinguish it from chromatic adaptation, simultaneous contrast and display color management. For product QA compare identical tokens in actual themes and device/ambient conditions, with calibrated reference where fidelity matters.",
+      "source_ids": [
+        "foster-2011",
+        "witzel-gegenfurtner-2018"
+      ],
+      "limit": "Reflective-surface laboratory results do not directly establish color behavior on emissive displays; no claim of guaranteed constancy."
+    },
+    {
+      "id": "color-appearance-ciecam16",
+      "title": "CIECAM16, CAM16, CAT16 and CAM16-UCS",
+      "definition": "CIE 248:2022 CIECAM16 supersedes CIECAM02 report CIE 159:2004; uses viewing-condition-dependent transforms of XYZ to appearance correlates and a chromatic adaptation transform. CAM16 is the underlying appearance model, CAT16 the adaptation transform, CAM16-UCS a derived approximately uniform space. Useful for calibrated cross-media appearance matching and color-difference research. Record white point, adapting luminance, background and surround; validate implementation against published reference values before use.",
+      "source_ids": [
+        "ciecam16-2022",
+        "cam16-2017"
+      ],
+      "limit": "Not a CSS-required space, mandatory design system algorithm or replacement for WCAG. Full CIE report not reviewed; do not implement equations from summary."
+    },
+    {
+      "id": "color-discrimination-delta-e",
+      "title": "Color discrimination, MacAdam ellipses and Delta E",
+      "definition": "MacAdam's psychophysical experiments show that chromaticity discrimination varies across the color diagram under specified viewing conditions. Delta E measures color difference in a stated model: distinguish Euclidean CIELAB ΔE76, CIEDE2000 ΔE00 (ISO/CIE 11664-6:2022), OKLab distance and CAM16-UCS distance. Use one documented metric for brand tolerance or token drift and compare actual rendered adjacent state colors; test recognition without hue alone.",
+      "source_ids": [
+        "macadam-1942",
+        "ciede2000-2022",
+        "cam16-2017",
+        "wcag-use-color"
+      ],
+      "limit": "No universal ΔE=1 just-noticeable threshold or mandatory spacing between palette steps. ΔE is not WCAG contrast, and discriminability depends on area, context, observer, luminance and viewing conditions."
+    },
+    {
+      "id": "color-feature-congestion",
+      "title": "Feature Congestion, visual clutter and color competition",
+      "definition": "Rosenholtz et al. compare Feature Congestion, Subband Entropy and Edge Density; color variability contributes to clutter in their experiments. Reserve accent for meaningful priorities; separate category/status/selection encoding; use neutral secondary surfaces and redundant labels. Compare matched task screens with varied color complexity, measure search time, errors and missed states; preserve information and avoid hiding essential cues.",
+      "source_ids": [
+        "rosenholtz-2007",
+        "mit-clutter"
+      ],
+      "limit": "No universal maximum hue count, saturation threshold or guarantee of task performance. Feature Congestion is a research measure, not an accessibility criterion."
     }
   ],
   "sources": [
@@ -288,6 +352,110 @@
       "title": "Grouping by proximity or similarity?",
       "url": "https://pubmed.ncbi.nlm.nih.gov/9797920/",
       "status": "research-search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "stroop-1935",
+      "title": "Stroop — Studies of interference in serial verbal reactions",
+      "url": "https://doi.org/10.1037/h0054651",
+      "status": "original study, abstract",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "macleod-1991",
+      "title": "MacLeod — Half a century of research on the Stroop effect",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/2034749/",
+      "status": "review, abstract",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "hurvich-jameson-1957",
+      "title": "Hurvich & Jameson — An opponent-process theory of color vision",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/13505974/",
+      "status": "historical study, bibliographic record",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "opponent-reassessment-2023",
+      "title": "Color appearance and the end of Hering’s Opponent-Colors Theory",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37394292/",
+      "status": "critical review, abstract",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "foster-2011",
+      "title": "Foster — Color constancy",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20849875/",
+      "status": "review, abstract",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "witzel-gegenfurtner-2018",
+      "title": "Witzel & Gegenfurtner — Color Perception: Objects, Constancy, and Categories",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30004833/",
+      "status": "review, abstract",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "ciecam16-2022",
+      "title": "CIE 248:2022 — CIECAM16",
+      "url": "https://www.cie.co.at/publications/cie-2016-colour-appearance-model-colour-management-systems-ciecam16",
+      "status": "official report description, full paid report not read",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "cam16-2017",
+      "title": "Li et al. — CAM16, CAT16, and CAM16-UCS",
+      "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/col.22131",
+      "status": "original article excerpt",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "macadam-1942",
+      "title": "MacAdam — Visual Sensitivities to Color Differences in Daylight",
+      "url": "https://www.wip.osapublishing.org/josa/abstract.cfm?uri=josa-32-5-247",
+      "status": "original article abstract",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "ciede2000-2022",
+      "title": "ISO/CIE 11664-6:2022 — CIEDE2000",
+      "url": "https://www.iso.org/standard/82662.html",
+      "status": "official standard summary; full text not read",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "rosenholtz-2007",
+      "title": "Rosenholtz, Li & Nakano — Measuring visual clutter",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18217832/",
+      "status": "original article abstract",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "mit-clutter",
+      "title": "MIT Persci — Visual Clutter",
+      "url": "https://persci.mit.edu/research/clutter/",
+      "status": "research project description",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "wcag-use-color",
+      "title": "W3C — Understanding SC 1.4.1 Use of Color",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/use-of-color",
+      "status": "official informative guidance",
       "checked_on": "2026-11-27",
       "storage": "link-only"
     }
