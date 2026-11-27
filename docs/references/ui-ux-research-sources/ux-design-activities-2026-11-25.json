@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "reviewed_on": "2026-11-25",
+  "reviewed_on": "2026-11-27",
   "category": "design-methods-and-deliverables",
   "evidence_status": "documentary web research; examples synthetic; no user testing or production verification",
   "activities": [
@@ -68,13 +68,38 @@
       "id": "activity-06",
       "name": "Low-fidelity Wireframe",
       "question": "Estrutura e hierarquia",
-      "deliverable": "Wireframe block, outline ou sketchy",
+      "deliverable": "Wireframe block, outline, greybox ou sketchy, conforme hipótese.",
       "activities": "Partir de tarefas ou sketch; regiões, hierarquia, proporções, rótulos e ações essenciais; usar placeholders só se não interferirem no teste; testar compreensão.",
       "include": "Seções, navegação, ação principal, conteúdo mínimo, estados que impactam estrutura, anotações de dúvida.",
       "avoid": "Evitar marca, decoração, sombras e tipografia final sem propósito; não exigir que seja estático ou que todos os estados sejam desenhados.",
       "example": "Sidebar matérias, área de enunciado, quatro alternativas e ação Responder.",
       "exit": "Estrutura compreensível para discutir/testar sem acabamento; documentar incertezas.",
-      "evidence": "Balsamiq; Sky View; Smashing Magazine."
+      "evidence": "Balsamiq; Sky View; Smashing Magazine.",
+      "greybox_review": {
+        "reviewed_on": "2026-11-27",
+        "classification": "Convenção contextual e critérios de QA, não norma universal",
+        "when": "Sketch aprovado; próxima hipótese é estrutura do workspace.",
+        "include": [
+          "superfícies neutras e placeholders preenchidos",
+          "controles reconhecíveis com rótulos essenciais",
+          "geometria nativa regular editável",
+          "hierarquia e espaçamento por proximidade",
+          "estados identificáveis sem depender só de cor"
+        ],
+        "avoid": [
+          "copiar o estilo manuscrito apenas trocando a fonte",
+          "polilinhas livres fechadas suavizadas que deformam retângulos",
+          "bordas decorativas e design final",
+          "truncamento fora da região"
+        ],
+        "gate": [
+          "capturar no runtime real",
+          "inspecionar todos os estados e temas pertinentes no tamanho final",
+          "verificar geometria, clipping, alinhamento, contraste e legibilidade",
+          "registrar SHA e proveniência; não confundir CI estrutural com revisão visual",
+          "separar propostas de requisitos e não afirmar comportamento testado"
+        ]
+      }
     },
     {
       "id": "activity-07",
@@ -521,6 +546,28 @@
       "storage": "link-only",
       "evidence": "Resultado visual indexado e página de origem identificada; licença de reprodução não verificada.",
       "canonical_id": "ux-activities-nomadly"
+    },
+    {
+      "id": "wireframe-figma-how-to",
+      "title": "Figma — How to wireframe",
+      "url": "https://www.figma.com/blog/how-to-wireframe/",
+      "kind": "vendor-practice-guide",
+      "notes": "Grayscale e layout/interações essenciais.",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "evidence": "Verificado por busca documental; sem teste do produto.",
+      "canonical_id": "wireframe-figma-how-to"
+    },
+    {
+      "id": "wireframe-balsamiq-examples",
+      "title": "Balsamiq — Wireframe and Prototype examples",
+      "url": "https://balsamiq.com/examples/",
+      "kind": "vendor-practice-guide",
+      "notes": "Galeria de exemplos; link-only.",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "evidence": "Verificado por busca documental; sem teste do produto.",
+      "canonical_id": "wireframe-balsamiq-examples"
     }
   ],
   "sync": {

@@ -89,6 +89,18 @@ Os itens "incluir" são mínimos recomendados conforme objetivo, não requisitos
 - **Critério de saída:** Estrutura compreensível para discutir/testar sem acabamento; documentar incertezas.
 - **Fundamentação:** Balsamiq; Sky View; Smashing Magazine.
 
+#### Greybox após Sketch — revisão 2026-11-27
+
+**Convenção de projeto, não norma universal:** quando um Sketch manuscrito já foi aprovado e o próximo objetivo é validar a estrutura de um workspace, preferir wireframe greybox/outline regular. Sketch, wireframe manuscrito e grayscale são técnicas válidas em outros contextos. Não basta trocar a fonte ou retirar o efeito de caneta.
+
+- Separar regiões por superfícies neutras de baixo contraste; usar blocos preenchidos para conteúdo abstrato e rótulos legíveis para navegação, ações e feedback. Manter componentes reconhecíveis: radio, botão, seleção, paginação e estados. Não criar cartões, bordas ou separadores por padrão.
+- Usar geometria nativa de retângulo/shape e texto editável quando disponível. Se o renderer suavizar traços fechados, usar quatro segmentos retos independentes ou o shape nativo validado; não representar o contorno inteiro por uma polilinha livre de poucos pontos. Não aplicar preset de Sketch ao wireframe estrutural. Verificar a API e a versão; não substituir por raster gerado quando editabilidade foi solicitada.
+- Manter alinhamentos, largura útil, espaçamento interno menor que o entre grupos, estado ativo/inativo reconhecível e feedback textual; evitar texto cortado ou transbordamento, incluindo sidebar estreita e nomes longos. Placeholders não substituem informação necessária para entender a tarefa.
+- Gate visual obrigatório: capturar no runtime real, conferir retângulos e botões não deformados, bordas, clipping, alinhamento, contraste e legibilidade no tamanho final e nos temas/variantes pertinentes; confirmar que elementos persistem e que cada estado corresponde à fonte. CI que valida IDs ou gera PNG não prova qualidade visual. Identificar SHA, origem e recorte. Se a captura falhar, não aprovar a etapa nem fingir que a prévia conceitual é a captura.
+- Não antecipar tokens finais, branding, fidelidade de conteúdo ou interações não aprovadas. Estados exploratórios precisam de indicação de proposta; imagem estática não valida teclado, responsividade funcional ou fluxo executável.
+
+**Evidência:** orientação de fabricantes, verificada por busca documental em 2026-11-27; critérios de geometria e gate são síntese aplicada, não exigência normativa: [Figma — How to wireframe](https://www.figma.com/blog/how-to-wireframe/), [Figma — Wireframe vs. Mockup](https://www.figma.com/resource-library/wireframe-vs-mockup/), [Balsamiq — What is a wireframe?](https://balsamiq.com/blog/what-are-wireframes/), [Balsamiq — exemplos](https://balsamiq.com/examples/). Sem redistribuição de imagens de terceiros.
+
 ### 07 — Mid-fidelity Wireframe
 
 - **Pergunta:** Densidade e controles.

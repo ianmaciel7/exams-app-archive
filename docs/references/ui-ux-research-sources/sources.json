@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "recorded_on": "2026-11-25",
+  "recorded_on": "2026-11-27",
   "sources": [
     {
       "id": "ui-patterns",
@@ -1377,6 +1377,46 @@
       "recorded_on": "2026-11-26",
       "checked_on": "2026-11-26",
       "status": "official research text retrieved; live demo interactions untested",
+      "storage": "link-only"
+    },
+    {
+      "id": "wireframe-figma-how-to",
+      "title": "Figma — How to wireframe",
+      "url": "https://www.figma.com/blog/how-to-wireframe/",
+      "kind": "vendor-practice-guide",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Grayscale e layout/interações essenciais.",
+      "storage": "link-only"
+    },
+    {
+      "id": "wireframe-figma-vs-mockup",
+      "title": "Figma — Wireframe vs. Mockup",
+      "url": "https://www.figma.com/resource-library/wireframe-vs-mockup/",
+      "kind": "vendor-practice-guide",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Estrutura e fluxo vs aparência final.",
+      "storage": "link-only"
+    },
+    {
+      "id": "wireframe-balsamiq-guide",
+      "title": "Balsamiq — What is a wireframe?",
+      "url": "https://balsamiq.com/blog/what-are-wireframes/",
+      "kind": "vendor-practice-guide",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Exemplos e níveis de fidelidade.",
+      "storage": "link-only"
+    },
+    {
+      "id": "wireframe-balsamiq-examples",
+      "title": "Balsamiq — Wireframe and Prototype examples",
+      "url": "https://balsamiq.com/examples/",
+      "kind": "vendor-practice-guide",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Galeria de exemplos; link-only.",
       "storage": "link-only"
     }
   ]
