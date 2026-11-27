@@ -84,3 +84,9 @@ No claims of a market-share ranking or universal effectiveness. Primary document
 
 - [16 observations and three documented sequences](../ui-ux-research-sources/ai-product-editor-contracts-2026-11-26.md)
 - Graph: 348 nodes, 528 edges. Official text-derived contracts are explicitly distinct from runtime observations. No visual or motion measurement claim.
+
+## Native artifact portal, library and editor-shell QA — 2026-11-27
+
+- [Source-backed implementation guidance and case study](../../../plugins/exams-archive-native/skills/artifact-portal-qa/SKILL.md): Open Artifact v0.17.0 static Playground vs persistent host; canonical stage order, native library tokens, authentic thumbnails, Grid/List, integrated Shell controls, public deployment verification and preservation of the screenshot fallback.
+- Upstream source and immutable Exam App CI evidence are linked in the skill. Element coverage and CI deployment do not establish visual parity, persistence, accessibility conformance or public cache freshness. Later project changes require separate runtime verification.
+- Shared knowledge: the private UX specialist and Open Artifact skill packages were updated and read back; local runtime binaries are unchanged. This is an implementation case study, not a new universal UX standard.
