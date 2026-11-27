@@ -453,6 +453,8 @@ def run_audit(
     backlog_gaps: list[dict[str, Any]] = []
 
     lifecycle_counts: Counter[str] = Counter()
+    local_file_states: Counter[str] = Counter()
+    remote_source_states: Counter[str] = Counter()
     modality_counts: Counter[str] = Counter()
     mime_counts: Counter[str] = Counter()
     unit_modality_counts: Counter[str] = Counter()
@@ -489,13 +491,14 @@ def run_audit(
                     {
                         "source_id": sid,
                         "gap_type": "bundle_blobs_not_mounted_locally",
-                        "detail": f"Manifest '{manifest_ref}' is verified locally; full Git objects live in release bundle.",
+                        "detail": f"Manifest '{manifest_ref}' exists locally; full Git objects live in release bundle.",
                     }
                 )
             else:
                 state = "located"
             src_states[state] += 1
             lifecycle_counts[state] += 1
+            remote_source_states[state] += 1
             source_summaries.append(
                 {
                     "source_id": sid,
@@ -543,6 +546,7 @@ def run_audit(
             file_path = base / rel_in_src
             if not file_path.is_file():
                 lifecycle_counts["unavailable"] += 1
+                local_file_states["unavailable"] += 1
                 src_states["unavailable"] += 1
                 continue
 
@@ -560,7 +564,7 @@ def run_audit(
             if modality == "ast_code":
                 text = raw.decode("utf-8", errors="replace")
                 units = _extract_code_units(file_path, full_rel, text, sha256)[:max_units_per_file]
-                state = "verified" if units else "extracted"
+                state = "extracted" if units else "retrieved"
             elif modality == "document":
                 if file_path.suffix.lower() == ".pdf":
                     # Check native PDF extractability without guessing OCR
@@ -588,7 +592,7 @@ def run_audit(
                     ]
                 else:
                     units = _extract_document_units(file_path, full_rel, raw, sha256)[:max_units_per_file]
-                    state = "verified" if units else "extracted"
+                    state = "extracted" if units else "retrieved"
             elif modality == "metadata":
                 try:
                     parsed_json = json.loads(raw.decode("utf-8"))
@@ -599,21 +603,21 @@ def run_audit(
                             "modality": "metadata",
                             "kind": "structured_metadata",
                             "keys": top_keys,
-                            "observation_status": "verified_json_schema",
+                            "observation_status": "parsed_json_not_schema_validated",
                         }
                     ]
-                    state = "queryable" if "references" in full_rel or "config/" in full_rel else "indexed"
-                except (UnicodeDecodeError, json.JSONDecodeError):
                     state = "extracted"
+                except (UnicodeDecodeError, json.JSONDecodeError):
+                    state = "retrieved"
             elif modality == "media_visual":
-                state = "indexed"
+                state = "retrieved"
                 units = [
                     {
                         "unit_id": f"media:file:{full_rel}",
                         "modality": "media_visual",
                         "kind": "binary_media_file",
                         "bytes": len(raw),
-                        "observation_status": "blob_sha256_verified_not_visually_inspected",
+                        "observation_status": "local_sha256_computed_not_visually_inspected",
                     }
                 ]
 
@@ -622,6 +626,7 @@ def run_audit(
             unit_modality_counts[modality] += len(units)
             src_states[state] += 1
             lifecycle_counts[state] += 1
+            local_file_states[state] += 1
 
             record_entry = {
                 "source_id": sid,
@@ -700,6 +705,12 @@ def run_audit(
             "visual_manifest_units": len(visual_units),
             "unit_count_semantics": "file units plus manifest records; not unique semantic concepts",
             "by_lifecycle_state": dict(sorted(lifecycle_counts.items())),
+            "by_local_file_lifecycle_state": dict(sorted(local_file_states.items())),
+            "by_remote_source_lifecycle_state": dict(sorted(remote_source_states.items())),
+            "local_eligible_occurrences": sum(local_file_states.values()),
+            "index_coverage_status": "NOT_MEASURED",
+            "index_coverage_percent": None,
+            "lifecycle_count_semantics": "Local file occurrences and remote source placeholders are distinct; extraction and local hashes are not evidence of index membership or retrieval.",
             "by_modality_files": dict(sorted(modality_counts.items())),
             "by_modality_units": dict(sorted(unit_modality_counts.items())),
             "mime_types_count": len(mime_counts),
@@ -737,11 +748,13 @@ def render_markdown_report(audit: dict[str, Any]) -> str:
         "",
         "### Lifecycle State Distribution",
         "",
-        "| Lifecycle State | Count |",
-        "|---|---:|",
+        "This offline extraction audit does not measure operational index membership, queryability or retrieval verification. Index coverage: **NOT MEASURED**. Local occurrences and remote source placeholders have separate denominators.",
+        "",
+        "| Lifecycle State | Local file occurrences | Remote sources |",
+        "|---|---:|---:|",
     ]
     for state in LIFECYCLE_STATES:
-        lines.append(f"| `{state}` | {s['by_lifecycle_state'].get(state, 0)} |")
+        lines.append(f"| `{state}` | {s.get('by_local_file_lifecycle_state', {}).get(state, 0)} | {s.get('by_remote_source_lifecycle_state', {}).get(state, 0)} |")
 
     lines.extend(
         [
