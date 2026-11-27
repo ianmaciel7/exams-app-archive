@@ -34,3 +34,7 @@ Deduplicate by existing stable IDs, aliases and normalized sources. Share genera
 ## Design foundations and state transitions
 
 Both plugins consult [decision guide](../ui-ux-research-sources/design-foundations-and-state-transitions-2026-11-25.md) and [cross-index](../ui-ux-research-sources/design-foundations-and-state-transitions-2026-11-25.json) for color selection, focus, layout, motion and state/transition decisions. Separate semantic state, event, guard, effect and visual animation; require source evidence, accessibility, interruption/reversal and real tests. #103–#105 remain research/validation backlog. No claim of automatic sync or historical implementation.
+
+## Fidelity progression and stage boundaries
+
+Both plugins apply the [evidence-based fidelity progression gate](../ui-ux-research-sources/ux-design-activities-2026-11-25.md) when auditing or producing design artifacts. Each stage must identify a distinct unresolved question, inherited invariants, the minimum evidence delta, representative scenarios, review method, findings, limitations and next question. Similar composition is not a defect; repeated rendering without a new learning objective is. Keep lifecycle coverage in the inventory and flows; select stage-appropriate visual scenarios and link supporting component studies. Preserve historical snapshots and distinguish structural CI, visual approval and runtime/user testing. Do not skip or merge formal stages without owner approval. This is an operational convention, not a universal UX process.
