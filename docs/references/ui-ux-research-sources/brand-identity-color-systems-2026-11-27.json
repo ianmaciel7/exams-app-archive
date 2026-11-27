@@ -80,6 +80,46 @@
         "wcag"
       ],
       "limit": "Proposed operational workflow; no claim that tests were run here."
+    },
+    {
+      "id": "color-gestalt-grouping",
+      "title": "Gestalt similarity, figure-ground and competing cues",
+      "definition": "Similar hues can group objects; figure-ground and proximity can reinforce or compete. Apply consistent color to equivalent roles and combine labels/shape/spacing; test whether users identify the groups correctly.",
+      "source_ids": [
+        "wagemans-gestalt-2012",
+        "gestalt-competition"
+      ],
+      "limit": "Perceptual grouping is context-sensitive, not an exclusive color law."
+    },
+    {
+      "id": "color-visual-search",
+      "title": "Preattentive features, selective attention and Guided Search 6.0",
+      "definition": "Hue can guide visual search; top-down goals, bottom-up salience, history, reward and scene context influence priority. Compare time to find and error rates with matched distractors; avoid competing accent colors.",
+      "source_ids": [
+        "wolfe-guided-search-6",
+        "wolfe-visual-search"
+      ],
+      "limit": "Guidance is not a guarantee of instantaneous detection; Guided Search 6.0 is a newer model, not a normative standard."
+    },
+    {
+      "id": "color-isolation-memory",
+      "title": "Von Restorff isolation versus salience",
+      "definition": "Distinctiveness can improve memory in isolation paradigms; visual salience and memory are separate outcomes. Use a distinct meaningful accent sparingly, measure detection and recall separately.",
+      "source_ids": [
+        "isolation-effect",
+        "wolfe-guided-search-6"
+      ],
+      "limit": "Does not establish conversion or task success."
+    },
+    {
+      "id": "color-context-adaptation",
+      "title": "Simultaneous color contrast and chromatic adaptation",
+      "definition": "Surround changes perceived color; temporal adaptation and contextual induction are distinct contributors. Compare the same token on actual surfaces, themes and ambient viewing conditions; validate separately from numerical WCAG contrast.",
+      "source_ids": [
+        "simultaneous-contrast",
+        "color-induction"
+      ],
+      "limit": "Mechanisms and magnitude depend on conditions; do not infer a universal correction factor."
     }
   ],
   "sources": [
@@ -192,6 +232,62 @@
       "title": "W3C Understanding Non-text Contrast",
       "url": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html",
       "status": "informative guidance",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "wagemans-gestalt-2012",
+      "title": "Wagemans et al. — A century of Gestalt psychology",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22845751/",
+      "status": "research-search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "wolfe-guided-search-6",
+      "title": "Wolfe — Guided Search 6.0",
+      "url": "https://doi.org/10.3758/s13423-020-01859-9",
+      "status": "research-search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "wolfe-visual-search",
+      "title": "Wolfe — Visual Search",
+      "url": "https://doi.org/10.1146/annurev-vision-091718-015048",
+      "status": "research-search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "isolation-effect",
+      "title": "What explains the von Restorff effect?",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0749596X17300864",
+      "status": "research-search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "simultaneous-contrast",
+      "title": "Basic characteristics of simultaneous color contrast revisited",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22983761/",
+      "status": "research-search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "color-induction",
+      "title": "An empirical explanation of color contrast",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC18850/",
+      "status": "research-search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "gestalt-competition",
+      "title": "Grouping by proximity or similarity?",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9797920/",
+      "status": "research-search-excerpt-reviewed",
       "checked_on": "2026-11-27",
       "storage": "link-only"
     }
