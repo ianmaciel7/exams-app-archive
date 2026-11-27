@@ -5,10 +5,10 @@
   "desired_version": "0.8.15",
   "last_published_release_id": null,
   "last_published_version": "0.8.15",
-  "status": "published-mirror-update",
-  "note": "Private Plugin Creator release 0.8.15 read back on 2026-11-27. Seven scoped files copied from the current release, including missing portable skills; remaining source files matched during preflight. Private current release identifier intentionally not exported; final mirror verification follows commit. Local agent runtime not tested.",
-  "verified_files": 0,
-  "byte_identical_files": 0,
+  "status": "verified-synced",
+  "note": "All 28 portable source files matched the private 0.8.15 release: 21 retained files verified before the scoped commit, seven changed/restored files verified by readback after it. Four manifests synchronized. Private current release identifier intentionally not exported. Local agent runtime not tested.",
+  "verified_files": 28,
+  "byte_identical_files": 28,
   "json_semantic_equivalent_files": [],
-  "verified_commit": null
+  "verified_commit": "c726bdad782d984be25402b60b69e6c122ff4773"
 }
