@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "product": "ClickUp",
+  "reviewed_on": "2026-11-27",
+  "baseline_commit": "96cdcf8d41672d4f3be86844ccd64526d29d80bd",
+  "scope": "Public Help Center article retrieval and search previews, no authenticated runtime.",
+  "source_ids": [
+    "clickup-spreadsheet-import",
+    "clickup-spreadsheet-prepare",
+    "clickup-import-overview",
+    "clickup-import-history",
+    "clickup-import-fields",
+    "clickup-export-tasks",
+    "clickup-export-overview",
+    "clickup-import-docs",
+    "clickup-import-notion",
+    "clickup-import-jira",
+    "clickup-import-export-limits",
+    "clickup-export-doc",
+    "clickup-share-docs",
+    "clickup-backups",
+    "clickup-storage",
+    "clickup-security",
+    "clickup-security-defaults",
+    "clickup-audit-limits",
+    "clickup-public-auth",
+    "clickup-link-types",
+    "clickup-session-management",
+    "clickup-chat-retention",
+    "clickup-two-factor",
+    "clickup-sso",
+    "clickup-microsoft-sso",
+    "clickup-saml",
+    "clickup-archive-space",
+    "clickup-app-center",
+    "clickup-desktop-command",
+    "clickup-mobile-home",
+    "clickup-import-export-section",
+    "clickup-privacy-section"
+  ],
+  "registry_audit": {
+    "before_count": 285,
+    "before_status": {
+      "verified": 200,
+      "search-result reviewed; full article pending": 80,
+      "search-result reviewed; direct fetch failed": 3,
+      "search-result reviewed; full section pending": 2
+    },
+    "after_count": 317,
+    "after_status": {
+      "verified": 215,
+      "search-result reviewed; full article pending": 96,
+      "search-result reviewed; direct fetch failed": 3,
+      "search-result reviewed; full section pending": 3
+    },
+    "duplicate_normalized_urls": 0,
+    "meaning": "Registry status is a recorded claim, not an independent revalidation of all historical URLs."
+  },
+  "import_field_matrix": {
+    "supported": [
+      "Checkbox",
+      "Date",
+      "Dropdown",
+      "Email",
+      "Labels",
+      "Money",
+      "Number",
+      "Phone",
+      "Progress (Manual)",
+      "Rating",
+      "Text",
+      "Text area (Long text)",
+      "Website"
+    ],
+    "unsupported_as_listed": [
+      "Button",
+      "Files",
+      "Formula",
+      "Location",
+      "People",
+      "Progress (Auto)",
+      "Relationships",
+      "Rollup",
+      "Signature",
+      "Task links",
+      "Voting"
+    ],
+    "source_id": "clickup-import-fields",
+    "note": "Importer taxonomy includes Task links; do not treat this as an additional general property type."
+  },
+  "contracts": [
+    {
+      "id": "clickup-import-mapping",
+      "source_ids": [
+        "clickup-spreadsheet-import",
+        "clickup-spreadsheet-prepare"
+      ],
+      "documented_behavior": "Choose file and destination, set date/delimiter, review suggested field mapping and invalid cell values before running. Mappings may reuse previous structural matches across users.",
+      "proposed_qa": "Test locale, duplicate source IDs, hierarchy references, permission to create schema, and explicit disclosure of unmapped columns.",
+      "evidence_status": "public documentation; runtime unverified"
+    },
+    {
+      "id": "clickup-import-job",
+      "source_ids": [
+        "clickup-import-history"
+      ],
+      "documented_behavior": "Queue and running states can be canceled; result has completion or failure status and drill-down by entity, actor and operation ID.",
+      "proposed_qa": "Test partial import, cancellation race, retry without duplicate entities, report authorization; rollback not established.",
+      "evidence_status": "public documentation; runtime unverified"
+    },
+    {
+      "id": "clickup-import-fidelity",
+      "source_ids": [
+        "clickup-import-fields"
+      ],
+      "documented_behavior": "Import maps cell values rather than workbook formatting. Computed, attachment and relational fields are unsupported; comments, image objects and rich presentation do not survive.",
+      "proposed_qa": "Show preflight loss report; distinguish omitted property from empty value, and preserve raw source for reconciliation.",
+      "evidence_status": "public documentation; runtime unverified"
+    },
+    {
+      "id": "clickup-structured-doc-import",
+      "source_ids": [
+        "clickup-import-docs"
+      ],
+      "documented_behavior": "Docx, HTML and Markdown can be imported; HTML splitting is an option and HTML has a 10 MB cap. Protected destination and role capabilities constrain import.",
+      "proposed_qa": "Test headings and nested pages, tables, unsupported embeds, file size, formatting and external references.",
+      "evidence_status": "public documentation; runtime unverified"
+    },
+    {
+      "id": "clickup-export-projection",
+      "source_ids": [
+        "clickup-export-tasks",
+        "clickup-export-overview",
+        "clickup-export-doc"
+      ],
+      "documented_behavior": "CSV exports are scoped to selected locations. Docs export selected or all pages into HTML, PDF or Markdown; embeds excluded and emailed download links expire after one hour.",
+      "proposed_qa": "Test access, consistent snapshot, stable identifiers, attachment download and missing links; do not equate export to complete backup.",
+      "evidence_status": "public documentation; runtime unverified"
+    },
+    {
+      "id": "clickup-trash-lifecycle",
+      "source_ids": [
+        "clickup-trash",
+        "clickup-task-delete"
+      ],
+      "documented_behavior": "Recoverable deleted items have 30-day window. Restore is individual. Deleted container contents are nested under container; some views, comments and individually deleted attachments cannot be recovered.",
+      "proposed_qa": "Test delete versus archive, permission, container restore, multi-list identity, permanent delete warning and expiry.",
+      "evidence_status": "public documentation; runtime unverified"
+    },
+    {
+      "id": "clickup-disaster-recovery",
+      "source_ids": [
+        "clickup-backups"
+      ],
+      "documented_behavior": "Vendor reports automatic region-local encrypted backups for disaster recovery only, retained up to one year; item-level restore unavailable.",
+      "proposed_qa": "Define separate self-service restore and disaster recovery policies; verify restore drill, RPO/RTO and export fidelity independently.",
+      "evidence_status": "public documentation; runtime unverified"
+    },
+    {
+      "id": "clickup-search-command",
+      "source_ids": [
+        "clickup-command",
+        "clickup-search-filter"
+      ],
+      "documented_behavior": "Global search starts with recents, then relevance-ranked results. Pinned object/source filters, creator/assignee/location/status/type and archive controls; results expose open, new tab and copy-link actions, keyboard equivalents. AI can assist after no results.",
+      "proposed_qa": "Test focus restoration, no results versus access denied, stale index, query history, source label and keyboard shortcuts.",
+      "evidence_status": "public documentation; runtime unverified"
+    },
+    {
+      "id": "clickup-link-boundary",
+      "source_ids": [
+        "clickup-link-types",
+        "clickup-public-auth"
+      ],
+      "documented_behavior": "Internal links require membership and object access; public links have different routes, and enterprise auth settings can require sign-in.",
+      "proposed_qa": "Test public versus internal copy, revoke access, unauthenticated user, custom IDs, expired share and no permission leakage.",
+      "evidence_status": "public documentation; runtime unverified"
+    },
+    {
+      "id": "clickup-session-expiry",
+      "source_ids": [
+        "clickup-session-management"
+      ],
+      "documented_behavior": "Session-duration policy can force all active users to sign out when changing from never-expire. Idle timeout offers continuation five minutes before expiry.",
+      "proposed_qa": "Test confirmation, preservation of unsaved work, multi-tab activity, reauthentication and policy changes.",
+      "evidence_status": "public documentation; runtime unverified"
+    },
+    {
+      "id": "clickup-identity-controls",
+      "source_ids": [
+        "clickup-two-factor",
+        "clickup-sso",
+        "clickup-security-defaults"
+      ],
+      "documented_behavior": "Optional or required SSO, policy-specific 2FA and administrator-assisted recovery; default policy differs from enforced policy.",
+      "proposed_qa": "Test enrollment, lockout, recovery, revocation and cross-tenant scope; don't infer cryptographic assurance from UI.",
+      "evidence_status": "public documentation; runtime unverified"
+    },
+    {
+      "id": "clickup-retention-inheritance",
+      "source_ids": [
+        "clickup-chat-retention",
+        "clickup-audit-limits",
+        "clickup-audit"
+      ],
+      "documented_behavior": "Global chat retention can be overridden per conversation type; daily cleanup also removes child replies. Audit history has separate 60-day limit.",
+      "proposed_qa": "Test inheritance, time-based deletion, admin permissions, audit trail and legal retention policy. Separate chat cleanup from backup lifecycle.",
+      "evidence_status": "public documentation; runtime unverified"
+    }
+  ],
+  "remaining": [
+    "Full article enumeration and review of pending sources",
+    "Runtime and visual capture, motion measurements and design tokens",
+    "Cross-index records into canonical searchable interface pattern catalog",
+    "Verify API schema and migration behavior through authorized sandbox"
+  ]
+}

@@ -387,6 +387,14 @@
       "interaction_count": 12,
       "opened_article_count": 9,
       "opened_visual_count": 0
+    },
+    {
+      "id": "portability-security-2026-11-27",
+      "path": "portability-security-2026-11-27.json",
+      "source_count": 32,
+      "interaction_count": 12,
+      "opened_new_article_count": 14,
+      "opened_visual_count": 0
     }
   ]
 }

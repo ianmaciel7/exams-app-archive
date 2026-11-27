@@ -144,3 +144,8 @@ Machine-readable inventory: [inventory.json](inventory.json). Source registry: [
 
 - [Properties, business rules and integrations](properties-integrations-2026-11-27.md)
 - [Structured property and integration inventory](properties-integrations-2026-11-27.json)
+
+## Eighth extraction batch
+
+- [Portability, search, security and recovery](portability-security-2026-11-27.md)
+- [Structured contracts and source audit](portability-security-2026-11-27.json)

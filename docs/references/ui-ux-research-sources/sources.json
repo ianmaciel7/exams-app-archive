@@ -4268,6 +4268,326 @@
       "status": "search-result reviewed; full section pending",
       "notes": "Section discovery.",
       "storage": "link-only"
+    },
+    {
+      "id": "clickup-spreadsheet-import",
+      "title": "ClickUp Help — Use the Spreadsheets Importer",
+      "url": "https://help.clickup.com/hc/en-us/articles/6310834724247-Use-the-Spreadsheets-Importer",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Destination, mapping, validation, report.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-spreadsheet-prepare",
+      "title": "ClickUp Help — Prepare a spreadsheet for import",
+      "url": "https://help.clickup.com/hc/en-us/articles/6310821748759-Prepare-a-spreadsheet-for-import",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Prepare source format and hierarchy.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-import-overview",
+      "title": "ClickUp Help — How do I import my work into ClickUp",
+      "url": "https://help.clickup.com/hc/en-us/articles/6311099045783-How-do-I-import-my-work-into-ClickUp",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Migration entry and supported sources.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-import-history",
+      "title": "ClickUp Help — Manage imports",
+      "url": "https://help.clickup.com/hc/en-us/articles/6310875506839-Manage-imports",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Queued/running/completed/failed; cancellation and per-entity reports.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-import-fields",
+      "title": "ClickUp Help — Fields supported by the Spreadsheets importer",
+      "url": "https://help.clickup.com/hc/en-us/articles/6310876671255-Fields-supported-by-the-Spreadsheets-importer",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Supported and unsupported properties, fidelity limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-export-tasks",
+      "title": "ClickUp Help — Export task data",
+      "url": "https://help.clickup.com/hc/en-us/articles/6310551109527-Export-task-data",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Scope-based CSV with identity and property columns.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-export-overview",
+      "title": "ClickUp Help — How do I export my Workspace s data",
+      "url": "https://help.clickup.com/hc/en-us/articles/6310786693015-How-do-I-export-my-Workspace-s-data",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Export by content type.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-import-docs",
+      "title": "ClickUp Help — Import Docs",
+      "url": "https://help.clickup.com/hc/en-us/articles/6325375296407-Import-Docs",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Document file types and entry points.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-import-notion",
+      "title": "ClickUp Help — Import from Notion",
+      "url": "https://help.clickup.com/hc/en-us/articles/21376442610839-Import-from-Notion",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Notion pages to Docs.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-import-jira",
+      "title": "ClickUp Help — Import from Jira",
+      "url": "https://help.clickup.com/hc/en-us/articles/6310954639255-Import-from-Jira",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "New versus legacy importer.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-import-export-limits",
+      "title": "ClickUp Help — Import and export feature availability and limits",
+      "url": "https://help.clickup.com/hc/en-us/articles/30782347809815-Import-and-export-feature-availability-and-limits",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Role and plan restrictions.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-export-doc",
+      "title": "ClickUp Help — Export a Doc",
+      "url": "https://help.clickup.com/hc/en-us/articles/6325383226391-Export-a-Doc",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "PDF, Markdown, HTML, page/all, embeds excluded.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-share-docs",
+      "title": "ClickUp Help — Share Docs",
+      "url": "https://help.clickup.com/hc/en-us/articles/6325333637271-Share-Docs",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Sharing and exporting from document surfaces.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-backups",
+      "title": "ClickUp Help — Backups and data retention",
+      "url": "https://help.clickup.com/hc/en-us/articles/43941086639383-Backups-and-data-retention",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Disaster recovery, not individual item recovery.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-storage",
+      "title": "ClickUp Help — Manage your Workspace storage",
+      "url": "https://help.clickup.com/hc/en-us/articles/6310498579607-Manage-your-Workspace-storage",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Storage quotas and Trash boundary.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-security",
+      "title": "ClickUp Help — Privacy and security",
+      "url": "https://help.clickup.com/hc/en-us/articles/6327713963031-Privacy-and-security",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Vendor security statements and permission retention.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-security-defaults",
+      "title": "ClickUp Help — Default security settings",
+      "url": "https://help.clickup.com/hc/en-us/articles/21797055143575-Default-security-settings",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Default security configuration.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-audit-limits",
+      "title": "ClickUp Help — Audit Logs feature availability and limits",
+      "url": "https://help.clickup.com/hc/en-us/articles/25324213764119-Audit-Logs-feature-availability-and-limits",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "60-day audit log history.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-public-auth",
+      "title": "ClickUp Help — Public views authentication",
+      "url": "https://help.clickup.com/hc/en-us/articles/33077853953943-Public-views-authentication",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "OpenID Connect option for shared views.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-link-types",
+      "title": "ClickUp Help — What s the difference between public and internal links",
+      "url": "https://help.clickup.com/hc/en-us/articles/41521317138455-What-s-the-difference-between-public-and-internal-links",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Public versus internal routing and permissions.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-session-management",
+      "title": "ClickUp Help — Session management",
+      "url": "https://help.clickup.com/hc/en-us/articles/6327732937751-Session-management",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Session duration, idle warning and forced logout.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-chat-retention",
+      "title": "ClickUp Help — Chat data retention",
+      "url": "https://help.clickup.com/hc/en-us/articles/30452538132759-Chat-data-retention",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Scoped retention settings and deletion schedule.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-two-factor",
+      "title": "ClickUp Help — Activate and manage two factor authentication",
+      "url": "https://help.clickup.com/hc/en-us/articles/6327741965591-Activate-and-manage-two-factor-authentication",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Personal and enforced 2FA policies; recovery.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-sso",
+      "title": "ClickUp Help — Intro to single sign on SSO",
+      "url": "https://help.clickup.com/hc/en-us/articles/6305043992343-Intro-to-single-sign-on-SSO",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Required/optional SSO and SCIM boundaries.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-microsoft-sso",
+      "title": "ClickUp Help — Microsoft single sign on",
+      "url": "https://help.clickup.com/hc/en-us/articles/6305100485015-Microsoft-single-sign-on",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Microsoft SSO; SCIM requires custom SAML.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-saml",
+      "title": "ClickUp Help — Configure custom SAML single sign on",
+      "url": "https://help.clickup.com/hc/en-us/articles/6305027039767-Configure-custom-SAML-single-sign-on",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Custom SAML configuration.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-archive-space",
+      "title": "ClickUp Help — Archive or restore Spaces",
+      "url": "https://help.clickup.com/hc/en-us/articles/6309342765079-Archive-or-restore-Spaces",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Archive and restore hierarchy locations.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-app-center",
+      "title": "ClickUp Help — Intro to the App Center",
+      "url": "https://help.clickup.com/hc/en-us/articles/12580135233559-Intro-to-the-App-Center",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Connection status filtering and scope.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-desktop-command",
+      "title": "ClickUp Help — Use AI Command Bar on the desktop app",
+      "url": "https://help.clickup.com/hc/en-us/articles/14952556494359-Use-AI-Command-Bar-on-the-desktop-app",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "System-wide search entry.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-mobile-home",
+      "title": "ClickUp Help — Intro to Home on mobile",
+      "url": "https://help.clickup.com/hc/en-us/articles/15146214337559-Intro-to-Home-on-mobile",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Mobile home and search entry.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-import-export-section",
+      "title": "ClickUp Help — Import and Export",
+      "url": "https://help.clickup.com/hc/en-us/sections/17043100285463-Import-and-Export",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Section listing opened, not all nested pages.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-privacy-section",
+      "title": "ClickUp Help — Privacy and security",
+      "url": "https://help.clickup.com/hc/en-us/sections/19621597921943-Privacy-and-security",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full section pending",
+      "notes": "Section discovery.",
+      "storage": "link-only"
     }
   ]
 }
