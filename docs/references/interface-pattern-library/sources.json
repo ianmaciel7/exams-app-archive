@@ -7542,6 +7542,42 @@
       "recorded_on": "2026-11-27",
       "status": "Reference retained from dated selection guide; search-excerpt documentary evidence, not runtime or new reachability validation",
       "storage": "link-only"
+    },
+    {
+      "id": "brand-color-adobe-identity",
+      "title": "Adobe — Brand identity",
+      "url": "https://www.adobe.com/creativecloud/business/teams/resources/how-to/brand-identity.html",
+      "kind": "educational",
+      "notes": "Positioning and brand consistency; not universal hue associations.",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "brand-color-adobe-theory",
+      "title": "Adobe — Color theory mistakes",
+      "url": "https://www.adobe.com/br/express/learn/blog/common-color-theory-mistakes",
+      "kind": "educational",
+      "notes": "Cultural context and trend limitations.",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "brand-color-material-theming",
+      "title": "Material 3 — Accessible personalized brand theme",
+      "url": "https://developer.android.com/codelabs/m3-design-theming",
+      "kind": "primary-platform",
+      "notes": "Tonal palettes and semantic on-color pairs.",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
+    },
+    {
+      "id": "brand-color-carbon-overview",
+      "title": "IBM Carbon — Color overview",
+      "url": "https://www.carbondesignsystem.com/building-blocks/foundations/color/overview",
+      "kind": "primary-platform",
+      "notes": "Role-based tokens and theme values.",
+      "checked_on": "2026-11-27",
+      "storage": "link-only"
     }
   ],
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",
