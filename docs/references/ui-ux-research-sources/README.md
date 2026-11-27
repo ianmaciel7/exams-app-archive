@@ -194,3 +194,7 @@ Registrar URLs originais e redirects, datas de consulta, fonte e status (verific
 ## Laws of UX — 30 concepts (2026-11-27)
 
 [Applied catalog](laws-of-ux-2026-11-27.md) · [Structured inventory](laws-of-ux-2026-11-27.json). All 30 concept pages reviewed; external full-text research and plugin publication are separate verification steps.
+
+## Brand identity and color systems
+
+- [Decision guide](brand-identity-color-systems-2026-11-27.md) and [structured records](brand-identity-color-systems-2026-11-27.json): seven frameworks bridging brand strategy, theory, color psychology, science, system engineering, accessibility and governance. Search excerpts reviewed; no full-book audit or product tests.
