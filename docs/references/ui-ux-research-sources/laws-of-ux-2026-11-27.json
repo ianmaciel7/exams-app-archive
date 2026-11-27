@@ -4,7 +4,7 @@
   "reviewed_on": "2026-11-27",
   "catalog_count": 30,
   "reviewed_count": 30,
-  "scope": "catalog pages, original synthesis; external full-text and media rights review pending",
+  "scope": "30 official concept pages verified; independent synthesis; selected complementary studies verified via abstracts/excerpts, not full exhaustive bibliography; license verified, link-only media",
   "items": [
     {
       "id": "aesthetic-usability-effect",
@@ -19,7 +19,8 @@
       "example": "ATM, estudo histórico",
       "url": "https://lawsofux.com/aesthetic-usability-effect/",
       "evidence": "catalog page reviewed; bibliographic leads not independently full-text verified; proposed applications/tests",
-      "visual_rights": "link only"
+      "visual_rights": "link only; official site/posters CC BY-NC-ND 4.0; third-party examples may have separate rights",
+      "additional_evidence": []
     },
     {
       "id": "choice-overload",
@@ -34,7 +35,11 @@
       "example": "Seleção de concursos",
       "url": "https://lawsofux.com/choice-overload/",
       "evidence": "catalog page reviewed; bibliographic leads not independently full-text verified; proposed applications/tests",
-      "visual_rights": "link only"
+      "visual_rights": "link only; official site/posters CC BY-NC-ND 4.0; third-party examples may have separate rights",
+      "additional_evidence": [
+        "https://doi.org/10.1086/651235",
+        "https://doi.org/10.1016/j.jcps.2014.08.002"
+      ]
     },
     {
       "id": "chunking",
@@ -49,7 +54,10 @@
       "example": "Formulário por propósito",
       "url": "https://lawsofux.com/chunking/",
       "evidence": "catalog page reviewed; bibliographic leads not independently full-text verified; proposed applications/tests",
-      "visual_rights": "link only"
+      "visual_rights": "link only; official site/posters CC BY-NC-ND 4.0; third-party examples may have separate rights",
+      "additional_evidence": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC2864034/"
+      ]
     },
     {
       "id": "cognitive-bias",
@@ -64,7 +72,8 @@
       "example": "Pesquisa não indutiva",
       "url": "https://lawsofux.com/cognitive-bias/",
       "evidence": "catalog page reviewed; bibliographic leads not independently full-text verified; proposed applications/tests",
-      "visual_rights": "link only"
+      "visual_rights": "link only; official site/posters CC BY-NC-ND 4.0; third-party examples may have separate rights",
+      "additional_evidence": []
     },
     {
       "id": "cognitive-load",
@@ -79,7 +88,8 @@
       "example": "Modo de resolução",
       "url": "https://lawsofux.com/cognitive-load/",
       "evidence": "catalog page reviewed; bibliographic leads not independently full-text verified; proposed applications/tests",
-      "visual_rights": "link only"
+      "visual_rights": "link only; official site/posters CC BY-NC-ND 4.0; third-party examples may have separate rights",
+      "additional_evidence": []
     },
     {
       "id": "doherty-threshold",
@@ -94,7 +104,8 @@
       "example": "Envio assíncrono",
       "url": "https://lawsofux.com/doherty-threshold/",
       "evidence": "catalog page reviewed; bibliographic leads not independently full-text verified; proposed applications/tests",
-      "visual_rights": "link only"
+      "visual_rights": "link only; official site/posters CC BY-NC-ND 4.0; third-party examples may have separate rights",
+      "additional_evidence": []
     },
     {
       "id": "fittss-law",
@@ -109,7 +120,8 @@
       "example": "Botão próximo das alternativas",
       "url": "https://lawsofux.com/fittss-law/",
       "evidence": "catalog page reviewed; bibliographic leads not independently full-text verified; proposed applications/tests",
-      "visual_rights": "link only"
+      "visual_rights": "link only; official site/posters CC BY-NC-ND 4.0; third-party examples may have separate rights",
+      "additional_evidence": []
     },
     {
       "id": "flow",
@@ -124,7 +136,8 @@
       "example": "Sessão de questões",
       "url": "https://lawsofux.com/flow/",
       "evidence": "catalog page reviewed; bibliographic leads not independently full-text verified; proposed applications/tests",
-      "visual_rights": "link only"
+      "visual_rights": "link only; official site/posters CC BY-NC-ND 4.0; third-party examples may have separate rights",
+      "additional_evidence": []
     },
     {
       "id": "goal-gradient-effect",
@@ -139,7 +152,8 @@
       "example": "12 de 20 questões respondidas",
       "url": "https://lawsofux.com/goal-gradient-effect/",
       "evidence": "catalog page reviewed; bibliographic leads not independently full-text verified; proposed applications/tests",
-      "visual_rights": "link only"
+      "visual_rights": "link only; official site/posters CC BY-NC-ND 4.0; third-party examples may have separate rights",
+      "additional_evidence": []
     },
     {
       "id": "hicks-law",
@@ -154,7 +168,10 @@
       "example": "Site: Google homepage, Apple TV remote, Slack onboarding",
       "url": "https://lawsofux.com/hicks-law/",
       "evidence": "catalog page reviewed; bibliographic leads not independently full-text verified; proposed applications/tests",
-      "visual_rights": "link only"
+      "visual_rights": "link only; official site/posters CC BY-NC-ND 4.0; third-party examples may have separate rights",
+      "additional_evidence": [
+        "https://doi.org/10.1086/651235"
+      ]
     },
     {
       "id": "jakobs-law",
@@ -169,7 +186,8 @@
       "example": "Site: controles analógicos e redesign YouTube 2017",
       "url": "https://lawsofux.com/jakobs-law/",
       "evidence": "catalog page reviewed; bibliographic leads not independently full-text verified; proposed applications/tests",
-      "visual_rights": "link only"
+      "visual_rights": "link only; official site/posters CC BY-NC-ND 4.0; third-party examples may have separate rights",
+      "additional_evidence": []
     },
     {
       "id": "law-of-common-region",
@@ -184,7 +202,8 @@
       "example": "Painel de filtros",
       "url": "https://lawsofux.com/law-of-common-region/",
       "evidence": "catalog page reviewed; bibliographic leads not independently full-text verified; proposed applications/tests",
-      "visual_rights": "link only"
+      "visual_rights": "link only; official site/posters CC BY-NC-ND 4.0; third-party examples may have separate rights",
+      "additional_evidence": []
     },
     {
       "id": "law-of-proximity",
@@ -199,7 +218,8 @@
       "example": "Site: resultados do Google",
       "url": "https://lawsofux.com/law-of-proximity/",
       "evidence": "catalog page reviewed; bibliographic leads not independently full-text verified; proposed applications/tests",
-      "visual_rights": "link only"
+      "visual_rights": "link only; official site/posters CC BY-NC-ND 4.0; third-party examples may have separate rights",
+      "additional_evidence": []
     },
     {
       "id": "law-of-pr%C3%A4gnanz",
@@ -214,7 +234,8 @@
       "example": "Mapa de relações",
       "url": "https://lawsofux.com/law-of-pr%C3%A4gnanz/",
       "evidence": "catalog page reviewed; bibliographic leads not independently full-text verified; proposed applications/tests",
-      "visual_rights": "link only"
+      "visual_rights": "link only; official site/posters CC BY-NC-ND 4.0; third-party examples may have separate rights",
+      "additional_evidence": []
     },
     {
       "id": "law-of-similarity",
@@ -229,7 +250,8 @@
       "example": "Estado de questão com ícone e texto",
       "url": "https://lawsofux.com/law-of-similarity/",
       "evidence": "catalog page reviewed; bibliographic leads not independently full-text verified; proposed applications/tests",
-      "visual_rights": "link only"
+      "visual_rights": "link only; official site/posters CC BY-NC-ND 4.0; third-party examples may have separate rights",
+      "additional_evidence": []
     },
     {
       "id": "law-of-uniform-connectedness",
@@ -244,7 +266,8 @@
       "example": "Site: resultados especiais do Google",
       "url": "https://lawsofux.com/law-of-uniform-connectedness/",
       "evidence": "catalog page reviewed; bibliographic leads not independently full-text verified; proposed applications/tests",
-      "visual_rights": "link only"
+      "visual_rights": "link only; official site/posters CC BY-NC-ND 4.0; third-party examples may have separate rights",
+      "additional_evidence": []
     },
     {
       "id": "mental-model",
@@ -259,7 +282,8 @@
       "example": "Site: convenções de e-commerce",
       "url": "https://lawsofux.com/mental-model/",
       "evidence": "catalog page reviewed; bibliographic leads not independently full-text verified; proposed applications/tests",
-      "visual_rights": "link only"
+      "visual_rights": "link only; official site/posters CC BY-NC-ND 4.0; third-party examples may have separate rights",
+      "additional_evidence": []
     },
     {
       "id": "millers-law",
@@ -274,7 +298,10 @@
       "example": "Site: Apple TV remote",
       "url": "https://lawsofux.com/millers-law/",
       "evidence": "catalog page reviewed; bibliographic leads not independently full-text verified; proposed applications/tests",
-      "visual_rights": "link only"
+      "visual_rights": "link only; official site/posters CC BY-NC-ND 4.0; third-party examples may have separate rights",
+      "additional_evidence": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC2864034/"
+      ]
     },
     {
       "id": "occams-razor",
@@ -289,7 +316,8 @@
       "example": "Botão versus menu desnecessário",
       "url": "https://lawsofux.com/occams-razor/",
       "evidence": "catalog page reviewed; bibliographic leads not independently full-text verified; proposed applications/tests",
-      "visual_rights": "link only"
+      "visual_rights": "link only; official site/posters CC BY-NC-ND 4.0; third-party examples may have separate rights",
+      "additional_evidence": []
     },
     {
       "id": "paradox-of-the-active-user",
@@ -304,7 +332,8 @@
       "example": "Ajuda ao iniciar simulado",
       "url": "https://lawsofux.com/paradox-of-the-active-user/",
       "evidence": "catalog page reviewed; bibliographic leads not independently full-text verified; proposed applications/tests",
-      "visual_rights": "link only"
+      "visual_rights": "link only; official site/posters CC BY-NC-ND 4.0; third-party examples may have separate rights",
+      "additional_evidence": []
     },
     {
       "id": "pareto-principle",
@@ -319,7 +348,8 @@
       "example": "Pareto de erros de submissão",
       "url": "https://lawsofux.com/pareto-principle/",
       "evidence": "catalog page reviewed; bibliographic leads not independently full-text verified; proposed applications/tests",
-      "visual_rights": "link only"
+      "visual_rights": "link only; official site/posters CC BY-NC-ND 4.0; third-party examples may have separate rights",
+      "additional_evidence": []
     },
     {
       "id": "parkinsons-law",
@@ -334,7 +364,8 @@
       "example": "Configuração da prova",
       "url": "https://lawsofux.com/parkinsons-law/",
       "evidence": "catalog page reviewed; bibliographic leads not independently full-text verified; proposed applications/tests",
-      "visual_rights": "link only"
+      "visual_rights": "link only; official site/posters CC BY-NC-ND 4.0; third-party examples may have separate rights",
+      "additional_evidence": []
     },
     {
       "id": "peak-end-rule",
@@ -349,7 +380,8 @@
       "example": "Site: confirmação Mailchimp e espera Uber",
       "url": "https://lawsofux.com/peak-end-rule/",
       "evidence": "catalog page reviewed; bibliographic leads not independently full-text verified; proposed applications/tests",
-      "visual_rights": "link only"
+      "visual_rights": "link only; official site/posters CC BY-NC-ND 4.0; third-party examples may have separate rights",
+      "additional_evidence": []
     },
     {
       "id": "postels-law",
@@ -364,7 +396,10 @@
       "example": "Busca com acentos e espaços",
       "url": "https://lawsofux.com/postels-law/",
       "evidence": "catalog page reviewed; bibliographic leads not independently full-text verified; proposed applications/tests",
-      "visual_rights": "link only"
+      "visual_rights": "link only; official site/posters CC BY-NC-ND 4.0; third-party examples may have separate rights",
+      "additional_evidence": [
+        "https://www.rfc-editor.org/rfc/rfc9413.html"
+      ]
     },
     {
       "id": "selective-attention",
@@ -379,7 +414,8 @@
       "example": "Feedback de resposta",
       "url": "https://lawsofux.com/selective-attention/",
       "evidence": "catalog page reviewed; bibliographic leads not independently full-text verified; proposed applications/tests",
-      "visual_rights": "link only"
+      "visual_rights": "link only; official site/posters CC BY-NC-ND 4.0; third-party examples may have separate rights",
+      "additional_evidence": []
     },
     {
       "id": "serial-position-effect",
@@ -394,7 +430,8 @@
       "example": "Navegação de revisão",
       "url": "https://lawsofux.com/serial-position-effect/",
       "evidence": "catalog page reviewed; bibliographic leads not independently full-text verified; proposed applications/tests",
-      "visual_rights": "link only"
+      "visual_rights": "link only; official site/posters CC BY-NC-ND 4.0; third-party examples may have separate rights",
+      "additional_evidence": []
     },
     {
       "id": "teslers-law",
@@ -409,7 +446,8 @@
       "example": "Envio idempotente",
       "url": "https://lawsofux.com/teslers-law/",
       "evidence": "catalog page reviewed; bibliographic leads not independently full-text verified; proposed applications/tests",
-      "visual_rights": "link only"
+      "visual_rights": "link only; official site/posters CC BY-NC-ND 4.0; third-party examples may have separate rights",
+      "additional_evidence": []
     },
     {
       "id": "von-restorff-effect",
@@ -424,7 +462,8 @@
       "example": "Answer como ação primária",
       "url": "https://lawsofux.com/von-restorff-effect/",
       "evidence": "catalog page reviewed; bibliographic leads not independently full-text verified; proposed applications/tests",
-      "visual_rights": "link only"
+      "visual_rights": "link only; official site/posters CC BY-NC-ND 4.0; third-party examples may have separate rights",
+      "additional_evidence": []
     },
     {
       "id": "working-memory",
@@ -439,7 +478,10 @@
       "example": "Preservar alternativa após falha",
       "url": "https://lawsofux.com/working-memory/",
       "evidence": "catalog page reviewed; bibliographic leads not independently full-text verified; proposed applications/tests",
-      "visual_rights": "link only"
+      "visual_rights": "link only; official site/posters CC BY-NC-ND 4.0; third-party examples may have separate rights",
+      "additional_evidence": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC2864034/"
+      ]
     },
     {
       "id": "zeigarnik-effect",
@@ -454,7 +496,74 @@
       "example": "Simulado interrompido",
       "url": "https://lawsofux.com/zeigarnik-effect/",
       "evidence": "catalog page reviewed; bibliographic leads not independently full-text verified; proposed applications/tests",
-      "visual_rights": "link only"
+      "visual_rights": "link only; official site/posters CC BY-NC-ND 4.0; third-party examples may have separate rights",
+      "additional_evidence": [
+        "https://www.nature.com/articles/s41599-025-05000-w"
+      ]
     }
-  ]
+  ],
+  "license": {
+    "source": "https://lawsofux.com/info/",
+    "author": "Jon Yablonski",
+    "license": "CC BY-NC-ND 4.0",
+    "terms": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+    "policy": "Link original pages, examples and poster downloads. No copies or adapted original artwork in this public project; noncommercial/no-derivatives license does not grant commercial reuse. Independent examples and factual summaries only; third-party screenshots may have separate rights.",
+    "status": "official license statement verified 2026-11-27"
+  },
+  "additional_evidence": [
+    {
+      "concepts": [
+        "choice-overload",
+        "hicks-law"
+      ],
+      "url": "https://doi.org/10.1086/651235",
+      "citation": "Scheibehenne, Greifeneder & Todd (2010), meta-analysis",
+      "access": "abstract/result reviewed",
+      "finding": "Mean effect was near zero across 63 conditions; considerable variability. Do not infer overload from option count alone."
+    },
+    {
+      "concepts": [
+        "choice-overload"
+      ],
+      "url": "https://doi.org/10.1016/j.jcps.2014.08.002",
+      "citation": "Chernev, Böckenholt & Goodman (2015), meta-analysis",
+      "access": "abstract/result reviewed",
+      "finding": "Complexity, decision difficulty, preference uncertainty and decision goals moderate choice overload."
+    },
+    {
+      "concepts": [
+        "millers-law",
+        "working-memory",
+        "chunking"
+      ],
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2864034/",
+      "citation": "Cowan (2010), The Magical Mystery Four",
+      "access": "available text excerpts reviewed",
+      "finding": "Around 3–5 separate items under particular experimental conditions; no universal UI item cap."
+    },
+    {
+      "concepts": [
+        "zeigarnik-effect"
+      ],
+      "url": "https://www.nature.com/articles/s41599-025-05000-w",
+      "citation": "Ghibellini & Meier (2025), meta-analysis",
+      "access": "available text excerpts reviewed",
+      "finding": "Recall advantage of unfinished tasks is not universal; distinguish the tendency to resume interrupted tasks (Ovsiankina effect). Support safe resumption rather than memory or engagement promises."
+    },
+    {
+      "concepts": [
+        "postels-law"
+      ],
+      "url": "https://www.rfc-editor.org/rfc/rfc9413.html",
+      "citation": "IAB RFC 9413 (2023)",
+      "access": "available text excerpts reviewed",
+      "finding": "Overly broad tolerance can harm maintainability and long-term interoperability; explicit protocols and active maintenance are preferred."
+    }
+  ],
+  "plugin_sync": {
+    "ux_specialist": "1.10.38",
+    "exams_archive": "0.8.20",
+    "status": "published and new skill read back; archive mirror 30/30 verified",
+    "archive_mirror_commit": "6e5df1142ff091c397342f1baf7ba3c711fadcd0"
+  }
 }
