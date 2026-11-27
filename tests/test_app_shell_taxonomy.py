@@ -20,7 +20,7 @@ class AppShellTaxonomyTests(unittest.TestCase):
         concept = concepts["ui.layout.app-shell"]
         self.assertGreaterEqual(len(shells), 18)
         self.assertEqual(set(concept["members"]), set(shells))
-        for alias in ("tipos de app shell", "app shell taxonomy"):
+        for alias in ("tipos de app shell", "app shell taxonomy", "app shell", "app-shell", "shell de aplicação"):
             self.assertEqual(concept_packs.resolve(alias, concepts), [concept["id"]])
         self.assertTrue(all(r["sources"] and r["confidence"] for r in shells.values()))
         self.assertTrue(research_index.verify_record_provenance(list(shells.values()))["integrity_passed"])
