@@ -7710,6 +7710,83 @@
       "kind": "research-reference",
       "notes": "informative guidance",
       "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "brand-science-wagemans-gestalt-2012",
+      "title": "Wagemans et al. — A century of Gestalt psychology",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22845751/",
+      "status": "research-search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "research-search-excerpt-reviewed",
+      "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "brand-science-wolfe-guided-search-6",
+      "title": "Wolfe — Guided Search 6.0",
+      "url": "https://doi.org/10.3758/s13423-020-01859-9",
+      "status": "research-search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "research-search-excerpt-reviewed",
+      "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "brand-science-wolfe-visual-search",
+      "title": "Wolfe — Visual Search",
+      "url": "https://doi.org/10.1146/annurev-vision-091718-015048",
+      "status": "research-search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "research-search-excerpt-reviewed",
+      "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "brand-science-isolation-effect",
+      "title": "What explains the von Restorff effect?",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0749596X17300864",
+      "status": "research-search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "research-search-excerpt-reviewed",
+      "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "brand-science-simultaneous-contrast",
+      "title": "Basic characteristics of simultaneous color contrast revisited",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22983761/",
+      "status": "research-search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "research-search-excerpt-reviewed",
+      "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "brand-science-color-induction",
+      "title": "An empirical explanation of color contrast",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC18850/",
+      "status": "research-search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "research-search-excerpt-reviewed",
+      "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "brand-science-gestalt-competition",
+      "title": "Grouping by proximity or similarity?",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9797920/",
+      "status": "research-search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "research-search-excerpt-reviewed",
+      "recorded_on": "2026-11-27"
     }
   ],
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",
