@@ -89,7 +89,7 @@ class GoldSetBenchmarkTests(unittest.TestCase):
             self.assertTrue((tmp_path / "GOLD-SET-BENCHMARK.json").is_file())
             self.assertTrue((tmp_path / "GOLD-SET-BENCHMARK.md").is_file())
 
-        self.assertTrue(report["gate_passed"])
+        self.assertTrue(report["gate_passed"], json.dumps({"overall": report["overall"], "by_domain": report["by_domain"], "failed_queries_sample": report["failed_queries_sample"]}, ensure_ascii=False))
         ov = report["overall"]
         self.assertGreaterEqual(ov["resolution_rate"], 0.95)
         self.assertGreaterEqual(ov["recall_at_20"], 0.90)
@@ -124,8 +124,9 @@ class GoldSetBenchmarkTests(unittest.TestCase):
             [sys.executable, str(SCRIPTS_DIR / "gold_set_benchmark.py"), "--no-write"],
             capture_output=True,
             text=True,
-            check=True,
+            check=False,
         )
+        self.assertEqual(proc.returncode, 0, proc.stdout + proc.stderr)
         parsed = json.loads(proc.stdout)
         self.assertEqual(parsed["total_queries"], 460)
         self.assertTrue(parsed["gate_passed"])
