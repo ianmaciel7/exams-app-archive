@@ -30,3 +30,23 @@ Evidence class: external public research (repository descriptions and indexed do
 Select one primary skill per responsibility to avoid duplicated context. For app UI, prefer existing design system and requirements over generic aesthetics. Use an automated visual check and screenshot/browser QA, not a prompt alone. For code, inspect the diff, preserve behavior and run meaningful tests; use React Doctor on React changes. Reserve independent adversarial review for risky changes. Review skill instructions, executable scripts, hooks, dependencies, network access and permissions before installing; pin reviewed revisions. Stars are adoption signals, not security or effectiveness evidence. Writing should prioritize factual correctness and voice rather than detector evasion.
 
 Additional discovery sources: https://github.com/phcodesage/anti-slop-atlas ; https://github.com/zhuyansen/awesome-humanizer-skills ; https://github.com/Daguilar0123/ai-writing-skill-field-guide . Their claims were not independently benchmarked.
+
+## Design-only follow-up — 2026-11-27
+
+Scope clarified to visual/product UI design. Additional public sources:
+- https://github.com/nextlevelbuilder/ui-ux-pro-max-skill — design-system generation and style selection.
+- https://github.com/heydamir/unslop — sequential screen redesign passes.
+- https://github.com/ibelick/ui-skills — UI constraints and component craft.
+- https://github.com/emilkowalski/skills — motion and interaction craft.
+- https://github.com/elayadesign/ai-design-skills — opinionated visual rules.
+- https://github.com/claudiusararu/unslop-ui-skill — catalog of approximately 100 visual tells.
+- https://github.com/nattergabriel/frontend-craft — prevent and repair generic frontend design.
+- https://github.com/wpgaurav/design-slop — design critique.
+- https://github.com/funboy322/avoid-ai-design — contemporary visual cliché detection.
+- https://github.com/marcosnovo/unslop-design — 72 fixes and automated scoring.
+- https://github.com/phcodesage/anti-slop-atlas — curated discovery index.
+- https://skills.pocketplay.win/en/trending — recent rounded popularity snapshots: Pro Max 155k, Taste 122k, Impeccable 118k.
+- https://github.com/zhuyansen/awesome-humanizer-skills — Hallmark ~61k in recent snapshot.
+- https://www.provimedia.de/en/blog/ai-web-design-skills — dated comparison, 23 Nov 2026.
+
+For dense productivity apps prefer Impeccable as the primary design skill, targeted Unslop/Hallmark review, UI Skills for component constraints and Emil Kowalski for motion when needed. Avoid imposing landing-page conventions or universal bans without product context. All recommendations editorial; no independent execution, security audit, or comparative quality benchmark.
