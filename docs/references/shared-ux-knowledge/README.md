@@ -38,3 +38,7 @@ Both plugins consult [decision guide](../ui-ux-research-sources/design-foundatio
 ## Fidelity progression and stage boundaries
 
 Both plugins apply the [evidence-based fidelity progression gate](../ui-ux-research-sources/ux-design-activities-2026-11-25.md) when auditing or producing design artifacts. Each stage must identify a distinct unresolved question, inherited invariants, the minimum evidence delta, representative scenarios, review method, findings, limitations and next question. Similar composition is not a defect; repeated rendering without a new learning objective is. Keep lifecycle coverage in the inventory and flows; select stage-appropriate visual scenarios and link supporting component studies. Preserve historical snapshots and distinguish structural CI, visual approval and runtime/user testing. Do not skip or merge formal stages without owner approval. This is an operational convention, not a universal UX process.
+
+## Award-backed visual benchmarking
+
+For art direction, identity and high-craft interface comparisons, consult [award-backed art direction](../ui-ux-research-sources/award-backed-art-direction-2025-2026.md) and structured records. Extend beyond familiar apps; compare award category, jury/audience/finalist status, studio case studies and task fit. No automatic palette approval or copied media.

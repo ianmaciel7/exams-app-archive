@@ -5650,6 +5650,446 @@
       "kind": "research-reference",
       "notes": "official informative guidance",
       "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "award-art-direction-developer-apple-com-1",
+      "title": "Apple Design Awards",
+      "url": "https://developer.apple.com/design/awards/",
+      "kind": "award-directory",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-winners-webbyawards-com-2",
+      "title": "Webby Awards",
+      "url": "https://winners.webbyawards.com/",
+      "kind": "award-directory",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-ifdesign-com-3",
+      "title": "iF Design Award",
+      "url": "https://ifdesign.com/en/winner-ranking/winner-overview/",
+      "kind": "award-directory",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-ux-design-award-com-4",
+      "title": "UX Design Awards",
+      "url": "https://ux-design-award.com/winners",
+      "kind": "award-directory",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-www-red-dot-org-5",
+      "title": "Red Dot",
+      "url": "https://www.red-dot.org/",
+      "kind": "award-directory",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-www-awwwards-com-6",
+      "title": "Awwwards",
+      "url": "https://www.awwwards.com/",
+      "kind": "award-directory",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-www-cssdesignawards-com-7",
+      "title": "CSS Design Awards",
+      "url": "https://www.cssdesignawards.com/",
+      "kind": "award-directory",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-www-oneclub-org-8",
+      "title": "ADC Awards",
+      "url": "https://www.oneclub.org/awards/adcawards/",
+      "kind": "award-directory",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-www-indigoaward-com-9",
+      "title": "Indigo Design Award",
+      "url": "https://www.indigoaward.com/",
+      "kind": "award-directory",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-www-instrument-com-10",
+      "title": "Instrument",
+      "url": "https://www.instrument.com/",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-daybreak-studio-11",
+      "title": "Daybreak Studio",
+      "url": "https://daybreak.studio/",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-www-fabrique-com-12",
+      "title": "Fabrique",
+      "url": "https://www.fabrique.com/",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-www-basicagency-com-13",
+      "title": "BASIC/DEPT",
+      "url": "https://www.basicagency.com/",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-www-fun-and-awe-io-14",
+      "title": "FUN AND AWE",
+      "url": "https://www.fun-and-awe.io/",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-blacklead-studio-15",
+      "title": "BL/S",
+      "url": "https://blacklead.studio/",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-linear-app-16",
+      "title": "https://linear.app/changelog/2026-03-12-ui-refresh",
+      "url": "https://linear.app/changelog/2026-03-12-ui-refresh",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-linear-app-17",
+      "title": "https://linear.app/now/behind-the-latest-design-refresh",
+      "url": "https://linear.app/now/behind-the-latest-design-refresh",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-vercel-com-18",
+      "title": "https://vercel.com/geist/colors",
+      "url": "https://vercel.com/geist/colors",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-www-radix-ui-com-19",
+      "title": "https://www.radix-ui.com/colors/docs/palette-composition/composing-a-palette",
+      "url": "https://www.radix-ui.com/colors/docs/palette-composition/composing-a-palette",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-ui-shadcn-com-20",
+      "title": "https://ui.shadcn.com/docs/theming",
+      "url": "https://ui.shadcn.com/docs/theming",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-docs-readwise-io-21",
+      "title": "https://docs.readwise.io/reader/docs/faqs/appearance",
+      "url": "https://docs.readwise.io/reader/docs/faqs/appearance",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-docs-readwise-io-22",
+      "title": "https://docs.readwise.io/reader/guides/workflows/longform-reading",
+      "url": "https://docs.readwise.io/reader/guides/workflows/longform-reading",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-capacities-io-23",
+      "title": "https://capacities.io/blog/redesign",
+      "url": "https://capacities.io/blog/redesign",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-docs-capacities-io-24",
+      "title": "https://docs.capacities.io/reference/user-interface",
+      "url": "https://docs.capacities.io/reference/user-interface",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-crucialexams-com-25",
+      "title": "https://crucialexams.com/",
+      "url": "https://crucialexams.com/",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-winners-webbyawards-com-26",
+      "title": "https://winners.webbyawards.com/2026/apps-software-immersive/app-excellence/best-visual-design-function/373483/a-more-intuitive-oura-app",
+      "url": "https://winners.webbyawards.com/2026/apps-software-immersive/app-excellence/best-visual-design-function/373483/a-more-intuitive-oura-app",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-www-instrument-com-27",
+      "title": "https://www.instrument.com/work/oura-app",
+      "url": "https://www.instrument.com/work/oura-app",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-winners-webbyawards-com-28",
+      "title": "https://winners.webbyawards.com/2026/apps-software-immersive/app-excellence/best-visual-design-aesthetic/368251/operator",
+      "url": "https://winners.webbyawards.com/2026/apps-software-immersive/app-excellence/best-visual-design-aesthetic/368251/operator",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-www-oneclub-org-29",
+      "title": "https://www.oneclub.org/awards/adcawards/-award/62632/operator/",
+      "url": "https://www.oneclub.org/awards/adcawards/-award/62632/operator/",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-winners-webbyawards-com-30",
+      "title": "https://winners.webbyawards.com/2026/apps-software-immersive/app-excellence/best-visual-design-aesthetic/380198/cosmos",
+      "url": "https://winners.webbyawards.com/2026/apps-software-immersive/app-excellence/best-visual-design-aesthetic/380198/cosmos",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-www-airnauts-com-31",
+      "title": "https://www.airnauts.com/works/cosmos",
+      "url": "https://www.airnauts.com/works/cosmos",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-www-tideguide-com-32",
+      "title": "https://www.tideguide.com/",
+      "url": "https://www.tideguide.com/",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-developer-apple-com-33",
+      "title": "https://developer.apple.com/design/awards/2025/",
+      "url": "https://developer.apple.com/design/awards/2025/",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-ia-net-34",
+      "title": "https://ia.net/topics/search-to-navigate",
+      "url": "https://ia.net/topics/search-to-navigate",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-winners-webbyawards-com-35",
+      "title": "https://winners.webbyawards.com/2025/websites-and-mobile-sites/features-design/best-user-interface/333807/rijksmuseum-collection-online",
+      "url": "https://winners.webbyawards.com/2025/websites-and-mobile-sites/features-design/best-user-interface/333807/rijksmuseum-collection-online",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-www-fabrique-com-36",
+      "title": "https://www.fabrique.com/cases/digital-design/rijksmuseum/",
+      "url": "https://www.fabrique.com/cases/digital-design/rijksmuseum/",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-winners-webbyawards-com-37",
+      "title": "https://winners.webbyawards.com/winners/websites-and-mobile-sites/features-design/best-user-interface",
+      "url": "https://winners.webbyawards.com/winners/websites-and-mobile-sites/features-design/best-user-interface",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-www-awwwards-com-38",
+      "title": "https://www.awwwards.com/sites/dichtm-fashion",
+      "url": "https://www.awwwards.com/sites/dichtm-fashion",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-www-cssdesignawards-com-39",
+      "title": "https://www.cssdesignawards.com/blog/2025-website-of-the-year-winners/430/",
+      "url": "https://www.cssdesignawards.com/blog/2025-website-of-the-year-winners/430/",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-brand-dropbox-com-40",
+      "title": "https://brand.dropbox.com/",
+      "url": "https://brand.dropbox.com/",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-ux-design-award-com-41",
+      "title": "https://ux-design-award.com/winners/awards-autumn-2026",
+      "url": "https://ux-design-award.com/winners/awards-autumn-2026",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-www-automata-tech-42",
+      "title": "https://www.automata.tech/linq/cloud",
+      "url": "https://www.automata.tech/linq/cloud",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-ux-design-award-com-43",
+      "title": "https://ux-design-award.com/winners/2026-2-multicampus-ai-studio",
+      "url": "https://ux-design-award.com/winners/2026-2-multicampus-ai-studio",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
+    },
+    {
+      "id": "award-art-direction-www-red-dot-org-44",
+      "title": "https://www.red-dot.org/bcd/",
+      "url": "https://www.red-dot.org/bcd/",
+      "kind": "visual-benchmark-reference",
+      "recorded_on": "2026-11-27",
+      "status": "documentary reference; live UI unverified",
+      "notes": "See award-backed-art-direction-2025-2026.md for category, applicability and limits.",
+      "storage": "link-only"
     }
   ]
 }

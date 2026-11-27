@@ -1,0 +1,198 @@
+{
+  "id": "award-backed-art-direction-2025-2026",
+  "date": "2026-11-27",
+  "scope": "award records and documentary benchmarking",
+  "directories": [
+    {
+      "name": "Apple Design Awards",
+      "url": "https://developer.apple.com/design/awards/",
+      "focus": "App interaction, accessibility and craft"
+    },
+    {
+      "name": "Webby Awards",
+      "url": "https://winners.webbyawards.com/",
+      "focus": "Best UI and Visual Design Function/Aesthetic"
+    },
+    {
+      "name": "iF Design Award",
+      "url": "https://ifdesign.com/en/winner-ranking/winner-overview/",
+      "focus": "Interface, product and identity"
+    },
+    {
+      "name": "UX Design Awards",
+      "url": "https://ux-design-award.com/winners",
+      "focus": "Product UX"
+    },
+    {
+      "name": "Red Dot",
+      "url": "https://www.red-dot.org/",
+      "focus": "Product and communication design"
+    },
+    {
+      "name": "Awwwards",
+      "url": "https://www.awwwards.com/",
+      "focus": "Digital art direction"
+    },
+    {
+      "name": "CSS Design Awards",
+      "url": "https://www.cssdesignawards.com/",
+      "focus": "Web visual execution"
+    },
+    {
+      "name": "ADC Awards",
+      "url": "https://www.oneclub.org/awards/adcawards/",
+      "focus": "Art direction and creative craft"
+    },
+    {
+      "name": "Indigo Design Award",
+      "url": "https://www.indigoaward.com/",
+      "focus": "Brand identity and digital design"
+    }
+  ],
+  "studios": [
+    {
+      "name": "Instrument",
+      "url": "https://www.instrument.com/",
+      "focus": "Digital products and identity"
+    },
+    {
+      "name": "Daybreak Studio",
+      "url": "https://daybreak.studio/",
+      "focus": "Brand and art direction"
+    },
+    {
+      "name": "Fabrique",
+      "url": "https://www.fabrique.com/",
+      "focus": "Digital/editorial experiences"
+    },
+    {
+      "name": "BASIC/DEPT",
+      "url": "https://www.basicagency.com/",
+      "focus": "Brand and digital experience"
+    },
+    {
+      "name": "FUN AND AWE",
+      "url": "https://www.fun-and-awe.io/",
+      "focus": "Visual experimentation and interaction"
+    },
+    {
+      "name": "BL/S",
+      "url": "https://blacklead.studio/",
+      "focus": "Digital art direction"
+    }
+  ],
+  "records": [
+    {
+      "id": "research-7225609160",
+      "title": "Research delta — 2026-11-27: quiet productivity UI and color direction",
+      "definition": "### Research delta — 2026-11-27: quiet productivity UI and color direction\nPublic documentary evidence, not a universal 2026 trend census or a product decision.\n- Linear's March 12, 2026 UI refresh describes a calmer interface, dimmer navigation and stronger content emphasis: https://linear.app/changelog/2026-03-12-ui-refresh and https://linear.app/now/behind-the-latest-design-refresh .\n- Vercel Geist separates primary/secondary backgrounds from default, hover, active, border and text/icon roles: https://vercel.com/geist/colors .\n- Radix distinguishes neutral gray pairing from subtle natural hue pairing and cautions that heavily tinted backgrounds may clash with colorful components: https://www.radix-ui.com/colors/docs/palette-composition/composing-a-palette .\n- shadcn/ui documents neutral families and semantic theme tokens: https://ui.shadcn.com/docs/theming .\nDesign hypothesis: compare neutral monochrome, cool neutral + restrained accent and warm neutral + restrained accent in identical reading-intensive task screens. Separate brand/action/status roles; assess selection and feedback without hue alone, contrast, scanability and preference in both themes. No specific hue is universally modern; no live UI or participant test conducted. Link with existing brand-identity-color-systems and color-roles-browser-validation records rather than duplicating taxonomy. This comment records research provenance only.",
+      "source_ids": [
+        "award-art-direction-linear-app-16",
+        "award-art-direction-linear-app-17",
+        "award-art-direction-vercel-com-18",
+        "award-art-direction-www-radix-ui-com-19",
+        "award-art-direction-ui-shadcn-com-20"
+      ],
+      "limit": "Documentary evidence only"
+    },
+    {
+      "id": "research-7225657922",
+      "title": "Art-direction benchmarking — 2026-11-27",
+      "definition": "### Art-direction benchmarking — 2026-11-27\nComplement the previous quiet-productivity research rather than duplicate the palette taxonomy. Official sources: Linear 2026 refresh (https://linear.app/now/behind-the-latest-design-refresh) describes subdued navigation, reduced separator noise and consistent chrome; Readwise Reader appearance (https://docs.readwise.io/reader/docs/faqs/appearance) and long-form reading guide (https://docs.readwise.io/reader/guides/workflows/longform-reading) document typography/reading customization and reduced action chrome; Capacities redesign (https://capacities.io/blog/redesign) explains selective meaningful color, with workspace anatomy in https://docs.capacities.io/reference/user-interface; Crucial Exams (https://crucialexams.com/) provides domain context for question practice. Synthesis: evaluate distinct visual worlds (typography, density, surface hierarchy, iconography, wordmark, role color) against identical real task content instead of hue swaps. Preserve product constraints and semantic accessibility. Use real reference captures with provenance; do not treat marketing shots as authenticated UI measurements or infer consumer psychology. No live product audit, color measurements, participant tests or copied third-party assets; these are documentary findings and an evaluation hypothesis.",
+      "source_ids": [
+        "award-art-direction-linear-app-17",
+        "award-art-direction-docs-readwise-io-21",
+        "award-art-direction-docs-readwise-io-22",
+        "award-art-direction-capacities-io-23",
+        "award-art-direction-docs-capacities-io-24",
+        "award-art-direction-crucialexams-com-25"
+      ],
+      "limit": "Documentary evidence only"
+    },
+    {
+      "id": "research-7225688681",
+      "title": "Award-backed visual benchmarking — 2026-11-27",
+      "definition": "### Award-backed visual benchmarking — 2026-11-27\nOfficial award records and publicly available studio/product imagery reviewed; awards distinguish jury, audience, finalist, and honoree. No live authenticated UI audit, pixel/token extraction, or participant study. Award year is not necessarily launch year.\n- 2026 Webby Best Visual Design–Function: Instrument's A More Intuitive OURA App, https://winners.webbyawards.com/2026/apps-software-immersive/app-excellence/best-visual-design-function/373483/a-more-intuitive-oura-app ; case study https://www.instrument.com/work/oura-app (progressive disclosure, unified semantic color, refined typography/grid/components; imagery tied to domain).\n- 2026 Webby Best Visual Design–Aesthetic: jury winner OPERATOR https://winners.webbyawards.com/2026/apps-software-immersive/app-excellence/best-visual-design-aesthetic/368251/operator ; studio case via ADC https://www.oneclub.org/awards/adcawards/-award/62632/operator/ ; audience winner Cosmos https://winners.webbyawards.com/2026/apps-software-immersive/app-excellence/best-visual-design-aesthetic/380198/cosmos ; visual discovery interface case https://www.airnauts.com/works/cosmos . Distinctive identity vs content-first UI, not direct patterns for exam practice.\n- 2026 Apple Design Awards Visuals and Graphics winner Tide Guide https://developer.apple.com/design/awards/ ; product imagery https://www.tideguide.com/ ; domain-linked color and precise data hierarchy. 2025 Interaction finalist (not winner) iA Writer https://developer.apple.com/design/awards/2025/ ; typography/library example https://ia.net/topics/search-to-navigate .\n- 2025 Webby Best User Interface jury and audience winner Rijksmuseum Collection Online https://winners.webbyawards.com/2025/websites-and-mobile-sites/features-design/best-user-interface/333807/rijksmuseum-collection-online ; studio https://www.fabrique.com/cases/digital-design/rijksmuseum/ . Content-led editorial composition; images not applicable to every task.\n- 2026 Webby website Best UI jury winner DICH Fashion https://winners.webbyawards.com/winners/websites-and-mobile-sites/features-design/best-user-interface ; visual source https://www.awwwards.com/sites/dichtm-fashion ; distinct art direction, not suitable as literal operational UI template.\n- 2025 CSS Design Awards Website of the Year (announced 2026-02-12) Dropbox Brand by Daybreak Studio https://www.cssdesignawards.com/blog/2025-website-of-the-year-winners/430/ ; https://brand.dropbox.com/ ; brand typography, color relationships and expressive system, separate marketing from product UI.\n- Autumn 2026 UX Design Awards Gold Product LINQ by Automata https://ux-design-award.com/winners/awards-autumn-2026 ; product UI https://www.automata.tech/linq/cloud . Complex work environment and contextual color; educational winner Multicampus AI Studio https://ux-design-award.com/winners/2026-2-multicampus-ai-studio (practice workflow/error feedback). General research directories: https://ifdesign.com/en/winner-ranking/winner-overview/ , https://www.red-dot.org/bcd/ , https://www.awwwards.com/ , https://www.oneclub.org/awards/adcawards/ , https://www.indigoaward.com/ .\nUse actual award/studio evidence, compare by task fit rather than prestige alone. Extract typography, composition, role-based color, visual hierarchy and craft; distinguish expressive promotional surfaces from daily-use software. No media redistribution or claims that any particular color is universally modern. Reuse canonical brand-identity-color-systems and rendered-validation guidance.",
+      "source_ids": [
+        "award-art-direction-winners-webbyawards-com-26",
+        "award-art-direction-www-instrument-com-27",
+        "award-art-direction-winners-webbyawards-com-28",
+        "award-art-direction-www-oneclub-org-29",
+        "award-art-direction-winners-webbyawards-com-30",
+        "award-art-direction-www-airnauts-com-31",
+        "award-art-direction-developer-apple-com-1",
+        "award-art-direction-www-tideguide-com-32",
+        "award-art-direction-developer-apple-com-33",
+        "award-art-direction-ia-net-34",
+        "award-art-direction-winners-webbyawards-com-35",
+        "award-art-direction-www-fabrique-com-36",
+        "award-art-direction-winners-webbyawards-com-37",
+        "award-art-direction-www-awwwards-com-38",
+        "award-art-direction-www-cssdesignawards-com-39",
+        "award-art-direction-brand-dropbox-com-40",
+        "award-art-direction-ux-design-award-com-41",
+        "award-art-direction-www-automata-tech-42",
+        "award-art-direction-ux-design-award-com-43",
+        "award-art-direction-ifdesign-com-3",
+        "award-art-direction-www-red-dot-org-44",
+        "award-art-direction-www-awwwards-com-6",
+        "award-art-direction-www-oneclub-org-8",
+        "award-art-direction-www-indigoaward-com-9"
+      ],
+      "limit": "Documentary evidence only"
+    }
+  ],
+  "protocol": [
+    "Start from task, audience, positioning and reading/operation context, not a favorite hue; separate brand, editorial and daily-use interfaces.",
+    "Compare distinct art directions together with typography, layout rhythm, surface hierarchy, iconography, wordmark and semantic color using identical representative tasks, states and content in both themes. Editorial and instrumental precision are hypotheses, not standards.",
+    "Avoid generic template recolors, indiscriminate accent fills, unnecessary cards, ornamental gradients, excessive radii and decorative iconography when they compete with the task; these are not universal bans.",
+    "Evaluate legibility, scanability, task hierarchy, semantic recognition, contrast, focus, non-color cues, state coverage, layout stability, responsive rendering and distinctiveness. Require real captures with provenance; do not infer CSS or interaction from still images.",
+    "Preserve product scope and stage gates. Awards are not proof of usability or accessibility. Record accepted/rejected alternatives and uncertainty."
+  ],
+  "source_ids": [
+    "award-art-direction-developer-apple-com-1",
+    "award-art-direction-winners-webbyawards-com-2",
+    "award-art-direction-ifdesign-com-3",
+    "award-art-direction-ux-design-award-com-4",
+    "award-art-direction-www-red-dot-org-5",
+    "award-art-direction-www-awwwards-com-6",
+    "award-art-direction-www-cssdesignawards-com-7",
+    "award-art-direction-www-oneclub-org-8",
+    "award-art-direction-www-indigoaward-com-9",
+    "award-art-direction-www-instrument-com-10",
+    "award-art-direction-daybreak-studio-11",
+    "award-art-direction-www-fabrique-com-12",
+    "award-art-direction-www-basicagency-com-13",
+    "award-art-direction-www-fun-and-awe-io-14",
+    "award-art-direction-blacklead-studio-15",
+    "award-art-direction-linear-app-16",
+    "award-art-direction-linear-app-17",
+    "award-art-direction-vercel-com-18",
+    "award-art-direction-www-radix-ui-com-19",
+    "award-art-direction-ui-shadcn-com-20",
+    "award-art-direction-docs-readwise-io-21",
+    "award-art-direction-docs-readwise-io-22",
+    "award-art-direction-capacities-io-23",
+    "award-art-direction-docs-capacities-io-24",
+    "award-art-direction-crucialexams-com-25",
+    "award-art-direction-winners-webbyawards-com-26",
+    "award-art-direction-www-instrument-com-27",
+    "award-art-direction-winners-webbyawards-com-28",
+    "award-art-direction-www-oneclub-org-29",
+    "award-art-direction-winners-webbyawards-com-30",
+    "award-art-direction-www-airnauts-com-31",
+    "award-art-direction-www-tideguide-com-32",
+    "award-art-direction-developer-apple-com-33",
+    "award-art-direction-ia-net-34",
+    "award-art-direction-winners-webbyawards-com-35",
+    "award-art-direction-www-fabrique-com-36",
+    "award-art-direction-winners-webbyawards-com-37",
+    "award-art-direction-www-awwwards-com-38",
+    "award-art-direction-www-cssdesignawards-com-39",
+    "award-art-direction-brand-dropbox-com-40",
+    "award-art-direction-ux-design-award-com-41",
+    "award-art-direction-www-automata-tech-42",
+    "award-art-direction-ux-design-award-com-43",
+    "award-art-direction-www-red-dot-org-44"
+  ]
+}
