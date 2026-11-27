@@ -2,13 +2,13 @@
   "schema": 2,
   "source_of_truth": "ianmaciel7/exams-app-archive@main:plugins/exams-archive-native/",
   "plugin_id": "plugins_6b04aaa9fd848191a24525011f76e2bb",
-  "desired_version": "0.8.16",
+  "desired_version": "0.8.17",
   "last_published_release_id": null,
-  "last_published_version": "0.8.16",
+  "last_published_version": "0.8.17",
   "status": "verified-synced",
-  "note": "Four manifests and the new skill compared byte-for-byte with private 0.8.16 release after publication; 24 retained source files unchanged by Git blob SHA against the previous verified mirror. Private release identifier not exported. Local runtime not tested.",
+  "note": "All 29 plugin source files compared byte-for-byte with private 0.8.17 release and canonical mirror commit. Four manifests and shared fidelity progression skill updated. Private release identifier not exported. Local runtime not tested.",
   "verified_files": 29,
   "byte_identical_files": 29,
   "json_semantic_equivalent_files": [],
-  "verified_commit": "79ba80183c12d1185e7cdb056f455a2da2c3c993"
+  "verified_commit": "28ae58062346f7eaffa6d5024446663729cc54db"
 }
