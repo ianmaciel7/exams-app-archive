@@ -79,3 +79,21 @@ def test_runner_context_projection_and_scoring():
     rows[0]["context_payload"]["audit_sha256"] = "tampered"
     with pytest.raises(ValueError):
         compare(rows, {"q": ["alias"]})
+
+
+def test_precision_at_10_counts_missing_ranks_and_duplicate_evidence():
+    rows = [{"id": "q", "hits": [
+        {"id": "a"},
+        {"id": "duplicate", "occurrences": [{"hit_id": "a"}]},
+        {"id": "b"},
+    ], "unavailable": [], "latency_ms": 1}]
+    report = score(rows, {"q": ["a", "b"]})
+    assert report["mean_precision_at_10"] == 0.2
+    assert report["mean_returned_precision_at_10"] == 2 / 3
+    assert report["mean_recall"] == 1
+    assert score(rows, {"q": []})["mean_precision_at_10"] is None
+    with pytest.raises(ValueError):
+        score(rows + rows, {"q": ["a"]})
+    with pytest.raises(ValueError):
+        score(rows, {"q": ["a", "a"]})
+
