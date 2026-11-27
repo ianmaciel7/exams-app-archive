@@ -7398,6 +7398,150 @@
       "recorded_on": "2026-11-27",
       "status": "Search-excerpt evidence retained from dated taxonomy; no runtime verification or new reachability check",
       "storage": "link-only"
+    },
+    {
+      "id": "shell-selection-adaptive-nav",
+      "title": "Android — Adaptive navigation",
+      "url": "https://developer.android.com/develop/adaptive-apps/guides/build-adaptive-navigation",
+      "kind": "primary-platform",
+      "recorded_on": "2026-11-27",
+      "status": "Reference retained from dated selection guide; search-excerpt documentary evidence, not runtime or new reachability validation",
+      "storage": "link-only"
+    },
+    {
+      "id": "shell-selection-adaptive-dos",
+      "title": "Android — Adaptive dos and don'ts",
+      "url": "https://developer.android.com/develop/adaptive-apps/guides/adaptive-dos-and-donts",
+      "kind": "primary-platform",
+      "recorded_on": "2026-11-27",
+      "status": "Reference retained from dated selection guide; search-excerpt documentary evidence, not runtime or new reachability validation",
+      "storage": "link-only"
+    },
+    {
+      "id": "shell-selection-apple-sidebars",
+      "title": "Apple HIG — Sidebars",
+      "url": "https://developer.apple.com/design/human-interface-guidelines/sidebars",
+      "kind": "primary-platform",
+      "recorded_on": "2026-11-27",
+      "status": "Reference retained from dated selection guide; search-excerpt documentary evidence, not runtime or new reachability validation",
+      "storage": "link-only"
+    },
+    {
+      "id": "shell-selection-apple-tab-bars",
+      "title": "Apple HIG — Tab bars",
+      "url": "https://developer.apple.com/design/human-interface-guidelines/tab-bars",
+      "kind": "primary-platform",
+      "recorded_on": "2026-11-27",
+      "status": "Reference retained from dated selection guide; search-excerpt documentary evidence, not runtime or new reachability validation",
+      "storage": "link-only"
+    },
+    {
+      "id": "shell-selection-carbon-global-header",
+      "title": "Carbon — Global header",
+      "url": "https://www.carbondesignsystem.com/building-blocks/core/patterns/global-header",
+      "kind": "design-system",
+      "recorded_on": "2026-11-27",
+      "status": "Reference retained from dated selection guide; search-excerpt documentary evidence, not runtime or new reachability validation",
+      "storage": "link-only"
+    },
+    {
+      "id": "shell-selection-carbon-shell-header",
+      "title": "Carbon — UI shell header",
+      "url": "https://www.carbondesignsystem.com/building-blocks/core/components/ui-shell-header/guidelines",
+      "kind": "design-system",
+      "recorded_on": "2026-11-27",
+      "status": "Reference retained from dated selection guide; search-excerpt documentary evidence, not runtime or new reachability validation",
+      "storage": "link-only"
+    },
+    {
+      "id": "shell-selection-resource-details",
+      "title": "Cloudscape — Resource details",
+      "url": "https://cloudscape.design/patterns/resource-management/details/",
+      "kind": "design-system",
+      "recorded_on": "2026-11-27",
+      "status": "Reference retained from dated selection guide; search-excerpt documentary evidence, not runtime or new reachability validation",
+      "storage": "link-only"
+    },
+    {
+      "id": "shell-selection-nng-vertical",
+      "title": "NN/g — Vertical navigation",
+      "url": "https://www.nngroup.com/articles/vertical-nav/",
+      "kind": "research-guidance",
+      "recorded_on": "2026-11-27",
+      "status": "Reference retained from dated selection guide; search-excerpt documentary evidence, not runtime or new reachability validation",
+      "storage": "link-only"
+    },
+    {
+      "id": "shell-selection-nng-hamburger",
+      "title": "NN/g — Hamburger menu recognizability",
+      "url": "https://www.nngroup.com/articles/hamburger-menu-icon-recognizability/",
+      "kind": "research-guidance",
+      "recorded_on": "2026-11-27",
+      "status": "Reference retained from dated selection guide; search-excerpt documentary evidence, not runtime or new reachability validation",
+      "storage": "link-only"
+    },
+    {
+      "id": "shell-selection-nng-ia",
+      "title": "NN/g — IA study guide",
+      "url": "https://www.nngroup.com/articles/ia-study-guide/",
+      "kind": "research-guidance",
+      "recorded_on": "2026-11-27",
+      "status": "Reference retained from dated selection guide; search-excerpt documentary evidence, not runtime or new reachability validation",
+      "storage": "link-only"
+    },
+    {
+      "id": "shell-selection-atlassian-layout",
+      "title": "Atlassian — Navigation layout",
+      "url": "https://atlassian.design/components/navigation-system/layout/usage",
+      "kind": "design-system",
+      "recorded_on": "2026-11-27",
+      "status": "Reference retained from dated selection guide; search-excerpt documentary evidence, not runtime or new reachability validation",
+      "storage": "link-only"
+    },
+    {
+      "id": "shell-selection-atlassian-panel",
+      "title": "Atlassian — Panel",
+      "url": "https://atlassian.design/components/panel/usage",
+      "kind": "design-system",
+      "recorded_on": "2026-11-27",
+      "status": "Reference retained from dated selection guide; search-excerpt documentary evidence, not runtime or new reachability validation",
+      "storage": "link-only"
+    },
+    {
+      "id": "shell-selection-sdi",
+      "title": "Microsoft — Single document interface in Excel",
+      "url": "https://learn.microsoft.com/en-us/office/vba/excel/concepts/programming-for-the-single-document-interface-in-excel",
+      "kind": "primary-product",
+      "recorded_on": "2026-11-27",
+      "status": "Reference retained from dated selection guide; search-excerpt documentary evidence, not runtime or new reachability validation",
+      "storage": "link-only"
+    },
+    {
+      "id": "shell-selection-ribbon",
+      "title": "Microsoft — Windows Ribbon controls",
+      "url": "https://learn.microsoft.com/en-us/windows/win32/windowsribbon/windowsribbon-controls-entry",
+      "kind": "primary-platform",
+      "recorded_on": "2026-11-27",
+      "status": "Reference retained from dated selection guide; search-excerpt documentary evidence, not runtime or new reachability validation",
+      "storage": "link-only"
+    },
+    {
+      "id": "shell-selection-map-list",
+      "title": "Google Maps — Place search pagination",
+      "url": "https://developers.google.com/maps/documentation/javascript/examples/place-search-pagination",
+      "kind": "primary-platform",
+      "recorded_on": "2026-11-27",
+      "status": "Reference retained from dated selection guide; search-excerpt documentary evidence, not runtime or new reachability validation",
+      "storage": "link-only"
+    },
+    {
+      "id": "shell-selection-css-cookbook",
+      "title": "MDN — CSS layout cookbook",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook",
+      "kind": "technical-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "Reference retained from dated selection guide; search-excerpt documentary evidence, not runtime or new reachability validation",
+      "storage": "link-only"
     }
   ],
   "retention_policy": "Preserve original URLs, dates, source types and original provenance. Append new sources on future UI/UX research, deduplicate by normalized URL and retain superseded links with status. Never silently delete links; check reachability and licenses when reusing. No private URLs or secrets.",
