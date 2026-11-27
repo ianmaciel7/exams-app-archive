@@ -202,3 +202,5 @@ Registrar URLs originais e redirects, datas de consulta, fonte e status (verific
 ## Award-backed art direction — 2025–2026
 
 [Research catalog](award-backed-art-direction-2025-2026.md) · [Structured evidence](award-backed-art-direction-2025-2026.json). Nine award directories, six studios, award cases and task-fit evaluation protocol. Distinguish awards from demonstrated usability.
+
+The same award-backed catalog now includes a domain-specific knowledge, science, learning and editorial benchmark (Google Learn About, Aithyra, Rankless, Allen Brain Map, Searching for Birds, Quanta, Scientific American, Nature and Ai3X A320) plus clearly unapproved Knowledge/Mastery/Connections exploration hypotheses.

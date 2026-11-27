@@ -140,6 +140,37 @@
         "award-art-direction-www-indigoaward-com-9"
       ],
       "limit": "Documentary evidence only"
+    },
+    {
+      "id": "research-7225984539",
+      "title": "Domain-specific benchmark — knowledge, learning, science and editorial design",
+      "definition": "### Domain-specific benchmark — knowledge, learning, science and editorial design (2026-11-27)\nNew research, complementing the canonical award-backed-art-direction-2025-2026 catalog. Verified public award statuses and documentary imagery; no authenticated UI audit, CSS extraction, copied assets, or participant testing. Award year ≠ design launch year.\n- Google Learn About: UX Design Award Product 2025, official jury/studio deep dive https://ux-design-awards.com/events-media/deep-dive-award-winners-google ; additional visual record https://ifdesign.com/en/winner-ranking/project/google-learn-about/709797 . Learning journeys, contextual topics and progressive access to complex information; do not infer that AI conversation is needed for other products.\n- Aithyra by Studio Dumbar/DEPT: 2026 TDC Merit, Brand Identity System https://www.oneclub.org/awards/tdcawards/-archive/awards/2026/all/134/select ; studio case https://studiodumbar.com/work/aithyra . Evolving domain-derived graphical system; promotional imagery is not daily-use UI guidance.\n- Rankless: 2025 Webby Science nominee, not winner https://winners.webbyawards.com/2025/websites-and-mobile-sites/general-desktop-mobile-sites/science/339706/rankless--academic-impact-explorer ; https://www.rankless.org/ ; https://centerforcollectivelearning.org/academic-impact . Relations and multidimensional impact, rather than reducing knowledge to a single score.\n- Allen Institute Brain-map.org: Webby 2026 Science honoree https://winners.webbyawards.com/2026/websites-and-mobile-sites/general-desktop-mobile-sites/science/374304/allen-institute-brain-maporg-science-website ; domain-linked data and research navigation. Public screenshot is not evidence of measured contrast.\n- Searching for Birds: 2026 Webby People's Voice Best Data Visualization https://winners.webbyawards.com/2026/websites-and-mobile-sites/features-design/best-data-visualization/384216/searching-for-birds ; https://searchingforbirds.visualcinnamon.com/ ; https://www.visualcinnamon.com/portfolio/searching-for-birds/ . Editorial hierarchy, meaningful categories and data-led exploration.\n- Quanta Magazine: Webby 2025 Science People's Voice winner, https://winners.webbyawards.com/winners/websites-and-mobile-sites/general-desktop-mobile-sites/science ; historical redesign announced in 2017 https://www.quantamagazine.org/the-new-familiar-quanta-20170502/ ; not a 2025 redesign.\n- Scientific American (Pentagram) https://www.pentagram.com/work/scientific-american/story and Nature (Mark Porter Associates) https://markporter.com/work/nature are complementary editorial identity case studies, not claimed award winners in 2025–2026. Grid, typography, authority, readability and consistent brand architecture.\n- Ai3X A320 Pilot Training 2026 UX Design Awards entry https://ux-design-awards.com/winners/2026-2-ai3x-a320-pilot-training ; award level not verified in this review. Professional high-stakes learning, precise content and source trust; not presented as a winner.\nTransferable hypothesis: editorial knowledge + professional practice + domain-linked discovery. Compare multiple distinct visual directions on identical representative task screens before choosing colors; reserve semantic feedback and data color roles, validate both themes and non-color cues. No historic project color values used. No universal color psychology or mandatory aesthetic.",
+      "source_ids": [
+        "knowledge-art-direction-ux-design-awards-com-1",
+        "knowledge-art-direction-ifdesign-com-2",
+        "knowledge-art-direction-www-oneclub-org-3",
+        "knowledge-art-direction-studiodumbar-com-4",
+        "knowledge-art-direction-winners-webbyawards-com-5",
+        "knowledge-art-direction-www-rankless-org-6",
+        "knowledge-art-direction-centerforcollectivelearning-org-7",
+        "knowledge-art-direction-winners-webbyawards-com-8",
+        "knowledge-art-direction-winners-webbyawards-com-9",
+        "knowledge-art-direction-searchingforbirds-visualcinnamon-com-10",
+        "knowledge-art-direction-www-visualcinnamon-com-11",
+        "knowledge-art-direction-winners-webbyawards-com-12",
+        "knowledge-art-direction-www-quantamagazine-org-13",
+        "knowledge-art-direction-www-pentagram-com-14",
+        "knowledge-art-direction-markporter-com-15",
+        "knowledge-art-direction-ux-design-awards-com-16"
+      ],
+      "limit": "Documentary evidence; no live UI or participant tests"
+    },
+    {
+      "id": "knowledge-mastery-connections-exploration",
+      "title": "Learning and knowledge identity hypotheses",
+      "definition": "## Exploratory direction concepts for learning and knowledge products\n\nThese are original hypotheses, not awarded designs, research results, or approved product tokens. They derive from the product concepts of knowledge, mastery, discovery, connection, evolution and precision, without reusing previous project colors.\n\n| Concept | Design rationale | Exploratory swatches (not validated tokens) |\n|---|---|---|\n| Knowledge | Intellectual/editorial depth, contemporary scientific publications, clear typography and reading hierarchy | #F4F0E8, #DAD4C7, #22221F, #B76C32, #D9AD56 |\n| Mastery | Professional preparation, instrumental precision, rigor, competence and progress | #F7F7F5, #D9DCD9, #262C30, #536D80, #CFB56C |\n| Connections | Organization, curiosity and relationships among knowledge objects | #F5F4F1, #DDDAD6, #29242D, #885C77, #C3A0B7 |\n\nProposed qualitative task fit (hypothesis, not measured): Knowledge: high for questions, notes, graph and review; medium for mock exams. Mastery: high for questions, mock exams and review; medium for notes and graph. Connections: high for notes, graph and review; medium for questions and mock exams. Preferred exploration: Knowledge + Mastery, editorial reading quality with professional software precision. Do not treat the preference or swatches as approved identity. Compare complete matched workspace studies in both themes, with actual question content and feedback, accessibility checks and owner review. Future features are context for scalable identity, not authorization to expand the current release. Keep the grayscale High-Fidelity stage intact until its separate review gate.\n\nBrand brief hypothesis: a serious learning and knowledge workspace supporting preparation, practice, assessment, understanding gaps, organization and review. Intended qualities: intellectually engaging, mature, precise, organized and approachable; avoid a generic SaaS dashboard, childish gamification or bureaucratic aesthetic. Distinguish long-term product possibilities from current approved scope. Color is one part of typography, grid, iconography, wordmark, surfaces and semantic roles.",
+      "source_ids": [],
+      "limit": "Original proposals; no validated palettes or product approval"
     }
   ],
   "protocol": [
@@ -193,6 +224,22 @@
     "award-art-direction-ux-design-award-com-41",
     "award-art-direction-www-automata-tech-42",
     "award-art-direction-ux-design-award-com-43",
-    "award-art-direction-www-red-dot-org-44"
+    "award-art-direction-www-red-dot-org-44",
+    "knowledge-art-direction-ux-design-awards-com-1",
+    "knowledge-art-direction-ifdesign-com-2",
+    "knowledge-art-direction-www-oneclub-org-3",
+    "knowledge-art-direction-studiodumbar-com-4",
+    "knowledge-art-direction-winners-webbyawards-com-5",
+    "knowledge-art-direction-www-rankless-org-6",
+    "knowledge-art-direction-centerforcollectivelearning-org-7",
+    "knowledge-art-direction-winners-webbyawards-com-8",
+    "knowledge-art-direction-winners-webbyawards-com-9",
+    "knowledge-art-direction-searchingforbirds-visualcinnamon-com-10",
+    "knowledge-art-direction-www-visualcinnamon-com-11",
+    "knowledge-art-direction-winners-webbyawards-com-12",
+    "knowledge-art-direction-www-quantamagazine-org-13",
+    "knowledge-art-direction-www-pentagram-com-14",
+    "knowledge-art-direction-markporter-com-15",
+    "knowledge-art-direction-ux-design-awards-com-16"
   ]
 }
