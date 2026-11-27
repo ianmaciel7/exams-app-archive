@@ -3808,6 +3808,466 @@
       "notes": "Editorial pointer to 4.0 product demonstration; no video inspected.",
       "recorded_on": "2026-11-27",
       "storage": "link-only"
+    },
+    {
+      "id": "clickup-formula-create",
+      "title": "ClickUp Help — Create a Formula Field",
+      "url": "https://help.clickup.com/hc/en-us/articles/30494683858071-Create-a-Formula-Field",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Formula builder, advanced editor, dependencies and restrictions.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-formula-intro",
+      "title": "ClickUp Help — Intro to Formula Fields",
+      "url": "https://help.clickup.com/hc/en-us/articles/6308656424983-Intro-to-Formula-Fields",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Calculated values and formula discovery.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-formula-advanced",
+      "title": "ClickUp Help — Use advanced Formulas",
+      "url": "https://help.clickup.com/hc/en-us/articles/15807110924567-Use-advanced-Formulas",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Advanced expression syntax.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-formula-logic",
+      "title": "ClickUp Help — Use logic functions in Formulas",
+      "url": "https://help.clickup.com/hc/en-us/articles/20619000861207-Use-logic-functions-in-Formulas",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Logical functions.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-formula-string",
+      "title": "ClickUp Help — Use string functions in Formulas",
+      "url": "https://help.clickup.com/hc/en-us/articles/20619090939159-Use-string-functions-in-Formulas",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "String functions; text custom fields are not supported inputs.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-field-permissions",
+      "title": "ClickUp Help — Custom Field permissions",
+      "url": "https://help.clickup.com/hc/en-us/articles/26025804975895-Custom-Field-permissions",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Field access and exceptions.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-field-required",
+      "title": "ClickUp Help — Make Custom Fields required",
+      "url": "https://help.clickup.com/hc/en-us/articles/30407234676887-Make-Custom-Fields-required",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Creation validation differs from status transition validation.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-field-manage",
+      "title": "ClickUp Help — Manage Custom Fields",
+      "url": "https://help.clickup.com/hc/en-us/articles/6303670304919-Manage-Custom-Fields",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Manage properties and settings.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-field-intro",
+      "title": "ClickUp Help — Intro to Custom Fields",
+      "url": "https://help.clickup.com/hc/en-us/articles/6303536766231-Intro-to-Custom-Fields",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Property overview and rollup.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-field-move",
+      "title": "ClickUp Help — Move Custom Fields",
+      "url": "https://help.clickup.com/hc/en-us/articles/14277098696599-Move-Custom-Fields",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Move properties between scopes.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-field-usage",
+      "title": "ClickUp Help — Custom Fields uses",
+      "url": "https://help.clickup.com/hc/en-us/articles/10993484102167-Custom-Fields-uses",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Quota semantics, including multi-value options.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-relationship-create",
+      "title": "ClickUp Help — Create Relationship Custom Fields",
+      "url": "https://help.clickup.com/hc/en-us/articles/14276813483031-Create-Relationship-Custom-Fields",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Workspace-wide or list-constrained references and rollup.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-goal-create",
+      "title": "ClickUp Help — Create a Goal",
+      "url": "https://help.clickup.com/hc/en-us/articles/6325733579671-Create-a-Goal",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Four target types and automatic goal progress.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-goal-views",
+      "title": "ClickUp Help — Use views for goals and OKRs",
+      "url": "https://help.clickup.com/hc/en-us/articles/30807756167447-Use-views-for-goals-and-OKRs",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Goal projections and planning.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-goal-cards",
+      "title": "ClickUp Help — Goals cards",
+      "url": "https://help.clickup.com/hc/en-us/articles/6325664888727-Goals-cards",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Goal drill-down and editing.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-dependencies-reschedule",
+      "title": "ClickUp Help — Rescheduling dependencies",
+      "url": "https://help.clickup.com/hc/en-us/articles/6304547785367-Rescheduling-dependencies",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Shift dependent dates under configured rules.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-dependencies-intro",
+      "title": "ClickUp Help — Intro to Dependency Relationships",
+      "url": "https://help.clickup.com/hc/en-us/articles/6309155073303-Intro-to-Dependency-Relationships",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Blocking relationships.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-scheduling-intro",
+      "title": "ClickUp Help — Intro to scheduling",
+      "url": "https://help.clickup.com/hc/en-us/articles/29661121592087-Intro-to-scheduling",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Scheduling ClickApps.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-task-duration",
+      "title": "ClickUp Help — Use task duration to schedule tasks",
+      "url": "https://help.clickup.com/hc/en-us/articles/29571347936791-Use-task-duration-to-schedule-tasks",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Duration-based scheduling.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-milestones",
+      "title": "ClickUp Help — Milestones",
+      "url": "https://help.clickup.com/hc/en-us/articles/6304458574615-Milestones",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Milestone type and filtering.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-gantt-planning",
+      "title": "ClickUp Help — How to use Gantt charts for project planning",
+      "url": "https://help.clickup.com/hc/en-us/articles/40982447293207-How-to-use-Gantt-charts-for-project-planning",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Dependency scheduling, dates and milestones.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-clickapps",
+      "title": "ClickUp Help — Intro to ClickApps",
+      "url": "https://help.clickup.com/hc/en-us/articles/6304327753111-Intro-to-ClickApps",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Scoped modular features.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-sprint-report",
+      "title": "ClickUp Help — Monitor and report on your sprints",
+      "url": "https://help.clickup.com/hc/en-us/articles/6310087298327-Monitor-and-report-on-your-sprints",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Seven reporting card types and sprint header.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-sprint-points",
+      "title": "ClickUp Help — Use Sprint Points",
+      "url": "https://help.clickup.com/hc/en-us/articles/6303883602327-Use-Sprint-Points",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Configurable estimate and subtask rollup.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-sprint-run",
+      "title": "ClickUp Help — Run a sprint",
+      "url": "https://help.clickup.com/hc/en-us/articles/6304342064151-Run-a-sprint",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Sprint flow and missing-estimate filtering.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-sprint-limits",
+      "title": "ClickUp Help — Sprints feature availability and limits",
+      "url": "https://help.clickup.com/hc/en-us/articles/35714017592471-Sprints-feature-availability-and-limits",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Plan availability and automatic completion.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-sprint-activate",
+      "title": "ClickUp Help — Activate the Sprints ClickApp",
+      "url": "https://help.clickup.com/hc/en-us/articles/21362742005399-Activate-the-Sprints-ClickApp",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Sprint folders and estimate modes.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-sprint-intro",
+      "title": "ClickUp Help — Intro to Sprints",
+      "url": "https://help.clickup.com/hc/en-us/articles/6303974210071-Intro-to-Sprints",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Sprint feature model.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-sprint-planning",
+      "title": "ClickUp Help — How to set up Sprint planning for Agile teams",
+      "url": "https://help.clickup.com/hc/en-us/articles/40976121279639-How-to-set-up-Sprint-planning-for-Agile-teams",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Backlog and reporting guidance.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-workload-measure",
+      "title": "ClickUp Help — Measure your workload",
+      "url": "https://help.clickup.com/hc/en-us/articles/30799712357271-Measure-your-workload",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Effort measures and actual/estimate display.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-integration-connect",
+      "title": "ClickUp Help — Connect an app",
+      "url": "https://help.clickup.com/hc/en-us/articles/31096074478359-Connect-an-app",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Personal versus shared connection scope.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-integration-github",
+      "title": "ClickUp Help — GitHub integration",
+      "url": "https://help.clickup.com/hc/en-us/articles/6305771568791-GitHub-integration",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Space-repository association and linked development activity.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-integration-automations",
+      "title": "ClickUp Help — Set up integration Automations",
+      "url": "https://help.clickup.com/hc/en-us/articles/6312091699735-Set-up-integration-Automations",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Supported third-party triggers and actions.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-integration-personal",
+      "title": "ClickUp Help — ClickUp for personal productivity",
+      "url": "https://help.clickup.com/hc/en-us/articles/6328337765015-ClickUp-for-personal-productivity",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Productivity integration examples.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-integration-project",
+      "title": "ClickUp Help — Integrations for project management",
+      "url": "https://help.clickup.com/hc/en-us/articles/9760934847639-Integrations-for-project-management",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Project integration examples.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-integration-marketing",
+      "title": "ClickUp Help — Integrations for marketing teams",
+      "url": "https://help.clickup.com/hc/en-us/articles/9915577759639-Integrations-for-marketing-teams",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Marketing integration examples.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-integration-dev",
+      "title": "ClickUp Help — Integrations for software development",
+      "url": "https://help.clickup.com/hc/en-us/articles/35923123576343-Integrations-for-software-development",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Development integration examples.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-integration-google-calendar",
+      "title": "ClickUp Help — Google Calendar integration",
+      "url": "https://help.clickup.com/hc/en-us/articles/6336507264663-Google-Calendar-integration",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Personal bidirectional event sync and AI tools.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-integration-outlook-calendar",
+      "title": "ClickUp Help — Outlook Calendar integration",
+      "url": "https://help.clickup.com/hc/en-us/articles/30618267005975-Outlook-Calendar-integration",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Outlook calendar integration.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-integration-planner-events",
+      "title": "ClickUp Help — Create events and schedule meetings from your Planner",
+      "url": "https://help.clickup.com/hc/en-us/articles/35975552416023-Create-events-and-schedule-meetings-from-your-Planner",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Event creation from planner.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-integration-drive",
+      "title": "ClickUp Help — Google Drive integration",
+      "url": "https://help.clickup.com/hc/en-us/articles/14841781940759-Google-Drive-integration",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "External files, embed, preview, creation, OAuth scope.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-integration-drive-automation",
+      "title": "ClickUp Help — Google Drive Automations",
+      "url": "https://help.clickup.com/hc/en-us/articles/37940170554519-Google-Drive-Automations",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full article pending",
+      "notes": "Drive automations.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-integration-figma",
+      "title": "ClickUp Help — Figma integration",
+      "url": "https://help.clickup.com/hc/en-us/articles/13648563810711-Figma-integration",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Figma commands and embedded content.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-integrations-directory",
+      "title": "ClickUp Help — Integrations",
+      "url": "https://help.clickup.com/hc/en-us/sections/5228895204247-Integrations",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Both directory pages opened; listed article titles, not all article bodies.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-calendar-directory",
+      "title": "ClickUp Help — Calendar-integrations",
+      "url": "https://help.clickup.com/hc/en-us/sections/6131948315799-Calendar-integrations",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full section pending",
+      "notes": "Section discovery.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-storage-directory",
+      "title": "ClickUp Help — Storage",
+      "url": "https://help.clickup.com/hc/en-us/sections/6308527765399-Storage",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "search-result reviewed; full section pending",
+      "notes": "Section discovery.",
+      "storage": "link-only"
     }
   ]
 }

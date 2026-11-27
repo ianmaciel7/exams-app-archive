@@ -139,3 +139,8 @@ Machine-readable inventory: [inventory.json](inventory.json). Source registry: [
 
 - [Release-aware flows and motion discovery](flows-motion-2026-11-27.md)
 - [Structured flow and release inventory](flows-motion-2026-11-27.json)
+
+## Seventh extraction batch
+
+- [Properties, business rules and integrations](properties-integrations-2026-11-27.md)
+- [Structured property and integration inventory](properties-integrations-2026-11-27.json)

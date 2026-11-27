@@ -1,0 +1,368 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-27",
+  "baseline_commit": "b204b802189fc685f3c41637ef2f2969d178c408",
+  "scope": "Public official documentation, opened pages and search excerpts. No runtime tests.",
+  "source_ids": [
+    "clickup-formula-create",
+    "clickup-formula-intro",
+    "clickup-formula-advanced",
+    "clickup-formula-logic",
+    "clickup-formula-string",
+    "clickup-field-permissions",
+    "clickup-field-required",
+    "clickup-field-manage",
+    "clickup-field-intro",
+    "clickup-field-move",
+    "clickup-field-usage",
+    "clickup-relationship-create",
+    "clickup-goal-create",
+    "clickup-goal-views",
+    "clickup-goal-cards",
+    "clickup-dependencies-reschedule",
+    "clickup-dependencies-intro",
+    "clickup-scheduling-intro",
+    "clickup-task-duration",
+    "clickup-milestones",
+    "clickup-gantt-planning",
+    "clickup-clickapps",
+    "clickup-sprint-report",
+    "clickup-sprint-points",
+    "clickup-sprint-run",
+    "clickup-sprint-limits",
+    "clickup-sprint-activate",
+    "clickup-sprint-intro",
+    "clickup-sprint-planning",
+    "clickup-workload-measure",
+    "clickup-integration-connect",
+    "clickup-integration-github",
+    "clickup-integration-automations",
+    "clickup-integration-personal",
+    "clickup-integration-project",
+    "clickup-integration-marketing",
+    "clickup-integration-dev",
+    "clickup-integration-google-calendar",
+    "clickup-integration-outlook-calendar",
+    "clickup-integration-planner-events",
+    "clickup-integration-drive",
+    "clickup-integration-drive-automation",
+    "clickup-integration-figma",
+    "clickup-integrations-directory",
+    "clickup-calendar-directory",
+    "clickup-storage-directory"
+  ],
+  "fields": [
+    {
+      "name": "Button",
+      "category": "action",
+      "description": "Starts configured automation manually.",
+      "source_id": "clickup-field-types"
+    },
+    {
+      "name": "Checkbox",
+      "category": "boolean",
+      "description": "True/false value.",
+      "source_id": "clickup-field-types"
+    },
+    {
+      "name": "Date",
+      "category": "date-time",
+      "description": "Date and optional time.",
+      "source_id": "clickup-field-types"
+    },
+    {
+      "name": "Dropdown",
+      "category": "single-option",
+      "description": "Configured options; shared across all field locations; 500 maximum.",
+      "source_id": "clickup-field-types"
+    },
+    {
+      "name": "Email",
+      "category": "contact",
+      "description": "Email address.",
+      "source_id": "clickup-field-types"
+    },
+    {
+      "name": "Files",
+      "category": "attachment",
+      "description": "Local or connected storage.",
+      "source_id": "clickup-field-types"
+    },
+    {
+      "name": "Formula",
+      "category": "computed",
+      "description": "Expression over supported fields.",
+      "source_id": "clickup-field-types"
+    },
+    {
+      "name": "Labels",
+      "category": "multi-option",
+      "description": "Up to 500 options; multiple selection.",
+      "source_id": "clickup-field-types"
+    },
+    {
+      "name": "Location",
+      "category": "geographic",
+      "description": "Formatted address.",
+      "source_id": "clickup-field-types"
+    },
+    {
+      "name": "Money",
+      "category": "numeric",
+      "description": "Amount and configured currency.",
+      "source_id": "clickup-field-types"
+    },
+    {
+      "name": "Number",
+      "category": "numeric",
+      "description": "Formatted number.",
+      "source_id": "clickup-field-types"
+    },
+    {
+      "name": "People",
+      "category": "reference",
+      "description": "People and optionally teams; configurable visibility and cardinality.",
+      "source_id": "clickup-field-types"
+    },
+    {
+      "name": "Phone",
+      "category": "contact",
+      "description": "Country code and number.",
+      "source_id": "clickup-field-types"
+    },
+    {
+      "name": "Progress (Auto)",
+      "category": "computed",
+      "description": "Subtasks, checklist items and assigned comments; nested subtasks excluded from rollup.",
+      "source_id": "clickup-field-types"
+    },
+    {
+      "name": "Progress (Manual)",
+      "category": "numeric",
+      "description": "Configurable range and manual completion.",
+      "source_id": "clickup-field-types"
+    },
+    {
+      "name": "Rating",
+      "category": "ordinal",
+      "description": "Configurable emoji and 1–5 scale.",
+      "source_id": "clickup-field-types"
+    },
+    {
+      "name": "Relationships",
+      "category": "reference",
+      "description": "Links to tasks.",
+      "source_id": "clickup-field-types"
+    },
+    {
+      "name": "Rollup",
+      "category": "derived-reference",
+      "description": "Reads selected related-task properties.",
+      "source_id": "clickup-field-types"
+    },
+    {
+      "name": "Signature",
+      "category": "input",
+      "description": "Typed or drawn signature; no identity verification claim.",
+      "source_id": "clickup-field-types"
+    },
+    {
+      "name": "Text",
+      "category": "text",
+      "description": "Single line; 2,048 characters.",
+      "source_id": "clickup-field-types"
+    },
+    {
+      "name": "Text area (Long Text)",
+      "category": "rich-text",
+      "description": "Rich text; 50,000 characters.",
+      "source_id": "clickup-field-types"
+    },
+    {
+      "name": "Voting",
+      "category": "aggregate",
+      "description": "Votes; configurable voter visibility.",
+      "source_id": "clickup-field-types"
+    },
+    {
+      "name": "Website",
+      "category": "url",
+      "description": "Website link.",
+      "source_id": "clickup-field-types"
+    }
+  ],
+  "contracts": [
+    {
+      "id": "clickup-required-vs-transition",
+      "source_ids": [
+        "clickup-field-required"
+      ],
+      "documented_behavior": "Creation-required fields apply at task creation; status changes need a separate automation. Owners/admins configure; Business and above.",
+      "proposed_qa": "Test task and subtask creation, API bypass (unknown), status change with empty property, automation failure and clear error.",
+      "evidence_status": "official documentation or search excerpt; runtime unverified"
+    },
+    {
+      "id": "clickup-field-access",
+      "source_ids": [
+        "clickup-field-permissions"
+      ],
+      "documented_behavior": "Default role access, edit schema+value, set value, view only, private. Named exceptions override baseline; creator retention. Restricted fields can be absent from other viewers' saved queries; saving without access may remove such criteria. Form exposure differs.",
+      "proposed_qa": "Test read/write/metadata permissions independently, query-save loss, form exposure, formula dependency and privilege revocation.",
+      "evidence_status": "official documentation or search excerpt; runtime unverified"
+    },
+    {
+      "id": "clickup-formula-column",
+      "source_ids": [
+        "clickup-formula-create"
+      ],
+      "documented_behavior": "Simple and advanced expression editors; one expression applies to the column. TODAY() disallows certain query, automation and aggregation uses. Results hidden if any input is inaccessible. Formula cannot span multiple locations.",
+      "proposed_qa": "Test null and zero, division by zero, access changes, time zones, circular references (unknown), migration and stale results.",
+      "evidence_status": "official documentation or search excerpt; runtime unverified"
+    },
+    {
+      "id": "clickup-relation-scope",
+      "source_ids": [
+        "clickup-relationship-create"
+      ],
+      "documented_behavior": "Relationship selector may allow all workspace tasks or tasks from a named List. Optional rollup projects related data.",
+      "proposed_qa": "Test allowed targets, duplicate IDs, deleted/moved target, permission changes and empty relation.",
+      "evidence_status": "official documentation or search excerpt; runtime unverified"
+    },
+    {
+      "id": "clickup-goal-metrics",
+      "source_ids": [
+        "clickup-goal-create"
+      ],
+      "documented_behavior": "Targets may be numbers, binary completion, money or task completion. Goal percentage changes when target progress changes; task shows goal badge.",
+      "proposed_qa": "Define target weights explicitly before implementing; test reversed ranges, currency, linked completion and missing target.",
+      "evidence_status": "official documentation or search excerpt; runtime unverified"
+    },
+    {
+      "id": "clickup-dependency-shift",
+      "source_ids": [
+        "clickup-dependencies-reschedule"
+      ],
+      "documented_behavior": "Configured rescheduling moves dependents by date change; requires blocking due date and blocked start date. Working-day rule and closed-task option apply. Gantt path limits changes to visible tasks and dependencies.",
+      "proposed_qa": "Test cycles (not documented), chains, working days/holidays, partial dates, closed status, hidden rows, permission and preview of cascading effects.",
+      "evidence_status": "official documentation or search excerpt; runtime unverified"
+    },
+    {
+      "id": "clickup-sprint-measures",
+      "source_ids": [
+        "clickup-sprint-report",
+        "clickup-sprint-intro"
+      ],
+      "documented_behavior": "Sprint has timeline, status and effort; missing-estimate warning. Reporting separates scope changes, burndown, burnup, velocity, cumulative flow, cycle and lead time.",
+      "proposed_qa": "Test scope changes, effort units, date window, completed work, chart drilldown and distinction from study accuracy.",
+      "evidence_status": "official documentation or search excerpt; runtime unverified"
+    },
+    {
+      "id": "clickup-connection-scope",
+      "source_ids": [
+        "clickup-integration-connect",
+        "clickup-connected-search"
+      ],
+      "documented_behavior": "Personal connections scoped to user; workspace connection lets workspace users search shared indexed data. Role and app availability differ.",
+      "proposed_qa": "Consent scope, index lifecycle, disconnect, revoked credentials, source ACL, cross-user leakage and reauthorization.",
+      "evidence_status": "official documentation or search excerpt; runtime unverified"
+    },
+    {
+      "id": "clickup-external-file-preview",
+      "source_ids": [
+        "clickup-integration-drive",
+        "clickup-integration-figma"
+      ],
+      "documented_behavior": "External links can have preview/embed or plain URL; Drive can create and attach external docs; login-required embeds have desktop/mobile restrictions.",
+      "proposed_qa": "Test unavailable auth, link permission, deleted source, preview fallback, read/write scope and platform limitations.",
+      "evidence_status": "official documentation or search excerpt; runtime unverified"
+    },
+    {
+      "id": "clickup-repository-link",
+      "source_ids": [
+        "clickup-integration-github"
+      ],
+      "documented_behavior": "Connect repositories to Spaces; tasks can reference commits, branches and PRs; creation and sync depend on permissions.",
+      "proposed_qa": "Test repository admin setup, disconnected repos, duplicate events, cross-repo references and source-of-truth ownership.",
+      "evidence_status": "official documentation or search excerpt; runtime unverified"
+    },
+    {
+      "id": "clickup-calendar-sync",
+      "source_ids": [
+        "clickup-integration-google-calendar",
+        "clickup-integration-outlook-calendar"
+      ],
+      "documented_behavior": "Personal calendar connection; Google Calendar offers event sync both directions through Planner. Do not infer task sync equivalence.",
+      "proposed_qa": "Test timezone, recurring events, private events, conflict resolution (unknown), deleted event and revocation.",
+      "evidence_status": "official documentation or search excerpt; runtime unverified"
+    },
+    {
+      "id": "clickup-integration-automation",
+      "source_ids": [
+        "clickup-integration-automations"
+      ],
+      "documented_behavior": "Configured trigger, optional conditions, and actions connect external services; supported app list varies.",
+      "proposed_qa": "Test retries, loop prevention, dedupe, secrets, permission, audit, pending and partial failure.",
+      "evidence_status": "official documentation or search excerpt; runtime unverified"
+    }
+  ],
+  "connections": {
+    "source_id": "clickup-integration-connect",
+    "personal": [
+      "Box",
+      "Dropbox",
+      "Facebook",
+      "Figma",
+      "GitHub",
+      "GitLab",
+      "Google Calendar",
+      "Google Drive",
+      "Gmail",
+      "Instagram",
+      "Jira",
+      "Microsoft OneDrive",
+      "Microsoft SharePoint",
+      "Microsoft Teams",
+      "Notion",
+      "Outlook Mail",
+      "Salesforce",
+      "Zoom",
+      "Ziflow",
+      "Certain external MCP servers"
+    ],
+    "workspace": [
+      "Box",
+      "Confluence",
+      "Dropbox",
+      "GitHub",
+      "GitLab",
+      "Google Drive",
+      "Jira",
+      "Microsoft OneDrive",
+      "Microsoft SharePoint",
+      "Microsoft Teams",
+      "Notion",
+      "Slack",
+      "Certain external MCP servers"
+    ],
+    "note": "Lists are documented connection types, not the universe of integrations. No connected accounts or private data inspected."
+  },
+  "automationApps": [
+    "Bugsnag",
+    "Calendly",
+    "Email",
+    "GitHub",
+    "Google Calendar",
+    "Google Drive",
+    "Gmail",
+    "HubSpot",
+    "Slack",
+    "Twilio",
+    "Outlook Mail"
+  ],
+  "remaining": [
+    "Detailed type-by-type field UI and API payload validation",
+    "Individual integration article bodies, complete app/plan/role matrix and authentication scopes",
+    "Full article inventory, visual/runtime evidence, actual motion, CSS and accessibility",
+    "Cross-index reusable patterns into canonical interface catalog"
+  ]
+}

@@ -378,6 +378,15 @@
       "video_directory_count": 24,
       "opened_visual_count": 0,
       "failed_media_retry_count": 1
+    },
+    {
+      "id": "properties-integrations-2026-11-27",
+      "path": "properties-integrations-2026-11-27.json",
+      "source_count": 46,
+      "field_type_count": 23,
+      "interaction_count": 12,
+      "opened_article_count": 9,
+      "opened_visual_count": 0
     }
   ]
 }
