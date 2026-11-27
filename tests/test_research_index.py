@@ -71,6 +71,43 @@ class ResearchIndexTests(unittest.TestCase):
                 mod.build(db, [b, b])
             self.assertEqual(db.execute("SELECT count(*) FROM research").fetchone()[0], 1)
 
+    def test_index_membership_detects_and_repairs_drift(self):
+        records = [{"id": i, "kind": "pattern", "catalog": "fixture", "title": title}
+                   for i, title in (("a", "alpha"), ("b", "beta"), ("c", "gamma"))]
+        with sqlite3.connect(":memory:") as db:
+            mod.build(db, records)
+            self.assertEqual(mod.index_membership(db, records)["membership_percent"], 100)
+            db.execute("DELETE FROM research_fts WHERE id='a'")
+            db.execute("INSERT INTO research_fts SELECT id,title,body FROM research_fts WHERE id='b'")
+            db.execute("UPDATE research SET kind='wrong' WHERE id='c'")
+            db.execute("INSERT INTO research_fts VALUES ('orphan','orphan','orphan')")
+            failed = mod.index_membership(db, records)
+            self.assertFalse(failed["integrity_passed"])
+            self.assertEqual(failed["matched_records"], 0)
+            self.assertEqual(failed["missing_fts_ids"], ["a"])
+            self.assertEqual(failed["duplicate_fts_ids"], ["b"])
+            self.assertEqual(failed["stale_metadata_ids"], ["c"])
+            self.assertEqual(failed["unexpected_fts_ids"], ["orphan"])
+            mod.build(db, records)
+            repaired = mod.index_membership(db, records)
+            self.assertTrue(repaired["integrity_passed"])
+            self.assertEqual(repaired["matched_records"], 3)
+            self.assertEqual(repaired["by_catalog"]["fixture"], {"eligible": 3, "matched": 3})
+            self.assertEqual(mod.search(db, "alpha")[0]["id"], "a")
+            self.assertFalse(mod.search(db, "orphan"))
+            self.assertEqual(len(mod.search(db, "beta")), 1)
+
+    def test_real_public_catalog_membership(self):
+        records = mod.load_records()
+        with sqlite3.connect(":memory:") as db:
+            mod.build(db, records)
+            measured = mod.coverage(records, db)["index_membership"]
+            self.assertTrue(measured["integrity_passed"])
+            self.assertEqual(measured["matched_records"], len(records))
+            self.assertEqual(sum(c["eligible"] for c in measured["by_catalog"].values()), len(records))
+            self.assertEqual(measured["membership_percent"], 100)
+            print("PUBLIC_CATALOG_MEMBERSHIP", measured["matched_records"], "/", measured["eligible_records"])
+
     def test_filters_graph_and_audit(self):
         records = mod.load_records()
         graph = mod.provenance_graph(records)
