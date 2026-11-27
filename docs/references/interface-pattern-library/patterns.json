@@ -2229,6 +2229,179 @@
       ],
       "classification": "Dated documentary synthesis and search-excerpt evidence; not universal taxonomy, measured benefit, or runtime validation",
       "related_catalog": "docs/references/ui-ux-research-sources/app-shell-taxonomy-2026-11-27.md"
+    },
+    {
+      "id": "shell.sdi",
+      "family": "app-shell-taxonomy",
+      "name": "Single Document Interface (SDI)",
+      "kind": "document management",
+      "definition": "One document per top-level window; choose when independent document windows match the task.",
+      "guardrail": "Compare with tabbed workspace when frequent document switching would increase window-management effort.",
+      "aliases": [
+        "SDI",
+        "single document interface",
+        "interface de documento único"
+      ],
+      "source_ids": [
+        "shell-selection-sdi"
+      ],
+      "classification": "Applied documentary synthesis; related dimension or subtype, not universal independent geometry or runtime validation",
+      "related_catalog": "docs/references/ui-ux-research-sources/app-shell-selection-guide-2026-11-27.md"
+    },
+    {
+      "id": "shell.mdi",
+      "family": "app-shell-taxonomy",
+      "name": "Multiple Document Interface (MDI)",
+      "kind": "document management",
+      "definition": "Multiple child document windows within one parent window; consider when internal overlapping windows serve a demonstrated expert task.",
+      "guardrail": "Do not confuse with separate top-level windows or peer split; test focus, z-order, keyboard and restore.",
+      "aliases": [
+        "MDI",
+        "multiple document interface",
+        "interface de múltiplos documentos"
+      ],
+      "source_ids": [
+        "shell-selection-sdi"
+      ],
+      "classification": "Applied documentary synthesis; related dimension or subtype, not universal independent geometry or runtime validation",
+      "related_catalog": "docs/references/ui-ux-research-sources/app-shell-selection-guide-2026-11-27.md"
+    },
+    {
+      "id": "shell.tdi",
+      "family": "app-shell-taxonomy",
+      "name": "Tabbed Document Interface (TDI)",
+      "kind": "document management subtype",
+      "definition": "Independent documents are organized into tabs; specialization of tabbed workspace, not a new geometric family.",
+      "guardrail": "Distinguish document tabs from navigation sections and command ribbon tabs; preserve unsaved work and tab state.",
+      "aliases": [
+        "TDI",
+        "tabbed document interface",
+        "interface de documentos em abas"
+      ],
+      "source_ids": [
+        "app-shell-s3",
+        "app-shell-s13a"
+      ],
+      "classification": "Applied documentary synthesis; related dimension or subtype, not universal independent geometry or runtime validation",
+      "related_catalog": "docs/references/ui-ux-research-sources/app-shell-selection-guide-2026-11-27.md"
+    },
+    {
+      "id": "shell.ribbon",
+      "family": "app-shell-taxonomy",
+      "name": "Ribbon-Based Shell",
+      "kind": "command-centric composition",
+      "definition": "Categorized command tabs and groups expose extensive document operations.",
+      "guardrail": "Prefer simpler toolbars for limited commands; verify command discovery, keyboard and narrow viewport.",
+      "aliases": [
+        "ribbon",
+        "ribbon shell",
+        "faixa de opções"
+      ],
+      "source_ids": [
+        "shell-selection-ribbon"
+      ],
+      "classification": "Applied documentary synthesis; related dimension or subtype, not universal independent geometry or runtime validation",
+      "related_catalog": "docs/references/ui-ux-research-sources/app-shell-selection-guide-2026-11-27.md"
+    },
+    {
+      "id": "shell.map-list",
+      "family": "app-shell-taxonomy",
+      "name": "Map + List / Detail Workspace",
+      "kind": "spatial content composition",
+      "definition": "Synchronize map selection and list or details for location-driven discovery.",
+      "guardrail": "Not a unique geometry; provide text and keyboard alternatives and preserve selection.",
+      "aliases": [
+        "map list",
+        "map detail",
+        "mapa e lista"
+      ],
+      "source_ids": [
+        "shell-selection-map-list"
+      ],
+      "classification": "Applied documentary synthesis; related dimension or subtype, not universal independent geometry or runtime validation",
+      "related_catalog": "docs/references/ui-ux-research-sources/app-shell-selection-guide-2026-11-27.md"
+    },
+    {
+      "id": "shell.resource-detail-hub",
+      "family": "app-shell-taxonomy",
+      "name": "Resource Detail Hub",
+      "kind": "resource page template",
+      "definition": "Dedicated resource overview with properties, actions and related resources when detail exceeds a transient preview.",
+      "guardrail": "Keep primary action clear; do not count as independent shell geometry.",
+      "aliases": [
+        "resource hub",
+        "resource detail page",
+        "central de detalhes"
+      ],
+      "source_ids": [
+        "shell-selection-resource-details"
+      ],
+      "classification": "Applied documentary synthesis; related dimension or subtype, not universal independent geometry or runtime validation",
+      "related_catalog": "docs/references/ui-ux-research-sources/app-shell-selection-guide-2026-11-27.md"
+    },
+    {
+      "id": "shell.region-roles",
+      "family": "app-shell-taxonomy",
+      "name": "Shell Region Responsibilities",
+      "kind": "architecture decision dimension",
+      "definition": "Distinguish global/local navigation, document tabs, primary content, supporting context, inspector, action and status bars from physical position.",
+      "guardrail": "Specify ownership, landmarks, scroll and RTL leading/trailing behavior; right placement does not imply inspector.",
+      "aliases": [
+        "shell region",
+        "chrome ownership",
+        "responsabilidade das regiões"
+      ],
+      "source_ids": [
+        "shell-selection-carbon-global-header",
+        "shell-selection-carbon-shell-header",
+        "shell-selection-atlassian-layout"
+      ],
+      "classification": "Applied documentary synthesis; related dimension or subtype, not universal independent geometry or runtime validation",
+      "related_catalog": "docs/references/ui-ux-research-sources/app-shell-selection-guide-2026-11-27.md"
+    },
+    {
+      "id": "shell.responsive-transition",
+      "family": "app-shell-taxonomy",
+      "name": "Responsive Shell Transition Policy",
+      "kind": "behavior and architecture decision",
+      "definition": "Choose navigation and pane adaptations from task and available window width while preserving destination identity and context.",
+      "guardrail": "Test focus, back, selection, unsaved work, resize and reflow; use measured content needs instead of universal breakpoints.",
+      "aliases": [
+        "responsive shell",
+        "adaptive shell",
+        "transição responsiva"
+      ],
+      "source_ids": [
+        "shell-selection-adaptive-nav",
+        "shell-selection-adaptive-dos",
+        "shell-selection-apple-sidebars",
+        "shell-selection-apple-tab-bars"
+      ],
+      "classification": "Applied documentary synthesis; related dimension or subtype, not universal independent geometry or runtime validation",
+      "related_catalog": "docs/references/ui-ux-research-sources/app-shell-selection-guide-2026-11-27.md"
+    },
+    {
+      "id": "shell.selection-method",
+      "family": "app-shell-taxonomy",
+      "name": "App Shell Selection Method",
+      "kind": "applied decision framework",
+      "definition": "Choose topology, placement, pane semantics, chrome ownership, domain composition and behavior independently from task, IA, switching frequency and simultaneous context.",
+      "guardrail": "Compare alternatives using representative tasks, completion, errors, context switches, state loss and accessibility; no fabricated scores.",
+      "aliases": [
+        "app shell decision",
+        "shell selection",
+        "como escolher app shell",
+        "critérios de escolha"
+      ],
+      "source_ids": [
+        "shell-selection-nng-ia",
+        "shell-selection-nng-vertical",
+        "shell-selection-nng-hamburger",
+        "app-shell-s7",
+        "app-shell-s8"
+      ],
+      "classification": "Applied documentary synthesis; related dimension or subtype, not universal independent geometry or runtime validation",
+      "related_catalog": "docs/references/ui-ux-research-sources/app-shell-selection-guide-2026-11-27.md"
     }
   ]
 }
