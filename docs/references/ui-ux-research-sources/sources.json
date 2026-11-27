@@ -2788,6 +2788,256 @@
       "status": "verified",
       "notes": "API errors including 429",
       "storage": "link-only"
+    },
+    {
+      "id": "clickup-developer-index",
+      "title": "ClickUp — Developer documentation index",
+      "url": "https://developer.clickup.com/llms.txt",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Official machine-oriented index of guides and v2/v3 reference pages.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-openapi",
+      "title": "ClickUp — OpenAPI specification guide",
+      "url": "https://developer.clickup.com/docs/open-api-spec",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Links to machine-readable specifications.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-openapi-v2",
+      "title": "ClickUp — OpenAPI v2",
+      "url": "https://developer.clickup.com/openapi/clickup-api-v2-reference.json",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Raw JSON specification retrieved in web tool; link-only.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-openapi-v3",
+      "title": "ClickUp — OpenAPI v3",
+      "url": "https://developer.clickup.com/openapi/ClickUp_PUBLIC_API_V3.yaml",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Raw specification URL retrieved; link-only.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-mcp-tools",
+      "title": "ClickUp — MCP supported tools",
+      "url": "https://developer.clickup.com/docs/mcp-tools",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Tools for search, task CRUD, bulk operator, fields, relations, time, attachments and comments.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-mcp-outbound",
+      "title": "ClickUp — What is ClickUp MCP?",
+      "url": "https://help.clickup.com/hc/en-us/articles/33335772678423-What-is-ClickUp-MCP",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "OAuth-only MCP; external connected search not exposed.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-mcp-inbound",
+      "title": "ClickUp — Connect an MCP server",
+      "url": "https://help.clickup.com/hc/en-us/articles/38503227973655-Connect-an-MCP-server-to-your-Workspace",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "External server tools become available to Brain and agents.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-connected-search",
+      "title": "ClickUp — Connected Search",
+      "url": "https://help.clickup.com/hc/en-us/articles/14642390285463-Connected-Search",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Personal and shared indexing; indexing lifecycle and permission boundary.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-automation-webhook",
+      "title": "ClickUp — Automation webhooks",
+      "url": "https://help.clickup.com/hc/en-us/articles/35313844961943-Integrate-ClickUp-using-Automation-webhooks",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "API webhooks versus automation-triggered webhooks.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-webhook-health",
+      "title": "ClickUp — Webhook health",
+      "url": "https://developer.clickup.com/docs/webhookhealth",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Failure status, retry, suspension and recovery.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-rate-limits",
+      "title": "ClickUp — Rate limits",
+      "url": "https://developer.clickup.com/docs/rate-limits",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Quota per token and 429 response headers.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-get-started-index",
+      "title": "ClickUp — Get started directory",
+      "url": "https://help.clickup.com/hc/en-us/categories/5735245366551-Get-started",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Navigation, migration, hierarchy, tasks, roles and use cases.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-mobile-index",
+      "title": "ClickUp — Mobile directory",
+      "url": "https://help.clickup.com/hc/en-us/categories/5852957874455-Mobile",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Mobile-specific features and sharing.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-support-index",
+      "title": "ClickUp — Technical Support directory",
+      "url": "https://help.clickup.com/hc/en-us/categories/5927901136151-Technical-Support",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Troubleshooting and feedback.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-security-index",
+      "title": "ClickUp — Data, privacy and security directory",
+      "url": "https://help.clickup.com/hc/en-us/categories/19621427111447-Data-privacy-and-security",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Data protection, SSO, backups, retention and security.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-synced-content",
+      "title": "ClickUp — Synced content",
+      "url": "https://help.clickup.com/hc/en-us/articles/42375806482711-Use-Synced-Content",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Shared block identity, permissions at source, unsync and deletion.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-content-blocks",
+      "title": "ClickUp — Content blocks",
+      "url": "https://help.clickup.com/hc/en-us/articles/31672686246807-Content-Blocks",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Drag handles, selection, keyboard movement, heading collapse.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-dashboard-layout",
+      "title": "ClickUp — Move and resize dashboard cards",
+      "url": "https://help.clickup.com/hc/en-us/articles/34275916892951-Move-and-resize-cards-on-Dashboards",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Layout reflow, auto layout, undo and per-card refresh.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-dependency-warning",
+      "title": "ClickUp — Dependency warnings",
+      "url": "https://help.clickup.com/hc/en-us/articles/6304410420759-Dependency-Warnings",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Configurable warning before closing blocked work.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-incomplete-warning",
+      "title": "ClickUp — Incomplete warning",
+      "url": "https://help.clickup.com/hc/en-us/articles/6304420229527-Incomplete-Warning",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Pre-completion warning for unresolved items.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-tag-manager",
+      "title": "ClickUp — Tag Manager",
+      "url": "https://help.clickup.com/hc/en-us/articles/41121088087319-What-is-the-Tag-Manager",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Central tag management scoped to Space.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-whiteboard-objects",
+      "title": "ClickUp — Tasks and Docs on whiteboards",
+      "url": "https://help.clickup.com/hc/en-us/articles/17217215332887-Add-tasks-and-Docs-to-a-Whiteboard",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Editable object references, conversion from canvas elements, export boundary.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-prompt-injection",
+      "title": "ClickUp — Prompt injection protection",
+      "url": "https://help.clickup.com/hc/en-us/articles/42114128067095-How-ClickUp-protects-against-prompt-injection",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Vendor-described risk checks and gated actions; not independently tested.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-mobile-launch",
+      "title": "ClickUp — Mobile launch page",
+      "url": "https://help.clickup.com/hc/en-us/articles/16765947283991-Choose-your-mobile-launch-page",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "User-selectable mobile entry page.",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-drafts-sent",
+      "title": "ClickUp — Drafts and Sent",
+      "url": "https://help.clickup.com/hc/en-us/articles/30093730138263-View-draft-scheduled-and-sent-messages-and-comments",
+      "kind": "official-documentation",
+      "recorded_on": "2026-11-27",
+      "status": "verified",
+      "notes": "Draft/scheduled/sent lifecycle, filters and row actions.",
+      "storage": "link-only"
     }
   ]
 }

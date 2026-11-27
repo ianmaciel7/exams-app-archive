@@ -340,5 +340,16 @@
     "Complete screenshot/video coverage, visual measurements and motion timing",
     "Full API endpoint/field enumeration, release history, integrations catalog and plan matrix",
     "Cross-index into reusable semantic pattern catalog with acceptance tests"
+  ],
+  "additional_batches": [
+    {
+      "id": "technical-interactions-2026-11-27",
+      "path": "technical-interactions-2026-11-27.json",
+      "source_count": 25,
+      "category_count": 9,
+      "interaction_count": 13,
+      "opened_visual_count": 3,
+      "failed_visual_count": 1
+    }
   ]
 }

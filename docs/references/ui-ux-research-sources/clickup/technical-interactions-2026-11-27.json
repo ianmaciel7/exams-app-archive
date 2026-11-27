@@ -1,0 +1,356 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-27",
+  "baseline_commit": "cf3f5572431feb214436c8210b9ed279ec4c1525",
+  "scope": "Public document-level and category-level discovery plus selected image inspection; no authenticated crawl",
+  "categories": [
+    {
+      "name": "Get started",
+      "url": "https://help.clickup.com/hc/en-us/categories/5735245366551-Get-started",
+      "sections_sample": [
+        "Setup",
+        "Navigation",
+        "Import/export",
+        "Hierarchy",
+        "Tasks",
+        "Teams",
+        "Use cases"
+      ],
+      "evidence_status": "category page inspected; nested articles not exhaustive"
+    },
+    {
+      "name": "Agents",
+      "url": "https://help.clickup.com/hc/en-us/categories/37728141474071-ClickUp-Agents",
+      "sections_sample": [
+        "Agent setup and management"
+      ],
+      "evidence_status": "category page inspected; nested articles not exhaustive"
+    },
+    {
+      "name": "AI",
+      "url": "https://help.clickup.com/hc/en-us/categories/37648258297623-ClickUp-AI",
+      "sections_sample": [
+        "Brain",
+        "Brain MAX desktop/mobile/Chrome",
+        "Content generation"
+      ],
+      "evidence_status": "category page inspected; nested articles not exhaustive"
+    },
+    {
+      "name": "Features",
+      "url": "https://help.clickup.com/hc/en-us/categories/5414365970455-Features-and-ClickApps",
+      "sections_sample": [
+        "Automations",
+        "Cards",
+        "Labs",
+        "Planner",
+        "Clips",
+        "Connected Search",
+        "Creative Studio",
+        "Custom Fields",
+        "Custom Task IDs",
+        "Dashboards",
+        "Docs",
+        "Goals",
+        "My Tasks",
+        "Personal List",
+        "Relationships",
+        "Scheduling",
+        "Sheets",
+        "Sprints",
+        "Tags",
+        "Templates",
+        "Time tracking",
+        "Whiteboards",
+        "Work in Progress limits"
+      ],
+      "evidence_status": "category page inspected; nested articles not exhaustive"
+    },
+    {
+      "name": "Chat",
+      "url": "https://help.clickup.com/hc/en-us/categories/29564258203671-Chat",
+      "sections_sample": [
+        "Messages",
+        "Direct messages",
+        "Channels",
+        "Posts",
+        "SyncUps"
+      ],
+      "evidence_status": "category page inspected; nested articles not exhaustive"
+    },
+    {
+      "name": "Integrations",
+      "url": "https://help.clickup.com/hc/en-us/categories/5735460831255-ClickApps-and-Integrations",
+      "sections_sample": [
+        "Sync",
+        "Integrations",
+        "API",
+        "MCP"
+      ],
+      "evidence_status": "category page inspected; nested articles not exhaustive"
+    },
+    {
+      "name": "Mobile",
+      "url": "https://help.clickup.com/hc/en-us/categories/5852957874455-Mobile",
+      "sections_sample": [
+        "Home",
+        "Inbox",
+        "Docs",
+        "Search",
+        "Sharing",
+        "Launch page"
+      ],
+      "evidence_status": "category page inspected; nested articles not exhaustive"
+    },
+    {
+      "name": "Technical support",
+      "url": "https://help.clickup.com/hc/en-us/categories/5927901136151-Technical-Support",
+      "sections_sample": [
+        "Troubleshooting"
+      ],
+      "evidence_status": "category page inspected; nested articles not exhaustive"
+    },
+    {
+      "name": "Data and security",
+      "url": "https://help.clickup.com/hc/en-us/categories/19621427111447-Data-privacy-and-security",
+      "sections_sample": [
+        "Audit logs",
+        "SSO",
+        "Backup",
+        "Retention",
+        "Prompt injection",
+        "Public view authentication"
+      ],
+      "evidence_status": "category page inspected; nested articles not exhaustive"
+    }
+  ],
+  "api": {
+    "source": "https://developer.clickup.com/llms.txt",
+    "specifications": {
+      "v2": "https://developer.clickup.com/openapi/clickup-api-v2-reference.json",
+      "v3": "https://developer.clickup.com/openapi/ClickUp_PUBLIC_API_V3.yaml"
+    },
+    "v2_families": [
+      "Authorization",
+      "Attachments",
+      "Comments",
+      "Custom Task Types",
+      "Custom Fields",
+      "Folders",
+      "Goals",
+      "Guests",
+      "Lists",
+      "Members",
+      "Roles",
+      "Shared Hierarchy",
+      "Spaces",
+      "Tags",
+      "Tasks",
+      "Task Checklists",
+      "Task Relationships",
+      "Templates",
+      "Workspaces",
+      "User Groups",
+      "Time Tracking",
+      "Time Tracking (Legacy)",
+      "Users",
+      "Views",
+      "Webhooks"
+    ],
+    "v3_families": [
+      "Privacy and access",
+      "Attachments",
+      "Audit Logs",
+      "Chat",
+      "Docs",
+      "Tasks"
+    ],
+    "limits": {
+      "unit": "requests/minute/token",
+      "free_unlimited_business": 100,
+      "business_plus": 1000,
+      "enterprise_enterprise_plus": 10000,
+      "source_id": "clickup-rate-limits"
+    },
+    "boundaries": [
+      "Public API differs from UI feature surface",
+      "MCP supports only OAuth, unlike REST personal API tokens",
+      "No authenticated requests or generated client validation performed",
+      "Exact endpoint-level count not asserted; consult raw specs"
+    ]
+  },
+  "patterns": [
+    {
+      "id": "clickup-synced-blocks",
+      "source_id": "clickup-synced-content",
+      "documented_behavior": "One source block, multiple live instances. Source ACL controls read/edit; instance protection is local. Unsync copy retains text; deleting source can preserve or remove copies; history at original; mobile read-only.",
+      "proposed_validation": "Test inaccessible original, stale permission, deletion confirmation, detach, sync conflicts and mobile.",
+      "evidence_status": "vendor-documentation; runtime-unverified"
+    },
+    {
+      "id": "clickup-block-editor",
+      "source_id": "clickup-content-blocks",
+      "documented_behavior": "Block drag handle reveals contextual actions, insertion guideline, keyboard movement; heading collapse and two-stage Select All when enabled.",
+      "proposed_validation": "Test keyboard/touch discovery, multi-selection, focus, undo and collapsed range.",
+      "evidence_status": "vendor-documentation; runtime-unverified"
+    },
+    {
+      "id": "clickup-dashboard-reflow",
+      "source_id": "clickup-dashboard-layout",
+      "documented_behavior": "Drag/resize causes neighboring cards to adjust; optional compaction; up to five recent layout undos, reset by other edits; per-card refresh and freshness label.",
+      "proposed_validation": "Test grid reflow, responsive constraints, undo boundary, failed refresh and stale data.",
+      "evidence_status": "vendor-documentation; runtime-unverified"
+    },
+    {
+      "id": "clickup-dependency-warning",
+      "source_id": "clickup-dependency-warning",
+      "documented_behavior": "Configurable warning when attempting to close work blocked by dependencies.",
+      "proposed_validation": "Test allowed override, cancellation, source permissions and keyboard.",
+      "evidence_status": "vendor-documentation; runtime-unverified"
+    },
+    {
+      "id": "clickup-completion-warning",
+      "source_id": "clickup-incomplete-warning",
+      "documented_behavior": "Warn before closing if unresolved subtasks, comments or checklist items remain; scope configured by Space.",
+      "proposed_validation": "Test resolve versus continue, navigation to offending items, counts, and no warning when complete.",
+      "evidence_status": "vendor-documentation; runtime-unverified"
+    },
+    {
+      "id": "clickup-scoped-tag-manager",
+      "source_id": "clickup-tag-manager",
+      "documented_behavior": "Central manager organized by Space; current context selected based on entry point; task tags distinct from document and time tags.",
+      "proposed_validation": "Test global versus local scope, renaming impact, empty results and deletion.",
+      "evidence_status": "vendor-documentation; runtime-unverified"
+    },
+    {
+      "id": "clickup-embedded-live-object",
+      "source_id": "clickup-whiteboard-objects",
+      "documented_behavior": "Canvas references to tasks and Docs allow edits; convert freeform items to tasks; export excludes embedded tasks/Docs.",
+      "proposed_validation": "Test same object identity, access, remove reference versus delete source and export disclosure.",
+      "evidence_status": "vendor-documentation; runtime-unverified"
+    },
+    {
+      "id": "clickup-draft-lifecycle",
+      "source_id": "clickup-drafts-sent",
+      "documented_behavior": "Draft, scheduled and sent tabs; draft stays local to originating device and expires after 90 days; row actions for edits, reschedule, send or delete.",
+      "proposed_validation": "Test accidental navigation, cross-device limitation, time zone, failure and expiry disclosure.",
+      "evidence_status": "vendor-documentation; runtime-unverified"
+    },
+    {
+      "id": "clickup-mobile-entry",
+      "source_id": "clickup-mobile-launch",
+      "documented_behavior": "A user can choose a preferred mobile launch destination.",
+      "proposed_validation": "Test permission changes, deleted destination and fallback.",
+      "evidence_status": "vendor-documentation; runtime-unverified"
+    },
+    {
+      "id": "clickup-action-gate",
+      "source_id": "clickup-prompt-injection",
+      "documented_behavior": "Vendor describes parallel inspection of untrusted content and confirmation before flagged writes/external actions; autonomous runs are policy-dependent.",
+      "proposed_validation": "Test false positives, denial, audit trace and noninteractive policy. Not security certification.",
+      "evidence_status": "vendor-documentation; runtime-unverified"
+    },
+    {
+      "id": "clickup-index-lifecycle",
+      "source_id": "clickup-connected-search",
+      "documented_behavior": "Index begins after connection, updates periodically or via events, and is removed on disconnect. Personal vs organizational connections have different visibility.",
+      "proposed_validation": "Test index progress, source ACL change, disconnect, stale results and cross-user access.",
+      "evidence_status": "vendor-documentation; runtime-unverified"
+    },
+    {
+      "id": "clickup-mcp-boundary",
+      "source_id": "clickup-mcp-outbound",
+      "documented_behavior": "ClickUp server uses OAuth and exposes permitted actions; Connected Search from external apps remains in-workspace.",
+      "proposed_validation": "Test tool scope, consent, revocation, destructive actions and authorization failure.",
+      "evidence_status": "vendor-documentation; runtime-unverified"
+    },
+    {
+      "id": "clickup-webhook-recovery",
+      "source_id": "clickup-webhook-health",
+      "documented_behavior": "Delivery health changes to failing after non-success or over seven seconds; up to five retries per event; suspension at fail count 100 or 401/410. Exhausted events not replayed automatically.",
+      "proposed_validation": "Test deduplication, reconciliation, queue, retry policy and observability.",
+      "evidence_status": "vendor-documentation; runtime-unverified"
+    }
+  ],
+  "visual_evidence": [
+    {
+      "id": "clickup-block-drag",
+      "source_id": "clickup-content-blocks",
+      "url": "https://help.clickup.com/hc/article_attachments/31672686242967",
+      "media_type": "image",
+      "observation": "Visible block handle, dragged text and horizontal insertion marker.",
+      "evidence_status": "source-image-opened-and-inspected",
+      "observed_on": "2026-11-27",
+      "rights": "redistribution not established",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-dashboard-layout-menu",
+      "source_id": "clickup-dashboard-layout",
+      "url": "https://help.clickup.com/hc/article_attachments/34275970785175",
+      "media_type": "image",
+      "observation": "Menu showing auto layout and auto refresh toggles alongside grouped actions.",
+      "evidence_status": "source-image-opened-and-inspected",
+      "observed_on": "2026-11-27",
+      "rights": "redistribution not established",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-incomplete-warning-modal",
+      "source_id": "clickup-incomplete-warning",
+      "url": "https://help.clickup.com/hc/article_attachments/39240807056535",
+      "media_type": "image",
+      "observation": "Three unresolved-item rows and distinct resolve/continue actions.",
+      "evidence_status": "source-image-opened-and-inspected",
+      "observed_on": "2026-11-27",
+      "rights": "redistribution not established",
+      "storage": "link-only"
+    },
+    {
+      "id": "clickup-synced-content-example",
+      "source_id": "clickup-synced-content",
+      "url": "https://help.clickup.com/hc/article_attachments/42379359154711",
+      "media_type": "image",
+      "observation": "Article labels this as a synced content screenshot; image fetch failed.",
+      "evidence_status": "source-linked-fetch-failed",
+      "observed_on": "2026-11-27",
+      "rights": "redistribution not established",
+      "storage": "link-only"
+    }
+  ],
+  "source_ids": [
+    "clickup-developer-index",
+    "clickup-openapi",
+    "clickup-openapi-v2",
+    "clickup-openapi-v3",
+    "clickup-mcp-tools",
+    "clickup-mcp-outbound",
+    "clickup-mcp-inbound",
+    "clickup-connected-search",
+    "clickup-automation-webhook",
+    "clickup-webhook-health",
+    "clickup-rate-limits",
+    "clickup-get-started-index",
+    "clickup-mobile-index",
+    "clickup-support-index",
+    "clickup-security-index",
+    "clickup-integrations-index",
+    "clickup-synced-content",
+    "clickup-content-blocks",
+    "clickup-dashboard-layout",
+    "clickup-dependency-warning",
+    "clickup-incomplete-warning",
+    "clickup-tag-manager",
+    "clickup-whiteboard-objects",
+    "clickup-prompt-injection",
+    "clickup-mobile-launch",
+    "clickup-drafts-sent"
+  ],
+  "gaps": [
+    "Help Center article API pagination URL was inaccessible in web tool; no complete denominator or recall percentage",
+    "Raw OpenAPI references linked, not locally parsed or schema-validated",
+    "No runtime sessions, screenshots across plans, CSS tokens or motion timings",
+    "Synced content image fetch failed",
+    "Integration-by-integration and feature article-by-article extraction remains incomplete"
+  ]
+}
