@@ -1,0 +1,57 @@
+name: Open Artifact upstream preservation v0.17.0
+on:
+  push:
+    branches: ['open-artifact/upstream-v0.17.0']
+    paths: ['.github/workflows/open-artifact-upstream-v017.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  preserve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Fetch pinned public sources and official distribution
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p evidence
+          git init upstream
+          git -C upstream remote add origin https://github.com/JimLiu/open-artifact.git
+          git -C upstream fetch --depth=1 origin refs/tags/v0.17.0
+          git -C upstream checkout --detach FETCH_HEAD
+          test "$(git -C upstream rev-parse HEAD)" = 0f6079853c8b0d2f4e9bddf5465ddbda722ce5a9
+          git -C upstream archive --format=tar.gz --prefix=open-artifact/ HEAD > evidence/open-artifact-source-v0.17.0.tar.gz
+          git -C upstream ls-tree -r HEAD > evidence/source-tree.txt
+          curl --fail --location --retry 3 --output evidence/open-artifact-plugins.zip https://github.com/JimLiu/open-artifact/releases/download/v0.17.0/open-artifact-plugins.zip
+          echo '161e146bfd38207e4b1a4f3a515f049f87c4424fba551d439763943a2ed40a3d  evidence/open-artifact-plugins.zip' | sha256sum --check
+          unzip -tq evidence/open-artifact-plugins.zip
+          unzip -Z1 evidence/open-artifact-plugins.zip > evidence/distribution-tree.txt
+          sha256sum evidence/*.gz evidence/*.zip > evidence/SHA256SUMS
+      - name: Inspect nine type contracts and runtime
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import zipfile,json,pathlib
+          p=pathlib.Path("evidence")
+          expected={"data","design","design-system","docs","motion","page","sheets","slides","whiteboard"}
+          with zipfile.ZipFile(p/"open-artifact-plugins.zip") as z:
+              names=z.namelist()
+              runtime=[n for n in names if "/chatgpt/" in "/"+n and n.endswith("/vendor/runtime.json")]
+              assert len(runtime)==1,runtime
+              ver=json.loads(z.read(runtime[0]))
+              assert ver["version"]=="0.17.0",ver
+              base=runtime[0].rsplit("/",1)[0]
+              found={n[len(base+"/artifact-types/"):].split("/")[0] for n in names if n.startswith(base+"/artifact-types/") and n.endswith("/artifact-type.json")}
+              assert expected<=found,(expected,found)
+              assert any(n.startswith(base+"/type-server/") for n in names)
+              report={"runtime":ver,"types":sorted(found),"zip_entries":len(names),"source_tree_entries":len((p/"source-tree.txt").read_text().splitlines()),"scope":"static inspection only; not runtime E2E or private plugin publication"}
+              (p/"verification.json").write_text(json.dumps(report,indent=2)+"\n")
+              print(json.dumps(report,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: open-artifact-upstream-v0.17.0
+          path: evidence/
+          retention-days: 14
+          if-no-files-found: error
