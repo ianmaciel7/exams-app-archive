@@ -155,3 +155,8 @@ Machine-readable inventory: [inventory.json](inventory.json). Source registry: [
 - [Source review and central index](review-index-2026-11-27.md)
 - [Structured review](review-index-2026-11-27.json)
 - [Searchable product-specific observations](pattern-index.json)
+
+## Tenth extraction batch
+
+- [Reopened references and interaction behaviors](review-behaviors-2026-11-27.md)
+- [Structured review](review-behaviors-2026-11-27.json)

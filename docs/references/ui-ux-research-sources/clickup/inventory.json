@@ -404,6 +404,14 @@
       "failed_source_count": 1,
       "interaction_count": 12,
       "indexed_observation_count": 92
+    },
+    {
+      "id": "review-behaviors-2026-11-27",
+      "path": "review-behaviors-2026-11-27.json",
+      "source_count": 0,
+      "reviewed_source_count": 30,
+      "interaction_count": 18,
+      "indexed_observation_count": 110
     }
   ]
 }

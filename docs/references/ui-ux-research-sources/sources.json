@@ -3456,11 +3456,11 @@
       "url": "https://help.clickup.com/hc/en-us/articles/7255480884887-Customize-views-to-increase-productivity",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; direct fetch failed",
+      "status": "verified",
       "storage": "link-only",
       "notes": "Saved filter views and sorting.",
       "reviewed_on": "2026-11-27",
-      "review_note": "Direct retrieval returned UnexpectedStatusCode; previous search preview retained.",
+      "review_note": "Multiple sorting keys are prioritized in configured order; add the fields as visible columns before sorting.",
       "product": "ClickUp"
     },
     {
@@ -3534,10 +3534,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6326086730263-Customize-a-template",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "storage": "link-only",
       "notes": "Selective import of template properties.",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Template application can select a subset of settings. Updating the existing template overwrites it; distinguish applying from changing the source template."
     },
     {
       "id": "clickup-checklist-templates",
@@ -3545,10 +3547,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/13455445264663-Create-checklist-templates",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "storage": "link-only",
       "notes": "Checklist templates and automation.",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Role-specific create, apply, edit and removal permissions. Documented limits: 250 checklists per task, 500 items per checklist, item description 2,000 characters."
     },
     {
       "id": "clickup-archive-task",
@@ -3569,10 +3573,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/30092637130263-Edit-or-delete-messages",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "storage": "link-only",
       "notes": "Short-lived undo of sent message deletion.",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Edit sent message from context menu or hover toolbar; keyboard E shortcut when enabled. Edits 15 minutes or more after sending show an edited marker."
     },
     {
       "id": "clickup-my-tasks",
@@ -3580,10 +3586,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/18944788880791-My-Tasks-page-formerly-Home",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "storage": "link-only",
       "notes": "Personal priorities, assigned comments and agenda.",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Personal canvas supports adding, reordering and removing cards; recent items can open from it."
     },
     {
       "id": "clickup-personal-list-filter",
@@ -3591,10 +3599,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/31409908744727-Group-and-Filter-your-Personal-List",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "storage": "link-only",
       "notes": "Personal List grouping and filtering.",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Personal List has direct group and filter controls plus equivalent settings through Customize."
     },
     {
       "id": "clickup-individual-workspace",
@@ -3602,10 +3612,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/9563959684119-Set-up-your-individual-Workspace",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "storage": "link-only",
       "notes": "Personal setup and pinned items.",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Solo workspace layout available for one-person workspaces; same account can create a separate workspace; policy may require SSO or 2FA."
     },
     {
       "id": "clickup-chrome-extension",
@@ -3613,10 +3625,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6305599755671-Use-the-Chrome-extension",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "storage": "link-only",
       "notes": "Capture, annotation and attach web content.",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Chrome extension supports task creation, time tracking, bookmarking, notes and screen capture; setup includes permission review and workspace selection."
     },
     {
       "id": "clickup-tasks-section",
@@ -3744,77 +3758,91 @@
       "title": "Customize your Workload view",
       "url": "https://help.clickup.com/hc/en-us/articles/30799933602327-Customize-your-Workload-view",
       "kind": "official-documentation",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Color by list, status, priority or dropdown property.",
       "recorded_on": "2026-11-27",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Measure by points, tasks, time or percent of capacity; choose color dimension, show/hide weekends and include subtask rollups. Option to open on current selected date."
     },
     {
       "id": "clickup-timeline-style",
       "title": "Customize your Timeline view",
       "url": "https://help.clickup.com/hc/en-us/articles/31440640517015-Customize-your-Timeline-view",
       "kind": "official-documentation",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Color by list, status, priority or dropdown property.",
       "recorded_on": "2026-11-27",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Color by list, status, priority or dropdown value; configure weekends, week numbers, locations, parent names and title compression."
     },
     {
       "id": "clickup-timeline-interactions",
       "title": "Add and manage tasks in Timeline view",
       "url": "https://help.clickup.com/hc/en-us/articles/31440880547991-Add-and-manage-tasks-in-Timeline-view",
       "kind": "official-documentation",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Drag date range endpoints, context-derived task defaults.",
       "recorded_on": "2026-11-27",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Click canvas to add existing/new task; new task receives row/date defaults. Drag left/right end to change respective date; drag whole bar shifts both; move across groups changes group value."
     },
     {
       "id": "clickup-button-field",
       "title": "Use Button Custom Fields",
       "url": "https://help.clickup.com/hc/en-us/articles/30117356611735-Use-Button-Custom-Fields",
       "kind": "official-documentation",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Configurable icon/color and automation action.",
       "recorded_on": "2026-11-27",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Manual automation trigger on individual task; configurable label, icon, color and actions. Permission/plan boundaries apply."
     },
     {
       "id": "clickup-design-review",
       "title": "Use ClickUp for design reviews",
       "url": "https://help.clickup.com/hc/en-us/articles/6328033402007-Use-ClickUp-for-design-reviews",
       "kind": "official-documentation",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Annotation of image, video and PDF.",
       "recorded_on": "2026-11-27",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Review comments can be placed on images, PDF or video attachments; comment also appears in task activity, and can be assigned or resolved."
     },
     {
       "id": "clickup-account-settings-index",
       "title": "Account settings",
       "url": "https://help.clickup.com/hc/en-us/sections/17042819979543-Account-settings",
       "kind": "official-documentation",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Theme, contrast and user settings.",
       "recorded_on": "2026-11-27",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Section lists account settings, storage, sleeping browser tabs, profiles, appearance, locale and high contrast. Section listing only."
     },
     {
       "id": "clickup-core-features",
       "title": "Core ClickUp features",
       "url": "https://help.clickup.com/hc/en-us/articles/6311563319063-Core-ClickUp-features",
       "kind": "official-documentation",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Feature overview.",
       "recorded_on": "2026-11-27",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Overview links to hierarchy, user roles, customizable features and web/desktop/mobile entry points."
     },
     {
       "id": "clickup-gummble-web",
@@ -4097,10 +4125,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6308656424983-Intro-to-Formula-Fields",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Calculated values and formula discovery.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Numeric/date/time computations; TODAY-dependent formulas exclude sorting, filtering, grouping and calculation cards; input permissions constrain output and formula cannot span locations."
     },
     {
       "id": "clickup-formula-advanced",
@@ -4108,10 +4138,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/15807110924567-Use-advanced-Formulas",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Advanced expression syntax.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Advanced formula editor can use Brain if enabled; text custom fields are not supported as inputs; generated expression results can vary."
     },
     {
       "id": "clickup-formula-logic",
@@ -4119,10 +4151,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/20619000861207-Use-logic-functions-in-Formulas",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Logical functions.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Boolean AND, NOT, OR and XOR are documented; syntax errors require feedback."
     },
     {
       "id": "clickup-formula-string",
@@ -4130,10 +4164,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/20619090939159-Use-string-functions-in-Formulas",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "String functions; text custom fields are not supported inputs.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Function table lists string functions but document explicitly says formula fields cannot manipulate strings and rejects text custom field inputs; treat as documentation ambiguity, test before implementation."
     },
     {
       "id": "clickup-field-permissions",
@@ -4163,10 +4199,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6303670304919-Manage-Custom-Fields",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Manage properties and settings.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Property manager supports sharing fields across locations, setting permissions, defaults, required and ordering options."
     },
     {
       "id": "clickup-field-intro",
@@ -4174,10 +4212,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6303536766231-Intro-to-Custom-Fields",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Property overview and rollup.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Location-level field applies to descendants; task-type properties available regardless of location. Both can coexist."
     },
     {
       "id": "clickup-field-move",
@@ -4185,10 +4225,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/14277098696599-Move-Custom-Fields",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Move properties between scopes.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Moving upward exposes field to descendants; moving downward hides values outside scope without deleting them and re-expanding restores them. Files, Formula, Progress Auto, Relationship, Rollup and Tasks are excluded."
     },
     {
       "id": "clickup-field-usage",
@@ -4196,10 +4238,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/10993484102167-Custom-Fields-uses",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Quota semantics, including multi-value options.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Quota counts value assignment, multiple labels count separately, creating field/options and linking tasks do not count. Existing data remains available on quota exhaustion."
     },
     {
       "id": "clickup-relationship-create",
@@ -4229,10 +4273,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/30807756167447-Use-views-for-goals-and-OKRs",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Goal projections and planning.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Vendor recommends separate filtered/grouped list projections for goals and Gantt for dependencies and milestones; advice not measured usability."
     },
     {
       "id": "clickup-goal-cards",
@@ -4240,10 +4286,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6325664888727-Goals-cards",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Goal drill-down and editing.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Grid cards show progress donut, target count, owner, last update; target count opens editing and card opens details."
     },
     {
       "id": "clickup-dependencies-reschedule",
@@ -4262,10 +4310,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6309155073303-Intro-to-Dependency-Relationships",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Blocking relationships.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Directed blocks and blocked-by relations remain visible after completion; Done counts as completion."
     },
     {
       "id": "clickup-scheduling-intro",
@@ -4273,10 +4323,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/29661121592087-Intro-to-scheduling",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Scheduling ClickApps.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Duration, non-working days and dependency rescheduling cooperate; two of start/due/duration determine the third."
     },
     {
       "id": "clickup-task-duration",
@@ -4284,10 +4336,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/29571347936791-Use-task-duration-to-schedule-tasks",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Duration-based scheduling.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Working-day duration excludes non-working days; elapsed duration counts calendar days; duration editor within date modal."
     },
     {
       "id": "clickup-milestones",
@@ -4295,10 +4349,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6304458574615-Milestones",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Milestone type and filtering.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Milestone is a custom task type represented with diamond icon; type filter and Gantt representation supported."
     },
     {
       "id": "clickup-gantt-planning",
@@ -4317,10 +4373,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6304327753111-Intro-to-ClickApps",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Scoped modular features.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Owners/admins toggle modular features at workspace or supported Space scope; members can view but guests cannot manage."
     },
     {
       "id": "clickup-sprint-report",

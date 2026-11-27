@@ -1,0 +1,341 @@
+{
+  "schema_version": 1,
+  "product": "ClickUp",
+  "reviewed_on": "2026-11-27",
+  "baseline_commit": "e66d23fa55fdcf55353b59ff7ff156c7598d52c4",
+  "reviewed_sources": [
+    {
+      "id": "clickup-view-customization",
+      "summary": "Multiple sorting keys are prioritized in configured order; add the fields as visible columns before sorting."
+    },
+    {
+      "id": "clickup-template-customize",
+      "summary": "Template application can select a subset of settings. Updating the existing template overwrites it; distinguish applying from changing the source template."
+    },
+    {
+      "id": "clickup-checklist-templates",
+      "summary": "Role-specific create, apply, edit and removal permissions. Documented limits: 250 checklists per task, 500 items per checklist, item description 2,000 characters."
+    },
+    {
+      "id": "clickup-message-edit-delete",
+      "summary": "Edit sent message from context menu or hover toolbar; keyboard E shortcut when enabled. Edits 15 minutes or more after sending show an edited marker."
+    },
+    {
+      "id": "clickup-my-tasks",
+      "summary": "Personal canvas supports adding, reordering and removing cards; recent items can open from it."
+    },
+    {
+      "id": "clickup-personal-list-filter",
+      "summary": "Personal List has direct group and filter controls plus equivalent settings through Customize."
+    },
+    {
+      "id": "clickup-individual-workspace",
+      "summary": "Solo workspace layout available for one-person workspaces; same account can create a separate workspace; policy may require SSO or 2FA."
+    },
+    {
+      "id": "clickup-chrome-extension",
+      "summary": "Chrome extension supports task creation, time tracking, bookmarking, notes and screen capture; setup includes permission review and workspace selection."
+    },
+    {
+      "id": "clickup-workload-style",
+      "summary": "Measure by points, tasks, time or percent of capacity; choose color dimension, show/hide weekends and include subtask rollups. Option to open on current selected date."
+    },
+    {
+      "id": "clickup-timeline-style",
+      "summary": "Color by list, status, priority or dropdown value; configure weekends, week numbers, locations, parent names and title compression."
+    },
+    {
+      "id": "clickup-timeline-interactions",
+      "summary": "Click canvas to add existing/new task; new task receives row/date defaults. Drag left/right end to change respective date; drag whole bar shifts both; move across groups changes group value."
+    },
+    {
+      "id": "clickup-button-field",
+      "summary": "Manual automation trigger on individual task; configurable label, icon, color and actions. Permission/plan boundaries apply."
+    },
+    {
+      "id": "clickup-design-review",
+      "summary": "Review comments can be placed on images, PDF or video attachments; comment also appears in task activity, and can be assigned or resolved."
+    },
+    {
+      "id": "clickup-account-settings-index",
+      "summary": "Section lists account settings, storage, sleeping browser tabs, profiles, appearance, locale and high contrast. Section listing only."
+    },
+    {
+      "id": "clickup-core-features",
+      "summary": "Overview links to hierarchy, user roles, customizable features and web/desktop/mobile entry points."
+    },
+    {
+      "id": "clickup-formula-intro",
+      "summary": "Numeric/date/time computations; TODAY-dependent formulas exclude sorting, filtering, grouping and calculation cards; input permissions constrain output and formula cannot span locations."
+    },
+    {
+      "id": "clickup-formula-advanced",
+      "summary": "Advanced formula editor can use Brain if enabled; text custom fields are not supported as inputs; generated expression results can vary."
+    },
+    {
+      "id": "clickup-formula-logic",
+      "summary": "Boolean AND, NOT, OR and XOR are documented; syntax errors require feedback."
+    },
+    {
+      "id": "clickup-formula-string",
+      "summary": "Function table lists string functions but document explicitly says formula fields cannot manipulate strings and rejects text custom field inputs; treat as documentation ambiguity, test before implementation."
+    },
+    {
+      "id": "clickup-field-manage",
+      "summary": "Property manager supports sharing fields across locations, setting permissions, defaults, required and ordering options."
+    },
+    {
+      "id": "clickup-field-intro",
+      "summary": "Location-level field applies to descendants; task-type properties available regardless of location. Both can coexist."
+    },
+    {
+      "id": "clickup-field-move",
+      "summary": "Moving upward exposes field to descendants; moving downward hides values outside scope without deleting them and re-expanding restores them. Files, Formula, Progress Auto, Relationship, Rollup and Tasks are excluded."
+    },
+    {
+      "id": "clickup-field-usage",
+      "summary": "Quota counts value assignment, multiple labels count separately, creating field/options and linking tasks do not count. Existing data remains available on quota exhaustion."
+    },
+    {
+      "id": "clickup-goal-views",
+      "summary": "Vendor recommends separate filtered/grouped list projections for goals and Gantt for dependencies and milestones; advice not measured usability."
+    },
+    {
+      "id": "clickup-goal-cards",
+      "summary": "Grid cards show progress donut, target count, owner, last update; target count opens editing and card opens details."
+    },
+    {
+      "id": "clickup-dependencies-intro",
+      "summary": "Directed blocks and blocked-by relations remain visible after completion; Done counts as completion."
+    },
+    {
+      "id": "clickup-scheduling-intro",
+      "summary": "Duration, non-working days and dependency rescheduling cooperate; two of start/due/duration determine the third."
+    },
+    {
+      "id": "clickup-task-duration",
+      "summary": "Working-day duration excludes non-working days; elapsed duration counts calendar days; duration editor within date modal."
+    },
+    {
+      "id": "clickup-milestones",
+      "summary": "Milestone is a custom task type represented with diamond icon; type filter and Gantt representation supported."
+    },
+    {
+      "id": "clickup-clickapps",
+      "summary": "Owners/admins toggle modular features at workspace or supported Space scope; members can view but guests cannot manage."
+    }
+  ],
+  "patterns": [
+    {
+      "id": "clickup-multi-key-sort",
+      "title": "Ordered multi-field sort",
+      "source_ids": [
+        "clickup-view-customization"
+      ],
+      "documented_behavior": "Sort uses ordered keys and requires the relevant fields to be columns.",
+      "proposed_qa": "Test priority reorder, stable tie-breaks, hidden field changes, nulls and persistence.",
+      "evidence_status": "official documentation reopened 2026-11-27; runtime unverified"
+    },
+    {
+      "id": "clickup-template-update-scope",
+      "title": "Template apply versus overwrite",
+      "source_ids": [
+        "clickup-template-customize",
+        "clickup-checklist-templates"
+      ],
+      "documented_behavior": "Selective template settings are applied to destination; updating modifies the template itself. Checklist action permissions vary by role.",
+      "proposed_qa": "Confirm affected source versus copy, preview selected settings, validate quotas and permissions.",
+      "evidence_status": "official documentation reopened 2026-11-27; runtime unverified"
+    },
+    {
+      "id": "clickup-personal-card-canvas",
+      "title": "Personal composable dashboard",
+      "source_ids": [
+        "clickup-my-tasks",
+        "clickup-personal-list-filter",
+        "clickup-individual-workspace"
+      ],
+      "documented_behavior": "Personal page contains reorderable removable cards, recent items and configurable personal list grouping/filtering.",
+      "proposed_qa": "Test add/remove/reorder, keyboard, personalization persistence, empty state and cross-device context.",
+      "evidence_status": "official documentation reopened 2026-11-27; runtime unverified"
+    },
+    {
+      "id": "clickup-message-edit-provenance",
+      "title": "Message editing provenance",
+      "source_ids": [
+        "clickup-message-edit-delete"
+      ],
+      "documented_behavior": "Edit from context menu or hover toolbar; after fifteen minutes, edited marker is shown.",
+      "proposed_qa": "Test keyboard and focus, simultaneous edit, timestamp boundary, permissions and audit.",
+      "evidence_status": "official documentation reopened 2026-11-27; runtime unverified"
+    },
+    {
+      "id": "clickup-capture-extension",
+      "title": "Contextual browser capture",
+      "source_ids": [
+        "clickup-chrome-extension"
+      ],
+      "documented_behavior": "Browser extension captures work while browsing with workspace selection and permission review.",
+      "proposed_qa": "Test source attribution, private content, denied permissions, offline behavior and duplicate capture.",
+      "evidence_status": "official documentation reopened 2026-11-27; runtime unverified"
+    },
+    {
+      "id": "clickup-workload-encoding",
+      "title": "Workload metric and color encoding",
+      "source_ids": [
+        "clickup-workload-style",
+        "clickup-timeline-style"
+      ],
+      "documented_behavior": "Workload units and color dimensions are configurable independently. Layout options control temporal and hierarchical context.",
+      "proposed_qa": "Test unit consistency, chart legend, contrast, hidden weekends, rollups and empty rows.",
+      "evidence_status": "official documentation reopened 2026-11-27; runtime unverified"
+    },
+    {
+      "id": "clickup-timeline-context-edit",
+      "title": "Timeline direct manipulation",
+      "source_ids": [
+        "clickup-timeline-interactions"
+      ],
+      "documented_behavior": "Canvas placement creates with row/date defaults; drag endpoints edit one date, whole bar edits both, cross-row drag changes grouping.",
+      "proposed_qa": "Test pointer and keyboard, cancel, permission, date boundaries, cross-group confirmation and rollback.",
+      "evidence_status": "official documentation reopened 2026-11-27; runtime unverified"
+    },
+    {
+      "id": "clickup-action-property",
+      "title": "Configurable action property",
+      "source_ids": [
+        "clickup-button-field"
+      ],
+      "documented_behavior": "Button property invokes task-specific automations; text, icon, color and actions configurable.",
+      "proposed_qa": "Test pending, repeat click, scope, permissions, confirmation, errors and audit.",
+      "evidence_status": "official documentation reopened 2026-11-27; runtime unverified"
+    },
+    {
+      "id": "clickup-review-anchor-mirror",
+      "title": "Anchored review and activity mirror",
+      "source_ids": [
+        "clickup-design-review"
+      ],
+      "documented_behavior": "Attachment comment also appears in task activity and supports assignment/resolution.",
+      "proposed_qa": "Test stable comment identity, media version, anchor coordinate, permission and resolved state.",
+      "evidence_status": "official documentation reopened 2026-11-27; runtime unverified"
+    },
+    {
+      "id": "clickup-field-dual-scope",
+      "title": "Property schema by type and location",
+      "source_ids": [
+        "clickup-field-intro",
+        "clickup-field-manage"
+      ],
+      "documented_behavior": "Properties may inherit from location hierarchy or be attached to object type; both are visible in task schema.",
+      "proposed_qa": "Test shared identity, duplicate names, move, inheritance and role gating.",
+      "evidence_status": "official documentation reopened 2026-11-27; runtime unverified"
+    },
+    {
+      "id": "clickup-field-visibility-retention",
+      "title": "Reversible property scope",
+      "source_ids": [
+        "clickup-field-move"
+      ],
+      "documented_behavior": "Narrowing field scope hides out-of-scope values without deleting them; widening can restore them. Some field types cannot move.",
+      "proposed_qa": "Test preservation, scope visibility and ACL enforcement, query behavior and warning before move.",
+      "evidence_status": "official documentation reopened 2026-11-27; runtime unverified"
+    },
+    {
+      "id": "clickup-value-write-quota",
+      "title": "Property assignment quota",
+      "source_ids": [
+        "clickup-field-usage"
+      ],
+      "documented_behavior": "Usage counts assigned values, not schema creation; each selected label counts. Data survives limit exhaustion.",
+      "proposed_qa": "Test counting, retry idempotency, read access after exhaustion, clear limit messaging.",
+      "evidence_status": "official documentation reopened 2026-11-27; runtime unverified"
+    },
+    {
+      "id": "clickup-formula-input-boundary",
+      "title": "Computed field input and expression constraints",
+      "source_ids": [
+        "clickup-formula-intro",
+        "clickup-formula-advanced",
+        "clickup-formula-logic",
+        "clickup-formula-string"
+      ],
+      "documented_behavior": "Calculation inputs and permissions are constrained; TODAY() reduces query support. Vendor string-function article has contradictory wording; avoid asserting unsupported manipulation.",
+      "proposed_qa": "Test null, invalid types, logic functions, private input, expression syntax and ambiguous string cases.",
+      "evidence_status": "official documentation reopened 2026-11-27; runtime unverified"
+    },
+    {
+      "id": "clickup-goal-progress-card",
+      "title": "Goal progress summary and drilldown",
+      "source_ids": [
+        "clickup-goal-views",
+        "clickup-goal-cards"
+      ],
+      "documented_behavior": "Goal card combines progress, target count, owner and freshness with target/detail entry points.",
+      "proposed_qa": "Test metric denominator, zero targets, stale data, accessible donut alternative and edit permissions.",
+      "evidence_status": "official documentation reopened 2026-11-27; runtime unverified"
+    },
+    {
+      "id": "clickup-dependency-visibility",
+      "title": "Dependency relationship persistence",
+      "source_ids": [
+        "clickup-dependencies-intro"
+      ],
+      "documented_behavior": "Blocker and waiting-on edges remain visible after Done or Closed.",
+      "proposed_qa": "Test direction, cycle handling (not established), completion and edge visibility.",
+      "evidence_status": "official documentation reopened 2026-11-27; runtime unverified"
+    },
+    {
+      "id": "clickup-duration-triad",
+      "title": "Two-input scheduling",
+      "source_ids": [
+        "clickup-scheduling-intro",
+        "clickup-task-duration"
+      ],
+      "documented_behavior": "Any two of start date, due date and duration determine the third; workday vs calendar duration differs.",
+      "proposed_qa": "Test holidays, timezone, date precision, edit precedence, invalid range and cascades.",
+      "evidence_status": "official documentation reopened 2026-11-27; runtime unverified"
+    },
+    {
+      "id": "clickup-milestone-type",
+      "title": "Milestone as typed object",
+      "source_ids": [
+        "clickup-milestones"
+      ],
+      "documented_behavior": "Milestone is a task type, not merely a decorative label; icon and filtering reflect type.",
+      "proposed_qa": "Test type conversion, filtering, timeline representation and accessible label.",
+      "evidence_status": "official documentation reopened 2026-11-27; runtime unverified"
+    },
+    {
+      "id": "clickup-scoped-feature-toggle",
+      "title": "Scoped modular features",
+      "source_ids": [
+        "clickup-clickapps"
+      ],
+      "documented_behavior": "Admins/owners can enable features globally or per supported Space, while members have view-only access.",
+      "proposed_qa": "Test inherited and overridden configurations, permission, disable-with-data and discoverability.",
+      "evidence_status": "official documentation reopened 2026-11-27; runtime unverified"
+    }
+  ],
+  "source_status_before": {
+    "verified": 230,
+    "search-result reviewed; direct fetch failed": 4,
+    "search-result reviewed; full article pending": 80,
+    "search-result reviewed; full section pending": 3
+  },
+  "source_status_after": {
+    "verified": 260,
+    "search-result reviewed; direct fetch failed": 3,
+    "search-result reviewed; full article pending": 51,
+    "search-result reviewed; full section pending": 3
+  },
+  "ci_observation": {
+    "prior_run": 46019837420,
+    "conclusion": "failure",
+    "clickup_projection_test": "passed",
+    "full_suite": "362 passed, 10 failed; regression quality monitor and plugin synchronization",
+    "current_baseline_run": 46019992834,
+    "status_at_check": "in_progress"
+  },
+  "scope": "Article and section retrieval; no live product validation or new media inspection."
+}

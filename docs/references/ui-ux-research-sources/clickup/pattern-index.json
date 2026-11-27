@@ -2980,6 +2980,470 @@
         "path": "docs/references/ui-ux-research-sources/clickup/review-index-2026-11-27.json",
         "pointer": "/patterns/11"
       }
+    },
+    {
+      "id": "clickup-multi-key-sort",
+      "title": "Ordered multi-field sort",
+      "product": "ClickUp",
+      "domain": "workspace",
+      "source_ids": [
+        "clickup-view-customization"
+      ],
+      "definition": "Sort uses ordered keys and requires the relevant fields to be columns.",
+      "guardrail": "Test priority reorder, stable tie-breaks, hidden field changes, nulls and persistence.",
+      "evidence": "official documentation reopened 2026-11-27; runtime unverified",
+      "classification": "product-specific documented behavior, not universal UI standard",
+      "origin": {
+        "path": "docs/references/ui-ux-research-sources/clickup/review-behaviors-2026-11-27.json",
+        "pointer": "/patterns/0"
+      },
+      "source_review_status": [
+        {
+          "id": "clickup-view-customization",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "id": "clickup-template-update-scope",
+      "title": "Template apply versus overwrite",
+      "product": "ClickUp",
+      "domain": "workspace",
+      "source_ids": [
+        "clickup-template-customize",
+        "clickup-checklist-templates"
+      ],
+      "definition": "Selective template settings are applied to destination; updating modifies the template itself. Checklist action permissions vary by role.",
+      "guardrail": "Confirm affected source versus copy, preview selected settings, validate quotas and permissions.",
+      "evidence": "official documentation reopened 2026-11-27; runtime unverified",
+      "classification": "product-specific documented behavior, not universal UI standard",
+      "origin": {
+        "path": "docs/references/ui-ux-research-sources/clickup/review-behaviors-2026-11-27.json",
+        "pointer": "/patterns/1"
+      },
+      "source_review_status": [
+        {
+          "id": "clickup-template-customize",
+          "status": "verified"
+        },
+        {
+          "id": "clickup-checklist-templates",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "id": "clickup-personal-card-canvas",
+      "title": "Personal composable dashboard",
+      "product": "ClickUp",
+      "domain": "workspace",
+      "source_ids": [
+        "clickup-my-tasks",
+        "clickup-personal-list-filter",
+        "clickup-individual-workspace"
+      ],
+      "definition": "Personal page contains reorderable removable cards, recent items and configurable personal list grouping/filtering.",
+      "guardrail": "Test add/remove/reorder, keyboard, personalization persistence, empty state and cross-device context.",
+      "evidence": "official documentation reopened 2026-11-27; runtime unverified",
+      "classification": "product-specific documented behavior, not universal UI standard",
+      "origin": {
+        "path": "docs/references/ui-ux-research-sources/clickup/review-behaviors-2026-11-27.json",
+        "pointer": "/patterns/2"
+      },
+      "source_review_status": [
+        {
+          "id": "clickup-my-tasks",
+          "status": "verified"
+        },
+        {
+          "id": "clickup-personal-list-filter",
+          "status": "verified"
+        },
+        {
+          "id": "clickup-individual-workspace",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "id": "clickup-message-edit-provenance",
+      "title": "Message editing provenance",
+      "product": "ClickUp",
+      "domain": "workspace",
+      "source_ids": [
+        "clickup-message-edit-delete"
+      ],
+      "definition": "Edit from context menu or hover toolbar; after fifteen minutes, edited marker is shown.",
+      "guardrail": "Test keyboard and focus, simultaneous edit, timestamp boundary, permissions and audit.",
+      "evidence": "official documentation reopened 2026-11-27; runtime unverified",
+      "classification": "product-specific documented behavior, not universal UI standard",
+      "origin": {
+        "path": "docs/references/ui-ux-research-sources/clickup/review-behaviors-2026-11-27.json",
+        "pointer": "/patterns/3"
+      },
+      "source_review_status": [
+        {
+          "id": "clickup-message-edit-delete",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "id": "clickup-capture-extension",
+      "title": "Contextual browser capture",
+      "product": "ClickUp",
+      "domain": "workspace",
+      "source_ids": [
+        "clickup-chrome-extension"
+      ],
+      "definition": "Browser extension captures work while browsing with workspace selection and permission review.",
+      "guardrail": "Test source attribution, private content, denied permissions, offline behavior and duplicate capture.",
+      "evidence": "official documentation reopened 2026-11-27; runtime unverified",
+      "classification": "product-specific documented behavior, not universal UI standard",
+      "origin": {
+        "path": "docs/references/ui-ux-research-sources/clickup/review-behaviors-2026-11-27.json",
+        "pointer": "/patterns/4"
+      },
+      "source_review_status": [
+        {
+          "id": "clickup-chrome-extension",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "id": "clickup-workload-encoding",
+      "title": "Workload metric and color encoding",
+      "product": "ClickUp",
+      "domain": "workspace",
+      "source_ids": [
+        "clickup-workload-style",
+        "clickup-timeline-style"
+      ],
+      "definition": "Workload units and color dimensions are configurable independently. Layout options control temporal and hierarchical context.",
+      "guardrail": "Test unit consistency, chart legend, contrast, hidden weekends, rollups and empty rows.",
+      "evidence": "official documentation reopened 2026-11-27; runtime unverified",
+      "classification": "product-specific documented behavior, not universal UI standard",
+      "origin": {
+        "path": "docs/references/ui-ux-research-sources/clickup/review-behaviors-2026-11-27.json",
+        "pointer": "/patterns/5"
+      },
+      "source_review_status": [
+        {
+          "id": "clickup-workload-style",
+          "status": "verified"
+        },
+        {
+          "id": "clickup-timeline-style",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "id": "clickup-timeline-context-edit",
+      "title": "Timeline direct manipulation",
+      "product": "ClickUp",
+      "domain": "workspace",
+      "source_ids": [
+        "clickup-timeline-interactions"
+      ],
+      "definition": "Canvas placement creates with row/date defaults; drag endpoints edit one date, whole bar edits both, cross-row drag changes grouping.",
+      "guardrail": "Test pointer and keyboard, cancel, permission, date boundaries, cross-group confirmation and rollback.",
+      "evidence": "official documentation reopened 2026-11-27; runtime unverified",
+      "classification": "product-specific documented behavior, not universal UI standard",
+      "origin": {
+        "path": "docs/references/ui-ux-research-sources/clickup/review-behaviors-2026-11-27.json",
+        "pointer": "/patterns/6"
+      },
+      "source_review_status": [
+        {
+          "id": "clickup-timeline-interactions",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "id": "clickup-action-property",
+      "title": "Configurable action property",
+      "product": "ClickUp",
+      "domain": "workspace",
+      "source_ids": [
+        "clickup-button-field"
+      ],
+      "definition": "Button property invokes task-specific automations; text, icon, color and actions configurable.",
+      "guardrail": "Test pending, repeat click, scope, permissions, confirmation, errors and audit.",
+      "evidence": "official documentation reopened 2026-11-27; runtime unverified",
+      "classification": "product-specific documented behavior, not universal UI standard",
+      "origin": {
+        "path": "docs/references/ui-ux-research-sources/clickup/review-behaviors-2026-11-27.json",
+        "pointer": "/patterns/7"
+      },
+      "source_review_status": [
+        {
+          "id": "clickup-button-field",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "id": "clickup-review-anchor-mirror",
+      "title": "Anchored review and activity mirror",
+      "product": "ClickUp",
+      "domain": "workspace",
+      "source_ids": [
+        "clickup-design-review"
+      ],
+      "definition": "Attachment comment also appears in task activity and supports assignment/resolution.",
+      "guardrail": "Test stable comment identity, media version, anchor coordinate, permission and resolved state.",
+      "evidence": "official documentation reopened 2026-11-27; runtime unverified",
+      "classification": "product-specific documented behavior, not universal UI standard",
+      "origin": {
+        "path": "docs/references/ui-ux-research-sources/clickup/review-behaviors-2026-11-27.json",
+        "pointer": "/patterns/8"
+      },
+      "source_review_status": [
+        {
+          "id": "clickup-design-review",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "id": "clickup-field-dual-scope",
+      "title": "Property schema by type and location",
+      "product": "ClickUp",
+      "domain": "workspace",
+      "source_ids": [
+        "clickup-field-intro",
+        "clickup-field-manage"
+      ],
+      "definition": "Properties may inherit from location hierarchy or be attached to object type; both are visible in task schema.",
+      "guardrail": "Test shared identity, duplicate names, move, inheritance and role gating.",
+      "evidence": "official documentation reopened 2026-11-27; runtime unverified",
+      "classification": "product-specific documented behavior, not universal UI standard",
+      "origin": {
+        "path": "docs/references/ui-ux-research-sources/clickup/review-behaviors-2026-11-27.json",
+        "pointer": "/patterns/9"
+      },
+      "source_review_status": [
+        {
+          "id": "clickup-field-intro",
+          "status": "verified"
+        },
+        {
+          "id": "clickup-field-manage",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "id": "clickup-field-visibility-retention",
+      "title": "Reversible property scope",
+      "product": "ClickUp",
+      "domain": "workspace",
+      "source_ids": [
+        "clickup-field-move"
+      ],
+      "definition": "Narrowing field scope hides out-of-scope values without deleting them; widening can restore them. Some field types cannot move.",
+      "guardrail": "Test preservation, scope visibility and ACL enforcement, query behavior and warning before move.",
+      "evidence": "official documentation reopened 2026-11-27; runtime unverified",
+      "classification": "product-specific documented behavior, not universal UI standard",
+      "origin": {
+        "path": "docs/references/ui-ux-research-sources/clickup/review-behaviors-2026-11-27.json",
+        "pointer": "/patterns/10"
+      },
+      "source_review_status": [
+        {
+          "id": "clickup-field-move",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "id": "clickup-value-write-quota",
+      "title": "Property assignment quota",
+      "product": "ClickUp",
+      "domain": "workspace",
+      "source_ids": [
+        "clickup-field-usage"
+      ],
+      "definition": "Usage counts assigned values, not schema creation; each selected label counts. Data survives limit exhaustion.",
+      "guardrail": "Test counting, retry idempotency, read access after exhaustion, clear limit messaging.",
+      "evidence": "official documentation reopened 2026-11-27; runtime unverified",
+      "classification": "product-specific documented behavior, not universal UI standard",
+      "origin": {
+        "path": "docs/references/ui-ux-research-sources/clickup/review-behaviors-2026-11-27.json",
+        "pointer": "/patterns/11"
+      },
+      "source_review_status": [
+        {
+          "id": "clickup-field-usage",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "id": "clickup-formula-input-boundary",
+      "title": "Computed field input and expression constraints",
+      "product": "ClickUp",
+      "domain": "workspace",
+      "source_ids": [
+        "clickup-formula-intro",
+        "clickup-formula-advanced",
+        "clickup-formula-logic",
+        "clickup-formula-string"
+      ],
+      "definition": "Calculation inputs and permissions are constrained; TODAY() reduces query support. Vendor string-function article has contradictory wording; avoid asserting unsupported manipulation.",
+      "guardrail": "Test null, invalid types, logic functions, private input, expression syntax and ambiguous string cases.",
+      "evidence": "official documentation reopened 2026-11-27; runtime unverified",
+      "classification": "product-specific documented behavior, not universal UI standard",
+      "origin": {
+        "path": "docs/references/ui-ux-research-sources/clickup/review-behaviors-2026-11-27.json",
+        "pointer": "/patterns/12"
+      },
+      "source_review_status": [
+        {
+          "id": "clickup-formula-intro",
+          "status": "verified"
+        },
+        {
+          "id": "clickup-formula-advanced",
+          "status": "verified"
+        },
+        {
+          "id": "clickup-formula-logic",
+          "status": "verified"
+        },
+        {
+          "id": "clickup-formula-string",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "id": "clickup-goal-progress-card",
+      "title": "Goal progress summary and drilldown",
+      "product": "ClickUp",
+      "domain": "workspace",
+      "source_ids": [
+        "clickup-goal-views",
+        "clickup-goal-cards"
+      ],
+      "definition": "Goal card combines progress, target count, owner and freshness with target/detail entry points.",
+      "guardrail": "Test metric denominator, zero targets, stale data, accessible donut alternative and edit permissions.",
+      "evidence": "official documentation reopened 2026-11-27; runtime unverified",
+      "classification": "product-specific documented behavior, not universal UI standard",
+      "origin": {
+        "path": "docs/references/ui-ux-research-sources/clickup/review-behaviors-2026-11-27.json",
+        "pointer": "/patterns/13"
+      },
+      "source_review_status": [
+        {
+          "id": "clickup-goal-views",
+          "status": "verified"
+        },
+        {
+          "id": "clickup-goal-cards",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "id": "clickup-dependency-visibility",
+      "title": "Dependency relationship persistence",
+      "product": "ClickUp",
+      "domain": "workspace",
+      "source_ids": [
+        "clickup-dependencies-intro"
+      ],
+      "definition": "Blocker and waiting-on edges remain visible after Done or Closed.",
+      "guardrail": "Test direction, cycle handling (not established), completion and edge visibility.",
+      "evidence": "official documentation reopened 2026-11-27; runtime unverified",
+      "classification": "product-specific documented behavior, not universal UI standard",
+      "origin": {
+        "path": "docs/references/ui-ux-research-sources/clickup/review-behaviors-2026-11-27.json",
+        "pointer": "/patterns/14"
+      },
+      "source_review_status": [
+        {
+          "id": "clickup-dependencies-intro",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "id": "clickup-duration-triad",
+      "title": "Two-input scheduling",
+      "product": "ClickUp",
+      "domain": "workspace",
+      "source_ids": [
+        "clickup-scheduling-intro",
+        "clickup-task-duration"
+      ],
+      "definition": "Any two of start date, due date and duration determine the third; workday vs calendar duration differs.",
+      "guardrail": "Test holidays, timezone, date precision, edit precedence, invalid range and cascades.",
+      "evidence": "official documentation reopened 2026-11-27; runtime unverified",
+      "classification": "product-specific documented behavior, not universal UI standard",
+      "origin": {
+        "path": "docs/references/ui-ux-research-sources/clickup/review-behaviors-2026-11-27.json",
+        "pointer": "/patterns/15"
+      },
+      "source_review_status": [
+        {
+          "id": "clickup-scheduling-intro",
+          "status": "verified"
+        },
+        {
+          "id": "clickup-task-duration",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "id": "clickup-milestone-type",
+      "title": "Milestone as typed object",
+      "product": "ClickUp",
+      "domain": "workspace",
+      "source_ids": [
+        "clickup-milestones"
+      ],
+      "definition": "Milestone is a task type, not merely a decorative label; icon and filtering reflect type.",
+      "guardrail": "Test type conversion, filtering, timeline representation and accessible label.",
+      "evidence": "official documentation reopened 2026-11-27; runtime unverified",
+      "classification": "product-specific documented behavior, not universal UI standard",
+      "origin": {
+        "path": "docs/references/ui-ux-research-sources/clickup/review-behaviors-2026-11-27.json",
+        "pointer": "/patterns/16"
+      },
+      "source_review_status": [
+        {
+          "id": "clickup-milestones",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "id": "clickup-scoped-feature-toggle",
+      "title": "Scoped modular features",
+      "product": "ClickUp",
+      "domain": "workspace",
+      "source_ids": [
+        "clickup-clickapps"
+      ],
+      "definition": "Admins/owners can enable features globally or per supported Space, while members have view-only access.",
+      "guardrail": "Test inherited and overridden configurations, permission, disable-with-data and discoverability.",
+      "evidence": "official documentation reopened 2026-11-27; runtime unverified",
+      "classification": "product-specific documented behavior, not universal UI standard",
+      "origin": {
+        "path": "docs/references/ui-ux-research-sources/clickup/review-behaviors-2026-11-27.json",
+        "pointer": "/patterns/17"
+      },
+      "source_review_status": [
+        {
+          "id": "clickup-clickapps",
+          "status": "verified"
+        }
+      ]
     }
   ]
 }
