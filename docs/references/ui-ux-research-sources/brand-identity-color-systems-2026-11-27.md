@@ -93,3 +93,55 @@ Surround changes perceived color; temporal adaptation and contextual induction a
 Sources: [Basic characteristics of simultaneous color contrast revisited](https://pubmed.ncbi.nlm.nih.gov/22983761/); [An empirical explanation of color contrast](https://pmc.ncbi.nlm.nih.gov/articles/PMC18850/). Search excerpts/abstracts reviewed 2026-11-27.
 
 Weber, Weber–Fechner and Stevens are psychophysical models, not universal design-token spacing or contrast formulas. Existing Laws of UX catalog covers similarity, selective attention and Von Restorff; do not count these as new laws. Feature Integration Theory is a historical model; Guided Search 6.0 supplements earlier models. WCAG 2.2 remains distinct normative accessibility guidance.
+
+## Advanced color perception and cognitive interference — 2026-11-27
+
+### Stroop effect and semantic color interference (color-stroop-interference)
+
+Conflicting word meaning and ink color can interfere with a color-naming task. In product design, avoid conflicting learned status colors and labels; use consistent text, icon and color for success/error. Compare congruent and conflicting alternatives with identical task, contrast and content; measure response time, errors and comprehension.
+
+**Limit:** Experimental color-word effect is not proof of a universal red/green convention or a fixed UI performance penalty; localize and test. Color labels are a design extrapolation.
+
+Sources: [Stroop — Studies of interference in serial verbal reactions](https://doi.org/10.1037/h0054651) — original study, abstract; [MacLeod — Half a century of research on the Stroop effect](https://pubmed.ncbi.nlm.nih.gov/2034749/) — review, abstract; [W3C — Understanding SC 1.4.1 Use of Color](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color) — official informative guidance.
+
+### Opponent processing and color vision (color-opponent-processing)
+
+Trichromatic cone signals are processed by opponent neural mechanisms; historical red–green and blue–yellow appearance models are not identical to physiological channels. Distinguish opponent encoding from complementary wheel hues, and account for variation in color vision; pair status color with labels/icons and validate with representative users.
+
+**Limit:** Historical Hering/Hurvich–Jameson links between neural opponency and unique hue appearance are challenged; do not treat them as settled or use them as palette-generation rules.
+
+Sources: [Hurvich & Jameson — An opponent-process theory of color vision](https://pubmed.ncbi.nlm.nih.gov/13505974/) — historical study, bibliographic record; [Color appearance and the end of Hering’s Opponent-Colors Theory](https://pubmed.ncbi.nlm.nih.gov/37394292/) — critical review, abstract; [W3C — Understanding SC 1.4.1 Use of Color](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color) — official informative guidance.
+
+### Color constancy and viewing conditions (color-constancy)
+
+Perceived surface color may remain relatively stable as illumination changes; constancy is imperfect and differs by scene, stimulus and observer. Distinguish it from chromatic adaptation, simultaneous contrast and display color management. For product QA compare identical tokens in actual themes and device/ambient conditions, with calibrated reference where fidelity matters.
+
+**Limit:** Reflective-surface laboratory results do not directly establish color behavior on emissive displays; no claim of guaranteed constancy.
+
+Sources: [Foster — Color constancy](https://pubmed.ncbi.nlm.nih.gov/20849875/) — review, abstract; [Witzel & Gegenfurtner — Color Perception: Objects, Constancy, and Categories](https://pubmed.ncbi.nlm.nih.gov/30004833/) — review, abstract.
+
+### CIECAM16, CAM16, CAT16 and CAM16-UCS (color-appearance-ciecam16)
+
+CIE 248:2022 CIECAM16 supersedes CIECAM02 report CIE 159:2004; uses viewing-condition-dependent transforms of XYZ to appearance correlates and a chromatic adaptation transform. CAM16 is the underlying appearance model, CAT16 the adaptation transform, CAM16-UCS a derived approximately uniform space. Useful for calibrated cross-media appearance matching and color-difference research. Record white point, adapting luminance, background and surround; validate implementation against published reference values before use.
+
+**Limit:** Not a CSS-required space, mandatory design system algorithm or replacement for WCAG. Full CIE report not reviewed; do not implement equations from summary.
+
+Sources: [CIE 248:2022 — CIECAM16](https://www.cie.co.at/publications/cie-2016-colour-appearance-model-colour-management-systems-ciecam16) — official report description, full paid report not read; [Li et al. — CAM16, CAT16, and CAM16-UCS](https://onlinelibrary.wiley.com/doi/full/10.1002/col.22131) — original article excerpt.
+
+### Color discrimination, MacAdam ellipses and Delta E (color-discrimination-delta-e)
+
+MacAdam's psychophysical experiments show that chromaticity discrimination varies across the color diagram under specified viewing conditions. Delta E measures color difference in a stated model: distinguish Euclidean CIELAB ΔE76, CIEDE2000 ΔE00 (ISO/CIE 11664-6:2022), OKLab distance and CAM16-UCS distance. Use one documented metric for brand tolerance or token drift and compare actual rendered adjacent state colors; test recognition without hue alone.
+
+**Limit:** No universal ΔE=1 just-noticeable threshold or mandatory spacing between palette steps. ΔE is not WCAG contrast, and discriminability depends on area, context, observer, luminance and viewing conditions.
+
+Sources: [MacAdam — Visual Sensitivities to Color Differences in Daylight](https://www.wip.osapublishing.org/josa/abstract.cfm?uri=josa-32-5-247) — original article abstract; [ISO/CIE 11664-6:2022 — CIEDE2000](https://www.iso.org/standard/82662.html) — official standard summary; full text not read; [Li et al. — CAM16, CAT16, and CAM16-UCS](https://onlinelibrary.wiley.com/doi/full/10.1002/col.22131) — original article excerpt; [W3C — Understanding SC 1.4.1 Use of Color](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color) — official informative guidance.
+
+### Feature Congestion, visual clutter and color competition (color-feature-congestion)
+
+Rosenholtz et al. compare Feature Congestion, Subband Entropy and Edge Density; color variability contributes to clutter in their experiments. Reserve accent for meaningful priorities; separate category/status/selection encoding; use neutral secondary surfaces and redundant labels. Compare matched task screens with varied color complexity, measure search time, errors and missed states; preserve information and avoid hiding essential cues.
+
+**Limit:** No universal maximum hue count, saturation threshold or guarantee of task performance. Feature Congestion is a research measure, not an accessibility criterion.
+
+Sources: [Rosenholtz, Li & Nakano — Measuring visual clutter](https://pubmed.ncbi.nlm.nih.gov/18217832/) — original article abstract; [MIT Persci — Visual Clutter](https://persci.mit.edu/research/clutter/) — research project description.
+
+Evidence scope: public abstracts, bibliographic records, article excerpts and official summaries; not a full standard or product audit. No new experiments conducted.
