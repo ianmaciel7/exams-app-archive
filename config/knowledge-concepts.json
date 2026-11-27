@@ -406,7 +406,6 @@
         "area de trabalho",
         "space",
         "espaco",
-        "app shell",
         "surface",
         "surfaces",
         "superficie"
@@ -872,7 +871,10 @@
         "tipos de app shell",
         "taxonomia de app shell",
         "arquitetura de app shell",
-        "app shells"
+        "app shells",
+        "app shell",
+        "app-shell",
+        "shell de aplicação"
       ],
       "members": [
         "general:shell.holy-grail",
