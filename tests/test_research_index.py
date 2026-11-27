@@ -18,6 +18,27 @@ class ResearchIndexTests(unittest.TestCase):
         self.assertGreaterEqual(c["catalogs"]["visual"], 36)
         self.assertEqual(len({r["id"] for r in records}), len(records))
         self.assertTrue(all(r["catalog_sha256"] for r in records))
+    def test_clickup_projection(self):
+        records = mod.load_records()
+        projected = [r for r in records if r["catalog"] == "clickup"]
+        self.assertGreaterEqual(len(projected), 92)
+        self.assertTrue(all(r["kind"] == "pattern" and r["product"] == "ClickUp"
+                            and r["sources"] and r["record"]["origin"]
+                            for r in projected))
+        self.assertTrue(all("runtime" in r["confidence"].lower()
+                            or r["confidence"] for r in projected))
+        self.assertTrue(mod.verify_record_provenance(projected)["integrity_passed"])
+        with sqlite3.connect(":memory:") as db:
+            mod.build(db, records)
+            for query, ident in (("sidebar", None), ("filter draft", "clickup-dashboard-filter-draft"),
+                                 ("status template", "clickup-status-template-fork"),
+                                 ("archive", "clickup-archive-not-delete")):
+                matches = mod.search(db, query, "pattern", product="ClickUp", limit=100)
+                self.assertTrue(matches, query)
+                if ident:
+                    self.assertTrue(any(r["record_id"] == ident for r in matches), query)
+            self.assertTrue(mod.search(db, "ClickUp", "source", product="ClickUp", limit=100))
+
     def test_queries(self):
         with sqlite3.connect(":memory:") as db:
             mod.build(db, mod.load_records())

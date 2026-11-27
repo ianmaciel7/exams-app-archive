@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "product": "ClickUp",
+  "reviewed_on": "2026-11-27",
+  "baseline_commit": "d57e027a2bbc623cd7aad2a8b423f697d8774d71",
+  "patterns": [
+    {
+      "id": "clickup-view-type-reordering",
+      "title": "View type grouping and reordering",
+      "source_ids": [
+        "clickup-view-reorder"
+      ],
+      "documented_behavior": "Group tabs by view type, including from overflow when the bar is full. Reorder horizontally by dragging; edit access required.",
+      "proposed_qa": "Check keyboard alternative, overflow, ordering persistence and permission denial.",
+      "evidence_status": "official documentation opened 2026-11-27; runtime unverified"
+    },
+    {
+      "id": "clickup-visible-property-search",
+      "title": "Visible property search and quick filter",
+      "source_ids": [
+        "clickup-custom-fields-query",
+        "clickup-list-filter"
+      ],
+      "documented_behavior": "Searchable fields depend on visible columns and supported textual types. Search preferences are workspace-wide; a hover filter applies a visible value.",
+      "proposed_qa": "Disclose search scope, include hidden-column tests, keyboard/touch alternative, and distinguish zero matches from missing permissions.",
+      "evidence_status": "official documentation opened 2026-11-27; runtime unverified"
+    },
+    {
+      "id": "clickup-timeline-secondary-group",
+      "title": "Timeline secondary grouping",
+      "source_ids": [
+        "clickup-timeline-group"
+      ],
+      "documented_behavior": "Primary grouping constrains Assignee/List secondary options; nested rows expand/collapse; single-List scope does not gain nested List rows.",
+      "proposed_qa": "Test incompatible options, save, collapsed state, counts and scope.",
+      "evidence_status": "official documentation opened 2026-11-27; runtime unverified"
+    },
+    {
+      "id": "clickup-contextual-creation-defaults",
+      "title": "Filter-derived creation defaults",
+      "source_ids": [
+        "clickup-list-filter",
+        "clickup-task-creation"
+      ],
+      "documented_behavior": "Supported active filters prefill newly created tasks. For single-value groups, filters remove nonmatching groups even when the same task has multiple values.",
+      "proposed_qa": "Preview defaults, avoid silently mutating existing objects, test contradictory filters and duplicate projections.",
+      "evidence_status": "official documentation opened 2026-11-27; runtime unverified"
+    },
+    {
+      "id": "clickup-dashboard-filter-draft",
+      "title": "Dashboard and card filter draft",
+      "source_ids": [
+        "clickup-dashboard-mixed-filters"
+      ],
+      "documented_behavior": "Global and card-specific filters may be combined. Nested boolean groups use independent operators; apply commits draft, reset reverts to last applied, clear removes criteria.",
+      "proposed_qa": "Test AND/OR truth tables, draft reset, scopes, counts and empty/error states.",
+      "evidence_status": "official documentation opened 2026-11-27; runtime unverified"
+    },
+    {
+      "id": "clickup-archive-not-delete",
+      "title": "Reversible archive versus deletion",
+      "source_ids": [
+        "clickup-archive-task"
+      ],
+      "documented_behavior": "Archiving removes an item from ordinary views without deleting it, including attached files; archived search and unarchive are available.",
+      "proposed_qa": "Test archived-only search, restore, attachment access and permission; separate permanent deletion.",
+      "evidence_status": "official documentation opened 2026-11-27; runtime unverified"
+    },
+    {
+      "id": "clickup-done-not-closed",
+      "title": "Done versus closed semantics",
+      "source_ids": [
+        "clickup-done-status",
+        "clickup-status-faq"
+      ],
+      "documented_behavior": "Done stops overdue notices, clears blocking dependencies and counts completion but retains visibility. Home List controls status schema across projections.",
+      "proposed_qa": "Test visible done versus closed, dependencies, metric consistency and multiple-list projection.",
+      "evidence_status": "official documentation opened 2026-11-27; runtime unverified"
+    },
+    {
+      "id": "clickup-activity-event-filter",
+      "title": "Activity event filtering and comments",
+      "source_ids": [
+        "clickup-task-activity",
+        "clickup-activity-filter"
+      ],
+      "documented_behavior": "Separate conversation and full history panels; filter history by person or event category, unread dot for comments, action items show assigned comments.",
+      "proposed_qa": "Test audit completeness, filtering, unread behavior and focus. Migration wording in source is inconsistent.",
+      "evidence_status": "official documentation opened 2026-11-27; runtime unverified"
+    },
+    {
+      "id": "clickup-thread-visibility-toggle",
+      "title": "Threaded comment visibility",
+      "source_ids": [
+        "clickup-reply-comments"
+      ],
+      "documented_behavior": "Thread replies may be hidden when threaded comments are disabled and reappear on re-enable. Follower and unread controls are distinct.",
+      "proposed_qa": "Test notification scope, disabled-feature data preservation, thread access and re-enable.",
+      "evidence_status": "official documentation opened 2026-11-27; runtime unverified"
+    },
+    {
+      "id": "clickup-status-template-fork",
+      "title": "Status template fork semantics",
+      "source_ids": [
+        "clickup-status-templates",
+        "clickup-status-faq"
+      ],
+      "documented_behavior": "Editing an existing status template applies to current location; other users of template retain current custom statuses rather than receiving update.",
+      "proposed_qa": "Disclose affected locations before save, test schema identity and old-status mapping.",
+      "evidence_status": "official documentation opened 2026-11-27; runtime unverified"
+    },
+    {
+      "id": "clickup-template-library-copy",
+      "title": "Template library copy",
+      "source_ids": [
+        "clickup-template-library"
+      ],
+      "documented_behavior": "Community template is added to workspace as customizable copy; source remains available. Guest access varies by type.",
+      "proposed_qa": "Test copy independence, version/provenance, permissions and duplicate names.",
+      "evidence_status": "official documentation opened 2026-11-27; runtime unverified"
+    },
+    {
+      "id": "clickup-personal-tray-doc",
+      "title": "Personal document tray",
+      "source_ids": [
+        "clickup-docs-pin"
+      ],
+      "documented_behavior": "Minimize a document to personal tray, reopen by click, remove using hover X or document control. Version-specific terminology.",
+      "proposed_qa": "Test one ID per object, close versus unpin, keyboard/touch, unsaved edits and navigation; not evidence of tabs.",
+      "evidence_status": "official documentation opened 2026-11-27; runtime unverified"
+    }
+  ],
+  "reviewed_sources": [
+    {
+      "id": "clickup-view-reorder",
+      "summary": "Group by view type via location settings or overflow menu when full; horizontal drag reorder requires full edit permissions."
+    },
+    {
+      "id": "clickup-custom-fields-query",
+      "summary": "Search covers eight textual field types only if visible as columns; search preferences apply to workspace views; hover value quick filter in List."
+    },
+    {
+      "id": "clickup-timeline-group",
+      "summary": "Second-level Assignee/List choices depend on primary group and location; collapse parent rows; List-level grouping does not add nested rows."
+    },
+    {
+      "id": "clickup-list-filter",
+      "summary": "Supported filters prefill new objects; single-value grouping hides nonmatching groups; separate subtasks mode makes them searchable."
+    },
+    {
+      "id": "clickup-dashboard-mixed-filters",
+      "summary": "Dashboard/card filter scopes can coexist; nested AND/OR, apply, reset to last applied, clear group/all."
+    },
+    {
+      "id": "clickup-archive-task",
+      "summary": "Archive preserves task and attached files; archived tasks searchable via views and command bar; unarchive restores access to attachments."
+    },
+    {
+      "id": "clickup-done-status",
+      "summary": "Done remains visible, stops overdue reminders, clears waiting dependencies and counts toward goals."
+    },
+    {
+      "id": "clickup-task-activity",
+      "summary": "Right icon rail separates Comments from full Activity; unread dot; assigned comments also appear in action items. Article has inconsistent migration wording."
+    },
+    {
+      "id": "clickup-activity-filter",
+      "summary": "Filter history by actor and change type, including moves, properties, dependencies, sharing and Git events."
+    },
+    {
+      "id": "clickup-reply-comments",
+      "summary": "Threads have unread counts, follower settings and scheduled replies; disabling threaded comments hides old threaded replies until re-enabled."
+    },
+    {
+      "id": "clickup-status-templates",
+      "summary": "Editing a shared template applies only locally; other locations retain previous statuses as Custom. Guests cannot edit or apply templates."
+    },
+    {
+      "id": "clickup-status-faq",
+      "summary": "Tasks in multiple Lists keep home List status schema; two statuses use checkmark icon, more use square; order configurable at schema and view levels."
+    },
+    {
+      "id": "clickup-task-creation",
+      "summary": "Quick create from global toolbar/command bar, comments and Chat; access and details depend on surface."
+    },
+    {
+      "id": "clickup-docs-pin",
+      "summary": "Personal Tray stores minimized Docs and tasks; click reopen, hover X remove. Do not assume same label in new layout."
+    },
+    {
+      "id": "clickup-template-library",
+      "summary": "Community templates can be copied to workspace library, renamed and shared; original remains; available object types depend on entry and role."
+    }
+  ],
+  "failed_sources": [
+    {
+      "id": "clickup-view-customization",
+      "reason": "Direct retrieval returned UnexpectedStatusCode; previous search preview retained."
+    }
+  ]
+}

@@ -20,3 +20,13 @@ python scripts/research_index.py sortable --product dnd-kit --availability archi
 ```
 
 A persisted database now reconciles added, changed and removed records. The public CLI filters by product, source URL, availability, confidence and date range before ranking/limit. The optional local MCP adapter exposes research_search and research_audit. The graph contains only explicit catalog-to-source URL citations; it does not imply equivalence, historical decisions, verified links or actual UI behavior. Audit counts distinguish modality, declared availability and unknown product, with query hit counts rather than invented recall. These are partial deliveries for #64, #65, #67, #72, #74 and #75; no private corpus is ingested and no agent runtime is asserted.
+
+## ClickUp product research
+
+The explicitly approved ClickUp pattern projection links the shared source register and retains original batch pointers, review status and proposed QA. It is a set of product-specific observations rather than a universal pattern taxonomy or verified live UI.
+
+```bash
+python scripts/research_index.py sidebar --product ClickUp --kind pattern
+python scripts/research_index.py "filter draft" --product ClickUp --kind pattern
+python scripts/research_index.py ClickUp --product ClickUp --kind source
+```

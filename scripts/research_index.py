@@ -17,6 +17,7 @@ CATALOGS = (
     ("workspace", "ui-ux-patterns-2026-11-25/patterns.json", "patterns", "pattern"),
     ("design-foundations", "ui-ux-research-sources/design-foundations-and-state-transitions-2026-11-25.json", "patterns", "pattern"),
     ("domain-research", "ui-ux-research-sources/domain-research-2026-11-26.json", "patterns", "pattern"),
+    ("clickup", "ui-ux-research-sources/clickup/pattern-index.json", "patterns", "pattern"),
     ("general-sources", "interface-pattern-library/sources.json", "sources", "source"),
     ("research-sources", "ui-ux-research-sources/sources.json", "sources", "source"),
     ("visual", "visual-evidence-library/manifest.json", "records", "visual"),
@@ -296,7 +297,9 @@ def load_records(*, base=BASE):
     records, seen = [], set()
     general_sources = json.loads((base / "interface-pattern-library/sources.json").read_text(encoding="utf-8"))["sources"]
     source_map = {x["id"]: x["url"] for x in general_sources}
-    maps = {"general": source_map, "design-foundations": source_map, "domain-research": source_map}
+    research_sources = json.loads((base / "ui-ux-research-sources/sources.json").read_text(encoding="utf-8"))["sources"]
+    research_map = {x["id"]: x["url"] for x in research_sources}
+    maps = {"general": source_map, "design-foundations": source_map, "domain-research": source_map, "clickup": research_map}
     for namespace, rel, key, kind in CATALOGS:
         path = base / rel
         data = path.read_bytes()
@@ -329,7 +332,7 @@ def load_records(*, base=BASE):
                 "record_sha256": record_digest(item), "record_pointer": f"/{key}/{index}",
                 "projection_sha256": record_digest(item),
                 "product": item.get("product"),
-                "confidence": item.get("evidence") or item.get("classification"),
+                "confidence": item.get("evidence") or item.get("classification") or (item.get("status") if item.get("product") == "ClickUp" else None),
                 "license": item.get("license"),
                 "availability": item.get("status") if namespace == "visual" else
                     ("archived-blob-declared" if namespace == "grok-assets" else

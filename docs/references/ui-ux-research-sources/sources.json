@@ -1427,7 +1427,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Global navigation, contextual sidebars, hover preview, recents, library and page navigation.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-intro-4",
@@ -1437,7 +1438,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Updated navigation and task layout; version boundary.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-hierarchy",
@@ -1447,7 +1449,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Workspace hierarchy and view selection by work context.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-views",
@@ -1457,7 +1460,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Task and page view inventory, including Artifact.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-page-views",
@@ -1467,7 +1471,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Docs, dashboards, forms, whiteboards and embeds.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-view-limits",
@@ -1477,7 +1482,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Plan availability and feature boundaries.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-view-bar",
@@ -1487,7 +1493,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Reorder, pin, group, search and persist views.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-view-control",
@@ -1497,7 +1504,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Grouping, sorting, filtering and search.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-task-views",
@@ -1507,7 +1515,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Multiple instances of views and autosave.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-protect",
@@ -1517,7 +1526,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Edit protection and permissions.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-task-layout",
@@ -1527,7 +1537,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Full screen, modal and sidebar; preferred mode persists.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-task-sidebar",
@@ -1537,7 +1548,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Contextual panel, relationships, comments and integrations.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-task-fields",
@@ -1547,7 +1559,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Object detail sections and section navigation.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-relationships",
@@ -1557,7 +1570,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Related objects, dependency links and dedicated relationship tabs.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-tasks",
@@ -1567,7 +1581,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Object details, activity history and collaboration.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-hubs",
@@ -1577,7 +1592,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Searchable and filterable hubs with collapsible sidebar.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-create",
@@ -1587,7 +1603,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Global and contextual creation.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-dashboard",
@@ -1597,7 +1614,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Dashboard card composition.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-forms",
@@ -1607,7 +1625,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Input collection and task creation.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-mobile",
@@ -1617,7 +1636,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Mobile feature scope.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-mobile-layout",
@@ -1627,7 +1647,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Personal mobile task detail layout.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-automation-triggers",
@@ -1637,7 +1658,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Event-driven trigger examples.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-automation-actions",
@@ -1647,7 +1669,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Actions, agents, permissions and webhooks.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-automation-conditions",
@@ -1657,7 +1680,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Conditional rules.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-global-nav",
@@ -1667,7 +1691,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Global navigation persists across contexts.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-home-sidebar",
@@ -1677,7 +1702,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Personal pages, hierarchy and favorites.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-sidebar-defaults",
@@ -1687,7 +1713,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Default section configuration.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-sidebar-custom",
@@ -1697,7 +1724,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Custom sections and contextual plus controls.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-sidebar-search",
@@ -1707,7 +1735,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Search and create inside sidebars.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-favorites",
@@ -1717,7 +1746,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Pin frequently used items.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-location-header",
@@ -1727,7 +1757,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Contextual quick actions and expanded location header.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-command",
@@ -1737,7 +1768,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Global commands, search and AI entry.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-search",
@@ -1747,7 +1779,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Workspace and connected search.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-search-filter",
@@ -1757,7 +1790,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Pinned type/location filters and ordering.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-toolbar",
@@ -1767,7 +1801,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Global toolbar and commands (layout may differ).",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-customize",
@@ -1777,7 +1812,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Personal preferences and sidebar customization.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-gallery",
@@ -1787,7 +1823,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Responsive image-first cards, cover, density, fields, grouping, save/revert, contextual menu.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-add-view",
@@ -1797,7 +1834,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Create a view in the context of a location.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-list-customize",
@@ -1807,7 +1845,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Resizable columns and view settings.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-board",
@@ -1817,7 +1856,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Group cards and drag tasks among statuses.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-board-customize",
@@ -1827,7 +1867,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Visibility and card configuration.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-table",
@@ -1837,7 +1878,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Pin columns, edit cells and fill down.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-calendar",
@@ -1847,7 +1889,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Navigate calendar periods.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-gantt",
@@ -1857,7 +1900,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Scheduling and hierarchy.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-timeline",
@@ -1867,7 +1911,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Grouped rows and time periods.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-mind-map",
@@ -1877,7 +1922,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Task-based or freeform maps.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-workload",
@@ -1887,7 +1933,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Capacity allocation and creation from canvas.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-create-from-views",
@@ -1897,7 +1944,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Context-derived defaults when creating on a view.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-view-private",
@@ -1907,7 +1955,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Private view sharing.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-view-export",
@@ -1917,7 +1966,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Export view data.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-tag-filter",
@@ -1927,7 +1977,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Tag query filtering.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-task-type",
@@ -1937,7 +1988,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Typed objects with icons and type-specific fields.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-field-types",
@@ -1947,7 +1999,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Typed property catalog.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-field-manager",
@@ -1957,7 +2010,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Manage by type and location.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-field-create",
@@ -1967,7 +2021,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Create custom fields.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-field-by-type",
@@ -1977,7 +2032,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Object schema by type.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-field-defaults",
@@ -1987,7 +2043,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Default property values.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-field-convert",
@@ -1997,7 +2054,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Convert field type.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-field-merge",
@@ -2007,7 +2065,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Merge fields of same type.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-task-menu",
@@ -2017,7 +2076,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Task context actions.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-task-description",
@@ -2027,7 +2087,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Status, assignee, priority, dates and description.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-bulk",
@@ -2037,7 +2098,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Selection-driven bulk operations.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-bulk-subtasks",
@@ -2047,7 +2109,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Bulk subtasks.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-link-task",
@@ -2057,7 +2120,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Permission-aware linked objects.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-recurring",
@@ -2067,7 +2131,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Recurring object settings.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-lists",
@@ -2077,7 +2142,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Lists contain tasks with icon and color configuration.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-docs",
@@ -2087,7 +2153,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Docs integrated with tasks; PDF/HTML/Markdown export.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-doc-page-settings",
@@ -2097,7 +2164,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Per-page options, import/export and trash.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-doc-settings",
@@ -2107,7 +2175,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Document-level management.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-docs-hub",
@@ -2117,7 +2186,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Central discovery, tags and filters.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-slash",
@@ -2127,7 +2197,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Contextual editor commands, Docs-specific UI revision.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-text-format",
@@ -2137,7 +2208,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Shared rich text behavior across surfaces.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-whiteboard-items",
@@ -2147,7 +2219,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Canvas objects, main and floating toolbar, group export.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-whiteboard-create",
@@ -2157,7 +2230,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Creation from hub, sidebar and slash command.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-whiteboard-limits",
@@ -2167,7 +2241,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Availability by role/plan.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-form-logic",
@@ -2177,7 +2252,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Conditional form rules, nesting up to five levels as documented.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-form-questions",
@@ -2187,7 +2263,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Question builder and field mapping.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-form-design",
@@ -2197,7 +2274,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Presentation and branding settings.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-form-create",
@@ -2207,7 +2285,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Multiple creation surfaces.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-form-hub",
@@ -2217,7 +2296,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Form discovery and contextual actions.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-sheets-hub",
@@ -2227,7 +2307,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Templates, blank Sheets and row hover actions.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-sheets-limits",
@@ -2237,7 +2318,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Sheets availability and sharing.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-cards",
@@ -2247,7 +2329,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Card categories including AI, custom and sprint cards.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-card-data",
@@ -2257,7 +2340,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Data and field compatibility by card type.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-dashboard-drill",
@@ -2267,7 +2351,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Chart selection opens contributing tasks.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-dashboard-settings",
@@ -2277,7 +2362,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Auto layout and PDF export.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-resource",
@@ -2287,7 +2373,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Capacity and resource dashboards.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-time-track",
@@ -2297,7 +2384,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Track time from tasks and AI.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-time-report",
@@ -2307,7 +2395,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Time fields and sorting in views.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-planner",
@@ -2317,7 +2406,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Planning and calendar integrations.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-planner-open",
@@ -2327,7 +2417,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Planner tasks and external calendar boundaries.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-planner-customize",
@@ -2337,7 +2428,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Personal planner settings.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-inbox",
@@ -2347,7 +2439,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Notification aggregation and configurable notifications.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-inbox-custom",
@@ -2357,7 +2450,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Notification grouping by date.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-notifications",
@@ -2367,7 +2461,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Inbox, email, browser and mobile channels.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-permissions",
@@ -2377,7 +2472,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Role and item permission levels.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-permissions-detail",
@@ -2387,7 +2483,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Permission matrix by resource and role.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-role-permissions",
@@ -2397,7 +2494,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Custom role capabilities.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-share",
@@ -2407,7 +2505,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Sharing modal and granular access.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-trash",
@@ -2417,7 +2516,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Restore deleted objects.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-task-delete",
@@ -2427,7 +2527,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Deletion workflow.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-audit",
@@ -2437,7 +2538,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Workspace and agent activity logs.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-ai-intro",
@@ -2447,7 +2549,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Brain, Super Agents and embedded AI.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-ai-tools",
@@ -2457,7 +2560,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Tool catalog and skills.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-brain-chat",
@@ -2467,7 +2571,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Chat modal and suggested actions.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-brain-context",
@@ -2477,7 +2582,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Contextual AI in objects and messages.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-brain-in-chat",
@@ -2487,7 +2593,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Task creation and thread summaries.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-agent-chat",
@@ -2497,7 +2604,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Agent invocation from channel automation.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-agent-overview",
@@ -2507,7 +2615,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Agent configuration and activity.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-agent-config",
@@ -2517,7 +2626,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Instructions, skills, tools, memory, schedules and permission boundaries.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-ai-access",
@@ -2527,7 +2637,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Role-level and individual AI access.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-agent-workflow",
@@ -2537,7 +2648,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Visual orchestration of Brain, agents and decisions; beta.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-agent-workflow-limits",
@@ -2547,7 +2659,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Beta and limits.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-ai-drive",
@@ -2557,7 +2670,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Labs storage and discovery surface.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-artifacts",
@@ -2567,7 +2681,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "AI creation of apps, prototypes, decks and reports.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-creative-studio",
@@ -2577,7 +2692,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Scene editor with media, shapes and export.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-automation-modal",
@@ -2587,7 +2703,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Automation creation from multiple locations.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-calendar-automation",
@@ -2597,7 +2714,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Calendar integration actions.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-keyboard",
@@ -2607,7 +2725,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Keyboard navigation and commands.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-my-settings",
@@ -2617,7 +2736,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Accessibility and personal settings.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-theme",
@@ -2627,7 +2747,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Theme and high contrast.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-mobile-menu",
@@ -2637,7 +2758,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Mobile More menu and feature access.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-mobile-inbox",
@@ -2647,7 +2769,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Mobile notifications.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-browser-tabs",
@@ -2657,7 +2780,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Inactive browser tab sleeping; not proof of app-level tabs.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-help",
@@ -2667,7 +2791,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Official help taxonomy",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-features-index",
@@ -2677,7 +2802,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Features/ClickApps directory",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-views-index",
@@ -2687,7 +2813,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Views directory including Gallery and legacy Chat",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-docs-index",
@@ -2697,7 +2824,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Docs directory",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-agents-index",
@@ -2707,7 +2835,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Agent directory",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-ai-index",
@@ -2717,7 +2846,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "AI directory",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-chat-index",
@@ -2727,7 +2857,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Chat directory",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-integrations-index",
@@ -2737,7 +2868,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Integration/API/MCP directory",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-sheets-index",
@@ -2747,7 +2879,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Sheets directory and spreadsheet description",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-api",
@@ -2757,7 +2890,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "API overview and per-token rate limits",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-api-auth",
@@ -2767,7 +2901,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "OAuth 2.0 and token authentication",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-api-webhooks",
@@ -2777,7 +2912,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Scoped event subscriptions and payload caveats",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-api-errors",
@@ -2787,7 +2923,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "API errors including 429",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-developer-index",
@@ -2797,7 +2934,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Official machine-oriented index of guides and v2/v3 reference pages.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-openapi",
@@ -2807,7 +2945,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Links to machine-readable specifications.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-openapi-v2",
@@ -2817,7 +2956,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Raw JSON specification retrieved in web tool; link-only.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-openapi-v3",
@@ -2827,7 +2967,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Raw specification URL retrieved; link-only.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-mcp-tools",
@@ -2837,7 +2978,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Tools for search, task CRUD, bulk operator, fields, relations, time, attachments and comments.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-mcp-outbound",
@@ -2847,7 +2989,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "OAuth-only MCP; external connected search not exposed.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-mcp-inbound",
@@ -2857,7 +3000,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "External server tools become available to Brain and agents.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-connected-search",
@@ -2867,7 +3011,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Personal and shared indexing; indexing lifecycle and permission boundary.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-automation-webhook",
@@ -2877,7 +3022,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "API webhooks versus automation-triggered webhooks.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-webhook-health",
@@ -2887,7 +3033,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Failure status, retry, suspension and recovery.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-rate-limits",
@@ -2897,7 +3044,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Quota per token and 429 response headers.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-get-started-index",
@@ -2907,7 +3055,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Navigation, migration, hierarchy, tasks, roles and use cases.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-mobile-index",
@@ -2917,7 +3066,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Mobile-specific features and sharing.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-support-index",
@@ -2927,7 +3077,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Troubleshooting and feedback.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-security-index",
@@ -2937,7 +3088,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Data protection, SSO, backups, retention and security.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-synced-content",
@@ -2947,7 +3099,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Shared block identity, permissions at source, unsync and deletion.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-content-blocks",
@@ -2957,7 +3110,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Drag handles, selection, keyboard movement, heading collapse.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-dashboard-layout",
@@ -2967,7 +3121,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Layout reflow, auto layout, undo and per-card refresh.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-dependency-warning",
@@ -2977,7 +3132,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Configurable warning before closing blocked work.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-incomplete-warning",
@@ -2987,7 +3143,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Pre-completion warning for unresolved items.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-tag-manager",
@@ -2997,7 +3154,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Central tag management scoped to Space.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-whiteboard-objects",
@@ -3007,7 +3165,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Editable object references, conversion from canvas elements, export boundary.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-prompt-injection",
@@ -3017,7 +3176,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Vendor-described risk checks and gated actions; not independently tested.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-mobile-launch",
@@ -3027,7 +3187,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "User-selectable mobile entry page.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-drafts-sent",
@@ -3037,7 +3198,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Draft/scheduled/sent lifecycle, filters and row actions.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-bottom-pin",
@@ -3047,7 +3209,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "storage": "link-only",
-      "notes": "Persistent bottom favorites; drag reorder and hover unpin."
+      "notes": "Persistent bottom favorites; drag reorder and hover unpin.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-filter-builder",
@@ -3057,7 +3220,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "storage": "link-only",
-      "notes": "Nested boolean predicates, search scope, supported field defaults, AI generated editable filters."
+      "notes": "Nested boolean predicates, search scope, supported field defaults, AI generated editable filters.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-offline",
@@ -3067,7 +3231,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "storage": "link-only",
-      "notes": "Disconnect notice, limited offline creation/read, reconnect sync."
+      "notes": "Disconnect notice, limited offline creation/read, reconnect sync.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-proofing",
@@ -3077,7 +3242,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "storage": "link-only",
-      "notes": "Spatial/time anchored review comments and assignment."
+      "notes": "Spatial/time anchored review comments and assignment.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-save-view",
@@ -3087,7 +3253,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "storage": "link-only",
-      "notes": "Save, autosave, duplicate, revert, access limits and delayed shared refresh."
+      "notes": "Save, autosave, duplicate, revert, access limits and delayed shared refresh.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-comments-revision",
@@ -3097,7 +3264,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "storage": "link-only",
-      "notes": "Separate default Comments and full Activity; migration and scope."
+      "notes": "Separate default Comments and full Activity; migration and scope.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-grouping",
@@ -3107,7 +3275,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "storage": "link-only",
-      "notes": "Single-value groups, identity preservation, grouping menu and collapse."
+      "notes": "Single-value groups, identity preservation, grouping menu and collapse.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-status-management",
@@ -3117,7 +3286,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "storage": "link-only",
-      "notes": "Lifecycle semantics, scoped inheritance, hidden closed tasks and reorder."
+      "notes": "Lifecycle semantics, scoped inheritance, hidden closed tasks and reorder.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-task-template",
@@ -3127,7 +3297,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "storage": "link-only",
-      "notes": "Selective import, template apply, schema conflicts and irreversible operations."
+      "notes": "Selective import, template apply, schema conflicts and irreversible operations.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-assign-comment",
@@ -3137,7 +3308,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "storage": "link-only",
-      "notes": "Assign, resolve, navigate and notify; cross-surface action items."
+      "notes": "Assign, resolve, navigate and notify; cross-surface action items.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-text-toolbar",
@@ -3147,7 +3319,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "storage": "link-only",
-      "notes": "Selected or pinned toolbar, undo/redo, contextual actions."
+      "notes": "Selected or pinned toolbar, undo/redo, contextual actions.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-high-contrast",
@@ -3157,7 +3330,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "storage": "link-only",
-      "notes": "Optional contrast preference, not a compliance certification."
+      "notes": "Optional contrast preference, not a compliance certification.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-task-activity",
@@ -3165,9 +3339,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/29723182607127-Task-activity-and-comments",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "storage": "link-only",
-      "notes": "Comments and activity panels."
+      "notes": "Comments and activity panels.",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Right icon rail separates Comments from full Activity; unread dot; assigned comments also appear in action items. Article has inconsistent migration wording.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-activity-filter",
@@ -3175,9 +3352,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6309921223191-Search-and-filter-task-activity",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "storage": "link-only",
-      "notes": "Activity filter and follower controls."
+      "notes": "Activity filter and follower controls.",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Filter history by actor and change type, including moves, properties, dependencies, sharing and Git events.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-reply-comments",
@@ -3185,9 +3365,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6308954445591-Reply-to-task-comments",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "storage": "link-only",
-      "notes": "Thread reply and quoting."
+      "notes": "Thread reply and quoting.",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Threads have unread counts, follower settings and scheduled replies; disabling threaded comments hides old threaded replies until re-enabled.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-status-templates",
@@ -3195,9 +3378,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6309533958935-Status-templates",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "storage": "link-only",
-      "notes": "Reusable workflow configurations."
+      "notes": "Reusable workflow configurations.",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Editing a shared template applies only locally; other locations retain previous statuses as Custom. Guests cannot edit or apply templates.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-done-status",
@@ -3205,9 +3391,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6309517280919-Use-Done-statuses",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "storage": "link-only",
-      "notes": "Done semantics, dependency clearing and drag reorder."
+      "notes": "Done semantics, dependency clearing and drag reorder.",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Done remains visible, stops overdue reminders, clears waiting dependencies and counts toward goals.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-status-faq",
@@ -3215,9 +3404,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6309465975063-Statuses-FAQ",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "storage": "link-only",
-      "notes": "Status FAQ and secondary status field automations."
+      "notes": "Status FAQ and secondary status field automations.",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Tasks in multiple Lists keep home List status schema; two statuses use checkmark icon, more use square; order configurable at schema and view levels.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-view-reorder",
@@ -3225,9 +3417,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/26004419744023-Group-and-reorder-views",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "storage": "link-only",
-      "notes": "Group views by type and reorder."
+      "notes": "Group views by type and reorder.",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Group by view type via location settings or overflow menu when full; horizontal drag reorder requires full edit permissions.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-custom-fields-query",
@@ -3235,9 +3430,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/12665650881943-Search-sort-and-filter-tasks-by-Custom-Fields",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "storage": "link-only",
-      "notes": "Column sorting and field search."
+      "notes": "Column sorting and field search.",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Search covers eight textual field types only if visible as columns; search preferences apply to workspace views; hover value quick filter in List.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-timeline-group",
@@ -3245,9 +3443,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/31440827150615-Group-tasks-in-Timeline-view",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "storage": "link-only",
-      "notes": "Nested rows and grouping location boundaries."
+      "notes": "Nested rows and grouping location boundaries.",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Second-level Assignee/List choices depend on primary group and location; collapse parent rows; List-level grouping does not add nested rows.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-view-customization",
@@ -3255,9 +3456,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/7255480884887-Customize-views-to-increase-productivity",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "search-result reviewed; direct fetch failed",
       "storage": "link-only",
-      "notes": "Saved filter views and sorting."
+      "notes": "Saved filter views and sorting.",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Direct retrieval returned UnexpectedStatusCode; previous search preview retained.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-list-filter",
@@ -3265,9 +3469,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6310206119575-Filter-and-search-tasks-in-List-view",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "storage": "link-only",
-      "notes": "Filter builder and undo generated filters."
+      "notes": "Filter builder and undo generated filters.",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Supported filters prefill new objects; single-value grouping hides nonmatching groups; separate subtasks mode makes them searchable.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-dashboard-mixed-filters",
@@ -3275,9 +3482,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/16154237385495-Use-mixed-filters-in-Dashboards-and-cards",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "storage": "link-only",
-      "notes": "Filter group clearing and nested filter options."
+      "notes": "Filter group clearing and nested filter options.",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Dashboard/card filter scopes can coexist; nested AND/OR, apply, reset to last applied, clear group/all.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-task-creation",
@@ -3285,9 +3495,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6309647350807-Create-a-task",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "storage": "link-only",
-      "notes": "Creation from multiple contexts including text toolbar."
+      "notes": "Creation from multiple contexts including text toolbar.",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Quick create from global toolbar/command bar, comments and Chat; access and details depend on surface.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-docs-pin",
@@ -3295,9 +3508,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/7245958790807-Minimize-Docs-to-the-Tray",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "storage": "link-only",
-      "notes": "Legacy naming and pinning documents; check layout version."
+      "notes": "Legacy naming and pinning documents; check layout version.",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Personal Tray stores minimized Docs and tasks; click reopen, hover X remove. Do not assume same label in new layout.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-template-library",
@@ -3305,9 +3521,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6326023965591-Add-a-template-to-your-library",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "storage": "link-only",
-      "notes": "Template Center access and personal library."
+      "notes": "Template Center access and personal library.",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Community templates can be copied to workspace library, renamed and shared; original remains; available object types depend on entry and role.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-template-customize",
@@ -3317,7 +3536,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "storage": "link-only",
-      "notes": "Selective import of template properties."
+      "notes": "Selective import of template properties.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-checklist-templates",
@@ -3327,7 +3547,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "storage": "link-only",
-      "notes": "Checklist templates and automation."
+      "notes": "Checklist templates and automation.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-archive-task",
@@ -3335,9 +3556,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6329610622487-Archive-a-task",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "storage": "link-only",
-      "notes": "Archive separate from deletion."
+      "notes": "Archive separate from deletion.",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Archive preserves task and attached files; archived tasks searchable via views and command bar; unarchive restores access to attachments.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-message-edit-delete",
@@ -3347,7 +3571,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "storage": "link-only",
-      "notes": "Short-lived undo of sent message deletion."
+      "notes": "Short-lived undo of sent message deletion.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-my-tasks",
@@ -3357,7 +3582,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "storage": "link-only",
-      "notes": "Personal priorities, assigned comments and agenda."
+      "notes": "Personal priorities, assigned comments and agenda.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-personal-list-filter",
@@ -3367,7 +3593,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "storage": "link-only",
-      "notes": "Personal List grouping and filtering."
+      "notes": "Personal List grouping and filtering.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-individual-workspace",
@@ -3377,7 +3604,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "storage": "link-only",
-      "notes": "Personal setup and pinned items."
+      "notes": "Personal setup and pinned items.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-chrome-extension",
@@ -3387,7 +3615,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "storage": "link-only",
-      "notes": "Capture, annotation and attach web content."
+      "notes": "Capture, annotation and attach web content.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-tasks-section",
@@ -3397,7 +3626,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "storage": "link-only",
-      "notes": "Section listing opened; parent article advertises 72 articles; not all pages traversed."
+      "notes": "Section listing opened; parent article advertises 72 articles; not all pages traversed.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-intro-views-section",
@@ -3407,7 +3637,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "storage": "link-only",
-      "notes": "Section listing opened; parent article advertises 28 articles; not all pages traversed."
+      "notes": "Section listing opened; parent article advertises 28 articles; not all pages traversed.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-communication-section",
@@ -3417,7 +3648,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "storage": "link-only",
-      "notes": "Section listing opened; parent article advertises 20 articles; not all pages traversed."
+      "notes": "Section listing opened; parent article advertises 20 articles; not all pages traversed.",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-brand",
@@ -3427,7 +3659,8 @@
       "status": "verified",
       "notes": "Brand palette, typography, logo usage and product illustration categories; not authenticated UI tokens.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-uizze",
@@ -3437,7 +3670,8 @@
       "status": "verified",
       "notes": "Public marketing site measured 2026-10-27; not official internal tokens.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-ui-archive",
@@ -3447,7 +3681,8 @@
       "status": "search-result reviewed; direct fetch failed",
       "notes": "Redirect loop; token categories listed in search only.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-sitepeel",
@@ -3457,7 +3692,8 @@
       "status": "search-result reviewed; direct fetch failed",
       "notes": "Cache miss; do not use purported tokens as verified.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-refero-styles",
@@ -3467,7 +3703,8 @@
       "status": "search-result reviewed; full article pending",
       "notes": "Marketing site token candidate, not production workspace.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-view-icons",
@@ -3477,7 +3714,8 @@
       "status": "verified",
       "notes": "Shared view icon, searchable picker and reset to type default.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-doc-page-styles",
@@ -3487,7 +3725,8 @@
       "status": "verified",
       "notes": "Font family categories, sizes, page widths, focus mode, outline and relationship layouts.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-desktop",
@@ -3497,7 +3736,8 @@
       "status": "verified",
       "notes": "System-wide command bar, clipboard history, deep linking and shortcut customization.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-workload-style",
@@ -3507,7 +3747,8 @@
       "status": "search-result reviewed; full article pending",
       "notes": "Color by list, status, priority or dropdown property.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-timeline-style",
@@ -3517,7 +3758,8 @@
       "status": "search-result reviewed; full article pending",
       "notes": "Color by list, status, priority or dropdown property.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-timeline-interactions",
@@ -3527,7 +3769,8 @@
       "status": "search-result reviewed; full article pending",
       "notes": "Drag date range endpoints, context-derived task defaults.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-button-field",
@@ -3537,7 +3780,8 @@
       "status": "search-result reviewed; full article pending",
       "notes": "Configurable icon/color and automation action.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-design-review",
@@ -3547,7 +3791,8 @@
       "status": "search-result reviewed; full article pending",
       "notes": "Annotation of image, video and PDF.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-account-settings-index",
@@ -3557,7 +3802,8 @@
       "status": "search-result reviewed; full article pending",
       "notes": "Theme, contrast and user settings.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-core-features",
@@ -3567,7 +3813,8 @@
       "status": "search-result reviewed; full article pending",
       "notes": "Feature overview.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-gummble-web",
@@ -3577,7 +3824,8 @@
       "status": "verified",
       "notes": "Gallery reports 964 screens, 207 flows, three captured versions, latest capture 2025-11-05; only preview listing inspected.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-gummble-ios",
@@ -3587,7 +3835,8 @@
       "status": "search-result reviewed; direct fetch failed",
       "notes": "Cache miss; no iOS screen count asserted.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-nicelydone",
@@ -3597,7 +3846,8 @@
       "status": "verified",
       "notes": "Product screens, onboarding, flows and component directory; text descriptions inspected.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-nicelydone-components",
@@ -3607,7 +3857,8 @@
       "status": "verified",
       "notes": "Descriptions of reversible notification toast and empty folder state; images not opened.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-uiland",
@@ -3617,7 +3868,8 @@
       "status": "verified",
       "notes": "Directory reports 218 screens and 14 flows; sign-in required for most images.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-uiland-create",
@@ -3627,7 +3879,8 @@
       "status": "search-result reviewed; full article pending",
       "notes": "Mobile creation screen candidate.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-uiland-goal",
@@ -3637,7 +3890,8 @@
       "status": "search-result reviewed; full article pending",
       "notes": "Mobile goal/task screen candidate.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-uiland-bookmark",
@@ -3647,7 +3901,8 @@
       "status": "search-result reviewed; full article pending",
       "notes": "Mobile bottom sheet candidate.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-mobbin-web-a",
@@ -3657,7 +3912,8 @@
       "status": "search-result reviewed; full article pending",
       "notes": "Screen candidate; no visual behavior claim.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-mobbin-web-b",
@@ -3667,7 +3923,8 @@
       "status": "search-result reviewed; full article pending",
       "notes": "Screen candidate; no visual behavior claim.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-squint",
@@ -3677,7 +3934,8 @@
       "status": "search-result reviewed; full article pending",
       "notes": "Marketing page hierarchy analysis; not application CSS.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-feature-catalog",
@@ -3687,7 +3945,8 @@
       "status": "verified",
       "notes": "Vendor feature/plan listing including AI governance, skills, live artifacts, browser sessions; not runtime verification.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-release-feed",
@@ -3697,7 +3956,8 @@
       "status": "verified",
       "notes": "Visible feed excerpt dated Nov 8–14; remaining updates behind Show more. Release labels and beta may coexist.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-videos",
@@ -3707,7 +3967,8 @@
       "status": "verified",
       "notes": "Tutorial directory with titles and displayed durations, including legacy 2.0. No playback performed.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-v4",
@@ -3717,7 +3978,8 @@
       "status": "search-result reviewed; full article pending",
       "notes": "Vendor product positioning and navigation overview.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-v4-news",
@@ -3727,7 +3989,8 @@
       "status": "search-result reviewed; full article pending",
       "notes": "Version announcement and personalized navigation.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-clips-hub",
@@ -3737,7 +4000,8 @@
       "status": "search-result reviewed; full article pending",
       "notes": "Recording hub and timestamped comments.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-clip-recording",
@@ -3747,7 +4011,8 @@
       "status": "verified",
       "notes": "Recording state machine, playback, transcript navigation, link sharing.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-clip-limits",
@@ -3757,7 +4022,8 @@
       "status": "search-result reviewed; full article pending",
       "notes": "Plan-dependent feature availability.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-voice-clips",
@@ -3767,7 +4033,8 @@
       "status": "search-result reviewed; full article pending",
       "notes": "Audio comments and transcription.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-syncup-recordings",
@@ -3777,7 +4044,8 @@
       "status": "search-result reviewed; full article pending",
       "notes": "Meeting recording playback, comments and sharing.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-intro-comments",
@@ -3787,7 +4055,8 @@
       "status": "search-result reviewed; full article pending",
       "notes": "Video and voice recording from comment composer.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-customizable-features",
@@ -3797,7 +4066,8 @@
       "status": "search-result reviewed; full article pending",
       "notes": "General product feature behavior.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-demo-video-guide",
@@ -3807,7 +4077,8 @@
       "status": "search-result reviewed; full article pending",
       "notes": "Editorial pointer to 4.0 product demonstration; no video inspected.",
       "recorded_on": "2026-11-27",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-formula-create",
@@ -3817,7 +4088,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Formula builder, advanced editor, dependencies and restrictions.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-formula-intro",
@@ -3827,7 +4099,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Calculated values and formula discovery.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-formula-advanced",
@@ -3837,7 +4110,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Advanced expression syntax.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-formula-logic",
@@ -3847,7 +4121,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Logical functions.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-formula-string",
@@ -3857,7 +4132,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "String functions; text custom fields are not supported inputs.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-field-permissions",
@@ -3867,7 +4143,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Field access and exceptions.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-field-required",
@@ -3877,7 +4154,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Creation validation differs from status transition validation.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-field-manage",
@@ -3887,7 +4165,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Manage properties and settings.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-field-intro",
@@ -3897,7 +4176,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Property overview and rollup.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-field-move",
@@ -3907,7 +4187,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Move properties between scopes.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-field-usage",
@@ -3917,7 +4198,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Quota semantics, including multi-value options.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-relationship-create",
@@ -3927,7 +4209,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Workspace-wide or list-constrained references and rollup.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-goal-create",
@@ -3937,7 +4220,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Four target types and automatic goal progress.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-goal-views",
@@ -3947,7 +4231,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Goal projections and planning.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-goal-cards",
@@ -3957,7 +4242,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Goal drill-down and editing.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-dependencies-reschedule",
@@ -3967,7 +4253,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Shift dependent dates under configured rules.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-dependencies-intro",
@@ -3977,7 +4264,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Blocking relationships.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-scheduling-intro",
@@ -3987,7 +4275,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Scheduling ClickApps.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-task-duration",
@@ -3997,7 +4286,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Duration-based scheduling.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-milestones",
@@ -4007,7 +4297,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Milestone type and filtering.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-gantt-planning",
@@ -4017,7 +4308,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Dependency scheduling, dates and milestones.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-clickapps",
@@ -4027,7 +4319,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Scoped modular features.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-sprint-report",
@@ -4037,7 +4330,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Seven reporting card types and sprint header.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-sprint-points",
@@ -4047,7 +4341,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Configurable estimate and subtask rollup.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-sprint-run",
@@ -4057,7 +4352,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Sprint flow and missing-estimate filtering.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-sprint-limits",
@@ -4067,7 +4363,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Plan availability and automatic completion.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-sprint-activate",
@@ -4077,7 +4374,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Sprint folders and estimate modes.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-sprint-intro",
@@ -4087,7 +4385,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Sprint feature model.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-sprint-planning",
@@ -4097,7 +4396,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Backlog and reporting guidance.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-workload-measure",
@@ -4107,7 +4407,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Effort measures and actual/estimate display.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-integration-connect",
@@ -4117,7 +4418,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Personal versus shared connection scope.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-integration-github",
@@ -4127,7 +4429,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Space-repository association and linked development activity.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-integration-automations",
@@ -4137,7 +4440,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Supported third-party triggers and actions.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-integration-personal",
@@ -4147,7 +4451,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Productivity integration examples.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-integration-project",
@@ -4157,7 +4462,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Project integration examples.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-integration-marketing",
@@ -4167,7 +4473,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Marketing integration examples.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-integration-dev",
@@ -4177,7 +4484,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Development integration examples.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-integration-google-calendar",
@@ -4187,7 +4495,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Personal bidirectional event sync and AI tools.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-integration-outlook-calendar",
@@ -4197,7 +4506,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Outlook calendar integration.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-integration-planner-events",
@@ -4207,7 +4517,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Event creation from planner.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-integration-drive",
@@ -4217,7 +4528,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "External files, embed, preview, creation, OAuth scope.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-integration-drive-automation",
@@ -4227,7 +4539,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Drive automations.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-integration-figma",
@@ -4237,7 +4550,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Figma commands and embedded content.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-integrations-directory",
@@ -4247,7 +4561,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Both directory pages opened; listed article titles, not all article bodies.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-calendar-directory",
@@ -4257,7 +4572,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full section pending",
       "notes": "Section discovery.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-storage-directory",
@@ -4267,7 +4583,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full section pending",
       "notes": "Section discovery.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-spreadsheet-import",
@@ -4277,7 +4594,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Destination, mapping, validation, report.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-spreadsheet-prepare",
@@ -4287,7 +4605,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Prepare source format and hierarchy.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-import-overview",
@@ -4297,7 +4616,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Migration entry and supported sources.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-import-history",
@@ -4307,7 +4627,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Queued/running/completed/failed; cancellation and per-entity reports.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-import-fields",
@@ -4317,7 +4638,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Supported and unsupported properties, fidelity limits.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-export-tasks",
@@ -4327,7 +4649,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Scope-based CSV with identity and property columns.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-export-overview",
@@ -4337,7 +4660,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Export by content type.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-import-docs",
@@ -4347,7 +4671,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Document file types and entry points.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-import-notion",
@@ -4357,7 +4682,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Notion pages to Docs.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-import-jira",
@@ -4367,7 +4693,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "New versus legacy importer.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-import-export-limits",
@@ -4377,7 +4704,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Role and plan restrictions.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-export-doc",
@@ -4387,7 +4715,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "PDF, Markdown, HTML, page/all, embeds excluded.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-share-docs",
@@ -4397,7 +4726,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Sharing and exporting from document surfaces.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-backups",
@@ -4407,7 +4737,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Disaster recovery, not individual item recovery.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-storage",
@@ -4417,7 +4748,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Storage quotas and Trash boundary.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-security",
@@ -4427,7 +4759,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Vendor security statements and permission retention.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-security-defaults",
@@ -4437,7 +4770,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Default security configuration.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-audit-limits",
@@ -4447,7 +4781,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "60-day audit log history.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-public-auth",
@@ -4457,7 +4792,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "OpenID Connect option for shared views.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-link-types",
@@ -4467,7 +4803,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Public versus internal routing and permissions.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-session-management",
@@ -4477,7 +4814,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Session duration, idle warning and forced logout.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-chat-retention",
@@ -4487,7 +4825,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Scoped retention settings and deletion schedule.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-two-factor",
@@ -4497,7 +4836,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Personal and enforced 2FA policies; recovery.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-sso",
@@ -4507,7 +4847,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Required/optional SSO and SCIM boundaries.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-microsoft-sso",
@@ -4517,7 +4858,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Microsoft SSO; SCIM requires custom SAML.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-saml",
@@ -4527,7 +4869,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Custom SAML configuration.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-archive-space",
@@ -4537,7 +4880,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Archive and restore hierarchy locations.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-app-center",
@@ -4547,7 +4891,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Connection status filtering and scope.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-desktop-command",
@@ -4557,7 +4902,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "System-wide search entry.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-mobile-home",
@@ -4567,7 +4913,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full article pending",
       "notes": "Mobile home and search entry.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-import-export-section",
@@ -4577,7 +4924,8 @@
       "recorded_on": "2026-11-27",
       "status": "verified",
       "notes": "Section listing opened, not all nested pages.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     },
     {
       "id": "clickup-privacy-section",
@@ -4587,7 +4935,8 @@
       "recorded_on": "2026-11-27",
       "status": "search-result reviewed; full section pending",
       "notes": "Section discovery.",
-      "storage": "link-only"
+      "storage": "link-only",
+      "product": "ClickUp"
     }
   ]
 }

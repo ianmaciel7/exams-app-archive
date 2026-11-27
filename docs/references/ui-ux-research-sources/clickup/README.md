@@ -149,3 +149,9 @@ Machine-readable inventory: [inventory.json](inventory.json). Source registry: [
 
 - [Portability, search, security and recovery](portability-security-2026-11-27.md)
 - [Structured contracts and source audit](portability-security-2026-11-27.json)
+
+## Ninth extraction batch
+
+- [Source review and central index](review-index-2026-11-27.md)
+- [Structured review](review-index-2026-11-27.json)
+- [Searchable product-specific observations](pattern-index.json)

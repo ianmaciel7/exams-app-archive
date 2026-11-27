@@ -395,6 +395,15 @@
       "interaction_count": 12,
       "opened_new_article_count": 14,
       "opened_visual_count": 0
+    },
+    {
+      "id": "review-index-2026-11-27",
+      "path": "review-index-2026-11-27.json",
+      "source_count": 0,
+      "reviewed_source_count": 15,
+      "failed_source_count": 1,
+      "interaction_count": 12,
+      "indexed_observation_count": 92
     }
   ]
 }
