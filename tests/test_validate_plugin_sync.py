@@ -25,7 +25,6 @@ from validate_plugin_sync import (
     CANONICAL_FILES,
     CLI_ROUTING_COMMANDS,
     EXPECTED_PLUGIN_ID,
-    EXPECTED_RELEASE_ID,
     EXPECTED_VERSION,
     compare_file_contents,
     compare_package_trees,
@@ -61,7 +60,10 @@ class TestValidatePluginSync(unittest.TestCase):
         result = verify_sync_state(SYNC_STATE_PATH)
         self.assertTrue(result["valid"])
         self.assertEqual(result["plugin_id"], EXPECTED_PLUGIN_ID)
-        self.assertEqual(result["release_id"], EXPECTED_RELEASE_ID)
+        self.assertIsNone(result["release_id"])
+        self.assertTrue(result["release_id_redacted"])
+        self.assertEqual(result["verified_files"], len(CANONICAL_FILES))
+        self.assertEqual(result["status"], "verified-synced")
         self.assertEqual(result["version"], EXPECTED_VERSION)
 
     def test_verify_sync_state_invalid_schema(self):
@@ -87,6 +89,16 @@ class TestValidatePluginSync(unittest.TestCase):
             with self.assertRaises(ValueError) as ctx:
                 verify_sync_state(bad_path)
             self.assertIn("desired_version", str(ctx.exception))
+
+    def test_redacted_release_requires_commit_and_full_count(self):
+        original = json.loads(SYNC_STATE_PATH.read_text(encoding="utf-8"))
+        for mutation in ({"release_id_redacted": False}, {"verified_commit": "bad"},
+                         {"verified_files": len(CANONICAL_FILES) - 1}):
+            with self.subTest(mutation=mutation), tempfile.TemporaryDirectory() as td:
+                path = Path(td) / ".sync-state.json"
+                path.write_text(json.dumps({**original, **mutation}), encoding="utf-8")
+                with self.assertRaises(ValueError):
+                    verify_sync_state(path)
 
     def test_verify_manifest_versions_all_platforms(self):
         """Verify that all platform manifests report the expected version and name."""

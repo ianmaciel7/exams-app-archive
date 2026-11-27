@@ -5,10 +5,11 @@
   "desired_version": "0.8.23",
   "last_published_release_id": null,
   "last_published_version": "0.8.23",
-  "status": "changed-files-verified",
-  "note": "Four manifests and new app-shell-selection skill verified byte-for-byte between published release and GitHub. Prior full-package baseline not revalidated; no local client or CI run claimed. Private release identifiers not exported.",
-  "verified_files": 5,
-  "byte_identical_files": 5,
+  "status": "verified-synced",
+  "note": "Full published 0.8.23 package readback compared against the pinned GitHub snapshot on 2026-11-27: 32/32 text files matched exactly; the private release ID is redacted. Local client execution and CI are separate checks.",
+  "verified_files": 32,
+  "byte_identical_files": 32,
   "json_semantic_equivalent_files": [],
-  "verified_commit": "ed03f0bf3fcb25b2f9e07d6fab23c843c9c42c71"
+  "verified_commit": "466d6044f9c9e24c4dd6fea41d8e0b61b5c02e9b",
+  "release_id_redacted": true
 }
