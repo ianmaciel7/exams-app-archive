@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-11-26",
+  "as_of": "2026-11-27",
   "scope": "general UI/UX",
   "patterns": [
     {
@@ -1906,6 +1906,329 @@
       ],
       "classification": "official help documentation; acceptance checks not executed",
       "product": "Gemini Notebook (formerly NotebookLM)"
+    },
+    {
+      "id": "shell.holy-grail",
+      "family": "app-shell-taxonomy",
+      "name": "Holy Grail Layout",
+      "kind": "geometry",
+      "definition": "Header, footer, central main content and two side regions.",
+      "guardrail": "Test narrow-screen reflow and landmark order.",
+      "aliases": [
+        "holy grail",
+        "layout santo graal"
+      ],
+      "source_ids": [
+        "app-shell-s1"
+      ],
+      "classification": "Dated documentary synthesis and search-excerpt evidence; not universal taxonomy, measured benefit, or runtime validation",
+      "related_catalog": "docs/references/ui-ux-research-sources/app-shell-taxonomy-2026-11-27.md"
+    },
+    {
+      "id": "shell.header-first",
+      "family": "app-shell-taxonomy",
+      "name": "Header-first Shell",
+      "kind": "geometry subtype",
+      "definition": "Header spans the full shell width above side regions.",
+      "guardrail": "Verify header navigation remains discoverable on small screens.",
+      "aliases": [
+        "header first",
+        "cabeçalho primeiro"
+      ],
+      "source_ids": [
+        "app-shell-s2"
+      ],
+      "classification": "Dated documentary synthesis and search-excerpt evidence; not universal taxonomy, measured benefit, or runtime validation",
+      "related_catalog": "docs/references/ui-ux-research-sources/app-shell-taxonomy-2026-11-27.md"
+    },
+    {
+      "id": "shell.sidebar-first",
+      "family": "app-shell-taxonomy",
+      "name": "Sidebar-first Shell",
+      "kind": "geometry subtype",
+      "definition": "Sidebar spans the shell height alongside the header and main region.",
+      "guardrail": "Check sidebar collapse and header width.",
+      "aliases": [
+        "sidebar first",
+        "barra lateral primeiro"
+      ],
+      "source_ids": [
+        "app-shell-s2"
+      ],
+      "classification": "Dated documentary synthesis and search-excerpt evidence; not universal taxonomy, measured benefit, or runtime validation",
+      "related_catalog": "docs/references/ui-ux-research-sources/app-shell-taxonomy-2026-11-27.md"
+    },
+    {
+      "id": "shell.horizontal-split",
+      "family": "app-shell-taxonomy",
+      "name": "Horizontal Split Shell",
+      "kind": "orientation subtype",
+      "definition": "Stacked independent upper and lower panes separated by a horizontal divider.",
+      "guardrail": "Provide keyboard resizing and minimum pane heights.",
+      "aliases": [
+        "horizontal split",
+        "split horizontal"
+      ],
+      "source_ids": [
+        "app-shell-s3",
+        "app-shell-s4a",
+        "app-shell-s4b"
+      ],
+      "classification": "Dated documentary synthesis and search-excerpt evidence; not universal taxonomy, measured benefit, or runtime validation",
+      "related_catalog": "docs/references/ui-ux-research-sources/app-shell-taxonomy-2026-11-27.md"
+    },
+    {
+      "id": "shell.mixed-split",
+      "family": "app-shell-taxonomy",
+      "name": "Mixed Split Shell",
+      "kind": "multi-pane subtype",
+      "definition": "Combines stacked and side-by-side panes in one workspace.",
+      "guardrail": "Verify minimum sizes, focus and nested resize behavior.",
+      "aliases": [
+        "mixed split",
+        "divisão mista"
+      ],
+      "source_ids": [
+        "app-shell-s3",
+        "app-shell-s4a",
+        "app-shell-s4b"
+      ],
+      "classification": "Dated documentary synthesis and search-excerpt evidence; not universal taxonomy, measured benefit, or runtime validation",
+      "related_catalog": "docs/references/ui-ux-research-sources/app-shell-taxonomy-2026-11-27.md"
+    },
+    {
+      "id": "shell.list-detail-detail",
+      "family": "app-shell-taxonomy",
+      "name": "List–Detail–Detail Shell",
+      "kind": "hierarchical pane relationship",
+      "definition": "Three related levels of navigation or detail, not a contextual inspector by default.",
+      "guardrail": "Preserve selection and hierarchical back navigation on narrow screens.",
+      "aliases": [
+        "list detail detail",
+        "lista detalhe detalhe"
+      ],
+      "source_ids": [
+        "app-shell-s5",
+        "app-shell-s6"
+      ],
+      "classification": "Dated documentary synthesis and search-excerpt evidence; not universal taxonomy, measured benefit, or runtime validation",
+      "related_catalog": "docs/references/ui-ux-research-sources/app-shell-taxonomy-2026-11-27.md"
+    },
+    {
+      "id": "shell.supporting-pane",
+      "family": "app-shell-taxonomy",
+      "name": "Supporting Pane Layout",
+      "kind": "complementary pane relationship",
+      "definition": "Primary content alongside supporting information or tools.",
+      "guardrail": "Keep primary task visible and make pane controls accessible.",
+      "aliases": [
+        "supporting pane",
+        "painel auxiliar",
+        "contextual inspector"
+      ],
+      "source_ids": [
+        "app-shell-s7",
+        "app-shell-s8"
+      ],
+      "classification": "Dated documentary synthesis and search-excerpt evidence; not universal taxonomy, measured benefit, or runtime validation",
+      "related_catalog": "docs/references/ui-ux-research-sources/app-shell-taxonomy-2026-11-27.md"
+    },
+    {
+      "id": "shell.feed",
+      "family": "app-shell-taxonomy",
+      "name": "Feed Shell",
+      "kind": "content composition",
+      "definition": "A stream of content arranged in one or more adaptive columns.",
+      "guardrail": "Preserve reading order and scroll position.",
+      "aliases": [
+        "feed layout",
+        "fluxo de conteúdo"
+      ],
+      "source_ids": [
+        "app-shell-s7"
+      ],
+      "classification": "Dated documentary synthesis and search-excerpt evidence; not universal taxonomy, measured benefit, or runtime validation",
+      "related_catalog": "docs/references/ui-ux-research-sources/app-shell-taxonomy-2026-11-27.md"
+    },
+    {
+      "id": "shell.flexible-column",
+      "family": "app-shell-taxonomy",
+      "name": "Flexible Column Layout",
+      "kind": "adaptive multi-pane subtype",
+      "definition": "Columns expand, collapse or change proportion with navigation and space.",
+      "guardrail": "Test back navigation, selection and responsive column transitions.",
+      "aliases": [
+        "flexible columns",
+        "colunas flexíveis"
+      ],
+      "source_ids": [
+        "app-shell-s5"
+      ],
+      "classification": "Dated documentary synthesis and search-excerpt evidence; not universal taxonomy, measured benefit, or runtime validation",
+      "related_catalog": "docs/references/ui-ux-research-sources/app-shell-taxonomy-2026-11-27.md"
+    },
+    {
+      "id": "shell.constrained-width",
+      "family": "app-shell-taxonomy",
+      "name": "Constrained Content Shell",
+      "kind": "sizing modifier",
+      "definition": "Main content occupies a constrained readable width inside the shell.",
+      "guardrail": "Test zoom, long content and narrow width; not a separate shell family.",
+      "aliases": [
+        "constrained width",
+        "largura máxima"
+      ],
+      "source_ids": [
+        "app-shell-s9"
+      ],
+      "classification": "Dated documentary synthesis and search-excerpt evidence; not universal taxonomy, measured benefit, or runtime validation",
+      "related_catalog": "docs/references/ui-ux-research-sources/app-shell-taxonomy-2026-11-27.md"
+    },
+    {
+      "id": "shell.drawer-first",
+      "family": "app-shell-taxonomy",
+      "name": "Drawer-first Shell",
+      "kind": "navigation composition",
+      "definition": "Primary navigation is revealed in an off-canvas drawer rather than a permanent sidebar.",
+      "guardrail": "Provide visible trigger, focus return and keyboard dismissal.",
+      "aliases": [
+        "drawer first",
+        "gaveta de navegação"
+      ],
+      "source_ids": [
+        "app-shell-s10"
+      ],
+      "classification": "Dated documentary synthesis and search-excerpt evidence; not universal taxonomy, measured benefit, or runtime validation",
+      "related_catalog": "docs/references/ui-ux-research-sources/app-shell-taxonomy-2026-11-27.md"
+    },
+    {
+      "id": "shell.workbench",
+      "family": "app-shell-taxonomy",
+      "name": "Workbench Shell",
+      "kind": "IDE-like composition",
+      "definition": "Editors, navigation, inspectors and optional lower tools/status surfaces form a workspace.",
+      "guardrail": "Verify tab ownership and panel visibility; cross-index IDE shell rather than count independently.",
+      "aliases": [
+        "workbench",
+        "IDE shell",
+        "bancada de trabalho"
+      ],
+      "source_ids": [
+        "app-shell-s3"
+      ],
+      "classification": "Dated documentary synthesis and search-excerpt evidence; not universal taxonomy, measured benefit, or runtime validation",
+      "related_catalog": "docs/references/ui-ux-research-sources/app-shell-taxonomy-2026-11-27.md"
+    },
+    {
+      "id": "shell.dockable",
+      "family": "app-shell-taxonomy",
+      "name": "Dockable / Tiling Workspace",
+      "kind": "workspace arrangement",
+      "definition": "Panels may be arranged or docked into configurable regions.",
+      "guardrail": "Provide non-drag alternatives, restore defaults and preserve work.",
+      "aliases": [
+        "docking",
+        "tiling",
+        "painéis acopláveis"
+      ],
+      "source_ids": [
+        "app-shell-s4a",
+        "app-shell-s4b"
+      ],
+      "classification": "Dated documentary synthesis and search-excerpt evidence; not universal taxonomy, measured benefit, or runtime validation",
+      "related_catalog": "docs/references/ui-ux-research-sources/app-shell-taxonomy-2026-11-27.md"
+    },
+    {
+      "id": "shell.multi-window",
+      "family": "app-shell-taxonomy",
+      "name": "Multi-window / Popout Shell",
+      "kind": "window management",
+      "definition": "Workspace content can open in separate windows.",
+      "guardrail": "Test focus, closing, recovery and unsaved changes.",
+      "aliases": [
+        "popout",
+        "multi window",
+        "múltiplas janelas"
+      ],
+      "source_ids": [
+        "app-shell-s4a",
+        "app-shell-s4b",
+        "app-shell-s11"
+      ],
+      "classification": "Dated documentary synthesis and search-excerpt evidence; not universal taxonomy, measured benefit, or runtime validation",
+      "related_catalog": "docs/references/ui-ux-research-sources/app-shell-taxonomy-2026-11-27.md"
+    },
+    {
+      "id": "shell.console",
+      "family": "app-shell-taxonomy",
+      "name": "Console Workspace",
+      "kind": "workspace composition",
+      "definition": "Workspace tabs and subtabs organize related records with utility surfaces.",
+      "guardrail": "Test tab hierarchy, closing and context retention.",
+      "aliases": [
+        "console workspace",
+        "subtabs",
+        "utility bar"
+      ],
+      "source_ids": [
+        "app-shell-s12"
+      ],
+      "classification": "Dated documentary synthesis and search-excerpt evidence; not universal taxonomy, measured benefit, or runtime validation",
+      "related_catalog": "docs/references/ui-ux-research-sources/app-shell-taxonomy-2026-11-27.md"
+    },
+    {
+      "id": "shell.hub-spoke",
+      "family": "app-shell-taxonomy",
+      "name": "Hub-and-Spoke",
+      "kind": "navigation topology",
+      "definition": "A central hub leads to distinct destinations or task flows.",
+      "guardrail": "Make return paths clear; topology is not a unique geometry.",
+      "aliases": [
+        "hub and spoke",
+        "central de navegação"
+      ],
+      "source_ids": [
+        "app-shell-s13a",
+        "app-shell-s13b"
+      ],
+      "classification": "Dated documentary synthesis and search-excerpt evidence; not universal taxonomy, measured benefit, or runtime validation",
+      "related_catalog": "docs/references/ui-ux-research-sources/app-shell-taxonomy-2026-11-27.md"
+    },
+    {
+      "id": "shell.drill-down",
+      "family": "app-shell-taxonomy",
+      "name": "Hierarchical Drill-Down",
+      "kind": "navigation topology",
+      "definition": "Users move progressively through related levels of information.",
+      "guardrail": "Preserve back behavior, breadcrumbs where useful and selected state.",
+      "aliases": [
+        "drill down",
+        "navegação hierárquica"
+      ],
+      "source_ids": [
+        "app-shell-s6",
+        "app-shell-s13a"
+      ],
+      "classification": "Dated documentary synthesis and search-excerpt evidence; not universal taxonomy, measured benefit, or runtime validation",
+      "related_catalog": "docs/references/ui-ux-research-sources/app-shell-taxonomy-2026-11-27.md"
+    },
+    {
+      "id": "shell.suite",
+      "family": "app-shell-taxonomy",
+      "name": "Suite Navigation Shell",
+      "kind": "navigation scope",
+      "definition": "Global product or suite navigation combines with local product navigation.",
+      "guardrail": "Distinguish global and local scope; avoid redundant destinations.",
+      "aliases": [
+        "suite navigation",
+        "global local navigation",
+        "navegação global local"
+      ],
+      "source_ids": [
+        "app-shell-s14"
+      ],
+      "classification": "Dated documentary synthesis and search-excerpt evidence; not universal taxonomy, measured benefit, or runtime validation",
+      "related_catalog": "docs/references/ui-ux-research-sources/app-shell-taxonomy-2026-11-27.md"
     }
   ]
 }
