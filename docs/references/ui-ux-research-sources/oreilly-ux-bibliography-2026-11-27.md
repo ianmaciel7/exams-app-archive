@@ -25,3 +25,27 @@ Public publisher catalog and search excerpts, not full books or exhaustive sales
 - [Designing and Prototyping Interfaces with Figma, 3rd Edition](https://www.oreilly.com/library/view/designing-and-prototyping/9781805805892/) — January 2026; tool-specific practice, adaptive layouts; available in platform catalog.
 - [AI for UX](https://www.oreilly.com/library/view/ai-for-ux/0642572224561/) and [Designing for AI](https://www.oreilly.com/library/view/designing-for-ai/0642572278793/) — December 2026 catalog dates, future as of review; drafts/advance entries, not verified as final published editions.
 Priority: general pattern vocabulary + AI-native interaction patterns, then methods and stakeholder communication. Recency is not equivalent to relevance or quality. No claim of full-book reading, full publisher catalog coverage, or plugin release.
+
+## Public GitHub companion discovery — 2026-11-27
+
+Search results and publisher catalog excerpts; candidates, not reviewed source trees, confirmed licenses, official companion repositories or installed skills. No full books copied.
+- https://github.com/DinoQuinten/claude-plugins/tree/main/ui-ux-design — community skill based on Designing Interfaces; advertises 50+ patterns and pattern selection.
+- https://github.com/mjmirza/patterns — community pattern catalog with HCI/Tidwell section.
+- https://github.com/sidhanth-povil/ia-practitioner — IA skill based on seven practitioner books.
+- https://github.com/FasalZein/laws-of-ux — UX laws adapted for coding agents.
+- https://github.com/AlexJoom/laws-of-ux-examples — interactive before/after demos; README indicates original law assets/definitions have CC BY-NC-ND restrictions; do not import assets wholesale.
+- https://github.com/worldiaday/Awesome-InformationArchitecture — IA bibliography and sources.
+- https://github.com/keysjoao/laws-of-ux-skills — advisor/audit/checklist.
+- https://github.com/jonyablonski — author profile; https://lawsofux.com/ primary public reference.
+- https://github.com/Tranz007/ux-skills — UX evidence, states, accessibility, engineering handoff; independent supplemental candidate.
+- https://github.com/humbleteam/awesome-ai-design-workflows — AI design references, review and QA skills; independent supplemental candidate.
+- https://github.com/antjanus/skillbox — UI/UX state matrix and audit contracts; independent supplemental candidate.
+- https://github.com/peterbamuhigire/chwezi-design-engine — cites Macfadyen; not official companion, bibliographic citation alone is not content coverage.
+
+Author/publisher references:
+- https://www.oreilly.com/pub/au/2312 — lists three editions of Designing Interfaces; third-edition catalog lists December 2019 (copyright/print year 2020 may differ).
+- https://www.oreilly.com/library/view/designing-ai-interfaces/9798341639812/ — March 2026, official public contents and overview. No official public GitHub repository for the book established by this search.
+- https://www.oreilly.com/library/view/designing-web-interfaces/9780596155353/ — public contents and overview, January 2009.
+- https://www.flickr.com/photos/designingwebinterfaces/collections/72157606817815788/ — collection claims 565 figures from Designing Web Interfaces; link-only, license of each figure must be checked, no bulk reproduction.
+
+Next step: compare candidate source paths, licenses, upstream provenance and actual pattern coverage against archive/plugin catalogs. Do not treat public visibility as reuse permission, or install third-party skills without security review. No new plugin release in this discovery.
