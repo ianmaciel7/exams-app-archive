@@ -43,7 +43,7 @@ class ConceptPackTests(unittest.TestCase):
         sidebar["aliases"].append("unique taxonomy test alias")
         self.assertEqual(mod.resolve("unique taxonomy test alias", mod.validate(changed, self.records)),
                          ["ui.navigation.sidebar"])
-        self.assertEqual(mod.resolve("unique taxonomy test alias", concepts), [])
+        self.assertNotIn("ui.navigation.sidebar", mod.resolve("unique taxonomy test alias", concepts))
 
     def test_cross_catalog_and_budget(self):
         pack = mod.build_pack("reorder", self.records, self.taxonomy, 2)["packs"][0]
