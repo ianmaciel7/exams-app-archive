@@ -52,3 +52,7 @@ Prefer describing a shell as a composition of orthogonal axes instead of countin
 - Additional: https://tailwindcss.com/plus/ui-blocks/application-ui — stacked/sidebar/multi-column catalog; https://cloudscape.design/components/app-layout/ — collapsible nav and tools; https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Tutorials/js13kGames/App_structure — technical shell distinction.
 
 Limit: only a gap review; no claim all labels are official names or that all combinations have equal evidence. Historical files unchanged. Structured index/plugin release requires separate review and validation.
+
+## Selection guide and additional dimensions — 2026-11-27
+
+See [App Shell selection guide](app-shell-selection-guide-2026-11-27.md) for decision criteria for all 48 prior labels, trade-offs, SDI/MDI/TDI, ribbon commands, map/list, resource detail hubs, region responsibilities, responsive transition and acceptance tests. This is documentary synthesis, not a product decision or an exhaustive standard.
