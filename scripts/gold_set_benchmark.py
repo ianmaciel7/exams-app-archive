@@ -1487,6 +1487,16 @@ def main(argv: list[str] | None = None) -> int:
         "overall": report["overall"],
         "splits": report["splits"],
         "ablations": report["ablations"],
+        "failed_domains": {
+            dom: {metric: metrics[metric] for metric in
+                  ("resolution_rate", "recall_at_20", "precision_at_10")}
+            for dom, metrics in report["by_domain"].items()
+            if any(metrics[metric] < report["thresholds"][metric + "_min"]
+                   for metric in ("resolution_rate", "recall_at_20", "precision_at_10"))
+        },
+        "failed_queries_count": report["failed_queries_count"],
+        "failed_query_ids": [row["query_id"] for row in report["failed_queries_sample"]],
+        "evaluation_scope": "label-aware synthetic regression, not production retrieval",
     }
     print(json.dumps(summary, ensure_ascii=False, indent=2))
     return 0 if report["gate_passed"] else 1
