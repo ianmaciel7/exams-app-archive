@@ -190,3 +190,7 @@ Registrar URLs originais e redirects, datas de consulta, fonte e status (verific
 - [Initial coverage audit](clickup-coverage-audit-2026-11-27.md)
 - [Expanded ClickUp interaction inventory](clickup/README.md) — official-source summaries, visual links, and explicit runtime gaps.
 - [Machine-readable ClickUp inventory](clickup/inventory.json)
+
+## Laws of UX — 30 concepts (2026-11-27)
+
+[Applied catalog](laws-of-ux-2026-11-27.md) · [Structured inventory](laws-of-ux-2026-11-27.json). All 30 concept pages reviewed; external full-text research and plugin publication are separate verification steps.
