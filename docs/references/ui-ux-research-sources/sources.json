@@ -5507,6 +5507,149 @@
       "kind": "research-reference",
       "notes": "research-search-excerpt-reviewed",
       "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "brand-science-stroop-1935",
+      "title": "Stroop — Studies of interference in serial verbal reactions",
+      "url": "https://doi.org/10.1037/h0054651",
+      "status": "search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "original study, abstract",
+      "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "brand-science-macleod-1991",
+      "title": "MacLeod — Half a century of research on the Stroop effect",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/2034749/",
+      "status": "search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "review, abstract",
+      "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "brand-science-hurvich-jameson-1957",
+      "title": "Hurvich & Jameson — An opponent-process theory of color vision",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/13505974/",
+      "status": "search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "historical study, bibliographic record",
+      "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "brand-science-opponent-reassessment-2023",
+      "title": "Color appearance and the end of Hering’s Opponent-Colors Theory",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37394292/",
+      "status": "search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "critical review, abstract",
+      "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "brand-science-foster-2011",
+      "title": "Foster — Color constancy",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20849875/",
+      "status": "search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "review, abstract",
+      "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "brand-science-witzel-gegenfurtner-2018",
+      "title": "Witzel & Gegenfurtner — Color Perception: Objects, Constancy, and Categories",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30004833/",
+      "status": "search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "review, abstract",
+      "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "brand-science-ciecam16-2022",
+      "title": "CIE 248:2022 — CIECAM16",
+      "url": "https://www.cie.co.at/publications/cie-2016-colour-appearance-model-colour-management-systems-ciecam16",
+      "status": "search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "official report description, full paid report not read",
+      "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "brand-science-cam16-2017",
+      "title": "Li et al. — CAM16, CAT16, and CAM16-UCS",
+      "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/col.22131",
+      "status": "search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "original article excerpt",
+      "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "brand-science-macadam-1942",
+      "title": "MacAdam — Visual Sensitivities to Color Differences in Daylight",
+      "url": "https://www.wip.osapublishing.org/josa/abstract.cfm?uri=josa-32-5-247",
+      "status": "search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "original article abstract",
+      "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "brand-science-ciede2000-2022",
+      "title": "ISO/CIE 11664-6:2022 — CIEDE2000",
+      "url": "https://www.iso.org/standard/82662.html",
+      "status": "search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "official standard summary; full text not read",
+      "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "brand-science-rosenholtz-2007",
+      "title": "Rosenholtz, Li & Nakano — Measuring visual clutter",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18217832/",
+      "status": "search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "original article abstract",
+      "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "brand-science-mit-clutter",
+      "title": "MIT Persci — Visual Clutter",
+      "url": "https://persci.mit.edu/research/clutter/",
+      "status": "search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "research project description",
+      "recorded_on": "2026-11-27"
+    },
+    {
+      "id": "brand-science-wcag-use-color",
+      "title": "W3C — Understanding SC 1.4.1 Use of Color",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/use-of-color",
+      "status": "search-excerpt-reviewed",
+      "checked_on": "2026-11-27",
+      "storage": "link-only",
+      "kind": "research-reference",
+      "notes": "official informative guidance",
+      "recorded_on": "2026-11-27"
     }
   ]
 }
