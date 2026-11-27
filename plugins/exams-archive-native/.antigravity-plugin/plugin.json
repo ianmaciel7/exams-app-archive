@@ -2,7 +2,7 @@
   "$schema": "https://antigravity.google/schemas/v1/plugin.json",
   "name": "exams-archive-native",
   "displayName": "Exams Archive",
-  "version": "0.8.23",
+  "version": "0.8.24",
   "description": "Exams Archive: pesquisa histórica, UI/UX, grafo, componentes interativos, capturas e CLI/MCP local para agentes.",
   "author": {
     "name": "Ian Maciel de Carvalho"
@@ -27,6 +27,8 @@
     "knowledge graph",
     "sync-ux-knowledge",
     "knowledge synchronization",
-    "shared-ux-knowledge"
+    "shared-ux-knowledge",
+    "award-backed-art-direction",
+    "visual-benchmarking"
   ]
 }
