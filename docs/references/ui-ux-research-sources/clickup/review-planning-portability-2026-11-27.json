@@ -1,0 +1,439 @@
+{
+  "schema_version": 1,
+  "product": "ClickUp",
+  "reviewed_on": "2026-11-27",
+  "baseline_commit": "5f771460def8c1557be4d4236ceddef8eadbbb10",
+  "scope": "Reopened every remaining registered lead via web retrieval. Success means page text retrieved, not all linked content, media or runtime verified.",
+  "reviewed_sources": [
+    {
+      "id": "clickup-sprint-points",
+      "summary": "Configurable effort points, optional subtask rollup and per-assignee estimates."
+    },
+    {
+      "id": "clickup-sprint-run",
+      "summary": "Plan work, lock forecast, execute rituals; backlog, new tasks or tasks in multiple lists."
+    },
+    {
+      "id": "clickup-sprint-limits",
+      "summary": "Plan and role matrix; Sprint Cards and Automations depend on plan; migration to new plans underway."
+    },
+    {
+      "id": "clickup-sprint-activate",
+      "summary": "Space-level activation, effort mode and default folder settings; custom sprint duration opt-in cannot be reversed."
+    },
+    {
+      "id": "clickup-sprint-intro",
+      "summary": "Dedicated Sprint Folders and Subfolders, timed cycles and progress tracking."
+    },
+    {
+      "id": "clickup-sprint-planning",
+      "summary": "Vendor guidance for backlog selection, estimates and burndown/velocity tracking."
+    },
+    {
+      "id": "clickup-workload-measure",
+      "summary": "Saved work-by-day allocations instead of flat averages; effort percentage of assignee capacity."
+    },
+    {
+      "id": "clickup-gantt-planning",
+      "summary": "Interactive timeline with left task tree, horizontal bars and dependencies; vendor guidance on appropriate use."
+    },
+    {
+      "id": "clickup-integration-github",
+      "summary": "Repository admin adds repo; workspace admin links to Space. Linked commits, branches and PRs; guests and limited members excluded."
+    },
+    {
+      "id": "clickup-integration-automations",
+      "summary": "Template or custom integration trigger/action, configured conditions and creation from hierarchy location."
+    },
+    {
+      "id": "clickup-integration-google-calendar",
+      "summary": "Private personal connection; bidirectional event sync through Planner, AI tools and commands."
+    },
+    {
+      "id": "clickup-integration-outlook-calendar",
+      "summary": "Events sync with Planner; Planner tasks do not become Outlook events. Existing Outlook visibility permissions apply."
+    },
+    {
+      "id": "clickup-integration-planner-events",
+      "summary": "Create by clicking time or sidebar plus; add attendees, meeting provider, task/doc links and location."
+    },
+    {
+      "id": "clickup-integration-drive",
+      "summary": "One authorized Drive account per user per Workspace; connection types control features and personal search visibility."
+    },
+    {
+      "id": "clickup-integration-drive-automation",
+      "summary": "Requires personal Drive connection, Automation ClickApp and eligible plan/role."
+    },
+    {
+      "id": "clickup-spreadsheet-prepare",
+      "summary": "Five supported format families; 10,000-row maximum per spreadsheet, split larger files."
+    },
+    {
+      "id": "clickup-import-overview",
+      "summary": "Directory of migration sources including Asana, Basecamp, Confluence, Jira, Monday, Notion, Todoist, Teamwork, Trello, Slack and Wrike."
+    },
+    {
+      "id": "clickup-export-overview",
+      "summary": "Task CSV, attachments, views, Docs, cards, whiteboards and API; links are not attachment bytes."
+    },
+    {
+      "id": "clickup-import-notion",
+      "summary": "Databases become a single folder; fields become Text properties; some comments, descriptions, attachments, buttons and wikis excluded."
+    },
+    {
+      "id": "clickup-import-jira",
+      "summary": "New upload importer supports on-premises and mappings; legacy API alternative. 50 GB upload cap; time ownership changes."
+    },
+    {
+      "id": "clickup-import-export-limits",
+      "summary": "Unlimited imports; export quotas and availability differ across old and new plans."
+    },
+    {
+      "id": "clickup-share-docs",
+      "summary": "Doc/page sharing by workspace, people, teams, invited users and hierarchy locations."
+    },
+    {
+      "id": "clickup-storage",
+      "summary": "Free plan storage usage indicator without per-item breakdown."
+    },
+    {
+      "id": "clickup-security",
+      "summary": "Vendor reports AWS hosting, SOC 2 and ISO certifications, PCI DSS, external testing and bounty program; not independently audited."
+    },
+    {
+      "id": "clickup-security-defaults",
+      "summary": "Owner/admin security and permissions page; settings vary by role/plan."
+    },
+    {
+      "id": "clickup-microsoft-sso",
+      "summary": "Microsoft 365/Entra login; custom SAML needed for multiple tenants or SCIM provisioning."
+    },
+    {
+      "id": "clickup-saml",
+      "summary": "SAML 2.0 IdP integration; Enterprise and permission constraints; link user accounts."
+    },
+    {
+      "id": "clickup-archive-space",
+      "summary": "Archive is searchable; deleted Spaces have 30-day restore period; guests cannot archive or delete."
+    },
+    {
+      "id": "clickup-app-center",
+      "summary": "Central integrations, Connected Search and ClickApps; personal connection option gated by role permission."
+    },
+    {
+      "id": "clickup-desktop-command",
+      "summary": "Desktop app background process required; configurable Ctrl/Cmd+J launcher."
+    },
+    {
+      "id": "clickup-mobile-home",
+      "summary": "Default mobile landing page configurable; Home tiles provide access to key pages."
+    },
+    {
+      "id": "clickup-privacy-section",
+      "summary": "Section index: backup, prompt injection, third-party cookies, public authentication, retention and SSO."
+    },
+    {
+      "id": "clickup-calendar-directory",
+      "summary": "Directory includes Google, Outlook, Morgen, Calendly and one-way iCal sync."
+    },
+    {
+      "id": "clickup-storage-directory",
+      "summary": "Directory includes cloud storage introduction, Drive, Dropbox and Box."
+    },
+    {
+      "id": "clickup-v4",
+      "summary": "Product marketing page including 4.0 navigation and keynote; coming-soon and rollout claims are not runtime evidence."
+    },
+    {
+      "id": "clickup-v4-news",
+      "summary": "Announcement dated December 9, 2025; historical version context, not current UI validation."
+    },
+    {
+      "id": "clickup-clips-hub",
+      "summary": "Automatically collects new clips, accessible from navigation and context entry."
+    },
+    {
+      "id": "clickup-clip-limits",
+      "summary": "Plan and role table; Free storage limits still apply; guest commenting restricted."
+    },
+    {
+      "id": "clickup-voice-clips",
+      "summary": "Microphone starts recording; cancel discards; finish uploads to comment draft; recordings also saved in Clips Hub."
+    },
+    {
+      "id": "clickup-syncup-recordings",
+      "summary": "Recording link copied from row hover; workspace membership required to comment in public preview."
+    },
+    {
+      "id": "clickup-intro-comments",
+      "summary": "Rich content and attachments in comments; plus opens block/format controls; scheduled comments plan-gated."
+    },
+    {
+      "id": "clickup-customizable-features",
+      "summary": "Vendor overview of modular features, role and plan boundaries."
+    },
+    {
+      "id": "clickup-demo-video-guide",
+      "summary": "Vendor editorial guide, not a played product demonstration or independent validation."
+    },
+    {
+      "id": "clickup-integration-personal",
+      "summary": "Vendor use-case guidance for hierarchy, fields, views and Brain; not measured outcomes."
+    },
+    {
+      "id": "clickup-integration-project",
+      "summary": "Vendor use-case directory includes SharePoint, Drive, time tracking, Zapier and Figma."
+    },
+    {
+      "id": "clickup-integration-marketing",
+      "summary": "Vendor examples include Miro objects/embeds, Make and Zapier."
+    },
+    {
+      "id": "clickup-integration-dev",
+      "summary": "Vendor examples of linking Spaces to GitLab, GitHub and Bitbucket."
+    },
+    {
+      "id": "clickup-refero-styles",
+      "summary": "Third-party public marketing page analysis: reports 4px base, 28px card padding, 12px element gap and font/radius observations. Not internal workspace tokens."
+    },
+    {
+      "id": "clickup-squint",
+      "summary": "Third-party editorial capture dated 2026-08-25; reports desktop/mobile consent overlay and hidden heading issues. No independent DOM or pixel verification."
+    }
+  ],
+  "failed_sources": [
+    {
+      "id": "clickup-ui-archive",
+      "reason": "Redirect loop"
+    },
+    {
+      "id": "clickup-sitepeel",
+      "reason": "Cache miss"
+    },
+    {
+      "id": "clickup-gummble-ios",
+      "reason": "Cache miss"
+    },
+    {
+      "id": "clickup-uiland-create",
+      "reason": "Cache miss"
+    },
+    {
+      "id": "clickup-uiland-goal",
+      "reason": "Not accessible via retrieval tool"
+    },
+    {
+      "id": "clickup-uiland-bookmark",
+      "reason": "Cache miss"
+    },
+    {
+      "id": "clickup-mobbin-web-a",
+      "reason": "Not accessible via retrieval tool"
+    },
+    {
+      "id": "clickup-mobbin-web-b",
+      "reason": "Not accessible via retrieval tool"
+    }
+  ],
+  "patterns": [
+    {
+      "id": "clickup-sprint-forecast-lock",
+      "title": "Forecast baseline and work commitment",
+      "source_ids": [
+        "clickup-sprint-run",
+        "clickup-sprint-intro",
+        "clickup-sprint-planning"
+      ],
+      "documented_behavior": "Backlog selection, assignment and estimation precede locking the sprint forecast. Existing tasks can be included without copying.",
+      "proposed_qa": "Test baseline vs changed scope, lock permissions, late additions and metric provenance.",
+      "evidence_status": "official public documentation reopened; runtime unverified"
+    },
+    {
+      "id": "clickup-sprint-settings-inheritance",
+      "title": "Timebox settings inheritance",
+      "source_ids": [
+        "clickup-sprint-activate",
+        "clickup-sprint-limits",
+        "clickup-sprint-points"
+      ],
+      "documented_behavior": "Default folder settings can be overridden; custom duration opt-in is irreversible; effort points may roll up and differ by assignee.",
+      "proposed_qa": "Test default/override, irreversible setting disclosure, roles and plan gates.",
+      "evidence_status": "official public documentation reopened; runtime unverified"
+    },
+    {
+      "id": "clickup-capacity-percent",
+      "title": "Capacity-based scheduling",
+      "source_ids": [
+        "clickup-workload-measure"
+      ],
+      "documented_behavior": "Daily saved work allocations or percentage of assignee capacity can represent planned work; weekly display may include hours and capacity.",
+      "proposed_qa": "Test zero capacity, partial days, calendar changes, actual/estimated distinction and accessibility.",
+      "evidence_status": "official public documentation reopened; runtime unverified"
+    },
+    {
+      "id": "clickup-gantt-linked-tree",
+      "title": "Linked hierarchy and timeline",
+      "source_ids": [
+        "clickup-gantt-planning"
+      ],
+      "documented_behavior": "Left task hierarchy and right dated bars share object identity; dependencies are represented in timeline.",
+      "proposed_qa": "Test synchronized scroll, undated items, selection, permission and keyboard access.",
+      "evidence_status": "official public documentation reopened; runtime unverified"
+    },
+    {
+      "id": "clickup-repo-connection-scope",
+      "title": "Repository-to-space integration",
+      "source_ids": [
+        "clickup-integration-github",
+        "clickup-integration-dev"
+      ],
+      "documented_behavior": "Repo and workspace admins have different setup roles; linked tasks reference external development activity.",
+      "proposed_qa": "Test revocation, cross-repo access, duplicate webhook events and source links.",
+      "evidence_status": "official public documentation reopened; runtime unverified"
+    },
+    {
+      "id": "clickup-calendar-event-boundary",
+      "title": "External calendar event boundary",
+      "source_ids": [
+        "clickup-integration-google-calendar",
+        "clickup-integration-outlook-calendar",
+        "clickup-integration-planner-events",
+        "clickup-calendar-directory"
+      ],
+      "documented_behavior": "Calendar events sync with Planner; Outlook tasks do not sync as events. iCal is one-way. Planner allows contextual event creation and linked objects.",
+      "proposed_qa": "Test event vs task, recurring events, timezone, conflicts, private visibility and disconnect.",
+      "evidence_status": "official public documentation reopened; runtime unverified"
+    },
+    {
+      "id": "clickup-connection-permission-discovery",
+      "title": "Central connection management",
+      "source_ids": [
+        "clickup-app-center",
+        "clickup-integration-drive",
+        "clickup-storage-directory"
+      ],
+      "documented_behavior": "App Center manages integrations, search and modular features; role permissions gate personal connections; Drive account selection scoped per workspace.",
+      "proposed_qa": "Test disabled vs unavailable, account switch, storage link access, consent and revocation.",
+      "evidence_status": "official public documentation reopened; runtime unverified"
+    },
+    {
+      "id": "clickup-integration-automation-setup",
+      "title": "Integration automation setup",
+      "source_ids": [
+        "clickup-integration-automations",
+        "clickup-integration-drive-automation"
+      ],
+      "documented_behavior": "Prebuilt or custom trigger/action plus conditions; eligible connection, feature toggle and plan are prerequisites.",
+      "proposed_qa": "Test missing connection, role/plan gate, validation, retry, audit and duplicate effects.",
+      "evidence_status": "official public documentation reopened; runtime unverified"
+    },
+    {
+      "id": "clickup-migration-fidelity-matrix",
+      "title": "Explicit migration compatibility",
+      "source_ids": [
+        "clickup-spreadsheet-prepare",
+        "clickup-import-notion",
+        "clickup-import-jira",
+        "clickup-import-overview"
+      ],
+      "documented_behavior": "Import format and source have distinct mapping and loss boundaries. Spreadsheet rows capped at 10,000; Notion properties mapped to text; Jira mapping and time ownership differ.",
+      "proposed_qa": "Test preflight, source-specific report, batching, identifiers, type conversions and ownership.",
+      "evidence_status": "official public documentation reopened; runtime unverified"
+    },
+    {
+      "id": "clickup-export-entitlement",
+      "title": "Export scope and entitlement",
+      "source_ids": [
+        "clickup-export-overview",
+        "clickup-import-export-limits",
+        "clickup-storage"
+      ],
+      "documented_behavior": "Exports differ by content type and plan; CSV attachment links are distinct from bytes; quota visibility can be aggregate only.",
+      "proposed_qa": "Test scope, entitlement, snapshot, missing attachment and transparent quota messaging.",
+      "evidence_status": "official public documentation reopened; runtime unverified"
+    },
+    {
+      "id": "clickup-document-sharing-scope",
+      "title": "Document and page sharing scope",
+      "source_ids": [
+        "clickup-share-docs"
+      ],
+      "documented_behavior": "Document and page access can target different subjects and hierarchy locations.",
+      "proposed_qa": "Test effective permissions, inheritance, direct link access and revocation.",
+      "evidence_status": "official public documentation reopened; runtime unverified"
+    },
+    {
+      "id": "clickup-identity-provider-boundary",
+      "title": "SSO and provisioning distinction",
+      "source_ids": [
+        "clickup-microsoft-sso",
+        "clickup-saml",
+        "clickup-security-defaults"
+      ],
+      "documented_behavior": "SSO sign-in and SCIM provisioning are distinct. Multiple Entra tenants or SCIM require custom SAML route according to vendor.",
+      "proposed_qa": "Test account link, provisioning, lockout recovery and administrator permission.",
+      "evidence_status": "official public documentation reopened; runtime unverified"
+    },
+    {
+      "id": "clickup-space-archive-recovery",
+      "title": "Container archive and restore",
+      "source_ids": [
+        "clickup-archive-space"
+      ],
+      "documented_behavior": "Archive retains searchable Space; deletion has bounded Trash recovery and role restrictions.",
+      "proposed_qa": "Test descendants, links, restore scope, permission and expired recovery.",
+      "evidence_status": "official public documentation reopened; runtime unverified"
+    },
+    {
+      "id": "clickup-voice-comment-draft",
+      "title": "Voice capture into comment draft",
+      "source_ids": [
+        "clickup-voice-clips",
+        "clickup-intro-comments",
+        "clickup-clip-limits"
+      ],
+      "documented_behavior": "Recording starts from microphone, cancel discards, finish uploads audio to draft, and recording hub collects clips; guest permissions differ.",
+      "proposed_qa": "Test microphone consent, draft deletion, upload pending/error, keyboard and transcription status.",
+      "evidence_status": "official public documentation reopened; runtime unverified"
+    },
+    {
+      "id": "clickup-recording-library",
+      "title": "Central recording library and review",
+      "source_ids": [
+        "clickup-clips-hub",
+        "clickup-syncup-recordings"
+      ],
+      "documented_behavior": "Recordings collected in hub; sharing link via row action; commenting requires workspace membership in documented preview flow.",
+      "proposed_qa": "Test link exposure, role, media processing, access revocation and comments.",
+      "evidence_status": "official public documentation reopened; runtime unverified"
+    },
+    {
+      "id": "clickup-mobile-launcher",
+      "title": "Mobile home and desktop entry",
+      "source_ids": [
+        "clickup-mobile-home",
+        "clickup-desktop-command"
+      ],
+      "documented_behavior": "Mobile default Home can change; desktop command bar uses configurable global hotkey and requires background app.",
+      "proposed_qa": "Test fallback, focus, shortcut collisions, permission and platform differences.",
+      "evidence_status": "official public documentation reopened; runtime unverified"
+    }
+  ],
+  "source_status_before": {
+    "verified": 260,
+    "search-result reviewed; direct fetch failed": 3,
+    "search-result reviewed; full article pending": 51,
+    "search-result reviewed; full section pending": 3
+  },
+  "source_status_after": {
+    "verified": 309,
+    "search-result reviewed; direct fetch failed": 8
+  },
+  "remaining": [
+    "Eight third-party leads unavailable through retrieval tool",
+    "No exhaustive Help Center denominator or full article corpus",
+    "No authenticated workspace CSS, interaction, motion or accessibility testing",
+    "No gallery image or video playback in this batch"
+  ]
+}

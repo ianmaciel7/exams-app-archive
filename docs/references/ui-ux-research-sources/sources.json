@@ -3696,7 +3696,9 @@
       "notes": "Redirect loop; token categories listed in search only.",
       "recorded_on": "2026-11-27",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Redirect loop; discovery lead retained, not a verified screen or runtime observation."
     },
     {
       "id": "clickup-sitepeel",
@@ -3707,18 +3709,22 @@
       "notes": "Cache miss; do not use purported tokens as verified.",
       "recorded_on": "2026-11-27",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Cache miss; discovery lead retained, not a verified screen or runtime observation."
     },
     {
       "id": "clickup-refero-styles",
       "title": "Refero Styles ClickUp",
       "url": "https://styles.refero.design/style/efcb73cb-b84a-4ae7-9a2b-e1116f79f130",
       "kind": "third-party-design-analysis",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Marketing site token candidate, not production workspace.",
       "recorded_on": "2026-11-27",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Third-party public marketing page analysis: reports 4px base, 28px card padding, 12px element gap and font/radius observations. Not internal workspace tokens."
     },
     {
       "id": "clickup-view-icons",
@@ -3864,7 +3870,9 @@
       "notes": "Cache miss; no iOS screen count asserted.",
       "recorded_on": "2026-11-27",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Cache miss; discovery lead retained, not a verified screen or runtime observation."
     },
     {
       "id": "clickup-nicelydone",
@@ -3904,66 +3912,78 @@
       "title": "Uiland ClickUp create screen",
       "url": "https://uiland.design/screens/clickup/screens/f317d0bb-e252-4c38-aa56-37cef23f0972/screen/d79f0e53-99f5-4017-a5fe-fbcfdb2abce2",
       "kind": "product-gallery",
-      "status": "search-result reviewed; full article pending",
+      "status": "search-result reviewed; direct fetch failed",
       "notes": "Mobile creation screen candidate.",
       "recorded_on": "2026-11-27",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Cache miss; discovery lead retained, not a verified screen or runtime observation."
     },
     {
       "id": "clickup-uiland-goal",
       "title": "Uiland ClickUp goal and task",
       "url": "https://uiland.design/screens/clickup/screens/f317d0bb-e252-4c38-aa56-37cef23f0972/screen/d464f66f-0dbd-4ad2-ad52-1c04ce530028",
       "kind": "product-gallery",
-      "status": "search-result reviewed; full article pending",
+      "status": "search-result reviewed; direct fetch failed",
       "notes": "Mobile goal/task screen candidate.",
       "recorded_on": "2026-11-27",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Not accessible via retrieval tool; discovery lead retained, not a verified screen or runtime observation."
     },
     {
       "id": "clickup-uiland-bookmark",
       "title": "Uiland ClickUp bookmarks",
       "url": "https://uiland.design/screens/clickup/screens/f317d0bb-e252-4c38-aa56-37cef23f0972/screen/8bd80c6a-c7f0-4a18-8881-69f327df7ca7",
       "kind": "product-gallery",
-      "status": "search-result reviewed; full article pending",
+      "status": "search-result reviewed; direct fetch failed",
       "notes": "Mobile bottom sheet candidate.",
       "recorded_on": "2026-11-27",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Cache miss; discovery lead retained, not a verified screen or runtime observation."
     },
     {
       "id": "clickup-mobbin-web-a",
       "title": "Mobbin ClickUp web screen A",
       "url": "https://mobbin.com/explore/screens/cb9d3f68-0824-457e-b951-cb42b20fdf7b",
       "kind": "product-gallery",
-      "status": "search-result reviewed; full article pending",
+      "status": "search-result reviewed; direct fetch failed",
       "notes": "Screen candidate; no visual behavior claim.",
       "recorded_on": "2026-11-27",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Not accessible via retrieval tool; discovery lead retained, not a verified screen or runtime observation."
     },
     {
       "id": "clickup-mobbin-web-b",
       "title": "Mobbin ClickUp web screen B",
       "url": "https://mobbin.com/explore/screens/7587be5b-57f1-49c3-b571-58b7859abb59",
       "kind": "product-gallery",
-      "status": "search-result reviewed; full article pending",
+      "status": "search-result reviewed; direct fetch failed",
       "notes": "Screen candidate; no visual behavior claim.",
       "recorded_on": "2026-11-27",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Not accessible via retrieval tool; discovery lead retained, not a verified screen or runtime observation."
     },
     {
       "id": "clickup-squint",
       "title": "Squint landing-page teardown",
       "url": "https://squint.page/sample-11/",
       "kind": "third-party-design-analysis",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Marketing page hierarchy analysis; not application CSS.",
       "recorded_on": "2026-11-27",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Third-party editorial capture dated 2026-08-25; reports desktop/mobile consent overlay and hidden heading issues. No independent DOM or pixel verification."
     },
     {
       "id": "clickup-feature-catalog",
@@ -4003,33 +4023,39 @@
       "title": "ClickUp 4.0 product page",
       "url": "https://clickup.com/v4",
       "kind": "official-documentation",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Vendor product positioning and navigation overview.",
       "recorded_on": "2026-11-27",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Product marketing page including 4.0 navigation and keynote; coming-soon and rollout claims are not runtime evidence."
     },
     {
       "id": "clickup-v4-news",
       "title": "ClickUp 4.0 announcement",
       "url": "https://clickup.com/news/clickup-4-0",
       "kind": "official-documentation",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Version announcement and personalized navigation.",
       "recorded_on": "2026-11-27",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Announcement dated December 9, 2025; historical version context, not current UI validation."
     },
     {
       "id": "clickup-clips-hub",
       "title": "Clips Hub",
       "url": "https://help.clickup.com/hc/en-us/articles/22210821909271-Clips-Hub",
       "kind": "official-documentation",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Recording hub and timestamped comments.",
       "recorded_on": "2026-11-27",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Automatically collects new clips, accessible from navigation and context entry."
     },
     {
       "id": "clickup-clip-recording",
@@ -4047,66 +4073,78 @@
       "title": "Clips feature availability and limits",
       "url": "https://help.clickup.com/hc/en-us/articles/32213057971095-Clips-feature-availability-and-limits",
       "kind": "official-documentation",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Plan-dependent feature availability.",
       "recorded_on": "2026-11-27",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Plan and role table; Free storage limits still apply; guest commenting restricted."
     },
     {
       "id": "clickup-voice-clips",
       "title": "Record, send, and transcribe Voice Clips",
       "url": "https://help.clickup.com/hc/en-us/articles/9810744743703-Record-send-and-transcribe-Voice-Clips",
       "kind": "official-documentation",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Audio comments and transcription.",
       "recorded_on": "2026-11-27",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Microphone starts recording; cancel discards; finish uploads to comment draft; recordings also saved in Clips Hub."
     },
     {
       "id": "clickup-syncup-recordings",
       "title": "Access, share, and comment on SyncUp recordings",
       "url": "https://help.clickup.com/hc/en-us/articles/31511366484759-Access-share-and-comment-on-SyncUp-recordings",
       "kind": "official-documentation",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Meeting recording playback, comments and sharing.",
       "recorded_on": "2026-11-27",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Recording link copied from row hover; workspace membership required to comment in public preview."
     },
     {
       "id": "clickup-intro-comments",
       "title": "Intro to comments",
       "url": "https://help.clickup.com/hc/en-us/articles/6309646134295-Intro-to-comments",
       "kind": "official-documentation",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Video and voice recording from comment composer.",
       "recorded_on": "2026-11-27",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Rich content and attachments in comments; plus opens block/format controls; scheduled comments plan-gated."
     },
     {
       "id": "clickup-customizable-features",
       "title": "Customizable ClickUp features",
       "url": "https://help.clickup.com/hc/en-us/articles/9559764679831-Customizable-ClickUp-features",
       "kind": "official-documentation",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "General product feature behavior.",
       "recorded_on": "2026-11-27",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Vendor overview of modular features, role and plan boundaries."
     },
     {
       "id": "clickup-demo-video-guide",
       "title": "Product demo video guide",
       "url": "https://clickup.com/blog/how-to-create-product-demo-video/",
       "kind": "vendor-editorial",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Editorial pointer to 4.0 product demonstration; no video inspected.",
       "recorded_on": "2026-11-27",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Vendor editorial guide, not a played product demonstration or independent validation."
     },
     {
       "id": "clickup-formula-create",
@@ -4362,10 +4400,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/40982447293207-How-to-use-Gantt-charts-for-project-planning",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Dependency scheduling, dates and milestones.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Interactive timeline with left task tree, horizontal bars and dependencies; vendor guidance on appropriate use."
     },
     {
       "id": "clickup-clickapps",
@@ -4397,10 +4437,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6303883602327-Use-Sprint-Points",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Configurable estimate and subtask rollup.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Configurable effort points, optional subtask rollup and per-assignee estimates."
     },
     {
       "id": "clickup-sprint-run",
@@ -4408,10 +4450,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6304342064151-Run-a-sprint",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Sprint flow and missing-estimate filtering.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Plan work, lock forecast, execute rituals; backlog, new tasks or tasks in multiple lists."
     },
     {
       "id": "clickup-sprint-limits",
@@ -4419,10 +4463,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/35714017592471-Sprints-feature-availability-and-limits",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Plan availability and automatic completion.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Plan and role matrix; Sprint Cards and Automations depend on plan; migration to new plans underway."
     },
     {
       "id": "clickup-sprint-activate",
@@ -4430,10 +4476,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/21362742005399-Activate-the-Sprints-ClickApp",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Sprint folders and estimate modes.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Space-level activation, effort mode and default folder settings; custom sprint duration opt-in cannot be reversed."
     },
     {
       "id": "clickup-sprint-intro",
@@ -4441,10 +4489,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6303974210071-Intro-to-Sprints",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Sprint feature model.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Dedicated Sprint Folders and Subfolders, timed cycles and progress tracking."
     },
     {
       "id": "clickup-sprint-planning",
@@ -4452,10 +4502,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/40976121279639-How-to-set-up-Sprint-planning-for-Agile-teams",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Backlog and reporting guidance.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Vendor guidance for backlog selection, estimates and burndown/velocity tracking."
     },
     {
       "id": "clickup-workload-measure",
@@ -4463,10 +4515,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/30799712357271-Measure-your-workload",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Effort measures and actual/estimate display.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Saved work-by-day allocations instead of flat averages; effort percentage of assignee capacity."
     },
     {
       "id": "clickup-integration-connect",
@@ -4485,10 +4539,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6305771568791-GitHub-integration",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Space-repository association and linked development activity.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Repository admin adds repo; workspace admin links to Space. Linked commits, branches and PRs; guests and limited members excluded."
     },
     {
       "id": "clickup-integration-automations",
@@ -4496,10 +4552,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6312091699735-Set-up-integration-Automations",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Supported third-party triggers and actions.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Template or custom integration trigger/action, configured conditions and creation from hierarchy location."
     },
     {
       "id": "clickup-integration-personal",
@@ -4507,10 +4565,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6328337765015-ClickUp-for-personal-productivity",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Productivity integration examples.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Vendor use-case guidance for hierarchy, fields, views and Brain; not measured outcomes."
     },
     {
       "id": "clickup-integration-project",
@@ -4518,10 +4578,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/9760934847639-Integrations-for-project-management",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Project integration examples.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Vendor use-case directory includes SharePoint, Drive, time tracking, Zapier and Figma."
     },
     {
       "id": "clickup-integration-marketing",
@@ -4529,10 +4591,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/9915577759639-Integrations-for-marketing-teams",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Marketing integration examples.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Vendor examples include Miro objects/embeds, Make and Zapier."
     },
     {
       "id": "clickup-integration-dev",
@@ -4540,10 +4604,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/35923123576343-Integrations-for-software-development",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Development integration examples.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Vendor examples of linking Spaces to GitLab, GitHub and Bitbucket."
     },
     {
       "id": "clickup-integration-google-calendar",
@@ -4551,10 +4617,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6336507264663-Google-Calendar-integration",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Personal bidirectional event sync and AI tools.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Private personal connection; bidirectional event sync through Planner, AI tools and commands."
     },
     {
       "id": "clickup-integration-outlook-calendar",
@@ -4562,10 +4630,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/30618267005975-Outlook-Calendar-integration",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Outlook calendar integration.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Events sync with Planner; Planner tasks do not become Outlook events. Existing Outlook visibility permissions apply."
     },
     {
       "id": "clickup-integration-planner-events",
@@ -4573,10 +4643,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/35975552416023-Create-events-and-schedule-meetings-from-your-Planner",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Event creation from planner.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Create by clicking time or sidebar plus; add attendees, meeting provider, task/doc links and location."
     },
     {
       "id": "clickup-integration-drive",
@@ -4584,10 +4656,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/14841781940759-Google-Drive-integration",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "External files, embed, preview, creation, OAuth scope.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "One authorized Drive account per user per Workspace; connection types control features and personal search visibility."
     },
     {
       "id": "clickup-integration-drive-automation",
@@ -4595,10 +4669,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/37940170554519-Google-Drive-Automations",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Drive automations.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Requires personal Drive connection, Automation ClickApp and eligible plan/role."
     },
     {
       "id": "clickup-integration-figma",
@@ -4628,10 +4704,12 @@
       "url": "https://help.clickup.com/hc/en-us/sections/6131948315799-Calendar-integrations",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full section pending",
+      "status": "verified",
       "notes": "Section discovery.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Directory includes Google, Outlook, Morgen, Calendly and one-way iCal sync."
     },
     {
       "id": "clickup-storage-directory",
@@ -4639,10 +4717,12 @@
       "url": "https://help.clickup.com/hc/en-us/sections/6308527765399-Storage",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full section pending",
+      "status": "verified",
       "notes": "Section discovery.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Directory includes cloud storage introduction, Drive, Dropbox and Box."
     },
     {
       "id": "clickup-spreadsheet-import",
@@ -4661,10 +4741,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6310821748759-Prepare-a-spreadsheet-for-import",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Prepare source format and hierarchy.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Five supported format families; 10,000-row maximum per spreadsheet, split larger files."
     },
     {
       "id": "clickup-import-overview",
@@ -4672,10 +4754,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6311099045783-How-do-I-import-my-work-into-ClickUp",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Migration entry and supported sources.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Directory of migration sources including Asana, Basecamp, Confluence, Jira, Monday, Notion, Todoist, Teamwork, Trello, Slack and Wrike."
     },
     {
       "id": "clickup-import-history",
@@ -4716,10 +4800,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6310786693015-How-do-I-export-my-Workspace-s-data",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Export by content type.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Task CSV, attachments, views, Docs, cards, whiteboards and API; links are not attachment bytes."
     },
     {
       "id": "clickup-import-docs",
@@ -4738,10 +4824,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/21376442610839-Import-from-Notion",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Notion pages to Docs.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Databases become a single folder; fields become Text properties; some comments, descriptions, attachments, buttons and wikis excluded."
     },
     {
       "id": "clickup-import-jira",
@@ -4749,10 +4837,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6310954639255-Import-from-Jira",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "New versus legacy importer.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "New upload importer supports on-premises and mappings; legacy API alternative. 50 GB upload cap; time ownership changes."
     },
     {
       "id": "clickup-import-export-limits",
@@ -4760,10 +4850,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/30782347809815-Import-and-export-feature-availability-and-limits",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Role and plan restrictions.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Unlimited imports; export quotas and availability differ across old and new plans."
     },
     {
       "id": "clickup-export-doc",
@@ -4782,10 +4874,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6325333637271-Share-Docs",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Sharing and exporting from document surfaces.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Doc/page sharing by workspace, people, teams, invited users and hierarchy locations."
     },
     {
       "id": "clickup-backups",
@@ -4804,10 +4898,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6310498579607-Manage-your-Workspace-storage",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Storage quotas and Trash boundary.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Free plan storage usage indicator without per-item breakdown."
     },
     {
       "id": "clickup-security",
@@ -4815,10 +4911,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6327713963031-Privacy-and-security",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Vendor security statements and permission retention.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Vendor reports AWS hosting, SOC 2 and ISO certifications, PCI DSS, external testing and bounty program; not independently audited."
     },
     {
       "id": "clickup-security-defaults",
@@ -4826,10 +4924,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/21797055143575-Default-security-settings",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Default security configuration.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Owner/admin security and permissions page; settings vary by role/plan."
     },
     {
       "id": "clickup-audit-limits",
@@ -4914,10 +5014,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6305100485015-Microsoft-single-sign-on",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Microsoft SSO; SCIM requires custom SAML.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Microsoft 365/Entra login; custom SAML needed for multiple tenants or SCIM provisioning."
     },
     {
       "id": "clickup-saml",
@@ -4925,10 +5027,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6305027039767-Configure-custom-SAML-single-sign-on",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Custom SAML configuration.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "SAML 2.0 IdP integration; Enterprise and permission constraints; link user accounts."
     },
     {
       "id": "clickup-archive-space",
@@ -4936,10 +5040,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/6309342765079-Archive-or-restore-Spaces",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Archive and restore hierarchy locations.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Archive is searchable; deleted Spaces have 30-day restore period; guests cannot archive or delete."
     },
     {
       "id": "clickup-app-center",
@@ -4947,10 +5053,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/12580135233559-Intro-to-the-App-Center",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Connection status filtering and scope.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Central integrations, Connected Search and ClickApps; personal connection option gated by role permission."
     },
     {
       "id": "clickup-desktop-command",
@@ -4958,10 +5066,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/14952556494359-Use-AI-Command-Bar-on-the-desktop-app",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "System-wide search entry.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Desktop app background process required; configurable Ctrl/Cmd+J launcher."
     },
     {
       "id": "clickup-mobile-home",
@@ -4969,10 +5079,12 @@
       "url": "https://help.clickup.com/hc/en-us/articles/15146214337559-Intro-to-Home-on-mobile",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full article pending",
+      "status": "verified",
       "notes": "Mobile home and search entry.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Default mobile landing page configurable; Home tiles provide access to key pages."
     },
     {
       "id": "clickup-import-export-section",
@@ -4991,10 +5103,12 @@
       "url": "https://help.clickup.com/hc/en-us/sections/19621597921943-Privacy-and-security",
       "kind": "official-documentation",
       "recorded_on": "2026-11-27",
-      "status": "search-result reviewed; full section pending",
+      "status": "verified",
       "notes": "Section discovery.",
       "storage": "link-only",
-      "product": "ClickUp"
+      "product": "ClickUp",
+      "reviewed_on": "2026-11-27",
+      "review_note": "Section index: backup, prompt injection, third-party cookies, public authentication, retention and SSO."
     }
   ]
 }

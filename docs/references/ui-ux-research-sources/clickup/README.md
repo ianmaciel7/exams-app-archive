@@ -160,3 +160,8 @@ Machine-readable inventory: [inventory.json](inventory.json). Source registry: [
 
 - [Reopened references and interaction behaviors](review-behaviors-2026-11-27.md)
 - [Structured review](review-behaviors-2026-11-27.json)
+
+## Eleventh extraction batch
+
+- [Remaining-source review, planning and portability](review-planning-portability-2026-11-27.md)
+- [Structured review](review-planning-portability-2026-11-27.json)
