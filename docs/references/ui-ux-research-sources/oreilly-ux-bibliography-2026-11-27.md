@@ -49,3 +49,13 @@ Author/publisher references:
 - https://www.flickr.com/photos/designingwebinterfaces/collections/72157606817815788/ — collection claims 565 figures from Designing Web Interfaces; link-only, license of each figure must be checked, no bulk reproduction.
 
 Next step: compare candidate source paths, licenses, upstream provenance and actual pattern coverage against archive/plugin catalogs. Do not treat public visibility as reuse permission, or install third-party skills without security review. No new plugin release in this discovery.
+
+## Publisher companion verification and additional GitHub leads — 2026-11-27
+
+- Official companion confirmed by publisher preface: https://github.com/PacktPublishing/Designing-and-Prototyping-Interfaces-with-Figma-Third-edition ; https://subscription.packtpub.com/book/web-development/9781805805892/pref/preflvl1sec04/to-get-the-most-out-of-this-book . Third edition; Figma variables, conditional prototyping, layout and device testing. Packt publication available in O'Reilly catalog, not published by O'Reilly Media.
+- Publisher organization: https://github.com/oreillymedia ; https://github.com/orgs/oreillymedia/repositories ; https://github.com/PacktPublishing .
+- Community references (search excerpts, not official book companions or audited code): https://github.com/phazurlabs/sumi/blob/main/skills/desktop-app-design/references/data-dense-interfaces.md (cites Designing Interfaces and Apple HIG); https://github.com/SixArm/ui-ux-design-guide ; https://github.com/natenberenstein/deep-dive-ui-ux/blob/main/resources/books-and-papers.md ; https://github.com/BenVanZee/ux-review ; https://github.com/tipoqueno/information-architecture ; https://github.com/plainspace/devour-skills/blob/main/references/reading-list.md ; https://github.com/rastian/ux-laws .
+- Author-maintained public Lean UX resources: https://leanuxbook.com/ ; https://jeffgothelf.com/blog/the-lean-ux-canvas/ ; https://jeffgothelf.com/blog/leanuxcanvas-v2/comment-page-1/ . Not GitHub companions.
+- No official GitHub book companion established for Designing AI Interfaces, Designing Interfaces, Designing Web Interfaces, Information Architecture, UX Skills for Business Strategy, AI in UX Design, Articulating Design Decisions or Mobile Design Pattern Gallery in these search results. A community citation is not full coverage or authorization to redistribute a book. Review actual files and licenses before extracting reusable knowledge; do not install third-party skills automatically.
+
+Scope: public web search and publisher preface evidence only; no complete book, repository-wide audit, plugin release, or structured index update.
