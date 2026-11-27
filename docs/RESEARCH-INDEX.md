@@ -30,3 +30,7 @@ python scripts/research_index.py sidebar --product ClickUp --kind pattern
 python scripts/research_index.py "filter draft" --product ClickUp --kind pattern
 python scripts/research_index.py ClickUp --product ClickUp --kind source
 ```
+
+## Operational index membership
+
+Use `python scripts/research_index.py --coverage --db .cache/public-research.sqlite` to build/reconcile the current explicitly approved public projection and report exact membership counts by catalog. Create the database parent directory first if needed. Use `python scripts/research_index.py --verify-index --db .cache/public-research.sqlite` to check an existing database in read-only mode without rebuilding, returning nonzero for drift. Missing, stale, duplicate and unexpected FTS/metadata entries are reported; the next build repairs them. Empty denominators are unknown, not 100%. This measures stored row membership only, not semantic retrieval accuracy, source completeness, media inspection or private historical coverage.

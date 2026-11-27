@@ -1,5 +1,7 @@
 # Semantic Ingestion & Source Coverage Audit (#82)
 
+> **Methodology correction (2026-11-27):** This historical extraction audit mixed remote source placeholders and local file occurrences, and inferred indexed/queryable/verified stages from extraction or local hashes. Those counts do not demonstrate operational index coverage. Index coverage is NOT MEASURED by this snapshot; preserve the figures for historical traceability only.
+
 - Generated at: `2026-11-25T22:31:17.586837+00:00`
 - Registry version: `1.0.0` (`9224f9c30c762475`)
 - Egress policy: `offline-local-only`

@@ -42,24 +42,34 @@ def validate(taxonomy, records):
 
 
 def labels(concept):
-    return {norm(s) for s in [concept["id"], concept["en"], concept["pt"], *concept["aliases"]] if norm(s)}
+    return {value for raw in (concept["id"], concept["en"], concept["pt"], *concept["aliases"])
+            if (value := norm(raw))}
+
+
+def _label_index(concepts):
+    # Build once per validated taxonomy snapshot, never reuse mutable global state.
+    return {ident: labels(concept) for ident, concept in concepts.items()}
 
 
 def resolve(query, concepts):
+    return _resolve_indexed(query, _label_index(concepts))
+
+
+def _resolve_indexed(query, index):
     q = norm(query)
     if not q:
         return []
-    exact = [c["id"] for c in concepts.values() if q in labels(c)]
+    exact = [ident for ident, terms in index.items() if q in terms]
     if exact:
         return sorted(exact)
     words = q.split()
     matches = []
-    for c in concepts.values():
-        for term in labels(c):
+    for ident, terms in index.items():
+        for term in terms:
             parts = term.split()
             for start in range(len(words) - len(parts) + 1):
                 if words[start:start + len(parts)] == parts:
-                    matches.append((start, start + len(parts), c["id"]))
+                    matches.append((start, start + len(parts), ident))
     # Remove only matches contained in a longer phrase, not separate concepts.
     return sorted({ident for start, end, ident in matches
                    if not any(a <= start and end <= b and b-a > end-start
@@ -69,6 +79,7 @@ def resolve(query, concepts):
 def group_records(records, taxonomy):
     concepts = validate(taxonomy, records)
     groups = defaultdict(dict)
+    index = _label_index(concepts)
     for c in concepts.values():
         for ident in c["members"]:
             groups[c["id"]][ident] = "curated"
@@ -80,7 +91,7 @@ def group_records(records, taxonomy):
         item = row.get("record", {})
         fields = [row["title"], *item.get("keywords", [])]
         for field in fields:
-            for ident in resolve(field, concepts):
+            for ident in _resolve_indexed(field, index):
                 groups[ident].setdefault(row["id"], "lexical-candidate")
     return concepts, groups
 

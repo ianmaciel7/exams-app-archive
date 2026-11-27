@@ -46,7 +46,20 @@ class SemanticIngestionAuditTests(unittest.TestCase):
         )
         # Ensure authenticated unavailable sources are explicitly tracked as unavailable publicly
         self.assertGreater(summary["by_lifecycle_state"].get("unavailable", 0), 0)
-        self.assertGreater(summary["by_lifecycle_state"].get("verified", 0), 0)
+        self.assertGreater(summary["by_local_file_lifecycle_state"].get("extracted", 0), 0)
+        # Extraction and file hashes are not proof of operational index membership.
+        self.assertEqual(summary["index_coverage_status"], "NOT_MEASURED")
+        self.assertIsNone(summary["index_coverage_percent"])
+        local = summary["by_local_file_lifecycle_state"]
+        remote = summary["by_remote_source_lifecycle_state"]
+        for state in ("indexed", "queryable", "verified"):
+            self.assertEqual(local.get(state, 0), 0)
+        self.assertEqual(sum(local.values()), summary["local_eligible_occurrences"])
+        self.assertEqual(sum(local.values()) - local.get("unavailable", 0), summary["files_included"])
+        self.assertEqual(sum(remote.values()), sum(s["adapter"] != "local_fs" for s in self.audit["sources"]))
+        for state in sia.LIFECYCLE_STATES:
+            self.assertEqual(summary["by_lifecycle_state"].get(state, 0),
+                             local.get(state, 0) + remote.get(state, 0))
 
     def test_visual_media_distinguishes_verified_vs_inferred(self) -> None:
         vis = self.audit["visual_media_audit"]
@@ -82,6 +95,8 @@ class SemanticIngestionAuditTests(unittest.TestCase):
             md_txt = mpath.read_text(encoding="utf-8")
             self.assertEqual(loaded["summary"]["files_included"], self.audit["summary"]["files_included"])
             self.assertIn("# Semantic Ingestion & Source Coverage Audit (#82)", md_txt)
+            self.assertIn("Index coverage: **NOT MEASURED**", md_txt)
+            self.assertIn("Local file occurrences | Remote sources", md_txt)
             self.assertFalse(EMOJI_REGEX.search(md_txt))
             self.assertFalse(EMOJI_REGEX.search(jpath.read_text(encoding="utf-8")))
 
