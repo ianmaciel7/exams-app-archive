@@ -59,3 +59,14 @@ Next step: compare candidate source paths, licenses, upstream provenance and act
 - No official GitHub book companion established for Designing AI Interfaces, Designing Interfaces, Designing Web Interfaces, Information Architecture, UX Skills for Business Strategy, AI in UX Design, Articulating Design Decisions or Mobile Design Pattern Gallery in these search results. A community citation is not full coverage or authorization to redistribute a book. Review actual files and licenses before extracting reusable knowledge; do not install third-party skills automatically.
 
 Scope: public web search and publisher preface evidence only; no complete book, repository-wide audit, plugin release, or structured index update.
+
+## Legal online reading and public preview access — 2026-11-27
+
+Publisher catalog and preview pages confirmed in search; no full paid text accessed.
+- Designing AI Interfaces (2026): https://www.oreilly.com/library/view/designing-ai-interfaces/9798341639812/ ; agentic AI chapter preview https://www.oreilly.com/library/view/designing-ai-interfaces/9798341639812/ch06.html ; index https://www.oreilly.com/library/view/designing-ai-interfaces/9798341639812/ix01.html ; Portuguese edition https://www.oreilly.com/library/view/projetando-interfaces-de/0642572353162/ ; Brazilian publisher https://novatec.com.br/livros/design-interfaces-ia/ .
+- Designing Interfaces 3e: Portuguese catalog https://www.oreilly.com/library/view/design-de-interfaces/9798341641532/ ; Google Books bibliographic record for 2020 third edition https://books.google.com/books/about/Designing_Interfaces.html?id=agTBxQEACAAJ ; older second edition preview https://books.google.com/books/about/Designing_Interfaces.html?id=5gvOU9X0fu0C .
+- Designing Web Interfaces: public first-section preview https://www.oreilly.com/library/view/designing-web-interfaces/9780596155353/pt01.html .
+- Information Architecture 4e Portuguese https://www.oreilly.com/library/view/arquitetura-da-informacao/9798341641549/ ; English index https://www.oreilly.com/library/view/information-architecture-4th/9781491913529/ix01.html .
+- Laws of UX 2e Portuguese https://www.oreilly.com/library/view/leis-de-ux/9798341636989/ ; author public site https://lawsofux.com/book/ .
+- Publisher subscription/trial https://www.oreilly.com/online-learning/individuals (10-day trial advertised; eligibility and terms apply). Library lending catalog for older Designing Interfaces edition https://www.overdrive.com/media/595905/designing-interfaces ; actual loan availability depends on library.
+Do not bypass access controls or treat preview navigation as full chapter access. No full texts, artwork, complete TOCs or restricted assets retained. No plugin release or index rebuild in this discovery.
