@@ -874,7 +874,11 @@
         "app shells",
         "app shell",
         "app-shell",
-        "shell de aplicação"
+        "shell de aplicação",
+        "app shell selection",
+        "como escolher app shell",
+        "escolha de app shell",
+        "critérios de escolha de app shell"
       ],
       "members": [
         "general:shell.holy-grail",
@@ -894,7 +898,16 @@
         "general:shell.console",
         "general:shell.hub-spoke",
         "general:shell.drill-down",
-        "general:shell.suite"
+        "general:shell.suite",
+        "general:shell.sdi",
+        "general:shell.mdi",
+        "general:shell.tdi",
+        "general:shell.ribbon",
+        "general:shell.map-list",
+        "general:shell.resource-detail-hub",
+        "general:shell.region-roles",
+        "general:shell.responsive-transition",
+        "general:shell.selection-method"
       ]
     }
   ]
