@@ -15,6 +15,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 from pathlib import Path
 import sqlite3
 import subprocess
@@ -25,8 +26,8 @@ from typing import Any
 
 CANONICAL_SOURCE = "ianmaciel7/exams-app-archive@main:plugins/exams-archive-native/"
 EXPECTED_PLUGIN_ID = "plugins_6b04aaa9fd848191a24525011f76e2bb"
-EXPECTED_VERSION = "0.8.7"
-VALID_VERSIONS = {"0.6.0", "0.7.0", "0.8.0", "0.8.1", "0.8.4", "0.8.5", "0.8.6", "0.8.7"}
+EXPECTED_VERSION = "0.8.23"
+VALID_VERSIONS = {"0.6.0", "0.7.0", "0.8.0", "0.8.1", "0.8.4", "0.8.5", "0.8.6", "0.8.7", "0.8.23"}
 EXPECTED_RELEASE_ID = "pluginrel_6b0869c028588191ad34c74a263fa9cc"
 VALID_RELEASE_IDS = {
     EXPECTED_RELEASE_ID,
@@ -48,7 +49,13 @@ CANONICAL_FILES: tuple[str, ...] = (
     "plugin.json",
     "README.md",
     "references/visual-evidence-discovery-2026-11-25.md",
+    "skills/app-shell-selection/SKILL.md",
+    "skills/artifact-portal-qa/SKILL.md",
     "skills/design-foundations-decisions/SKILL.md",
+    "skills/fidelity-non-regression/SKILL.md",
+    "skills/laws-of-ux/SKILL.md",
+    "skills/save/SKILL.md",
+    "skills/whiteboard-tools-comments/SKILL.md",
     "skills/shared-ux-knowledge/SKILL.md",
     "skills/visual-evidence-discovery/SKILL.md",
     "scripts/archive_query.py",
@@ -112,10 +119,16 @@ def verify_sync_state(sync_state_path: Path) -> dict[str, Any]:
         )
 
     last_release_id = data.get("last_published_release_id")
-    if last_release_id not in VALID_RELEASE_IDS:
-        raise ValueError(
-            f"release_id mismatch: {last_release_id} not in {VALID_RELEASE_IDS}"
-        )
+    # The repository is public. Private release identifiers must not be published.
+    # Redaction is allowed only with an explicit verification record pinned to a
+    # full Git commit; it does not establish live plugin parity by itself.
+    if last_release_id is None:
+        if data.get("release_id_redacted") is not True:
+            raise ValueError("release_id missing without explicit redaction")
+        if not re.fullmatch(r"[0-9a-f]{40}", str(data.get("verified_commit", ""))):
+            raise ValueError("redacted release requires a full verified_commit SHA")
+    elif last_release_id not in VALID_RELEASE_IDS:
+        raise ValueError("release_id mismatch: unknown historical release")
 
     status = data.get("status")
     if status not in VALID_SYNC_STATUSES:
@@ -129,6 +142,9 @@ def verify_sync_state(sync_state_path: Path) -> dict[str, Any]:
         "release_id": last_release_id,
         "version": desired_ver,
         "status": status,
+        "release_id_redacted": data.get("release_id_redacted") is True,
+        "verified_files": data.get("verified_files"),
+        "verification_scope": "recorded readback, not live verification",
     }
 
 
@@ -225,7 +241,7 @@ def compare_package_trees(
     canonical_map: dict[str, bytes],
     target_map: dict[str, bytes],
 ) -> dict[str, Any]:
-    """Compare canonical 19 package files against target release file map."""
+    """Compare explicit canonical package files against target release file map."""
     details: dict[str, str] = {}
     byte_identical_count = 0
     json_semantic_count = 0
