@@ -2,13 +2,13 @@
   "schema": 2,
   "source_of_truth": "ianmaciel7/exams-app-archive@main:plugins/exams-archive-native/",
   "plugin_id": "plugins_6b04aaa9fd848191a24525011f76e2bb",
-  "desired_version": "0.8.26",
+  "desired_version": "0.8.27",
   "last_published_release_id": null,
-  "last_published_version": "0.8.26",
-  "status": "changed-files-verified",
-  "note": "Four manifests and new apple-hig-design-craft skill verified byte-for-byte between published release and GitHub. Full unchanged package not revalidated; no local-client or CI execution claimed. Private release identifiers not exported.",
-  "verified_files": 5,
-  "byte_identical_files": 5,
+  "last_published_version": "0.8.27",
+  "status": "pending-post-commit-verification",
+  "note": "ChatGPT release read back: three new skill bodies and two manifests. Candidate mirror has all four manifests at 0.8.27. Post-merge readback, CI and local-client checks pending; no private release ID exported.",
+  "verified_files": 0,
+  "byte_identical_files": 0,
   "json_semantic_equivalent_files": [],
-  "verified_commit": "0163f4c4588667c4ac1bc7a1551e764290798a48"
+  "verified_commit": null
 }

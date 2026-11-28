@@ -1,0 +1,277 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-28",
+  "title": "Apple-derived operational quality",
+  "scope": "13 operational depth enrichments; no claim of exhaustive HIG coverage or actual runtime acceptance",
+  "pattern_count": 13,
+  "patterns": [
+    {
+      "id": "hig-selective-routing",
+      "name": "HIG selective source routing / roteamento de conhecimento",
+      "behavior": "Select foundations, platform and task article; bounded related expansion; classify primary guidance vs interpretation.",
+      "acceptance": "Trace each recommendation to source, version, platform or project choice; no ungrounded native-to-web rules.",
+      "skill_path": "plugins/exams-archive-native/skills/adaptive-workspace-design/SKILL.md",
+      "source_ids": [
+        "hig-routing",
+        "hig-router",
+        "hig-layout"
+      ],
+      "evidence_status": "Independent operational enrichment from reviewed skill entrypoints; proposed acceptance checks, runtime not executed.",
+      "classification": "operational enrichment, not a novel universal pattern"
+    },
+    {
+      "id": "continuous-adaptive-resize",
+      "name": "Continuous adaptive resize / redimensionamento contínuo",
+      "behavior": "Container-local constraints, stable state, collapse order and focus recovery.",
+      "acceptance": "Narrow-wide-narrow, zoom, long labels, splitter cancel; preserve selection, scroll and draft.",
+      "skill_path": "plugins/exams-archive-native/skills/adaptive-workspace-design/SKILL.md",
+      "source_ids": [
+        "xcode",
+        "hig-layout"
+      ],
+      "evidence_status": "Independent operational enrichment from reviewed skill entrypoints; proposed acceptance checks, runtime not executed.",
+      "classification": "operational enrichment, not a novel universal pattern"
+    },
+    {
+      "id": "toolbar-priority-overflow",
+      "name": "Toolbar priority and overflow / prioridade de comandos",
+      "behavior": "Explicit command groups and deterministic overflow with essential actions reachable.",
+      "acceptance": "Test width thresholds, localization, keyboard/touch, anchor and focus return.",
+      "skill_path": "plugins/exams-archive-native/skills/adaptive-workspace-design/SKILL.md",
+      "source_ids": [
+        "hig-toolbar",
+        "openai-macos"
+      ],
+      "evidence_status": "Independent operational enrichment from reviewed skill entrypoints; proposed acceptance checks, runtime not executed.",
+      "classification": "operational enrichment, not a novel universal pattern"
+    },
+    {
+      "id": "window-panel-lifecycle",
+      "name": "Window, tab and panel lifecycle / restauração do workspace",
+      "behavior": "Separate object identity, view instance and durable state; dispose on close.",
+      "acceptance": "Test duplicate opening, reopen, restore, scope isolation, close active and history.",
+      "skill_path": "plugins/exams-archive-native/skills/adaptive-workspace-design/SKILL.md",
+      "source_ids": [
+        "openai-macos",
+        "xcode"
+      ],
+      "evidence_status": "Independent operational enrichment from reviewed skill entrypoints; proposed acceptance checks, runtime not executed.",
+      "classification": "operational enrichment, not a novel universal pattern"
+    },
+    {
+      "id": "document-save-recovery",
+      "name": "Document autosave, undo and recovery / recuperação de documentos",
+      "behavior": "Revision-guard saves, recoverable drafts, undo scope, conflict handling.",
+      "acceptance": "Test edit during save, offline, retry, conflict and reload; no false saved state.",
+      "skill_path": "plugins/exams-archive-native/skills/adaptive-workspace-design/SKILL.md",
+      "source_ids": [
+        "xcode"
+      ],
+      "evidence_status": "Independent operational enrichment from reviewed skill entrypoints; proposed acceptance checks, runtime not executed.",
+      "classification": "operational enrichment, not a novel universal pattern"
+    },
+    {
+      "id": "gesture-ownership-parity",
+      "name": "Multimodal gesture ownership / conflitos de gestos",
+      "behavior": "Define precedence of press, scroll, drag, pinch and selection; provide alternative inputs.",
+      "acceptance": "Test pointercancel, nested scrolling, long press, keyboard reorder, no duplicate action.",
+      "skill_path": "plugins/exams-archive-native/skills/adaptive-workspace-design/SKILL.md",
+      "source_ids": [
+        "xcode",
+        "hig-router"
+      ],
+      "evidence_status": "Independent operational enrichment from reviewed skill entrypoints; proposed acceptance checks, runtime not executed.",
+      "classification": "operational enrichment, not a novel universal pattern"
+    },
+    {
+      "id": "runtime-accessibility-evidence",
+      "name": "Runtime accessibility evidence / acessibilidade real",
+      "behavior": "Automated and manual semantic, keyboard, assistive technology and composited contrast checks.",
+      "acceptance": "Record tested AT/version, focus, reflow, reduced motion, failures and not-run checks.",
+      "skill_path": "plugins/exams-archive-native/skills/runtime-ui-verification/SKILL.md",
+      "source_ids": [
+        "wcag",
+        "openai-ios",
+        "hig-router"
+      ],
+      "evidence_status": "Independent operational enrichment from reviewed skill entrypoints; proposed acceptance checks, runtime not executed.",
+      "classification": "operational enrichment, not a novel universal pattern"
+    },
+    {
+      "id": "functional-visual-evidence",
+      "name": "Functional visual evidence / captura e comportamento",
+      "behavior": "Bind deployed revision, fixture, screenshot, semantic tree, interaction assertion and logs.",
+      "acceptance": "Reproduce requested state and verify behavior; screenshot alone not proof.",
+      "skill_path": "plugins/exams-archive-native/skills/runtime-ui-verification/SKILL.md",
+      "source_ids": [
+        "xcode",
+        "openai-ios"
+      ],
+      "evidence_status": "Independent operational enrichment from reviewed skill entrypoints; proposed acceptance checks, runtime not executed.",
+      "classification": "operational enrichment, not a novel universal pattern"
+    },
+    {
+      "id": "comparable-performance-profiling",
+      "name": "Comparable performance profiling / medição de desempenho",
+      "behavior": "Repeat same workload and environment; preserve raw samples, distinguish hypotheses from measurement.",
+      "acceptance": "Baseline vs candidate with correctness, cancellation, variance and explicit attribution.",
+      "skill_path": "plugins/exams-archive-native/skills/runtime-ui-verification/SKILL.md",
+      "source_ids": [
+        "runtime-proof",
+        "openai-ios"
+      ],
+      "evidence_status": "Independent operational enrichment from reviewed skill entrypoints; proposed acceptance checks, runtime not executed.",
+      "classification": "operational enrichment, not a novel universal pattern"
+    },
+    {
+      "id": "privacy-bounded-telemetry",
+      "name": "Privacy-bounded telemetry / telemetria com privacidade",
+      "behavior": "Typed allowlist, low-cardinality metadata, bounded retention and authorized export.",
+      "acceptance": "Assert no private payload, unknown fields or unintended network export.",
+      "skill_path": "plugins/exams-archive-native/skills/runtime-ui-verification/SKILL.md",
+      "source_ids": [
+        "privacy",
+        "openai-macos"
+      ],
+      "evidence_status": "Independent operational enrichment from reviewed skill entrypoints; proposed acceptance checks, runtime not executed.",
+      "classification": "operational enrichment, not a novel universal pattern"
+    },
+    {
+      "id": "agent-action-contract",
+      "name": "Agent action contracts / ferramentas de IA",
+      "behavior": "Stable identifiers, typed schemas, deterministic authority, side effects and idempotency.",
+      "acceptance": "Test duplicate request, cancellation, stale outputs, permissions, uncertain outcome reconciliation.",
+      "skill_path": "plugins/exams-archive-native/skills/agent-action-context-quality/SKILL.md",
+      "source_ids": [
+        "xcode",
+        "agent-eval"
+      ],
+      "evidence_status": "Independent operational enrichment from reviewed skill entrypoints; proposed acceptance checks, runtime not executed.",
+      "classification": "operational enrichment, not a novel universal pattern"
+    },
+    {
+      "id": "agent-action-evaluation",
+      "name": "Agent action evaluation / avaliação de agentes",
+      "behavior": "Versioned fixtures test tool selection, arguments, forbidden effects, fallback and schema.",
+      "acceptance": "Isolated fixtures with hidden labels, record denominator and failures; separate retrieval metrics.",
+      "skill_path": "plugins/exams-archive-native/skills/agent-action-context-quality/SKILL.md",
+      "source_ids": [
+        "xcode",
+        "agent-eval"
+      ],
+      "evidence_status": "Independent operational enrichment from reviewed skill entrypoints; proposed acceptance checks, runtime not executed.",
+      "classification": "operational enrichment, not a novel universal pattern"
+    },
+    {
+      "id": "conversation-context-lifecycle",
+      "name": "Conversation transcript lifecycle / gerenciamento de contexto",
+      "behavior": "Selective skill loading, compact completed exchanges, preserve durable decisions and pending calls.",
+      "acceptance": "Measure token/latency and context-loss regressions in long sessions; preserve authorization boundaries.",
+      "skill_path": "plugins/exams-archive-native/skills/agent-action-context-quality/SKILL.md",
+      "source_ids": [
+        "foundation-models",
+        "hig-routing"
+      ],
+      "evidence_status": "Independent operational enrichment from reviewed skill entrypoints; proposed acceptance checks, runtime not executed.",
+      "classification": "operational enrichment, not a novel universal pattern"
+    }
+  ],
+  "sources": [
+    {
+      "id": "xcode",
+      "title": "Exported Xcode skills (independent mirror)",
+      "url": "https://github.com/mariusfanu/xcode-skills",
+      "recorded_on": "2026-11-28",
+      "storage": "link-only",
+      "evidence_status": "Source pointer from reviewed skills; verify current primary documentation for exact platform requirements."
+    },
+    {
+      "id": "hig-routing",
+      "title": "HIG Agent Skills",
+      "url": "https://github.com/justinwetch/HIGAgentSkills",
+      "recorded_on": "2026-11-28",
+      "storage": "link-only",
+      "evidence_status": "Source pointer from reviewed skills; verify current primary documentation for exact platform requirements."
+    },
+    {
+      "id": "hig-router",
+      "title": "HIG category routers",
+      "url": "https://github.com/Zinoo00/apple-human-interface-guideline-skills",
+      "recorded_on": "2026-11-28",
+      "storage": "link-only",
+      "evidence_status": "Source pointer from reviewed skills; verify current primary documentation for exact platform requirements."
+    },
+    {
+      "id": "hig-layout",
+      "title": "Apple HIG layout",
+      "url": "https://developer.apple.com/design/human-interface-guidelines/layout",
+      "recorded_on": "2026-11-28",
+      "storage": "link-only",
+      "evidence_status": "Source pointer from reviewed skills; verify current primary documentation for exact platform requirements."
+    },
+    {
+      "id": "hig-toolbar",
+      "title": "Apple HIG toolbars",
+      "url": "https://developer.apple.com/design/human-interface-guidelines/toolbars",
+      "recorded_on": "2026-11-28",
+      "storage": "link-only",
+      "evidence_status": "Source pointer from reviewed skills; verify current primary documentation for exact platform requirements."
+    },
+    {
+      "id": "openai-macos",
+      "title": "OpenAI Build macOS Apps",
+      "url": "https://github.com/openai/plugins/tree/main/plugins/build-macos-apps",
+      "recorded_on": "2026-11-28",
+      "storage": "link-only",
+      "evidence_status": "Source pointer from reviewed skills; verify current primary documentation for exact platform requirements."
+    },
+    {
+      "id": "openai-ios",
+      "title": "OpenAI Build iOS Apps",
+      "url": "https://github.com/openai/plugins/tree/main/plugins/build-ios-apps",
+      "recorded_on": "2026-11-28",
+      "storage": "link-only",
+      "evidence_status": "Source pointer from reviewed skills; verify current primary documentation for exact platform requirements."
+    },
+    {
+      "id": "wcag",
+      "title": "WCAG 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "recorded_on": "2026-11-28",
+      "storage": "link-only",
+      "evidence_status": "Source pointer from reviewed skills; verify current primary documentation for exact platform requirements."
+    },
+    {
+      "id": "runtime-proof",
+      "title": "Independent runtime proof",
+      "url": "https://github.com/coryparrry/apple-engineering-skills/tree/HEAD/skills/apple-runtime-performance-proof",
+      "recorded_on": "2026-11-28",
+      "storage": "link-only",
+      "evidence_status": "Source pointer from reviewed skills; verify current primary documentation for exact platform requirements."
+    },
+    {
+      "id": "privacy",
+      "title": "Independent privacy telemetry",
+      "url": "https://github.com/coryparrry/apple-engineering-skills/tree/HEAD/skills/apple-privacy-telemetry",
+      "recorded_on": "2026-11-28",
+      "storage": "link-only",
+      "evidence_status": "Source pointer from reviewed skills; verify current primary documentation for exact platform requirements."
+    },
+    {
+      "id": "foundation-models",
+      "title": "Apple Foundation Models Utilities",
+      "url": "https://github.com/apple/foundation-models-utilities",
+      "recorded_on": "2026-11-28",
+      "storage": "link-only",
+      "evidence_status": "Source pointer from reviewed skills; verify current primary documentation for exact platform requirements."
+    },
+    {
+      "id": "agent-eval",
+      "title": "Independent production Foundation Models evaluation",
+      "url": "https://github.com/coryparrry/apple-engineering-skills/tree/HEAD/skills/apple-foundation-models-production",
+      "recorded_on": "2026-11-28",
+      "storage": "link-only",
+      "evidence_status": "Source pointer from reviewed skills; verify current primary documentation for exact platform requirements."
+    }
+  ]
+}

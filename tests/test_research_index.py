@@ -18,6 +18,18 @@ class ResearchIndexTests(unittest.TestCase):
         self.assertGreaterEqual(c["catalogs"]["visual"], 36)
         self.assertEqual(len({r["id"] for r in records}), len(records))
         self.assertTrue(all(r["catalog_sha256"] for r in records))
+    def test_apple_operational_quality_projection(self):
+        rows = [r for r in mod.load_records() if r["catalog"] == "apple-operational-quality"]
+        self.assertEqual(len(rows), 13)
+        self.assertTrue(all(r["sources"] and r["record"]["acceptance"] and r["record"]["skill_path"] for r in rows))
+        self.assertTrue(mod.verify_record_provenance(rows)["integrity_passed"])
+        with sqlite3.connect(":memory:") as db:
+            mod.build(db, rows)
+            for query, ident in (("toolbar priority", "toolbar-priority-overflow"),
+                                 ("gesture ownership", "gesture-ownership-parity"),
+                                 ("transcript lifecycle", "conversation-context-lifecycle")):
+                self.assertTrue(any(r["record_id"] == ident for r in mod.search(db, query, "pattern", limit=100)), query)
+
     def test_clickup_projection(self):
         records = mod.load_records()
         projected = [r for r in records if r["catalog"] == "clickup"]
