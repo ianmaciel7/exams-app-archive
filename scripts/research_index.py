@@ -48,6 +48,7 @@ SUPPLEMENTAL_CATALOGS = (
     ("component-behavior", "component-interaction-behavior-patterns.json", "patterns", "design-system"),
     ("microinteraction", "microinteraction-state-and-polish.json", "patterns", "motion"),
     ("agent-design-system", "agent-ready-design-system-completeness.json", "patterns", "design-system"),
+    ("apple-operational-quality", "apple-operational-quality-2026-11-28.json", "patterns", "interacao"),
     ("ai-native", "ai-native-product-design.json", "records", "ai-native-ux"),
     ("space-views", "chatgpt-space-views-and-composable-pages-2026-11-26.json", "patterns", "workspace"),
     ("ai-product-views", "ai-product-views-and-artifacts-2026-11-26.json", "products", "ai-native-ux"),

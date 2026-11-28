@@ -30,3 +30,7 @@ python scripts/research_index.py sidebar --product ClickUp --kind pattern
 python scripts/research_index.py "filter draft" --product ClickUp --kind pattern
 python scripts/research_index.py ClickUp --product ClickUp --kind source
 ```
+
+## Apple-derived operational quality
+
+[Operational catalog and acceptance contracts](references/ui-ux-research-sources/apple-operational-quality-2026-11-28.md): 13 scoped enrichments for workspace resizing, toolbars, document lifecycle, gesture arbitration, functional evidence, profiling, privacy, agent actions and transcript lifecycle. Query e.g. `python scripts/research_index.py 'toolbar priority' --kind pattern`. Runtime execution is not claimed.
